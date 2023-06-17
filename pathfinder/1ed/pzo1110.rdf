@@ -18,12 +18,11 @@
         <owl:imports rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/generic_ontology.rdf"/>
         <dc:creator rdf:resource="http://dbpedia.org/resource/Jason_Bulmahn"/>
         <schema:image rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image_Rulebook_Cover"/>
-        <rdfs:comment>The Pathfinder RPG Core Rulebook was released in August 2009. It is on its sixth printing, which was published May 30, 2013. 
-Author(s) - Jason Bulmahn
-Pages - 576 pages
-Type - rulebook</rdfs:comment>
         <rdfs:label>Pathfinder Roleplaying Game Core Rulebook</rdfs:label>
+        <pfgo:bookType>Core</pfgo:bookType>
+        <pfgo:dateOfRelease rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2009-08-01T00:00:00</pfgo:dateOfRelease>
         <pfgo:officialLink rdf:resource="https://paizo.com/products/btpy88yj?Pathfinder-Roleplaying-Game-Core-Rulebook"/>
+        <pfgo:pages rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">576</pfgo:pages>
         <pfgo:wiki rdf:resource="https://pathfinderwiki.com/wiki/Core_Rulebook_(First_Edition)"/>
     </owl:Ontology>
     
@@ -196,6 +195,16 @@ Type - rulebook</rdfs:comment>
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#create -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#create">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#isCreatedBy"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Person"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#depict -->
 
     <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#depict">
@@ -271,16 +280,6 @@ Type - rulebook</rdfs:comment>
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#isActivatedBy -->
 
     <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#isActivatedBy"/>
-    
-
-
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#isAuthorOf -->
-
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#isAuthorOf">
-        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#isCreatedBy"/>
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Person"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image"/>
-    </owl:ObjectProperty>
     
 
 
