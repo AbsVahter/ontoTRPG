@@ -15,6 +15,7 @@
      xmlns:schema="http://schema.org/"
      xmlns:pzo1110="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#">
     <owl:Ontology rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf">
+        <owl:imports rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/generic_ontology.rdf"/>
         <dc:creator rdf:resource="http://dbpedia.org/resource/Jason_Bulmahn"/>
         <schema:image rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image_Rulebook_Cover"/>
         <rdfs:comment>The Pathfinder RPG Core Rulebook was released in August 2009. It is on its sixth printing, which was published May 30, 2013. 
@@ -22,6 +23,7 @@ Author(s) - Jason Bulmahn
 Pages - 576 pages
 Type - rulebook</rdfs:comment>
         <rdfs:label>Pathfinder Roleplaying Game Core Rulebook</rdfs:label>
+        <pfgo:officialLink rdf:resource="https://paizo.com/products/btpy88yj?Pathfinder-Roleplaying-Game-Core-Rulebook"/>
         <pfgo:wiki rdf:resource="https://pathfinderwiki.com/wiki/Core_Rulebook_(First_Edition)"/>
     </owl:Ontology>
     

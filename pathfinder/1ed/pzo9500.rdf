@@ -8,7 +8,10 @@
      xmlns:pzgo="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/generic_ontology.rdf#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf">
+        <owl:imports rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/generic_ontology.rdf"/>
         <rdfs:label>Hollow&apos;s Last Hope</rdfs:label>
+        <pzgo:officialLink rdf:resource="https://paizo.com/products/btpy82r0?GameMastery-Module-D0-Hollows-Last-Hope"/>
+        <pzgo:wiki rdf:resource="https://pathfinderwiki.com/wiki/Hollow%27s_Last_Hope"/>
     </owl:Ontology>
 </rdf:RDF>
 
