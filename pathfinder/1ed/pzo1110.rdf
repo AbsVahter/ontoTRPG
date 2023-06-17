@@ -82,6 +82,32 @@
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/generic_ontology.rdf#create -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/generic_ontology.rdf#create"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/generic_ontology.rdf#depict -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/generic_ontology.rdf#depict"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/generic_ontology.rdf#isCreatedBy -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/generic_ontology.rdf#isCreatedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/generic_ontology.rdf#isDepictedBy -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/generic_ontology.rdf#isDepictedBy"/>
+    
+
+
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#activate -->
 
     <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#activate">
@@ -195,25 +221,6 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#create -->
-
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#create">
-        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#isCreatedBy"/>
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Person"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#depict -->
-
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#depict">
-        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#isDepictedBy"/>
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#determine -->
 
     <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#determine">
@@ -294,20 +301,6 @@
     <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#isConsequenceOf">
         <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#leadTo"/>
     </owl:ObjectProperty>
-    
-
-
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#isCreatedBy -->
-
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#isCreatedBy">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#isDepictedBy -->
-
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#isDepictedBy"/>
     
 
 
@@ -539,6 +532,18 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/generic_ontology.rdf#Image -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/generic_ontology.rdf#Image"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/generic_ontology.rdf#Person -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/generic_ontology.rdf#Person"/>
     
 
 
@@ -2082,12 +2087,6 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image -->
-
-    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image"/>
-    
-
-
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Knowledge -->
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Knowledge">
@@ -2272,12 +2271,6 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Person -->
-
-    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Person"/>
-    
-
-
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Poison -->
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Poison">
@@ -2386,7 +2379,7 @@
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#isDepictedBy"/>
+                        <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/generic_ontology.rdf#isDepictedBy"/>
                         <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image_Races_Scale"/>
                     </owl:Restriction>
                     <owl:Restriction>
@@ -4046,7 +4039,7 @@
     <!-- http://dbpedia.org/resource/Jason_Bulmahn -->
 
     <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Jason_Bulmahn">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Person"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/generic_ontology.rdf#Person"/>
     </owl:NamedIndividual>
     
 
@@ -4054,7 +4047,7 @@
     <!-- http://dbpedia.org/resource/Wayne_Reynolds -->
 
     <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Wayne_Reynolds">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Person"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/generic_ontology.rdf#Person"/>
     </owl:NamedIndividual>
     
 
@@ -10146,9 +10139,9 @@ Hit dices: + hit dice by class.</output>
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image_Classes_Barbarian -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image_Classes_Barbarian">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image"/>
-        <depict rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Barbarian"/>
-        <isCreatedBy rdf:resource="http://dbpedia.org/resource/Wayne_Reynolds"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/generic_ontology.rdf#Image"/>
+        <pfgo:depict rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Barbarian"/>
+        <pfgo:isCreatedBy rdf:resource="http://dbpedia.org/resource/Wayne_Reynolds"/>
         <schema:image rdf:resource="https://pathfinderwiki.com/w/images/0/0b/Amiri.jpg"/>
     </owl:NamedIndividual>
     
@@ -10157,8 +10150,8 @@ Hit dices: + hit dice by class.</output>
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image_Classes_Bard -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image_Classes_Bard">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image"/>
-        <isCreatedBy rdf:resource="http://dbpedia.org/resource/Wayne_Reynolds"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/generic_ontology.rdf#Image"/>
+        <pfgo:isCreatedBy rdf:resource="http://dbpedia.org/resource/Wayne_Reynolds"/>
         <schema:image rdf:resource="https://pathfinderwiki.com/w/images/e/ef/Lem.jpg"/>
         <pfgo:wiki rdf:resource="https://www.aonprd.com/ClassDisplay.aspx?ItemName=Bard"/>
     </owl:NamedIndividual>
@@ -10168,9 +10161,9 @@ Hit dices: + hit dice by class.</output>
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image_Classes_Cleric -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image_Classes_Cleric">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image"/>
-        <depict rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Cleric"/>
-        <isCreatedBy rdf:resource="http://dbpedia.org/resource/Wayne_Reynolds"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/generic_ontology.rdf#Image"/>
+        <pfgo:depict rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Cleric"/>
+        <pfgo:isCreatedBy rdf:resource="http://dbpedia.org/resource/Wayne_Reynolds"/>
         <schema:image rdf:resource="https://pathfinderwiki.com/w/images/2/23/Kyra.jpg"/>
     </owl:NamedIndividual>
     
@@ -10179,8 +10172,8 @@ Hit dices: + hit dice by class.</output>
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image_Classes_Druid -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image_Classes_Druid">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image"/>
-        <depict rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Druid"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/generic_ontology.rdf#Image"/>
+        <pfgo:depict rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Druid"/>
         <schema:image rdf:resource="https://static.wikia.nocookie.net/pathfinder/images/d/d3/Lini1.jpg/revision/latest/scale-to-width-down/1000?cb=20170714074218&amp;path-prefix=ru"/>
     </owl:NamedIndividual>
     
@@ -10189,7 +10182,7 @@ Hit dices: + hit dice by class.</output>
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image_Classes_Ogre_Fight -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image_Classes_Ogre_Fight">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/generic_ontology.rdf#Image"/>
         <schema:image rdf:resource="https://triangularroom.files.wordpress.com/2014/06/ogres.jpg"/>
     </owl:NamedIndividual>
     
@@ -10198,7 +10191,7 @@ Hit dices: + hit dice by class.</output>
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image_Example_of_Play -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image_Example_of_Play">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/generic_ontology.rdf#Image"/>
         <schema:image rdf:resource="https://writeups.letsyouandhimfight.com/images/620738194a8fc7b3d0a51f5161aa638131d48dd7095db240aeb54204e8229a04.jpeg"/>
     </owl:NamedIndividual>
     
@@ -10207,7 +10200,7 @@ Hit dices: + hit dice by class.</output>
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image_Getting_Started_Dragon_Fight -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image_Getting_Started_Dragon_Fight">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/generic_ontology.rdf#Image"/>
         <schema:image rdf:resource="https://mcdn.wallpapersafari.com/medium/11/88/jlvHxJ.jpg"/>
     </owl:NamedIndividual>
     
@@ -10216,7 +10209,7 @@ Hit dices: + hit dice by class.</output>
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image_Getting_Started_Elven_Gate -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image_Getting_Started_Elven_Gate">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/generic_ontology.rdf#Image"/>
         <schema:image rdf:resource="https://static.wikia.nocookie.net/pathfinderkingmaker/images/5/56/Elven_gate.jpg"/>
     </owl:NamedIndividual>
     
@@ -10225,7 +10218,7 @@ Hit dices: + hit dice by class.</output>
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image_Introduction_Attack_of_Goblins -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image_Introduction_Attack_of_Goblins">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/generic_ontology.rdf#Image"/>
         <schema:image rdf:resource="https://paizo.com/image/product/secondary/Pathfinder/Pathfinder1_02.jpg"/>
     </owl:NamedIndividual>
     
@@ -10234,7 +10227,7 @@ Hit dices: + hit dice by class.</output>
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image_Races_Escape_from_Drows -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image_Races_Escape_from_Drows">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/generic_ontology.rdf#Image"/>
         <schema:image rdf:resource="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRP6erg6-3KJtZsZksjeg6OdCGvub2xMHiPZ13-ee-b2UsENTvX"/>
     </owl:NamedIndividual>
     
@@ -10243,7 +10236,7 @@ Hit dices: + hit dice by class.</output>
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image_Races_Scale -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image_Races_Scale">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/generic_ontology.rdf#Image"/>
         <schema:image rdf:resource="https://static.wikia.nocookie.net/pathfinderkingmaker/images/e/eb/Races.jpg/revision/latest/scale-to-width-down/422?cb=20180918093921"/>
     </owl:NamedIndividual>
     
@@ -10252,8 +10245,8 @@ Hit dices: + hit dice by class.</output>
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image_Rulebook_Cover -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image_Rulebook_Cover">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image"/>
-        <isCreatedBy rdf:resource="http://dbpedia.org/resource/Wayne_Reynolds"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/generic_ontology.rdf#Image"/>
+        <pfgo:isCreatedBy rdf:resource="http://dbpedia.org/resource/Wayne_Reynolds"/>
         <schema:image rdf:resource="https://pathfinderwiki.com/w/images/3/34/Pathfinder_RPG_cover.jpg"/>
     </owl:NamedIndividual>
     

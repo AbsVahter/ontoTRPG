@@ -2,6 +2,7 @@
 <rdf:RDF xmlns="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#"
      xml:base="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:dbr="http://dbpedia.org/resource/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
@@ -17,6 +18,25 @@
         <pzgo:pages rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16</pzgo:pages>
         <pzgo:wiki rdf:resource="https://pathfinderwiki.com/wiki/Hollow%27s_Last_Hope"/>
     </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/resource/Jason_Bulmahn -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Jason_Bulmahn">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/generic_ontology.rdf#Person"/>
+    </owl:NamedIndividual>
 </rdf:RDF>
 
 
