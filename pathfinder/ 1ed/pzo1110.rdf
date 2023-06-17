@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110/"
      xml:base="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:dbr="http://dbpedia.org/resource/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -14,13 +15,13 @@
      xmlns:pzo1110="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#">
     <owl:Ontology rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110">
         <owl:versionIRI rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110/1.0.0"/>
+        <dc:creator rdf:resource="http://dbpedia.org/resource/Jason_Bulmahn"/>
         <schema:image rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Image_Rulebook_Cover"/>
         <rdfs:comment>The Pathfinder RPG Core Rulebook was released in August 2009. It is on its sixth printing, which was published May 30, 2013. 
 Author(s) - Jason Bulmahn
 Pages - 576 pages
 Type - rulebook</rdfs:comment>
         <rdfs:label>Pathfinder Roleplaying Game Core Rulebook</rdfs:label>
-        <pzo1110:author rdf:resource="http://dbpedia.org/resource/Jason_Bulmahn"/>
         <pzo1110:wiki rdf:resource="https://pathfinderwiki.com/wiki/Core_Rulebook_(First_Edition)"/>
     </owl:Ontology>
     
@@ -37,6 +38,12 @@ Type - rulebook</rdfs:comment>
     
 
 
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
     <!-- http://schema.org/image -->
 
     <owl:AnnotationProperty rdf:about="http://schema.org/image"/>
@@ -46,12 +53,6 @@ Type - rulebook</rdfs:comment>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#abbreviation -->
 
     <owl:AnnotationProperty rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#abbreviation"/>
-    
-
-
-    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#author -->
-
-    <owl:AnnotationProperty rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#author"/>
     
 
 
