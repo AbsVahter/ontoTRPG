@@ -8,16 +8,68 @@
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:pzgo="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/generic_ontology.rdf#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:pf1ed="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#"
+     xmlns:schema="http://schema.org/">
     <owl:Ontology rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf">
-        <owl:imports rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/generic_ontology.rdf"/>
+        <owl:imports rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf"/>
+        <dc:creator rdf:resource="http://dbpedia.org/resource/F._Wesley_Schneider"/>
+        <dc:creator rdf:resource="http://dbpedia.org/resource/Jason_Bulmahn"/>
+        <schema:image rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Image_Cover"/>
         <rdfs:label>Hollow&apos;s Last Hope</rdfs:label>
-        <pzgo:bookType>Adventure, GameMastery Modules</pzgo:bookType>
-        <pzgo:dateOfRelease rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2007-06-01T00:00:00</pzgo:dateOfRelease>
-        <pzgo:officialLink rdf:resource="https://paizo.com/products/btpy82r0?GameMastery-Module-D0-Hollows-Last-Hope"/>
-        <pzgo:pages rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16</pzgo:pages>
-        <pzgo:wiki rdf:resource="https://pathfinderwiki.com/wiki/Hollow%27s_Last_Hope"/>
+        <pf1ed:bookType>Adventure, GameMastery Modules</pf1ed:bookType>
+        <pf1ed:dateOfRelease rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2007-06-01T00:00:00</pf1ed:dateOfRelease>
+        <pf1ed:officialLink rdf:resource="https://paizo.com/products/btpy82r0?GameMastery-Module-D0-Hollows-Last-Hope"/>
+        <pf1ed:pages rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16</pf1ed:pages>
+        <pf1ed:wiki rdf:resource="https://pathfinderwiki.com/wiki/Hollow%27s_Last_Hope"/>
     </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.org/image -->
+
+    <owl:AnnotationProperty rdf:about="http://schema.org/image"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#bookType -->
+
+    <owl:AnnotationProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#bookType"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#dateOfRelease -->
+
+    <owl:AnnotationProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#dateOfRelease"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#officialLink -->
+
+    <owl:AnnotationProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#officialLink"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#pages -->
+
+    <owl:AnnotationProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#pages"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#wiki -->
+
+    <owl:AnnotationProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#wiki"/>
     
 
 
@@ -32,10 +84,27 @@
     
 
 
+    <!-- http://dbpedia.org/resource/F._Wesley_Schneider -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/F._Wesley_Schneider">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#Person"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://dbpedia.org/resource/Jason_Bulmahn -->
 
     <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Jason_Bulmahn">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/generic_ontology.rdf#Person"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#Person"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Image_Cover -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Image_Cover">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#Image"/>
+        <schema:image rdf:resource="https://pathfinderwiki.com/w/images/f/fd/Hollow%27s_Last_Hope.jpg"/>
     </owl:NamedIndividual>
 </rdf:RDF>
 

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf" uri="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1687043548862" name="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf" uri="pf1ed.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1687043548862" name="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf" uri="pzo1110.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1687043548862" name="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf" uri="pzo9500.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1687045860709" name="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf" uri="pf1ed.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1687045860709" name="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf" uri="pzo1110.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1687045860709" name="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf" uri="pzo9500.rdf"/>
     </group>
 </catalog>
