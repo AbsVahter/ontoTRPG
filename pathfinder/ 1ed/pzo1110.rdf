@@ -91,7 +91,7 @@ Type - rulebook</rdfs:comment>
     <owl:ObjectProperty rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#activate">
         <owl:inverseOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isActivatedBy"/>
         <rdfs:domain rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Action"/>
-        <rdfs:range rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rules"/>
+        <rdfs:range rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule"/>
     </owl:ObjectProperty>
     
 
@@ -177,8 +177,8 @@ Type - rulebook</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#block">
         <owl:inverseOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isBlockedBy"/>
-        <rdfs:domain rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rules"/>
-        <rdfs:range rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rules"/>
+        <rdfs:domain rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule"/>
+        <rdfs:range rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule"/>
     </owl:ObjectProperty>
     
 
@@ -212,7 +212,7 @@ Type - rulebook</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#determine">
         <owl:inverseOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isDeterminedBy"/>
-        <rdfs:domain rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rules"/>
+        <rdfs:domain rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule"/>
         <rdfs:range rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#SpecAbilities"/>
     </owl:ObjectProperty>
     
@@ -241,7 +241,7 @@ Type - rulebook</rdfs:comment>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#haveAbility -->
 
     <owl:ObjectProperty rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#haveAbility">
-        <rdfs:domain rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class"/>
+        <rdfs:domain rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Playable"/>
         <rdfs:range rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#SpecAbilities"/>
     </owl:ObjectProperty>
     
@@ -393,7 +393,7 @@ Type - rulebook</rdfs:comment>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#pick -->
 
     <owl:ObjectProperty rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#pick">
-        <rdfs:domain rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rules"/>
+        <rdfs:domain rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule"/>
     </owl:ObjectProperty>
     
 
@@ -401,7 +401,7 @@ Type - rulebook</rdfs:comment>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#proficientWith -->
 
     <owl:ObjectProperty rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#proficientWith">
-        <rdfs:domain rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class"/>
+        <rdfs:domain rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_General"/>
         <rdfs:range rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill"/>
     </owl:ObjectProperty>
     
@@ -410,7 +410,7 @@ Type - rulebook</rdfs:comment>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#setFeatureValue -->
 
     <owl:ObjectProperty rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#setFeatureValue">
-        <rdfs:domain rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rules"/>
+        <rdfs:domain rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule"/>
         <rdfs:range rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Feature"/>
     </owl:ObjectProperty>
     
@@ -419,7 +419,7 @@ Type - rulebook</rdfs:comment>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#useFeature -->
 
     <owl:ObjectProperty rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#useFeature">
-        <rdfs:domain rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rules"/>
+        <rdfs:domain rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule"/>
         <rdfs:range rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Feature"/>
     </owl:ObjectProperty>
     
@@ -428,8 +428,8 @@ Type - rulebook</rdfs:comment>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#useRule -->
 
     <owl:ObjectProperty rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#useRule">
-        <rdfs:domain rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rules"/>
-        <rdfs:range rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rules"/>
+        <rdfs:domain rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule"/>
+        <rdfs:range rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule"/>
     </owl:ObjectProperty>
     
 
@@ -457,7 +457,7 @@ Type - rulebook</rdfs:comment>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#condition -->
 
     <owl:DatatypeProperty rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#condition">
-        <rdfs:domain rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rules"/>
+        <rdfs:domain rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -466,7 +466,7 @@ Type - rulebook</rdfs:comment>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#distance -->
 
     <owl:DatatypeProperty rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#distance">
-        <rdfs:domain rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rules"/>
+        <rdfs:domain rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -484,7 +484,7 @@ Type - rulebook</rdfs:comment>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#hitDie -->
 
     <owl:DatatypeProperty rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#hitDie">
-        <rdfs:domain rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class"/>
+        <rdfs:domain rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Playable"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -493,7 +493,7 @@ Type - rulebook</rdfs:comment>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#output -->
 
     <owl:DatatypeProperty rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#output">
-        <rdfs:domain rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rules"/>
+        <rdfs:domain rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -502,7 +502,7 @@ Type - rulebook</rdfs:comment>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#skillsRanksPerLevel -->
 
     <owl:DatatypeProperty rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#skillsRanksPerLevel">
-        <rdfs:domain rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class"/>
+        <rdfs:domain rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Playable"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
     </owl:DatatypeProperty>
     
@@ -529,7 +529,7 @@ Type - rulebook</rdfs:comment>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#uses -->
 
     <owl:DatatypeProperty rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#uses">
-        <rdfs:domain rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rules"/>
+        <rdfs:domain rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -563,7 +563,7 @@ Type - rulebook</rdfs:comment>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#AbilityScoresGenerators -->
 
     <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#AbilityScoresGenerators">
-        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharCreationRules"/>
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule_Character_Creation"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isPickedBy"/>
@@ -577,7 +577,7 @@ Type - rulebook</rdfs:comment>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Ability_Modifier -->
 
     <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Ability_Modifier">
-        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rules"/>
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule"/>
         <rdfs:subClassOf>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
@@ -614,7 +614,7 @@ Type - rulebook</rdfs:comment>
                     </owl:Restriction>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isSetByRule"/>
-                        <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#LevelUpAbilityScoreSetter"/>
+                        <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Ability_Score_Setter"/>
                     </owl:Restriction>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isSetByRule"/>
@@ -752,20 +752,6 @@ Type - rulebook</rdfs:comment>
     
 
 
-    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Barbarian_Skill -->
-
-    <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Barbarian_Skill">
-        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Class"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isProfSkillByClass"/>
-                <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Barbarian"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Bard_Associated_Skill -->
 
     <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Bard_Associated_Skill">
@@ -773,21 +759,7 @@ Type - rulebook</rdfs:comment>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isPickedBy"/>
-                <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#VersatilePerformanceSetter"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
-    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Bard_Skill -->
-
-    <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Bard_Skill">
-        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Class"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isProfSkillByClass"/>
-                <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Bard"/>
+                <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Versatile_Performance_Setter"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -843,11 +815,11 @@ Type - rulebook</rdfs:comment>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#BonusesBAB -->
 
     <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#BonusesBAB">
-        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_BonusesRules"/>
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_Bonuses_Rule"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isUsedRuleBy"/>
-                <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#BABSetter"/>
+                <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_Bonuses_Setter_BAB"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -857,11 +829,11 @@ Type - rulebook</rdfs:comment>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#BonusesFort -->
 
     <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#BonusesFort">
-        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_BonusesRules"/>
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_Bonuses_Rule"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isUsedRuleBy"/>
-                <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#FortSetter"/>
+                <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_Bonuses_Setter_Fortitude"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -871,11 +843,11 @@ Type - rulebook</rdfs:comment>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#BonusesRef -->
 
     <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#BonusesRef">
-        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_BonusesRules"/>
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_Bonuses_Rule"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isUsedRuleBy"/>
-                <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#RefSetter"/>
+                <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_Bonuses_Setter_Reflex"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -885,21 +857,21 @@ Type - rulebook</rdfs:comment>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#BonusesWill -->
 
     <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#BonusesWill">
-        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_BonusesRules"/>
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_Bonuses_Rule"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isUsedRuleBy"/>
-                <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#WillSetter"/>
+                <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_Bonuses_Setter_Will"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
     
 
 
-    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharCreationRules -->
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Animal_Companion_Feature -->
 
-    <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharCreationRules">
-        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rules"/>
+    <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Animal_Companion_Feature">
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Feature"/>
     </owl:Class>
     
 
@@ -916,27 +888,6 @@ Type - rulebook</rdfs:comment>
 
     <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Save">
         <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Feature"/>
-    </owl:Class>
-    
-
-
-    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class -->
-
-    <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class">
-        <rdfs:subClassOf>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isPickedBy"/>
-                        <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#ClassSelector"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isPickedBy"/>
-                        <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#MultitalentedRule"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -1116,7 +1067,7 @@ Type - rulebook</rdfs:comment>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Ability_Rule -->
 
     <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Ability_Rule">
-        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rules"/>
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule"/>
     </owl:Class>
     
 
@@ -1149,6 +1100,12 @@ Type - rulebook</rdfs:comment>
     
 
 
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_General -->
+
+    <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_General"/>
+    
+
+
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level -->
 
     <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level">
@@ -1165,10 +1122,10 @@ Type - rulebook</rdfs:comment>
     
 
 
-    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_BonusesRules -->
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_Bonuses_Rule -->
 
-    <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_BonusesRules">
-        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharCreationRules"/>
+    <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_Bonuses_Rule">
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule_Character_Creation"/>
         <rdfs:subClassOf>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
@@ -1187,20 +1144,42 @@ Type - rulebook</rdfs:comment>
     
 
 
-    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_BonusesSetters -->
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_Bonuses_Setter -->
 
-    <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_BonusesSetters">
-        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharCreationRules"/>
+    <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_Bonuses_Setter">
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Setter"/>
         <rdfs:subClassOf>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isUsedRuleBy"/>
-                        <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#LevelUpRule"/>
+                        <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#useFeature"/>
+                        <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Class_Levels"/>
                     </owl:Restriction>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#output"/>
                         <owl:hasValue>= max bonus for character&apos;s class levels</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Playable -->
+
+    <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Playable">
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_General"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isPickedBy"/>
+                        <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Class_Selector"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isPickedBy"/>
+                        <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#MultitalentedRule"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -1250,7 +1229,7 @@ Type - rulebook</rdfs:comment>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Spellcasting_Ability_Rule -->
 
     <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Spellcasting_Ability_Rule">
-        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharCreationRules"/>
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule_Character_Creation"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isUsedRuleBy"/>
@@ -1294,7 +1273,7 @@ Type - rulebook</rdfs:comment>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_with_Armor_Prof_Basic -->
 
     <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_with_Armor_Prof_Basic">
-        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class"/>
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Playable"/>
         <rdfs:comment>Classes are proficient with light and medium armor and standard shields.</rdfs:comment>
     </owl:Class>
     
@@ -1303,7 +1282,7 @@ Type - rulebook</rdfs:comment>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_with_Armor_Prof_Light -->
 
     <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_with_Armor_Prof_Light">
-        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class"/>
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Playable"/>
         <rdfs:comment>Classes are proficient with light armor.</rdfs:comment>
     </owl:Class>
     
@@ -1312,7 +1291,7 @@ Type - rulebook</rdfs:comment>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_with_Armor_Prof_Standard -->
 
     <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_with_Armor_Prof_Standard">
-        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class"/>
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Playable"/>
         <rdfs:comment>Classes are proficient with all armor and standard shields.</rdfs:comment>
     </owl:Class>
     
@@ -1321,7 +1300,7 @@ Type - rulebook</rdfs:comment>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_with_Weapon_Prof_Simple -->
 
     <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_with_Weapon_Prof_Simple">
-        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class"/>
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Playable"/>
         <rdfs:comment>Classes are proficient with all simple weapon.</rdfs:comment>
     </owl:Class>
     
@@ -1330,7 +1309,7 @@ Type - rulebook</rdfs:comment>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_with_Weapon_Prof_Standard -->
 
     <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_with_Weapon_Prof_Standard">
-        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class"/>
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Playable"/>
         <rdfs:comment>Classes are proficient with all simple and martial weapon.</rdfs:comment>
     </owl:Class>
     
@@ -1531,20 +1510,6 @@ Type - rulebook</rdfs:comment>
     
 
 
-    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Cleric_Skill -->
-
-    <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Cleric_Skill">
-        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Class"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isProfSkillByClass"/>
-                <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Cleric"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CombatFeats -->
 
     <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CombatFeats">
@@ -1727,7 +1692,7 @@ Type - rulebook</rdfs:comment>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#useRule"/>
-                <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#DicerollRule"/>
+                <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Dice_Roll_Rule"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -1765,20 +1730,12 @@ Type - rulebook</rdfs:comment>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Domain_Setter -->
 
     <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Domain_Setter">
-        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharCreationRules"/>
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Class_Setter_Consequence"/>
         <rdfs:subClassOf>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#setFeatureValue"/>
-                        <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Domains"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#useRule"/>
-                        <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_Setter"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#setFeatureValue"/>
+                <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Domains"/>
+            </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
     
@@ -1792,20 +1749,6 @@ Type - rulebook</rdfs:comment>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isPickedBy"/>
                 <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Prof_WA_Druid_Rule"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
-    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Druid_Skill -->
-
-    <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Druid_Skill">
-        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Class"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isProfSkillByClass"/>
-                <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Druid"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -1913,13 +1856,13 @@ Type - rulebook</rdfs:comment>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Ex_Class_Rule -->
 
     <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Ex_Class_Rule">
-        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rules"/>
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule"/>
         <rdfs:subClassOf>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#block"/>
-                        <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_Setter"/>
+                        <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Class_Setter"/>
                     </owl:Restriction>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#block"/>
@@ -1944,7 +1887,7 @@ Type - rulebook</rdfs:comment>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#FeatRules -->
 
     <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#FeatRules">
-        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rules"/>
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule"/>
     </owl:Class>
     
 
@@ -1969,24 +1912,10 @@ Type - rulebook</rdfs:comment>
     
 
 
-    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Fighter_Skill -->
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Generating_Character_Setter -->
 
-    <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Fighter_Skill">
-        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Class"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isProfSkillByClass"/>
-                <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Fighter"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
-    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#GenCharSetters -->
-
-    <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#GenCharSetters">
-        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharCreationRules"/>
+    <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Generating_Character_Setter">
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule_Character_Creation"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isActivatedBy"/>
@@ -2202,7 +2131,7 @@ Type - rulebook</rdfs:comment>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Language_Rule -->
 
     <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Language_Rule">
-        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rules"/>
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule"/>
     </owl:Class>
     
 
@@ -2224,7 +2153,7 @@ Type - rulebook</rdfs:comment>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Learning_Spell_Rule -->
 
     <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Learning_Spell_Rule">
-        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharCreationRules"/>
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule_Character_Creation"/>
         <rdfs:subClassOf>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
@@ -2269,15 +2198,51 @@ Type - rulebook</rdfs:comment>
     
 
 
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Class_Setter_Consequence -->
+
+    <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Class_Setter_Consequence">
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule_Character_Creation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#useRule"/>
+                <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Class_Setter"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Setter -->
 
     <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Setter">
-        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharCreationRules"/>
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule_Character_Creation"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isUsedRuleBy"/>
-                <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#LevelUpRule"/>
+                <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#useRule"/>
+                <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Rule"/>
             </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Setter_Animal_Companion -->
+
+    <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Setter_Animal_Companion">
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Setter"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#useFeature"/>
+                        <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Animal_Companion"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#useFeature"/>
+                        <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Class_Levels"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
         </rdfs:subClassOf>
     </owl:Class>
     
@@ -2297,20 +2262,6 @@ Type - rulebook</rdfs:comment>
     
 
 
-    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Monk_Skill -->
-
-    <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Monk_Skill">
-        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Class"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isProfSkillByClass"/>
-                <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Monk"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Obsessive_Skill -->
 
     <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Obsessive_Skill">
@@ -2319,20 +2270,6 @@ Type - rulebook</rdfs:comment>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isPickedBy"/>
                 <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#ObsessiveRule"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
-    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Paladin_Skill -->
-
-    <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Paladin_Skill">
-        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Class"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isProfSkillByClass"/>
-                <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Paladin"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -2378,7 +2315,7 @@ Type - rulebook</rdfs:comment>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#ProfWASetters -->
 
     <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#ProfWASetters">
-        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharCreationRules"/>
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule_Character_Creation"/>
         <rdfs:subClassOf>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
@@ -2499,7 +2436,7 @@ Type - rulebook</rdfs:comment>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#RacialAbilityScoreModifierRules -->
 
     <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#RacialAbilityScoreModifierRules">
-        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharCreationRules"/>
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule_Character_Creation"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#setFeatureValue"/>
@@ -2543,7 +2480,7 @@ Type - rulebook</rdfs:comment>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#RagePowersRules -->
 
     <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#RagePowersRules">
-        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rules"/>
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#useRule"/>
@@ -2563,20 +2500,6 @@ Type - rulebook</rdfs:comment>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isPickedBy"/>
                 <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#RagePowersSelector"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
-    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Ranger_Skill -->
-
-    <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Ranger_Skill">
-        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Class"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isProfSkillByClass"/>
-                <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Ranger"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -2611,30 +2534,16 @@ Type - rulebook</rdfs:comment>
     
 
 
-    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rogue_Skill -->
-
-    <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rogue_Skill">
-        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Class"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isProfSkillByClass"/>
-                <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rogue"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rolls -->
 
     <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rolls">
-        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rules"/>
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule"/>
         <rdfs:subClassOf>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#useRule"/>
-                        <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#DicerollRule"/>
+                        <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Dice_Roll_Rule"/>
                     </owl:Restriction>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#useRule"/>
@@ -2652,6 +2561,12 @@ Type - rulebook</rdfs:comment>
             </owl:Class>
         </rdfs:subClassOf>
     </owl:Class>
+    
+
+
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule -->
+
+    <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule"/>
     
 
 
@@ -2681,6 +2596,14 @@ Type - rulebook</rdfs:comment>
                 </owl:intersectionOf>
             </owl:Class>
         </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule_Character_Creation -->
+
+    <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule_Character_Creation">
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule"/>
     </owl:Class>
     
 
@@ -2729,12 +2652,6 @@ Type - rulebook</rdfs:comment>
     
 
 
-    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rules -->
-
-    <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rules"/>
-    
-
-
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rules8Uses -->
 
     <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rules8Uses">
@@ -2760,7 +2677,7 @@ Type - rulebook</rdfs:comment>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#RulesByAttack -->
 
     <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#RulesByAttack">
-        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rules"/>
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule"/>
     </owl:Class>
     
 
@@ -2768,7 +2685,7 @@ Type - rulebook</rdfs:comment>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#RulesByUses -->
 
     <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#RulesByUses">
-        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rules"/>
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule"/>
     </owl:Class>
     
 
@@ -2776,7 +2693,7 @@ Type - rulebook</rdfs:comment>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#SaveBonuses2Level -->
 
     <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#SaveBonuses2Level">
-        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_BonusesRules"/>
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_Bonuses_Rule"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#output"/>
@@ -2790,7 +2707,7 @@ Type - rulebook</rdfs:comment>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#SaveBonuses3Level -->
 
     <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#SaveBonuses3Level">
-        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_BonusesRules"/>
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_Bonuses_Rule"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#output"/>
@@ -2878,7 +2795,7 @@ Type - rulebook</rdfs:comment>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isPickedBy"/>
-                        <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#SkillUpSelector"/>
+                        <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Upgrade_Selector_General"/>
                     </owl:Restriction>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isSetByRule"/>
@@ -2886,10 +2803,158 @@ Type - rulebook</rdfs:comment>
                     </owl:Restriction>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isSetByRule"/>
-                        <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#SkillRanksSetter"/>
+                        <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Ranks_Setter"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Animal -->
+
+    <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Animal">
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isPickedBy"/>
+                <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Upgrade_Selector_Animal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Animal_Proficient -->
+
+    <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Animal_Proficient">
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Animal"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Barbarian -->
+
+    <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Barbarian">
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Class"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isProfSkillByClass"/>
+                <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Barbarian"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Bard -->
+
+    <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Bard">
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Class"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isProfSkillByClass"/>
+                <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Bard"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Cleric -->
+
+    <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Cleric">
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Class"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isProfSkillByClass"/>
+                <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Cleric"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Druid -->
+
+    <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Druid">
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Class"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isProfSkillByClass"/>
+                <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Druid"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Fighter -->
+
+    <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Fighter">
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Class"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isProfSkillByClass"/>
+                <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Fighter"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Monk -->
+
+    <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Monk">
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Class"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isProfSkillByClass"/>
+                <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Monk"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Paladin -->
+
+    <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Paladin">
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Class"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isProfSkillByClass"/>
+                <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Paladin"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Ranger -->
+
+    <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Ranger">
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Class"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isProfSkillByClass"/>
+                <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Ranger"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Rogue -->
+
+    <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Rogue">
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Class"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isProfSkillByClass"/>
+                <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rogue"/>
+            </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
     
@@ -3025,6 +3090,60 @@ Type - rulebook</rdfs:comment>
     
 
 
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Sorcerer -->
+
+    <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Sorcerer">
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Class"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isProfSkillByClass"/>
+                <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Sorcerer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Upgrade_Selector -->
+
+    <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Upgrade_Selector">
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule_Character_Creation"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isUsedRuleBy"/>
+                        <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Ranks_Setter"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#useFeature"/>
+                        <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Hit_Dices"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#output"/>
+                        <owl:hasValue>1 skill for each free skill rank</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Wizard -->
+
+    <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Wizard">
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Class"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isProfSkillByClass"/>
+                <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Wizard"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Ability -->
 
     <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Ability">
@@ -3077,20 +3196,6 @@ Type - rulebook</rdfs:comment>
 
     <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Wisdom">
         <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Ability"/>
-    </owl:Class>
-    
-
-
-    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Sorc_Skill -->
-
-    <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Sorc_Skill">
-        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Class"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isProfSkillByClass"/>
-                <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Sorcerer"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -3758,7 +3863,7 @@ Type - rulebook</rdfs:comment>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Spells_Bonus_Rule -->
 
     <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Spells_Bonus_Rule">
-        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rules"/>
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#output"/>
@@ -3796,7 +3901,7 @@ Type - rulebook</rdfs:comment>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#StatusRules -->
 
     <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#StatusRules">
-        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rules"/>
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule"/>
     </owl:Class>
     
 
@@ -3840,7 +3945,7 @@ Type - rulebook</rdfs:comment>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#TraitRules -->
 
     <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#TraitRules">
-        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rules"/>
+        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule"/>
     </owl:Class>
     
 
@@ -3885,20 +3990,6 @@ Type - rulebook</rdfs:comment>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isPickedBy"/>
                 <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Prof_WA_Wizard_Rule"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
-    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Wizard_Skill -->
-
-    <owl:Class rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Wizard_Skill">
-        <rdfs:subClassOf rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Class"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#isProfSkillByClass"/>
-                <owl:hasValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Wizard"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -3991,7 +4082,7 @@ Type - rulebook</rdfs:comment>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#AbilityScoreCostsRule -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#AbilityScoreCostsRule">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharCreationRules"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule_Character_Creation"/>
         <pzo1110:output>{score: points} = {7: -4, 8: -2, 9: -1, 10: 0, 11: 1, 12: 2, 13: 3, 14: 5, 15: 7, 16: 10, 17: 13, 18: 17}</pzo1110:output>
     </owl:NamedIndividual>
     
@@ -4000,7 +4091,7 @@ Type - rulebook</rdfs:comment>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#AbilityScoresSetter -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#AbilityScoresSetter">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#GenCharSetters"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Generating_Character_Setter"/>
         <pzo1110:output>ability scores by selected generator</pzo1110:output>
     </owl:NamedIndividual>
     
@@ -4009,7 +4100,7 @@ Type - rulebook</rdfs:comment>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#AbilitySelector -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#AbilitySelector">
-        <pzo1110:isUsedRuleBy rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#LevelUpAbilityScoreSetter"/>
+        <pzo1110:isUsedRuleBy rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Ability_Score_Setter"/>
         <pzo1110:output>one selected ability</pzo1110:output>
     </owl:NamedIndividual>
     
@@ -4142,7 +4233,7 @@ Type - rulebook</rdfs:comment>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#AdvancementPaceRule -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#AdvancementPaceRule">
-        <pzo1110:useFeature rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharLevel"/>
+        <pzo1110:useFeature rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Hit_Dices"/>
         <pzo1110:output>thousands exp = level: [Slow, Medium, Fast] = {2: [3, 2, 1.3], 3: [7.5, 5, 3.3], 4: [14, 9, 6], 5: [23, 15, 10], 6: [35, 23, 15], 7: [53, 35, 23], 8: [77, 51, 34], 9: [115, 75, 50], 10: [160, 105, 71], 11: [235, 155, 105], 12: [330, 220, 145], 13: [475, 315, 210], 14: [665, 445, 295], 15: [955, 635, 425], 16: [1350, 890, 600], 17: [1900, 1300, 850], 18: [2700, 1800, 1200], 19: [3850, 2550, 1700], 20: [5350, 3600, 2400]}</pzo1110:output>
     </owl:NamedIndividual>
     
@@ -4316,7 +4407,7 @@ Type - rulebook</rdfs:comment>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#AlignmentSetter -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#AlignmentSetter">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#GenCharSetters"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Generating_Character_Setter"/>
         <pzo1110:setFeatureValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Alignment"/>
         <pzo1110:output>selected alignment considering class restrictions</pzo1110:output>
     </owl:NamedIndividual>
@@ -4389,6 +4480,14 @@ Bite dmg: 1d4 points of damage (assuming the barbarian is Medium; 1d3 points of 
     
 
 
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Animal_Companion -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Animal_Companion">
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_General"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Animal_Companion_Ability -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Animal_Companion_Ability">
@@ -4403,9 +4502,12 @@ Bite dmg: 1d4 points of damage (assuming the barbarian is Medium; 1d3 points of 
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Animal_Companion_Ability_Rule">
         <pzo1110:determine rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Animal_Companion_Ability"/>
+        <pzo1110:isUsedRuleBy rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Generating_Character"/>
+        <pzo1110:setFeatureValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Animal_Companion"/>
         <pzo1110:useFeature rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Class_Levels"/>
         <pzo1110:useRule rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Nature_Bond_Rule"/>
-        <pzo1110:output>Animal companion&apos;s level: druid level or (domain class level - 3).</pzo1110:output>
+        <pzo1110:output>Selected animal.
+Animal companion&apos;s level: druid level or (domain class level - 3).</pzo1110:output>
         <pzo1110:forFutureCorrection>A druid may begin play with any of the animals listed in the Animal Companions section...
 ...she may gain a new one by performing a ceremony requiring 24 uninterrupted hours of prayer in the environment where the new companion typically lives...</pzo1110:forFutureCorrection>
     </owl:NamedIndividual>
@@ -4494,12 +4596,11 @@ Bite dmg: 1d4 points of damage (assuming the barbarian is Medium; 1d3 points of 
     
 
 
-    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#ArmorClass -->
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Armor_Class -->
 
-    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#ArmorClass">
+    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Armor_Class">
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Feature"/>
         <pzo1110:isUsedFeatureBy rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#ACRoll"/>
-        <rdfs:label>Armor class</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -4693,19 +4794,10 @@ Resistance: 5 + (5 if cleric level &gt;= 14) against all elements.</pzo1110:outp
     
 
 
-    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#BABSetter -->
-
-    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#BABSetter">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_BonusesSetters"/>
-        <pzo1110:setFeatureValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#BAB"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Barbarian -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Barbarian">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Playable"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_with_Armor_Prof_Basic"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_with_Weapon_Prof_Standard"/>
         <pzo1110:hitDie>d12</pzo1110:hitDie>
@@ -4740,7 +4832,7 @@ Barbarians excel in combat, possessing the martial prowess and fortitude to take
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Bard -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Bard">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Playable"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_with_Armor_Prof_Light"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_with_Weapon_Prof_Simple"/>
         <pzo1110:hitDie>d8</pzo1110:hitDie>
@@ -4937,7 +5029,7 @@ Barbarians excel in combat, possessing the martial prowess and fortitude to take
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#BitOfLuckRule">
         <pzo1110:determine rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#BitOfLuck"/>
-        <pzo1110:useRule rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#DicerollRule"/>
+        <pzo1110:useRule rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Dice_Roll_Rule"/>
         <pzo1110:useRule rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#RollTwiceRule"/>
         <pzo1110:condition>Autohit for willing target</pzo1110:condition>
         <pzo1110:output>Favorable result of two dice rolls.</pzo1110:output>
@@ -5336,7 +5428,7 @@ Perception DC and disable device DC: 26.</pzo1110:output>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CampaignTypePointsRule -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CampaignTypePointsRule">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharCreationRules"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule_Character_Creation"/>
         <pzo1110:output>{campaign type: score points} = {low: 10, standard: 15, high: 20, epic: 25}</pzo1110:output>
     </owl:NamedIndividual>
     
@@ -5498,15 +5590,6 @@ Will save DC = 10 + 1/2 cleric level + charisma modifier + (2 if glory domain).<
     
 
 
-    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharClassProfSkills -->
-
-    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharClassProfSkills">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Feature"/>
-        <pzo1110:isSetByRule rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_Setter"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharDeity -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharDeity">
@@ -5544,34 +5627,6 @@ Will save DC = 10 + 1/2 cleric level + charisma modifier + (2 if glory domain).<
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharFort">
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Save"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharHP -->
-
-    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharHP">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Feature"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharLevel -->
-
-    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharLevel">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Feature"/>
-        <rdfs:comment>from 1 to 20</rdfs:comment>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharLevelRule -->
-
-    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharLevelRule">
-        <pzo1110:setFeatureValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharLevel"/>
-        <pzo1110:useFeature rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Class_Levels"/>
-        <pzo1110:useRule rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_Setter"/>
-        <pzo1110:output>Character level = sum of class levels</pzo1110:output>
     </owl:NamedIndividual>
     
 
@@ -5615,8 +5670,8 @@ Will save DC = 10 + 1/2 cleric level + charisma modifier + (2 if glory domain).<
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Feature"/>
         <pzo1110:isSetByRule rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#AdaptabilityRule"/>
         <pzo1110:isSetByRule rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#BonusFeatRule"/>
-        <pzo1110:isSetByRule rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_Setter"/>
-        <pzo1110:isSetByRule rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#LevelUpFeatSetter"/>
+        <pzo1110:isSetByRule rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Class_Setter"/>
+        <pzo1110:isSetByRule rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Feat_Setter"/>
         <rdfs:comment>List of special abilities: racial traits, class abilities, feats.</rdfs:comment>
     </owl:NamedIndividual>
     
@@ -5654,6 +5709,14 @@ Will save DC = 10 + 1/2 cleric level + charisma modifier + (2 if glory domain).<
     
 
 
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Animal_Companion -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Animal_Companion">
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Feature"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Class_Levels -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Class_Levels">
@@ -5666,6 +5729,23 @@ Will save DC = 10 + 1/2 cleric level + charisma modifier + (2 if glory domain).<
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Domains -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Domains">
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Feature"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Hit_Dices -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Hit_Dices">
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Feature"/>
+        <rdfs:comment>from 1 to 20</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Hit_Points -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Hit_Points">
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Feature"/>
     </owl:NamedIndividual>
     
@@ -5709,6 +5789,15 @@ Will save DC = 10 + 1/2 cleric level + charisma modifier + (2 if glory domain).<
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Prof_Weapon_Armor">
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Feature"/>
         <rdfs:comment>List of profficient weapons</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Proficient_Skills -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Proficient_Skills">
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Feature"/>
+        <pzo1110:isSetByRule rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Class_Setter"/>
     </owl:NamedIndividual>
     
 
@@ -5788,14 +5877,6 @@ Each attempt to use this ability consumes 1 round of its duration, whether or no
         <pzo1110:isUsedRuleBy rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#AlignmentSetter"/>
         <pzo1110:useFeature rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Class_Levels"/>
         <pzo1110:output>alignment from {class: alignment} = {barbarian: any nonlawful, bard: any, cleric: within one step of deity, druid: any neutral, fighter: any, monk: any lawful, paladin: lawful good, ranger: any, rogue: any, sorcerer: any, wizard: any}</pzo1110:output>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#ClassSelector -->
-
-    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#ClassSelector">
-        <pzo1110:output>one class</pzo1110:output>
     </owl:NamedIndividual>
     
 
@@ -6087,17 +6168,38 @@ Each attempt to use this ability consumes 1 round of its duration, whether or no
     
 
 
-    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_Setter -->
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_Bonuses_Setter_BAB -->
 
-    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_Setter">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Setter"/>
-        <pzo1110:setFeatureValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Class_Levels"/>
-        <pzo1110:useRule rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#ClassSelector"/>
-        <pzo1110:output>+1 level in selected class
-+ skill ranks per level by selected class
-Hit die of selected class
-Proficient skills by selected class
-Class special abilities by level</pzo1110:output>
+    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_Bonuses_Setter_BAB">
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_Bonuses_Setter"/>
+        <pzo1110:setFeatureValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#BAB"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_Bonuses_Setter_Fortitude -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_Bonuses_Setter_Fortitude">
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_Bonuses_Setter"/>
+        <pzo1110:setFeatureValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharFort"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_Bonuses_Setter_Reflex -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_Bonuses_Setter_Reflex">
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_Bonuses_Setter"/>
+        <pzo1110:setFeatureValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharRef"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_Bonuses_Setter_Will -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_Bonuses_Setter_Will">
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_Bonuses_Setter"/>
+        <pzo1110:setFeatureValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharWill"/>
     </owl:NamedIndividual>
     
 
@@ -6154,7 +6256,7 @@ Class special abilities by level</pzo1110:output>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Cleric -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Cleric">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Playable"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_with_Armor_Prof_Basic"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_with_Weapon_Prof_Simple"/>
         <pzo1110:hitDie>d8</pzo1110:hitDie>
@@ -6227,7 +6329,7 @@ Class special abilities by level</pzo1110:output>
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#ClericKnowRule">
         <pzo1110:determine rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#ClericKnow"/>
-        <pzo1110:setFeatureValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharClassProfSkills"/>
+        <pzo1110:setFeatureValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Proficient_Skills"/>
         <pzo1110:output>Class skills: + knowledge</pzo1110:output>
     </owl:NamedIndividual>
     
@@ -6939,22 +7041,23 @@ feet. If a creature’s saving throw fails, it dies.</pzo1110:condition>
     
 
 
-    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#DeitySetter -->
-
-    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#DeitySetter">
-        <pzo1110:setFeatureValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharDeity"/>
-        <pzo1110:useFeature rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Class_Levels"/>
-        <pzo1110:useRule rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_Setter"/>
-        <pzo1110:condition>1st level cleric</pzo1110:condition>
-        <pzo1110:output>One selected deity.</pzo1110:output>
-    </owl:NamedIndividual>
-    
-
-
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#DeityWeapons -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#DeityWeapons">
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Weapon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Deity_Setter -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Deity_Setter">
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Class_Setter_Consequence"/>
+        <pzo1110:setFeatureValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharDeity"/>
+        <pzo1110:useFeature rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Class_Levels"/>
+        <pzo1110:useRule rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Class_Setter"/>
+        <pzo1110:condition>1st level cleric</pzo1110:condition>
+        <pzo1110:output>One selected deity.</pzo1110:output>
     </owl:NamedIndividual>
     
 
@@ -7096,19 +7199,19 @@ Critical hit: autoconfirm.</pzo1110:output>
     
 
 
-    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Diceroll -->
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Dice_Roll_Rule -->
 
-    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Diceroll">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Action_Meta"/>
+    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Dice_Roll_Rule">
+        <pzo1110:isActivatedBy rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Diceroll"/>
+        <pzo1110:output>roll die</pzo1110:output>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#DicerollRule -->
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Diceroll -->
 
-    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#DicerollRule">
-        <pzo1110:isActivatedBy rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Diceroll"/>
-        <pzo1110:output>roll die</pzo1110:output>
+    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Diceroll">
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Action_Meta"/>
     </owl:NamedIndividual>
     
 
@@ -7464,7 +7567,7 @@ If an ally leaves the area or makes an attack, the effect ends for that ally. If
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Domain_Animal_Know_Rule">
         <pzo1110:determine rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Domain_Animal_Know"/>
         <pzo1110:pick rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Knowledge_Nature"/>
-        <pzo1110:setFeatureValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharClassProfSkills"/>
+        <pzo1110:setFeatureValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Proficient_Skills"/>
         <pzo1110:output>Class skills: + knowledge nature</pzo1110:output>
     </owl:NamedIndividual>
     
@@ -7931,7 +8034,7 @@ Domains that belong to cleric&apos;s deity or cleric&apos;s alignment.</pzo1110:
         <pzo1110:pick rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Bluff"/>
         <pzo1110:pick rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Disguise"/>
         <pzo1110:pick rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Stealth"/>
-        <pzo1110:setFeatureValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharClassProfSkills"/>
+        <pzo1110:setFeatureValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Proficient_Skills"/>
         <pzo1110:output>Class skills: + bluff, disguise, stealth.</pzo1110:output>
     </owl:NamedIndividual>
     
@@ -8004,7 +8107,7 @@ Domains that belong to cleric&apos;s deity or cleric&apos;s alignment.</pzo1110:
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Druid -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Druid">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Playable"/>
         <pzo1110:hitDie>d8</pzo1110:hitDie>
         <pzo1110:skillsRanksPerLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</pzo1110:skillsRanksPerLevel>
         <rdfs:comment>The druid is a worshiper of all things natural—a spellcaster, a friend to animals, and a skilled shapechanger.</rdfs:comment>
@@ -8089,7 +8192,7 @@ Domains that belong to cleric&apos;s deity or cleric&apos;s alignment.</pzo1110:
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#DyingChecker -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#DyingChecker">
-        <pzo1110:useFeature rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharHP"/>
+        <pzo1110:useFeature rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Hit_Points"/>
         <pzo1110:condition>hp &lt; 0</pzo1110:condition>
         <rdfs:label>Dying checker</rdfs:label>
     </owl:NamedIndividual>
@@ -8654,9 +8757,9 @@ Fascinated: failed will save throw.</pzo1110:condition>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#FavClassSetter -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#FavClassSetter">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#GenCharSetters"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Generating_Character_Setter"/>
         <pzo1110:setFeatureValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharFavClasses"/>
-        <pzo1110:useRule rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#ClassSelector"/>
+        <pzo1110:useRule rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Class_Selector"/>
         <pzo1110:output>one new selected class</pzo1110:output>
     </owl:NamedIndividual>
     
@@ -8711,7 +8814,7 @@ Fascinated: failed will save throw.</pzo1110:condition>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Fighter -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Fighter">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Playable"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_with_Armor_Prof_Standard"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_with_Weapon_Prof_Standard"/>
         <pzo1110:hitDie>d10</pzo1110:hitDie>
@@ -8891,15 +8994,6 @@ Fascinated: failed will save throw.</pzo1110:condition>
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Fort3Level">
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#BonusesFort"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#SaveBonuses3Level"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#FortSetter -->
-
-    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#FortSetter">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_BonusesSetters"/>
-        <pzo1110:setFeatureValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharFort"/>
     </owl:NamedIndividual>
     
 
@@ -9868,13 +9962,15 @@ DC for these spells: 10 + the spell’s level + the gnome’s Charisma modifier.
     
 
 
-    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#HitDieRoll -->
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Hit_Die_Roll -->
 
-    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#HitDieRoll">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rolls"/>
-        <pzo1110:setFeatureValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharHP"/>
-        <pzo1110:useRule rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_Setter"/>
-        <pzo1110:output>+ hit die roll in selected class (max hit die for 1st level)</pzo1110:output>
+    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Hit_Die_Roll">
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Class_Setter_Consequence"/>
+        <pzo1110:setFeatureValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Hit_Dices"/>
+        <pzo1110:setFeatureValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Hit_Points"/>
+        <pzo1110:useRule rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Dice_Roll_Rule"/>
+        <pzo1110:output>Hit points: + hit dice roll in selected class (max hit die for 1st level).
+Hit dices: + hit dice by class.</pzo1110:output>
     </owl:NamedIndividual>
     
 
@@ -10557,16 +10653,6 @@ DC for these spells: 10 + the spell’s level + the gnome’s Charisma modifier.
     
 
 
-    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#InitLevelUp -->
-
-    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#InitLevelUp">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#GenCharSetters"/>
-        <pzo1110:useRule rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#LevelUpRule"/>
-        <rdfs:comment>Level up from 0 to 1 level.</rdfs:comment>
-    </owl:NamedIndividual>
-    
-
-
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Insanity -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Insanity">
@@ -10895,7 +10981,7 @@ Duration: as long as the targets are able to witness the performance.</pzo1110:o
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#JackOfAllTradesRule16Level">
         <pzo1110:determine rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#JackOfAllTrades"/>
-        <pzo1110:setFeatureValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharClassProfSkills"/>
+        <pzo1110:setFeatureValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Proficient_Skills"/>
         <pzo1110:condition>16 bard level</pzo1110:condition>
     </owl:NamedIndividual>
     
@@ -11096,7 +11182,7 @@ Duration: as long as the targets are able to witness the performance.</pzo1110:o
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Language_Bonus_Selector -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Language_Bonus_Selector">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#GenCharSetters"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Generating_Character_Setter"/>
         <pzo1110:setFeatureValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Language"/>
         <pzo1110:useFeature rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharRace"/>
         <pzo1110:useRule rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Ability_Modifier_Intelligence"/>
@@ -11335,59 +11421,82 @@ Duration: as long as the targets are able to witness the performance.</pzo1110:o
     
 
 
-    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#LevelUp -->
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up -->
 
-    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#LevelUp">
+    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up">
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Action_Meta"/>
-        <pzo1110:activate rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#LevelUpRule"/>
+        <pzo1110:activate rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Rule"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#LevelUpAbilityScoreSetter -->
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Ability_Score_Setter -->
 
-    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#LevelUpAbilityScoreSetter">
+    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Ability_Score_Setter">
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Setter"/>
-        <pzo1110:useFeature rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharLevel"/>
+        <pzo1110:useFeature rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Hit_Dices"/>
         <pzo1110:output>+1 score for selected ability every 4th level</pzo1110:output>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#LevelUpFavClassRule -->
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Class_Selector -->
 
-    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#LevelUpFavClassRule">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharCreationRules"/>
-        <pzo1110:isUsedRuleBy rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#SkillRanksSetter"/>
-        <pzo1110:setFeatureValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharHP"/>
+    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Class_Selector">
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule_Character_Creation"/>
+        <pzo1110:output>one class</pzo1110:output>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Class_Setter -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Class_Setter">
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Setter"/>
+        <pzo1110:pick rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Animal_Companion"/>
+        <pzo1110:setFeatureValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Class_Levels"/>
+        <pzo1110:useRule rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Class_Selector"/>
+        <pzo1110:output>Character level: +1 in selected class.
+Skills: + ranks per level by selected class.
+Hit dice of selected class.
+Proficient skills by selected class.
+Class special abilities by level.
+Animal companion&apos;s level: +1 if selected druid class and appropriate nature bond.</pzo1110:output>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Favourite_Class_Rule -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Favourite_Class_Rule">
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Class_Setter_Consequence"/>
+        <pzo1110:isUsedRuleBy rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Ranks_Setter"/>
+        <pzo1110:setFeatureValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Hit_Points"/>
         <pzo1110:useFeature rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharFavClasses"/>
-        <pzo1110:useRule rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_Setter"/>
+        <pzo1110:useRule rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Class_Setter"/>
         <pzo1110:condition>Selected class for level up in list of  favored classes</pzo1110:condition>
         <pzo1110:output>+ 1 hit point or + 1 skill rank by choice</pzo1110:output>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#LevelUpFeatSetter -->
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Feat_Setter -->
 
-    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#LevelUpFeatSetter">
+    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Feat_Setter">
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Setter"/>
-        <pzo1110:useFeature rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharLevel"/>
+        <pzo1110:useFeature rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Hit_Dices"/>
         <pzo1110:useRule rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#FeatSelector"/>
         <pzo1110:output>+1 selected feat every odd level</pzo1110:output>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#LevelUpRule -->
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Generating_Character -->
 
-    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#LevelUpRule">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharCreationRules"/>
-        <pzo1110:useFeature rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharLevel"/>
-        <pzo1110:useFeature rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#XP"/>
-        <pzo1110:useRule rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#AdvancementPaceRule"/>
-        <pzo1110:useRule rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#XPSetter"/>
-        <pzo1110:condition>xp &gt;= needed amount of xp for (level + 1) in current advancement pace</pzo1110:condition>
+    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Generating_Character">
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Generating_Character_Setter"/>
+        <pzo1110:isUsedRuleBy rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Rule"/>
+        <rdfs:comment>Level up from 0 to 1 level.</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -11399,6 +11508,80 @@ Duration: as long as the targets are able to witness the performance.</pzo1110:o
         <pzo1110:setFeatureValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Known_Spells"/>
         <pzo1110:useFeature rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Class_Levels"/>
         <pzo1110:output>selected spells depending on new class level</pzo1110:output>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Rule -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Rule">
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule_Character_Creation"/>
+        <pzo1110:useFeature rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Hit_Dices"/>
+        <pzo1110:useFeature rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#XP"/>
+        <pzo1110:useRule rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#AdvancementPaceRule"/>
+        <pzo1110:useRule rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#XPSetter"/>
+        <pzo1110:condition>xp &gt;= needed amount of xp for (level + 1) in current advancement pace</pzo1110:condition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Setter_Animal_Companion_BAB -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Setter_Animal_Companion_BAB">
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Setter_Animal_Companion"/>
+        <pzo1110:isUsedRuleBy rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_Bonuses_Setter_BAB"/>
+        <pzo1110:output>{level: value} = {1: +1, 2: +2, 3: +2, 4: +3, 5: +3, 6: +4, 7: +4, 8: +5, 9: +6, 10: +6, 11: +6, 12: +7, 13: +8, 14: +9, 15: +9, 16: +9, 17: +10, 18: +11, 19: +11, 20: +12}.</pzo1110:output>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Setter_Animal_Companion_Fortitude -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Setter_Animal_Companion_Fortitude">
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Setter_Animal_Companion"/>
+        <pzo1110:isUsedRuleBy rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_Bonuses_Setter_Fortitude"/>
+        <pzo1110:output>{level: value} = {1: +3, 2: +3, 3: +3, 4: +4, 5: +4, 6: +5, 7: +5, 8: +5, 9: +6, 10: +6, 11: +6, 12: +7, 13: +7, 14: +8, 15: +8, 16: +8, 17: +9, 18: +9, 19: +9, 20: +10}.</pzo1110:output>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Setter_Animal_Companion_Hit_Dice -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Setter_Animal_Companion_Hit_Dice">
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Setter_Animal_Companion"/>
+        <pzo1110:setFeatureValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Hit_Dices"/>
+        <pzo1110:output>Hit dices: 2 + int ((level - 1) / 4) * 3 + (if mod ((level - 1), 4) &lt; 3 then 1 else 2) d8.</pzo1110:output>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Setter_Animal_Companion_Reflex -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Setter_Animal_Companion_Reflex">
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Setter_Animal_Companion"/>
+        <pzo1110:isUsedRuleBy rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_Bonuses_Setter_Reflex"/>
+        <pzo1110:output>{level: value} = {1: +3, 2: +3, 3: +3, 4: +4, 5: +4, 6: +5, 7: +5, 8: +5, 9: +6, 10: +6, 11: +6, 12: +7, 13: +7, 14: +8, 15: +8, 16: +8, 17: +9, 18: +9, 19: +9, 20: +10}.</pzo1110:output>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Setter_Animal_Companion_Skill_Ranks -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Setter_Animal_Companion_Skill_Ranks">
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Setter_Animal_Companion"/>
+        <pzo1110:isUsedRuleBy rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Class_Setter"/>
+        <pzo1110:output>Skill ranks: 2 + int ((level - 1) / 4) * 3 + (if mod ((level - 1), 4) &lt; 3 then 1 else 2).</pzo1110:output>
+        <pzo1110:forFutureCorrection>Animal companions with an Intelligence of 3 or higher can purchase ranks in any skill.</pzo1110:forFutureCorrection>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Setter_Animal_Companion_Will -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Setter_Animal_Companion_Will">
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Setter_Animal_Companion"/>
+        <pzo1110:isUsedRuleBy rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_Bonuses_Setter_Will"/>
+        <pzo1110:output>{level: value} = {1: +0, 2: +1, 3: +1, 4: +1, 5: +1, 6: +2, 7: +2, 8: +2, 9: +2, 10: +3, 11: +3, 12: +3, 13: +3, 14: +4, 15: +4, 16: +4, 17: +4, 18: +5, 19: +5, 20: +5}.</pzo1110:output>
     </owl:NamedIndividual>
     
 
@@ -12073,7 +12256,7 @@ Save DC to disbelieve this effect: 10 + 1/2 cleric level + Wisdom modifier.</pzo
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Monk -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Monk">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Playable"/>
         <pzo1110:hitDie>d8</pzo1110:hitDie>
         <pzo1110:skillsRanksPerLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</pzo1110:skillsRanksPerLevel>
         <rdfs:comment>A student of martial arts, the monk trains his body to be his greatest weapon and defense.</rdfs:comment>
@@ -12418,7 +12601,7 @@ Undead</pzo1110:forFutureCorrection>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Paladin -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Paladin">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Playable"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_with_Armor_Prof_Standard"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_with_Weapon_Prof_Standard"/>
         <pzo1110:hitDie>d10</pzo1110:hitDie>
@@ -13043,7 +13226,7 @@ A druid who wears prohibited armor or uses a prohibited shield is unable to cast
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#RaceSetter -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#RaceSetter">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#GenCharSetters"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Generating_Character_Setter"/>
         <pzo1110:setFeatureValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharRace"/>
         <pzo1110:setFeatureValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharSpecialAbilities"/>
         <pzo1110:output>Race = selected race
@@ -13263,7 +13446,7 @@ Reqs: low-light vision for night vision, intimidating glare for terrifying howl.
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Ranger -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Ranger">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Playable"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_with_Armor_Prof_Basic"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_with_Weapon_Prof_Standard"/>
         <pzo1110:hitDie>d10</pzo1110:hitDie>
@@ -13315,8 +13498,8 @@ Reqs: low-light vision for night vision, intimidating glare for terrifying howl.
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#RebukeDeathRule">
         <pzo1110:determine rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#RebukeDeath"/>
         <pzo1110:isUsedRuleBy rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#HealRoll"/>
-        <pzo1110:useFeature rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharHP"/>
         <pzo1110:useFeature rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Class_Levels"/>
+        <pzo1110:useFeature rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Hit_Points"/>
         <pzo1110:condition>Can only use this ability on a creature that is below 0 hit points.</pzo1110:condition>
         <pzo1110:output>Heal roll: 1d4 + int (cleric level / 2).</pzo1110:output>
     </owl:NamedIndividual>
@@ -13337,15 +13520,6 @@ Reqs: low-light vision for night vision, intimidating glare for terrifying howl.
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Ref3Level">
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#BonusesRef"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#SaveBonuses3Level"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#RefSetter -->
-
-    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#RefSetter">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_BonusesSetters"/>
-        <pzo1110:setFeatureValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharRef"/>
     </owl:NamedIndividual>
     
 
@@ -13477,7 +13651,7 @@ Reqs: low-light vision for night vision, intimidating glare for terrifying howl.
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#RerollRule -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#RerollRule">
-        <pzo1110:useRule rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#DicerollRule"/>
+        <pzo1110:useRule rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Dice_Roll_Rule"/>
         <pzo1110:output>Character must take the second result, even if it is worse.</pzo1110:output>
     </owl:NamedIndividual>
     
@@ -13628,7 +13802,7 @@ Lose your resistance bonus granted by the Protection domain for 1 minute.</pzo11
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rogue -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rogue">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Playable"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_with_Armor_Prof_Light"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_with_Weapon_Prof_Simple"/>
         <pzo1110:hitDie>d8</pzo1110:hitDie>
@@ -14177,7 +14351,7 @@ Lose your resistance bonus granted by the Protection domain for 1 minute.</pzo11
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#SizeSetter -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#SizeSetter">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#GenCharSetters"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Generating_Character_Setter"/>
         <pzo1110:setFeatureValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Size"/>
         <pzo1110:useFeature rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharRace"/>
         <pzo1110:output>Size of selected race</pzo1110:output>
@@ -14193,47 +14367,15 @@ Lose your resistance bonus granted by the Protection domain for 1 minute.</pzo11
     
 
 
-    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#SkillRanksSetter -->
-
-    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#SkillRanksSetter">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharCreationRules"/>
-        <pzo1110:output>+1 rank for selected skill</pzo1110:output>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#SkillUpSelector -->
-
-    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#SkillUpSelector">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharCreationRules"/>
-        <pzo1110:isUsedRuleBy rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#SkillRanksSetter"/>
-        <pzo1110:useFeature rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharLevel"/>
-        <pzo1110:condition>rank of selected skill &lt; character&apos;s level</pzo1110:condition>
-        <pzo1110:output>1 skill</pzo1110:output>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#SkillUpgradeRule -->
-
-    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#SkillUpgradeRule">
-        <pzo1110:determine rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#SkilledTrait"/>
-        <pzo1110:isUsedRuleBy rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#SkillRanksSetter"/>
-        <pzo1110:useRule rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Ability_Modifier_Intelligence"/>
-        <pzo1110:useRule rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_Setter"/>
-        <pzo1110:output>+ skill ranks per level by selected class + 1 by skilled trait + int mod</pzo1110:output>
-    </owl:NamedIndividual>
-    
-
-
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Acrobatics -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Acrobatics">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Barbarian_Skill"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Bard_Associated_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Bard_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Monk_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rogue_Skill"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Animal_Proficient"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Barbarian"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Bard"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Monk"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Rogue"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Dexterity"/>
     </owl:NamedIndividual>
     
@@ -14242,12 +14384,12 @@ Lose your resistance bonus granted by the Protection domain for 1 minute.</pzo11
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Appraise -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Appraise">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Bard_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Cleric_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rogue_Skill"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Bard"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Cleric"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Rogue"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Sorcerer"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Wizard"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Intelligence"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Sorc_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Wizard_Skill"/>
     </owl:NamedIndividual>
     
 
@@ -14256,10 +14398,10 @@ Lose your resistance bonus granted by the Protection domain for 1 minute.</pzo11
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Bluff">
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Bard_Associated_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Bard_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rogue_Skill"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Bard"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Rogue"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Sorcerer"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Charisma"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Sorc_Skill"/>
     </owl:NamedIndividual>
     
 
@@ -14267,13 +14409,14 @@ Lose your resistance bonus granted by the Protection domain for 1 minute.</pzo11
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Climb -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Climb">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Barbarian_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Bard_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Druid_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Fighter_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Monk_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Ranger_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rogue_Skill"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Animal_Proficient"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Barbarian"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Bard"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Druid"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Fighter"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Monk"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Ranger"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Rogue"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Strength"/>
     </owl:NamedIndividual>
     
@@ -14282,19 +14425,19 @@ Lose your resistance bonus granted by the Protection domain for 1 minute.</pzo11
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Craft -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Craft">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Barbarian_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Bard_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Cleric_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Druid_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Fighter_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Monk_Skill"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Obsessive_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Paladin_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Ranger_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rogue_Skill"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Barbarian"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Bard"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Cleric"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Druid"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Fighter"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Monk"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Paladin"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Ranger"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Rogue"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Sorcerer"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Wizard"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Intelligence"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Sorc_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Wizard_Skill"/>
     </owl:NamedIndividual>
     
 
@@ -14303,10 +14446,10 @@ Lose your resistance bonus granted by the Protection domain for 1 minute.</pzo11
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Diplomacy">
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Bard_Associated_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Bard_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Cleric_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Paladin_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rogue_Skill"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Bard"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Cleric"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Paladin"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Rogue"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Charisma"/>
     </owl:NamedIndividual>
     
@@ -14315,7 +14458,7 @@ Lose your resistance bonus granted by the Protection domain for 1 minute.</pzo11
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Disable_Device -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Disable_Device">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rogue_Skill"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Rogue"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Dexterity"/>
     </owl:NamedIndividual>
     
@@ -14325,8 +14468,8 @@ Lose your resistance bonus granted by the Protection domain for 1 minute.</pzo11
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Disguise">
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Bard_Associated_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Bard_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rogue_Skill"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Bard"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Rogue"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Charisma"/>
     </owl:NamedIndividual>
     
@@ -14335,9 +14478,10 @@ Lose your resistance bonus granted by the Protection domain for 1 minute.</pzo11
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Escape_Artist -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Escape_Artist">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Bard_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Monk_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rogue_Skill"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Animal"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Bard"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Monk"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Rogue"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Dexterity"/>
     </owl:NamedIndividual>
     
@@ -14347,10 +14491,11 @@ Lose your resistance bonus granted by the Protection domain for 1 minute.</pzo11
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Fly">
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Bard_Associated_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Druid_Skill"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Animal_Proficient"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Druid"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Sorcerer"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Wizard"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Dexterity"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Sorc_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Wizard_Skill"/>
     </owl:NamedIndividual>
     
 
@@ -14358,12 +14503,12 @@ Lose your resistance bonus granted by the Protection domain for 1 minute.</pzo11
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Handle_Animal -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Handle_Animal">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Barbarian_Skill"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Bard_Associated_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Druid_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Fighter_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Paladin_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Ranger_Skill"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Barbarian"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Druid"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Fighter"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Paladin"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Ranger"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Charisma"/>
     </owl:NamedIndividual>
     
@@ -14372,10 +14517,10 @@ Lose your resistance bonus granted by the Protection domain for 1 minute.</pzo11
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Heal -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Heal">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Cleric_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Druid_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Paladin_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Ranger_Skill"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Cleric"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Druid"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Paladin"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Ranger"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Wisdom"/>
     </owl:NamedIndividual>
     
@@ -14384,15 +14529,16 @@ Lose your resistance bonus granted by the Protection domain for 1 minute.</pzo11
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Intimidate -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Intimidate">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Barbarian_Skill"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Bard_Associated_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Bard_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Fighter_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Monk_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Ranger_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rogue_Skill"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Animal"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Barbarian"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Bard"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Fighter"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Monk"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Ranger"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Rogue"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Sorcerer"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Charisma"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Sorc_Skill"/>
     </owl:NamedIndividual>
     
 
@@ -14400,9 +14546,9 @@ Lose your resistance bonus granted by the Protection domain for 1 minute.</pzo11
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Knowledge_Arcana -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Knowledge_Arcana">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Cleric_Skill"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Knowledge"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Sorc_Skill"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Cleric"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Sorcerer"/>
     </owl:NamedIndividual>
     
 
@@ -14410,10 +14556,10 @@ Lose your resistance bonus granted by the Protection domain for 1 minute.</pzo11
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Knowledge_Dungeoneering -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Knowledge_Dungeoneering">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Fighter_Skill"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Knowledge"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Ranger_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rogue_Skill"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Fighter"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Ranger"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Rogue"/>
     </owl:NamedIndividual>
     
 
@@ -14421,8 +14567,8 @@ Lose your resistance bonus granted by the Protection domain for 1 minute.</pzo11
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Knowledge_Engineering -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Knowledge_Engineering">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Fighter_Skill"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Knowledge"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Fighter"/>
     </owl:NamedIndividual>
     
 
@@ -14430,9 +14576,9 @@ Lose your resistance bonus granted by the Protection domain for 1 minute.</pzo11
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Knowledge_Geography -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Knowledge_Geography">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Druid_Skill"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Knowledge"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Ranger_Skill"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Druid"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Ranger"/>
     </owl:NamedIndividual>
     
 
@@ -14440,9 +14586,9 @@ Lose your resistance bonus granted by the Protection domain for 1 minute.</pzo11
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Knowledge_History -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Knowledge_History">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Cleric_Skill"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Knowledge"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Monk_Skill"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Cleric"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Monk"/>
     </owl:NamedIndividual>
     
 
@@ -14451,7 +14597,7 @@ Lose your resistance bonus granted by the Protection domain for 1 minute.</pzo11
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Knowledge_Local">
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Knowledge"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rogue_Skill"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Rogue"/>
     </owl:NamedIndividual>
     
 
@@ -14459,10 +14605,10 @@ Lose your resistance bonus granted by the Protection domain for 1 minute.</pzo11
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Knowledge_Nature -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Knowledge_Nature">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Barbarian_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Druid_Skill"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Knowledge"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Ranger_Skill"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Barbarian"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Druid"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Ranger"/>
     </owl:NamedIndividual>
     
 
@@ -14470,9 +14616,9 @@ Lose your resistance bonus granted by the Protection domain for 1 minute.</pzo11
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Knowledge_Nobility -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Knowledge_Nobility">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Cleric_Skill"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Knowledge"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Paladin_Skill"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Cleric"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Paladin"/>
     </owl:NamedIndividual>
     
 
@@ -14480,8 +14626,8 @@ Lose your resistance bonus granted by the Protection domain for 1 minute.</pzo11
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Knowledge_Planes -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Knowledge_Planes">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Cleric_Skill"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Knowledge"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Cleric"/>
     </owl:NamedIndividual>
     
 
@@ -14489,10 +14635,10 @@ Lose your resistance bonus granted by the Protection domain for 1 minute.</pzo11
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Knowledge_Religion -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Knowledge_Religion">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Cleric_Skill"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Knowledge"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Monk_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Paladin_Skill"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Cleric"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Monk"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Paladin"/>
     </owl:NamedIndividual>
     
 
@@ -14500,9 +14646,9 @@ Lose your resistance bonus granted by the Protection domain for 1 minute.</pzo11
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Linguistics -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Linguistics">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Bard_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Cleric_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rogue_Skill"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Bard"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Cleric"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Rogue"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Intelligence"/>
     </owl:NamedIndividual>
     
@@ -14511,12 +14657,13 @@ Lose your resistance bonus granted by the Protection domain for 1 minute.</pzo11
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Perception -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Perception">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Barbarian_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Bard_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Druid_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Monk_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Ranger_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rogue_Skill"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Animal_Proficient"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Barbarian"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Bard"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Druid"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Monk"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Ranger"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Rogue"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Wisdom"/>
     </owl:NamedIndividual>
     
@@ -14525,9 +14672,9 @@ Lose your resistance bonus granted by the Protection domain for 1 minute.</pzo11
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Perform -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Perform">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Bard_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Monk_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rogue_Skill"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Bard"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Monk"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Rogue"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Charisma"/>
     </owl:NamedIndividual>
     
@@ -14536,18 +14683,27 @@ Lose your resistance bonus granted by the Protection domain for 1 minute.</pzo11
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Profession -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Profession">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Bard_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Cleric_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Druid_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Fighter_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Monk_Skill"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Obsessive_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Paladin_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Ranger_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rogue_Skill"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Bard"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Cleric"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Druid"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Fighter"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Monk"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Paladin"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Ranger"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Rogue"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Sorcerer"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Wizard"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Wisdom"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Sorc_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Wizard_Skill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Ranks_Setter -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Ranks_Setter">
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule_Character_Creation"/>
+        <pzo1110:output>+1 rank for selected skill</pzo1110:output>
     </owl:NamedIndividual>
     
 
@@ -14555,12 +14711,12 @@ Lose your resistance bonus granted by the Protection domain for 1 minute.</pzo11
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Ride -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Ride">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Barbarian_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Druid_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Fighter_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Monk_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Paladin_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Ranger_Skill"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Barbarian"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Druid"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Fighter"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Monk"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Paladin"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Ranger"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Dexterity"/>
     </owl:NamedIndividual>
     
@@ -14794,11 +14950,11 @@ Lose your resistance bonus granted by the Protection domain for 1 minute.</pzo11
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Sense_Motive">
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Bard_Associated_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Bard_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Cleric_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Monk_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Paladin_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rogue_Skill"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Bard"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Cleric"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Monk"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Paladin"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Rogue"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Wisdom"/>
     </owl:NamedIndividual>
     
@@ -14807,8 +14963,8 @@ Lose your resistance bonus granted by the Protection domain for 1 minute.</pzo11
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_SleightOfHand -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_SleightOfHand">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Bard_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rogue_Skill"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Bard"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Rogue"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Dexterity"/>
     </owl:NamedIndividual>
     
@@ -14817,14 +14973,14 @@ Lose your resistance bonus granted by the Protection domain for 1 minute.</pzo11
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Spellcraft -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Spellcraft">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Bard_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Cleric_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Druid_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Paladin_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Ranger_Skill"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Bard"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Cleric"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Druid"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Paladin"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Ranger"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Sorcerer"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Wizard"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Intelligence"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Sorc_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Wizard_Skill"/>
     </owl:NamedIndividual>
     
 
@@ -14832,10 +14988,11 @@ Lose your resistance bonus granted by the Protection domain for 1 minute.</pzo11
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Stealth -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Stealth">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Bard_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Monk_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Ranger_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rogue_Skill"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Animal_Proficient"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Bard"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Monk"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Ranger"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Rogue"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Dexterity"/>
     </owl:NamedIndividual>
     
@@ -14844,10 +15001,11 @@ Lose your resistance bonus granted by the Protection domain for 1 minute.</pzo11
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Survival -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Survival">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Barbarian_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Druid_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Fighter_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Ranger_Skill"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Animal"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Barbarian"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Druid"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Fighter"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Ranger"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Wisdom"/>
     </owl:NamedIndividual>
     
@@ -14856,13 +15014,46 @@ Lose your resistance bonus granted by the Protection domain for 1 minute.</pzo11
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Swim -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Swim">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Barbarian_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Druid_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Fighter_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Monk_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Ranger_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rogue_Skill"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Animal_Proficient"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Barbarian"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Druid"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Fighter"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Monk"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Ranger"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Rogue"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Strength"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Upgrade_Rule -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Upgrade_Rule">
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Class_Setter_Consequence"/>
+        <pzo1110:determine rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#SkilledTrait"/>
+        <pzo1110:isUsedRuleBy rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Ranks_Setter"/>
+        <pzo1110:useRule rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Ability_Modifier_Intelligence"/>
+        <pzo1110:useRule rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Class_Setter"/>
+        <pzo1110:output>+ skill ranks per level by selected class + 1 by skilled trait + int mod</pzo1110:output>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Upgrade_Selector_Animal -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Upgrade_Selector_Animal">
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Upgrade_Selector"/>
+        <pzo1110:useFeature rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Character_Animal_Companion"/>
+        <pzo1110:condition>(Character animal companion &lt;&gt; null) and (rank of selected skill &lt; character&apos;s hit dices count)</pzo1110:condition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Upgrade_Selector_General -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Upgrade_Selector_General">
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Upgrade_Selector"/>
+        <pzo1110:condition>rank of selected skill &lt; character&apos;s hit dices count</pzo1110:condition>
     </owl:NamedIndividual>
     
 
@@ -14870,10 +15061,10 @@ Lose your resistance bonus granted by the Protection domain for 1 minute.</pzo11
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Use_Magic_Device -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Use_Magic_Device">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Bard_Skill"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rogue_Skill"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Bard"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Rogue"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Sorcerer"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_by_Charisma"/>
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Sorc_Skill"/>
     </owl:NamedIndividual>
     
 
@@ -15012,7 +15203,7 @@ Lose your resistance bonus granted by the Protection domain for 1 minute.</pzo11
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Sorcerer -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Sorcerer">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Playable"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_with_Weapon_Prof_Simple"/>
         <pzo1110:hitDie>d6</pzo1110:hitDie>
         <pzo1110:skillsRanksPerLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</pzo1110:skillsRanksPerLevel>
@@ -15099,7 +15290,7 @@ Lose your resistance bonus granted by the Protection domain for 1 minute.</pzo11
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#SpeedSetter -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#SpeedSetter">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#GenCharSetters"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Generating_Character_Setter"/>
         <pzo1110:setFeatureValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharSpeed"/>
         <pzo1110:useFeature rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharRace"/>
         <pzo1110:output>Speed of selected race</pzo1110:output>
@@ -16332,7 +16523,7 @@ Saving throws DC against druid&apos;s spell: 10 + spell level + Wisdom modifier.
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule_Wis_Uses"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Rule_by_Melee_Touch_Attack"/>
         <pzo1110:determine rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#TouchOfChaos"/>
-        <pzo1110:isUsedRuleBy rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#DicerollRule"/>
+        <pzo1110:isUsedRuleBy rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Dice_Roll_Rule"/>
         <pzo1110:useRule rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#MeleeTouchAttackCheck"/>
         <pzo1110:useRule rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Opponent"/>
         <pzo1110:condition>Melee touch attack hit</pzo1110:condition>
@@ -16449,7 +16640,7 @@ Saving throws DC against druid&apos;s spell: 10 + spell level + Wisdom modifier.
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#TouchOfLawRule -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#TouchOfLawRule">
-        <pzo1110:block rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#DicerollRule"/>
+        <pzo1110:block rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Dice_Roll_Rule"/>
         <pzo1110:determine rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#TouchOfLaw"/>
         <pzo1110:output>Duration: 1 round.</pzo1110:output>
     </owl:NamedIndividual>
@@ -16873,9 +17064,9 @@ Trap sense bonuses gained from multiple classes stack.</pzo1110:output>
     
 
 
-    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#VersatilePerformance -->
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Versatile_Performance -->
 
-    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#VersatilePerformance">
+    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Versatile_Performance">
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Ability_Bard"/>
         <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Extraordinary_Ability"/>
         <pzo1110:becomeAvailableAtLevel rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_10"/>
@@ -16887,10 +17078,10 @@ Trap sense bonuses gained from multiple classes stack.</pzo1110:output>
     
 
 
-    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#VersatilePerformanceRule -->
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Versatile_Performance_Rule -->
 
-    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#VersatilePerformanceRule">
-        <pzo1110:determine rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#VersatilePerformance"/>
+    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Versatile_Performance_Rule">
+        <pzo1110:determine rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Versatile_Performance"/>
         <pzo1110:useFeature rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharBardAssociateSkills"/>
         <pzo1110:useRule rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Skill_Roll_Perform"/>
         <pzo1110:output>Total Perform skill bonus in place of its associated skill’s bonus.</pzo1110:output>
@@ -16899,12 +17090,12 @@ Trap sense bonuses gained from multiple classes stack.</pzo1110:output>
     
 
 
-    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#VersatilePerformanceSetter -->
+    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Versatile_Performance_Setter -->
 
-    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#VersatilePerformanceSetter">
-        <pzo1110:determine rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#VersatilePerformance"/>
+    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Versatile_Performance_Setter">
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Level_Up_Class_Setter_Consequence"/>
+        <pzo1110:determine rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Versatile_Performance"/>
         <pzo1110:setFeatureValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharBardAssociateSkills"/>
-        <pzo1110:useRule rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_Setter"/>
         <pzo1110:condition>bard level = 2 + 4 * i, where i = 0, 1, 2..</pzo1110:condition>
         <pzo1110:output>Selected perform type (associated skills) = Act (Bluff, Disguise), Comedy (Bluff, Intimidate), Dance (Acrobatics, Fly), Keyboard Instruments (Diplomacy, Intimidate), Oratory (Diplomacy, Sense Motive), Percussion (Handle Animal, Intimidate), Sing (Bluff, Sense Motive), String (Bluff, Diplomacy), and Wind (Diplomacy, Handle Animal).</pzo1110:output>
     </owl:NamedIndividual>
@@ -17286,15 +17477,6 @@ warded area.</pzo1110:forFutureCorrection>
     
 
 
-    <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#WillSetter -->
-
-    <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#WillSetter">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Level_BonusesSetters"/>
-        <pzo1110:setFeatureValue rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#CharWill"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#WindStanceFeat -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#WindStanceFeat">
@@ -17360,7 +17542,7 @@ warded area.</pzo1110:forFutureCorrection>
     <!-- https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Wizard -->
 
     <owl:NamedIndividual rdf:about="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Wizard">
-        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class"/>
+        <rdf:type rdf:resource="https://github.com/AbsVahter/trpgontologies/pathfinder/1ed/pzo1110#Class_Playable"/>
         <pzo1110:hitDie>d6</pzo1110:hitDie>
         <pzo1110:skillsRanksPerLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</pzo1110:skillsRanksPerLevel>
         <rdfs:comment>The wizard masters magic through constant study that gives him incredible magical power.</rdfs:comment>
