@@ -13,15 +13,8 @@
      xmlns:schema="http://schema.org/">
     <owl:Ontology rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf">
         <owl:imports rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf"/>
-        <dc:creator rdf:resource="http://dbpedia.org/resource/F._Wesley_Schneider"/>
-        <dc:creator rdf:resource="http://dbpedia.org/resource/Jason_Bulmahn"/>
         <schema:image rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Image_Cover"/>
         <rdfs:label>Hollow&apos;s Last Hope</rdfs:label>
-        <pf1ed:bookType>Adventure, GameMastery Modules</pf1ed:bookType>
-        <pf1ed:dateOfRelease rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2007-06-01T00:00:00</pf1ed:dateOfRelease>
-        <pf1ed:officialLink rdf:resource="https://paizo.com/products/btpy82r0?GameMastery-Module-D0-Hollows-Last-Hope"/>
-        <pf1ed:pages rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16</pf1ed:pages>
-        <pf1ed:wiki rdf:resource="https://pathfinderwiki.com/wiki/Hollow%27s_Last_Hope"/>
     </owl:Ontology>
     
 
@@ -76,6 +69,25 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Image_Map -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Image_Map">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#Image"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Individuals
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -84,27 +96,29 @@
     
 
 
-    <!-- http://dbpedia.org/resource/F._Wesley_Schneider -->
-
-    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/F._Wesley_Schneider">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#Person"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://dbpedia.org/resource/Jason_Bulmahn -->
-
-    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Jason_Bulmahn">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#Person"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Image_Cover -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Image_Cover">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#Image"/>
         <schema:image rdf:resource="https://pathfinderwiki.com/w/images/f/fd/Hollow%27s_Last_Hope.jpg"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Image_Map_Droscar&apos;s_Crucible_Ground_Level -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Image_Map_Droscar&apos;s_Crucible_Ground_Level">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Image_Map"/>
+        <schema:image rdf:resource="https://cdn.obsidianportal.com/assets/94277/Location-DwarvenRuinsGroundLevel.jpg"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Image_Map_Falcon&apos;s_Hollow_Environs -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Image_Map_Falcon&apos;s_Hollow_Environs">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Image_Map"/>
+        <schema:image rdf:resource="https://cdn.obsidianportal.com/assets/93763/Falcon_s_Hollow_Environs.jpg"/>
     </owl:NamedIndividual>
 </rdf:RDF>
 

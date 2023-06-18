@@ -1,0 +1,374 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/nerpa/ontologies/2023/5/untitled-ontology-63/"
+     xml:base="http://www.semanticweb.org/nerpa/ontologies/2023/5/untitled-ontology-63/"
+     xmlns:dbr="http://dbpedia.org/resource/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:pf1ed="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#"
+     xmlns:pf1meta="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#">
+    <owl:Ontology rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#linkInfo -->
+
+    <owl:AnnotationProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#linkInfo"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#linkOntology -->
+
+    <owl:AnnotationProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#linkOntology"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#artist -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#artist">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#inCreditsOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#artistCover -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#artistCover">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#artist"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#artistInterior -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#artistInterior">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#artist"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#brandManager -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#brandManager">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#inCreditsOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#cartographer -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#cartographer">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#inCreditsOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#designer -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#designer">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#inCreditsOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#developmentEditing -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#developmentEditing">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#inCreditsOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#graphicDesigner -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#graphicDesigner">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#inCreditsOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#inCreditsOf -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#inCreditsOf">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#Creator"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#Book"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#publisher -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#publisher">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#inCreditsOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#seniorArtDirector -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#seniorArtDirector">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#inCreditsOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#dateOfRelease -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#dateOfRelease">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#Book"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#level -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#level">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#Book_Gamemastery_Module"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#pages -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#pages">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#Book"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#Creator -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#Creator"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#Book -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#Book"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#Book_Gamemastery_Module -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#Book_Gamemastery_Module">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#Book"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/resource/Erik_Mona -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Erik_Mona">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#Creator"/>
+        <pf1meta:publisher rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#pzo9500"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/F._Wesley_Schneider -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/F._Wesley_Schneider">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#Creator"/>
+        <pf1meta:designer rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#pzo9500"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Jason_Bulmahn -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Jason_Bulmahn">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#Creator"/>
+        <pf1meta:brandManager rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#pzo9500"/>
+        <pf1meta:designer rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#pzo9500"/>
+        <pf1meta:developmentEditing rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#pzo9500"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Udon_Studios -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Udon_Studios">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#Creator"/>
+        <pf1meta:artistCover rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#pzo9500"/>
+        <pf1meta:artistInterior rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#pzo9500"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Vincent_Dutrait -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Vincent_Dutrait">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#Creator"/>
+        <pf1meta:artistInterior rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#pzo9500"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#Christopher_West -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#Christopher_West">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#Creator"/>
+        <pf1meta:cartographer rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#pzo9500"/>
+        <pf1meta:linkInfo rdf:resource="https://maps-of-mastery-store.myshopify.com/"/>
+        <pf1meta:linkInfo rdf:resource="https://pathfinderwiki.com/wiki/Christopher_West"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#Espen_Grundetjern -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#Espen_Grundetjern">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#Creator"/>
+        <pf1meta:artistCover rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#pzo9500"/>
+        <pf1meta:artistInterior rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#pzo9500"/>
+        <pf1meta:linkInfo rdf:resource="https://pathfinderwiki.com/wiki/Espen_Grundetjern"/>
+        <pf1meta:linkInfo rdf:resource="https://www.deviantart.com/espeng"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#James_Davis -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#James_Davis">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#Creator"/>
+        <pf1meta:graphicDesigner rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#pzo9500"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#Jeremy_Walker -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#Jeremy_Walker">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#Creator"/>
+        <pf1meta:developmentEditing rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#pzo9500"/>
+        <pf1meta:linkInfo rdf:resource="https://pathfinderwiki.com/wiki/Jeremy_Walker"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#Joe_Ng -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#Joe_Ng">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#Creator"/>
+        <pf1meta:artistCover rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#pzo9500"/>
+        <pf1meta:artistInterior rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#pzo9500"/>
+        <pf1meta:linkInfo rdf:resource="https://pathfinderwiki.com/wiki/Joe_Ng"/>
+        <pf1meta:linkInfo rdf:resource="https://www.deviantart.com/ngboy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#Mike_McArtor -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#Mike_McArtor">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#Creator"/>
+        <pf1meta:developmentEditing rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#pzo9500"/>
+        <pf1meta:linkInfo rdf:resource="https://pathfinderwiki.com/wiki/Mike_McArtor"/>
+        <pf1meta:linkInfo rdf:resource="https://web.archive.org/web/20160412143033/http://www.mkmcartor.com"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#Robert_Lazzaretti -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#Robert_Lazzaretti">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#Creator"/>
+        <pf1meta:linkInfo rdf:resource="http://lazzmap.tumblr.com/"/>
+        <pf1meta:linkInfo rdf:resource="https://pathfinderwiki.com/wiki/Rob_Lazzaretti"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#Sean_Glenn -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#Sean_Glenn">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#Creator"/>
+        <pf1meta:seniorArtDirector rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#pzo9500"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#pzo1110 -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#pzo1110">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#Book"/>
+        <pf1meta:linkOntology rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#pzo9500 -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#pzo9500">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#Book_Gamemastery_Module"/>
+        <pf1meta:dateOfRelease rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2007-06-01T00:00:00</pf1meta:dateOfRelease>
+        <pf1meta:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</pf1meta:level>
+        <pf1meta:pages rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16</pf1meta:pages>
+        <pf1meta:linkOntology rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
+

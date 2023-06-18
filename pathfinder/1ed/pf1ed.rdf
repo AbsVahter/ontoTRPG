@@ -24,49 +24,9 @@
     
 
 
-    <!-- http://purl.org/dc/elements/1.1/creator -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
-    
-
-
     <!-- http://schema.org/image -->
 
     <owl:AnnotationProperty rdf:about="http://schema.org/image"/>
-    
-
-
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#bookType -->
-
-    <owl:AnnotationProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#bookType"/>
-    
-
-
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#dateOfRelease -->
-
-    <owl:AnnotationProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#dateOfRelease">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    </owl:AnnotationProperty>
-    
-
-
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#officialLink -->
-
-    <owl:AnnotationProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#officialLink"/>
-    
-
-
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#pages -->
-
-    <owl:AnnotationProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#pages">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-    </owl:AnnotationProperty>
-    
-
-
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#wiki -->
-
-    <owl:AnnotationProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#wiki"/>
     
 
 

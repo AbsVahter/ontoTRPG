@@ -560,15 +560,15 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#Image -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#Creator -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#Image"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#Creator"/>
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#Person -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#Image -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#Person"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#Image"/>
     
 
 
@@ -4064,7 +4064,7 @@
     <!-- http://dbpedia.org/resource/Jason_Bulmahn -->
 
     <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Jason_Bulmahn">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#Person"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#Creator"/>
     </owl:NamedIndividual>
     
 
@@ -4072,7 +4072,7 @@
     <!-- http://dbpedia.org/resource/Wayne_Reynolds -->
 
     <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Wayne_Reynolds">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#Person"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#Creator"/>
     </owl:NamedIndividual>
     
 
