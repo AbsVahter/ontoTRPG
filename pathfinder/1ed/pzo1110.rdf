@@ -66,6 +66,12 @@
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#for_future_correction -->
+
+    <owl:AnnotationProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#for_future_correction"/>
+    
+
+
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#officialLink -->
 
     <owl:AnnotationProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#officialLink"/>
@@ -87,12 +93,6 @@
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#abbreviation -->
 
     <owl:AnnotationProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#abbreviation"/>
-    
-
-
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#forFutureCorrection -->
-
-    <owl:AnnotationProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#forFutureCorrection"/>
     
 
 
@@ -119,17 +119,17 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#isCreatedBy -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#is_created_by -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#isCreatedBy">
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#is_created_by">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#isDepictedBy -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#is_depicted_by -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#isDepictedBy"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#is_depicted_by"/>
     
 
 
@@ -772,6 +772,7 @@
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment">
         <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Character_Feature"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feature"/>
     </owl:Class>
     
 
@@ -1198,6 +1199,14 @@
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Class_NPC -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Class_NPC">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Class_General"/>
+    </owl:Class>
+    
+
+
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Class_Playable -->
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Class_Playable">
@@ -1598,7 +1607,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#associatedDeityWithAlignment"/>
-                <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#AlignmentCE"/>
+                <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment_Chaotic_Evil"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -1612,7 +1621,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#associatedDeityWithAlignment"/>
-                <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#AlignmentCG"/>
+                <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment_Chaotic_Good"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -1626,7 +1635,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#associatedDeityWithAlignment"/>
-                <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#AlignmentCN"/>
+                <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment_Chaotic_Neutral"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -1640,7 +1649,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#associatedDeityWithAlignment"/>
-                <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#AlignmentLE"/>
+                <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment_Lawful_Evil"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -1654,7 +1663,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#associatedDeityWithAlignment"/>
-                <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#AlignmentLG"/>
+                <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment_Lawful_Good"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -1668,7 +1677,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#associatedDeityWithAlignment"/>
-                <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#AlignmentLN"/>
+                <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment_Lawful_Neutral"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -1682,7 +1691,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#associatedDeityWithAlignment"/>
-                <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#AlignmentN"/>
+                <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment_Neutral"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -1696,7 +1705,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#associatedDeityWithAlignment"/>
-                <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#AlignmentNE"/>
+                <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment_Neutral_Evil"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -1710,7 +1719,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#associatedDeityWithAlignment"/>
-                <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#AlignmentNG"/>
+                <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment_Neutral_Good"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -1903,7 +1912,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </rdfs:subClassOf>
-        <forFutureCorrection>...except for armor and shield proficiencies and proficiency with simple weapons; atonement spell description...</forFutureCorrection>
+        <pf1ed:for_future_correction>...except for armor and shield proficiencies and proficiency with simple weapons; atonement spell description...</pf1ed:for_future_correction>
     </owl:Class>
     
 
@@ -2361,7 +2370,7 @@
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#RaceBySize -->
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#RaceBySize">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#RacePlayable"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Race_Playable"/>
     </owl:Class>
     
 
@@ -2369,7 +2378,7 @@
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#RaceBySpeed -->
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#RaceBySpeed">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#RacePlayable"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Race_Playable"/>
     </owl:Class>
     
 
@@ -2402,29 +2411,6 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#RacePlayable -->
-
-    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#RacePlayable">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Creature"/>
-        <rdfs:subClassOf>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#isDepictedBy"/>
-                        <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image_Races_Scale"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#isPickedBy"/>
-                        <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#RaceSetter"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </rdfs:subClassOf>
-        <schema:image rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image_Races_Scale"/>
-    </owl:Class>
-    
-
-
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#RaceSlow -->
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#RaceSlow">
@@ -2449,6 +2435,29 @@
                 <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#SmallSize"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Race_Playable -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Race_Playable">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Creature"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#is_depicted_by"/>
+                        <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image_Races_Scale"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#isPickedBy"/>
+                        <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#RaceSetter"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <schema:image rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image_Races_Scale"/>
     </owl:Class>
     
 
@@ -4286,7 +4295,7 @@
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#AgileFeetStatus -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#AgileFeetStatus">
-        <forFutureCorrection>you ignore all difficult terrain and do not take any penalties for moving through it.</forFutureCorrection>
+        <pf1ed:for_future_correction>you ignore all difficult terrain and do not take any penalties for moving through it.</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -4338,82 +4347,10 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#AlignmentCE -->
-
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#AlignmentCE">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#AlignmentCG -->
-
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#AlignmentCG">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#AlignmentCN -->
-
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#AlignmentCN">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#AlignmentChannelFeat -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#AlignmentChannelFeat">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feats"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#AlignmentLE -->
-
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#AlignmentLE">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#AlignmentLG -->
-
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#AlignmentLG">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#AlignmentLN -->
-
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#AlignmentLN">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#AlignmentN -->
-
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#AlignmentN">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#AlignmentNE -->
-
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#AlignmentNE">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#AlignmentNG -->
-
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#AlignmentNG">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment"/>
     </owl:NamedIndividual>
     
 
@@ -4424,6 +4361,78 @@
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Generating_Character_Setter"/>
         <setFeatureValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Character_Alignment"/>
         <output>selected alignment considering class restrictions</output>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment_Chaotic_Evil -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment_Chaotic_Evil">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment_Chaotic_Good -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment_Chaotic_Good">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment_Chaotic_Neutral -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment_Chaotic_Neutral">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment_Lawful_Evil -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment_Lawful_Evil">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment_Lawful_Good -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment_Lawful_Good">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment_Lawful_Neutral -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment_Lawful_Neutral">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment_Neutral -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment_Neutral">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment_Neutral_Evil -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment_Neutral_Evil">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment_Neutral_Good -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment_Neutral_Good">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment"/>
     </owl:NamedIndividual>
     
 
@@ -4507,7 +4516,7 @@ Bite dmg: 1d4 points of damage (assuming the barbarian is Medium; 1d3 points of 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Animal_Companion_Ability">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Extraordinary_Ability"/>
         <becomeAvailableAtLevel rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Class_Level_4"/>
-        <forFutureCorrection>Your effective druid level for this animal companion is equal to your cleric level – 3.</forFutureCorrection>
+        <pf1ed:for_future_correction>Your effective druid level for this animal companion is equal to your cleric level – 3.</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -4522,8 +4531,8 @@ Bite dmg: 1d4 points of damage (assuming the barbarian is Medium; 1d3 points of 
         <useRule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Nature_Bond_Rule"/>
         <output>Selected animal.
 Animal companion&apos;s level: druid level or (domain class level - 3).</output>
-        <forFutureCorrection>A druid may begin play with any of the animals listed in the Animal Companions section...
-...she may gain a new one by performing a ceremony requiring 24 uninterrupted hours of prayer in the environment where the new companion typically lives...</forFutureCorrection>
+        <pf1ed:for_future_correction>A druid may begin play with any of the animals listed in the Animal Companions section...
+...she may gain a new one by performing a ceremony requiring 24 uninterrupted hours of prayer in the environment where the new companion typically lives...</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -4638,9 +4647,9 @@ Animal companion&apos;s level: druid level or (domain class level - 3).</output>
         <condition>Melee touch attack hit to objects and constructs.</condition>
         <output>Damage roll: 1d6 + int (cleric level / 2).
 Damage check: - cleric level to damage reduction and hardness</output>
-        <forFutureCorrection>You can cast mending at will, using your cleric level as the caster level to repair damaged objects.
+        <pf1ed:for_future_correction>You can cast mending at will, using your cleric level as the caster level to repair damaged objects.
 Objects and constructs take 1d6 points of damage...
-This attack bypasses an amount of damage reduction and hardness equal to your cleric level.</forFutureCorrection>
+This attack bypasses an amount of damage reduction and hardness equal to your cleric level.</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -4948,7 +4957,7 @@ Barbarians excel in combat, possessing the martial prowess and fortitude to take
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Bardic_Performance_Will_Save_DC"/>
         <becomeAvailableAtLevel rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Class_Level_6"/>
         <contain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#AudibleComp"/>
-        <forFutureCorrection>enchantment (compulsion), mind affecting, language-dependent ability</forFutureCorrection>
+        <pf1ed:for_future_correction>enchantment (compulsion), mind affecting, language-dependent ability</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -5121,7 +5130,7 @@ Barbarians excel in combat, possessing the martial prowess and fortitude to take
         <output>Invisible 1-st level rune in free adjacent square.
 Damage: 1d6 + int (cleric level / 2).
 Perception DC and disable device DC: 26.</output>
-        <forFutureCorrection>This rune deals either acid, cold, electricity, or fire damage, decided when you create the rune.</forFutureCorrection>
+        <pf1ed:for_future_correction>This rune deals either acid, cold, electricity, or fire damage, decided when you create the rune.</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -5133,7 +5142,7 @@ Perception DC and disable device DC: 26.</output>
         <isUsedRuleBy rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#DmgRoll"/>
         <duration>depending on input</duration>
         <output>Damage: 1d6 per round.</output>
-        <forFutureCorrection>until stopped with a DC 15 Heal check or any spell or effect that heals damage</forFutureCorrection>
+        <pf1ed:for_future_correction>until stopped with a DC 15 Heal check or any spell or effect that heals damage</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -5281,7 +5290,7 @@ Perception DC and disable device DC: 26.</output>
         <useFeature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Piercing"/>
         <output>Damage roll: 1d6 piercing + int (domain level / 2) damage.</output>
         <uses>Domain class level rounds per day. These rounds do not need to be consecutive.</uses>
-        <forFutureCorrection>any foe striking you with an unarmed strike or a melee weapon without reach</forFutureCorrection>
+        <pf1ed:for_future_correction>any foe striking you with an unarmed strike or a melee weapon without reach</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -5545,7 +5554,7 @@ Cleric must be able to present her holy symbol to use this ability.</condition>
 HP or damage = (1d6 + int ((cleric level - 1) / 2) d6) *  (1/2 if target&apos;s successful will check else 1).
 Will save DC = 10 + 1/2 cleric level + charisma modifier + (2 if glory domain).</output>
         <uses>3 + charisma modifier per day</uses>
-        <forFutureCorrection>to deal damage to undead creatures or to heal living creatures</forFutureCorrection>
+        <pf1ed:for_future_correction>to deal damage to undead creatures or to heal living creatures</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -5879,8 +5888,8 @@ Will save DC = 10 + 1/2 cleric level + charisma modifier + (2 if glory domain).<
         <useFeature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Character_Class_Levels"/>
         <condition>Only one creature charmed in this way at a time.</condition>
         <output>Duration: cleric level per day</output>
-        <forFutureCorrection>DC of 10 + 1/2 your cleric level + your Wisdom modifier.
-Each attempt to use this ability consumes 1 round of its duration, whether or not the creature succeeds on its save to resist the effect.</forFutureCorrection>
+        <pf1ed:for_future_correction>DC of 10 + 1/2 your cleric level + your Wisdom modifier.
+Each attempt to use this ability consumes 1 round of its duration, whether or not the creature succeeds on its save to resist the effect.</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -6214,6 +6223,22 @@ Each attempt to use this ability consumes 1 round of its duration, whether or no
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Class_Level_Bonuses_Setter_Will">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Class_Level_Bonuses_Setter"/>
         <setFeatureValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#CharWill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Class_NPC_Aristocrat -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Class_NPC_Aristocrat">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Class_NPC"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Class_NPC_Expert -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Class_NPC_Expert">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Class_NPC"/>
     </owl:NamedIndividual>
     
 
@@ -6580,7 +6605,7 @@ Each attempt to use this ability consumes 1 round of its duration, whether or no
         <leadTo rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#CopycatStatus"/>
         <condition>Character can have no more than one copycat at a time. This ability does not stack with the mirror image spell.</condition>
         <output>Duration: (cleric level) rounds or until the illusory duplicate is dispelled or destroyed.</output>
-        <forFutureCorrection>functions as a single mirror image</forFutureCorrection>
+        <pf1ed:for_future_correction>functions as a single mirror image</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -6883,7 +6908,7 @@ Perform - keyboard, percussion, wind, string, or sing.</condition>
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Bardic_Performance_Will_Save_DC"/>
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Supernatural_Ability"/>
         <becomeAvailableAtLevel rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Class_Level_20"/>
-        <forFutureCorrection>mind-affecting death effect</forFutureCorrection>
+        <pf1ed:for_future_correction>mind-affecting death effect</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -7159,7 +7184,7 @@ Critical hit: autoconfirm.</output>
         <useRule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#MeleeAttackCheck"/>
         <condition>Melee attack hit</condition>
         <output>Damage: min (+ 1/2 cleric level, 1) morale bonus</output>
-        <forFutureCorrection>You must declare the destructive smite before making the attack.</forFutureCorrection>
+        <pf1ed:for_future_correction>You must declare the destructive smite before making the attack.</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -7295,7 +7320,7 @@ Critical hit: autoconfirm.</output>
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Bardic_Performance"/>
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Supernatural_Ability"/>
         <becomeAvailableAtLevel rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Class_Level_8"/>
-        <forFutureCorrection>mind-affecting fear effect</forFutureCorrection>
+        <pf1ed:for_future_correction>mind-affecting fear effect</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -7423,7 +7448,7 @@ Critical hit: autoconfirm.</output>
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#DispellingTouchRule">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Rules8Uses"/>
         <determine rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#DispellingTouch"/>
-        <forFutureCorrection>you can use a targeted dispel magic effect as a melee touch attack</forFutureCorrection>
+        <pf1ed:for_future_correction>you can use a targeted dispel magic effect as a melee touch attack</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -7504,8 +7529,8 @@ Perform - act, comedy, dance, or oratory.</condition>
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#DivinePresenceRule">
         <determine rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#DivinePresence"/>
         <useFeature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Character_Class_Levels"/>
-        <forFutureCorrection>All allies within this aura are treated as if under the effects of a sanctuary spell with a DC equal to 10 + 1/2 your cleric level + your Wisdom modifier.
-If an ally leaves the area or makes an attack, the effect ends for that ally. If you make an attack, the effect ends for you and your allies.</forFutureCorrection>
+        <pf1ed:for_future_correction>All allies within this aura are treated as if under the effects of a sanctuary spell with a DC equal to 10 + 1/2 your cleric level + your Wisdom modifier.
+If an ally leaves the area or makes an attack, the effect ends for that ally. If you make an attack, the effect ends for you and your allies.</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -8134,8 +8159,8 @@ Domains that belong to cleric&apos;s deity or cleric&apos;s alignment.</conditio
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Dwarf">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#RaceMedium"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#RacePlayable"/>
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#RaceSlow"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Race_Playable"/>
         <pf1ed:wiki rdf:resource="https://www.aonprd.com/RacesDisplay.aspx?ItemName=Dwarf"/>
     </owl:NamedIndividual>
     
@@ -8278,7 +8303,7 @@ Domains that belong to cleric&apos;s deity or cleric&apos;s alignment.</conditio
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Elf">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#RaceMedium"/>
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#RaceNormalSpeed"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#RacePlayable"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Race_Playable"/>
         <pf1ed:wiki rdf:resource="https://www.aonprd.com/RacesDisplay.aspx?ItemName=Elf"/>
     </owl:NamedIndividual>
     
@@ -8520,7 +8545,7 @@ Domains that belong to cleric&apos;s deity or cleric&apos;s alignment.</conditio
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ex_Class_Rule"/>
         <pick rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Cleric"/>
         <condition>Grossly violates the code of conduct required by her god.</condition>
-        <forFutureCorrection>...Grossly violates the code of conduct required by her god....</forFutureCorrection>
+        <pf1ed:for_future_correction>...Grossly violates the code of conduct required by her god....</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -8531,7 +8556,7 @@ Domains that belong to cleric&apos;s deity or cleric&apos;s alignment.</conditio
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ex_Class_Rule"/>
         <pick rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Druid"/>
         <condition>Ceases to revere nature, changes to a prohibited alignment, or teaches the Druidic language to a nondruid.</condition>
-        <forFutureCorrection>...ceases to revere nature, changes to a prohibited alignment, or teaches the Druidic language to a nondruid...</forFutureCorrection>
+        <pf1ed:for_future_correction>...ceases to revere nature, changes to a prohibited alignment, or teaches the Druidic language to a nondruid...</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -8650,7 +8675,7 @@ Domains that belong to cleric&apos;s deity or cleric&apos;s alignment.</conditio
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#EyesOfDarknessRule">
         <determine rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#EyesOfDarkness"/>
         <uses>(1/2 cleric level) rounds per day, do not need to be consecutive</uses>
-        <forFutureCorrection>Your vision is not impaired by lighting conditions, even in absolute darkness and magic darkness.</forFutureCorrection>
+        <pf1ed:for_future_correction>Your vision is not impaired by lighting conditions, even in absolute darkness and magic darkness.</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -8699,7 +8724,7 @@ Domains that belong to cleric&apos;s deity or cleric&apos;s alignment.</conditio
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Bardic_Performance_Will_Save_DC"/>
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Supernatural_Ability"/>
         <becomeAvailableAtLevel rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Class_Level_1"/>
-        <forFutureCorrection>Fascinate is an enchantment (compulsion), mindaffecting ability.</forFutureCorrection>
+        <pf1ed:for_future_correction>Fascinate is an enchantment (compulsion), mindaffecting ability.</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -8721,7 +8746,7 @@ Fascinated: failed will save throw.</condition>
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Fascinated">
         <duration>unknown</duration>
         <output>–4 penalty on all skill checks made as reactions</output>
-        <forFutureCorrection>all skill checks made as reactions</forFutureCorrection>
+        <pf1ed:for_future_correction>all skill checks made as reactions</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -9162,8 +9187,8 @@ Fascinated: failed will save throw.</condition>
         <condition>If you touch a staggered living creature.</condition>
         <output>Duration for living creatures: 1 round.
 Duration for undead: (wisdom modifier) rounds.</output>
-        <forFutureCorrection>living creatures
-undead creatures</forFutureCorrection>
+        <pf1ed:for_future_correction>living creatures
+undead creatures</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -9196,9 +9221,9 @@ undead creatures</forFutureCorrection>
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Gnome -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Gnome">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#RacePlayable"/>
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#RaceSlow"/>
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#RaceSmall"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Race_Playable"/>
         <pf1ed:wiki rdf:resource="https://www.aonprd.com/RacesDisplay.aspx?ItemName=Gnome"/>
     </owl:NamedIndividual>
     
@@ -9667,7 +9692,7 @@ DC for these spells: 10 + the spell’s level + the gnome’s Charisma modifier.
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Half-elf">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#RaceMedium"/>
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#RaceNormalSpeed"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#RacePlayable"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Race_Playable"/>
         <pf1ed:wiki rdf:resource="https://www.aonprd.com/RacesDisplay.aspx?ItemName=Half-Elf"/>
     </owl:NamedIndividual>
     
@@ -9678,7 +9703,7 @@ DC for these spells: 10 + the spell’s level + the gnome’s Charisma modifier.
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Half-orc">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#RaceMedium"/>
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#RaceNormalSpeed"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#RacePlayable"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Race_Playable"/>
         <pf1ed:wiki rdf:resource="https://www.aonprd.com/RacesDisplay.aspx?ItemName=Half-Orc"/>
     </owl:NamedIndividual>
     
@@ -9705,9 +9730,9 @@ DC for these spells: 10 + the spell’s level + the gnome’s Charisma modifier.
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Halfling -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Halfling">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#RacePlayable"/>
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#RaceSlow"/>
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#RaceSmall"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Race_Playable"/>
         <pf1ed:wiki rdf:resource="https://www.aonprd.com/RacesDisplay.aspx?ItemName=Halfling"/>
     </owl:NamedIndividual>
     
@@ -9800,7 +9825,7 @@ DC for these spells: 10 + the spell’s level + the gnome’s Charisma modifier.
         <useRule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Modifier_Wisdom"/>
         <distance>30 feet range</distance>
         <output>Ranged attack roll: wisdom modifier instead of dexterity modifier.</output>
-        <forFutureCorrection>This attack is treated as a ranged attack with a thrown weapon</forFutureCorrection>
+        <pf1ed:for_future_correction>This attack is treated as a ranged attack with a thrown weapon</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -9890,7 +9915,7 @@ DC for these spells: 10 + the spell’s level + the gnome’s Charisma modifier.
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#HealerBlessingRule">
         <determine rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#HealerBlessing"/>
-        <forFutureCorrection>all of your cure spells are treated as if they were empowered, increasing the amount of damage healed by half (+50%). This does not apply to damage dealt to undead with a cure spell. This does not stack with the Empower Spell metamagic feat.</forFutureCorrection>
+        <pf1ed:for_future_correction>all of your cure spells are treated as if they were empowered, increasing the amount of damage healed by half (+50%). This does not apply to damage dealt to undead with a cure spell. This does not stack with the Empower Spell metamagic feat.</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -10088,7 +10113,7 @@ Hit dices: + hit dice by class.</output>
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Human">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#RaceMedium"/>
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#RaceNormalSpeed"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#RacePlayable"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Race_Playable"/>
         <pf1ed:wiki rdf:resource="https://www.aonprd.com/RacesDisplay.aspx?ItemName=Human"/>
     </owl:NamedIndividual>
     
@@ -10166,7 +10191,7 @@ Hit dices: + hit dice by class.</output>
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image_Classes_Barbarian">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#Image"/>
         <pf1ed:depict rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Barbarian"/>
-        <pf1ed:isCreatedBy rdf:resource="http://dbpedia.org/resource/Wayne_Reynolds"/>
+        <pf1ed:is_created_by rdf:resource="http://dbpedia.org/resource/Wayne_Reynolds"/>
         <schema:image rdf:resource="https://pathfinderwiki.com/w/images/0/0b/Amiri.jpg"/>
     </owl:NamedIndividual>
     
@@ -10176,7 +10201,7 @@ Hit dices: + hit dice by class.</output>
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image_Classes_Bard">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#Image"/>
-        <pf1ed:isCreatedBy rdf:resource="http://dbpedia.org/resource/Wayne_Reynolds"/>
+        <pf1ed:is_created_by rdf:resource="http://dbpedia.org/resource/Wayne_Reynolds"/>
         <schema:image rdf:resource="https://pathfinderwiki.com/w/images/e/ef/Lem.jpg"/>
         <pf1ed:wiki rdf:resource="https://www.aonprd.com/ClassDisplay.aspx?ItemName=Bard"/>
     </owl:NamedIndividual>
@@ -10188,7 +10213,7 @@ Hit dices: + hit dice by class.</output>
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image_Classes_Cleric">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#Image"/>
         <pf1ed:depict rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Cleric"/>
-        <pf1ed:isCreatedBy rdf:resource="http://dbpedia.org/resource/Wayne_Reynolds"/>
+        <pf1ed:is_created_by rdf:resource="http://dbpedia.org/resource/Wayne_Reynolds"/>
         <schema:image rdf:resource="https://pathfinderwiki.com/w/images/2/23/Kyra.jpg"/>
     </owl:NamedIndividual>
     
@@ -10271,7 +10296,7 @@ Hit dices: + hit dice by class.</output>
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Image_Rulebook_Cover">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#Image"/>
-        <pf1ed:isCreatedBy rdf:resource="http://dbpedia.org/resource/Wayne_Reynolds"/>
+        <pf1ed:is_created_by rdf:resource="http://dbpedia.org/resource/Wayne_Reynolds"/>
         <schema:image rdf:resource="https://pathfinderwiki.com/w/images/3/34/Pathfinder_RPG_cover.jpg"/>
     </owl:NamedIndividual>
     
@@ -10707,7 +10732,7 @@ Hit dices: + hit dice by class.</output>
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Bardic_Performance"/>
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Supernatural_Ability"/>
         <becomeAvailableAtLevel rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Class_Level_1"/>
-        <forFutureCorrection>Inspire courage is a mind-affecting ability</forFutureCorrection>
+        <pf1ed:for_future_correction>Inspire courage is a mind-affecting ability</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -10721,7 +10746,7 @@ Hit dices: + hit dice by class.</output>
         <condition>Bard must choose which component to use when starting his performance.
 To be affected, an ally (including bard) must be able to perceive the bard’s performance.</condition>
         <output>+1 + int ((bard level + 1) / 6) morale bonus on saving throws against charm and fear effects and competence bonus on attack and weapon damage rolls</output>
-        <forFutureCorrection>against charm and fear effects</forFutureCorrection>
+        <pf1ed:for_future_correction>against charm and fear effects</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -10733,7 +10758,7 @@ To be affected, an ally (including bard) must be able to perceive the bard’s p
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Bardic_Performance"/>
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Supernatural_Ability"/>
         <becomeAvailableAtLevel rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Class_Level_9"/>
-        <forFutureCorrection>mind-affecting ability</forFutureCorrection>
+        <pf1ed:for_future_correction>mind-affecting ability</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -10762,7 +10787,7 @@ Fortitude roll: +1 competence bonus.</output>
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Bardic_Performance"/>
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Supernatural_Ability"/>
         <becomeAvailableAtLevel rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Class_Level_15"/>
-        <forFutureCorrection>mind-affecting ability</forFutureCorrection>
+        <pf1ed:for_future_correction>mind-affecting ability</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -11374,7 +11399,7 @@ Duration: as long as the targets are able to witness the performance.</output>
         <pick rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#LeadershipFeat"/>
         <setFeatureValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#CharSpecialAbilities"/>
         <output>Bonus feat: leadership.</output>
-        <forFutureCorrection>you gain a +2 bonus on your leadership score as long as you uphold the tenets of your deity (or divine concept if you do not venerate a deity).</forFutureCorrection>
+        <pf1ed:for_future_correction>you gain a +2 bonus on your leadership score as long as you uphold the tenets of your deity (or divine concept if you do not venerate a deity).</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -11585,7 +11610,7 @@ Animal companion&apos;s level: +1 if selected druid class and appropriate nature
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Level_Up_Setter_Animal_Companion"/>
         <isUsedRuleBy rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Level_Up_Class_Setter"/>
         <output>Skill ranks: 2 + int ((level - 1) / 4) * 3 + (if mod ((level - 1), 4) &lt; 3 then 1 else 2).</output>
-        <forFutureCorrection>Animal companions with an Intelligence of 3 or higher can purchase ranks in any skill.</forFutureCorrection>
+        <pf1ed:for_future_correction>Animal companions with an Intelligence of 3 or higher can purchase ranks in any skill.</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -11615,7 +11640,7 @@ Animal companion&apos;s level: +1 if selected druid class and appropriate nature
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#LiberationRule">
         <determine rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Liberation"/>
         <uses>(cleric level) rounds per day</uses>
-        <forFutureCorrection>you can move normally regardless of magical effects that impede movement, as if you were affected by freedom of movement</forFutureCorrection>
+        <pf1ed:for_future_correction>you can move normally regardless of magical effects that impede movement, as if you were affected by freedom of movement</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -11683,7 +11708,7 @@ Animal companion&apos;s level: +1 if selected druid class and appropriate nature
         <useFeature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Character_Class_Levels"/>
         <condition>No creature can be the target of more than one bolt and no two targets can be more than  30 feet apart.</condition>
         <uses>Domain class level bolts per day</uses>
-        <forFutureCorrection>functions as call lightning</forFutureCorrection>
+        <pf1ed:for_future_correction>functions as call lightning</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -12001,7 +12026,7 @@ Animal companion&apos;s level: +1 if selected druid class and appropriate nature
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#SpellLike_Ability"/>
         <becomeAvailableAtLevel rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Class_Level_18"/>
         <contain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#AudibleComp"/>
-        <forFutureCorrection>Enchantment (compulsion), mind-affecting, languagedependent ability.</forFutureCorrection>
+        <pf1ed:for_future_correction>Enchantment (compulsion), mind-affecting, languagedependent ability.</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -12044,7 +12069,7 @@ Animal companion&apos;s level: +1 if selected druid class and appropriate nature
         <condition>Character and allies.</condition>
         <output>Hides the appearance.
 Save DC to disbelieve this effect: 10 + 1/2 cleric level + Wisdom modifier.</output>
-        <forFutureCorrection>functions like the spell veil</forFutureCorrection>
+        <pf1ed:for_future_correction>functions like the spell veil</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -12135,7 +12160,7 @@ Save DC to disbelieve this effect: 10 + 1/2 cleric level + Wisdom modifier.</out
         <useFeature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Character_Class_Levels"/>
         <output>Strength: + (cleric level) enchancement bonus.</output>
         <uses>Cleric level rounds per day. These rounds do not need to be consecutive.</uses>
-        <forFutureCorrection>This bonus only applies on Strength checks and Strength-based skill checks.</forFutureCorrection>
+        <pf1ed:for_future_correction>This bonus only applies on Strength checks and Strength-based skill checks.</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -12501,8 +12526,8 @@ Save DC to disbelieve this effect: 10 + 1/2 cleric level + Wisdom modifier.</out
         <useFeature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Character_Class_Levels"/>
         <condition>Undead within aura</condition>
         <output>Damage: cleric level.</output>
-        <forFutureCorrection>This acts as a daylight spell
-Undead</forFutureCorrection>
+        <pf1ed:for_future_correction>This acts as a daylight spell
+Undead</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -12984,9 +13009,9 @@ Undead</forFutureCorrection>
         <useRule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Prof_Medium_Armor_Feat_Rule"/>
         <useRule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Prof_Shield_Feat_Rule"/>
         <condition>Light and medium armor and shield without metal component.</condition>
-        <forFutureCorrection>also proficient with all natural attacks (claw, bite, and so forth) of any form they assume with wild shape
+        <pf1ed:for_future_correction>also proficient with all natural attacks (claw, bite, and so forth) of any form they assume with wild shape
 A druid may also wear wooden armor that has been altered by the ironwood spell so that it functions as though it were steel.
-A druid who wears prohibited armor or uses a prohibited shield is unable to cast druid spells or use any of her supernatural or spell-like class abilities while doing so and for 24 hours thereafter.</forFutureCorrection>
+A druid who wears prohibited armor or uses a prohibited shield is unable to cast druid spells or use any of her supernatural or spell-like class abilities while doing so and for 24 hours thereafter.</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -13573,7 +13598,7 @@ Reqs: low-light vision for night vision, intimidating glare for terrifying howl.
         <determine rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#RemoteViewing"/>
         <useFeature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Character_Class_Levels"/>
         <uses>(cleric level) rounds per day</uses>
-        <forFutureCorrection>can use clairvoyance/clairaudience as a spell-like ability using your cleric level as the caster level.</forFutureCorrection>
+        <pf1ed:for_future_correction>can use clairvoyance/clairaudience as a spell-like ability using your cleric level as the caster level.</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -15287,7 +15312,7 @@ Lose your resistance bonus granted by the Protection domain for 1 minute.</outpu
         <determine rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Speak_with_Animals"/>
         <useFeature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Character_Class_Levels"/>
         <uses>3 + domain class level per day</uses>
-        <forFutureCorrection>can speak with animals, as per the spell</forFutureCorrection>
+        <pf1ed:for_future_correction>can speak with animals, as per the spell</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -15997,7 +16022,7 @@ Saving throws DC against druid&apos;s spell: 10 + spell level + Wisdom modifier.
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Storm_Burst_Rule">
         <determine rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Storm_Burst"/>
-        <forFutureCorrection>nonlethal damage</forFutureCorrection>
+        <pf1ed:for_future_correction>nonlethal damage</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -16074,7 +16099,7 @@ Saving throws DC against druid&apos;s spell: 10 + spell level + Wisdom modifier.
         <isUsedRuleBy rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#StrRoll"/>
         <useFeature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Character_Class_Levels"/>
         <output>Melee attack roll, strength-based skill rolls, strength roll: + min (1, 1/2 cleric level) enchancement bonus.</output>
-        <forFutureCorrection>combat maneuver checks that rely on Strength</forFutureCorrection>
+        <pf1ed:for_future_correction>combat maneuver checks that rely on Strength</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -16205,7 +16230,7 @@ Saving throws DC against druid&apos;s spell: 10 + spell level + Wisdom modifier.
         <isUsedRuleBy rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#ChannelEnergyRule"/>
         <useFeature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Character_Class_Levels"/>
         <output>Channel positive energy to harm undead: + cleric level.</output>
-        <forFutureCorrection>Undead do not add their channel resistance to their saves when you channel positive energy.</forFutureCorrection>
+        <pf1ed:for_future_correction>Undead do not add their channel resistance to their saves when you channel positive energy.</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -16429,7 +16454,7 @@ Saving throws DC against druid&apos;s spell: 10 + spell level + Wisdom modifier.
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Thousand_Faces_Rule">
         <determine rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Thousand_Faces"/>
         <uses>at will</uses>
-        <forFutureCorrection>...ability to change her appearance at will, as if using the alter self spell, but only while in her normal form...</forFutureCorrection>
+        <pf1ed:for_future_correction>...ability to change her appearance at will, as if using the alter self spell, but only while in her normal form...</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -16475,7 +16500,7 @@ Saving throws DC against druid&apos;s spell: 10 + spell level + Wisdom modifier.
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Timeless_Body_Rule">
         <determine rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Timeless_Body"/>
-        <forFutureCorrection>...no longer takes ability score penalties for aging and cannot be magically aged. Any penalties she may have already incurred, however, remain in place. Bonuses still accrue, and the druid still dies of old age when her time is up...</forFutureCorrection>
+        <pf1ed:for_future_correction>...no longer takes ability score penalties for aging and cannot be magically aged. Any penalties she may have already incurred, however, remain in place. Bonuses still accrue, and the druid still dies of old age when her time is up...</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -16591,7 +16616,7 @@ Saving throws DC against druid&apos;s spell: 10 + spell level + Wisdom modifier.
         <useRule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Opponent"/>
         <condition>Melee touch attack hit</condition>
         <output>Duration: min (1/2 cleric level, 1)</output>
-        <forFutureCorrection>Creatures sickened by your touch count as good for the purposes of spells with the evil descriptor.</forFutureCorrection>
+        <pf1ed:for_future_correction>Creatures sickened by your touch count as good for the purposes of spells with the evil descriptor.</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -16689,7 +16714,7 @@ Saving throws DC against druid&apos;s spell: 10 + spell level + Wisdom modifier.
         <isUsedRuleBy rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#AttackRoll"/>
         <useFeature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Character_Class_Levels"/>
         <output>Attack roll, skill rolls, ability rolls, saving throws: + min (1/2 your cleric level, 1).</output>
-        <forFutureCorrection>attack rolls, skill checks, ability checks, and saving throws equal to half your cleric level (minimum 1) for 1 round</forFutureCorrection>
+        <pf1ed:for_future_correction>attack rolls, skill checks, ability checks, and saving throws equal to half your cleric level (minimum 1) for 1 round</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -16741,7 +16766,7 @@ Saving throws DC against druid&apos;s spell: 10 + spell level + Wisdom modifier.
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Trackless_Step_Rule">
         <determine rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Trackless_Step"/>
-        <forFutureCorrection>...leaves no trail in natural surroundings and cannot be tracked. She may choose to leave a trail if so desired.</forFutureCorrection>
+        <pf1ed:for_future_correction>...leaves no trail in natural surroundings and cannot be tracked. She may choose to leave a trail if so desired.</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -16878,7 +16903,7 @@ Trap sense bonuses gained from multiple classes stack.</output>
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Class_Ability_Barbarian"/>
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Extraordinary_Ability"/>
         <becomeAvailableAtLevel rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Class_Level_2"/>
-        <forFutureCorrection>If a barbarian already has uncanny dodge from a different class, she automatically gains improved uncanny dodge instead.</forFutureCorrection>
+        <pf1ed:for_future_correction>If a barbarian already has uncanny dodge from a different class, she automatically gains improved uncanny dodge instead.</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -16983,7 +17008,7 @@ Trap sense bonuses gained from multiple classes stack.</output>
         <determine rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Unity"/>
         <distance>30 feet radius around character</distance>
         <output>All allies can use cleric saving throw roll instead of their own.</output>
-        <forFutureCorrection>use your saving throw agains the effect in place of their own</forFutureCorrection>
+        <pf1ed:for_future_correction>use your saving throw agains the effect in place of their own</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -17099,7 +17124,7 @@ Trap sense bonuses gained from multiple classes stack.</output>
         <useFeature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#CharBardAssociateSkills"/>
         <useRule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Roll_Perform"/>
         <output>Total Perform skill bonus in place of its associated skill’s bonus.</output>
-        <forFutureCorrection>total Perform skill bonus</forFutureCorrection>
+        <pf1ed:for_future_correction>total Perform skill bonus</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -17224,8 +17249,8 @@ For other types: - min (1, 1/2 cleric level).</output>
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#WardAgainstDeathRule">
         <determine rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#WardAgainstDeath"/>
-        <forFutureCorrection>Living creatures in this area are immune to all death effects, energy drain, and effects that cause negative levels. This ward does not remove negative levels that a creature has already gained, but the negative levels have no effect while the creature is inside the
-warded area.</forFutureCorrection>
+        <pf1ed:for_future_correction>Living creatures in this area are immune to all death effects, energy drain, and effects that cause negative levels. This ward does not remove negative levels that a creature has already gained, but the negative levels have no effect while the creature is inside the
+warded area.</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -17343,7 +17368,7 @@ warded area.</forFutureCorrection>
         <useRule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Opponent"/>
         <condition>Against bardic performance, sonic, and language-dependent effects.</condition>
         <output>Saving throws: +4 bonus.</output>
-        <forFutureCorrection>sonic, and language-dependent effects</forFutureCorrection>
+        <pf1ed:for_future_correction>sonic, and language-dependent effects</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -17406,7 +17431,7 @@ warded area.</forFutureCorrection>
 1 minute but it might take more or less time.</condition>
         <distance>30 feet range</distance>
         <output>Improve the attitude of a animal.</output>
-        <forFutureCorrection>A druid can improve the attitude of an animal.</forFutureCorrection>
+        <pf1ed:for_future_correction>A druid can improve the attitude of an animal.</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -17440,8 +17465,8 @@ warded area.</forFutureCorrection>
         <output>Duration: (druid level) hours.
 {druid level: [forms]} =  {4: [beast shape I], 6: [beast shape II, elemental body I], 8: [beast shape III, elemental body II, plant shape I], 10: [elemental body III, plant shape II], 12: [elemental body IV, plant shape III]}.</output>
         <uses>int ((druid level - 2) / 2) per day or at will at 20th level</uses>
-        <forFutureCorrection>...all creatures with the animal type...
-{druid level: [forms]} =  {4: [beast shape I], 6: [beast shape II, elemental body I], 8: [beast shape III, elemental body II, plant shape I], 10: [elemental body III, plant shape II], 12: [elemental body IV, plant shape III]}.</forFutureCorrection>
+        <pf1ed:for_future_correction>...all creatures with the animal type...
+{druid level: [forms]} =  {4: [beast shape I], 6: [beast shape II, elemental body I], 8: [beast shape III, elemental body II, plant shape I], 10: [elemental body III, plant shape II], 12: [elemental body IV, plant shape III]}.</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -17450,7 +17475,7 @@ warded area.</forFutureCorrection>
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Wild_Shape_Status">
         <block rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Speak"/>
-        <forFutureCorrection>...can communicate normally with other animals of the same general grouping as her new form...</forFutureCorrection>
+        <pf1ed:for_future_correction>...can communicate normally with other animals of the same general grouping as her new form...</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -17600,7 +17625,7 @@ warded area.</forFutureCorrection>
         <isUsedRuleBy rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#DmgRoll"/>
         <useFeature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Character_Class_Levels"/>
         <output>Damage roll: min (1, 1/2 domain class level).</output>
-        <forFutureCorrection>your unarmed strikes do not provoke attacks of opportunity, deal lethal damage</forFutureCorrection>
+        <pf1ed:for_future_correction>your unarmed strikes do not provoke attacks of opportunity, deal lethal damage</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -17612,7 +17637,7 @@ warded area.</forFutureCorrection>
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Extraordinary_Ability"/>
         <becomeAvailableAtLevel rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Class_Level_2"/>
         <condition>Natural undergrowth</condition>
-        <forFutureCorrection>normal speed and without taking damage or suffering any other impairment</forFutureCorrection>
+        <pf1ed:for_future_correction>normal speed and without taking damage or suffering any other impairment</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -17674,8 +17699,8 @@ warded area.</forFutureCorrection>
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Resist_Nature’s_Lure_Rule">
         <determine rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Resist_Nature’s_Lure"/>
         <output>Saving throws: +4 bonus.</output>
-        <forFutureCorrection>...against the spell-like and supernatural abilities of fey
-This bonus also applies to spells and effects that utilize or target plants, such as blight, entangle, spike growth, and warp wood.</forFutureCorrection>
+        <pf1ed:for_future_correction>...against the spell-like and supernatural abilities of fey
+This bonus also applies to spells and effects that utilize or target plants, such as blight, entangle, spike growth, and warp wood.</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
