@@ -2,9 +2,9 @@
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <uri id="Imports Wizard Entry" name="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf" uri="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1687092285780" name="http://www.semanticweb.org/nerpa/ontologies/2023/5/untitled-ontology-63/" uri="pf1meta.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1687092285780" name="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf" uri="pf1ed.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1687092285780" name="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf" uri="pzo1110.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1687092285780" name="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf" uri="pzo9500.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1687094481398" name="http://www.semanticweb.org/nerpa/ontologies/2023/5/untitled-ontology-63/" uri="pf1meta.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1687094481398" name="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf" uri="pf1ed.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1687094481398" name="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf" uri="pzo1110.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1687094481398" name="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf" uri="pzo9500.rdf"/>
     </group>
 </catalog>
