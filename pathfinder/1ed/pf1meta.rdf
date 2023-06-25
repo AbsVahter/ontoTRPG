@@ -24,15 +24,9 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#linkInfo -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#link_ontology -->
 
-    <owl:AnnotationProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#linkInfo"/>
-    
-
-
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#linkOntology -->
-
-    <owl:AnnotationProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#linkOntology"/>
+    <owl:AnnotationProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#link_ontology"/>
     
 
 
@@ -285,8 +279,8 @@
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#Christopher_West">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#Creator"/>
         <pf1meta:cartographer rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#pzo9500"/>
-        <pf1meta:linkInfo rdf:resource="https://maps-of-mastery-store.myshopify.com/"/>
-        <pf1meta:linkInfo rdf:resource="https://pathfinderwiki.com/wiki/Christopher_West"/>
+        <rdfs:seeAlso rdf:resource="https://maps-of-mastery-store.myshopify.com/"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Christopher_West"/>
     </owl:NamedIndividual>
     
 
@@ -297,8 +291,8 @@
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#Creator"/>
         <pf1meta:artistCover rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#pzo9500"/>
         <pf1meta:artistInterior rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#pzo9500"/>
-        <pf1meta:linkInfo rdf:resource="https://pathfinderwiki.com/wiki/Espen_Grundetjern"/>
-        <pf1meta:linkInfo rdf:resource="https://www.deviantart.com/espeng"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Espen_Grundetjern"/>
+        <rdfs:seeAlso rdf:resource="https://www.deviantart.com/espeng"/>
     </owl:NamedIndividual>
     
 
@@ -317,7 +311,7 @@
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#Jeremy_Walker">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#Creator"/>
         <pf1meta:developmentEditing rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#pzo9500"/>
-        <pf1meta:linkInfo rdf:resource="https://pathfinderwiki.com/wiki/Jeremy_Walker"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Jeremy_Walker"/>
     </owl:NamedIndividual>
     
 
@@ -328,8 +322,8 @@
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#Creator"/>
         <pf1meta:artistCover rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#pzo9500"/>
         <pf1meta:artistInterior rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#pzo9500"/>
-        <pf1meta:linkInfo rdf:resource="https://pathfinderwiki.com/wiki/Joe_Ng"/>
-        <pf1meta:linkInfo rdf:resource="https://www.deviantart.com/ngboy"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Joe_Ng"/>
+        <rdfs:seeAlso rdf:resource="https://www.deviantart.com/ngboy"/>
     </owl:NamedIndividual>
     
 
@@ -339,8 +333,8 @@
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#Mike_McArtor">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#Creator"/>
         <pf1meta:developmentEditing rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#pzo9500"/>
-        <pf1meta:linkInfo rdf:resource="https://pathfinderwiki.com/wiki/Mike_McArtor"/>
-        <pf1meta:linkInfo rdf:resource="https://web.archive.org/web/20160412143033/http://www.mkmcartor.com"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Mike_McArtor"/>
+        <rdfs:seeAlso rdf:resource="https://web.archive.org/web/20160412143033/http://www.mkmcartor.com"/>
     </owl:NamedIndividual>
     
 
@@ -350,8 +344,8 @@
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#Robert_Lazzaretti">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#Creator"/>
         <pf1meta:cartographer rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#pzo9500"/>
-        <pf1meta:linkInfo rdf:resource="http://lazzmap.tumblr.com/"/>
-        <pf1meta:linkInfo rdf:resource="https://pathfinderwiki.com/wiki/Rob_Lazzaretti"/>
+        <rdfs:seeAlso rdf:resource="http://lazzmap.tumblr.com/"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Rob_Lazzaretti"/>
     </owl:NamedIndividual>
     
 
@@ -369,7 +363,7 @@
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#pzo1110">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#Book"/>
-        <pf1meta:linkOntology rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf"/>
+        <pf1meta:link_ontology rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf"/>
     </owl:NamedIndividual>
     
 
@@ -381,7 +375,7 @@
         <pf1meta:dateOfRelease rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2007-06-01T00:00:00</pf1meta:dateOfRelease>
         <pf1meta:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</pf1meta:level>
         <pf1meta:pages rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16</pf1meta:pages>
-        <pf1meta:linkOntology rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf"/>
+        <pf1meta:link_ontology rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf"/>
     </owl:NamedIndividual>
     
 
