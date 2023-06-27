@@ -456,10 +456,10 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#special_feature_weapon -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#special_feature_to_weapon -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#special_feature_weapon">
-        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#weapon_special_feature"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#special_feature_to_weapon">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#weapon_to_special_feature"/>
     </owl:ObjectProperty>
     
 
@@ -501,18 +501,18 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#weapon_special_feature -->
-
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#weapon_special_feature">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feature_Special_for_Weapon"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#weapon_to_deity -->
 
     <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#weapon_to_deity"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#weapon_to_special_feature -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#weapon_to_special_feature">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feature_Special_for_Weapon"/>
+    </owl:ObjectProperty>
     
 
 
@@ -4185,6 +4185,20 @@
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Martial -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Martial">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_by_Type"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#is_picked_by_rule"/>
+                <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feat_Prof_Weapon_Martial"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Melee -->
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Melee">
@@ -5130,6 +5144,28 @@ Resistance: 5 + (5 if cleric level &gt;= 14) against all elements.</output>
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Axe_Throwing -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Axe_Throwing">
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Light"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Martial"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Melee"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Slashing"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <resource_cost>8 gp</resource_cost>
+        <resource_weight>2 lbs.</resource_weight>
+        <weapon_critical_modifier>x2</weapon_critical_modifier>
+        <weapon_damage>1d6</weapon_damage>
+        <weapon_range>10 ft.</weapon_range>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Axiomatic -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Axiomatic">
@@ -5385,6 +5421,20 @@ Barbarians excel in combat, possessing the martial prowess and fortitude to take
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Battleaxe">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Dwarf"/>
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Martial"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Melee"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_One_Handed"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Slashing"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <resource_cost>10 gp</resource_cost>
+        <resource_weight>6 lbs.</resource_weight>
+        <weapon_critical_modifier>x3</weapon_critical_modifier>
+        <weapon_damage>1d8</weapon_damage>
     </owl:NamedIndividual>
     
 
@@ -5645,7 +5695,7 @@ Perception DC and disable device DC: 26.</output>
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Brace_Weapon">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feature_Special_for_Weapon"/>
-        <special_feature_weapon rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Longspear"/>
+        <special_feature_to_weapon rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Longspear"/>
     </owl:NamedIndividual>
     
 
@@ -8054,6 +8104,14 @@ Critical hit: autoconfirm.</output>
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Disarm_Weapon -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Disarm_Weapon">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feature_Special_for_Weapon"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#DiscernLies -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#DiscernLies">
@@ -8839,7 +8897,7 @@ Domains that belong to cleric&apos;s deity or cleric&apos;s alignment.</conditio
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Double_Weapon">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feature_Special_for_Weapon"/>
-        <special_feature_weapon rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Quarterstaff"/>
+        <special_feature_to_weapon rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Quarterstaff"/>
         <pf1ed:for_future_correction>You can use a double weapon to fight as if fighting with two weapons, but if you do, you incur all the normal attack penalties associated with fighting with two weapons, just as if you were using a one-handed weapon and a light weapon. You can choose to wield one end of a double weapon two-handed, but it cannot be used as a double weapon when wielded in this way—only one end of the weapon can be used in any given round.</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
@@ -9398,7 +9456,21 @@ Domains that belong to cleric&apos;s deity or cleric&apos;s alignment.</conditio
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Falchion">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Half_Orc"/>
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Martial"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Melee"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Slashing"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Two_Handed"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
         <weapon_to_deity rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Lamashtu"/>
+        <resource_cost>75 gp</resource_cost>
+        <resource_weight>8 lbs.</resource_weight>
+        <weapon_critical_modifier>18-20/x2</weapon_critical_modifier>
+        <weapon_damage>2d4</weapon_damage>
     </owl:NamedIndividual>
     
 
@@ -9705,6 +9777,52 @@ Fascinated: failed will save throw.</condition>
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Fireball">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Spell_Cleric_Fire"/>
         <haveSpellFeature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Spell_Level_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Flail -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Flail">
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Bludgeoning"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Martial"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Melee"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_One_Handed"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <weapon_to_special_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Disarm_Weapon"/>
+        <weapon_to_special_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Trip_Weapon"/>
+        <resource_cost>8 gp</resource_cost>
+        <resource_weight>5 lbs.</resource_weight>
+        <weapon_critical_modifier>x2</weapon_critical_modifier>
+        <weapon_damage>1d8</weapon_damage>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Flail_Heavy -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Flail_Heavy">
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Bludgeoning"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Martial"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Melee"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Two_Handed"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <weapon_to_special_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Disarm_Weapon"/>
+        <weapon_to_special_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Trip_Weapon"/>
+        <resource_cost>15 gp</resource_cost>
+        <resource_weight>10 lbs.</resource_weight>
+        <weapon_critical_modifier>19-20/x2</weapon_critical_modifier>
+        <weapon_damage>1d10</weapon_damage>
     </owl:NamedIndividual>
     
 
@@ -10074,7 +10192,22 @@ undead creatures</pf1ed:for_future_correction>
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Glaive -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Glaive">
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Martial"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Melee"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Slashing"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Two_Handed"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
         <weapon_to_deity rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Shelyn"/>
+        <weapon_to_special_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Reach_Weapon"/>
+        <resource_cost>8 gp</resource_cost>
+        <resource_weight>10 lbs.</resource_weight>
+        <weapon_critical_modifier>x3</weapon_critical_modifier>
+        <weapon_damage>1d10</weapon_damage>
     </owl:NamedIndividual>
     
 
@@ -10308,7 +10441,42 @@ DC for these spells: 10 + the spell’s level + the gnome’s Charisma modifier.
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Greataxe">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Half_Orc"/>
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Martial"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Melee"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Slashing"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Two_Handed"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
         <weapon_to_deity rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Rovagug"/>
+        <resource_cost>20 gp</resource_cost>
+        <resource_weight>12 lbs.</resource_weight>
+        <weapon_critical_modifier>x3</weapon_critical_modifier>
+        <weapon_damage>1d12</weapon_damage>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Greatclub -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Greatclub">
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Bludgeoning"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Martial"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Melee"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Two_Handed"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <resource_cost>5 gp</resource_cost>
+        <resource_weight>8 lbs.</resource_weight>
+        <weapon_critical_modifier>x2</weapon_critical_modifier>
+        <weapon_damage>1d10</weapon_damage>
     </owl:NamedIndividual>
     
 
@@ -10504,7 +10672,21 @@ DC for these spells: 10 + the spell’s level + the gnome’s Charisma modifier.
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Greatsword -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Greatsword">
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Martial"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Melee"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Slashing"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Two_Handed"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
         <weapon_to_deity rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Gorum"/>
+        <resource_cost>50 gp</resource_cost>
+        <resource_weight>8 lbs.</resource_weight>
+        <weapon_critical_modifier>19-20/x2</weapon_critical_modifier>
+        <weapon_damage>2d6</weapon_damage>
     </owl:NamedIndividual>
     
 
@@ -10558,6 +10740,53 @@ DC for these spells: 10 + the spell’s level + the gnome’s Charisma modifier.
         <condition>Character is target of opponent&apos;s melee attacks.</condition>
         <duration>Number of rounds equal to current Constitution modifier (minimum 1)</duration>
         <output>+1 + int (level / 6) dodge bonus to her Armor Class against melee attacks</output>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Guisarme -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Guisarme">
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Martial"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Melee"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Slashing"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Two_Handed"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <weapon_to_special_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Reach_Weapon_Rule"/>
+        <weapon_to_special_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Trip_Weapon"/>
+        <resource_cost>9 gp</resource_cost>
+        <resource_weight>12 lbs.</resource_weight>
+        <weapon_critical_modifier>x3</weapon_critical_modifier>
+        <weapon_damage>2d4</weapon_damage>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Halberd -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Halberd">
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Martial"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Melee"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Piercing"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Slashing"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Two_Handed"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <weapon_to_special_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Brace_Weapon"/>
+        <weapon_to_special_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Trip_Weapon"/>
+        <resource_cost>10 gp</resource_cost>
+        <resource_weight>12 lbs.</resource_weight>
+        <weapon_critical_modifier>x3</weapon_critical_modifier>
+        <weapon_damage>1d10</weapon_damage>
     </owl:NamedIndividual>
     
 
@@ -10689,6 +10918,28 @@ DC for these spells: 10 + the spell’s level + the gnome’s Charisma modifier.
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Hammer_Light -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Hammer_Light">
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Bludgeoning"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Light"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Martial"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Melee"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <resource_cost>1 gp</resource_cost>
+        <resource_weight>2 lbs.</resource_weight>
+        <weapon_critical_modifier>x2</weapon_critical_modifier>
+        <weapon_damage>1d4</weapon_damage>
+        <weapon_range>20 ft.</weapon_range>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#HandCrossbow -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#HandCrossbow">
@@ -10724,6 +10975,20 @@ DC for these spells: 10 + the spell’s level + the gnome’s Charisma modifier.
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Handaxe">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Monk"/>
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Light"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Martial"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Melee"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Slashing"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <resource_cost>6 gp</resource_cost>
+        <resource_weight>3 lbs.</resource_weight>
+        <weapon_critical_modifier>x3</weapon_critical_modifier>
+        <weapon_damage>1d6</weapon_damage>
     </owl:NamedIndividual>
     
 
@@ -10823,15 +11088,6 @@ DC for these spells: 10 + the spell’s level + the gnome’s Charisma modifier.
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#HeavyArmorProfFeatRule">
         <rule_determines_special_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feat_Prof_Armor_Heavy"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#HeavyPick -->
-
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#HeavyPick">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Dwarf"/>
-        <rdfs:label>Heavy pick</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -11997,10 +12253,53 @@ Duration: as long as the targets are able to witness the performance.</output>
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Kukri -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Kukri">
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Light"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Martial"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Melee"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Slashing"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <resource_cost>8 gp</resource_cost>
+        <resource_weight>2 lbs.</resource_weight>
+        <weapon_critical_modifier>18-20/x2</weapon_critical_modifier>
+        <weapon_damage>1d4</weapon_damage>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Lamashtu -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Lamashtu">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#DeityCE"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Lance -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Lance">
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Martial"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Melee"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Piercing"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Two_Handed"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <weapon_to_special_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Reach_Weapon"/>
+        <resource_cost>10 gp</resource_cost>
+        <resource_weight>10 lbs.</resource_weight>
+        <weapon_critical_modifier>x3</weapon_critical_modifier>
+        <weapon_damage>1d8</weapon_damage>
     </owl:NamedIndividual>
     
 
@@ -12670,7 +12969,21 @@ Animal companion&apos;s level: +1 if selected druid class and appropriate nature
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Longsword">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Elf"/>
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Martial"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Melee"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_One_Handed"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Slashing"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
         <weapon_to_deity rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Iomedae"/>
+        <resource_cost>15 gp</resource_cost>
+        <resource_weight>4 lbs.</resource_weight>
+        <weapon_critical_modifier>19-20/x2</weapon_critical_modifier>
+        <weapon_damage>1d8</weapon_damage>
     </owl:NamedIndividual>
     
 
@@ -13482,6 +13795,15 @@ Save DC to disbelieve this effect: 10 + 1/2 cleric level + Wisdom modifier.</out
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Nonlethal_Weapon -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Nonlethal_Weapon">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feature_Special_for_Weapon"/>
+        <special_feature_to_weapon rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Sap"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Norgorber -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Norgorber">
@@ -13710,6 +14032,49 @@ Undead</pf1ed:for_future_correction>
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Pick_Heavy -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Pick_Heavy">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Dwarf"/>
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Martial"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Melee"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_One_Handed"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Piercing"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <resource_cost>8 gp</resource_cost>
+        <resource_weight>6 lbs.</resource_weight>
+        <weapon_critical_modifier>x4</weapon_critical_modifier>
+        <weapon_damage>1d6</weapon_damage>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Pick_Light -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Pick_Light">
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Light"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Martial"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Melee"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Piercing"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <resource_cost>4 gp</resource_cost>
+        <resource_weight>3 lbs.</resource_weight>
+        <weapon_critical_modifier>x4</weapon_critical_modifier>
+        <weapon_damage>1d4</weapon_damage>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Piercing -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Piercing">
@@ -13897,8 +14262,8 @@ Undead</pf1ed:for_future_correction>
         <rule_picks rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Longsword"/>
         <rule_picks rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Rapier"/>
         <rule_picks rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Sap"/>
-        <rule_picks rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#ShortSword"/>
         <rule_picks rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Shortbow"/>
+        <rule_picks rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Sword_Short"/>
         <rule_picks rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Whip"/>
     </owl:NamedIndividual>
     
@@ -14378,7 +14743,21 @@ Reqs: low-light vision for night vision, intimidating glare for terrifying howl.
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Rapier">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Elf"/>
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Rogue"/>
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Martial"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Melee"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_One_Handed"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Piercing"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
         <weapon_to_deity rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#CaydenCailean"/>
+        <resource_cost>20 gp</resource_cost>
+        <weapon_critical_modifier>18-20/x2</weapon_critical_modifier>
+        <weapon_critical_modifier>2 lbs.</weapon_critical_modifier>
+        <weapon_damage>1d6</weapon_damage>
     </owl:NamedIndividual>
     
 
@@ -14387,7 +14766,7 @@ Reqs: low-light vision for night vision, intimidating glare for terrifying howl.
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Reach_Weapon">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feature_Special_for_Weapon"/>
-        <special_feature_weapon rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Longspear"/>
+        <special_feature_to_weapon rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Longspear"/>
     </owl:NamedIndividual>
     
 
@@ -14864,6 +15243,20 @@ one pound of platinum: 500 gp
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Sap">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Rogue"/>
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Bludgeoning"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Light"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Martial"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Melee"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <resource_cost>1 gp</resource_cost>
+        <resource_weight>2 lbs.</resource_weight>
+        <weapon_critical_modifier>x2</weapon_critical_modifier>
+        <weapon_damage>1d6</weapon_damage>
     </owl:NamedIndividual>
     
 
@@ -14921,7 +15314,21 @@ one pound of platinum: 500 gp
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Scimitar">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon"/>
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Druid"/>
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Martial"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Melee"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_One_Handed"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Slashing"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
         <weapon_to_deity rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Sarenrae"/>
+        <resource_cost>15 gp</resource_cost>
+        <resource_weight>4 lbs.</resource_weight>
+        <weapon_critical_modifier>18-20/x2</weapon_critical_modifier>
+        <weapon_damage>1d6</weapon_damage>
     </owl:NamedIndividual>
     
 
@@ -15212,12 +15619,40 @@ one pound of platinum: 500 gp
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#ShortSword -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Shield_Heavy -->
 
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#ShortSword">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Monk"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Rogue"/>
-        <weapon_to_deity rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Norgorber"/>
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Shield_Heavy">
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Bludgeoning"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Martial"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Melee"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_One_Handed"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <weapon_critical_modifier>x2</weapon_critical_modifier>
+        <weapon_damage>1d4</weapon_damage>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Shield_Light -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Shield_Light">
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Bludgeoning"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Light"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Martial"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Melee"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <weapon_critical_modifier>x2</weapon_critical_modifier>
+        <weapon_damage>1d3</weapon_damage>
     </owl:NamedIndividual>
     
 
@@ -16336,7 +16771,7 @@ one pound of platinum: 500 gp
                 </owl:intersectionOf>
             </owl:Class>
         </rdf:type>
-        <weapon_special_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Brace_Weapon"/>
+        <weapon_to_special_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Brace_Weapon"/>
         <resource_cost>2 gp</resource_cost>
         <resource_weight>6 lbs.</resource_weight>
         <weapon_critical_modifier>x3</weapon_critical_modifier>
@@ -16788,6 +17223,63 @@ Saving throws DC against druid&apos;s spell: 10 + spell level + Wisdom modifier.
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Spiked_Armor -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Spiked_Armor">
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Light"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Martial"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Melee"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Piercing"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <weapon_critical_modifier>x2</weapon_critical_modifier>
+        <weapon_damage>1d6</weapon_damage>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Spiked_Shield_Heavy -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Spiked_Shield_Heavy">
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Martial"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Melee"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_One_Handed"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Piercing"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <weapon_critical_modifier>x2</weapon_critical_modifier>
+        <weapon_damage>1d6</weapon_damage>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Spiked_Shield_Light -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Spiked_Shield_Light">
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Light"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Martial"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Melee"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Piercing"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <weapon_critical_modifier>x2</weapon_critical_modifier>
+        <weapon_damage>1d4</weapon_damage>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#SpiritedChargeFeat -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#SpiritedChargeFeat">
@@ -16889,7 +17381,22 @@ Saving throws DC against druid&apos;s spell: 10 + spell level + Wisdom modifier.
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Starknife -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Starknife">
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Light"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Martial"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Melee"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Piercing"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
         <weapon_to_deity rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Desna"/>
+        <resource_cost>24 gp</resource_cost>
+        <resource_weight>3 lbs.</resource_weight>
+        <weapon_critical_modifier>x3</weapon_critical_modifier>
+        <weapon_damage>1d4</weapon_damage>
+        <weapon_range>20 ft.</weapon_range>
     </owl:NamedIndividual>
     
 
@@ -17369,6 +17876,30 @@ Saving throws DC against druid&apos;s spell: 10 + spell level + Wisdom modifier.
         <rule_sets_character_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Character_Speed"/>
         <duration>always active while the barbarian is raging</duration>
         <output>+5 foot enhancement bonus per power selection</output>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Sword_Short -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Sword_Short">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Monk"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Rogue"/>
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Light"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Martial"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Melee"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Piercing"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <weapon_to_deity rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Norgorber"/>
+        <resource_cost>10 gp</resource_cost>
+        <resource_weight>2 lbs.</resource_weight>
+        <weapon_critical_modifier>19-20/x2</weapon_critical_modifier>
+        <weapon_damage>1d6</weapon_damage>
     </owl:NamedIndividual>
     
 
@@ -17900,7 +18431,23 @@ Trap sense bonuses gained from multiple classes stack.</output>
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Trident -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Trident">
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Martial"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Melee"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_One_Handed"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Piercing"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
         <weapon_to_deity rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Gozreh"/>
+        <weapon_to_special_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Brace_Weapon"/>
+        <resource_cost>15 gp</resource_cost>
+        <resource_weight>4 lbs.</resource_weight>
+        <weapon_critical_modifier>x2</weapon_critical_modifier>
+        <weapon_damage>1d8</weapon_damage>
+        <weapon_range>10 ft.</weapon_range>
     </owl:NamedIndividual>
     
 
@@ -17918,6 +18465,14 @@ Trap sense bonuses gained from multiple classes stack.</output>
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Trip_Rule">
         <rule_action rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Trip"/>
         <rule_picks rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Sickle"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Trip_Weapon -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Trip_Weapon">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feature_Special_for_Weapon"/>
     </owl:NamedIndividual>
     
 
@@ -18352,7 +18907,21 @@ warded area.</pf1ed:for_future_correction>
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Warhammer">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Dwarf"/>
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Bludgeoning"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Martial"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_Melee"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Weapon_One_Handed"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
         <weapon_to_deity rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Torag"/>
+        <resource_cost>12 gp</resource_cost>
+        <resource_weight>5 lbs.</resource_weight>
+        <weapon_critical_modifier>x3</weapon_critical_modifier>
+        <weapon_damage>1d8</weapon_damage>
     </owl:NamedIndividual>
     
 
