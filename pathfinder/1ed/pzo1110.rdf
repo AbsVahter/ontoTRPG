@@ -792,6 +792,20 @@
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Check -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Check">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Check"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#rule_condition"/>
+                <owl:hasValue>Ability roll &gt;= DC.</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Modifier -->
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Modifier">
@@ -944,6 +958,20 @@
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Action_Movement -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Action_Movement">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Action_Ingame"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#action_to_rule"/>
+                <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Movement_Distance_Rule"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Action_Nonprovoking_Attack_of_Opportunity -->
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Action_Nonprovoking_Attack_of_Opportunity">
@@ -1042,10 +1070,18 @@
     <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Armor_Heavy">
         <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Armor"/>
         <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#is_picked_by_rule"/>
-                <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Sleeping_in_Armor_Rule"/>
-            </owl:Restriction>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#is_picked_by_rule"/>
+                        <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Movement_Distance_Rule"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#is_picked_by_rule"/>
+                        <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Sleeping_in_Armor_Rule"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
         </rdfs:subClassOf>
     </owl:Class>
     
@@ -1167,6 +1203,14 @@
                 <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Character_Vital_Statistics_Setter"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Check -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Check">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Rule_of_Game"/>
     </owl:Class>
     
 
@@ -2159,6 +2203,36 @@
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feat_Rule -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feat_Rule">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Class_Ability_Rule"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feat_Skill_Modifier -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feat_Skill_Modifier">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feat"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feat_Skill_Modifier_Rule -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feat_Skill_Modifier_Rule">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feat_Rule"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#rule_output"/>
+                <owl:hasValue>Skill roll: +2 + (2 if ranks &gt; =10).</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feature -->
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feature"/>
@@ -2496,6 +2570,20 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Movement_Rule -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Movement_Rule">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Rule_of_Game"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#rule_to_environment"/>
+                <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Distance"/>
+            </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
     
@@ -3032,11 +3120,11 @@
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check -->
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Rule_of_Game"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Check"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#rule_condition"/>
-                <owl:hasValue>Skill roll &gt;= skill DC.</owl:hasValue>
+                <owl:hasValue>Skill roll &gt;= DC.</owl:hasValue>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -4738,10 +4826,30 @@
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Check_Constitution_Forced_March -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Check_Constitution_Forced_March">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Check"/>
+        <rule_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Movement_Overland_Rule"/>
+        <rule_condition>Character walks for more than 8 hours.</rule_condition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Check_DC_Constitution_Forced_March -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Check_DC_Constitution_Forced_March">
+        <rule_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Check_Constitution_Forced_March"/>
+        <rule_output>DC: 10 + 2 * (walking hours - 8).</rule_output>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Modifier_Charisma -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Modifier_Charisma">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Modifier"/>
+        <rule_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_DC_Diplomacy_Change_Attitude"/>
         <rule_use_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Charisma"/>
     </owl:NamedIndividual>
     
@@ -4788,6 +4896,55 @@
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Modifier_Wisdom">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Modifier"/>
         <rule_use_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Wisdom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Roll_Charisma -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Roll_Charisma">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Roll"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Roll_Constitution -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Roll_Constitution">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Roll"/>
+        <rule_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Check_Constitution_Forced_March"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Roll_Dexterity -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Roll_Dexterity">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Roll"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Roll_Intelligence -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Roll_Intelligence">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Roll"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Roll_Strength -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Roll_Strength">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Roll"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Roll_Wisdom -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Roll_Wisdom">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Roll"/>
     </owl:NamedIndividual>
     
 
@@ -5563,6 +5720,26 @@ This attack bypasses an amount of damage reduction and hardness equal to your cl
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Attack_of_Opportunity_Rule">
         <rule_from_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#QuickReflexesRule"/>
         <rule_from_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#UnexpectedStrikeChecker"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Attitude_to_NPC_Changed_Status -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Attitude_to_NPC_Changed_Status">
+        <rule_sets_character_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Character_Attitude_to_NPC"/>
+        <status_duration>1d4+ hours.</status_duration>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Attitude_to_NPC_Steps -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Attitude_to_NPC_Steps">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Rule_of_Game"/>
+        <rule_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_Diplomacy_Change_Attitude"/>
+        <rule_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_Diplomacy_Request"/>
+        <rule_output>Hostile -&gt; Unfriendly -&gt; Indifferent -&gt; Friedly -&gt; Helpful</rule_output>
     </owl:NamedIndividual>
     
 
@@ -6485,14 +6662,6 @@ Money: - cost of item.</rule_output>
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#ChaRoll -->
-
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#ChaRoll">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Roll"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#ChaZero -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#ChaZero">
@@ -6677,6 +6846,15 @@ Will save DC = 10 + 1/2 cleric level + charisma modifier + (2 if glory domain).<
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Character_Attitude_to_NPC -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Character_Attitude_to_NPC">
+        <feature_is_used_by_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_DC_Diplomacy_Change_Attitude"/>
+        <rdfs:comment>{NPC: attitude}</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Character_Class_Levels -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Character_Class_Levels">
@@ -6690,6 +6868,7 @@ Will save DC = 10 + 1/2 cleric level + charisma modifier + (2 if glory domain).<
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Character_Combat_Maneur_Defense">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Character_Feature"/>
+        <feature_is_used_by_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_DC_Acrobatics_Threatened_Square"/>
     </owl:NamedIndividual>
     
 
@@ -6903,7 +7082,9 @@ Will save DC = 10 + 1/2 cleric level + charisma modifier + (2 if glory domain).<
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Character_Speed">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Character_Feature"/>
+        <feature_is_used_by_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Movement_Distance_Rule"/>
         <feature_is_used_by_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_DC_Acrobatics_Surface"/>
+        <feature_is_used_by_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_DC_Acrobatics_Threatened_Square"/>
         <feature_is_used_by_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Roll_Acrobatics_Jump"/>
         <rdfs:comment>Base racial speed; actual speed.</rdfs:comment>
     </owl:NamedIndividual>
@@ -7676,6 +7857,16 @@ Each attempt to use this ability consumes 1 round of its duration, whether or no
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Combatant -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Combatant">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Status"/>
+        <rule_blocks_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_Diplomacy_Change_Attitude"/>
+        <rule_blocks_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_Diplomacy_Request"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#CommandPlants -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#CommandPlants">
@@ -7698,14 +7889,6 @@ Each attempt to use this ability consumes 1 round of its duration, whether or no
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#ComprehendLangs">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Spell_Cleric_Know"/>
         <haveSpellFeature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Spell_Level_1"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#ConRoll -->
-
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#ConRoll">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Roll"/>
     </owl:NamedIndividual>
     
 
@@ -7750,6 +7933,7 @@ Each attempt to use this ability consumes 1 round of its duration, whether or no
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Constitution">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Score"/>
+        <feature_is_used_by_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Movement_Local_Rule"/>
         <rdfs:comment>Constitution represents your character’s health and stamina. A Constitution bonus increases a character’s hit points, so the ability is important for all classes. Some creatures, such as undead and constructs, do not have a Constitution score. Their modif ier is +0 for any Constitution-based checks.</rdfs:comment>
         <abbreviation>Con</abbreviation>
     </owl:NamedIndividual>
@@ -8605,14 +8789,6 @@ Critical hit: autoconfirm.</rule_output>
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#DetectThoughts">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Spell_Cleric_Know"/>
         <haveSpellFeature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Spell_Level_2"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#DexRoll -->
-
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#DexRoll">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Roll"/>
     </owl:NamedIndividual>
     
 
@@ -10276,7 +10452,7 @@ Dexterity: -2.</rule_output>
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feat_Acrobatic -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feat_Acrobatic">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feat"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feat_Skill_Modifier"/>
         <special_ability_is_determined_by_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feat_Acrobatic_Rule"/>
     </owl:NamedIndividual>
     
@@ -10287,7 +10463,24 @@ Dexterity: -2.</rule_output>
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feat_Acrobatic_Rule">
         <rule_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Roll_Acrobatics"/>
         <rule_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Roll_Fly"/>
-        <rule_output>Skill roll: +2 + (2 if ranks &gt; =10).</rule_output>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feat_Persuasive -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feat_Persuasive">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feat_Skill_Modifier"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feat_Persuasive_Rule -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feat_Persuasive_Rule">
+        <rule_determines_special_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feat_Persuasive"/>
+        <rule_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Roll_Diplomacy"/>
+        <rule_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Roll_Intimidate"/>
     </owl:NamedIndividual>
     
 
@@ -10296,6 +10489,14 @@ Dexterity: -2.</rule_output>
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feat_Prof_Armor_Heavy">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feat_Prof_Armor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feat_Prof_Armor_Heavy_Rule -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feat_Prof_Armor_Heavy_Rule">
+        <rule_determines_special_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feat_Prof_Armor_Heavy"/>
     </owl:NamedIndividual>
     
 
@@ -11702,6 +11903,26 @@ DC for these spells: 10 + the spell’s level + the gnome’s Charisma modifier.
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Hampered_Movement_Condition -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Hampered_Movement_Condition">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Environment"/>
+        <environment_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Hampered_Movement_Condition_Rule"/>
+        <environment_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Movement_Tactical_Rule"/>
+        <rule_output>Condition: difficult terrain; obstacle; poor visibility.</rule_output>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Hampered_Movement_Condition_Rule -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Hampered_Movement_Condition_Rule">
+        <rule_blocks_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Charge_Rule"/>
+        <rule_blocks_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Run_Rule"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#HandOfTheAcolyte -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#HandOfTheAcolyte">
@@ -11834,14 +12055,6 @@ DC for these spells: 10 + the spell’s level + the gnome’s Charisma modifier.
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#HeatMetal">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Spell_Cleric_Sun"/>
         <haveSpellFeature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Spell_Level_2"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#HeavyArmorProfFeatRule -->
-
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#HeavyArmorProfFeatRule">
-        <rule_determines_special_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feat_Prof_Armor_Heavy"/>
     </owl:NamedIndividual>
     
 
@@ -12013,6 +12226,23 @@ Hit dices: + hit dice by class.</rule_output>
         <race_venerable_age rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">70</race_venerable_age>
         <race_weight_multiplier rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5</race_weight_multiplier>
         <rdfs:seeAlso rdf:resource="https://www.aonprd.com/RacesDisplay.aspx?ItemName=Human"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Hustle -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Hustle">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Action_Movement"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Hustle_Rule -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Hustle_Rule">
+        <rule_blocks_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Movement_Overland_Rule"/>
+        <rule_to_action rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Hustle"/>
     </owl:NamedIndividual>
     
 
@@ -12745,14 +12975,6 @@ Duration: as long as the targets are able to witness the performance.</rule_outp
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#IntRoll -->
-
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#IntRoll">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Roll"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#IntZero -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#IntZero">
@@ -12768,6 +12990,7 @@ Duration: as long as the targets are able to witness the performance.</rule_outp
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Intelligence">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Score"/>
+        <feature_is_used_by_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Low_Intelligence_Rule"/>
         <rdfs:comment>Intelligence determines how well your character learns and reasons. This ability is important for wizards because it affects their spellcasting ability in many ways. Creatures of animal-level instinct have Intelligence scores of 1 or 2. Any creature capable of understanding speech has a score of at least 3. Some creatures do not possess an Intelligence score. Their modifier is +0 for any Intelligence-based skills or checks.</rdfs:comment>
         <abbreviation>Int</abbreviation>
     </owl:NamedIndividual>
@@ -13872,6 +14095,16 @@ Animal companion&apos;s level: +1 if selected druid class and appropriate nature
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Low_Intelligence_Rule -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Low_Intelligence_Rule">
+        <rule_blocks_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_Diplomacy_Change_Attitude"/>
+        <rule_blocks_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_Diplomacy_Request"/>
+        <rule_condition>Intelligence score &lt;= 3.</rule_condition>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#LungeFeat -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#LungeFeat">
@@ -14478,10 +14711,55 @@ Save DC to disbelieve this effect: 10 + 1/2 cleric level + Wisdom modifier.</rul
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Move_through_Threatened_Square_while_Prone_Rule">
         <rule_from_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Move_through_Threatened_Square_Rule"/>
         <rule_from_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Prone"/>
-        <rule_from_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_Acrobatics_Move_through_Threatened_Square"/>
         <rule_to_action rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Move_through_Threatened_Square_while_Prone"/>
         <rule_condition>Successful acrobatics check.</rule_condition>
         <rule_distance>5 ft.</rule_distance>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Movement_Distance_Rule -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Movement_Distance_Rule">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Movement_Rule"/>
+        <rule_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Movement_Local_Rule"/>
+        <rule_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Movement_Overland_Rule"/>
+        <rule_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Movement_Tactical_Rule"/>
+        <rule_output>Distance: {walk: 1; hustle: 2; run: 4 - (1 if heavy armor)} * speed * {tactical: 1; local: 10; overland, hour: 100; overland, day: 800} ft.</rule_output>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Movement_Local_Rule -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Movement_Local_Rule">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Movement_Rule"/>
+        <rule_condition>Can run for (constitution score) rounds without needing to rest.</rule_condition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Movement_Overland_Rule -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Movement_Overland_Rule">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Movement_Rule"/>
+        <rule_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Nonlethal_Damage_Roll"/>
+        <status_cause_to_status rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Fatigued"/>
+        <rule_condition>Hustle: 1 hour without rest.</rule_condition>
+        <rule_output>Nonlethal damage: 2 ^ (hours of hustle - 2) where (hours of hustle) &gt; 1.
+Nonlethal damage: 1d6 if failed forced march check.
+Fatigued: nonlethal damage &gt; 0.
+Distance: (distance by speed) * (terrain modifier), where (terrain modifier) = {terrain: [highway, road or trail, trackless]} = {moor or plains: [1, 1, 3/4]; forest: [1, 1, 1/2]; frozen tundra: [1, 3/4, 3/4]; hills or swamp: [1, 3/4, 1/2]; jungle: [1, 3/4, 1/4]; sandy desert: [1, 1/2, 1/2]; mountains: [3/4, 3/4, 1/2]}.</rule_output>
+        <pf1ed:for_future_correction>Eliminating the nonlethal damage also eliminates the fatigue.</pf1ed:for_future_correction>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Movement_Tactical_Rule -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Movement_Tactical_Rule">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Movement_Rule"/>
+        <rule_output>Distance: min (5 ft., one round distance / (2 ^ (hampered conditions)).</rule_output>
     </owl:NamedIndividual>
     
 
@@ -14675,6 +14953,12 @@ Save DC to disbelieve this effect: 10 + 1/2 cleric level + Wisdom modifier.</rul
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Nonlethal_Damage_Roll -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Nonlethal_Damage_Roll"/>
+    
+
+
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Nonlethal_Weapon -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Nonlethal_Weapon">
@@ -14771,6 +15055,7 @@ Undead</pf1ed:for_future_correction>
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Opponent -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Opponent">
+        <rule_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_DC_Acrobatics_Threatened_Square"/>
         <status_duration>period of confrontation</status_duration>
     </owl:NamedIndividual>
     
@@ -14890,14 +15175,6 @@ Undead</pf1ed:for_future_correction>
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#PerceptionSkillDC -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#PerceptionSkillDC"/>
-    
-
-
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#PersuasiveFeat -->
-
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#PersuasiveFeat">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feat"/>
-    </owl:NamedIndividual>
     
 
 
@@ -15269,7 +15546,9 @@ A druid who wears prohibited armor or uses a prohibited shield is unable to cast
 
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Prone -->
 
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Prone"/>
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Prone">
+        <rule_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_DC_Acrobatics_Threatened_Square"/>
+    </owl:NamedIndividual>
     
 
 
@@ -16134,7 +16413,7 @@ one pound of platinum: 500 gp
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Run -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Run">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Action_Ingame"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Action_Movement"/>
     </owl:NamedIndividual>
     
 
@@ -17009,8 +17288,8 @@ Prone for failed check after taking damage.</rule_output>
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_Acrobatics_Move_through_Threatened_Square">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check"/>
         <rule_blocks_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Move_through_Threatened_Square_Rule"/>
-        <rule_from_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Roll_Acrobatics"/>
         <rule_sets_character_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Character_Speed"/>
+        <rule_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Move_through_Threatened_Square_while_Prone_Rule"/>
         <rule_use_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Character_Speed"/>
         <rule_condition>Actual speed &gt;= base racial speed.</rule_condition>
         <rule_output>Speed: half or full speed by choice.</rule_output>
@@ -17061,12 +17340,73 @@ severely unsteady (earthquake): +10
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_DC_Acrobatics_Threatened_Square -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_DC_Acrobatics_Threatened_Square">
-        <rule_from_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Opponent"/>
-        <rule_from_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Prone"/>
         <rule_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_Acrobatics_Move_through_Threatened_Square"/>
-        <rule_use_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Character_Combat_Maneur_Defense"/>
-        <rule_use_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Character_Speed"/>
         <rule_output>DC: opponent&apos;s combat maneur defense + (5 if move through enemy&apos;s space) + (10 if full speed) + (5 if prone) + 2 for each additional avoided opponent + DC modifier.</rule_output>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_DC_Diplomacy_Change_Attitude -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_DC_Diplomacy_Change_Attitude">
+        <rule_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_DC_Diplomacy_Request"/>
+        <rule_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_Diplomacy_Change_Attitude"/>
+        <rule_output>DC = target&apos;s charisma modifier + {hostile: 25; unfriendly: 20; indifferent: 15; friendly: 10; helpful: 0}.</rule_output>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_DC_Diplomacy_Gather_Information -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_DC_Diplomacy_Gather_Information">
+        <rule_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_Diplomacy_Gather_Information"/>
+        <rule_output>DC: {rumors: 10; secret knowledge: 20+}.</rule_output>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_DC_Diplomacy_Request -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_DC_Diplomacy_Request">
+        <rule_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_Diplomacy_Request"/>
+        <rule_output>DC: attitude DC + {give simple advice or directions: -5; give detailed advice or simple aid: 0; reveal an unimportant secret or give lengthy or complicated aid: +5; give dangerous aid: +10; reveal an important secret: +10+; give aid that could result in punishment: +15+; additional requests: +5 per request}.</rule_output>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_Diplomacy_Change_Attitude -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_Diplomacy_Change_Attitude">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check"/>
+        <status_cause_to_status rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Attitude_to_NPC_Changed_Status"/>
+        <rule_condition>Intelligence score of target &gt; 3 and out of combat..</rule_condition>
+        <rule_output>Attitude: + 1 step + (1 step if check&apos;s delta &gt;= 5) - (1 step if check&apos;s delta &lt; -4).</rule_output>
+        <rule_uses>Once per day.</rule_uses>
+        <status_duration>1 minute</status_duration>
+        <pf1ed:for_future_correction>You cannot use Diplomacy against a creature that does not understand you &lt;...&gt;
+Diplomacy is generally ineffective &lt;...&gt; against creatures that intend to harm you or your allies in the immediate future.</pf1ed:for_future_correction>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_Diplomacy_Gather_Information -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_Diplomacy_Gather_Information">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check"/>
+        <rule_output>Information</rule_output>
+        <status_duration>1d4 hours +</status_duration>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_Diplomacy_Request -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_Diplomacy_Request">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check"/>
+        <rule_condition>Attitude &gt;= indifferent.</rule_condition>
+        <rule_output>Successful request.</rule_output>
+        <rule_uses>Once per day per request.</rule_uses>
+        <status_duration>1+ rounds.</status_duration>
     </owl:NamedIndividual>
     
 
@@ -17075,6 +17415,22 @@ severely unsteady (earthquake): +10
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_Knowledge">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Rule_of_Game"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_Perception -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_Perception">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_Survival -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_Survival">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check"/>
     </owl:NamedIndividual>
     
 
@@ -17400,6 +17756,7 @@ severely unsteady (earthquake): +10
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Roll_Acrobatics">
         <rule_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_Acrobatics_Fall"/>
         <rule_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_Acrobatics_Move_on_Surface"/>
+        <rule_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_Acrobatics_Move_through_Threatened_Square"/>
         <rule_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Roll_Acrobatics_Jump"/>
         <rule_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#SureFootedRule"/>
         <rule_use_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Acrobatics"/>
@@ -17456,6 +17813,9 @@ severely unsteady (earthquake): +10
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Roll_Diplomacy">
         <rule_is_blocked_by_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#RageBlocker"/>
+        <rule_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_Diplomacy_Change_Attitude"/>
+        <rule_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_Diplomacy_Gather_Information"/>
+        <rule_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_Diplomacy_Request"/>
         <rule_use_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Diplomacy"/>
     </owl:NamedIndividual>
     
@@ -17540,6 +17900,7 @@ severely unsteady (earthquake): +10
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Roll_Perception -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Roll_Perception">
+        <rule_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_Perception"/>
         <rule_use_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Perception"/>
     </owl:NamedIndividual>
     
@@ -17609,6 +17970,7 @@ severely unsteady (earthquake): +10
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Roll_Survival -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Roll_Survival">
+        <rule_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Check_Survival"/>
         <rule_use_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Survival"/>
     </owl:NamedIndividual>
     
@@ -18837,14 +19199,6 @@ Saving throws DC against druid&apos;s spell: 10 + spell level + Wisdom modifier.
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#StrRoll -->
-
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#StrRoll">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Roll"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#StrZero -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#StrZero">
@@ -18905,8 +19259,8 @@ Saving throws DC against druid&apos;s spell: 10 + spell level + Wisdom modifier.
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#StrengthSurgeClericStatus -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#StrengthSurgeClericStatus">
+        <rule_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Roll_Strength"/>
         <rule_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#MeleeAttackRule"/>
-        <rule_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#StrRoll"/>
         <rule_use_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Character_Class_Levels"/>
         <rule_output>Melee attack roll, strength-based skill rolls, strength roll: + min (1, 1/2 cleric level) enchancement bonus.</rule_output>
         <pf1ed:for_future_correction>combat maneuver checks that rely on Strength</pf1ed:for_future_correction>
@@ -18918,9 +19272,9 @@ Saving throws DC against druid&apos;s spell: 10 + spell level + Wisdom modifier.
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#StrengthSurgeRule">
         <rule_determines_special_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#StrengthSurge"/>
+        <rule_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Roll_Strength"/>
         <rule_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#CMBRoll"/>
         <rule_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#CMDRoll"/>
-        <rule_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#StrRoll"/>
         <rule_use_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Character_Class_Levels"/>
         <rule_output>+ barbarian level on one Strength check or combat maneuver check, or to Combat Maneuver Defense when an opponent attempts a maneuver against her.</rule_output>
         <rule_uses>once per rage</rule_uses>
@@ -19308,6 +19662,15 @@ attempted carries no penalties for failure.</rule_condition>
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Terrain_for_Overland_Movement -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Terrain_for_Overland_Movement">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Environment"/>
+        <environment_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Movement_Overland_Rule"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#TerrifyingHowl -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#TerrifyingHowl">
@@ -19619,7 +19982,7 @@ attempted carries no penalties for failure.</rule_condition>
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#TouchedByGloryStatus -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#TouchedByGloryStatus">
-        <rule_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#ChaRoll"/>
+        <rule_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Roll_Charisma"/>
         <rule_use_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Character_Class_Levels"/>
         <status_from_status_cause rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#TouchOfGloryRule"/>
         <rule_output>Charisma skill roll or charisma roll: + (cleric level).</rule_output>
@@ -20229,6 +20592,23 @@ For other types: - min (1, 1/2 cleric level).</rule_output>
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Walk -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Walk">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Action_Movement"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Walk_Rule -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Walk_Rule">
+        <rule_to_action rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Walk"/>
+        <rule_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Check_DC_Constitution_Forced_March"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#WallOfFire -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#WallOfFire">
@@ -20647,14 +21027,6 @@ warded area.</pf1ed:for_future_correction>
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#WisRoll -->
-
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#WisRoll">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Roll"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#WisZero -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#WisZero">
@@ -20879,8 +21251,18 @@ This bonus also applies to spells and effects that utilize or target plants, suc
     </owl:Restriction>
     <owl:Restriction>
         <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#rule_determines_special_ability"/>
+        <owl:someValuesFrom rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feat"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feat_Rule"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#rule_determines_special_ability"/>
         <owl:someValuesFrom rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feat_Prof_Weapon"/>
         <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feat_Prof_Weapon_Rule"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#rule_determines_special_ability"/>
+        <owl:someValuesFrom rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feat_Skill_Modifier"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feat_Skill_Modifier_Rule"/>
     </owl:Restriction>
     <owl:Restriction>
         <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#rule_sets_character_feature"/>
