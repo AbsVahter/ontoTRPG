@@ -45,43 +45,43 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Banning_Use_of_Spring -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Community_Church_of_Iomedae -->
 
-    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Banning_Use_of_Spring">
-        <pzo9500:event_to_motive rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500_homebrew.rdf#Motive_Solve_Problem_with_Water"/>
-    </rdf:Description>
-    
-
-
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Church_of_Iomedae -->
-
-    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Church_of_Iomedae">
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Community_Church_of_Iomedae">
         <pzo9500:subject_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500_homebrew.rdf#Clerics_Met_PCs"/>
         <pzo9500:subject_to_motive rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500_homebrew.rdf#Motive_Disease_Warning_for_Newcomers"/>
     </rdf:Description>
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Laurel_Found_Possible_Treatment -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Community_PCs -->
 
-    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Laurel_Found_Possible_Treatment">
-        <pzo9500:event_to_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Falcon~s_Hollow"/>
-    </rdf:Description>
-    
-
-
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Magistrate_Vamros_Harg -->
-
-    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Magistrate_Vamros_Harg">
-        <pzo9500:subject_to_motive rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500_homebrew.rdf#Motive_Solve_Problem_with_Water"/>
-    </rdf:Description>
-    
-
-
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#PCs -->
-
-    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#PCs">
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Community_PCs">
         <pzo9500:subject_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500_homebrew.rdf#Clerics_Met_PCs"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_Banning_Use_of_Spring -->
+
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_Banning_Use_of_Spring">
+        <pzo9500:event_to_motive rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500_homebrew.rdf#Motive_Solve_Problem_with_Water"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_Laurel_Found_Possible_Treatment -->
+
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_Laurel_Found_Possible_Treatment">
+        <pzo9500:event_to_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Settlement_Falcon~s_Hollow"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Magistrate_Vamros_Harg -->
+
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Magistrate_Vamros_Harg">
+        <pzo9500:subject_to_motive rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500_homebrew.rdf#Motive_Solve_Problem_with_Water"/>
     </rdf:Description>
     
 
@@ -90,7 +90,7 @@
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500_homebrew.rdf#Clerics_Met_PCs">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_Part_1_an_Elusive_Antidote"/>
-        <pzo9500:event_to_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Falcon~s_Hollow"/>
+        <pzo9500:event_to_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Settlement_Falcon~s_Hollow"/>
     </owl:NamedIndividual>
     
 
@@ -125,7 +125,7 @@
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500_homebrew.rdf#Emphasize_PCs~_Temperament">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500_homebrew.rdf#Motive_Meta"/>
-        <pzo9500:motive_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#PCs_Bypass_Line_to_Roots_and_Remedies"/>
+        <pzo9500:motive_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_PCs_Bypass_Line_to_Roots_and_Remedies"/>
     </owl:NamedIndividual>
 </rdf:RDF>
 

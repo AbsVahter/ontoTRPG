@@ -141,28 +141,28 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#dateOfRelease -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#book_date_of_release -->
 
-    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#dateOfRelease">
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#book_date_of_release">
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#Book"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#level -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#book_pages -->
 
-    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#level">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#Book_Gamemastery_Module"/>
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#book_pages">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#Book"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#pages -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#module_level -->
 
-    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#pages">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#Book"/>
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#module_level">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#Book_Gamemastery_Module"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     </owl:DatatypeProperty>
     
@@ -363,6 +363,8 @@
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#pzo1110">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#Book"/>
+        <pf1meta:book_date_of_release rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-05-30T00:00:00</pf1meta:book_date_of_release>
+        <pf1meta:book_pages rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">576</pf1meta:book_pages>
         <pf1meta:link_ontology rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf"/>
     </owl:NamedIndividual>
     
@@ -372,9 +374,9 @@
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#pzo9500">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1meta.rdf#Book_Gamemastery_Module"/>
-        <pf1meta:dateOfRelease rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2007-06-01T00:00:00</pf1meta:dateOfRelease>
-        <pf1meta:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</pf1meta:level>
-        <pf1meta:pages rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16</pf1meta:pages>
+        <pf1meta:book_date_of_release rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2007-06-01T00:00:00</pf1meta:book_date_of_release>
+        <pf1meta:book_pages rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16</pf1meta:book_pages>
+        <pf1meta:module_level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</pf1meta:module_level>
         <pf1meta:link_ontology rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf"/>
     </owl:NamedIndividual>
     
