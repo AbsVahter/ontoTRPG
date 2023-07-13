@@ -72,9 +72,9 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#rule_from_rule -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#rule_for_rule -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#rule_from_rule"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#rule_for_rule"/>
     
 
 
@@ -90,15 +90,15 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#rule_to_rule -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#rule_uses_feature -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#rule_to_rule"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#rule_uses_feature"/>
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#rule_use_feature -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#rule_uses_rule -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#rule_use_feature"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#rule_uses_rule"/>
     
 
 
@@ -132,10 +132,10 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#creature_to_npc -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#creature_to_subject -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#creature_to_npc">
-        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#npc_to_creature"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#creature_to_subject">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#subject_to_creature"/>
     </owl:ObjectProperty>
     
 
@@ -222,20 +222,20 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#event_to_rule -->
-
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#event_to_rule">
-        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#rule_to_event"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#event_to_subject -->
 
     <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#event_to_subject">
         <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#subject_to_event"/>
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event"/>
         <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Subject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#event_uses_rule -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#event_uses_rule">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#rule_for_event"/>
     </owl:ObjectProperty>
     
 
@@ -328,7 +328,7 @@
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#motive_targets_subject -->
 
     <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#motive_targets_subject">
-        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#subject_targets_of_motive"/>
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#subject_is_target_of_motive"/>
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Motive"/>
         <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Subject"/>
     </owl:ObjectProperty>
@@ -381,15 +381,6 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#npc_to_creature -->
-
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#npc_to_creature">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Subject_NPC"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Creature"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#npc_to_race -->
 
     <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#npc_to_race">
@@ -435,9 +426,9 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#rule_to_event -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#rule_for_event -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#rule_to_event">
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#rule_for_event">
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Gamerule"/>
         <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event"/>
     </owl:ObjectProperty>
@@ -454,9 +445,9 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#subject_targets_of_motive -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#subject_is_target_of_motive -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#subject_targets_of_motive">
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#subject_is_target_of_motive">
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Subject"/>
         <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Motive"/>
     </owl:ObjectProperty>
@@ -468,6 +459,15 @@
     <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#subject_to_alignment">
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Subject"/>
         <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feature_Alignment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#subject_to_creature -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#subject_to_creature">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Subject"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Creature"/>
     </owl:ObjectProperty>
     
 
@@ -763,12 +763,16 @@
                         <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Location_Darkmoon_Vale"/>
                     </owl:Restriction>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#event_to_rule"/>
-                        <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Rule_Darkmoon_Vale_Random_Encounter"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
                         <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#event_to_subject"/>
                         <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Community_PCs"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#event_uses_rule"/>
+                        <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Rule_Random_Encounter_Darkmoon_Vale"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#event_uses_rule"/>
+                        <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500_homebrew.rdf#Rule_Random_Encounter_Darkmoon_Vale_Day_or_Night"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -901,11 +905,11 @@
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#rule_from_rule"/>
+                        <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#rule_uses_rule"/>
                         <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Check_Skill_Knowledge"/>
                     </owl:Restriction>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#rule_to_event"/>
+                        <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#rule_for_event"/>
                         <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_PCs_Find_Locations_of_Ingredients"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
@@ -1027,6 +1031,12 @@
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment_Chaotic_Neutral -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment_Chaotic_Neutral"/>
+    
+
+
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment_Lawful_Evil -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment_Lawful_Evil"/>
@@ -1081,6 +1091,18 @@
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Check_Skill_Diplomacy_Request -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Check_Skill_Diplomacy_Request"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Check_Skill_Intimidate -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Check_Skill_Intimidate"/>
+    
+
+
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Check_Skill_Knowledge -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Check_Skill_Knowledge"/>
@@ -1111,6 +1133,12 @@
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Class_NPC_Warrior -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Class_NPC_Warrior"/>
+    
+
+
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Cleric -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Cleric"/>
@@ -1126,6 +1154,18 @@
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Darkvision -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Darkvision"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feat_Skill_Focus -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feat_Skill_Focus"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feat_Toughness -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feat_Toughness"/>
     
 
 
@@ -1177,6 +1217,12 @@
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ranger -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ranger"/>
+    
+
+
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Resource_Coin -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Resource_Coin"/>
@@ -1198,6 +1244,12 @@
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Scent -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Scent"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Size_Medium -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Size_Medium"/>
     
 
 
@@ -1243,9 +1295,27 @@
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Special_Ability_Constrict -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Special_Ability_Constrict"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Special_Ability_Grab -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Special_Ability_Grab"/>
+    
+
+
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Speed_Normal -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Speed_Normal"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Speed_Special -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Speed_Special"/>
     
 
 
@@ -1265,6 +1335,7 @@
         <pzo1110:creature_has_special_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Low_Light_Vision"/>
         <pzo1110:creature_has_special_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Scent"/>
         <pzo1110:creature_has_special_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Size_Tiny"/>
+        <pzo1110:creature_has_special_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Speed_Special"/>
         <pzo1110:creature_has_special_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Special_Ability_Attach"/>
         <pzo1110:creature_has_special_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Special_Ability_Blood_Drain"/>
         <pzo1110:creature_has_special_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Special_Ability_Diseased"/>
@@ -1274,6 +1345,7 @@
         <pzo1110:bestiary_experience_points rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">200</pzo1110:bestiary_experience_points>
         <pzo1110:bestiary_statistics>Initiative: +4;
 Perception: +1;
+Special speed: 10 ft and fly 40 ft.;
 Armor class: {standard: 16; touch: 16; flat-footed: 12};
 Hit points: 5 (1d10);
 Save: {Fortitude: +2; Reflex: +6; Will: +1};
@@ -1284,7 +1356,72 @@ Base attack bonus: +1;
 Combat maneur bonus: +3 or +11 grapple when attached;
 Combat maneur defense: 9 or 17 vs. trip;
 Skills: {fly: +8; stealth: +16}.</pzo1110:bestiary_statistics>
-        <pf1ed:for_future_correction>magical beast</pf1ed:for_future_correction>
+        <pf1ed:for_future_correction>magical beast
+fly 40 ft. (average)</pf1ed:for_future_correction>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Bestiary_Snake_Constrictor -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Bestiary_Snake_Constrictor">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Creature_Bestiary"/>
+        <pzo1110:bestiary_to_alignment rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment_Neutral"/>
+        <pzo1110:creature_has_special_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feat_Skill_Focus"/>
+        <pzo1110:creature_has_special_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feat_Toughness"/>
+        <pzo1110:creature_has_special_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Scent"/>
+        <pzo1110:creature_has_special_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Size_Medium"/>
+        <pzo1110:creature_has_special_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Special_Ability_Constrict"/>
+        <pzo1110:creature_has_special_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Special_Ability_Grab"/>
+        <pzo1110:creature_has_special_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Speed_Special"/>
+        <creature_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_Darkmoon_Vale_Random_Encounter_Giant_Moorsnake"/>
+        <pzo1110:bestiary_attacks>Melee: bite +5 (1d4 + 4 plus grab).</pzo1110:bestiary_attacks>
+        <pzo1110:bestiary_challenge_rating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</pzo1110:bestiary_challenge_rating>
+        <pzo1110:bestiary_experience_points rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">600</pzo1110:bestiary_experience_points>
+        <pzo1110:bestiary_statistics>Initiative: +3;
+Perception: +12;
+Speial speed: 20 ft., climb 20 ft., swim 20 ft.;
+Armor class: {standard: 15; touch: 13; flat-footed: 12};
+Hit points: 19 (3d8+6);
+Save: {Fortitude: +4; Reflex: +6; Will: +2};
+Abilities: {strength: 17; dexterity: 17; constitution: 12; intelligence: 1; wisdom: 12; charisma: 2};
+Base attack bonus: +2;
+Combat maneur bonus: +5 (+9 grapple);
+Combat maneur defense: 18 (can&apos;t be tripped);
+Skill Focus: perception;
+Skills: {acrobatics: +15; climb: +11; perception: +12; stealth: +11; swim: +11};
+Racial skill modifiers: {acrobatics: +8; perception: +4; stealth: +4}.</pzo1110:bestiary_statistics>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Bestiary_Wolf -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Bestiary_Wolf">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Creature_Bestiary"/>
+        <pzo1110:bestiary_to_alignment rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment_Neutral"/>
+        <pzo1110:creature_has_special_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Feat_Skill_Focus"/>
+        <pzo1110:creature_has_special_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Low_Light_Vision"/>
+        <pzo1110:creature_has_special_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Scent"/>
+        <pzo1110:creature_has_special_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Size_Medium"/>
+        <pzo1110:creature_has_special_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Speed_Special"/>
+        <creature_to_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Community_Wolves_of_Graypelt"/>
+        <pzo1110:bestiary_attacks>Melee: bite +2 (1d6 +1 plus trip).</pzo1110:bestiary_attacks>
+        <pzo1110:bestiary_challenge_rating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</pzo1110:bestiary_challenge_rating>
+        <pzo1110:bestiary_experience_points rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">400</pzo1110:bestiary_experience_points>
+        <pzo1110:bestiary_statistics>Initiative: +2;
+Perception: +8;
+Special speed: 50 ft;
+Armor class: {standard: 14; touch: 12; flat-footed: 12};
+Hit points: 13 (2d8+4);
+Save: {Fortitude: +5; Reflex: +5; Will: +1};
+Abilities: {strength: 13; dexterity: 15; constitution: 15; intelligence: 2; wisdom: 12; charisma: 6};
+Base attack bonus: +1;
+Combat maneur bonus: +2;
+Combat maneur defense: 14 (18 vs trip);
+Skill focus: perception;
+Skills: {perception: +8; stealth: +6; survival: +1 (+5 scent tracking)};
+Racial modifiers: survival +4 when tracking by scent.</pzo1110:bestiary_statistics>
     </owl:NamedIndividual>
     
 
@@ -1322,17 +1459,8 @@ Combat maneur defense: 10.</pzo1110:bestiary_statistics>
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Blackscour_Taint">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Subject_Threat"/>
         <subject_to_resource rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Resource_Blackscour"/>
-        <threat_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Blackscour_Taint_Rule"/>
+        <threat_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Rule_Blackscour_Taint"/>
         <rdfs:comment>Fungal disease</rdfs:comment>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Blackscour_Taint_Rule -->
-
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Blackscour_Taint_Rule">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Gamerule"/>
-        <pf1ed:for_future_correction>Blackscour taint is an ingested disease with an incubation period of 1d3 days. The disease deals 1d2 points of Constitution damage and is resisted with a DC 14 Fortitude save.</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
@@ -1386,10 +1514,21 @@ Combat maneur defense: 10.</pzo1110:bestiary_statistics>
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Community_Loggers -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Community_Loggers">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Subject_Community"/>
+        <subject_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_PCs_at_Lumber_Consortium_Camp"/>
+        <subject_to_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Location_Lumber_Consortium_Camp"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Community_Lumber_Consortium -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Community_Lumber_Consortium">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Subject_Community"/>
+        <subject_to_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Location_Lumber_Consortium_Camp"/>
         <subject_to_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Settlement_Falcon~s_Hollow"/>
     </owl:NamedIndividual>
     
@@ -1403,9 +1542,22 @@ Combat maneur defense: 10.</pzo1110:bestiary_statistics>
         <subject_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_PCs_Bypass_Line_to_Roots_and_Remedies"/>
         <subject_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_PCs_Find_Locations_of_Ingredients"/>
         <subject_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_PCs_are_Exploring_the_Vale"/>
+        <subject_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_PCs_at_Lumber_Consortium_Camp"/>
+        <subject_to_motive rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Motive_Find_Milon_Rhoddam"/>
         <subject_to_motive rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Motive_Secret_of_Unusual_Medicine"/>
         <subject_to_motive rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Motive_Assistance_to_Authorities_of_Falcon~s_Hollow"/>
         <rdfs:comment>Characters of players</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Community_Wolves_of_Graypelt -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Community_Wolves_of_Graypelt">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Subject_Community"/>
+        <subject_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_Darkmoon_Vale_Random_Encounter_Wolves"/>
+        <subject_to_motive rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Motive_Serve_to_Master_Graypelt"/>
+        <rdfs:comment>Two wolfes</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -1415,26 +1567,6 @@ Combat maneur defense: 10.</pzo1110:bestiary_statistics>
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Creature_Wyvern_Blue">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Creature"/>
         <creature_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_Darkmoon_Vale_Random_Encounter_Wyvern_Sighting"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Death_of_Infected_Relative_Rule -->
-
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Death_of_Infected_Relative_Rule">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Gamerule"/>
-        <pzo1110:rule_from_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Rule_Diceroll"/>
-        <pzo1110:rule_output>Death toll: 4d10.</pzo1110:rule_output>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Death_of_Infected_Townsfolks_Rule -->
-
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Death_of_Infected_Townsfolks_Rule">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Gamerule"/>
-        <pzo1110:rule_from_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Rule_Diceroll"/>
-        <pzo1110:rule_output>Death toll: sum (min(1, (days from the start of the adventure) - 1)d4 every day)</pzo1110:rule_output>
     </owl:NamedIndividual>
     
 
@@ -1520,6 +1652,8 @@ Combat maneur defense: 10.</pzo1110:bestiary_statistics>
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_Darkmoon_Vale_Random_Encounter_Wolves">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_Darkmoon_Vale_Random_Encounter"/>
+        <combat_encounter_level rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</combat_encounter_level>
+        <rdfs:comment>Two wolves in the service of Graypelt patrol the far reaches of their master’s claimed territory. They viciously attack the PCs on sight, but both flee if either is reduced to fewer than half hit points, returning to the monastery to inform their worg master.</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -1547,16 +1681,26 @@ Combat maneur defense: 10.</pzo1110:bestiary_statistics>
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_Death_of_Infected_Townsfolks">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_Part_0_Introduction"/>
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Process"/>
+        <event_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_Death_of_Nephew_of_Milon"/>
         <event_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_Too_Many_Deaths"/>
         <event_to_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Settlement_Falcon~s_Hollow"/>
         <event_to_motive rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Motive_Cure_Disease"/>
-        <event_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Death_of_Infected_Relative_Rule"/>
-        <event_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Death_of_Infected_Townsfolks_Rule"/>
         <event_to_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Blackscour_Taint"/>
         <event_to_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Community_Population_of_Falcon~s_Hollow"/>
+        <event_uses_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Rule_Death_of_Infected_Relative"/>
+        <event_uses_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Rule_Death_of_Infected_Townsfolks"/>
         <process_duration>Until a total of forty villagers have perished.</process_duration>
         <rdfs:comment>Slowly deteriorating, most of the afflicted can hang on for several more days, but already the weakest have succumbed, with their number growing daily.
 Those who are infected develop a hacking cough that quickly turns bloody if the disease is allowed to progress.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_Death_of_Nephew_of_Milon -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_Death_of_Nephew_of_Milon">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event"/>
+        <rdfs:comment>&lt;...&gt;Should more than thirty townsfolk die before the PCs return, Rhoddam’s young nephew is among the dead, and the canny tracker holds them responsible, possibly seeking revenge at a future date.&lt;...&gt;</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -1596,7 +1740,7 @@ Those who are infected develop a hacking cough that quickly turns bloody if the 
         <event_from_motive rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Motive_Cure_Disease"/>
         <event_to_motive rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Motive_Special_Ingredients_for_Medicine"/>
         <event_to_resource rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Resource_Old_Book_of_Laurel"/>
-        <event_to_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Herbalist_Laurel"/>
+        <event_to_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Laurel_Herbalist"/>
         <rdfs:comment>There’s one last treatment from the cultic appendices of the tome—scribed in a hand that is not Laurel’s grandmother’s—that the herbalist has yet to try, as she lacks three of the most important ingredients and would rather do what she can for the sick with what she knows than chase a fanciful salvation.</rdfs:comment>
     </owl:NamedIndividual>
     
@@ -1610,7 +1754,7 @@ Those who are infected develop a hacking cough that quickly turns bloody if the 
         <event_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_Banning_Use_of_Spring"/>
         <event_to_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Location_Brookman~s_Well"/>
         <event_to_resource rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Resource_Blackscour"/>
-        <event_to_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Herbalist_Laurel"/>
+        <event_to_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Laurel_Herbalist"/>
         <rdfs:comment>&lt;...&gt; Laurel has traced the source of the malady to Brookman’s well &lt;...&gt; and a rare fungus called blackscour.</rdfs:comment>
     </owl:NamedIndividual>
     
@@ -1644,7 +1788,7 @@ Those who are infected develop a hacking cough that quickly turns bloody if the 
         <event_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_PCs_Bypass_Line_to_Roots_and_Remedies"/>
         <event_to_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Location_Roots_and_Remedies"/>
         <event_to_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Community_PCs"/>
-        <event_to_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Herbalist_Laurel"/>
+        <event_to_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Laurel_Herbalist"/>
         <rdfs:comment>A DC 10 Knowledge (local) check or merely inquiring with any of the families of the afflicted reveals that Laurel is aiding the families of the sick as best she can &lt;...&gt;</rdfs:comment>
     </owl:NamedIndividual>
     
@@ -1654,7 +1798,19 @@ Those who are infected develop a hacking cough that quickly turns bloody if the 
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_PCs_are_Exploring_the_Vale">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_Part_2_Darkmoon_Vale"/>
+        <event_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_PCs_at_Lumber_Consortium_Camp"/>
         <event_to_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Location_Darkmoon_Vale"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_PCs_at_Lumber_Consortium_Camp -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_PCs_at_Lumber_Consortium_Camp">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_Part_2_Darkmoon_Vale"/>
+        <event_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_PCs_Find_Locations_of_Ingredients"/>
+        <event_to_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Location_Lumber_Consortium_Camp"/>
+        <rdfs:comment>The Lumber Consortium Camp cuts an ugly scar of stumps into a dense stand of proud darkwood trees. Five sturdy-looking log buildings - seemingly a bunkhouse, meal hall, office, barn, and smithy - stand with numerous wide carts and sleds amid the sawdust-covered clearing.</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -1664,9 +1820,9 @@ Those who are infected develop a hacking cough that quickly turns bloody if the 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_Too_Many_Deaths">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event"/>
         <event_to_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Settlement_Falcon~s_Hollow"/>
-        <event_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Death_of_Infected_Townsfolks_Rule"/>
         <event_to_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Community_PCs"/>
         <event_to_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Community_Population_of_Falcon~s_Hollow"/>
+        <event_uses_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Rule_Death_of_Infected_Townsfolks"/>
         <event_condition>Death toll = 40</event_condition>
         <rdfs:comment>Once forty townsfolk die from blackscour taint, the malady has run its course, killing all those unable to overcome the disease on their own. If the PCs take up the search for a cure and fail to return to Falcon’s Hollow by this time, they are widely shunned and blamed by many for the deaths of their loved ones.</rdfs:comment>
     </owl:NamedIndividual>
@@ -1686,7 +1842,7 @@ Those who are infected develop a hacking cough that quickly turns bloody if the 
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Image_Laurel_Portrait">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#Image"/>
-        <pf1ed:image_depicts rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Herbalist_Laurel"/>
+        <pf1ed:image_depicts rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Laurel_Herbalist"/>
         <schema:image>https://static.wikia.nocookie.net/pathfinder/images/9/9f/Laurel_face_card.jpg/revision/latest?cb=20091210205121</schema:image>
     </owl:NamedIndividual>
     
@@ -1718,6 +1874,16 @@ Those who are infected develop a hacking cough that quickly turns bloody if the 
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Location_Lumber_Consortium_Camp -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Location_Lumber_Consortium_Camp">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Location"/>
+        <location_inside_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Location_Darkmoon_Vale"/>
+        <rdfs:comment>The Lumber Consortium Camp cuts an ugly scar of stumps into a dense stand of proud darkwood trees. Five sturdy-looking log buildings - seemingly a bunkhouse, meal hall, office, barn, and smithy - stand with numerous wide carts and sleds amid the sawdust-covered clearing.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Location_Roots_and_Remedies -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Location_Roots_and_Remedies">
@@ -1741,6 +1907,7 @@ Those who are infected develop a hacking cough that quickly turns bloody if the 
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Motive_Aggresive_Fauna">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Motive"/>
+        <motive_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_Darkmoon_Vale_Random_Encounter_Giant_Moorsnake"/>
         <motive_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_Darkmoon_Vale_Random_Encounter_Giant_Mosquito"/>
         <motive_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_Darkmoon_Vale_Random_Encounter_Kobold_Shaman"/>
     </owl:NamedIndividual>
@@ -1756,11 +1923,30 @@ Those who are infected develop a hacking cough that quickly turns bloody if the 
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Motive_Cure_for_Nephew_of_Milon -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Motive_Cure_for_Nephew_of_Milon">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Motive"/>
+        <motive_targets_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Nephew_of_Milon"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Motive_Cure_for_Relative -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Motive_Cure_for_Relative">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Motive_Starter_for_PCs"/>
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Motive_vs_Blackscour_Taint"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Motive_Find_Milon_Rhoddam -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Motive_Find_Milon_Rhoddam">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Motive"/>
+        <motive_targets_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Milon_Rhoddam_Woodsman"/>
+        <motive_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_PCs_at_Lumber_Consortium_Camp"/>
     </owl:NamedIndividual>
     
 
@@ -1779,7 +1965,19 @@ Those who are infected develop a hacking cough that quickly turns bloody if the 
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Motive_Rat_Familiar_to_Kolmokmurk">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Motive"/>
-        <motive_targets_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Kobold_Kolmokmurk"/>
+        <motive_targets_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Kolmokmurk_Kobold"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Motive_Revenge_for_Death_of_Relative -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Motive_Revenge_for_Death_of_Relative">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Motive"/>
+        <motive_from_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_Death_of_Nephew_of_Milon"/>
+        <motive_targets_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Community_PCs"/>
+        <motive_targets_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Nephew_of_Milon"/>
+        <motive_to_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Milon_Rhoddam_Woodsman"/>
     </owl:NamedIndividual>
     
 
@@ -1789,6 +1987,15 @@ Those who are infected develop a hacking cough that quickly turns bloody if the 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Motive_Secret_of_Unusual_Medicine">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Motive_Starter_for_PCs"/>
         <motive_targets_resource rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Resource_Medicine_of_Laurel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Motive_Serve_to_Master_Graypelt -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Motive_Serve_to_Master_Graypelt">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Motive"/>
+        <motive_targets_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Graypelt"/>
     </owl:NamedIndividual>
     
 
@@ -1821,17 +2028,13 @@ Those who are infected develop a hacking cough that quickly turns bloody if the 
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Cleric_Lady_Cirthana -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Creeper_Rat -->
 
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Cleric_Lady_Cirthana">
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Creeper_Rat">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Subject_NPC"/>
-        <npc_to_class rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Cleric"/>
-        <npc_to_community rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Community_Church_of_Iomedae"/>
-        <subject_to_alignment rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment_Lawful_Good"/>
-        <subject_to_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Settlement_Falcon~s_Hollow"/>
-        <subject_to_motive rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Motive_Cure_Disease"/>
-        <rdfs:comment>Female cleric 2 of Iomedae.
-She shows any interest in stopping the illness and she lacks the ability to cure diseases.</rdfs:comment>
+        <subject_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_Exile_of_Kolmokmurk"/>
+        <subject_to_motive rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Motive_Rat_Familiar_to_Kolmokmurk"/>
+        <rdfs:comment>&lt;...&gt; The zombie kobold now wanders the forest, thoughtless and aimless, attended by Creeper, his dutiful rat familiar (who now lives in his skull). &lt;...&gt;</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -1850,6 +2053,14 @@ She shows any interest in stopping the illness and she lacks the ability to cure
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Graypelt -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Graypelt">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Subject_NPC"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Grung_Knifetongue -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Grung_Knifetongue">
@@ -1860,9 +2071,48 @@ She shows any interest in stopping the illness and she lacks the ability to cure
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Herbalist_Laurel -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Jarlben_Trookshavits_Foreman_of_Lumber_Camp -->
 
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Herbalist_Laurel">
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Jarlben_Trookshavits_Foreman_of_Lumber_Camp">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Subject_NPC"/>
+        <npc_to_community rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Community_Lumber_Consortium"/>
+        <subject_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_PCs_at_Lumber_Consortium_Camp"/>
+        <subject_to_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Location_Lumber_Consortium_Camp"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Kolmokmurk_Kobold -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Kolmokmurk_Kobold">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Subject_NPC"/>
+        <npc_to_community rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Community_Kobolds_of_Dwarven_Monastery"/>
+        <subject_to_creature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Bestiary_Zombie_Kobold"/>
+        <subject_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_Darkmoon_Vale_Random_Encounter_Kobold_Shaman"/>
+        <subject_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_Exile_of_Kolmokmurk"/>
+        <subject_to_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Location_Darkmoon_Vale"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Lady_Cirthana_Cleric -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Lady_Cirthana_Cleric">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Subject_NPC"/>
+        <npc_to_class rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Cleric"/>
+        <npc_to_community rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Community_Church_of_Iomedae"/>
+        <subject_to_alignment rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment_Lawful_Good"/>
+        <subject_to_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Settlement_Falcon~s_Hollow"/>
+        <subject_to_motive rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Motive_Cure_Disease"/>
+        <rdfs:comment>Female cleric 2 of Iomedae.
+She shows any interest in stopping the illness and she lacks the ability to cure diseases.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Laurel_Herbalist -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Laurel_Herbalist">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Subject_NPC"/>
         <npc_to_class rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Class_NPC_Expert"/>
         <npc_to_race rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Human"/>
@@ -1878,15 +2128,16 @@ Laurel does her best to help those who come to her in need, but her tight income
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Kobold_Kolmokmurk -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Logger_Random -->
 
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Kobold_Kolmokmurk">
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Logger_Random">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Subject_NPC"/>
-        <npc_to_community rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Community_Kobolds_of_Dwarven_Monastery"/>
-        <npc_to_creature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Bestiary_Zombie_Kobold"/>
-        <subject_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_Darkmoon_Vale_Random_Encounter_Kobold_Shaman"/>
-        <subject_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_Exile_of_Kolmokmurk"/>
-        <subject_to_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Location_Darkmoon_Vale"/>
+        <npc_to_class rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Class_NPC_Expert"/>
+        <npc_to_class rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Class_NPC_Warrior"/>
+        <npc_to_community rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Community_Loggers"/>
+        <npc_to_race rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Human"/>
+        <subject_to_alignment rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment_Chaotic_Neutral"/>
+        <rdfs:comment>CN male human warrior 1/expert 1</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -1904,13 +2155,28 @@ Laurel does her best to help those who come to her in need, but her tight income
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Rat_Creeper -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Milon_Rhoddam_Woodsman -->
 
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Rat_Creeper">
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Milon_Rhoddam_Woodsman">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Subject_NPC"/>
-        <subject_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_Exile_of_Kolmokmurk"/>
-        <subject_to_motive rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Motive_Rat_Familiar_to_Kolmokmurk"/>
-        <rdfs:comment>&lt;...&gt; The zombie kobold now wanders the forest, thoughtless and aimless, attended by Creeper, his dutiful rat familiar (who now lives in his skull). &lt;...&gt;</rdfs:comment>
+        <npc_to_class rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Class_NPC_Expert"/>
+        <npc_to_class rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ranger"/>
+        <npc_to_race rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Human"/>
+        <subject_to_alignment rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Alignment_Neutral"/>
+        <subject_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_Laurel_Asks_PCs_to_Find_Ingredients_for_Medicine"/>
+        <subject_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_PCs_Find_Locations_of_Ingredients"/>
+        <subject_to_motive rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Motive_Cure_for_Nephew_of_Milon"/>
+        <rdfs:comment>N male human expert 2 / ranger 2
+&lt;...&gt; blunt, quiet man, is one of the most experienced wanderers and woodsmen in the region.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Nephew_of_Milon -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Nephew_of_Milon">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Subject_NPC"/>
+        <subject_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_Death_of_Nephew_of_Milon"/>
     </owl:NamedIndividual>
     
 
@@ -1928,36 +2194,13 @@ Laurel does her best to help those who come to her in need, but her tight income
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Witch_Ulizmila -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Ulizmila_Witch -->
 
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Witch_Ulizmila">
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Ulizmila_Witch">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Subject_NPC"/>
         <subject_to_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Location_Ulizmila~s_Hut"/>
         <subject_to_resource rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Resource_Old_Book_of_Laurel"/>
         <rdfs:comment>Witch of Darkmoon Vale</rdfs:comment>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Woodsman_Milon_Rhoddam -->
-
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Woodsman_Milon_Rhoddam">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Subject_NPC"/>
-        <subject_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_Laurel_Asks_PCs_to_Find_Ingredients_for_Medicine"/>
-        <subject_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_PCs_Find_Locations_of_Ingredients"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#PCs_Bargain_Laurel_to_Find_Ingredients_Rule -->
-
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#PCs_Bargain_Laurel_to_Find_Ingredients_Rule">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Gamerule"/>
-        <pzo1110:rule_from_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Check_Skill_Diplomacy_Change_Attitude"/>
-        <rule_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_Laurel_Asks_PCs_to_Find_Ingredients_for_Medicine"/>
-        <pzo1110:rule_condition>Skill roll &gt;= 15</pzo1110:rule_condition>
-        <pzo1110:rule_output>Rise reward from 30 to 45 gp.</pzo1110:rule_output>
-        <rdfs:comment>&lt;...&gt; She can be bargained up to 45 gp each with a successful DC 15 Diplomacy check. &lt;...&gt;</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -1980,19 +2223,6 @@ Laurel does her best to help those who come to her in need, but her tight income
         <pzo1110:rule_picks rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Knowledge_Geography"/>
         <pzo1110:rule_picks rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Knowledge_Nature"/>
         <pzo1110:rule_condition>Geography DC 20,Nature DC 24</pzo1110:rule_condition>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#PCs_Found_Herbalist_Laurel_Rule -->
-
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#PCs_Found_Herbalist_Laurel_Rule">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Gamerule"/>
-        <pzo1110:rule_from_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Check_Skill_Knowledge"/>
-        <pzo1110:rule_picks rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Knowledge_Local"/>
-        <rule_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_PCs_Found_Herbalist_Laurel"/>
-        <pzo1110:rule_condition>Successful knowledge (local) skill check or merely inquiring with any of the families of the afflicted.</pzo1110:rule_condition>
-        <pzo1110:rule_output>Knowledge (local) DC: 10.</pzo1110:rule_output>
     </owl:NamedIndividual>
     
 
@@ -2049,7 +2279,7 @@ Laurel does her best to help those who come to her in need, but her tight income
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Resource_Medicine_of_Laurel">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Resource"/>
-        <resource_to_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Herbalist_Laurel"/>
+        <resource_to_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Laurel_Herbalist"/>
     </owl:NamedIndividual>
     
 
@@ -2058,7 +2288,7 @@ Laurel does her best to help those who come to her in need, but her tight income
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Resource_Old_Book_of_Laurel">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Resource"/>
-        <resource_to_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Herbalist_Laurel"/>
+        <resource_to_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#NPC_Laurel_Herbalist"/>
         <rdfs:comment>Although the book contains no actual magic, it holds the rooted wisdom of generations of Laurel’s family, including the teachings of the Witch of Darkmoon Vale, Ulizmila, from whom Laurel’s grandmother learned in exchange for her sight.</rdfs:comment>
     </owl:NamedIndividual>
     
@@ -2077,8 +2307,8 @@ Laurel does her best to help those who come to her in need, but her tight income
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Rule_Attach">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Gamerule"/>
-        <pzo1110:rule_from_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Check_Attack_Melee_Touch"/>
-        <pzo1110:rule_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Check_Grapple"/>
+        <pzo1110:rule_for_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Check_Grapple"/>
+        <pzo1110:rule_uses_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Check_Attack_Melee_Touch"/>
         <pzo1110:status_cause_to_status rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Status_Attached"/>
         <pzo1110:rule_condition>Success melee touch attack.</pzo1110:rule_condition>
         <pzo1110:rule_output>Grapple check: autosuccess.</pzo1110:rule_output>
@@ -2086,24 +2316,22 @@ Laurel does her best to help those who come to her in need, but her tight income
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Rule_Blood_Drain -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Rule_Blackscour_Taint -->
 
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Rule_Blood_Drain">
-        <pzo1110:rule_sets_character_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Constitution"/>
-        <pzo1110:rule_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Rule_Diseased"/>
-        <pzo1110:rule_condition>Attached status and total drained constitution score &lt; 5.</pzo1110:rule_condition>
-        <pzo1110:rule_output>Constitution score: -1.</pzo1110:rule_output>
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Rule_Blackscour_Taint">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Gamerule"/>
+        <pf1ed:for_future_correction>Blackscour taint is an ingested disease with an incubation period of 1d3 days. The disease deals 1d2 points of Constitution damage and is resisted with a DC 14 Fortitude save.</pf1ed:for_future_correction>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Rule_Darkmoon_Vale_Random_Encounter -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Rule_Blood_Drain -->
 
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Rule_Darkmoon_Vale_Random_Encounter">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Gamerule"/>
-        <pzo1110:rule_from_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Rule_Diceroll"/>
-        <pzo1110:rule_condition>Exploring the vale.</pzo1110:rule_condition>
-        <pf1ed:rule_uses>Once per day.</pf1ed:rule_uses>
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Rule_Blood_Drain">
+        <pzo1110:rule_for_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Rule_Diseased"/>
+        <pzo1110:rule_sets_character_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Constitution"/>
+        <pzo1110:rule_condition>Attached status and total drained constitution score &lt; 5.</pzo1110:rule_condition>
+        <pzo1110:rule_output>Constitution score: -1.</pzo1110:rule_output>
     </owl:NamedIndividual>
     
 
@@ -2111,10 +2339,10 @@ Laurel does her best to help those who come to her in need, but her tight income
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Rule_Darkmoon_Vale_Random_Encounter_Dead_Fey -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Rule_Darkmoon_Vale_Random_Encounter_Dead_Fey">
-        <pzo1110:rule_from_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Check_Skill_Knowledge"/>
         <pzo1110:rule_picks rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Knowledge_Local"/>
         <pzo1110:rule_picks rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Knowledge_Nature"/>
-        <rule_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_Darkmoon_Vale_Random_Encounter_Dead_Fey"/>
+        <pzo1110:rule_uses_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Check_Skill_Knowledge"/>
+        <rule_for_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_Darkmoon_Vale_Random_Encounter_Dead_Fey"/>
         <pzo1110:rule_condition>{knowledge skill: DC} = {natue: 16; local: 14}.</pzo1110:rule_condition>
         <pzo1110:rule_output>Nature check: to identify piskies.
 Local check: to recall stories about fairy blood and gold.</pzo1110:rule_output>
@@ -2125,11 +2353,11 @@ Local check: to recall stories about fairy blood and gold.</pzo1110:rule_output>
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Rule_Darkmoon_Vale_Random_Encounter_Foul_Tracks -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Rule_Darkmoon_Vale_Random_Encounter_Foul_Tracks">
-        <pzo1110:rule_from_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Check_Skill_Perception"/>
-        <pzo1110:rule_from_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Check_Skill_Spot"/>
-        <pzo1110:rule_from_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Check_Skill_Track"/>
-        <pzo1110:rule_use_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Survival"/>
-        <rule_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_Darkmoon_Vale_Random_Encounter_Foul_Tracks"/>
+        <pzo1110:rule_uses_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Survival"/>
+        <pzo1110:rule_uses_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Check_Skill_Perception"/>
+        <pzo1110:rule_uses_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Check_Skill_Spot"/>
+        <pzo1110:rule_uses_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Check_Skill_Track"/>
+        <rule_for_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_Darkmoon_Vale_Random_Encounter_Foul_Tracks"/>
         <pzo1110:rule_condition>Perception: 18 DC; survival rank &gt; 0.</pzo1110:rule_condition>
         <pzo1110:rule_output>Tracks</pzo1110:rule_output>
     </owl:NamedIndividual>
@@ -2139,8 +2367,8 @@ Local check: to recall stories about fairy blood and gold.</pzo1110:rule_output>
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Rule_Darkmoon_Vale_Random_Encounter_Glowmold -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Rule_Darkmoon_Vale_Random_Encounter_Glowmold">
-        <pzo1110:rule_from_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Check_Skill_Survival"/>
-        <rule_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_Darkmoon_Vale_Random_Encounter_Glowmold"/>
+        <pzo1110:rule_uses_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Check_Skill_Survival"/>
+        <rule_for_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_Darkmoon_Vale_Random_Encounter_Glowmold"/>
         <pzo1110:rule_condition>Survival DC: 16.</pzo1110:rule_condition>
         <pzo1110:rule_output>Glowmold without destroying.</pzo1110:rule_output>
     </owl:NamedIndividual>
@@ -2150,10 +2378,41 @@ Local check: to recall stories about fairy blood and gold.</pzo1110:rule_output>
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Rule_Darkmoon_Vale_Random_Encounter_Wyvern_Sighting -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Rule_Darkmoon_Vale_Random_Encounter_Wyvern_Sighting">
-        <pzo1110:rule_from_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Check_Skill_Perception"/>
-        <pzo1110:rule_from_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Check_Skill_Spot"/>
-        <rule_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_Darkmoon_Vale_Random_Encounter_Wyvern_Sighting"/>
+        <pzo1110:rule_uses_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Check_Skill_Perception"/>
+        <pzo1110:rule_uses_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Check_Skill_Spot"/>
+        <rule_for_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_Darkmoon_Vale_Random_Encounter_Wyvern_Sighting"/>
         <pzo1110:rule_condition>Perception DC: 20.</pzo1110:rule_condition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Rule_Death_of_Infected_Relative -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Rule_Death_of_Infected_Relative">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Gamerule"/>
+        <pzo1110:rule_uses_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Rule_Diceroll"/>
+        <pzo1110:rule_output>Death toll: 4d10.</pzo1110:rule_output>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Rule_Death_of_Infected_Townsfolks -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Rule_Death_of_Infected_Townsfolks">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Gamerule"/>
+        <pzo1110:rule_uses_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Rule_Diceroll"/>
+        <pzo1110:rule_output>Death toll: sum (min(1, (days from the start of the adventure) - 1)d4 every day)</pzo1110:rule_output>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Rule_Death_of_Nephew_of_Milon -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Rule_Death_of_Nephew_of_Milon">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Gamerule"/>
+        <pzo1110:rule_uses_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Rule_Death_of_Infected_Townsfolks"/>
+        <rule_for_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_Death_of_Nephew_of_Milon"/>
+        <pzo1110:rule_condition>Death toll &gt;= 30.</pzo1110:rule_condition>
     </owl:NamedIndividual>
     
 
@@ -2162,11 +2421,61 @@ Local check: to recall stories about fairy blood and gold.</pzo1110:rule_output>
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Rule_Diseased">
         <pzo1110:rule_determines_special_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Special_Ability_Diseased"/>
-        <pzo1110:rule_from_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Rule_Diceroll"/>
+        <pzo1110:rule_uses_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Rule_Diceroll"/>
         <pzo1110:rule_condition>Successful blood drain.</pzo1110:rule_condition>
         <pzo1110:rule_output>10% chance of disease to target</pzo1110:rule_output>
         <pzo1110:rule_uses>once per target</pzo1110:rule_uses>
         <pf1ed:for_future_correction>&lt;...&gt;filth fever, blinding sickness, or a similar disease&lt;...&gt;</pf1ed:for_future_correction>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Rule_Know_about_Milon_at_Lumber_Consortium_Camp -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Rule_Know_about_Milon_at_Lumber_Consortium_Camp">
+        <pzo1110:rule_picks rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Resource_Coin"/>
+        <pzo1110:rule_uses_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Check_Skill_Diplomacy_Request"/>
+        <pzo1110:rule_uses_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Check_Skill_Intimidate"/>
+        <rule_for_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_PCs_at_Lumber_Consortium_Camp"/>
+        <event_condition>{option: DC} = {diplomacy for loggers: 16; intimidate for loggers: 16; diplomacy for foreman: 14; bribe: 5 gp}.</event_condition>
+        <rdfs:comment>If the PCs come inquiring after woodsman Milon Rhoddam, their requests are ignored by the workers unless they succeed at a DC 16 Diplomacy or Intimidate check. PCs who inquire after the camp foreman, Jarlben Trookshavits, are taken to his filthy office, thickly decorated with taxidermies of fierce forest animals. The impatient foreman sends for Rhoddam if the PCs succeed at a DC 14 Diplomacy check or pay the man 5 gp.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Rule_PCs_Bargain_Laurel_to_Find_Ingredients -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Rule_PCs_Bargain_Laurel_to_Find_Ingredients">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Gamerule"/>
+        <pzo1110:rule_uses_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Check_Skill_Diplomacy_Change_Attitude"/>
+        <rule_for_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_Laurel_Asks_PCs_to_Find_Ingredients_for_Medicine"/>
+        <pzo1110:rule_condition>Skill roll &gt;= 15</pzo1110:rule_condition>
+        <pzo1110:rule_output>Rise reward from 30 to 45 gp.</pzo1110:rule_output>
+        <rdfs:comment>&lt;...&gt; She can be bargained up to 45 gp each with a successful DC 15 Diplomacy check. &lt;...&gt;</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Rule_PCs_Found_Herbalist_Laurel -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Rule_PCs_Found_Herbalist_Laurel">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Gamerule"/>
+        <pzo1110:rule_picks rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Skill_Knowledge_Local"/>
+        <pzo1110:rule_uses_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Check_Skill_Knowledge"/>
+        <rule_for_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Event_PCs_Found_Herbalist_Laurel"/>
+        <pzo1110:rule_condition>Successful knowledge (local) skill check or merely inquiring with any of the families of the afflicted.</pzo1110:rule_condition>
+        <pzo1110:rule_output>Knowledge (local) DC: 10.</pzo1110:rule_output>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Rule_Random_Encounter_Darkmoon_Vale -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Rule_Random_Encounter_Darkmoon_Vale">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Gamerule"/>
+        <pzo1110:rule_uses_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Rule_Diceroll"/>
+        <pzo1110:rule_condition>Exploring the vale.</pzo1110:rule_condition>
+        <pzo1110:rule_uses>Once per day.</pzo1110:rule_uses>
     </owl:NamedIndividual>
     
 
@@ -2212,8 +2521,8 @@ Local check: to recall stories about fairy blood and gold.</pzo1110:rule_output>
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Status_Attached">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Status"/>
-        <pzo1110:rule_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Modifier_Dexterity_Bonus"/>
-        <pzo1110:rule_to_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Rule_Blood_Drain"/>
+        <pzo1110:rule_for_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Ability_Modifier_Dexterity_Bonus"/>
+        <pzo1110:rule_for_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Rule_Blood_Drain"/>
         <pzo1110:rule_output>Loss dexterity bonus.</pzo1110:rule_output>
     </owl:NamedIndividual>
     
@@ -2372,6 +2681,12 @@ Local check: to recall stories about fairy blood and gold.</pzo1110:rule_output>
         <settlement_type>Town</settlement_type>
         <rdfs:comment>&lt;...&gt; Falcon’s Hollow rests on the edge of Darkmoon Vale, a blunt, sawdust-choked stop on a winding trade route. Home to fewer than 1,500 humans and a smattering of other races, most of the townsfolk care only for the paltry coins paid for their backbreaking work and what simple comforts they can buy. A few, however, understand that what’s bad for one is bad for all, and so the community thrives on a tenacious mix of greed, debauchery, and stubborn self-reliance.</rdfs:comment>
     </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500_homebrew.rdf#Rule_Random_Encounter_Darkmoon_Vale_Day_or_Night -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500_homebrew.rdf#Rule_Random_Encounter_Darkmoon_Vale_Day_or_Night"/>
 </rdf:RDF>
 
 

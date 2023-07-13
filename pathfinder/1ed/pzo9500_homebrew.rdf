@@ -8,6 +8,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:pf1ed="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pf1ed.rdf#"
      xmlns:schema="http://schema.org/"
+     xmlns:pzo1110="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#"
      xmlns:pzo9500="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#">
     <owl:Ontology rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500_homebrew.rdf">
         <owl:imports rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf"/>
@@ -108,6 +109,16 @@
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500_homebrew.rdf#Motive_Solve_Problem_with_Water">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500.rdf#Motive"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500_homebrew.rdf#Rule_Random_Encounter_Darkmoon_Vale_Day_or_Night -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo9500_homebrew.rdf#Rule_Random_Encounter_Darkmoon_Vale_Day_or_Night">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Gamerule"/>
+        <pzo1110:rule_uses_rule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/1ed/pzo1110.rdf#Rule_Diceroll"/>
+        <pzo1110:rule_output>Diceroll: d2 - daytime or nighttime.</pzo1110:rule_output>
     </owl:NamedIndividual>
     
 
