@@ -1,0 +1,2529 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/nerpa/ontologies/2023/6/untitled-ontology-90/"
+     xml:base="http://www.semanticweb.org/nerpa/ontologies/2023/6/untitled-ontology-90/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:schema="http://schema.org/"
+     xmlns:pzo2101="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#">
+    <owl:Ontology rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.org/image -->
+
+    <owl:AnnotationProperty rdf:about="http://schema.org/image"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#for_future_correction -->
+
+    <owl:AnnotationProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#for_future_correction"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#ability_is_boost_for_concept -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#ability_is_boost_for_concept">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#concept_has_boost_for_ability"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#ability_is_flaw_for_ancestry -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#ability_is_flaw_for_ancestry">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#ancestry_has_flaw_for_ability"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#ability_is_secondary_for_gameclass -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#ability_is_secondary_for_gameclass">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gameclass_has_secondary_ability"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#action_with_gamerule -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#action_with_gamerule">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_for_action"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#ancestry_has_flaw_for_ability -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#ancestry_has_flaw_for_ability">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ancestry"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Ability_Score"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#ancestry_knows_language -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#ancestry_knows_language">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#language_of_ancestry"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ancestry"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Language"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#art_depicts -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#art_depicts">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#is_depicted_by_art"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Art"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#art_is_created_by -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#art_is_created_by">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Art"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Creator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#background_is_trained_in_skill -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#background_is_trained_in_skill">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#skill_for_background"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feature_Skill"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#characteristic_for_gamerule -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#characteristic_for_gamerule">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_uses_characteristic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#characteristic_is_chaged_by_gamerule -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#characteristic_is_chaged_by_gamerule">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_changes_characteristic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#characteristic_is_determined_by_gamerule -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#characteristic_is_determined_by_gamerule">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_determines_characteristic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#characteristic_of_role -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#characteristic_of_role">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#role_has_characteristic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#concept_has_boost_for_ability -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#concept_has_boost_for_ability">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Concept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Ability_Score"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#concept_has_feature -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#concept_has_feature">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#feature_of_concept"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Concept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#feat_requires_trained_skill -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#feat_requires_trained_skill">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#skill_is_required_to_be_trained_for_feat"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feature_Feat"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feature_Skill"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#feature_of_concept -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#feature_of_concept"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#feature_with_gamerule -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#feature_with_gamerule">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_for_feature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gameclass_has_secondary_ability -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gameclass_has_secondary_ability">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gameclass"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Ability_Score"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_changes_characteristic -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_changes_characteristic">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_determines_characteristic -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_determines_characteristic">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_for_action -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_for_action">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Action"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_for_feature -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_for_feature">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_for_gamerule -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_for_gamerule">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_uses_gamerule"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_is_consequence_of_gamerule -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_is_consequence_of_gamerule">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_leads_to_gamerule"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_leads_to_gamerule -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_leads_to_gamerule">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_selects -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_selects">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#is_selected_by_gamerule"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Selector"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_uses_characteristic -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_uses_characteristic">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_uses_gamerule -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_uses_gamerule">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_uses_resource -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_uses_resource">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#resource_for_gamerule"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Resource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#is_depicted_by_art -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#is_depicted_by_art"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#is_selected_by_gamerule -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#is_selected_by_gamerule"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#language_of_ancestry -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#language_of_ancestry"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#resource_for_gamerule -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#resource_for_gamerule"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#role_has_characteristic -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#role_has_characteristic">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Role"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#skill_for_background -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#skill_for_background"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#skill_is_required_to_be_trained_for_feat -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#skill_is_required_to_be_trained_for_feat"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#ancestry_hit_points -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#ancestry_hit_points">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ancestry"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#ancestry_speed -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#ancestry_speed">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ancestry"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>base speed in feet</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#background_lore_speciality -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#background_lore_speciality">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#condition_duration -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#condition_duration">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Condition"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#feat_level -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#feat_level">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feature_Feat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_condition -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_condition">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule"/>
+        <rdfs:comment>{condition: result}</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_output -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_output">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule"/>
+        <rdfs:comment>{option: output}</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_supplement -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_supplement">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule"/>
+        <rdfs:comment>{term: description}</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#selector_list -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#selector_list">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Selector"/>
+        <rdfs:comment>[list for selection]</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Creator -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Creator"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Mental -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Mental">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Ability_Score"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Physical -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Physical">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Ability_Score"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Action -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Action"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Action_Character -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Action_Character">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Action"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Action_Player -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Action_Player">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Action"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ancestry -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ancestry">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Concept"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#ancestry_knows_language"/>
+                        <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Language_Common"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#concept_has_feature"/>
+                        <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Trait_Humanoid"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#is_selected_by_gamerule"/>
+                        <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Selector_Ancestry"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Art -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Art"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Concept"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#background_is_trained_in_skill"/>
+                        <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Skill_Lore"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#is_selected_by_gamerule"/>
+                        <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Selector_Background"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Ability_Score -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Ability_Score">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_General"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_General -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_General">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_PC -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_PC">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#characteristic_of_role"/>
+                <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Role_Player_Character"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Check_Saving_Throw -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Check_Saving_Throw">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Check"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Concept -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Concept"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feat_Ancestry -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feat_Ancestry">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feature_Feat"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#is_selected_by_gamerule"/>
+                <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Selector_Ancestry_Feat"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feat_Ancestry_Halfling -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feat_Ancestry_Halfling">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feat_Ancestry"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#feature_of_concept"/>
+                <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ancestry_Halfling"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feat_Ancestry_Halfling_Level_1 -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feat_Ancestry_Halfling_Level_1">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feat_Ancestry_Halfling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#feat_level"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feat_Skill -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feat_Skill">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feature_Feat"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feature -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feature"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feature_Feat -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feature_Feat">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feature_Heritage -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feature_Heritage">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#is_selected_by_gamerule"/>
+                <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Selector_Ancestry_Heritage"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feature_Skill -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feature_Skill">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feature_Trait -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feature_Trait">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gameclass -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gameclass">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Ability_Modifier -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Ability_Modifier">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_output"/>
+                <owl:hasValue>int (((ability score) - 10) / 2)</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Check -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Check">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_condition"/>
+                <owl:hasValue>{condition: check result} =
+{
+roll &gt;= DC: success;
+roll &lt; DC: failure;
+(roll &gt;= DC + 10) or (natural roll = 20): critical success;
+(roll &lt; DC - 10) or (natural roll = 1): critical failure;
+}</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Condition -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Condition">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Determine_Ability_Scores_by_Method -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Determine_Ability_Scores_by_Method">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_uses_characteristic"/>
+                        <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Background"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_uses_characteristic"/>
+                        <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Level"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_uses_gamerule"/>
+                        <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Ancestry_Boosts_and_Flaws"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_condition"/>
+                        <owl:hasValue>{
+multiple ability boosts from the same source: must each apply to different score;
+1st level: ability score &lt;= 18;
+}</owl:hasValue>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_supplement"/>
+                        <owl:hasValue>{
+boost: {ability score &lt; 18: +2; ability score &gt;= 18: +1};
+flaw: -2;
+non-free background boost: one of boosted ability;
+}</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Feat -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Feat">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Heritage -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Heritage">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Roll -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Roll">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_uses_gamerule"/>
+                        <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Diceroll"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_uses_gamerule"/>
+                        <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Proficiency"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_output"/>
+                        <owl:hasValue>d20 + ability modifier + proficiency bonus + other factors</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Selector -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Selector">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Heritage_Halfling -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Heritage_Halfling">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feature_Heritage"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Language -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Language">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#is_selected_by_gamerule"/>
+                <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Selector_Languages_by_Intelligence_Bonus"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Resource -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Resource"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Resource_Weapon -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Resource_Weapon">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Role -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Role"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/resource/Wayne_Reynolds -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Wayne_Reynolds"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Konstantin_Porubov -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Konstantin_Porubov"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Modifier_Charisma -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Modifier_Charisma">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Ability_Modifier"/>
+        <pzo2101:gamerule_uses_characteristic rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Charisma"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Modifier_Constitution -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Modifier_Constitution">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Ability_Modifier"/>
+        <pzo2101:gamerule_uses_characteristic rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Constitution"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Modifier_Dexterity -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Modifier_Dexterity">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Ability_Modifier"/>
+        <pzo2101:gamerule_uses_characteristic rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Dexterity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Modifier_Intelligence -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Modifier_Intelligence">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Ability_Modifier"/>
+        <pzo2101:gamerule_uses_characteristic rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Intelligence"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Modifier_Strength -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Modifier_Strength">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Ability_Modifier"/>
+        <pzo2101:gamerule_uses_characteristic rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Strength"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Modifier_Wisdom -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Modifier_Wisdom">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Ability_Modifier"/>
+        <pzo2101:gamerule_uses_characteristic rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Wisdom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Charisma -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Charisma">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Mental"/>
+        <rdfs:comment>Charisma measures your character’s personal magnetism and strength of personality. A high Charisma score helps you inflfluence the thoughts and moods of others.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Constitution -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Constitution">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Physical"/>
+        <rdfs:comment>Constitution measures your character’s overall health and stamina. Constitution is an important statistic for all characters, especially those who fifight in close combat. Your Constitution modififier is added to your Hit Points and Fortitude saving throws.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Dexterity -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Dexterity">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Physical"/>
+        <rdfs:comment>Dexterity measures your character’s agility, balance, and reflflexes. Dexterity is important if your character plans to make attacks with ranged weapons or use stealth to surprise foes. Your Dexterity modififier is also added to your character’s AC and Reflflex saving throws.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Intelligence -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Intelligence">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Mental"/>
+        <rdfs:comment>Intelligence measures how well your character can learn and reason. A high Intelligence allows your character to analyze situations and understand patterns, and it means they can become trained in additional skills and might be able to master additional languages.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Strength -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Strength">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Physical"/>
+        <rdfs:comment>Strength measures your character’s physical power. Strength is important if your character plans to engage in hand-to-hand combat. Your Strength modififier gets added to melee damage rolls and determines how much your character can carry.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Wisdom -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Wisdom">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Mental"/>
+        <rdfs:comment>Wisdom measures your character’s common sense, awareness, and intuition. Your Wisdom modififier is added to your Perception and Will saving throws.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Action_Character_Creation -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Action_Character_Creation">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Action_Player"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Action_Diceroll -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Action_Diceroll">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Action_Player"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Action_Seek -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Action_Seek">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Action_Character"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Action_Strike -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Action_Strike">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Action_Character"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ancestry_Dwarf -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ancestry_Dwarf">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ancestry"/>
+        <pzo2101:ancestry_has_flaw_for_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Charisma"/>
+        <pzo2101:concept_has_boost_for_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Constitution"/>
+        <pzo2101:concept_has_boost_for_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Wisdom"/>
+        <rdfs:comment>Dwarves are a short, stocky people who are often stubborn, fierce, and devoted.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ancestry_Elf -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ancestry_Elf">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ancestry"/>
+        <pzo2101:ancestry_has_flaw_for_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Constitution"/>
+        <pzo2101:concept_has_boost_for_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Dexterity"/>
+        <pzo2101:concept_has_boost_for_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Intelligence"/>
+        <rdfs:comment>Elves are a tall, slender, long-lived people with a strong tradition of art and magic.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ancestry_Gnome -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ancestry_Gnome">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ancestry"/>
+        <pzo2101:ancestry_has_flaw_for_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Strength"/>
+        <pzo2101:concept_has_boost_for_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Charisma"/>
+        <pzo2101:concept_has_boost_for_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Constitution"/>
+        <rdfs:comment>Gnomes are short and hardy folk, with an unquenchable curiosity and eccentric habits.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ancestry_Goblin -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ancestry_Goblin">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ancestry"/>
+        <pzo2101:ancestry_has_flaw_for_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Wisdom"/>
+        <pzo2101:concept_has_boost_for_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Charisma"/>
+        <pzo2101:concept_has_boost_for_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Dexterity"/>
+        <rdfs:comment>Goblins are a short, scrappy, energetic people who have spent millennia maligned and feared.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ancestry_Halfling -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ancestry_Halfling">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ancestry"/>
+        <pzo2101:ancestry_has_flaw_for_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Strength"/>
+        <pzo2101:ancestry_knows_language rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Language_Halfling"/>
+        <pzo2101:concept_has_boost_for_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Dexterity"/>
+        <pzo2101:concept_has_boost_for_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Wisdom"/>
+        <pzo2101:concept_has_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Trait_Halfling"/>
+        <pzo2101:concept_has_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Trait_Size_Small"/>
+        <pzo2101:is_depicted_by_art rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Art_Chapter_2_Ancestries_and_Backgrounds_Halfling"/>
+        <pzo2101:ancestry_hit_points rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</pzo2101:ancestry_hit_points>
+        <pzo2101:ancestry_speed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</pzo2101:ancestry_speed>
+        <rdfs:comment>Halflings are a short, adaptable people who exhibit remarkable curiosity and humor.
+
+They might:
+• Get along well with a wide variety of people and enjoy meeting new friends.
+• Find it difficult to resist indulging your curiosity, even when you know it’s going to lead to trouble.
+• Hold a deep and personal hatred of the practice of slavery and devote yourself to freeing those who still labor against their will.
+Others probably:
+• Appreciate your ability to always find a silver lining or something to laugh about, no matter how dire the situation.
+• Think you bring good luck with you.
+• Underestimate your strength, endurance, and fighting prowess.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ancestry_Human -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ancestry_Human">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ancestry"/>
+        <rdfs:comment>Humans are diverse. Some, such as half-elves and half-orcs, even have non-human ancestors.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Art_Chapter_1_Introduction_Bard_and_Monk_are_Exploring -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Art_Chapter_1_Introduction_Bard_and_Monk_are_Exploring">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Art"/>
+        <schema:image rdf:resource="https://ibb.co/W2tSS30"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Art_Chapter_1_Introduction_Bard_is_Casting_Spell -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Art_Chapter_1_Introduction_Bard_is_Casting_Spell">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Art"/>
+        <schema:image rdf:resource="https://rollforcombat.com/wp-content/uploads/2019/08/4a.jpg"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Art_Chapter_1_Introduction_Fight_with_Kobolds -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Art_Chapter_1_Introduction_Fight_with_Kobolds">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Art"/>
+        <schema:image rdf:resource="https://igrodruid.ru/images/12192022/15642413.jpg"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Art_Chapter_1_Introduction_Fight_with_Zombies -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Art_Chapter_1_Introduction_Fight_with_Zombies">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Art"/>
+        <schema:image rdf:resource="https://images.squarespace-cdn.com/content/v1/57c8dde4579fb35c8fb9dcd5/1565285054914-8845WT7JBPUCSL6DZ87W/080119-undeadfight.jpg?format=500w"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Art_Chapter_1_Introduction_World_as_a_Participant -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Art_Chapter_1_Introduction_World_as_a_Participant">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Art"/>
+        <schema:image rdf:resource="https://ibb.co/5161RnG"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Art_Chapter_2_Ancestries_and_Backgrounds_City_on_Trees -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Art_Chapter_2_Ancestries_and_Backgrounds_City_on_Trees">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Art"/>
+        <schema:image rdf:resource="https://www.worldanvil.com/i/3763745"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Art_Chapter_2_Ancestries_and_Backgrounds_Halfling -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Art_Chapter_2_Ancestries_and_Backgrounds_Halfling">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Art"/>
+        <pzo2101:art_is_created_by rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Konstantin_Porubov"/>
+        <schema:image rdf:resource="https://cdnb.artstation.com/p/assets/images/images/024/281/449/large/konstantin-porubov-halfling-farmer.jpg?1581919737"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Art_Chapter_2_Ancestries_and_Backgrounds_Halfling_with_Cakes -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Art_Chapter_2_Ancestries_and_Backgrounds_Halfling_with_Cakes">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Art"/>
+        <pzo2101:art_is_created_by rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Konstantin_Porubov"/>
+        <schema:image rdf:resource="https://cdna.artstation.com/p/assets/images/images/024/281/438/large/konstantin-porubov-halfling-butler.jpg?1581919731"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Art_Cover -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Art_Cover">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Art"/>
+        <pzo2101:art_is_created_by rdf:resource="http://dbpedia.org/resource/Wayne_Reynolds"/>
+        <schema:image rdf:resource="https://pathfinderwiki.com/w/images/0/07/Core_Rulebook.jpg"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Acolyte -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Acolyte">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Acrobat -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Acrobat">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Animal_Whisperer -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Animal_Whisperer">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Artisan -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Artisan">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Artist -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Artist">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Barkeep -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Barkeep">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Barrister -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Barrister">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Bounty_Hunter -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Bounty_Hunter">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Charlatan -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Charlatan">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Criminal -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Criminal">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Detective -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Detective">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background"/>
+        <pzo2101:concept_has_boost_for_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Intelligence"/>
+        <pzo2101:concept_has_boost_for_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Wisdom"/>
+        <pzo2101:concept_has_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feat_Skill_Streetwise"/>
+        <pzo2101:background_lore_speciality>underworld</pzo2101:background_lore_speciality>
+        <rdfs:comment>You solved crimes as a police inspector or took jobs for wealthy clients as a private investigator. You might have become an adventurer as part of your next big mystery, but likely it was due to the consequences or aftermath of a prior case.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Emissary -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Emissary">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Entertainer -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Entertainer">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Farmhand -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Farmhand">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Field_Medic -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Field_Medic">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Fortune_Teller -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Fortune_Teller">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Gambler -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Gambler">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Gladiator -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Gladiator">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Guard -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Guard">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Herbalist -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Herbalist">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Hermit -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Hermit">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Hunter -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Hunter">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Laborer -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Laborer">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Martial_Disciple -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Martial_Disciple">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Merchant -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Merchant">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Miner -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Miner">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Noble -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Noble">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Nomad -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Nomad">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Prisoner -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Prisoner">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Sailor -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Sailor">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Scholar -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Scholar">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Scout -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Scout">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Street_Urchin -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Street_Urchin">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Tinker -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Tinker">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Warrior -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Warrior">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Alignment -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Alignment">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_General"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Ancestry -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Ancestry">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_PC"/>
+        <rdfs:comment>represents the character’s parents and heritage, such as human, elf, or goblin</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Armor_Class -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Armor_Class">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_General"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Background -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Background">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_PC"/>
+        <rdfs:comment>describes character&apos;s upbringing</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Class -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Class">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_PC"/>
+        <rdfs:comment>defifines the majority of their aptitudes and abilities</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Experience_Points -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Experience_Points">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_PC"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Feats -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Feats">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_PC"/>
+        <rdfs:comment>individual abilities selected during character creation and as the character increases in level</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Heritage -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Heritage">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_PC"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Hit_Points -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Hit_Points">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_General"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Languages -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Languages">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_General"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Level -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Level">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_PC"/>
+        <rdfs:comment>conveys the approximate power and capabilities of every individual creature</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Skills -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Skills">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_PC"/>
+        <rdfs:comment>measure ability to perform various tasks</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Check_Attack -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Check_Attack">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Check"/>
+        <pzo2101:gamerule_for_action rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Action_Strike"/>
+        <pzo2101:gamerule_leads_to_gamerule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Damage"/>
+        <pzo2101:gamerule_uses_gamerule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_DC_Attack"/>
+        <pzo2101:gamerule_uses_gamerule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Roll_Attack"/>
+        <pzo2101:gamerule_output>{check result: output} = 
+{
+success: damage;
+critical success: 2 * damage;
+}</pzo2101:gamerule_output>
+        <pzo2101:gamerule_supplement>damage: ? + other modifiers;
+other modifiers:
+{
+titan slinger feat: increase damage die by one step;
+}</pzo2101:gamerule_supplement>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Check_Flat -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Check_Flat">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Check"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Check_Seek -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Check_Seek">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Check"/>
+        <pzo2101:gamerule_for_action rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Action_Seek"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Check_Skill_Medicine -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Check_Skill_Medicine">
+        <pzo2101:gamerule_changes_characteristic rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Hit_Points"/>
+        <pzo2101:gamerule_uses_gamerule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Heritage_Halfling_Hillock"/>
+        <pzo2101:gamerule_output>hit points: ? + other modifiers</pzo2101:gamerule_output>
+        <pzo2101:gamerule_supplement>other modifiers: 
+{
+hillock halfling heritage: + (level) hp;
+}</pzo2101:gamerule_supplement>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Condition_Concealed -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Condition_Concealed">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Condition"/>
+        <pzo2101:gamerule_for_gamerule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Keen_Eyes"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Condition_Hidden -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Condition_Hidden">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Condition"/>
+        <pzo2101:gamerule_for_gamerule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Keen_Eyes"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Condition_Undetected -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Condition_Undetected">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Condition"/>
+        <pzo2101:gamerule_for_gamerule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Keen_Eyes"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feat_Ancestry_Halfling_Distracting_Shadows -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feat_Ancestry_Halfling_Distracting_Shadows">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feat_Ancestry_Halfling_Level_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feat_Ancestry_Halfling_Halfling_Lore -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feat_Ancestry_Halfling_Halfling_Lore">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feat_Ancestry_Halfling_Level_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feat_Ancestry_Halfling_Halfling_Luck -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feat_Ancestry_Halfling_Halfling_Luck">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feat_Ancestry_Halfling_Level_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feat_Ancestry_Halfling_Halfling_Weapon_Familiarity -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feat_Ancestry_Halfling_Halfling_Weapon_Familiarity">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feat_Ancestry_Halfling_Level_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feat_Ancestry_Halfling_Sure_Feet -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feat_Ancestry_Halfling_Sure_Feet">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feat_Ancestry_Halfling_Level_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feat_Ancestry_Halfling_Titan_Slinger -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feat_Ancestry_Halfling_Titan_Slinger">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feat_Ancestry_Halfling_Level_1"/>
+        <rdfs:comment>You have learned how to use your sling to fell enormous creatures. When you hit on an attack with a sling against a Large or larger creature, increase the size of the weapon damage die by one step (details on increasing weapon damage die sizes can be found on page 279).</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feat_Ancestry_Halfling_Unfettered_Halfling -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feat_Ancestry_Halfling_Unfettered_Halfling">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feat_Ancestry_Halfling_Level_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feat_Ancestry_Halfling_Watchful_Halfling -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feat_Ancestry_Halfling_Watchful_Halfling">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feat_Ancestry_Halfling_Level_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feat_Skill_Streetwise -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feat_Skill_Streetwise">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feat_Skill"/>
+        <pzo2101:feat_requires_trained_skill rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Skill_Society"/>
+        <pzo2101:feat_level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</pzo2101:feat_level>
+        <rdfs:comment>You know about life on the streets and feel the pulse of your local settlement. You can use your Society modifier instead of your Diplomacy modifier to Gather Information. In any settlement you frequent regularly, you can use the Recall Knowledge action with Society to know the same sorts of information that you could discover with Diplomacy to Gather Information. The DC is usually significantly higher, but you know the information without spending time gathering it. If you fail to recall the information, you can still subsequently attempt to Gather Information normally.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gameclass_Alchemist -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gameclass_Alchemist">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gameclass"/>
+        <pzo2101:concept_has_boost_for_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Intelligence"/>
+        <pzo2101:gameclass_has_secondary_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Constitution"/>
+        <pzo2101:gameclass_has_secondary_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Dexterity"/>
+        <rdfs:comment>The alchemist throws alchemical bombs and drinks concoctions of their own making.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gameclass_Barbarian -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gameclass_Barbarian">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gameclass"/>
+        <pzo2101:concept_has_boost_for_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Strength"/>
+        <pzo2101:gameclass_has_secondary_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Constitution"/>
+        <pzo2101:gameclass_has_secondary_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Dexterity"/>
+        <rdfs:comment>The barbarian flies into a rage on the battlefield, smashing foes with abandon.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gameclass_Bard -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gameclass_Bard">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gameclass"/>
+        <pzo2101:concept_has_boost_for_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Charisma"/>
+        <pzo2101:gameclass_has_secondary_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Constitution"/>
+        <pzo2101:gameclass_has_secondary_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Dexterity"/>
+        <rdfs:comment>Skilled performances and secrets of the occult enable the bard to distract foes and inspire allies.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gameclass_Champion -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gameclass_Champion">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gameclass"/>
+        <pzo2101:concept_has_boost_for_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Dexterity"/>
+        <pzo2101:concept_has_boost_for_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Strength"/>
+        <pzo2101:gameclass_has_secondary_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Charisma"/>
+        <pzo2101:gameclass_has_secondary_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Constitution"/>
+        <rdfs:comment>A warrior dedicated to a deity, the champion uses divine power to enhance their abilities and protect allies.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gameclass_Cleric -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gameclass_Cleric">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gameclass"/>
+        <pzo2101:concept_has_boost_for_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Wisdom"/>
+        <pzo2101:gameclass_has_secondary_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Charisma"/>
+        <pzo2101:gameclass_has_secondary_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Constitution"/>
+        <rdfs:comment>The cleric calls on the power of a deity to cast spells that can heal allies or harm foes.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gameclass_Druid -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gameclass_Druid">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gameclass"/>
+        <pzo2101:concept_has_boost_for_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Wisdom"/>
+        <pzo2101:gameclass_has_secondary_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Constitution"/>
+        <pzo2101:gameclass_has_secondary_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Dexterity"/>
+        <rdfs:comment>The druid uses the magic of the natural world to bolster allies and strike down enemies.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gameclass_Fighter -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gameclass_Fighter">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gameclass"/>
+        <pzo2101:concept_has_boost_for_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Dexterity"/>
+        <pzo2101:concept_has_boost_for_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Strength"/>
+        <pzo2101:gameclass_has_secondary_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Constitution"/>
+        <rdfs:comment>The fighter is a master of weapons, martial techniques, and powerful attack combinations.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gameclass_Monk -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gameclass_Monk">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gameclass"/>
+        <pzo2101:concept_has_boost_for_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Dexterity"/>
+        <pzo2101:concept_has_boost_for_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Strength"/>
+        <pzo2101:gameclass_has_secondary_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Constitution"/>
+        <pzo2101:gameclass_has_secondary_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Wisdom"/>
+        <rdfs:comment>The monk wields the secrets of martial arts in dazzling displays of battlefield prowess.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gameclass_Ranger -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gameclass_Ranger">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gameclass"/>
+        <pzo2101:concept_has_boost_for_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Dexterity"/>
+        <pzo2101:concept_has_boost_for_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Strength"/>
+        <pzo2101:gameclass_has_secondary_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Constitution"/>
+        <pzo2101:gameclass_has_secondary_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Wisdom"/>
+        <rdfs:comment>The ranger is a master of using their surroundings, traps, and animal allies to harry enemies.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gameclass_Rogue -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gameclass_Rogue">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gameclass"/>
+        <pzo2101:concept_has_boost_for_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Dexterity"/>
+        <pzo2101:gameclass_has_secondary_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Charisma"/>
+        <pzo2101:gameclass_has_secondary_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Constitution"/>
+        <rdfs:comment>The rogue is a multitalented master of skulduggery who strikes when enemies least expect it.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gameclass_Sorcerer -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gameclass_Sorcerer">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gameclass"/>
+        <pzo2101:concept_has_boost_for_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Charisma"/>
+        <pzo2101:gameclass_has_secondary_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Constitution"/>
+        <pzo2101:gameclass_has_secondary_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Dexterity"/>
+        <rdfs:comment>The sorcerer’s magical might flows from their blood and manifests as fantastic spells and abilities.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gameclass_Wizard -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gameclass_Wizard">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gameclass"/>
+        <pzo2101:concept_has_boost_for_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Intelligence"/>
+        <pzo2101:gameclass_has_secondary_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Constitution"/>
+        <pzo2101:gameclass_has_secondary_ability rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Score_Dexterity"/>
+        <rdfs:comment>The wizard is a scholar whose reservoirs of arcane knowledge powers their wondrous spells and abilities.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Ancestry_Boosts_and_Flaws -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Ancestry_Boosts_and_Flaws">
+        <pzo2101:gamerule_is_consequence_of_gamerule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Selector_Ancestry"/>
+        <pzo2101:gamerule_uses_characteristic rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Ancestry"/>
+        <pzo2101:gamerule_output>(boosts + flaw + (free boosts)) by ancestry</pzo2101:gamerule_output>
+        <pzo2101:gamerule_supplement>{free boosts count: [list of ancestries]} = 
+{
+1: [dwarf; elf; gnome; goblin; halfling; human];
+2: [human];
+}</pzo2101:gamerule_supplement>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_DC_Attack -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_DC_Attack">
+        <pzo2101:gamerule_uses_characteristic rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Armor_Class"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_DC_Flat -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_DC_Flat">
+        <pzo2101:gamerule_for_gamerule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Check_Flat"/>
+        <pzo2101:gamerule_uses_gamerule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Keen_Eyes"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Damage -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Damage">
+        <pzo2101:gamerule_changes_characteristic rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Hit_Points"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Determine_Ability_Scores -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Determine_Ability_Scores">
+        <pzo2101:gamerule_is_consequence_of_gamerule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Selector_Ancestry"/>
+        <pzo2101:gamerule_is_consequence_of_gamerule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Selector_Background"/>
+        <pzo2101:gamerule_uses_gamerule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Determine_Ability_Scores_Standard"/>
+        <pzo2101:gamerule_uses_gamerule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Determine_Ability_Scores_by_Roll"/>
+        <pzo2101:selector_list>[
+by roll; 
+standard;
+]</pzo2101:selector_list>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Determine_Ability_Scores_Standard -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Determine_Ability_Scores_Standard">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Determine_Ability_Scores_by_Method"/>
+        <pzo2101:gamerule_uses_gamerule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Gameclass_Boost"/>
+        <pzo2101:gamerule_output>ability scores: 10 + (ancestry boosts) + (ancestry flaws) + (1 non-free and 1 free background boosts) + (class boost) + (4 free boosts)</pzo2101:gamerule_output>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Determine_Ability_Scores_by_Roll -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Determine_Ability_Scores_by_Roll">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Determine_Ability_Scores_by_Method"/>
+        <pzo2101:gamerule_uses_gamerule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Roll_Ability_Score"/>
+        <pzo2101:gamerule_output>ability scores: (assigned scores by roll) + (ancestry boosts - one free ancestry boost) + (ancestry flaws) + (one non-free background boosts)</pzo2101:gamerule_output>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Determine_Hit_Points -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Determine_Hit_Points">
+        <pzo2101:gamerule_determines_characteristic rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Hit_Points"/>
+        <pzo2101:gamerule_uses_characteristic rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Ancestry"/>
+        <pzo2101:gamerule_output>hit points: ancestry hp.</pzo2101:gamerule_output>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Determine_Languages -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Determine_Languages">
+        <pzo2101:gamerule_determines_characteristic rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Languages"/>
+        <pzo2101:gamerule_uses_characteristic rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Ancestry"/>
+        <pzo2101:gamerule_output>languages: (ancestry languages) + (selected languages by high intelligence score)</pzo2101:gamerule_output>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Diceroll -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Diceroll">
+        <pzo2101:gamerule_for_action rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Action_Diceroll"/>
+        <pzo2101:gamerule_output>XdY = roll of X dices with Y sides.</pzo2101:gamerule_output>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Encounter_Turn -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Encounter_Turn">
+        <pzo2101:gamerule_output>about 6 seconds for three actions + one reaction + unlimited free actions</pzo2101:gamerule_output>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Gameclass_Boost -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Gameclass_Boost">
+        <pzo2101:gamerule_uses_characteristic rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Class"/>
+        <pzo2101:gamerule_output>key ability boost</pzo2101:gamerule_output>
+        <pzo2101:gamerule_supplement>{option: [list of classes]} = 
+{
+key ability to boost: [alchemist; barbarian; bard; cleric; druid; sorcerer; wizard];
+one key ability to choose: [champion; fighter; monk; ranger];
+key ability or other to boost: [rogue];
+}</pzo2101:gamerule_supplement>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Heritage_Halfling_Hillock -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Heritage_Halfling_Hillock">
+        <pzo2101:gamerule_for_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Heritage_Halfling_Hillock"/>
+        <pzo2101:gamerule_uses_characteristic rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Level"/>
+        <pzo2101:gamerule_output>overnight rest: + (level) hp;
+medicine check to threat character&apos;s wounds: + (level) hp;</pzo2101:gamerule_output>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Keen_Eyes -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Keen_Eyes">
+        <pzo2101:gamerule_for_gamerule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Roll_Seek"/>
+        <pzo2101:gamerule_condition>seek: hidden or undetected creatures within 30 feet;
+flat check: target is concealed or hidden;</pzo2101:gamerule_condition>
+        <pzo2101:gamerule_output>seek roll: +2 circumstance bonus;
+flat check DC: 3 for concealed target and 9 for hidden target;</pzo2101:gamerule_output>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Overnight_Rest -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Overnight_Rest">
+        <pzo2101:gamerule_changes_characteristic rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Hit_Points"/>
+        <pzo2101:gamerule_uses_gamerule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Heritage_Halfling_Hillock"/>
+        <pzo2101:gamerule_output>hit points: ? + other modifiers</pzo2101:gamerule_output>
+        <pzo2101:gamerule_supplement>other modifiers: 
+{
+hillock halfling heritage: + (level) hp;
+}</pzo2101:gamerule_supplement>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Proficiency -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Proficiency">
+        <pzo2101:gamerule_uses_characteristic rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Level"/>
+        <pzo2101:gamerule_output>{rank: bonus} =
+{
+untrained: 0;
+trained: level + 2;
+expert: level + 4;
+master: level + 6;
+legendary: level + 8;
+}</pzo2101:gamerule_output>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Roll_Ability_Score -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Roll_Ability_Score">
+        <pzo2101:gamerule_uses_gamerule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Diceroll"/>
+        <pzo2101:gamerule_output>4d6 - lowest die result</pzo2101:gamerule_output>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Titan_Slinger -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Titan_Slinger">
+        <pzo2101:gamerule_for_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feat_Ancestry_Halfling_Titan_Slinger"/>
+        <pzo2101:gamerule_for_gamerule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Check_Attack"/>
+        <pzo2101:gamerule_uses_characteristic rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Ancestry"/>
+        <pzo2101:gamerule_condition>attack: (weapon = sling) and (target&apos;s size &gt;= large)</pzo2101:gamerule_condition>
+        <pzo2101:gamerule_output>damage roll: increased damage die</pzo2101:gamerule_output>
+        <pzo2101:gamerule_supplement>target&apos;s size: ancestry trait</pzo2101:gamerule_supplement>
+        <pzo2101:for_future_correction>damage die by one step</pzo2101:for_future_correction>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Heritage_Halfling_Gutsy -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Heritage_Halfling_Gutsy">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Heritage_Halfling"/>
+        <rdfs:comment>Your family line is known for keeping a level head and staving off fear when the chips were down, making them wise leaders and sometimes even heroes. When you roll a success on a saving throw against an emotion effect, you get a critical success instead.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Heritage_Halfling_Hillock -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Heritage_Halfling_Hillock">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Heritage_Halfling"/>
+        <rdfs:comment>Accustomed to a calm life in the hills, your people find rest and relaxation especially replenishing, particularly when indulging in creature comforts. When you regain Hit Points overnight, add your level to the Hit Points regained. When anyone uses the Medicine skill to Treat your Wounds, you can eat a snack to add your level to the Hit Points you regain from their treatment.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Heritage_Halfling_Nomadic -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Heritage_Halfling_Nomadic">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Heritage_Halfling"/>
+        <rdfs:comment>Your ancestors have traveled from place to place for generations, never content to settle down. You gain two additional languages of your choice, chosen from among the common and uncommon languages available to you, and every time you take the Multilingual feat, you gain another new language.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Heritage_Halfling_Twilight -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Heritage_Halfling_Twilight">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Heritage_Halfling"/>
+        <rdfs:comment>Your ancestors performed many secret acts under the concealing cover of dusk, whether for good or ill, and over time they developed the ability to see in twilight beyond even the usual keen sight of halflings. You gain low-light vision.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Heritage_Halfling_Wildwood -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Heritage_Halfling_Wildwood">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Heritage_Halfling"/>
+        <rdfs:comment>You hail from deep in a jungle or forest, and you’ve learned how to use your small size to wriggle through undergrowth, vines, and other obstacles. You ignore difficult terrain from trees, foliage, and undergrowth.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Language_Common -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Language_Common">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Language"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Language_Dwarven -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Language_Dwarven">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Language"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Language_Elven -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Language_Elven">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Language"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Language_Gnomish -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Language_Gnomish">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Language"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Language_Goblin -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Language_Goblin">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Language"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Language_Halfling -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Language_Halfling">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Language"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Role_Monster -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Role_Monster">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Role"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Role_Nonplayer_Character -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Role_Nonplayer_Character">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Role"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Role_Player_Character -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Role_Player_Character">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Role"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Roll_Attack -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Roll_Attack">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Roll"/>
+        <pzo2101:gamerule_uses_gamerule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Encounter_Turn"/>
+        <pzo2101:gamerule_supplement>other factors: - 5 * (attack index in turn - 1)</pzo2101:gamerule_supplement>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Roll_Seek -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Roll_Seek">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Roll"/>
+        <pzo2101:gamerule_for_gamerule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Check_Seek"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Saving_Throw_Fortitude -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Saving_Throw_Fortitude">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Check_Saving_Throw"/>
+        <rdfs:comment>is used when your character’s health or vitality is under attack, such as from poison or disease</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Saving_Throw_Reflex -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Saving_Throw_Reflex">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Check_Saving_Throw"/>
+        <rdfs:comment>is called for when your character must dodge away from danger, usually something that affects a large area</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Saving_Throw_Will -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Saving_Throw_Will">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Check_Saving_Throw"/>
+        <rdfs:comment>is often your defense against spells and effects that target your character’s mind</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Selector_Ancestry -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Selector_Ancestry">
+        <pzo2101:gamerule_determines_characteristic rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Ancestry"/>
+        <pzo2101:gamerule_for_action rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Action_Character_Creation"/>
+        <pzo2101:gamerule_leads_to_gamerule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Determine_Hit_Points"/>
+        <pzo2101:gamerule_leads_to_gamerule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Determine_Languages"/>
+        <pzo2101:gamerule_output>selected ancestry</pzo2101:gamerule_output>
+        <pzo2101:selector_list>[playable ancestries]</pzo2101:selector_list>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Selector_Ancestry_Feat -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Selector_Ancestry_Feat">
+        <pzo2101:gamerule_determines_characteristic rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Feats"/>
+        <pzo2101:gamerule_is_consequence_of_gamerule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Selector_Ancestry"/>
+        <pzo2101:gamerule_uses_characteristic rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Level"/>
+        <pzo2101:gamerule_condition>time of selection: 1 + (4k) level, where k = 0, 1, ..., 4;
+selection:(feats of selected ancestry) and (level of feat &lt;= character&apos;s level);</pzo2101:gamerule_condition>
+        <pzo2101:selector_list>one from [list of feats]</pzo2101:selector_list>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Selector_Ancestry_Heritage -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Selector_Ancestry_Heritage">
+        <pzo2101:gamerule_determines_characteristic rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Heritage"/>
+        <pzo2101:gamerule_is_consequence_of_gamerule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Selector_Ancestry"/>
+        <pzo2101:gamerule_uses_characteristic rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Ancestry"/>
+        <pzo2101:gamerule_condition>heritages of selected ancestry</pzo2101:gamerule_condition>
+        <pzo2101:selector_list>one from [list of heritages]</pzo2101:selector_list>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Selector_Background -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Selector_Background">
+        <pzo2101:gamerule_determines_characteristic rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Background"/>
+        <pzo2101:gamerule_for_action rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Action_Character_Creation"/>
+        <pzo2101:selector_list>one from [list of backgrounds]</pzo2101:selector_list>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Selector_Languages_by_Intelligence_Bonus -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Selector_Languages_by_Intelligence_Bonus">
+        <pzo2101:gamerule_for_gamerule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Determine_Languages"/>
+        <pzo2101:gamerule_uses_characteristic rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Ancestry"/>
+        <pzo2101:gamerule_uses_gamerule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ability_Modifier_Intelligence"/>
+        <pzo2101:selector_list>(intelligence bonus) from {ancestry: [list of languages]} = 
+{
+halfling: [dwarven, elven, gnomish, goblin, local];
+}</pzo2101:selector_list>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Skill_Lore -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Skill_Lore">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feature_Skill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Skill_Society -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Skill_Society">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feature_Skill"/>
+        <pzo2101:skill_for_background rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Background_Detective"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Trait_Halfling -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Trait_Halfling">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feature_Trait"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Trait_Humanoid -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Trait_Humanoid">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feature_Trait"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Trait_Keen_Eyes -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Trait_Keen_Eyes">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feature_Trait"/>
+        <pzo2101:feature_of_concept rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Ancestry_Halfling"/>
+        <pzo2101:gamerule_for_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Keen_Eyes"/>
+        <rdfs:comment>Your eyes are sharp, allowing you to make out small details about concealed or even invisible creatures that others might miss. You gain a +2 circumstance bonus when using the Seek action to find hidden or undetected creatures within 30 feet of you. When you target an opponent that is concealed from you or hidden from you, reduce the DC of the flat check to 3 for a concealed target or 9 for a hidden one.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Trait_Size_Small -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Trait_Size_Small">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feature_Trait"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Weapon_Sling -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Weapon_Sling">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Resource_Weapon"/>
+        <pzo2101:resource_for_gamerule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Titan_Slinger"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_for_feature"/>
+        <owl:someValuesFrom rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feature_Feat"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Feat"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_for_feature"/>
+        <owl:someValuesFrom rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Feature_Heritage"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Heritage"/>
+    </owl:Restriction>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="urn:swrl:var#abil">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#rule">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#char">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#role">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_Ability_Score"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#abil"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Gamerule_Determine_Ability_Scores_by_Method"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#rule"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#gamerule_determines_characteristic"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#rule"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#abil"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Characteristic_General"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#char"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#Role"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#role"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf#characteristic_of_role"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#char"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#role"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
+

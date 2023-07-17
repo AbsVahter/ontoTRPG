@@ -1,0 +1,1829 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/nerpa/ontologies/2023/6/untitled-ontology-87/"
+     xml:base="http://www.semanticweb.org/nerpa/ontologies/2023/6/untitled-ontology-87/"
+     xmlns:dbr="http://dbpedia.org/resource/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:pf2_books="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#">
+    <owl:Ontology rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#cover_art -->
+
+    <owl:AnnotationProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#cover_art"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#ontology_link -->
+
+    <owl:AnnotationProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#ontology_link">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Book"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#additional_writer_of_book -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#additional_writer_of_book">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#creator_of_book"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#art_director_of_book -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#art_director_of_book">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#creator_of_book"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#artist_cover_of_book -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#artist_cover_of_book">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#creator_of_book"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#artist_interior_of_book -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#artist_interior_of_book">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#creator_of_book"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#author_of_book -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#author_of_book">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#creator_of_book"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#book_is_created_by -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#book_is_created_by">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#creator_of_book"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#cartographer -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#cartographer">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#creator_of_book"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#creative_director_of_book -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#creative_director_of_book">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#creator_of_book"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#creator_of_book -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#creator_of_book">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Creator"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Book"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#designer_additional_of_book -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#designer_additional_of_book">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#creator_of_book"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#designer_of_book -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#designer_of_book">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#creator_of_book"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#developer_additional_of_book -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#developer_additional_of_book">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#creator_of_book"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#developer_lead_of_book -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#developer_lead_of_book">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#creator_of_book"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#developer_lead_organized_play_of_book -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#developer_lead_organized_play_of_book">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#creator_of_book"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#developer_of_book -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#developer_of_book">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#creator_of_book"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#editor_lead_of_book -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#editor_lead_of_book">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#creator_of_book"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#editor_of_book -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#editor_of_book">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#creator_of_book"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#manager_organized_play_of_book -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#manager_organized_play_of_book">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#creator_of_book"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#manager_project_of_book -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#manager_project_of_book">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#creator_of_book"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#playtester_of_book -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#playtester_of_book">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#creator_of_book"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#publisher_of_book -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#publisher_of_book">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#creator_of_book"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#adventure_path_part -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#adventure_path_part">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Book_Adventure_Path"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#book_date_of_release -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#book_date_of_release">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Book"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#book_pages -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#book_pages">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Book"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Adventure_Path_Age_of_Ashes -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Adventure_Path_Age_of_Ashes">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Book_Adventure_Path"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Book -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Book"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Book_Adventure_Path -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Book_Adventure_Path">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Book"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Book_Core -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Book_Core">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Book"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Book_Quest -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Book_Quest">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Book"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Book_Scenario -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Book_Scenario">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Book"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Book_Society -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Book_Society">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Book"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Creator -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Creator"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/resource/Ben_Wootten -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Ben_Wootten">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Ben_Wootten"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Erik_Mona -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Erik_Mona">
+        <pf2_books:developer_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <pf2_books:publisher_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <pf2_books:publisher_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <pf2_books:publisher_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9000-25e"/>
+        <pf2_books:publisher_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo90145"/>
+        <pf2_books:publisher_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9555"/>
+        <pf2_books:publisher_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfq0001e"/>
+        <pf2_books:publisher_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0100"/>
+        <pf2_books:publisher_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0101e"/>
+        <pf2_books:publisher_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0102e"/>
+        <pf2_books:publisher_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0103e"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Erik_Mona"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Jason_Bulmahn -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Jason_Bulmahn">
+        <pf2_books:author_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9555"/>
+        <pf2_books:designer_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <pf2_books:designer_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <pf2_books:designer_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9555"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Jason_Bulmahn"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Wayne_Reynolds -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Wayne_Reynolds">
+        <pf2_books:artist_cover_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <pf2_books:artist_cover_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Wayne_Reynolds"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/James_Jacobs_(game_designer) -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/James_Jacobs_(game_designer)">
+        <pf2_books:additional_writer_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <pf2_books:additional_writer_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo90145"/>
+        <pf2_books:author_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9000-25e"/>
+        <pf2_books:creative_director_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <pf2_books:creative_director_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <pf2_books:creative_director_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9000-25e"/>
+        <pf2_books:creative_director_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo90145"/>
+        <pf2_books:creative_director_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9555"/>
+        <pf2_books:creative_director_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfq0001e"/>
+        <pf2_books:creative_director_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0100"/>
+        <pf2_books:creative_director_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0101e"/>
+        <pf2_books:creative_director_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0102e"/>
+        <pf2_books:creative_director_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0103e"/>
+        <pf2_books:designer_additional_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <pf2_books:developer_lead_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <pf2_books:developer_lead_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9000-25e"/>
+        <pf2_books:developer_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo90145"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/James_Jacobs"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Adam_Daigle -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Adam_Daigle">
+        <pf2_books:designer_additional_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <pf2_books:developer_lead_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <pf2_books:developer_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <pf2_books:developer_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9555"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Adam_Daigle"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Adrian_Ng -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Adrian_Ng">
+        <pf2_books:author_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0103e"/>
+        <pf2_books:editor_lead_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0101e"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo90145"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9555"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfq0001e"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0100"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0102e"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Adrian_Ng"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Alex_Riggs -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Alex_Riggs">
+        <pf2_books:designer_additional_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Alex_Riggs"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Alexander_Augunas -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Alexander_Augunas">
+        <pf2_books:designer_additional_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Alexander_Augunas"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Alexander_Nanitchkov -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Alexander_Nanitchkov">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo90145"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Alexander_Nanitchkov"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Allison_Theus -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Allison_Theus">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Allison_Theus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Amanda_Hamon -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Amanda_Hamon">
+        <pf2_books:additional_writer_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9000-25e"/>
+        <pf2_books:author_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo90145"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Amanda_Hamon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Amirali_Attar_Olyaee -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Amirali_Attar_Olyaee">
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo90145"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9555"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Amirali_Attar_Olyaee"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Andrea_Tentori_Montalto -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Andrea_Tentori_Montalto">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Andrea_Tentori_Montalto"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Angelo_Peluso -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Angelo_Peluso">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0103e"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Angelo_Peluso"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Anna_Podedworna -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Anna_Podedworna">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Anna_Podedworna"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Avi_Kool -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Avi_Kool">
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo90145"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9555"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Avi_Kool"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Biagio_d_Alessandro -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Biagio_d_Alessandro">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Brian_Valeza -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Brian_Valeza">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo90145"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Brian_Valeza"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Bryan_Sola -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Bryan_Sola">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Bryan_Sola"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Chris_L_Kimball -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Chris_L_Kimball">
+        <pf2_books:artist_cover_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0102e"/>
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0102e"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Chris_S_Sims -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Chris_S_Sims">
+        <pf2_books:designer_additional_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Chris_S._Sims"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Christopher_Currie -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Christopher_Currie">
+        <pf2_books:playtester_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9555"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Christopher_Paul_Carey -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Christopher_Paul_Carey">
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Christopher_Paul_Carey"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Corey_Macourek -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Corey_Macourek">
+        <pf2_books:cartographer rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0101e"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Corey_Macourek"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Damien_Mammoliti -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Damien_Mammoliti">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Damien_Mammoliti"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Darcy_Dixon -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Darcy_Dixon">
+        <pf2_books:playtester_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9555"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#David_Melvin -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#David_Melvin">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0101e"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/David_Melvin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#David_N_Ross -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#David_N_Ross">
+        <pf2_books:designer_additional_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/David_N._Ross"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Denis_Zhbankov -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Denis_Zhbankov">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo90145"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Denis_Zhbankov"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Diana_Campos -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Diana_Campos">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfq0001e"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Diana_Martinez -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Diana_Martinez">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo90145"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Diana_Martinez"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Dion_Harris -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Dion_Harris">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfq0001e"/>
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0101e"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Dion_Harris"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Eleanor_Ferron -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Eleanor_Ferron">
+        <pf2_books:author_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0102e"/>
+        <pf2_books:designer_additional_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Eleanor_Ferron"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Elijah_Harrison -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Elijah_Harrison">
+        <pf2_books:playtester_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9555"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Elsa_Sjunneson_Henry -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Elsa_Sjunneson_Henry">
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Emile_Denis -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Emile_Denis">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Emile_Denis"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Emmanuele_Desiati -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Emmanuele_Desiati">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0100"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Enrique_Barajas -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Enrique_Barajas">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Enrique_Barajas"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Fabrio_Rodrigues -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Fabrio_Rodrigues">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0101e"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Federico_Musetti -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Federico_Musetti">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Federico_Musetti"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Firat_Solhan -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Firat_Solhan">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9000-25e"/>
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo90145"/>
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9555"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Firat_Solhan"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Gabriel_Waluconis -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Gabriel_Waluconis">
+        <pf2_books:manager_project_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9000-25e"/>
+        <pf2_books:manager_project_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0101e"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Giorgio_Baroni -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Giorgio_Baroni">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Giorgio_Baroni"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Giorgio_Falconi -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Giorgio_Falconi">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Giorgio_Falconi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Gislaine_Avila -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Gislaine_Avila">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0101e"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Gislaine_Avila"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Hai_Hoang -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Hai_Hoang">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9555"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Hai_Hoang"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Helge_C_Balzer -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Helge_C_Balzer">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Helge_C._Balzer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Henrik_Rosenborg -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Henrik_Rosenborg">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0101e"/>
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0103e"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Henrik_Rosenborg"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Igor_Grechanyi -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Igor_Grechanyi">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Igor_Grechanyi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Irina_Nordsol -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Irina_Nordsol">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo90145"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Irina_Nordsol_Kuzmina"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#James_Case -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#James_Case">
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo90145"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9555"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/James_Case"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Jason_Engle -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Jason_Engle">
+        <pf2_books:cartographer rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfq0001e"/>
+        <pf2_books:cartographer rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0100"/>
+        <pf2_books:cartographer rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0101e"/>
+        <pf2_books:cartographer rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0102e"/>
+        <pf2_books:cartographer rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0103e"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Jason_Engle"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Jason_Juta -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Jason_Juta">
+        <pf2_books:cartographer rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9000-25e"/>
+        <pf2_books:cartographer rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo90145"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Jason_Juta"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Jason_Keeley -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Jason_Keeley">
+        <pf2_books:designer_additional_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Jason_Keeley"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Jason_Tondro -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Jason_Tondro">
+        <pf2_books:additional_writer_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo90145"/>
+        <pf2_books:designer_additional_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo90145"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9555"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0103e"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Jason_Tondro"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Javier_Charro -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Javier_Charro">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Javier_Charro"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Jaym_Gates -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Jaym_Gates">
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Jaym_Gates"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Jeffrey_Swank -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Jeffrey_Swank">
+        <pf2_books:designer_additional_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Jeffrey_Swank"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#John_Compton -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#John_Compton">
+        <pf2_books:designer_additional_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <pf2_books:developer_lead_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0102e"/>
+        <pf2_books:developer_lead_organized_play_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfq0001e"/>
+        <pf2_books:developer_lead_organized_play_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0100"/>
+        <pf2_books:developer_lead_organized_play_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0101e"/>
+        <pf2_books:developer_lead_organized_play_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0103e"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/John_Compton"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Johnny_Morrow -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Johnny_Morrow">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfq0001e"/>
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0103e"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Johnny_Morrow"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Jorge_Fares -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Jorge_Fares">
+        <pf2_books:artist_cover_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfq0001e"/>
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Jorge_Fares"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Jose_Parodi -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Jose_Parodi">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Jose_Parodi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Josef_Kucera -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Josef_Kucera">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Josef_Ku%C4%8Dera"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Judy_Bauer -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Judy_Bauer">
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9000-25e"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo90145"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9555"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Judy_Bauer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Kenneth_Camaro -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Kenneth_Camaro">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0101e"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Kenneth_Camaro"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Kieran_Yanner -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Kieran_Yanner">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0101e"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Kieran_Yanner"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Kiki_Moch_Rizky -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Kiki_Moch_Rizky">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9000-25e"/>
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo90145"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Kiki_Moch_Rizky"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Klaher_Baklaher -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Klaher_Baklaher">
+        <pf2_books:artist_cover_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0101e"/>
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0101e"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Klaher_Baklaher"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Konstantin_Porubov -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Konstantin_Porubov">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Konstantin_Porubov"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Ksenia_Kozhevnikova -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Ksenia_Kozhevnikova">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Ksenia_Kozhevnikova"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Lacy_Pellazar -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Lacy_Pellazar">
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo90145"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9555"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Leo_Glass -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Leo_Glass">
+        <pf2_books:designer_additional_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <pf2_books:editor_lead_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9000-25e"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9000-25e"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo90145"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9555"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0101e"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Leo_Glass"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Leonardo_Borazio -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Leonardo_Borazio">
+        <pf2_books:artist_cover_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9000-25e"/>
+        <pf2_books:artist_cover_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo90145"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Leonardo_Borazio"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Linda_Zayas_Palmer -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Linda_Zayas_Palmer">
+        <pf2_books:author_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfq0001e"/>
+        <pf2_books:designer_additional_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <pf2_books:developer_additional_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <pf2_books:developer_lead_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0101e"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Linda_Zayas-Palmer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Logan_Bonner -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Logan_Bonner">
+        <pf2_books:additional_writer_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo90145"/>
+        <pf2_books:designer_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <pf2_books:designer_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <pf2_books:designer_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9000-25e"/>
+        <pf2_books:designer_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo90145"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Logan_Bonner"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Lu_Pellazar -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Lu_Pellazar">
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Lu_Pellazar"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Luca_Bancone -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Luca_Bancone">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Luca_Bancone"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Luis_Loza -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Luis_Loza">
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Luis_Loza"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Lyz_Liddell -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Lyz_Liddell">
+        <pf2_books:author_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0101e"/>
+        <pf2_books:designer_additional_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <pf2_books:developer_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo90145"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9555"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfq0001e"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0102e"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0103e"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Lyz_Liddell"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Maichol_Quinto -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Maichol_Quinto">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0100"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Maichol_Quinto"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Mariusz_Gandzel -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Mariusz_Gandzel">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Mariusz_Gandzel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Mark_Molnar -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Mark_Molnar">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Mark_Molnar"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Mark_Seifter -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Mark_Seifter">
+        <pf2_books:designer_additional_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9555"/>
+        <pf2_books:designer_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <pf2_books:designer_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <pf2_books:designer_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfq0001e"/>
+        <pf2_books:designer_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0100"/>
+        <pf2_books:designer_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0101e"/>
+        <pf2_books:designer_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0102e"/>
+        <pf2_books:designer_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0103e"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Mark_Seifter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Mary_Jane_Pajaron -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Mary_Jane_Pajaron">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Mary_Jane_Pajaron"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Matias_Tapia -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Matias_Tapia">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Matias_Tapia"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Matteo_Spirito -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Matteo_Spirito">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Matteo_Spirito"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Matthias_Kinnigkeit -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Matthias_Kinnigkeit">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Matthias_Kinnigkeit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Matthias_Rothenaicher -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Matthias_Rothenaicher">
+        <pf2_books:cartographer rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9555"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Matthias_Rothenaicher"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Michael_Sayre -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Michael_Sayre">
+        <pf2_books:designer_additional_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <pf2_books:developer_lead_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfq0001e"/>
+        <pf2_books:developer_lead_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0100"/>
+        <pf2_books:developer_lead_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0103e"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Michael_Sayre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Michele_Esposito -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Michele_Esposito">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Michele_Esposito"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Michele_Giorgi -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Michele_Giorgi">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Michele_Giorgi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Miguel_Regodon_Harkness -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Miguel_Regodon_Harkness">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9555"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Miguel_Regod%C3%B3n_Harkness"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Mikhail_Palamarchuk -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Mikhail_Palamarchuk">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Mikhail_Palamarchuk"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Mirco_Paganessi -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Mirco_Paganessi">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Mirco_Paganessi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Mirko_Faloni -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Mirko_Faloni">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Nikolai_Ostertag -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Nikolai_Ostertag">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0101e"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Nikolai_Ostertag"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Paris_Crenshaw -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Paris_Crenshaw">
+        <pf2_books:designer_additional_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Paris_Crenshaw"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Patrick_Renie -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Patrick_Renie">
+        <pf2_books:developer_lead_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <pf2_books:developer_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo90145"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <pf2_books:editor_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0100"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Patrick_Renie"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Pixoloid_Studios -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Pixoloid_Studios">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfq0001e"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Pixoloid_Studios"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Raph_Lomotan -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Raph_Lomotan">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0102e"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Raph_Lomotan"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Ricardo_Rullo -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Ricardo_Rullo">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0100"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Riccardo_Rullo -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Riccardo_Rullo">
+        <pf2_books:artist_cover_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0100"/>
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Riccardo_Rullo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Rob_McCaleb -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Rob_McCaleb">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Rob_McCaleb"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Robert_G_Mc_Creary -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Robert_G_Mc_Creary">
+        <pf2_books:designer_additional_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Robert_G._McCreary"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Roberto_Pitturru -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Roberto_Pitturru">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Roberto_Pitturru"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Rodger_van_de_Beek -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Rodger_van_de_Beek">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0100"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Rogier_van_de_Beek -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Rogier_van_de_Beek">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Rogier_van_de_Beek"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Roman_Roland_Kuteynikov -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Roman_Roland_Kuteynikov">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Roman_Roland_Kuteynikov"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Ron_Lundeen -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Ron_Lundeen">
+        <pf2_books:author_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0100"/>
+        <pf2_books:designer_additional_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Ron_Lundeen"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Ross_Williams -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Ross_Williams">
+        <pf2_books:playtester_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9555"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Sam_Yang -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Sam_Yang">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Sam_Yang"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Sarah_E_Robinson -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Sarah_E_Robinson">
+        <pf2_books:art_director_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <pf2_books:art_director_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <pf2_books:art_director_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9000-25e"/>
+        <pf2_books:art_director_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo90145"/>
+        <pf2_books:art_director_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9555"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Sarah_Robinson"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Scott_Purdy -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Scott_Purdy">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Scott_Purdy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Sergio_Cosmai -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Sergio_Cosmai">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Sergio_Cosmai"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Setiawan_Lie -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Setiawan_Lie">
+        <pf2_books:artist_cover_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9555"/>
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Lie_Setiawan"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Sonja_Morris -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Sonja_Morris">
+        <pf2_books:art_director_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <pf2_books:art_director_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <pf2_books:art_director_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9000-25e"/>
+        <pf2_books:art_director_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo90145"/>
+        <pf2_books:art_director_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9555"/>
+        <pf2_books:art_director_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfq0001e"/>
+        <pf2_books:art_director_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0100"/>
+        <pf2_books:art_director_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0101e"/>
+        <pf2_books:art_director_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0102e"/>
+        <pf2_books:art_director_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0103e"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Sonja_Morris"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Stefano_Moroni -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Stefano_Moroni">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Stefano_Moroni"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Stephen_Radney_MacFarland -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Stephen_Radney_MacFarland">
+        <pf2_books:designer_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <pf2_books:designer_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Stephen_Radney-MacFarland"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Taylor_Fischer -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Taylor_Fischer">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Taylor_Fischer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Teresa_Guido -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Teresa_Guido">
+        <pf2_books:artist_cover_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0103e"/>
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0103e"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Teresa_Guido"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Thurston_Hillman -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Thurston_Hillman">
+        <pf2_books:designer_additional_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Thurston_Hillman"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Tim_Nightengale -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Tim_Nightengale">
+        <pf2_books:designer_additional_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Tim_Nightengale"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Tony_Barnett -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Tony_Barnett">
+        <pf2_books:art_director_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfq0001e"/>
+        <pf2_books:art_director_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0100"/>
+        <pf2_books:art_director_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0101e"/>
+        <pf2_books:art_director_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0102e"/>
+        <pf2_books:art_director_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0103e"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Tonya_Woldridge -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Tonya_Woldridge">
+        <pf2_books:designer_additional_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <pf2_books:manager_organized_play_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfq0001e"/>
+        <pf2_books:manager_organized_play_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0100"/>
+        <pf2_books:manager_organized_play_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0101e"/>
+        <pf2_books:manager_organized_play_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0102e"/>
+        <pf2_books:manager_organized_play_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0103e"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Tonya_Woldridge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Valeria_Lutfullina -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Valeria_Lutfullina">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Valera_Lutfullina"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Vicky_Yarova -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Vicky_Yarova">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9555"/>
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0102e"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Víctor_Manuel_Leza_Moreno -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Víctor_Manuel_Leza_Moreno">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Will_O_Brien -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Will_O_Brien">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#William_Liu -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#William_Liu">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9555"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/William_Liu"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Yanis_Cardin -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Yanis_Cardin">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101"/>
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Yanis_Cardin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Yasen_Stoilov -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Yasen_Stoilov">
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102"/>
+        <pf2_books:artist_interior_of_book rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0102e"/>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Yasen_Stoilov"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101 -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2101">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Book_Core"/>
+        <pf2_books:book_date_of_release rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-08-01T00:00:00</pf2_books:book_date_of_release>
+        <pf2_books:book_pages rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">640</pf2_books:book_pages>
+        <rdfs:label>Pathfinder Core Rulebook</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Core_Rulebook_(Second_Edition)"/>
+        <pf2_books:cover_art rdf:resource="https://pathfinderwiki.com/w/images/0/07/Core_Rulebook.jpg"/>
+        <pf2_books:ontology_link rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo2101.rdf"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102 -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo2102">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Book_Core"/>
+        <pf2_books:book_date_of_release rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-08-01T00:00:00</pf2_books:book_date_of_release>
+        <pf2_books:book_pages rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">360</pf2_books:book_pages>
+        <rdfs:label>Bestiary</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Bestiary_(Second_Edition)"/>
+        <pf2_books:cover_art rdf:resource="https://pathfinderwiki.com/w/images/2/28/Pathfinder_Bestiary.jpg"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9000-25e -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9000-25e">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Adventure_Path_Age_of_Ashes"/>
+        <pf2_books:adventure_path_part rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</pf2_books:adventure_path_part>
+        <pf2_books:book_date_of_release rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-07-29T00:00:00</pf2_books:book_date_of_release>
+        <pf2_books:book_pages rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</pf2_books:book_pages>
+        <rdfs:label>Age of Ashes Player&apos;s Guide</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Age_of_Ashes_Player%27s_Guide"/>
+        <pf2_books:cover_art rdf:resource="https://pathfinderwiki.com/w/images/2/2c/Age_of_Ashes_Player%27s_Guide.jpg"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo90145 -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo90145">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Adventure_Path_Age_of_Ashes"/>
+        <pf2_books:adventure_path_part rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</pf2_books:adventure_path_part>
+        <pf2_books:book_date_of_release rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-08-01T00:00:00</pf2_books:book_date_of_release>
+        <pf2_books:book_pages rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">96</pf2_books:book_pages>
+        <rdfs:label>Pathfinder Adventure Path #145: Hellknight Hill</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Hellknight_Hill_(adventure)"/>
+        <pf2_books:cover_art rdf:resource="https://pathfinderwiki.com/w/images/5/52/Hellknight_Hill.jpg"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9555 -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzo9555">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Book_Scenario"/>
+        <pf2_books:book_date_of_release rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-08-01T00:00:00</pf2_books:book_date_of_release>
+        <pf2_books:book_pages rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">64</pf2_books:book_pages>
+        <rdfs:label>The Fall of Plaguestone</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/The_Fall_of_Plaguestone"/>
+        <pf2_books:cover_art rdf:resource="https://pathfinderwiki.com/w/images/d/d1/The_Fall_of_Plaguestone.jpg"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfq0001e -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfq0001e">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Book_Quest"/>
+        <pf2_books:book_date_of_release rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-08-01T00:00:00</pf2_books:book_date_of_release>
+        <pf2_books:book_pages rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">23</pf2_books:book_pages>
+        <rdfs:label>The Sandstone Secret</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/The_Sandstone_Secret"/>
+        <pf2_books:cover_art rdf:resource="https://pathfinderwiki.com/w/images/0/00/The_Sandstone_Secret.jpg"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0100 -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0100">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Book_Society"/>
+        <pf2_books:book_date_of_release rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-08-17T00:00:00</pf2_books:book_date_of_release>
+        <pf2_books:book_pages rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</pf2_books:book_pages>
+        <rdfs:label>Origin of the Open Road</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Origin_of_the_Open_Road"/>
+        <pf2_books:cover_art rdf:resource="https://pathfinderwiki.com/w/images/e/e4/Origin_of_the_Open_Road.jpg"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0101e -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0101e">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Book_Society"/>
+        <pf2_books:book_date_of_release rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-08-01T00:00:00</pf2_books:book_date_of_release>
+        <pf2_books:book_pages rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">67</pf2_books:book_pages>
+        <rdfs:label>The Absalom Initiation</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/The_Absalom_Initiation"/>
+        <pf2_books:cover_art rdf:resource="https://pathfinderwiki.com/w/images/d/da/The_Absalom_Initiation.jpg"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0102e -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0102e">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Book_Society"/>
+        <pf2_books:book_date_of_release rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-08-01T00:00:00</pf2_books:book_date_of_release>
+        <pf2_books:book_pages rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">33</pf2_books:book_pages>
+        <rdfs:label>The Mosquito Witch</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/The_Mosquito_Witch"/>
+        <pf2_books:cover_art rdf:resource="https://pathfinderwiki.com/w/images/a/aa/The_Mosquito_Witch.jpg"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0103e -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#pzopfs0103e">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf#Book_Society"/>
+        <pf2_books:book_date_of_release rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-08-01T00:00:00</pf2_books:book_date_of_release>
+        <pf2_books:book_pages rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">42</pf2_books:book_pages>
+        <rdfs:label>Escaping the Grave</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Escaping_the_Grave"/>
+        <pf2_books:cover_art rdf:resource="https://pathfinderwiki.com/w/images/6/60/Escaping_the_Grave.jpg"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
+
