@@ -7,9 +7,11 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:schema="http://schema.org/"
+     xmlns:pzo2101="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#"
      xmlns:pf2_general="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#"
-     xmlns:pzo9000-25e="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#">
-    <owl:Ontology rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf">
+     xmlns:pzo9000-25e="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#"
+     xmlns:pzo9000-25e1="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#">
+    <owl:Ontology rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf">
         <owl:imports rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf"/>
     </owl:Ontology>
     
@@ -26,149 +28,410 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#event_forms_motive -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#ability_is_boost_for_concept -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#event_forms_motive">
-        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#motive_from_event"/>
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Event"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Motive"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#ability_is_boost_for_concept">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#concept_has_boost_for_ability"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#event_from_motive -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#action_with_gamerule -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#event_from_motive">
-        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#motive_leads_to_event"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#action_with_gamerule">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#gamerule_for_action"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#event_in_location -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#background_is_trained_in_skill -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#event_in_location">
-        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#location_for_event"/>
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Event"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Location"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#background_is_trained_in_skill">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#skill_for_background"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Background"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Feature_Skill"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#event_with_subject -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#concept_has_boost_for_ability -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#event_with_subject">
-        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#subject_of_event"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#concept_has_boost_for_ability">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Concept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Characteristic_Ability_Score"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#location_contains_location -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#concept_has_feature -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#location_contains_location">
-        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#location_inside_location"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#concept_has_feature">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#feature_of_concept"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Concept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Feature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#condition_is_stopped_by_gamerule -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#condition_is_stopped_by_gamerule">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#gamerule_stops_condition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#feature_of_concept -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#feature_of_concept"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#gamerule_for_action -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#gamerule_for_action"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#gamerule_for_gamerule -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#gamerule_for_gamerule">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#gamerule_uses_gamerule"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#gamerule_is_consequence_of_gamerule -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#gamerule_is_consequence_of_gamerule">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#gamerule_leads_to_gamerule"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#gamerule_leads_to_gamerule -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#gamerule_leads_to_gamerule"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#gamerule_stops_condition -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#gamerule_stops_condition">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Gamerule"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Gamerule_Condition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#gamerule_uses_gamerule -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#gamerule_uses_gamerule">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Gamerule"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Gamerule"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#is_selected_by_gamerule -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#is_selected_by_gamerule"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#skill_for_background -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#skill_for_background"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#background_has_motive -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#background_has_motive">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#motive_of_background"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Background"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#community_of_npc -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#community_of_npc">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#npc_from_community"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#deity_connected_with_location -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#deity_connected_with_location">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#location_is_connected_with_deity"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Deity"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#deity_is_connected_with_subject -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#deity_is_connected_with_subject">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#subject_is_connected_with_deity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#event_forms_motive -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#event_forms_motive">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#motive_from_event"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Event"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#event_from_motive -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#event_from_motive">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#motive_leads_to_event"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#event_in_location -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#event_in_location">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#location_for_event"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Event"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#event_with_gamerule -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#event_with_gamerule">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#gamerule_for_event"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#event_with_subject -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#event_with_subject">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#subject_of_event"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#gamerule_for_event -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#gamerule_for_event">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Gamerule"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Event"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#gamerule_for_location -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#gamerule_for_location">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#location_with_gamerule"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Gamerule"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#location_contains_location -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#location_contains_location">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#location_inside_location"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#location_for_event -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#location_for_event -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#location_for_event"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#location_for_event"/>
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#location_for_subject -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#location_for_subject -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#location_for_subject">
-        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#subject_of_location"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#location_for_subject">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#subject_of_location"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#location_inside_location -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#location_inside_location -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#location_inside_location">
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#location_inside_location">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Location"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Location"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#location_next_to_location -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#location_is_connected_with_deity -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#location_next_to_location">
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#location_is_connected_with_deity"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#location_next_to_location -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#location_next_to_location">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Location"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Location"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#motive_from_event -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#location_with_gamerule -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#motive_from_event"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#location_with_gamerule"/>
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#motive_has_target_subject -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#motive_from_event -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#motive_has_target_subject">
-        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#subject_is_target_for_motive"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#motive_from_event"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#motive_has_target_subject -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#motive_has_target_subject">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#subject_is_target_for_motive"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#motive_leads_to_event -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#motive_leads_to_event -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#motive_leads_to_event">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Motive"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Event"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#motive_leads_to_event">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Event"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#motive_of_subject -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#motive_of_background -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#motive_of_subject">
-        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#subject_has_motive"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#motive_of_background"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#motive_of_subject -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#motive_of_subject">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#subject_has_motive"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#subject_has_motive -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#npc_from_community -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#subject_has_motive">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Subject"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Motive"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#npc_from_community">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Community"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#subject_is_target_for_motive -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#subject_has_motive -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#subject_is_target_for_motive">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Subject"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Motive"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#subject_has_motive">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Subject"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#subject_of_event -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#subject_is_connected_with_deity -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#subject_of_event">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Subject"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Event"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#subject_is_connected_with_deity">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Subject"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Deity"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#subject_of_location -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#subject_is_target_for_motive -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#subject_of_location">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Subject"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Location"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#subject_is_target_for_motive">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Subject"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive"/>
     </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#subject_of_event -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#subject_of_event">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Subject"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Event"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#subject_of_location -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#subject_of_location">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Subject"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#background_lore_speciality -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#background_lore_speciality">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Background"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#condition_duration -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#condition_duration">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Gamerule_Condition"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#gamerule_condition -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#gamerule_condition">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Gamerule"/>
+        <rdfs:comment>{condition: result}</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#gamerule_output -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#gamerule_output">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Gamerule"/>
+        <rdfs:comment>{option: output}</rdfs:comment>
+    </owl:DatatypeProperty>
     
 
 
@@ -183,51 +446,261 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Community -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Action -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Community">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Subject"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Action"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Action_Player -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Action_Player">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Action"/>
     </owl:Class>
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Event -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Background -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Event"/>
-    
-
-
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Location -->
-
-    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Location"/>
-    
-
-
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Motive -->
-
-    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Motive"/>
-    
-
-
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#NPC -->
-
-    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#NPC">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Subject"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Background">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Concept"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#background_is_trained_in_skill"/>
+                        <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Skill_Lore"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#is_selected_by_gamerule"/>
+                        <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Selector_Background"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Settlement -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Background_Charisma -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Settlement">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Location"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Background_Charisma">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Background"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#concept_has_boost_for_ability"/>
+                <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Ability_Score_Charisma"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Subject -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Background_Constitution -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Subject"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Background_Constitution">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Background"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#concept_has_boost_for_ability"/>
+                <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Ability_Score_Constitution"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Background_Dexterity -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Background_Dexterity">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Background"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#concept_has_boost_for_ability"/>
+                <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Ability_Score_Dexterity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Background_Intelligence -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Background_Intelligence">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Background"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#concept_has_boost_for_ability"/>
+                <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Ability_Score_Intelligence"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Background_Strength -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Background_Strength">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Background"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#concept_has_boost_for_ability"/>
+                <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Ability_Score_Strength"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Background_Wisdom -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Background_Wisdom">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Background"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#concept_has_boost_for_ability"/>
+                <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Ability_Score_Wisdom"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Characteristic_Ability_Score -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Characteristic_Ability_Score"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Concept -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Concept"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Deity -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Deity"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Feature -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Feature"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Feature_Skill -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Feature_Skill">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Gamerule -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Gamerule"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Gamerule_Condition -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Gamerule_Condition">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Gamerule"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Community -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Community">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Subject"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Event -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Event"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Breachill -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Breachill">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#location_inside_location"/>
+                <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Settlement_Breachill"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Map -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Map">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#Art"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Background -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Background">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#motive_leads_to_event"/>
+                        <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Event_Call_of_Heroes"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#motive_of_subject"/>
+                        <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Community_PCs"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Subject"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Settlement -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Settlement">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Subject -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Subject"/>
     
 
 
@@ -242,15 +715,227 @@
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_books.rdf#Jason_Juta -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_books.rdf#Jason_Juta"/>
+    
+
+
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_books.rdf#Leonardo_Borazio -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_books.rdf#Leonardo_Borazio"/>
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Art_Cover -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Ability_Modifier_Charisma -->
 
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Art_Cover">
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Ability_Modifier_Charisma"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Ability_Score_Charisma -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Ability_Score_Charisma"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Ability_Score_Constitution -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Ability_Score_Constitution"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Ability_Score_Dexterity -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Ability_Score_Dexterity"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Ability_Score_Intelligence -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Ability_Score_Intelligence"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Ability_Score_Strength -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Ability_Score_Strength"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Ability_Score_Wisdom -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Ability_Score_Wisdom"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Check_Skill_Diplomacy -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Check_Skill_Diplomacy"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Deity_Cayden_Cailean -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Deity_Cayden_Cailean"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Deity_Desna -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Deity_Desna"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Deity_Shelyn -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Deity_Shelyn"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Feat_Skill_Courtly_Graces -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Feat_Skill_Courtly_Graces"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Feat_Skill_Hobnobber -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Feat_Skill_Hobnobber"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Feat_Skill_Intimidating_Glare -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Feat_Skill_Intimidating_Glare"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Feat_Skill_Lie_to_Me -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Feat_Skill_Lie_to_Me"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Feat_Skill_Pickpocket -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Feat_Skill_Pickpocket"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Feat_Skill_Specialty_Crafting -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Feat_Skill_Specialty_Crafting"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Feat_Skill_Student_of_the_Canon -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Feat_Skill_Student_of_the_Canon"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Feat_Skill_Terrain_Expertise -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Feat_Skill_Terrain_Expertise"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Feat_Skill_Terrain_Stalker -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Feat_Skill_Terrain_Stalker"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Roll_Diplomacy -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Roll_Diplomacy"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Selector_Background -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Selector_Background"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Skill_Crafting -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Skill_Crafting"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Skill_Deception -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Skill_Deception"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Skill_Diplomacy -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Skill_Diplomacy"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Skill_Intimidation -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Skill_Intimidation"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Skill_Lore -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Skill_Lore"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Skill_Society -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Skill_Society"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Skill_Stealth -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Skill_Stealth"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Skill_Survival -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Skill_Survival"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Skill_Thievery -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Skill_Thievery"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Action_Befriend_a_Local -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Action_Befriend_a_Local">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Action_Player"/>
+        <rdfs:comment>You spend the day in the company of an NPC whose companionship you value in order to strengthen the bonds of your friendship with them.</rdfs:comment>
+        <pf2_general:for_future_correction>concentrate, downtime, linguistic</pf2_general:for_future_correction>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Art_Breachill -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Art_Breachill">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#Art"/>
+        <pf2_general:art_depicts rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Settlement_Breachill"/>
+        <schema:image rdf:resource="https://ibb.co/jTbggxR"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Art_Cover -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Art_Cover">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#Art"/>
         <pf2_general:art_is_created_by rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_books.rdf#Leonardo_Borazio"/>
         <schema:image rdf:resource="https://pathfinderwiki.com/w/images/2/2c/Age_of_Ashes_Player%27s_Guide.jpg"/>
@@ -258,107 +943,672 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Community_Goblin_Tribe_Bumblebrashers -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Background_Dragon_Scholar -->
 
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Community_Goblin_Tribe_Bumblebrashers">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Community"/>
-        <pzo9000-25e:subject_of_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Location_Citadel_Altaerein"/>
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Background_Dragon_Scholar">
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Background_Charisma"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Background_Strength"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <pzo2101:background_is_trained_in_skill rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Skill_Intimidation"/>
+        <pzo2101:concept_has_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Feat_Skill_Intimidating_Glare"/>
+        <pzo2101:background_lore_speciality>Dragon</pzo2101:background_lore_speciality>
+        <rdfs:comment>Dragons have fascinated you for as long as you can remember. The potent power they possess, the long lives they lead, the ancient traditions they inspire—whatever the source of your interest, you’ve spent much of your life to this point immersed in all things draconic. These studies have bolstered your self-confidence and given you a wide range of methods and tactics you can use to impose your will on others.</rdfs:comment>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Community_Hellknight_Order_of_the_Nail -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Background_Emancipated -->
 
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Community_Hellknight_Order_of_the_Nail">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Community"/>
-        <pzo9000-25e:subject_of_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Location_Citadel_Altaerein"/>
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Background_Emancipated">
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Background_Charisma"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Background_Dexterity"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <pzo2101:background_is_trained_in_skill rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Skill_Stealth"/>
+        <pzo2101:concept_has_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Feat_Skill_Terrain_Stalker"/>
+        <pzo2101:background_lore_speciality>Kintargo</pzo2101:background_lore_speciality>
+        <rdfs:comment>Until recently, the nation of Ravounel was part of the larger nation of Cheliax, where the church of Asmodeus is the law and slaves are traded freely in the open market. You had the poor fortune to be born into slavery, but the good luck to have grown up in the city of Kintargo. When Ravounel seceded from Cheliax, the leaders of this new nation freed all slaves, and you’ve wasted no time in exploring and establishing your new life. How and why you’ve come to Breachill is left to you to decide—but the fact that you feel empowered to determine your own destiny continues to drive you!</rdfs:comment>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Community_PCs -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Background_Haunting_Vision -->
 
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Community_PCs">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Community"/>
-        <pzo9000-25e:subject_is_target_for_motive rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Motive_Ask_for_Help_to_Bumblebrashers"/>
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Background_Haunting_Vision">
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Background_Constitution"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Background_Wisdom"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <pzo2101:background_is_trained_in_skill rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Skill_Stealth"/>
+        <pzo2101:concept_has_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Feat_Skill_Student_of_the_Canon"/>
+        <pzo2101:background_lore_speciality>Dahak</pzo2101:background_lore_speciality>
+        <rdfs:comment>You’ve been haunted by frightening dreams of fires your whole life. This could be the result of a past, neardeath experience with fire or it might have no obvious source that you know of. Recently, you stumbled upon an image, story, or other omen featuring the dragon god of destruction, Dahak, and you were struck with an unnerving sense of deja vu—you’ve come to think that the draconic deity might have something to do with your dreams, and as such have been studying all you can about the god. Your visions have bolstered your faith as well; even if you don’t worship a specific deity, you have a deep passion for matters of faith.</rdfs:comment>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Community_Population_of_Breachill -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Background_Hellknight_Historian -->
 
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Community_Population_of_Breachill">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Community"/>
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Background_Hellknight_Historian">
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Background_Intelligence"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Background_Strength"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <pzo2101:background_is_trained_in_skill rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Skill_Society"/>
+        <pzo2101:concept_has_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Feat_Skill_Courtly_Graces"/>
+        <pzo2101:background_lore_speciality>Architecture</pzo2101:background_lore_speciality>
+        <rdfs:comment>The various Hellknight Orders intrigue you, whether you seek to become one of their number yourself, wish to oppose their goals at every turn, or are merely inspired by or curious to learn more about them. You’ve heard that when the Order of the Nail abandoned Citadel Altaerein, they left behind the deed to the castle so anyone brave enough to explore the ruins and the defenses no doubt left behind would be rewarded with ownership of the abandoned fortress.</rdfs:comment>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Event_Call_of_Heroes -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Background_Local_Scion -->
 
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Event_Call_of_Heroes">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Event"/>
-        <pzo9000-25e:event_in_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Settlement_Breachill"/>
-        <pzo9000-25e:event_with_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Community_PCs"/>
-        <pzo9000-25e:event_with_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#NPC_Local_Goblin"/>
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Background_Local_Scion">
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Background_Charisma"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Background_Constitution"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <pzo2101:background_is_trained_in_skill rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Skill_Crafting"/>
+        <pzo2101:concept_has_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Feat_Skill_Specialty_Crafting"/>
+        <pzo2101:background_lore_speciality>Breachhill</pzo2101:background_lore_speciality>
+        <rdfs:comment>You’re from Breachill and have lived there most, if not all, of your life. You might be the son or daughter of a wellknown local adventuring family, or a family with a storied tradition of military or other martial service. You likely also have some sort of skill with your hands, as the people of Breachill are very self-sufficient.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Background_Out_of_Towner -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Background_Out_of_Towner">
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Background_Constitution"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Background_Intelligence"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <pzo2101:background_is_trained_in_skill rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Skill_Diplomacy"/>
+        <pzo2101:concept_has_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Feat_Skill_Hobnobber"/>
+        <pzo2101:background_lore_speciality>Dwarf, Elf, Gnome, Goblin, or Halfling</pzo2101:background_lore_speciality>
+        <rdfs:comment>You’ve never been to Breachill, nor do you have roots in the town, but as chance has it you find yourself visiting. You might be here traveling with a friend, visiting an old acquaintance, or merely here to see a new part of the world. Before coming to town, though, you spent many years living with an ancestry other than your own, and your diverse childhood has left you with an open mind and a curious nature.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Background_Reputation_Seeker -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Background_Reputation_Seeker">
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Background_Dexterity"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Background_Intelligence"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <pzo2101:background_is_trained_in_skill rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Skill_Survival"/>
+        <pzo2101:concept_has_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Feat_Skill_Terrain_Expertise"/>
+        <pzo2101:background_lore_speciality>Darklands, Desert, or Jungle</pzo2101:background_lore_speciality>
+        <rdfs:comment>You’re likely from Breachill, but unlike the Local Scion, your family has no notable legacy in the area. You might not even have much of a family at all to call your own, and could be an orphan. You’ve seen so many people make names for themselves that you set out on your own and spent some time abroad in the jungles or deserts of Garund or in the upper reaches of the Darklands—regions that proved too dangerous to remain in for long on your own. You returned home with more caution and knowledge of the world beyond Breachill’s borders, but still determined to win fame.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Background_Returning_Descendant -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Background_Returning_Descendant">
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Background_Dexterity"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Background_Wisdom"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <pzo2101:background_is_trained_in_skill rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Skill_Thievery"/>
+        <pzo2101:concept_has_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Feat_Skill_Pickpocket"/>
+        <pzo2101:background_lore_speciality>Engineering</pzo2101:background_lore_speciality>
+        <rdfs:comment>You aren’t from Breachill yourself—you might not even be from Isger or Avistan at all. You’ve lived a hard life, in any event. You have often had to make tough decisions, and have developed a knack for understanding how things work (and the best way to take them apart) that has helped you support yourself. Recently you discovered that an ancestor was from the town of Breachill and had a modest career as an adventurer. You can’t help but wonder if you would have had an easier life if you’d grown up there instead, and have decided to seek out this small town to learn more about it.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Background_Truth_Seeker -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Background_Truth_Seeker">
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Background_Strength"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Background_Wisdom"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <pzo2101:background_is_trained_in_skill rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Skill_Deception"/>
+        <pzo2101:concept_has_feature rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Feat_Skill_Lie_to_Me"/>
+        <pzo2101:background_lore_speciality>Politics</pzo2101:background_lore_speciality>
+        <rdfs:comment>Whether you are a local or from out of town, you’ve heard rumors that Breachill’s past contains a hidden secret. Perhaps you’ve heard strange rumors that the town’s founder, Lamond Breachton, was not the hero everyone touts, or maybe your grandmother heard stories from her own grandmother that contradict the town’s accepted narrative of its establishment. In the pursuit of the truth, you’ve learned to navigate the tangles of politics, and to never take anyone’s word at face value.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Community_Breachill_Authority -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Community_Breachill_Authority">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Community"/>
+        <pzo9000-25e1:subject_of_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Settlement_Breachill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Community_Breachill_Population -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Community_Breachill_Population">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Community"/>
+        <rdfs:comment>Breachill’s townsfolk are hardy, and the town is focused on self-sufficiency and creature comforts. Residents are friendly and tend to help each other, and the town’s history makes them open-minded toward outsiders. Breachill’s citizens tend to play as hard as they work, so the town counts numerous taverns among its many businesses.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Community_Goblin_Tribe_Bumblebrashers -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Community_Goblin_Tribe_Bumblebrashers">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Community"/>
+        <pzo9000-25e1:subject_of_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Citadel_Altaerein"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Community_Hellknight_Order_of_the_Nail -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Community_Hellknight_Order_of_the_Nail">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Community"/>
+        <pzo9000-25e1:subject_of_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Citadel_Altaerein"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Community_PCs -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Community_PCs">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Community"/>
+        <pzo9000-25e1:subject_is_target_for_motive rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Ask_for_Help_to_Bumblebrashers"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Community_Posandi_Family -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Community_Posandi_Family">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Community"/>
+        <pzo9000-25e1:community_of_npc rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Amera_Lang"/>
+        <pzo9000-25e1:community_of_npc rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Quentino_Posandi"/>
+        <pzo9000-25e1:subject_of_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Posandi_Bros"/>
+        <rdfs:comment>&lt;...&gt; titular clan, the family is notoriously tightlipped about its business practices.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Condition_Befriended_Local -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Condition_Befriended_Local">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Gamerule_Condition"/>
+        <pzo2101:gamerule_for_gamerule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Roll_Diplomacy"/>
+        <pzo2101:gamerule_for_gamerule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Condition_Adventurer~s_Discount"/>
+        <pzo2101:gamerule_is_consequence_of_gamerule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Gamerule_Befriend_a_Local"/>
+        <pzo2101:gamerule_stops_condition rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Condition_Critically_Failed_Befriend"/>
+        <pzo2101:condition_duration>permanent (critical success) or  min (1, charisma modifier) weeks (success)</pzo2101:condition_duration>
+        <pzo2101:gamerule_output>{
+adventurer&apos;s discount: -10%;
+diplomacy roll: +1;
+}</pzo2101:gamerule_output>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Condition_Critically_Failed_Befriend -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Condition_Critically_Failed_Befriend">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Gamerule_Condition"/>
+        <pzo2101:gamerule_for_gamerule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Gamerule_Befriend_a_Local"/>
+        <pzo2101:gamerule_is_consequence_of_gamerule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Gamerule_Befriend_a_Local"/>
+        <pzo2101:gamerule_stops_condition rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Condition_Befriended_Local"/>
+        <pzo2101:gamerule_output>{
+befriended condition: stopped;
+befriend DC: +5;
+}</pzo2101:gamerule_output>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Event_Call_of_Heroes -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Event_Call_of_Heroes">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Event"/>
+        <pzo9000-25e1:event_in_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Settlement_Breachill"/>
+        <pzo9000-25e1:event_with_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Community_PCs"/>
+        <pzo9000-25e1:event_with_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Local_Goblin"/>
         <rdfs:comment>Breachill’s local government has a long history of hiring adventurers to tackle challenges its residents face that fall outside the scope of the town guard’s duties.</rdfs:comment>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Event_Strange_Signal_Fires_atop_Citadel -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Event_Free_Kintargo -->
 
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Event_Strange_Signal_Fires_atop_Citadel">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Event"/>
-        <pzo9000-25e:event_in_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Location_Citadel_Altaerein"/>
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Event_Free_Kintargo">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Event"/>
+        <pzo9000-25e1:event_forms_motive rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Background_Emancipated"/>
+        <pzo9000-25e1:event_in_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Settlement_Kintargo"/>
+        <pzo9000-25e1:event_with_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Community_PCs"/>
+        <rdfs:comment>When Ravounel seceded from Cheliax, the leaders of this new nation freed all slaves, and &lt;character with emancipated background&gt; wasted no time in exploring and establishing your new life.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Event_PCs_Earns_Discount_in_Breachill -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Event_PCs_Earns_Discount_in_Breachill">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Event"/>
+        <pzo9000-25e1:event_in_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Settlement_Breachill"/>
+        <pzo9000-25e1:event_with_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Community_PCs"/>
+        <rdfs:comment>During a point in the first adventure, after your group of PCs has accomplished its first significant quest, you’ll earn this discount. Once you’ve done so, you’ll receive a flat 5% discount off the price of all items and services purchased in Breachill.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Event_Strange_Signal_Fires_atop_Citadel -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Event_Strange_Signal_Fires_atop_Citadel">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Event"/>
+        <pzo9000-25e1:event_in_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Citadel_Altaerein"/>
         <rdfs:comment>&lt;...&gt; strange signal fires begin to burn atop the citadel’s battlements &lt;...&gt;</rdfs:comment>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Location_Citadel_Altaerein -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Gamerule_Befriend_a_Local -->
 
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Location_Citadel_Altaerein">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Location"/>
-        <pzo9000-25e:location_inside_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Location_Hellknight_Hill"/>
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Gamerule_Befriend_a_Local">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Gamerule"/>
+        <pzo2101:gamerule_for_action rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Action_Befriend_a_Local"/>
+        <pzo2101:gamerule_uses_gamerule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Ability_Modifier_Charisma"/>
+        <pzo2101:gamerule_uses_gamerule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Check_Skill_Diplomacy"/>
+        <pzo2101:gamerule_condition>DC: 20 + (5 if critically failed befriend)</pzo2101:gamerule_condition>
+        <pzo2101:gamerule_output>{
+critical success: {condition duration: permanent};
+success: {condition duration: min (1, charisma modifier) weeks};
+critical failure: failed befriend condition;
+}</pzo2101:gamerule_output>
+        <rdfs:comment>You can always roll a Diplomacy check to determine your degree of success when you try to Befriend a Local, but you can instead attempt another skill check of your choice to engage that NPC in an area of expertise they might be interested in.</rdfs:comment>
+        <pf2_general:for_future_correction>GM will decide if the check you chose is applicable—if not, the outcome of your check is one degree of success worse.</pf2_general:for_future_correction>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Breach_Creek_Lumber -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Breach_Creek_Lumber">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Breachill"/>
+        <rdfs:comment>This facility on the edge of Crimson Tide Wood serves as a logging mill and a carpenter’s shop. One of the largest logging companies in Breachill, the business provides lumber for much of the town’s construction needs &lt;...&gt;</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Breachhill_Town_Hall -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Breachhill_Town_Hall">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Breachill"/>
+        <pzo9000-25e1:location_for_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Event_Call_of_Heroes"/>
+        <rdfs:comment>In addition to the chamber used for Breachill’s public meetings—including town council meetings and the Call for Heroes—Breachill Town Hall holds the offices of all staff members who support the town’s government and its myriad municipal functions, as well as facilities for its town guard and courts.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Breachill_Archives -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Breachill_Archives">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Breachill"/>
+        <pzo9000-25e1:location_is_connected_with_deity rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Deity_Desna"/>
+        <rdfs:comment>Kept in a sprawling (if musty) facility just across the fence from Breachill Town Hall, the town archives consist of official records and historical accounts dating back to the settlement’s founding.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Citadel_Altaerein -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Citadel_Altaerein">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location"/>
+        <pzo9000-25e1:location_inside_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Hellknight_Hill"/>
         <rdfs:comment>abandoned castle</rdfs:comment>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Location_Hellknight_Hill -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Crimson_Tide_Wood -->
 
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Location_Hellknight_Hill">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Location"/>
-        <pzo9000-25e:location_inside_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Location_Isger"/>
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Crimson_Tide_Wood">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location"/>
+        <pzo9000-25e1:location_next_to_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Settlement_Breachill"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Location_Isger -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Crimson_Wood_Furs -->
 
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Location_Isger">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Location"/>
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Crimson_Wood_Furs">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Breachill"/>
+        <rdfs:comment>Despite the specificity of its name, Crimson Wood Furs is a comprehensive haberdashery known for its high-end tailoring, gorgeous cold-weather outerwear, and fine cobbling. The establishment takes pride in its origins as a luxury supplier to highranking Hellknights, and portraits of early Order of the Nail leaders wearing the shop’s fine clothes line the store’s mahogany walls.</rdfs:comment>
+        <pf2_general:for_future_correction>luxury supplier to highranking Hellknights</pf2_general:for_future_correction>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Motive_Ask_for_Help_to_Bumblebrashers -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Great_Dreamhouse -->
 
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Motive_Ask_for_Help_to_Bumblebrashers">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Motive"/>
-        <pzo9000-25e:motive_from_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Event_Strange_Signal_Fires_atop_Citadel"/>
-        <pzo9000-25e:motive_leads_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Event_Call_of_Heroes"/>
-        <pzo9000-25e:motive_of_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#NPC_Local_Goblin"/>
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Great_Dreamhouse">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Breachill"/>
+        <rdfs:comment>One of the few dedicated temples in Breachill, the Great Dreamhouse is a monastery-like establishment dedicated to the goddess Desna. About 30 priests and acolytes who live, work, study, and pray in the temple’s peaceful lounges and verdant indoor gardens call the place home. The Great Dreamhouse offers a place for weary travelers of all stripes to rest, and most of its resident faithful are willing to provide healing at a reasonable price.</rdfs:comment>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Motive_Starter_and_Advices_for_PCs -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Hellknight_Hill -->
 
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Motive_Starter_and_Advices_for_PCs">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Motive"/>
-        <pzo9000-25e:motive_leads_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Event_Call_of_Heroes"/>
-        <pzo9000-25e:motive_of_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Community_PCs"/>
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Hellknight_Hill">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location"/>
+        <pzo9000-25e1:location_inside_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Isger"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Isger -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Isger">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Monument_Circle -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Monument_Circle">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Breachill"/>
+        <rdfs:comment>This marble-paved circle is the visual centerpiece of Breachill. Around it stand six deep wells that the nearby residents and businesses rely on for fresh water. In the center of the ring is an elegant, 15-foottall bronze statue of the wizard Lamond Breachton, Breachill’s founder and the town’s most important historical figure.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Pickled_Ear -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Pickled_Ear">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Breachill"/>
+        <rdfs:comment>This rough-and-tumble dive bar and tavern is frequented by locals and hardscrabble adventurers alike—many of whom clash in rowdy and sometimes vicious brawls that take place far too regularly for the town guard’s liking.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Posandi_Bros -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Posandi_Bros">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Breachill"/>
+        <rdfs:comment>Located on the shores of Breach Creek for more than five generations, this masonry business has provided most of the bricks for new construction in Breachill for the past 50 years. Posandi Bros. is a family-owned business, and all of its employees are somehow connected to its titular clan, whether they’re direct scions or cousins, or have married into the family.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Quarters_and_Bits -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Quarters_and_Bits">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Breachill"/>
+        <rdfs:comment>This dual storefront is home on one side to a general store called Bits, and on the other, a weapon and armor smithy called Quarters.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Reliant_Book_Company -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Reliant_Book_Company">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Breachill"/>
+        <rdfs:comment>This niche retailer buys and sells rare tomes and is known for its stuffy and academic selection, ranging from ancient history texts to the personal diaries of long-dead heroes in myriad languages.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Tuskhead_Stoneworking -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Tuskhead_Stoneworking">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Breachill"/>
+        <rdfs:comment>A new venture in the last decade, Tuskhead Stoneworking does brisk business building limestone foundations and walkways, installing landscaping stonework, and carving gravestones. The business is known for importing large barges of quarried stone straight into its building on the banks of Breach Creek, and management’s strong relationship with the town council has ensured that all permit requests are readily approved.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Map_Breachill -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Map_Breachill">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Map"/>
+        <pf2_general:art_depicts rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Settlement_Breachill"/>
+        <pf2_general:art_is_created_by rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_books.rdf#Jason_Juta"/>
+        <schema:image rdf:resource="https://ibb.co/gZrxhW1"/>
+        <schema:image rdf:resource="https://ibb.co/sjcq1sy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Ask_for_Help_to_Bumblebrashers -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Ask_for_Help_to_Bumblebrashers">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive"/>
+        <pzo9000-25e1:motive_from_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Event_Strange_Signal_Fires_atop_Citadel"/>
+        <pzo9000-25e1:motive_leads_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Event_Call_of_Heroes"/>
+        <pzo9000-25e1:motive_of_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Local_Goblin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Background_Dragon_Scholar -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Background_Dragon_Scholar">
+        <pzo9000-25e1:motive_of_background rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Background_Dragon_Scholar"/>
+        <rdfs:comment>You’ve likely chosen to attend the Call for Heroes as a way to seek funds as an adventurer to afford more texts about dragons or perhaps out of a desire to encounter one in real life.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Background_Emancipated -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Background_Emancipated">
+        <pzo9000-25e1:motive_of_background rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Background_Emancipated"/>
+        <rdfs:comment>The chance to become an adventurer has excited you for some time, as you hope to build a new life for yourself as a hero rewarded with fame and fortune. Joining the Call for Heroes is a great opportunity to find a group to adventure with.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Background_Haunting_Vision -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Background_Haunting_Vision">
+        <pzo9000-25e1:motive_of_background rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Background_Haunting_Vision"/>
+        <rdfs:comment>Your latest dream, for the first time, had enough details to identify its setting—in this last dream, you saw the town of Breachill burning. You’ve decided to join the Call for Heroes hoping to save the town you fear might burn to the ground soon.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Background_Hellknight_Historian -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Background_Hellknight_Historian">
+        <pzo9000-25e1:motive_has_target_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Community_Hellknight_Order_of_the_Nail"/>
+        <pzo9000-25e1:motive_of_background rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Background_Hellknight_Historian"/>
+        <rdfs:comment>You decided to join the Call for Heroes to hoping to gain an opportunity to explore Citadel Altaerein.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Background_Local_Scion -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Background_Local_Scion">
+        <pzo9000-25e1:motive_has_target_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Community_Breachill_Population"/>
+        <pzo9000-25e1:motive_of_background rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Background_Local_Scion"/>
+        <rdfs:comment>The Call for Heroes is one of your hometown’s most iconic traditions, and you want to attend so you can prove your own merits to the council—beyond simply those of your family’s name.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Background_Out_of_Towner -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Background_Out_of_Towner">
+        <pzo9000-25e1:motive_of_background rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Background_Out_of_Towner"/>
+        <rdfs:comment>You’re excited to meet new people and cultures, and answering the Call for Heroes seems to be an interesting way to do so.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Background_Reputation_Seeker -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Background_Reputation_Seeker">
+        <pzo9000-25e1:motive_of_background rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Background_Reputation_Seeker"/>
+        <rdfs:comment>You’ve decided that joining an adventuring group would be the best way to secure aid in your quest to build your own reputation, and are attending the Call for Heroes to find such allies.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Background_Returning_Descendant -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Background_Returning_Descendant">
+        <pzo9000-25e1:motive_of_background rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Background_Returning_Descendant"/>
+        <rdfs:comment>You’ve decided to respond to the Call for Heroes to follow in your ancestor’s footsteps, either to honor their memory or accomplish the great deeds they did not.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Background_Truth_Seeker -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Background_Truth_Seeker">
+        <pzo9000-25e1:motive_of_background rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Background_Truth_Seeker"/>
+        <rdfs:comment>You plan to join the Call for Heroes so that you can make yourself known to the council, or perhaps even ingratiating yourself to them, so you can seek the truth and eventually uncover Breachill’s secrets!</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Brynne_Taithe -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Brynne_Taithe">
+        <pzo9000-25e1:motive_of_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Brynne_Taithe"/>
+        <rdfs:comment>loves little more than when adventurers tell rousing tales of their daring exploits and deeds, preferably in conjunction with frequent purchases of ale</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Crink_Twiddleton -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Crink_Twiddleton">
+        <pzo9000-25e1:motive_of_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Crink_Twiddleton"/>
+        <rdfs:comment>sales skills often help him sell outlandish items to customers and convince them they never knew how much they needed his wares</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Encourage_Adventures_to_Spend_Money -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Encourage_Adventures_to_Spend_Money">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive"/>
+        <pzo9000-25e1:motive_leads_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Event_PCs_Earns_Discount_in_Breachill"/>
+        <pzo9000-25e1:motive_of_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Community_Breachill_Population"/>
+        <rdfs:comment>Adventurers serve as lucrative sources of income for the business owners in Breachill—cash-laden heroes freshly returned from their quests are a well-known source of money for local artisans and crafters.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Jorell_Blacktusk -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Jorell_Blacktusk">
+        <pzo9000-25e1:motive_of_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Jorell_Blacktusk"/>
+        <rdfs:comment>&lt;...&gt; happy to assist any visitors with finding even the most obscure records, though the fact that he is woefully understaffed means that he is often preoccupied and distracted while doing so.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Kellen_Carondil -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Kellen_Carondil">
+        <pzo9000-25e1:motive_of_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Kellen_Carondil"/>
+        <rdfs:comment>&lt;...&gt; provide healing at a reasonable price, On clear nights in the summer invites the public into the temple’s observatory to gaze at the stars and ponder the callings of the goddess of travelers.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Morta_Valaskin -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Morta_Valaskin">
+        <pzo9000-25e1:motive_of_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Morta_Valaskin"/>
+        <rdfs:comment>Morta views death as both a business and a lifestyle. She is said to be one of the most informed gossips about town.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Narine_Howerdell -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Narine_Howerdell">
+        <pzo9000-25e1:motive_of_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Narine_Howerdell"/>
+        <rdfs:comment>&lt;...&gt; regularly sends contingents of lumberjacks into the nearby wood—though the aggressive boars, cougars, and even wargs and owlbears often make this a dangerous prospect &lt;...&gt; often hires adventurers to accompany these lumberjack teams.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Renatta_Gilroy -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Renatta_Gilroy">
+        <pzo9000-25e1:motive_of_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Renatta_Gilroy"/>
+        <rdfs:comment>This quiet but deeply kind woman often helps guests of the operation at her own personal expense.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Rorsk_Axebane -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Rorsk_Axebane">
+        <pzo9000-25e1:motive_of_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Rorsk_Axebane"/>
+        <rdfs:comment>always suspects that his rivals dabble in shady business practices, has poached a few prominent clients from the Posandi Bros. masonry company</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Roxie_Denn -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Roxie_Denn">
+        <pzo9000-25e1:motive_of_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Roxie_Denn"/>
+        <rdfs:comment>always looking for ways to expand her customer base</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Starter_Advices_for_PCs -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Starter_Advices_for_PCs">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive"/>
+        <pzo9000-25e1:motive_leads_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Event_Call_of_Heroes"/>
+        <pzo9000-25e1:motive_of_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Community_PCs"/>
         <rdfs:comment>&lt;...&gt; characters should be in the town—as either citizens or visitors—and should have no immediate plans or goals to move on to another location.
 
 Alignment: there isn’t any restriction, but best for non-evil PCs.
@@ -366,40 +1616,348 @@ Ancestries: core ancestries should be the most rewarding from the story’s poin
 Classes: any, having a few characters who are skilled at Crafting is a wise choice.
 Languages: common, ancestries languages. Draconic is a key language in many parts of the campaign as well.
 Religion: worshipping a draconic god isn’t well-suited for this campaign.
-Background: special and core (especially Acolyte, Artisan, Artist, Bounty Hunter, Detective, Emissary, Entertainer, Gladiator, Guard, Hunter, Laborer, Martial Disciple, Merchant, Nomad, Scholar, Scout, Tinker, or Warrior).</rdfs:comment>
+Background: special and core (especially Acolyte, Artisan, Artist, Bounty Hunter, Detective, Emissary, Entertainer, Gladiator, Guard, Hunter, Laborer, Martial Disciple, Merchant, Nomad, Scholar, Scout, Tinker, or Warrior).
+Downtime: with Crafting, Lore, or Performance, you can take advantage of downtime to earn extra coin doing various tasks and jobs.</rdfs:comment>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Motive_Worry_for_her_Tribe -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Winthrop_Finney -->
 
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Motive_Worry_for_her_Tribe">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Motive"/>
-        <pzo9000-25e:motive_has_target_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Community_Goblin_Tribe_Bumblebrashers"/>
-        <pzo9000-25e:motive_of_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#NPC_Local_Goblin"/>
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Winthrop_Finney">
+        <pzo9000-25e1:motive_of_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Winthrop_Finney"/>
+        <rdfs:comment>he is passionate about his craft and about outfitting his customers in exquisite finery</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Worry_for_her_Tribe -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Worry_for_her_Tribe">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive"/>
+        <pzo9000-25e1:motive_has_target_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Community_Goblin_Tribe_Bumblebrashers"/>
+        <pzo9000-25e1:motive_of_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Local_Goblin"/>
         <rdfs:comment>&lt;...&gt; begins to worry, for her tribe, the Bumblebrashers, live within the castle. She fears the fires are distress signals &lt;..&gt;</rdfs:comment>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#NPC_Local_Goblin -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Xandel_Rynearsohn -->
 
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#NPC_Local_Goblin">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#NPC"/>
-        <pzo9000-25e:subject_of_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Event_Strange_Signal_Fires_atop_Citadel"/>
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Xandel_Rynearsohn">
+        <pzo9000-25e1:motive_of_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Xandel_Rynearsohn"/>
+        <rdfs:comment>employs some of the best artisans in Breachill</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Amera_Lang -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Amera_Lang">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC"/>
+        <pzo9000-25e1:subject_of_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Posandi_Bros"/>
+        <rdfs:comment>female human mason, Posandi cousin, currently administrates day-to-day duties</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Brynne_Taithe -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Brynne_Taithe">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC"/>
+        <pzo9000-25e1:subject_is_connected_with_deity rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Deity_Cayden_Cailean"/>
+        <pzo9000-25e1:subject_of_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Cayden~s_Keg"/>
+        <rdfs:comment>proprietor, primary bartender, and head priestess, female human cleric of Cayden Cailean</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Calmont_Trenault -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Calmont_Trenault">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC"/>
+        <pzo9000-25e1:subject_of_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Reliant_Book_Company"/>
+        <rdfs:comment>apprentice of Voz Lirayne, male halfling scribe</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Crink_Twiddleton -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Crink_Twiddleton">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC"/>
+        <pzo9000-25e1:subject_of_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Quarters_and_Bits"/>
+        <rdfs:comment>proprietor of Quarters and Bits, male halfling merchant, fast-talking, is known for wearing a smart suit and a jaunty hat, and for having a mischievous twinkle in his eye, but beyond his cheesy charisma, he’s also known for importing some of the finest goods and employing several highly skilled smiths.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Fadelby_Vusker -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Fadelby_Vusker">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC"/>
+        <pzo9000-25e1:subject_of_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Vusker~s_Carts_and_Wheels"/>
+        <rdfs:comment>Chief wainwright and business owner, male human wainwright, clever and hardworking, and he has built up a robust business from the small mom-and-pop store that his father opened just before he was born</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Jorell_Blacktusk -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Jorell_Blacktusk">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC"/>
+        <pzo9000-25e1:subject_of_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Breachill_Archives"/>
+        <rdfs:comment>cheif archivist, male half-orc librarian, one of the most knowledgeable citizens in the settlement about the town’s history</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Kellen_Carondil -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Kellen_Carondil">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC"/>
+        <pzo9000-25e1:subject_is_connected_with_deity rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Deity_Desna"/>
+        <pzo9000-25e1:subject_of_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Great_Dreamhouse"/>
+        <rdfs:comment>head priest, male elf cleric of Desna</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Lamond_Breachton -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Lamond_Breachton">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC"/>
+        <pzo9000-25e1:npc_from_community rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Community_Breachill_Authority"/>
+        <rdfs:comment>Powerful wizard and adventurer, mentor of Breachill.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Local_Goblin -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Local_Goblin">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC"/>
+        <pzo9000-25e1:subject_of_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Event_Strange_Signal_Fires_atop_Citadel"/>
         <rdfs:comment>local goblin and friend of Breachill’s citizens</rdfs:comment>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Settlement_Breachill -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Morta_Valaskin -->
 
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Settlement_Breachill">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Settlement"/>
-        <pzo9000-25e:location_inside_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Location_Isger"/>
-        <pzo9000-25e:location_next_to_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pzo9000-25e.rdf#Location_Hellknight_Hill"/>
-        <rdfs:comment>&lt;...&gt; small town near the eastern border of Isger &lt;...&gt;</rdfs:comment>
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Morta_Valaskin">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC"/>
+        <pzo9000-25e1:subject_of_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Morta~s_Mortiary"/>
+        <rdfs:comment>female human mortician, eccentric woman whose daily fashions include elaborate mourning gowns, gauzy black veils, and elbow-length satin gloves</rdfs:comment>
     </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Narine_Howerdell -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Narine_Howerdell">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC"/>
+        <pzo9000-25e1:subject_of_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Breach_Creek_Lumber"/>
+        <rdfs:comment>chief logging forewoman, female half-elf lumberjack</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Quentino_Posandi -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Quentino_Posandi">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC"/>
+        <pzo9000-25e1:subject_of_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Posandi_Bros"/>
+        <rdfs:comment>town councilor, male human councilor, business’s owner and manager</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Renatta_Gilroy -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Renatta_Gilroy">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC"/>
+        <pzo9000-25e1:subject_of_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Lamond~s_Lament"/>
+        <rdfs:comment>female human chef, currently oversees Lamond’s Lament</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Rorsk_Axebane -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Rorsk_Axebane">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC"/>
+        <pzo9000-25e1:subject_of_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Tuskhead_Stoneworking"/>
+        <rdfs:comment>owner of Tuskhead Stoneworking, male dwarf mason</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Roxie_Denn -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Roxie_Denn">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC"/>
+        <pzo9000-25e1:subject_of_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Pickled_Ear"/>
+        <rdfs:comment>proprietor, female human tavernkeeper</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Tarindlara_Vallindel -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Tarindlara_Vallindel">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC"/>
+        <pzo9000-25e1:subject_is_connected_with_deity rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Deity_Shelyn"/>
+        <pzo9000-25e1:subject_of_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Shelyn~s_Smile"/>
+        <rdfs:comment>Guild president, female elf cleric of Shelyn, an immaculate professional representative—the picture of sartorial splendor and class—and a prominent Shelynite herself</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Trinil_Uskwold -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Trinil_Uskwold">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC"/>
+        <pzo9000-25e1:subject_of_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Wizard~s_Grace"/>
+        <rdfs:comment>practice owner of Wizard’s Grace, female human innkeeper</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Voz_Lirayne -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Voz_Lirayne">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC"/>
+        <pzo9000-25e1:subject_of_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Reliant_Book_Company"/>
+        <rdfs:comment>Owner of Reliant Book Company, female half-elf bookseller</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Winthrop_Finney -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Winthrop_Finney">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC"/>
+        <pzo9000-25e1:subject_of_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Crimson_Wood_Furs"/>
+        <rdfs:comment>Current owner of Crimson Wood Furs and chief tailor, male human tailor, relative newcomer to Breachill</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Xandel_Rynearsohn -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Xandel_Rynearsohn">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC"/>
+        <pzo9000-25e1:subject_of_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Breach_Creek_Lumber"/>
+        <rdfs:comment>eccentric male human carpenter, oversees associated carpenter’s shop</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Settlement_Breachill -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Settlement_Breachill">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Settlement"/>
+        <pzo9000-25e1:location_inside_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Isger"/>
+        <pzo9000-25e1:location_next_to_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Hellknight_Hill"/>
+        <rdfs:comment>4th-level settlement.
+The town of Breachill is nestled in the foothills of the Five King Mountains in the wilds of eastern Isger, about 50 miles from the Druman border. Compared to the region’s other settlements, this small town is young—just shy of 170 years old—though it has a fascinating history that rivals those of many far older places. Breachill began with the humblest of origins, as a barely functional outpost of human amnesiacs, but the aid and mentorship of a powerful wizard led these shivering and dying unfortunates to found the hardy and thriving town that exists today.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Settlement_Kintargo -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Settlement_Kintargo">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Settlement"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Condition_Adventurer~s_Discount -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Condition_Adventurer~s_Discount">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Gamerule_Condition"/>
+        <pzo9000-25e1:gamerule_for_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Event_PCs_Earns_Discount_in_Breachill"/>
+        <pzo9000-25e1:gamerule_for_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Settlement_Breachill"/>
+        <pzo2101:condition_duration>permanent</pzo2101:condition_duration>
+        <pzo2101:gamerule_condition>all items and services purchased in Breachill</pzo2101:gamerule_condition>
+        <pzo2101:gamerule_output>price: - 5% - (5% if befriended merchant)</pzo2101:gamerule_output>
+        <pf2_general:for_future_correction>purchased</pf2_general:for_future_correction>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Cayden~s_Keg -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Cayden~s_Keg">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Breachill"/>
+        <pzo9000-25e1:location_is_connected_with_deity rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Deity_Cayden_Cailean"/>
+        <rdfs:comment>This rousing, well-kept tavern is one of Breachill’s most popular places to enjoy a hearty meal and a pint of ale, and it doubles as a temple of Cayden Cailean, the freewheeling Accidental God.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Lamond~s_Lament -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Lamond~s_Lament">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Breachill"/>
+        <rdfs:comment>Located in one of the most hardscrabble parts of Breachill, Lamond’s Lament is a soup kitchen and place for the downtrodden to rest. The operation is funded through a mix of public money and donations, and its staff consists of volunteers from throughout the community.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Morta~s_Mortiary -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Morta~s_Mortiary">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Breachill"/>
+        <rdfs:comment>&lt;...&gt; imposing, black-painted building with heavy, onyx-colored curtains &lt;...&gt;</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Shelyn~s_Smile -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Shelyn~s_Smile">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Breachill"/>
+        <pzo9000-25e1:location_is_connected_with_deity rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Deity_Shelyn"/>
+        <rdfs:comment>This segmented building on Breach Creek is both the headquarters of Breachill’s artisan guild and a temple to Shelyn, goddess of art, beauty, love, and music. In one wing, the faithful worship the Eternal Rose through sculpture and painting classes as well as via choirs and orchestral performances, and priests offer healing to those in need. In the other wing, representatives for Breachill’s artisans and tradespeople are available on most days of the week, and customers can pay a small fee to be matched with the right proprietors for all their renovation, building, and decorating needs.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Vusker~s_Carts_and_Wheels -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Vusker~s_Carts_and_Wheels">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Breachill"/>
+        <rdfs:comment>Located just inside the Breachill town limits, Vusker’s Carts &amp; Wheels is the go-to wainwright for the many traveling merchants and adventuring caravans that pass through the town.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Wizard~s_Grace -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Wizard~s_Grace">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Breachill"/>
+        <pzo9000-25e1:location_next_to_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Breachhill_Town_Hall"/>
+        <rdfs:comment>Owing to its proximity to Breachill Town Hall, the Wizard’s Grace tavern is the favored establishment of many adventurers who hope to gain work from the council by attending the town’s monthly Call for Heroes. Adventurers and municipal workers regularly mingle here, exchanging stories and generally enjoying the atmosphere created by the diverse clientele. In the days leading up to each council meeting, the tavern is particularly busy, as adventurers schmooze with town officials and even the occasional council member who might show up for a drink and a meal. Before each meeting, the inn’s tavern has a long-standing tradition of holding toasts and serving meals of boar stew with lentils. Because of the politics of socializing here, the crowd tends to be both well-mannered and chatty, though occasionally a brash adventurer or two gets rowdy.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#motive_of_background"/>
+        <owl:someValuesFrom rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Background"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Background"/>
+    </owl:Restriction>
 </rdf:RDF>
 
 

@@ -6,7 +6,8 @@
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:schema="http://schema.org/">
+     xmlns:schema="http://schema.org/"
+     xmlns:pf2_general="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#">
     <owl:Ontology rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf"/>
     
 
@@ -25,6 +26,12 @@
     <!-- http://schema.org/image -->
 
     <owl:AnnotationProperty rdf:about="http://schema.org/image"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#for_future_correction -->
+
+    <owl:AnnotationProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#for_future_correction"/>
     
 
 

@@ -85,6 +85,7 @@
 
     <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_books.rdf#artist_of_book">
         <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_books.rdf#creator_of_book"/>
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_books.rdf#book_is_illustrated_by"/>
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#Artist"/>
     </owl:ObjectProperty>
     
@@ -103,6 +104,12 @@
     <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_books.rdf#book_is_created_by">
         <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_books.rdf#creator_of_book"/>
     </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_books.rdf#book_is_illustrated_by -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_books.rdf#book_is_illustrated_by"/>
     
 
 

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf" uri="pzo2101.rdf"/>
     <uri id="Imports Wizard Entry" name="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf" uri="pf2_general.rdf"/>
     <uri id="Imports Wizard Entry" name="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/pathfinder/2ed/pf2_books.rdf" uri="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_books.rdf"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1689612663106" name="http://www.semanticweb.org/nerpa/ontologies/2023/6/untitled-ontology-87/" uri="pf2_books.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1689612663106" name="http://www.semanticweb.org/nerpa/ontologies/2023/6/untitled-ontology-90/" uri="pzo2101.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1689612663106" name="http://www.semanticweb.org/nerpa/ontologies/2023/6/untitled-ontology-92/" uri="pzo9000-25e.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1689612663106" name="http://www.semanticweb.org/nerpa/ontologies/2023/6/untitled-ontology-96/" uri="pf2_general.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1689705482406" name="http://www.semanticweb.org/nerpa/ontologies/2023/6/untitled-ontology-87/" uri="pf2_books.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1689705482406" name="http://www.semanticweb.org/nerpa/ontologies/2023/6/untitled-ontology-90/" uri="pzo2101.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1689705482406" name="http://www.semanticweb.org/nerpa/ontologies/2023/6/untitled-ontology-92/" uri="pzo9000-25e.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1689705482406" name="http://www.semanticweb.org/nerpa/ontologies/2023/6/untitled-ontology-96/" uri="pf2_general.rdf"/>
     </group>
 </catalog>
