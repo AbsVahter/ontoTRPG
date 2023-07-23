@@ -1768,6 +1768,7 @@
         <rdfs:label>Pathfinder Adventure Path #145: Hellknight Hill</rdfs:label>
         <rdfs:seeAlso rdf:resource="https://pathfinderwiki.com/wiki/Hellknight_Hill_(adventure)"/>
         <pf2_books1:cover_art rdf:resource="https://pathfinderwiki.com/w/images/5/52/Hellknight_Hill.jpg"/>
+        <pf2_books1:ontology_link rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf"/>
     </owl:NamedIndividual>
     
 

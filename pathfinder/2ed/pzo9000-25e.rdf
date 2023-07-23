@@ -44,6 +44,16 @@
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#advice_for_gamerule -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#advice_for_gamerule">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#gamerule_with_advice"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Gamerule_Advice"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Gamerule"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#background_is_trained_in_skill -->
 
     <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#background_is_trained_in_skill">
@@ -130,6 +140,12 @@
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Gamerule"/>
         <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Gamerule"/>
     </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#gamerule_with_advice -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#gamerule_with_advice"/>
     
 
 
@@ -604,6 +620,14 @@
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Gamerule_Advice -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Gamerule_Advice">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Gamerule"/>
+    </owl:Class>
+    
+
+
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Gamerule_Condition -->
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Gamerule_Condition">
@@ -847,6 +871,12 @@
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Gamerule_Character_Creation -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Gamerule_Character_Creation"/>
+    
+
+
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Roll_Diplomacy -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Roll_Diplomacy"/>
@@ -919,6 +949,24 @@
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Action_Player"/>
         <rdfs:comment>You spend the day in the company of an NPC whose companionship you value in order to strengthen the bonds of your friendship with them.</rdfs:comment>
         <pf2_general:for_future_correction>concentrate, downtime, linguistic</pf2_general:for_future_correction>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Advice_Generation_PCs -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Advice_Generation_PCs">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Gamerule_Advice"/>
+        <pzo2101:advice_for_gamerule rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Gamerule_Character_Creation"/>
+        <rdfs:comment>&lt;...&gt; characters should be in the town—as either citizens or visitors—and should have no immediate plans or goals to move on to another location.
+
+Alignment: there isn’t any restriction, but best for non-evil PCs.
+Ancestries: core ancestries should be the most rewarding from the story’s point of view.
+Classes: any, having a few characters who are skilled at Crafting is a wise choice.
+Languages: common, ancestries languages. Draconic is a key language in many parts of the campaign as well.
+Religion: worshipping a draconic god isn’t well-suited for this campaign.
+Background: special and core (especially Acolyte, Artisan, Artist, Bounty Hunter, Detective, Emissary, Entertainer, Gladiator, Guard, Hunter, Laborer, Martial Disciple, Merchant, Nomad, Scholar, Scout, Tinker, or Warrior).
+Downtime: with Crafting, Lore, or Performance, you can take advantage of downtime to earn extra coin doing various tasks and jobs.</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -1599,25 +1647,6 @@ critical failure: failed befriend condition;
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Roxie_Denn">
         <pzo9000-25e1:motive_of_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Roxie_Denn"/>
         <rdfs:comment>always looking for ways to expand her customer base</rdfs:comment>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Starter_Advices_for_PCs -->
-
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Starter_Advices_for_PCs">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive"/>
-        <pzo9000-25e1:motive_leads_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Event_Call_of_Heroes"/>
-        <pzo9000-25e1:motive_of_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Community_PCs"/>
-        <rdfs:comment>&lt;...&gt; characters should be in the town—as either citizens or visitors—and should have no immediate plans or goals to move on to another location.
-
-Alignment: there isn’t any restriction, but best for non-evil PCs.
-Ancestries: core ancestries should be the most rewarding from the story’s point of view.
-Classes: any, having a few characters who are skilled at Crafting is a wise choice.
-Languages: common, ancestries languages. Draconic is a key language in many parts of the campaign as well.
-Religion: worshipping a draconic god isn’t well-suited for this campaign.
-Background: special and core (especially Acolyte, Artisan, Artist, Bounty Hunter, Detective, Emissary, Entertainer, Gladiator, Guard, Hunter, Laborer, Martial Disciple, Merchant, Nomad, Scholar, Scout, Tinker, or Warrior).
-Downtime: with Crafting, Lore, or Performance, you can take advantage of downtime to earn extra coin doing various tasks and jobs.</rdfs:comment>
     </owl:NamedIndividual>
     
 
