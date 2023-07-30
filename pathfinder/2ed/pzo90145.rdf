@@ -34,6 +34,12 @@
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#art_is_created_by -->
+
+    <owl:AnnotationProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#art_is_created_by"/>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -50,6 +56,22 @@
     <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#event_after_event">
         <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#event_to_event"/>
     </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#event_includes_event -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#event_includes_event">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#event_is_element_of_event"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Event"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Event"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#event_is_element_of_event -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#event_is_element_of_event"/>
     
 
 
@@ -91,6 +113,15 @@
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#resource_is_target_for_motive -->
 
     <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#resource_is_target_for_motive"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#subject_is_connected_with_subject -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#subject_is_connected_with_subject">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Subject"/>
+    </owl:ObjectProperty>
     
 
 
@@ -138,10 +169,24 @@
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Chapter -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Chapter">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Event"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#event_is_element_of_event"/>
+                <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Summary_Hellknight_Hill"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Chapter_2_The_Ruined_Citadel -->
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Chapter_2_The_Ruined_Citadel">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Event"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Chapter"/>
         <rdfs:comment>The heroes travel to Hellknight Hill and explore the ruined citadel that sits atop it. Therein, they might meet a few new friends, and they’ll certainly clash with plenty of new enemies before they can rescue a tribe of imperiled goblins.</rdfs:comment>
     </owl:Class>
     
@@ -150,7 +195,7 @@
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Chapter_3_The_Citadel_Below -->
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Chapter_3_The_Citadel_Below">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Event"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Chapter"/>
         <rdfs:comment>The heroes descend beneath Citadel Altaerein, where they find something sinister: an isolated group of cultists called the Cinderclaws, who herald a more serious threat from their brethren below.</rdfs:comment>
     </owl:Class>
     
@@ -164,10 +209,46 @@
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Summary -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Summary">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#NPC_Breachill_Councilor -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#NPC_Breachill_Councilor">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#npc_from_community"/>
+                <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Community_Breachill_Authority"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Portrait -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Portrait">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#Art"/>
+    </owl:Class>
+    
+
+
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Chapter_1_The_Council~s_Chosen -->
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Chapter_1_The_Council~s_Chosen">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Event"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Chapter"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#event_is_element_of_event"/>
+                <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Summary_Chapter_1"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment>The Age of Ashes Adventure Path begins with a routine town council meeting in the storied town of Breachill. But before the PCs can learn what sort of adventure the town council might hire them for, the building ignites in a fiery crisis!</rdfs:comment>
     </owl:Class>
     
@@ -176,7 +257,7 @@
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Chapter_4_Breachill’s_Secrets -->
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Chapter_4_Breachill’s_Secrets">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Event"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Chapter"/>
         <rdfs:comment>After following a secret tunnel leading from the Hellknight citadel to the town where their saga began, the heroes must scramble to find out who in the town plots to use the keep for nefarious purposes. Clues lead the heroes to a cave complex that leads straight to the lowest level of the Hellknight citadel’s dungeons. There, they must face a powerful cultist leader and discover an ancient elven gateway before untold horrors descend upon Breachill—and perhaps all of Golarion!</rdfs:comment>
     </owl:Class>
     
@@ -193,9 +274,70 @@
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_books.rdf#Diana_Martinez -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_books.rdf#Diana_Martinez"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Deity_Asmodeus -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Deity_Asmodeus"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Deity_Norgorber -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Deity_Norgorber"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Deity_Pharasma -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Deity_Pharasma"/>
+    
+
+
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Gamerule_Leveling_Up -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Gamerule_Leveling_Up"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Community_Posandi_Family -->
+
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Community_Posandi_Family">
+        <pzo9000-25e:subject_is_connected_with_deity rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Deity_Asmodeus"/>
+        <rdfs:comment>The family is notoriously tight-lipped about its business practices, and for good reason: the Posandis have been secret Asmodeus worshippers for generations. They often seek the guidance and aid of devils when they feel it’s necessary, sometimes even summoning them in their secret diabolic underground chambers.</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Breachhill_Town_Hall -->
+
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Breachhill_Town_Hall">
+        <pzo9000-25e:location_for_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Community_Breachill_Authority"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Great_Dreamhouse -->
+
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Great_Dreamhouse">
+        <pzo9000-25e:location_for_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Community_Breachill_Religion_Breachton"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Jorell_Blacktusk -->
+
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Jorell_Blacktusk">
+        <pzo9000-25e:npc_from_community rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Community_Breachill_Religion_Breachton"/>
+        <rdfs:comment>LN male human half-orc librarian
+He traces his lineage on his human mother’s side back to Breachill’s original pioneers, and he is one of the most knowledgeable citizens in the settlement about the town’s history.
+
+Jorell sees the historical figure Lamond Breachton as a personal hero; he suffers no rude comments about Breachton and has in fact banned visitors who’ve shown less than a healthy respect for the wizard.</rdfs:comment>
+    </rdf:Description>
     
 
 
@@ -213,6 +355,41 @@
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Morta_Valaskin -->
+
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Morta_Valaskin">
+        <pzo9000-25e:subject_is_connected_with_deity rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Deity_Pharasma"/>
+        <rdfs:comment>N female human mortician
+Morta views death as both a business and a lifestyle. Though her flighty mannerisms and morbid outlook toward funerals and the dead might seem macabre, to Morta, death is just a part of life, and a fascinating one at that. Naturally, Morta worships Pharasma, the Lady of Graves</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Voz_Lirayne -->
+
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Voz_Lirayne">
+        <pzo9000-25e:subject_is_connected_with_deity rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Deity_Norgorber"/>
+        <rdfs:comment>Owner of Reliant Book Company and secret necromancer</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Cayden~s_Keg -->
+
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Cayden~s_Keg">
+        <pzo9000-25e:location_for_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Community_Breachill_Religion_Breachton"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Lamond~s_Lament -->
+
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Lamond~s_Lament">
+        <pzo9000-25e:location_for_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#NPC_Greta_Gardania"/>
+    </rdf:Description>
+    
+
+
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Advice_Advancement_Track -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Advice_Advancement_Track">
@@ -222,15 +399,6 @@
 The PCs should be 2nd level before they descend into Citadel Altaerein’s dungeon in Chapter 3.
 The PCs should reach 3rd level after clearing two wings of the dungeon in Chapter 3.
 The PCs should be 4th level before they enter the cavern complex around Alseta’s Ring.</rdfs:comment>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Art_Citadel -->
-
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Art_Citadel">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#Art"/>
-        <schema:image rdf:resource="https://www.worldanvil.com/uploads/images/8973a08d027526f05110bd89e565cae2.jpg"/>
     </owl:NamedIndividual>
     
 
@@ -273,6 +441,41 @@ The PCs should be 4th level before they enter the cavern complex around Alseta�
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Community_Breachill_Religion_Breachton -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Community_Breachill_Religion_Breachton">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Community"/>
+        <pzo9000-25e:subject_of_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Settlement_Breachill"/>
+        <pzo90145:subject_is_connected_with_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Lamond_Breachton"/>
+        <rdfs:comment>Among the scions of the town’s oldest families, the closest thing to a widespread religion might be veneration of Lamond Breachton. However, a schism is slowly forming between the more tradition-minded residents and newer citizens, who sometimes question how the town’s amnesiacs arrived in the region at all and why Breachton just happened to come upon them at just the right time.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Community_Breachill_Religions -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Community_Breachill_Religions">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Community"/>
+        <pzo9000-25e:subject_is_connected_with_deity rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Deity_Asmodeus"/>
+        <pzo9000-25e:subject_is_connected_with_deity rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Deity_Cayden_Cailean"/>
+        <pzo9000-25e:subject_is_connected_with_deity rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Deity_Desna"/>
+        <pzo9000-25e:subject_is_connected_with_deity rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf#Deity_Shelyn"/>
+        <pzo9000-25e:subject_of_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Settlement_Breachill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Community_Cinderclaws -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Community_Cinderclaws">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Community"/>
+        <pzo9000-25e:subject_of_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Citadel_Altaerein"/>
+        <pzo90145:subject_is_connected_with_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#NPC_Dahak"/>
+        <rdfs:comment>cult of Dahak worshippers</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Community_Ekujae_Elves -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Community_Ekujae_Elves">
@@ -309,6 +512,33 @@ By taking care to invest his manifestation with just enough power so as to avoid
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Cinderclaws_in_Citadel_Altaerein -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Cinderclaws_in_Citadel_Altaerein">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_History"/>
+        <pzo90145:event_after_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Construction_of_Citadel_by_Order_of_the_Nail"/>
+        <pzo90145:event_date rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4719</pzo90145:event_date>
+        <rdfs:comment>Cinderclaw cult activates Huntergate and invades Citadel Altaerein.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Construction_of_Citadel_by_Order_of_the_Nail -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Construction_of_Citadel_by_Order_of_the_Nail">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_History"/>
+        <pzo9000-25e:event_in_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Citadel_Altaerein"/>
+        <pzo9000-25e:event_with_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Community_Hellknight_Order_of_the_Nail"/>
+        <pzo90145:event_date>{
+4638: Order of the Nail is founded and constructs Citadel Altaerein.
+4682: Order of the Nail relocates to Varisia.
+4711: Citadel Altaerein is completely abandoned.
+4717: Bumblebrasher goblins move into Citadel Altaerein.
+}</pzo90145:event_date>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Destruction_of_Orb_of_Gold_Dragonkind -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Destruction_of_Orb_of_Gold_Dragonkind">
@@ -316,6 +546,10 @@ By taking care to invest his manifestation with just enough power so as to avoid
         <pzo9000-25e:event_with_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#NPC_Mengkare"/>
         <pzo90145:event_after_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Mengkare~s_Path"/>
         <pzo90145:event_with_resource rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Artifact_Orb_of_Gold_Dragonkind"/>
+        <pzo90145:event_date>{
+3977: Mengkare hears rumors about the return of the orb of gold dragonkind and confronts its new owner, Ilgreth, only to become dominated by the orb again.
+3980: Mengkare destroys the orb of gold dragonkind and Ilgreth along with it; Droskar’s Crag erupts as a result.
+}</pzo90145:event_date>
         <rdfs:comment>In 3980, Mengkare learned of a deeply troubling rumor that finally drew him out of hiding—news that a human wizard named Ilgreth had recovered the orb of gold dragonkind and had been using it to enslave dragons dwelling in and around the Five Kings Mountains. Infuriated and blinded with a need for vengeance, Mengkare foolishly challenged Ilgreth, hoping to defeat him, gain control of the orb of gold dragonkind, and keep it from human hands forever. But the orb of gold dragonkind warned Ilgreth of Mengkare’s approach. He confronted the gold dragon and, only a moment later, Mengkare became dominated by the orb of gold dragonkind for the second time in his life. Ilgreth retreated back to his hidden workshop deep within the volcano then known as Torag’s Crag and put Mengkare to work, but his plans to harness the dormant volcano’s energy collapsed when a group of powerful human heroes tracked him down and confronted him. The wizard threw his dominated dragons at the heroes, but a lucky greater dispel magic managed to counteract the dominate monster effect controlling several of the dragons, including Mengkare. The furious and shamed gold dragon seized his chance—and discovered in that moment a heretofore unknown fact of his ancestry: Mengkare was a direct descendant of the original gold dragon whose soul had been bound, eons before, into the orb of gold dragonkind. While Ilgreth had protected himself from fire, he had no defense against Mengkare’s weakness-inducing breath. Already feeble, the wizard was rendered unconscious by the blast, but this mattered little, for the breath also caught the orb of gold dragonkind in its wake. The result was instantaneous. The orb of gold dragonkind exploded, overloaded the runes Ilgreth had been carefully crafting, and set off a chain reaction: the volcano began to erupt! As devastation spread, Mengkare quickly swept up most of the shattered fragments of the destroyed orb of gold dragonkind and teleported away, back to his lair in Hermea.</rdfs:comment>
     </owl:NamedIndividual>
     
@@ -375,13 +609,18 @@ Well over 10,000 years ago, during the fabled Age of Legend, an elven hero named
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Foundation_of_Breachill -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_First_Glorious_Endeavor_and_Foundation_of_Breachill -->
 
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Foundation_of_Breachill">
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_First_Glorious_Endeavor_and_Foundation_of_Breachill">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_History"/>
         <pzo9000-25e:event_in_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Settlement_Breachill"/>
         <pzo9000-25e:event_with_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#NPC_Mengkare"/>
         <pzo90145:event_after_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Mengkare_Activated_Portal"/>
+        <pzo90145:event_date>{
+4519: Mengkare begins the first Glorious Endeavor near the site of Alseta’s Ring.
+4520: Mengkare realizes his first attempt to create a utopia is a failure and wipes the memories of the citizens of Breachill.
+4521: Mengkare leaves Breachill to its fate after spending some time helping the amnesiac town regain its footing, returning to Hermea to reevaluate his plans.
+}</pzo90145:event_date>
         <rdfs:comment>And so Mengkare hid the Vengegate key in his lair and dedicated himself to finding a solution to this new problem. For 2 centuries the dragon pondered, spending much of that time researching in the Perfect City on Axis. Eventually he discovered a potential solution, then spent nearly another century searching his soul and agonizing over the ramifications of what he’d learned—a potential way to not only defeat Dahak’s incarnation but also to strike a significant, perhaps even mortal, blow to the dragon god of destruction, but only at the expense of an entire civilization.
 Mengkare’s discovery was of the Anima Invocation, the same ritual the Ekujae elves used so long ago to end the previous Age of Ashes and imprison Dahak’s avatar. Mengkare studied the ritual and focused on methods of expanding and improving its effects, eventually coming to the conclusion that if he could engineer a powerful enough sacrifice of a sufficient number of perfected souls, he could not only defeat the manifestation of Dahak but cause significant and lasting damage to the dragon god himself! Using the same logical arguments he’d used to retroactively justify the devastating volcanic eruption he’d triggered years before, he was able to come to terms with the most distasteful part of his plan—the sacrifice itself. If sacrificing a few thousand souls could save hundreds of thousands or more, would it not be a greater evil to do nothing and potentially consign future nations to oblivion?
 Mengkare returned to Golarion in 4512 and spent the next several years finalizing his plan. Then, in 4519, he traveled to the region surrounding Alseta’s Ring, disguised as a human wizard named Lamond Breachton, and scoured Isger for people who epitomized the perfection he sought. The dragon’s initial plan was to tell these recruits the goal of his plan and use saving the world as motivation, theorizing that a like-minded group of good-hearted people would see the wisdom of his goals, but he quickly found that humans were resistant to building a society whose goal was self-sacrifice. When he realized his initial plan to create a utopia was a failure, the dragon used powerful magic to erase all traces of his attempt. He wiped the subjects’ memories, leaving them with only the barest training they’d need to survive in the remote wilderness. He extended this mind-wiping magic to cut off the citizens of the town from their loved ones, seeking to ensure his first failure would remain forgotten. He then spent a year helping the townsfolk get re-established, playing the role of a “kindly wizard who’d discovered the amnesiac citizens of a remote town and sought to save them.” In so doing, Mengkare yet again stanched his own guilt by telling himself he was acting for the greater good of humanity.
@@ -397,6 +636,9 @@ Mengkare spared no expense in this pursuit, spending a significant amount of gol
         <pzo9000-25e:event_in_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Location_Alseta~s_Ring"/>
         <pzo9000-25e:event_with_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#NPC_Mengkare"/>
         <pzo90145:event_after_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Destruction_of_Orb_of_Gold_Dragonkind"/>
+        <pzo90145:event_date>{
+4212: Mengkare discovers Vengegate, Alseta’s Ring, and the trapped incarnation of Dahak.
+}</pzo90145:event_date>
         <rdfs:comment>Victory over the orb of gold dragonkind rang hollow, as Mengkare realized the volcanic eruption he had triggered had caused the loss of many lives, but he convinced himself that this was a necessary sacrifice. He devoted much of his time to studying the shards of the orb of gold dragonkind, and eventually decided that there was no way the destroyed artifact could ever be restored. Relieved that this thorn from his past had been truly vanquished, he placed the shards in his vault and spent the following years periodically traveling back to the perfect city of Axis to further research the nature of racial and spiritual perfection. In 4212, Mengkare found something amazing in a cavern deep under Hermea—an ancient and inoperable aiudara called Vengegate. Although he was initially unable to reactivate the portal, Mengkare’s considerable intellect and magical skill allowed him to determine where the portal led—a remote location on the border of Isger and Druma. Mengkare flew to the site, explored further, and discovered Alseta’s Ring. There, he also discovered the magical key needed to activate Vengegate. But when Mengkare activated the portal, he made a disturbing discovery: the incarnation of Dahak that haunted the Ring. Mengkare’s wonder at discovering the portal network and desire to reactivate the other portals in Alseta’s Ring was replaced by fear of what would occur should the incarnation of Dahak escape from its imprisonment—a resurgence of dragonstorms and the release of a cruel god’s avatar.</rdfs:comment>
     </owl:NamedIndividual>
     
@@ -408,6 +650,11 @@ Mengkare spared no expense in this pursuit, spending a significant amount of gol
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_History"/>
         <pzo9000-25e:event_with_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Community_Scarlet_Triad"/>
         <pzo90145:event_after_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Second_Glorious_Endeavor"/>
+        <pzo90145:event_date>{
+4690: Scarlet Triad gets into the slavery business.
+4715: Scarlet Triad starts seeking out slivers of the orb of gold dragonkind to begin work on rebuilding a lesser version of the artifact.
+4717: Absalom outlaws slavery.
+}</pzo90145:event_date>
         <rdfs:comment>For decades, the Scarlet Triad served as “talent scouts” for Promise, but as the Glorious Endeavor continued to gain momentum and population, the need for new blood grew less and less. By 4690, Mengkare reduced funding and support to the Scarlet Triad, reasoning that their services were increasingly unnecessary. The Triad then decided to secretly branch out into the slave trade to augment their dwindling coffers, figuring that their agents were already seeking out talented and gifted people and that even those who didn’t meet the strict requirements for inclusion into the Glorious Endeavour could still fetch a high price as slaves.
 The Scarlet Triad kept this venture quiet from Mengkare with the aid of their current leader, Uri Zandivar, whose elder sister Emaliza had the dragon’s ear and a vaunted position as one of Mengkare’s 13 elected advisors—the Council of Enlightenment. With his sister’s aid, Uri prevented Mengkare from learning the truth about the Triad’s descent into the slave trade—as long as the organization continued to provide the good human stock the dragon sought and did so at reduced overhead, things ran smoothly. When Absalom outlawed slavery in 4717, the Scarlet Triad saw a significant portion of its business crash and burn, and over the past few years it has been working to branch out—most significantly into Old Cheliax’s slave trade, into the Darklands below the Five Kings Mountains (hoping to set up a new slave trade with the duergar there), and with a cult of Dahak worshippers in the Mwangi Expanse—a cult whose invasion of Breachill sets into motion the events of this Adventure Path.</rdfs:comment>
     </owl:NamedIndividual>
@@ -420,8 +667,131 @@ The Scarlet Triad kept this venture quiet from Mengkare with the aid of their cu
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_History"/>
         <pzo9000-25e:event_from_motive rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Motive_Defeat_Incarnation_of_Dahak"/>
         <pzo9000-25e:event_with_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#NPC_Mengkare"/>
-        <pzo90145:event_after_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Foundation_of_Breachill"/>
+        <pzo90145:event_after_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_First_Glorious_Endeavor_and_Foundation_of_Breachill"/>
+        <pzo90145:event_date>{
+4552 Mengkare founds Promise on Hermea, now planning to “farm” humans rather than recruit them, and intending to keep secret the truth behind his plans from all.
+4606 Aroden’s death. Storms wreak havoc on Hermea and cause major setbacks for the Glorious Endeavor.
+4607 Scarlet Triad is founded and charged with seeking out promising humans to send to Hermea, freeing Mengkare from the job of seeking new recruits.
+}</pzo90145:event_date>
         <rdfs:comment>It would be decades before Mengkare began his second attempt at creating a utopia. With this second Glorious Endeavor and the founding of the utopian city of Promise, he embraced secrecy and sought to not only recruit souls but also to hand-craft them himself via selective breeding and rigorous training. But what Mengkare didn’t anticipate was that his creation of a new organization—the Scarlet Triad—would eventually set into motion a series of events that could well bring the Glorious Endeavor to its knees.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Summary_Against_the_Scarlet_Triad -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Summary_Against_the_Scarlet_Triad">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Summary"/>
+        <pzo90145:event_after_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Summary_Fires_of_the_Haunted_City"/>
+        <rdfs:comment>By John Compton
+Pathfinder Adventure Path #149, Levels 15–17
+
+With two defeats against the Scarlet Triad under their belts, the PCs are finally ready to take the fight to the slavers’ home turf—the city of Katapesh. First, they’ll need to save the gnomes of the settlement of Finderplain, who have been enduring brutal sandstorms of a supernatural nature. With the gnomes’ aid, the PCs can move on to the city of Katapesh itself, but before they can make their final move against the Scarlet Triad’s base of operations, the PCs must convince that city’s mysterious leaders to declare the Scarlet Triad in breach of the city’s mercantile laws. Once this is accomplished, the Scarlet Triad find themselves without allies, and a swift strike against their underground complex not only can disrupt the slavers for good, but reveals to the PCs the true danger—that Mengkare himself is planning a devastating apocalypse in a misguided attempt to defeat Dahak.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Summary_Broken_Promises -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Summary_Broken_Promises">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Summary"/>
+        <pzo90145:event_after_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Summary_Against_the_Scarlet_Triad"/>
+        <rdfs:comment>By Luis Loza
+Pathfinder Adventure Path #150, Levels 18–20
+
+The Scarlet Triad has been defeated, and the PCs have recovered all of the portal keys to activate the remaining aiudara of Alseta’s Ring, but their work is far from done. As this final adventure begins, Dahak’s manifestation, trapped for so long without a body inside the limbo of Alseta’s Ring, finally manages to escape. The dragon god’s avatar surges out of Alseta’s Ring, and the PCs are forced to contend with the first dragonstorm in thousands of years—one centered on their home town of Breachill! Defending the town from this event only buys the PCs time—they must move on to Promise and confront Mengkare before he moves forward with his plan to sacrifice the people of his utopia in an attempt to defeat Dahak. Whether the PCs are able to convince the gold dragon of the error of his ways or are forced instead to defeat him in combat is up to them, but in the end, Dahak’s manifestation must be exorcised. As long as he haunts Alseta’s Ring, all lands touched by the portals will be threatened by dragonstorms. Now at the height of their power, the PCs will need all of their resources and abilities to infiltrate a series of demiplanes within Alseta’s Ring, realms where Dahak’s manifestation has toyed with potential apocalypses over thousands of years, if they hope to defeat his presence once and for all. Only with the dragon god’s presence completely expunged from the world can the PCs be assured that their homes will not face devastation in a new Age of Ashes!</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Summary_Chapter_1 -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Summary_Chapter_1">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Summary"/>
+        <pzo90145:event_is_element_of_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Summary_Hellknight_Hill"/>
+        <rdfs:comment>During the opening portion of this adventure, the heroes are pulled into a crisis at Breachill’s town hall, where it’s up to them to save the councilors and the gathered townspeople from a raging fire as well as a manic fire mephit. Witnesses report that the arsonist fled the town toward Citadel Altaerein. What’s more, a beloved ambassador to a goblin tribe hailing from the keep is desperately worried that she’s lost contact with her people, and she’s concerned about smoky distress signals that waft from the citadel’s battlements.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Summary_Cult_of_Cinders -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Summary_Cult_of_Cinders">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Summary"/>
+        <pzo90145:event_after_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Summary_Hellknight_Hill"/>
+        <rdfs:comment>By Eleanor Ferron
+Pathfinder Adventure Path #146, Levels 5–8
+
+The PCs use their newfound aiudara network to travel to the Mwangi Expanse, seeking the source of the Cinderclaw cultists who used it to invade Hellknight Hill. As they do so, they experience first-hand the dangers of Dahak’s trapped incarnation, and then befriend a settlement of Ekujae elves who welcome them into their homes. The elves have their own problem—some sort of affliction strikes them blind if they travel east into the jungle, and their leaders have determined that the cult of Dahak (a group they have fought for generations) is responsible. With the elves’ support, the PCs explore the trackless jungles and discover strange magical pillars invested with potent magic tied to Dahak’s cult, a hidden strip mine used by the Cinderclaws to produce poisonous gold, and eventually the cult’s fortress, where they can save the elves and defeat the Cinderclaws completely.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Summary_Fires_of_the_Haunted_City -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Summary_Fires_of_the_Haunted_City">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Summary"/>
+        <pzo90145:event_after_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Summary_Tomorrow_Must_Burn"/>
+        <rdfs:comment>By Linda Zayas-Palmer
+Pathfinder Adventure Path #148, Levels 12–14
+
+The Scarlet Triad knows it has enemies now—with Laslunn’s defeat and the destabilization of their slaver operations in Ravounel, a coming alliance with duergar slavers in the Darklands below the Five Kings Mountains grows even more important. The Scarlet Triad’s second in command, the dwarven cleric Ilssrah Embermead, steps up her plans to forge not only this alliance, but another with the magma dragon Veshumirix, who holds what might be the largest shard of the orb of gold dragonkind in his hoard. The PCs use Alseta’s Ring to travel to the haunted dwarven city of Saggorak, where they recruit the aid of the dwarves of Kolvar to oppose the Triad once again. For while an alliance with duergar slavers will bolster the Scarlet Triad’s resources, an alliance with a powerful dragon who owns a shard of the artifact needed to complete the Triad’s plot could spell even greater danger, should the PCs let it come to pass.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Summary_Hellknight_Hill -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Summary_Hellknight_Hill">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Summary"/>
+        <rdfs:comment>By Amanda Hamon
+Pathfinder Adventure Path #145, Levels 1–4
+
+When they investigate the source of strange signal fires atop the abandoned Hellknight fortress of Citadel Altaerein, the PCs find more than a desperate tribe of goblins. The dungeons below have been invaded by a band of Dahak cultists who belong to a much larger group known as the Cinderclaws. At the same time, a local bookseller and secret worshipper of Norgorber begins to lay plans for using Citadel Altaerein as the site of an assassin’s guild. By defeating her plot and the stranded Cinderclaws, the PCs not only remove a threat to the town of Breachill, but discover the lost aiudara network of Alseta’s Ring and recover the deed to the citadel—making the PCs its new owners.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Summary_Tomorrow_Must_Burn -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Summary_Tomorrow_Must_Burn">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Summary"/>
+        <pzo90145:event_after_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Summary_Cult_of_Cinders"/>
+        <rdfs:comment>By Ron Lundeen
+Pathfinder Adventure Path #147, Levels 9–11
+
+While the Cinderclaws have been defeated, the PCs learn that another group, the mysterious Scarlet Triad, has been not only providing the cult with powerful magic but has been using it as a source for tainted gold. When an agent of the Scarlet Triad strikes at the PCs’ allies in Breachill, they follow up in the nation of Ravounel, traveling via another portal in Alseta’s Ring. Once there, they discover the Scarlet Triad working to expand the underground slave trade in Old Cheliax, using the city of Kintargo as a base of operations. Working with the halflings of the Bellflower Network to oppose the slavers, the PCs strike a critical blow to the Scarlet Triad’s attempt to expand into Cheliax, eventually confronting and defeating the operation’s third-in-command, the gnoll slaver Laslunn.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Location_Five_Kings_Mountains -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Location_Five_Kings_Mountains">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location"/>
+        <pzo9000-25e:location_next_to_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Settlement_Breachill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Location_Mwangi_Expanse -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Location_Mwangi_Expanse">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location"/>
+        <pzo9000-25e:location_for_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Community_Cinderclaws"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Motive_Call_for_Heroes -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Motive_Call_for_Heroes">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive"/>
+        <pzo9000-25e:motive_leads_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Event_Call_of_Heroes"/>
+        <pzo9000-25e:motive_of_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Community_Breachill_Authority"/>
+        <rdfs:comment>First, it provides the townspeople with an official way to obtain help when they’ve exhausted all other options. 
+Second, it allows the salaried town guard to focus on mundane crimes and threats to the town. 
+Third, it provides experience to local adventurers and allows the council to vet out-of-town mercenaries, so that if the need arises again, the town will have heroes ready to come to its aid, just as Lord Lamond Breachton did years ago.</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -431,7 +801,7 @@ The Scarlet Triad kept this venture quiet from Mengkare with the aid of their cu
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Motive_Defeat_Incarnation_of_Dahak">
         <pzo9000-25e:motive_from_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Mengkare_Activated_Portal"/>
         <pzo9000-25e:motive_has_target_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#NPC_Dahak"/>
-        <pzo9000-25e:motive_leads_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Foundation_of_Breachill"/>
+        <pzo9000-25e:motive_leads_to_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_First_Glorious_Endeavor_and_Foundation_of_Breachill"/>
         <pzo9000-25e:motive_of_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#NPC_Mengkare"/>
         <rdfs:comment>The phrase “Tomorrow Must Burn” is one Mengkare often uses to justify his actions. It refers to the end goal of the Glorious Endeavor, and to Mengkare’s conviction that in order to save the future from Dahak, a short-term and hopefully controlled apocalypse in the form of sacrificing the populace of Promise will secure survival for the rest of the world. “Tomorrow must burn...” Mengkare tells himself, “...so the days thereafter can prosper.”</rdfs:comment>
     </owl:NamedIndividual>
@@ -507,6 +877,16 @@ When the PCs begin Age of Ashes, two of the portal keys await discovery. Scarlet
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Motive_Voz_Lirayne -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Motive_Voz_Lirayne">
+        <pzo9000-25e:motive_has_target_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Community_Scarlet_Triad"/>
+        <pzo9000-25e:motive_of_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Voz_Lirayne"/>
+        <rdfs:comment>Voz Lirayne has discovered the existence of Alseta’s Ring, and now plots to find a way to reactivate it to earn support from a group she’s allied with: the Scarlet Triad</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#NPC_Candlaron_the_Sculptor -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#NPC_Candlaron_the_Sculptor">
@@ -536,12 +916,53 @@ When the PCs begin Age of Ashes, two of the portal keys await discovery. Scarlet
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#NPC_Greta_Gardania -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#NPC_Greta_Gardania">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#NPC_Breachill_Councilor"/>
+        <rdfs:comment>LG female human councilor
+The daughter of one of the most prominent families in Breachill, Greta Gardania traces her lineage to one of Breachill’s founders, Rennold Gardania. From a very young age Greta passionately aspired to public service, tirelessly studying the town’s civic history and diving into every text she could find about the philosophy and strategies of governance.
+Council President Greta Gardania once worked here and administrated operations of Lamond&apos;s Lament.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#NPC_Ilgreth -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#NPC_Ilgreth">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC"/>
         <pzo9000-25e:subject_of_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Destruction_of_Orb_of_Gold_Dragonkind"/>
         <rdfs:comment>human wizard named Ilgreth had recovered the orb of gold dragonkind and had been using it to enslave dragons</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#NPC_Jorsk_Hinterclaw -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#NPC_Jorsk_Hinterclaw">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#NPC_Breachill_Councilor"/>
+        <rdfs:comment>NG male dwarf councilor
+The son of silver miners from Kraggodan in Nirmathas, Jorsk was a smith’s apprentice in his hometown before he left for a life of adventure. He traveled all around the region completing various jobs with crews of mostly kind-hearted adventurers, and he garnered a very positive reputation in Breachill long before he settled there and began to dabble in public service.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#NPC_Malarunk -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#NPC_Malarunk">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC"/>
+        <pzo9000-25e:npc_from_community rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Community_Cinderclaws"/>
+        <rdfs:comment>sub-commander</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#NPC_Melma_Ann_Sendari -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#NPC_Melma_Ann_Sendari">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#NPC_Breachill_Councilor"/>
+        <rdfs:comment>LN female human councilor
+The scion of a Chelish family who fled the nation after the Thrune Ascendancy, Melma Ann carries the pedigree of old nobility whose legacy ended with the political upheaval of the Chelish Civil War. Nonetheless, she carries herself with impressive self-assurance, and she understands diplomacy and statesmanship better than perhaps any other politician on the council.</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -555,6 +976,16 @@ When the PCs begin Age of Ashes, two of the portal keys await discovery. Scarlet
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#NPC_Trini_Sprizzlegig -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#NPC_Trini_Sprizzlegig">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#NPC_Breachill_Councilor"/>
+        <rdfs:comment>CG female gnome councilor
+A first-generation resident of Breachill, Trini Sprizzlegig immigrated as a baby from her parents’ hometown of Brastlewark in Cheliax. Trini is a deeply kind and empathetic woman, if a little manic, and her propensity for helping others led her to earn a spot on the council. Perhaps one of its flightiest members, Trini nonetheless is one of its staunchest voices for helping those in need—and for welcoming adventurers from far-off locales or unusual backgrounds.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#NPC_Uri_Zandivar -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#NPC_Uri_Zandivar">
@@ -562,6 +993,75 @@ When the PCs begin Age of Ashes, two of the portal keys await discovery. Scarlet
         <pzo9000-25e:npc_from_community rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Community_Scarlet_Triad"/>
         <pzo9000-25e:subject_of_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Scarlet_Triad_as_Slave_Trader"/>
         <rdfs:comment>leader of Scarlet Triad</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#NPC_Warbal_Bumblebrasher -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#NPC_Warbal_Bumblebrasher">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC"/>
+        <pf2_general:is_depicted_by_art rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Portrait_Warbal_Bumblebrasher"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#NPC_Wilford_Lavendil -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#NPC_Wilford_Lavendil">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC"/>
+        <pzo9000-25e:npc_from_community rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Community_Breachill_Authority"/>
+        <pzo9000-25e:subject_of_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Settlement_Breachill"/>
+        <rdfs:comment>head of the town guard, LG male halfelf soldier, a jolly yet militaristic man whose human mother’s family traces its heritage to a founding Breachill pioneer</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Portrait_Quentino_Posandi -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Portrait_Quentino_Posandi">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Portrait"/>
+        <schema:image rdf:resource="https://db4sgowjqfwig.cloudfront.net/images/5590223/Quentino_Posandi.png"/>
+        <pf2_general:art_depicts rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Quentino_Posandi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Portrait_Tarindlara_Vallinder -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Portrait_Tarindlara_Vallinder">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Portrait"/>
+        <schema:image rdf:resource="https://db4sgowjqfwig.cloudfront.net/images/5687497/Tarindalla.jpg"/>
+        <pf2_general:art_depicts rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Tarindlara_Vallindel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Portrait_Warbal_Bumblebrasher -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Portrait_Warbal_Bumblebrasher">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Portrait"/>
+        <schema:image rdf:resource="https://cdna.artstation.com/p/assets/images/images/030/041/964/large/diana-martinez-pzo90145-warbal-portrait.jpg?1599428369"/>
+        <pf2_general:art_is_created_by rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_books.rdf#Diana_Martinez"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Scenery_Citadel -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Scenery_Citadel">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#Scenery"/>
+        <schema:image rdf:resource="https://www.worldanvil.com/uploads/images/8973a08d027526f05110bd89e565cae2.jpg"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Scenery_Lamond_Breachton -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Scenery_Lamond_Breachton">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#Scenery"/>
+        <schema:image rdf:resource="https://images.squarespace-cdn.com/content/v1/5c6da7607a1fbd3a427551e7/1570744379196-CKK2KAWK5EBD35OQUJ3R/Lamond+Breachton+Statue+-+Episode+1.png?format=500w"/>
+        <pf2_general:art_depicts rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Lamond_Breachton"/>
     </owl:NamedIndividual>
     
 
@@ -585,22 +1085,17 @@ When the PCs begin Age of Ashes, two of the portal keys await discovery. Scarlet
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Art_Torag~s_Crag -->
-
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Art_Torag~s_Crag">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#Art"/>
-        <schema:image rdf:resource="https://ibb.co/XxsrnKN"/>
-        <pf2_general:art_depicts rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Location_Torag~s_Crag"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Mengkare~s_Path -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Mengkare~s_Path">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_History"/>
         <pzo9000-25e:event_with_subject rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#NPC_Mengkare"/>
         <pzo90145:event_after_event rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Event_Dragon_Plague"/>
+        <pzo90145:event_date>{
+3773: Mengkare returns to Golarion after spending about a century in exile and study in Axis.
+3819: Mengkare is convinced to join the Shining Crusade by a passionate young crusader named Iomedae; he does so disguised as a human wizard.
+3823: The loss of Arazni is the final straw for Mengkare and he abandons the Shining Crusade after seeing humanity at its worst. (Tar-Baphon, while undead, is still human as far as Mengkare is concerned.)
+}</pzo90145:event_date>
         <rdfs:comment>Mengkare returned to Golarion in 3773 and spent many years traveling the land in the guise of a human philosopher, intrigued by humanity’s paradoxical capacity for great good and great evil. Everywhere he traveled, he studied and observed. In 3819, as he wandered along the front of the Shining Crusade in Lastwall, he was approached by a fascinating woman who seemed to realize he was something more than a mere wandering philosopher. This woman was none other than Iomedae (before she ascended to divinity), a passionate and powerful crusader, and she convinced Mengkare to aid humanity in opposing the Whispering Tyrant and joining the crusade. Mengkare’s time as a crusader was short, for only 4 years later, he once again experienced humanity’s capacity for great evil when he witnessed Tar-Baphon’s defeat of Arazni. Demoralized further by what he took to be a lost cause, Mengkare quit the field of battle and left the mainland of Avistan, settling in for a hermit’s life on a remote and wilderness island in the Steaming Sea: Hermea.</rdfs:comment>
     </owl:NamedIndividual>
     
@@ -639,6 +1134,16 @@ When the PCs begin Age of Ashes, two of the portal keys await discovery. Scarlet
     
 
 
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Scenery_Torag~s_Crag -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Scenery_Torag~s_Crag">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#Scenery"/>
+        <schema:image rdf:resource="https://ibb.co/XxsrnKN"/>
+        <pf2_general:art_depicts rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Location_Torag~s_Crag"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -649,6 +1154,66 @@ When the PCs begin Age of Ashes, two of the portal keys await discovery. Scarlet
 
     <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Art_Cover">
         <rdfs:comment>Kyra and Merisiel face off against an undead Hellknight guardian</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Breachill_Archives">
+        <rdfs:comment>The archives began with Lamond Breachton’s own meticulous notes detailing the year during which the wizard worked with the valley’s foundlings to create a self-sufficient hamlet. Official first-person accounts from town residents also are stored here; they begin shortly after Breachton’s departure and continue to be regularly added to. Military records from the town’s involvement in the Goblinblood Wars and documents related to the Order of the Nail’s official presence on Hellknight Hill are found here, too; these archives all have a rather formal and official feel compared to the more personal recollections of the main repository.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Monument_Circle">
+        <pf2_general:is_depicted_by_art rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#Scenery_Lamond_Breachton"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Narine_Howerdell">
+        <rdfs:comment>Payment might come in the form of gold pieces, choice selections of lumber, or wood worked into graceful furniture or other pieces in the carpentry shop attached to the mill.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Motive_Winthrop_Finney">
+        <rdfs:comment>He is particularly impressed by self-made adventurers, and he can be convinced to offer discounts or even free articles to adventurers who promise to publicly and prominently wear his clothes and speak highly of his wares.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Amera_Lang">
+        <rdfs:comment>LE female human mason</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Brynne_Taithe">
+        <rdfs:comment>CG female human cleric of Cayden Cailean 5</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Crink_Twiddleton">
+        <rdfs:comment>CN male halfling merchant</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Fadelby_Vusker">
+        <rdfs:comment>LN male human wainwright
+Vusker is clever and hardworking, and he has built up a robust business from the small mom-and-pop store that his father opened just before he was born. He’s also a shrewd businessman, and when his customers return to him complaining that wayward bandits or roving monsters damaged their wagons, Vusker simply shrugs, charges them for repairs, and recommends that they petition the town council for adventurers to address any recurring dangers to themselves or other travelers. Occasionally, when a threat outside town has scared enough of his customers, Vusker himself quietly looks for heroes to help address the problem and keep the heat off his business affairs.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Kellen_Carondil">
+        <rdfs:comment>CG male elf cleric of Desna 5</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Narine_Howerdell">
+        <rdfs:comment>N female half-elf lumberjack</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Quentino_Posandi">
+        <rdfs:comment>N male human councilor
+One of the most inscrutable members of Breachill’s town council, Quentino Posandi is nonetheless the owner of one of the most successful businesses in town, the Posandi Bros. masonry company. Quentino is the business’s fifth-generation owner and manages it himself, and despite the significance of handling those tasks alone, the business has never thrived more. Out of all the council members, Quentino speaks the least, but when he does weigh in publicly on a decision, his shrewdness and problem-solving ability are remarkable.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Renatta_Gilroy">
+        <rdfs:comment>LG female human chef</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Rorsk_Axebane">
+        <rdfs:comment>LG male dwarf mason</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Roxie_Denn">
+        <rdfs:comment>CN female human tavernkeeper</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Tarindlara_Vallindel">
+        <rdfs:comment>NG female elf cleric of Shelyn 5</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Trinil_Uskwold">
+        <rdfs:comment>NG female human innkeeper
+highly encourages, as her grandfather, himself a prominent local adventurer, loved eating that meal before embarking on his own many daring journeys</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Winthrop_Finney">
+        <rdfs:comment>NG male human tailor</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Xandel_Rynearsohn">
+        <rdfs:comment>CG male human carpenter</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Morta~s_Mortiary">
+        <rdfs:comment>various images of psychopomps—particularly the birdlike nosoi—decorate the mortuary in the form of paintings, sconces, floor statues, and the like</rdfs:comment>
     </rdf:Description>
 </rdf:RDF>
 

@@ -661,10 +661,18 @@
     <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Breachill">
         <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location"/>
         <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#location_inside_location"/>
-                <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Settlement_Breachill"/>
-            </owl:Restriction>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#is_depicted_by_art"/>
+                        <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Map_Breachill"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#location_inside_location"/>
+                        <owl:hasValue rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Settlement_Breachill"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
         </rdfs:subClassOf>
     </owl:Class>
     
@@ -725,6 +733,12 @@
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Subject -->
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Subject"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#NPC_Breachill_Councilor -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#NPC_Breachill_Councilor"/>
     
 
 
@@ -967,16 +981,6 @@ Languages: common, ancestries languages. Draconic is a key language in many part
 Religion: worshipping a draconic god isn’t well-suited for this campaign.
 Background: special and core (especially Acolyte, Artisan, Artist, Bounty Hunter, Detective, Emissary, Entertainer, Gladiator, Guard, Hunter, Laborer, Martial Disciple, Merchant, Nomad, Scholar, Scout, Tinker, or Warrior).
 Downtime: with Crafting, Lore, or Performance, you can take advantage of downtime to earn extra coin doing various tasks and jobs.</rdfs:comment>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Art_Breachill -->
-
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Art_Breachill">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#Art"/>
-        <pf2_general:art_depicts rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Settlement_Breachill"/>
-        <schema:image rdf:resource="https://ibb.co/jTbggxR"/>
     </owl:NamedIndividual>
     
 
@@ -1795,7 +1799,7 @@ critical failure: failed befriend condition;
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Quentino_Posandi -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC_Quentino_Posandi">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo90145.rdf#NPC_Breachill_Councilor"/>
         <pzo9000-25e1:subject_of_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Posandi_Bros"/>
         <rdfs:comment>town councilor, male human councilor, business’s owner and manager</rdfs:comment>
     </owl:NamedIndividual>
@@ -1879,6 +1883,16 @@ critical failure: failed befriend condition;
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#NPC"/>
         <pzo9000-25e1:subject_of_location rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Location_Breach_Creek_Lumber"/>
         <rdfs:comment>eccentric male human carpenter, oversees associated carpenter’s shop</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Scenery_Breachill -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Scenery_Breachill">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#Scenery"/>
+        <pf2_general:art_depicts rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo9000-25e.rdf#Settlement_Breachill"/>
+        <schema:image rdf:resource="https://ibb.co/jTbggxR"/>
     </owl:NamedIndividual>
     
 
