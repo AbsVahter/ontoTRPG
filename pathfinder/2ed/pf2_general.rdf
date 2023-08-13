@@ -53,11 +53,21 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#art_depicts -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#OWLObjectProperty0001398 -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#art_depicts">
-        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#is_depicted_by_art"/>
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#Art"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#OWLObjectProperty0001398">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#OWLObjectProperty0001399"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#OWLClass0001378"/>
+        <rdfs:label>depicts</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#OWLObjectProperty0001399 -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#OWLObjectProperty0001399">
+        <rdfs:label>is depicted by</rdfs:label>
+        <skos:hiddenLabel>isDepictedBy</skos:hiddenLabel>
     </owl:ObjectProperty>
     
 
@@ -66,8 +76,8 @@
 
     <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#art_is_created_by">
         <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#artist_creates"/>
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#Art"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#Artist"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#OWLClass0001378"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#OWLClass0001380"/>
     </owl:ObjectProperty>
     
 
@@ -75,12 +85,6 @@
     <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#artist_creates -->
 
     <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#artist_creates"/>
-    
-
-
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#is_depicted_by_art -->
-
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#is_depicted_by_art"/>
     
 
 
@@ -95,22 +99,28 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#Art -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#OWLClass0001378 -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#Art"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#OWLClass0001378">
+        <rdfs:label>Art</rdfs:label>
+    </owl:Class>
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#Artist -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#OWLClass0001379 -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#Artist"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#OWLClass0001379">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#OWLClass0001378"/>
+        <rdfs:label>Scenery art</rdfs:label>
+        <skos:hiddenLabel>Scenery</skos:hiddenLabel>
+    </owl:Class>
     
 
 
-    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#Scenery -->
+    <!-- https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#OWLClass0001380 -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#Scenery">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#Art"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pf2_general.rdf#OWLClass0001380">
+        <rdfs:label>Artist</rdfs:label>
     </owl:Class>
 </rdf:RDF>
 
