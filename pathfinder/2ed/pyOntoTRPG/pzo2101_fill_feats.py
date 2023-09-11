@@ -1,4 +1,5 @@
 from owlready2 import *
+import main
 
 
 def fill(pzo2101: Ontology):
@@ -15,7 +16,13 @@ def fill(pzo2101: Ontology):
 
 def fill_languages(pzo2101: Ontology):
     with pzo2101:
-        class Language(pzo2101.Feat): pass
+        class Language(pzo2101.Feat):
+            comment = ["The people of the Inner Sea region speak dozens of different languages, along with hundreds "
+                       "of dialects and regional variations. While a character can generally get by with Taldane, "
+                       "also known as Common, knowing another language is vital in some regions. Being able to speak "
+                       "these tongues can help you with negotiation, spying on enemies, or just conducting simple "
+                       "commerce. Languages also afford you the chance to contextualize your character in the world "
+                       "and give meaning to your other character choices."]
 
         pzo2101.Language.comment = ("The people of the Inner Sea region speak dozens of different languages, along with "
                                  "hundreds of dialects and regional variations. While a character can generally get "
@@ -43,11 +50,10 @@ def fill_languages(pzo2101: Ontology):
 
 
 def create_feats(pzo2101: Ontology):
-    import re
     with pzo2101:
         feats_anc = ['Darkvision', 'Clan Dagger', 'Low-Light Vision', 'Keen Eyes']
         for f in feats_anc:
-            pzo2101.Feat(re.sub('\W+', '_', f.lower()))
+            pzo2101.Feat(main.prepare_name(f))
 
         feats_heritage = [
             'Ancient-Blooded Dwarf', 'Death Warden Dwarf', 'Forge Dwarf', 'Rock Dwarf', 'Strong-Blooded Dwarf',
@@ -58,7 +64,7 @@ def create_feats(pzo2101: Ontology):
             'Half-Elf', 'Half-Orc', 'Skilled Heritage', 'Versatile Heritage'
         ]
         for f in feats_heritage:
-            pzo2101.Heritage(re.sub('\W+', '_', f.lower()))
+            pzo2101.Heritage(main.prepare_name(f))
 
         feats_anc_sel = {
             1: ['DWARVEN LORE', 'DWARVEN WEAPON FAMILIARITY', 'ROCK RUNNER', 'STONECUNNING', 'UNBURDENED IRON',
@@ -85,7 +91,7 @@ def create_feats(pzo2101: Ontology):
         for lvl in feats_anc_sel:
             lst = feats_anc_sel[lvl]
             for f in lst:
-                pzo2101.Feat(re.sub('\W+', '_', f.lower()), level = lvl)
+                pzo2101.Feat(main.prepare_name(f), level = lvl)
 
         class prereq(pzo2101.Feat >> pzo2101.Heritage): pass
 
@@ -95,3 +101,7 @@ def create_feats(pzo2101: Ontology):
             pzo2101.orc_weapon_familiarity, pzo2101.orc_weapon_carnage, pzo2101.victorious_vigor,
             pzo2101.pervasive_superstition, pzo2101.incredible_ferocity, pzo2101.orc_weapon_expertise]:
             f.prereq.append(pzo2101.half_orc)
+
+        class Skill_feat(pzo2101.Feat): pass
+        for index, row in main.iterrows('Skill_feats'):
+            Skill_feat(main.prepare_name(row['name']))

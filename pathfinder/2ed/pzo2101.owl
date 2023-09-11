@@ -15,24 +15,24 @@
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#ability_boost">
+  <rdfs:domain rdf:resource="#Concept"/>
   <rdfs:range rdf:resource="#Ability_score"/>
-  <rdfs:domain rdf:resource="#Ancestry"/>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#ability_flaw">
-  <rdfs:range rdf:resource="#Ability_score"/>
   <rdfs:domain rdf:resource="#Ancestry"/>
+  <rdfs:range rdf:resource="#Ability_score"/>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#has_feat">
+  <rdfs:domain rdf:resource="#Concept"/>
   <rdfs:range rdf:resource="#Feat"/>
-  <rdfs:domain rdf:resource="#Ancestry"/>
   <owl:inverseOf rdf:resource="#feat_of"/>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#has_selectable_feat">
-  <rdfs:range rdf:resource="#Feat"/>
   <rdfs:domain rdf:resource="#Ancestry"/>
+  <rdfs:range rdf:resource="#Feat"/>
   <owl:inverseOf rdf:resource="#selectable_feat_of"/>
 </owl:ObjectProperty>
 
@@ -49,9 +49,14 @@
   <rdfs:range rdf:resource="#Trait"/>
 </owl:ObjectProperty>
 
+<owl:ObjectProperty rdf:about="#trained_in">
+  <rdfs:domain rdf:resource="#Background"/>
+  <rdfs:range rdf:resource="#Skill"/>
+</owl:ObjectProperty>
+
 <owl:ObjectProperty rdf:about="#depicts">
-  <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
   <rdfs:domain rdf:resource="#Art"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
   <owl:inverseOf rdf:resource="#is_depicted_by"/>
 </owl:ObjectProperty>
 
@@ -61,34 +66,48 @@
 
 <owl:DatatypeProperty rdf:about="#level">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
   <rdfs:domain rdf:resource="#Feat"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
 </owl:DatatypeProperty>
 
 <owl:DatatypeProperty rdf:about="#hp">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
   <rdfs:domain rdf:resource="#Ancestry"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hit points</rdfs:comment>
 </owl:DatatypeProperty>
 
 <owl:DatatypeProperty rdf:about="#size">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   <rdfs:domain rdf:resource="#Ancestry"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
 </owl:DatatypeProperty>
 
 <owl:DatatypeProperty rdf:about="#speed">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
   <rdfs:domain rdf:resource="#Ancestry"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">speed in feet</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#lore_speciality">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Background"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
 </owl:DatatypeProperty>
 
 <owl:AnnotationProperty rdf:about="http://schema.org/image"/>
 
-<owl:Class rdf:about="#Ability_score">
+<owl:Class rdf:about="#Characteristic">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Ability_score">
+  <rdfs:subClassOf rdf:resource="#Characteristic"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Skill">
+  <rdfs:subClassOf rdf:resource="#Characteristic"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Feat">
@@ -105,13 +124,13 @@
 </owl:Class>
 
 <owl:Class rdf:about="#Language_common">
+  <rdfs:subClassOf rdf:resource="#Language"/>
   <rdfs:subClassOf>
     <owl:Restriction>
-      <owl:hasValue rdf:resource="#human"/>
       <owl:onProperty rdf:resource="#selectable_feat_of"/>
+      <owl:hasValue rdf:resource="#human"/>
     </owl:Restriction>
   </rdfs:subClassOf>
-  <rdfs:subClassOf rdf:resource="#Language"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Language_uncommon">
@@ -122,31 +141,57 @@
   <rdfs:subClassOf rdf:resource="#Language"/>
 </owl:Class>
 
+<owl:Class rdf:about="#Skill_feat">
+  <rdfs:subClassOf rdf:resource="#Feat"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Concept">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
 <owl:Class rdf:about="#Ancestry">
+  <rdfs:subClassOf rdf:resource="#Concept"/>
+  <rdfs:subClassOf>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#has_feat"/>
+          <owl:hasValue rdf:resource="#common_language"/>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#has_selectable_feat"/>
+          <owl:hasValue rdf:resource="#local_language"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </rdfs:subClassOf>
   <rdfs:subClassOf>
     <owl:Restriction>
       <owl:onProperty rdf:resource="#has_trait"/>
       <owl:hasValue rdf:resource="#humanoid_trait"/>
     </owl:Restriction>
   </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Class>
-      <owl:intersectionOf rdf:parseType="Collection">
-        <owl:Restriction>
-          <owl:hasValue rdf:resource="#common_language"/>
-          <owl:onProperty rdf:resource="#has_feat"/>
-        </owl:Restriction>
-        <owl:Restriction>
-          <owl:hasValue rdf:resource="#local_language"/>
-          <owl:onProperty rdf:resource="#has_selectable_feat"/>
-        </owl:Restriction>
-      </owl:intersectionOf>
-    </owl:Class>
-  </rdfs:subClassOf>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Your character’s ancestry determines which people they call their own, whether it’s diverse and ambitious humans, insular but vivacious elves, traditionalist and family-focused dwarves, or any of the other folk who call Golarion home. A character’s ancestry and their experiences prior to their life as an adventurer—represented by a background—might be key parts of their identity, shape how they see the world, and help them find their place in it.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#Trait">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Background">
+  <rdfs:subClassOf rdf:resource="#Concept"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#trained_in"/>
+      <owl:hasValue rdf:resource="#lore"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Backgrounds allow you to customize your character based on their life before adventuring. This is the next step in their life story after their ancestry, which reflects the circumstances of their birth. Your character’s background can help you learn or portray more about their personality while also suggesting what sorts of things they’re likely to know. Consider what events set your character on their path to the life of an adventurer and how those circumstances relate to their background.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Gameclass">
+  <rdfs:subClassOf rdf:resource="#Concept"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Just as your character’s ancestry plays a key role in expressing their identity and worldview, their class indicates the training they have and will improve upon as an adventurer. Choosing your character’s class is perhaps the most important decision you will make for them. Groups of players often create characters whose skills and abilities complement each other mechanically—for example, ensuring your party includes a healer, a combatoriented character, a stealthy character, and someone with command over magic—so you may wish to discuss options with your group before deciding.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#Art">
@@ -181,6 +226,74 @@
 <owl:NamedIndividual rdf:about="#charisma">
   <rdf:type rdf:resource="#Ability_score"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Charisma measures your character’s personal magnetism and strength of personality. A high Charisma score helps you inflfluence the thoughts and moods of others.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#acrobatics">
+  <rdf:type rdf:resource="#Skill"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#arcana">
+  <rdf:type rdf:resource="#Skill"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#athletics">
+  <rdf:type rdf:resource="#Skill"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#crafting">
+  <rdf:type rdf:resource="#Skill"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#deception">
+  <rdf:type rdf:resource="#Skill"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#diplomacy">
+  <rdf:type rdf:resource="#Skill"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#intimidation">
+  <rdf:type rdf:resource="#Skill"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#lore">
+  <rdf:type rdf:resource="#Skill"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#medicine">
+  <rdf:type rdf:resource="#Skill"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#nature">
+  <rdf:type rdf:resource="#Skill"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#occultism">
+  <rdf:type rdf:resource="#Skill"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#performance">
+  <rdf:type rdf:resource="#Skill"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#religion">
+  <rdf:type rdf:resource="#Skill"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#society">
+  <rdf:type rdf:resource="#Skill"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#stealth">
+  <rdf:type rdf:resource="#Skill"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#survival">
+  <rdf:type rdf:resource="#Skill"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#thievery">
+  <rdf:type rdf:resource="#Skill"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#common_language">
@@ -879,19 +992,412 @@
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">13</level>
 </owl:NamedIndividual>
 
+<owl:NamedIndividual rdf:about="#assurance">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#dubious_knowledge">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#quick_identification">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#recognize_spell">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#skill_training">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#trick_magic_item">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#automatic_knowledge">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#magical_shorthand">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#quick_recognition">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#cat_fall">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#quick_squeeze">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#steady_balance">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#nimble_crawl">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#kip_up">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#arcane_sense">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#unified_theory">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#combat_climber">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#hefty_hauler">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#quick_jump">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#titan_wrestler">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#underwater_marauder">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#powerful_leap">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rapid_mantel">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#quick_climb">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#quick_swim">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#wall_jump">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#cloud_jump">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#alchemical_crafting">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#quick_repair">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#snare_crafting">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#specialty_crafting">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#magical_crafting">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#impeccable_crafting">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#inventor">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#craft_anything">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#charming_liar">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#lengthy_diversion">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#lie_to_me">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#confabulator">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#quick_disguise">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#slippery_secrets">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#bargain_hunter">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#group_impression">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#hobnobber">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#glad_hand">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#shameless_request">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#legendary_negotiation">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#group_coercion">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#intimidating_glare">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#quick_coercion">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#intimidating_prowess">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#lasting_coercion">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#battle_cry">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#terrified_retreat">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#scare_to_death">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#additional_lore">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#experienced_professional">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#unmistakable_lore">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#legendary_professional">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#battle_medicine">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#continual_recovery">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#robust_recovery">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ward_medic">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#legendary_medic">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#natural_medicine">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#train_animal">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#bonded_animal">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#oddity_identification">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#bizarre_magic">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#fascinating_performance">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#impressive_performance">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#virtuosic_performer">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#legendary_performer">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#student_of_the_canon">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#divine_guidance">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#courtly_graces">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#multilingual">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#read_lips">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#sign_language">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#streetwise">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#connections">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#legendary_codebreaker">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#legendary_linguist">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#experienced_smuggler">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#terrain_stalker">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#quiet_allies">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#foil_senses">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#swift_sneak">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#legendary_sneak">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#experienced_tracker">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#forager">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#survey_wildlife">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#terrain_expertise">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#planar_survival">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#legendary_survivalist">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#pickpocket_subtle_theft_wary_disarmament">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#quick_unlock">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#legendary_thief">
+  <rdf:type rdf:resource="#Skill_feat"/>
+</owl:NamedIndividual>
+
 <owl:NamedIndividual rdf:about="#dwarf">
+  <rdf:type rdf:resource="#Ancestry"/>
   <ability_boost rdf:resource="#constitution"/>
   <ability_boost rdf:resource="#wisdom"/>
   <ability_flaw rdf:resource="#charisma"/>
   <has_feat rdf:resource="#dwarven_language"/>
+  <has_feat rdf:resource="#darkvision"/>
+  <has_feat rdf:resource="#clan_dagger"/>
   <has_selectable_feat rdf:resource="#gnomish_language"/>
   <has_selectable_feat rdf:resource="#goblin_language"/>
   <has_selectable_feat rdf:resource="#jotun_language"/>
   <has_selectable_feat rdf:resource="#orcish_language"/>
-  <has_selectable_feat rdf:resource="#undercommon_language"/>
   <has_selectable_feat rdf:resource="#terran_language"/>
-  <has_feat rdf:resource="#darkvision"/>
-  <has_feat rdf:resource="#clan_dagger"/>
+  <has_selectable_feat rdf:resource="#undercommon_language"/>
   <has_selectable_feat rdf:resource="#ancient_blooded_dwarf"/>
   <has_selectable_feat rdf:resource="#death_warden_dwarf"/>
   <has_selectable_feat rdf:resource="#forge_dwarf"/>
@@ -908,26 +1414,26 @@
   <has_selectable_feat rdf:resource="#mountain_s_stoutness"/>
   <has_selectable_feat rdf:resource="#stonewalker"/>
   <has_selectable_feat rdf:resource="#dwarven_weapon_expertise"/>
-  <rdf:type rdf:resource="#Ancestry"/>
-  <hp rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</hp>
-  <speed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</speed>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dwarves have a well-earned reputation as a stoic and stern people, ensconced within citadels and cities carved from solid rock. While some see them as dour and humorless crafters of stone and metal, dwarves and those who have spent time among them understand their unbridled zeal for their work, caring far more about quality than quantity. To a stranger, they can seem untrusting and clannish, but to their friends and family, they are warm and caring, their halls filled with the sounds of laughter and hammers hitting anvils.</rdfs:comment>
+  <hp rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</hp>
   <size rdf:datatype="http://www.w3.org/2001/XMLSchema#string">medium</size>
+  <speed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</speed>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#elf">
+  <rdf:type rdf:resource="#Ancestry"/>
   <ability_boost rdf:resource="#dexterity"/>
-  <ability_flaw rdf:resource="#constitution"/>
   <ability_boost rdf:resource="#intelligence"/>
-  <has_selectable_feat rdf:resource="#draconic_language"/>
+  <ability_flaw rdf:resource="#constitution"/>
   <has_feat rdf:resource="#elven_language"/>
+  <has_feat rdf:resource="#low_light_vision"/>
+  <has_selectable_feat rdf:resource="#celestial_language"/>
+  <has_selectable_feat rdf:resource="#draconic_language"/>
+  <has_selectable_feat rdf:resource="#gnoll_language"/>
   <has_selectable_feat rdf:resource="#gnomish_language"/>
   <has_selectable_feat rdf:resource="#goblin_language"/>
   <has_selectable_feat rdf:resource="#orcish_language"/>
   <has_selectable_feat rdf:resource="#sylvan_language"/>
-  <has_selectable_feat rdf:resource="#celestial_language"/>
-  <has_selectable_feat rdf:resource="#gnoll_language"/>
-  <has_feat rdf:resource="#low_light_vision"/>
   <has_selectable_feat rdf:resource="#arctic_elf"/>
   <has_selectable_feat rdf:resource="#cavern_elf"/>
   <has_selectable_feat rdf:resource="#seer_elf"/>
@@ -946,26 +1452,26 @@
   <has_selectable_feat rdf:resource="#expert_longevity"/>
   <has_selectable_feat rdf:resource="#universal_longevity"/>
   <has_selectable_feat rdf:resource="#elven_weapon_expertise"/>
-  <rdf:type rdf:resource="#Ancestry"/>
-  <hp rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</hp>
-  <speed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</speed>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">As an ancient people, elves have seen great change and have the perspective that can come only from watching the arc of history. After leaving the world in ancient times, they returned to a changed land, and they still struggle to reclaim their ancestral homes, most notably from terrible demons that have invaded parts of their lands. To some, the elves are objects of awe—graceful and beautiful, with immense talent and knowledge. Among themselves, however, the elves place far more importance on personal freedom than on living up to these ideals.</rdfs:comment>
+  <hp rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</hp>
   <size rdf:datatype="http://www.w3.org/2001/XMLSchema#string">medium</size>
+  <speed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</speed>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#gnome">
-  <ability_flaw rdf:resource="#strength"/>
+  <rdf:type rdf:resource="#Ancestry"/>
   <ability_boost rdf:resource="#constitution"/>
   <ability_boost rdf:resource="#charisma"/>
+  <ability_flaw rdf:resource="#strength"/>
+  <has_feat rdf:resource="#gnomish_language"/>
+  <has_feat rdf:resource="#sylvan_language"/>
+  <has_feat rdf:resource="#low_light_vision"/>
   <has_selectable_feat rdf:resource="#draconic_language"/>
   <has_selectable_feat rdf:resource="#dwarven_language"/>
   <has_selectable_feat rdf:resource="#elven_language"/>
-  <has_feat rdf:resource="#gnomish_language"/>
   <has_selectable_feat rdf:resource="#goblin_language"/>
   <has_selectable_feat rdf:resource="#jotun_language"/>
   <has_selectable_feat rdf:resource="#orcish_language"/>
-  <has_feat rdf:resource="#sylvan_language"/>
-  <has_feat rdf:resource="#low_light_vision"/>
   <has_selectable_feat rdf:resource="#chameleon_gnome"/>
   <has_selectable_feat rdf:resource="#fey_touched_gnome"/>
   <has_selectable_feat rdf:resource="#sensate_gnome"/>
@@ -984,25 +1490,25 @@
   <has_selectable_feat rdf:resource="#first_world_adept"/>
   <has_selectable_feat rdf:resource="#vivacious_conduit"/>
   <has_selectable_feat rdf:resource="#gnome_weapon_expertise"/>
-  <rdf:type rdf:resource="#Ancestry"/>
-  <hp rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</hp>
-  <speed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</speed>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Long ago, early gnome ancestors emigrated from the First World, realm of the fey. While it’s unclear why the first gnomes wandered to Golarion, this lineage manifests in modern gnomes as bizarre reasoning, eccentricity, obsessive tendencies, and what some see as naivete. These qualities are further reflected in their physical characteristics, such as spindly limbs, brightly colored hair, and childlike and extremely expressive facial features that further reflect their otherworldly origins.</rdfs:comment>
+  <hp rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</hp>
   <size rdf:datatype="http://www.w3.org/2001/XMLSchema#string">small</size>
+  <speed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</speed>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#goblin">
+  <rdf:type rdf:resource="#Ancestry"/>
   <ability_boost rdf:resource="#dexterity"/>
-  <ability_flaw rdf:resource="#wisdom"/>
   <ability_boost rdf:resource="#charisma"/>
+  <ability_flaw rdf:resource="#wisdom"/>
+  <has_feat rdf:resource="#goblin_language"/>
+  <has_feat rdf:resource="#darkvision"/>
   <has_selectable_feat rdf:resource="#draconic_language"/>
   <has_selectable_feat rdf:resource="#dwarven_language"/>
+  <has_selectable_feat rdf:resource="#gnoll_language"/>
   <has_selectable_feat rdf:resource="#gnomish_language"/>
-  <has_feat rdf:resource="#goblin_language"/>
   <has_selectable_feat rdf:resource="#halfling_language"/>
   <has_selectable_feat rdf:resource="#orcish_language"/>
-  <has_selectable_feat rdf:resource="#gnoll_language"/>
-  <has_feat rdf:resource="#darkvision"/>
   <has_selectable_feat rdf:resource="#charhide_goblin"/>
   <has_selectable_feat rdf:resource="#irongut_goblin"/>
   <has_selectable_feat rdf:resource="#razortooth_goblin"/>
@@ -1022,23 +1528,23 @@
   <has_selectable_feat rdf:resource="#skittering_scuttle"/>
   <has_selectable_feat rdf:resource="#goblin_weapon_expertise"/>
   <has_selectable_feat rdf:resource="#very_very_sneaky"/>
-  <rdf:type rdf:resource="#Ancestry"/>
-  <hp rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</hp>
-  <speed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</speed>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The convoluted histories other people cling to don’t interest goblins. These small folk live in the moment, and they prefer tall tales over factual records. The wars of a few decades ago might as well be from the ancient past. Misunderstood by other people, goblins are happy how they are. Goblin virtues are about being present, creative, and honest. They strive to lead fulfilled lives, rather than worrying about how their journeys will end. To tell stories, not nitpick the facts. To be small, but dream big.</rdfs:comment>
+  <hp rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</hp>
   <size rdf:datatype="http://www.w3.org/2001/XMLSchema#string">small</size>
+  <speed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</speed>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#halfling">
-  <ability_flaw rdf:resource="#strength"/>
+  <rdf:type rdf:resource="#Ancestry"/>
   <ability_boost rdf:resource="#dexterity"/>
   <ability_boost rdf:resource="#wisdom"/>
+  <ability_flaw rdf:resource="#strength"/>
+  <has_feat rdf:resource="#halfling_language"/>
+  <has_feat rdf:resource="#keen_eyes"/>
   <has_selectable_feat rdf:resource="#dwarven_language"/>
   <has_selectable_feat rdf:resource="#elven_language"/>
   <has_selectable_feat rdf:resource="#gnomish_language"/>
   <has_selectable_feat rdf:resource="#goblin_language"/>
-  <has_feat rdf:resource="#halfling_language"/>
-  <has_feat rdf:resource="#keen_eyes"/>
   <has_selectable_feat rdf:resource="#gutsy_halfling"/>
   <has_selectable_feat rdf:resource="#hillock_halfling"/>
   <has_selectable_feat rdf:resource="#nomadic_halfling"/>
@@ -1058,18 +1564,14 @@
   <has_selectable_feat rdf:resource="#irrepressible"/>
   <has_selectable_feat rdf:resource="#ceaseless_shadows"/>
   <has_selectable_feat rdf:resource="#halfling_weapon_expertise"/>
-  <rdf:type rdf:resource="#Ancestry"/>
-  <hp rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</hp>
-  <speed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</speed>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Claiming no place as their own, halflings control few settlements larger than villages. Instead, they frequently live among humans within the walls of larger cities, carving out small communities alongside taller folk. Many halflings lead perfectly fulfilling lives in the shadows of their larger neighbors, while others prefer a nomadic existence, traveling the world and taking advantage of opportunities and adventures as they come.</rdfs:comment>
+  <hp rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</hp>
   <size rdf:datatype="http://www.w3.org/2001/XMLSchema#string">small</size>
+  <speed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</speed>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#human">
-  <has_selectable_feat rdf:resource="#half_elf"/>
-  <has_selectable_feat rdf:resource="#half_orc"/>
-  <has_selectable_feat rdf:resource="#skilled_heritage"/>
-  <has_selectable_feat rdf:resource="#versatile_heritage"/>
+  <rdf:type rdf:resource="#Ancestry"/>
   <has_selectable_feat rdf:resource="#adapted_cantrip"/>
   <has_selectable_feat rdf:resource="#cooperative_nature"/>
   <has_selectable_feat rdf:resource="#general_training"/>
@@ -1096,93 +1598,479 @@
   <has_selectable_feat rdf:resource="#unconventional_expertise"/>
   <has_selectable_feat rdf:resource="#incredible_ferocity"/>
   <has_selectable_feat rdf:resource="#orc_weapon_expertise"/>
-  <rdf:type rdf:resource="#Ancestry"/>
-  <hp rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</hp>
-  <speed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</speed>
+  <has_selectable_feat rdf:resource="#skilled_heritage"/>
+  <has_selectable_feat rdf:resource="#half_elf"/>
+  <has_selectable_feat rdf:resource="#half_orc"/>
+  <has_selectable_feat rdf:resource="#versatile_heritage"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">As unpredictable and varied as any of Golarion’s peoples, humans have exceptional drive and the capacity to endure and expand. Though many civilizations thrived before humanity rose to prominence, humans have built some of the greatest and the most terrible societies throughout the course of history, and today they are the most populous people in the realms around the Inner Sea.</rdfs:comment>
+  <hp rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</hp>
   <size rdf:datatype="http://www.w3.org/2001/XMLSchema#string">medium</size>
+  <speed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</speed>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#humanoid_trait">
   <rdf:type rdf:resource="#Trait"/>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#art_dwarf_1">
-  <depicts rdf:resource="#dwarf"/>
+<owl:NamedIndividual rdf:about="#acolyte">
+  <rdf:type rdf:resource="#Background"/>
+  <ability_boost rdf:resource="#intelligence"/>
+  <ability_boost rdf:resource="#wisdom"/>
+  <trained_in rdf:resource="#religion"/>
+  <has_feat rdf:resource="#student_of_the_canon"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You spent your early days in a religious monastery or cloister. You may have traveled out into the world to spread the message of your religion or because you cast away the teachings of your faith, but deep down you’ll always carry within you the lessons you learned.</rdfs:comment>
+  <lore_speciality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the Scribing Lore skill</lore_speciality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#acrobat">
+  <rdf:type rdf:resource="#Background"/>
+  <ability_boost rdf:resource="#strength"/>
+  <ability_boost rdf:resource="#dexterity"/>
+  <trained_in rdf:resource="#acrobatics"/>
+  <has_feat rdf:resource="#steady_balance"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">In a circus or on the streets, you earned your pay by performing as an acrobat. You might have turned to adventuring when the money dried up, or simply decided to put your skills to better use.</rdfs:comment>
+  <lore_speciality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the Circus Lore skill</lore_speciality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#animal_whisperer">
+  <rdf:type rdf:resource="#Background"/>
+  <ability_boost rdf:resource="#wisdom"/>
+  <ability_boost rdf:resource="#charisma"/>
+  <trained_in rdf:resource="#nature"/>
+  <has_feat rdf:resource="#train_animal"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You have always felt a connection to animals, and it was only a small leap to learn to train them. As you travel, you continuously encounter different creatures, befriending them along the way.</rdfs:comment>
+  <lore_speciality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a Lore skill related to one terrain inhabited by animals you like (such as Plains Lore or Swamp Lore)</lore_speciality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#artisan">
+  <rdf:type rdf:resource="#Background"/>
+  <ability_boost rdf:resource="#strength"/>
+  <ability_boost rdf:resource="#intelligence"/>
+  <trained_in rdf:resource="#crafting"/>
+  <has_feat rdf:resource="#specialty_crafting"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">As an apprentice, you practiced a particular form of building or crafting, developing specialized skill. You might have been a blacksmith’s apprentice toiling over the forge for countless hours, a young tailor sewing garments of all kinds, or a shipwright shaping the hulls of ships.</rdfs:comment>
+  <lore_speciality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the Guild Lore skill</lore_speciality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#artist">
+  <rdf:type rdf:resource="#Background"/>
+  <ability_boost rdf:resource="#dexterity"/>
+  <ability_boost rdf:resource="#charisma"/>
+  <trained_in rdf:resource="#crafting"/>
+  <has_feat rdf:resource="#specialty_crafting"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Your art is your greatest passion, whatever form it takes. Adventuring might help you find inspiration, or simply be a way to survive until you become a world-famous artist.</rdfs:comment>
+  <lore_speciality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the Art Lore skill</lore_speciality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#barkeep">
+  <rdf:type rdf:resource="#Background"/>
+  <ability_boost rdf:resource="#constitution"/>
+  <ability_boost rdf:resource="#charisma"/>
+  <trained_in rdf:resource="#diplomacy"/>
+  <has_feat rdf:resource="#hobnobber"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You have five specialties: hefting barrels, drinking, polishing steins, drinking, and drinking. You worked in a bar, where you learned how to hold your liquor and rowdily socialize.</rdfs:comment>
+  <lore_speciality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the Alcohol Lore skill</lore_speciality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#barrister">
+  <rdf:type rdf:resource="#Background"/>
+  <ability_boost rdf:resource="#intelligence"/>
+  <ability_boost rdf:resource="#charisma"/>
+  <trained_in rdf:resource="#diplomacy"/>
+  <has_feat rdf:resource="#group_impression"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Piles of legal manuals, stern teachers, and experience in the courtroom have instructed you in legal matters. You’re capable of mounting a prosecution or defense in court, and you tend to keep abreast of local laws, as you never can tell when you might need to know them on short notice.</rdfs:comment>
+  <lore_speciality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the Legal Lore skill</lore_speciality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#bounty_hunter">
+  <rdf:type rdf:resource="#Background"/>
+  <ability_boost rdf:resource="#strength"/>
+  <ability_boost rdf:resource="#wisdom"/>
+  <trained_in rdf:resource="#survival"/>
+  <has_feat rdf:resource="#experienced_tracker"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bringing in lawbreakers lined your pockets. Maybe you had an altruistic motive and sought to bring in criminals to make the streets safer, or maybe the coin was motivation enough. Your techniques for hunting down criminals transfer easily to the life of an adventurer.</rdfs:comment>
+  <lore_speciality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the Legal Lore skill</lore_speciality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#charlatan">
+  <rdf:type rdf:resource="#Background"/>
+  <ability_boost rdf:resource="#intelligence"/>
+  <ability_boost rdf:resource="#charisma"/>
+  <trained_in rdf:resource="#deception"/>
+  <has_feat rdf:resource="#charming_liar"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You traveled from place to place, peddling false fortunes and snake oil in one town, pretending to be royalty in exile to seduce a wealthy heir in the next. Becoming an adventurer might be your next big scam or an attempt to put your talents to use for a greater cause. Perhaps it’s a bit of both, as you realize that after pretending to be a hero, you’ve become the mask.</rdfs:comment>
+  <lore_speciality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the Underworld Lore skill</lore_speciality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#criminal">
+  <rdf:type rdf:resource="#Background"/>
+  <ability_boost rdf:resource="#dexterity"/>
+  <ability_boost rdf:resource="#intelligence"/>
+  <trained_in rdf:resource="#stealth"/>
+  <has_feat rdf:resource="#experienced_smuggler"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">As an unscrupulous independent or as a member of an underworld organization, you lived a life of crime. You might have become an adventurer to seek redemption, to escape the law, or simply to get access to bigger and better loot.</rdfs:comment>
+  <lore_speciality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the Underworld Lore skill</lore_speciality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#detective">
+  <rdf:type rdf:resource="#Background"/>
+  <ability_boost rdf:resource="#intelligence"/>
+  <ability_boost rdf:resource="#wisdom"/>
+  <trained_in rdf:resource="#society"/>
+  <has_feat rdf:resource="#streetwise"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You solved crimes as a police inspector or took jobs for wealthy clients as a private investigator. You might have become an adventurer as part of your next big mystery, but likely it was due to the consequences or aftermath of a prior case.</rdfs:comment>
+  <lore_speciality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the Underworld Lore skill</lore_speciality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#emissary">
+  <rdf:type rdf:resource="#Background"/>
+  <ability_boost rdf:resource="#intelligence"/>
+  <ability_boost rdf:resource="#charisma"/>
+  <trained_in rdf:resource="#society"/>
+  <has_feat rdf:resource="#multilingual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">As a diplomat or messenger, you traveled to lands far and wide. Communicating with new people and forming alliances were your stock and trade.</rdfs:comment>
+  <lore_speciality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a Lore skill related to one city you’ve visited often</lore_speciality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#entertainer">
+  <rdf:type rdf:resource="#Background"/>
+  <ability_boost rdf:resource="#dexterity"/>
+  <ability_boost rdf:resource="#charisma"/>
+  <trained_in rdf:resource="#performance"/>
+  <has_feat rdf:resource="#fascinating_performance"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Through an education in the arts or sheer dogged practice, you learned to entertain crowds. You might have been an actor, a dancer, a musician, a street magician, or any other sort of performer.</rdfs:comment>
+  <lore_speciality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the Theater Lore skill</lore_speciality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#farmhand">
+  <rdf:type rdf:resource="#Background"/>
+  <ability_boost rdf:resource="#constitution"/>
+  <ability_boost rdf:resource="#wisdom"/>
+  <trained_in rdf:resource="#athletics"/>
+  <has_feat rdf:resource="#assurance"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">With a strong back and an understanding of seasonal cycles, you tilled the land and tended crops. Your farm could have been razed by invaders, you could have lost the family tying you to the land, or you might have simply tired of the drudgery, but at some point you became an adventurer.</rdfs:comment>
+  <lore_speciality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the Farming Lore skill</lore_speciality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#field_medic">
+  <rdf:type rdf:resource="#Background"/>
+  <ability_boost rdf:resource="#constitution"/>
+  <ability_boost rdf:resource="#wisdom"/>
+  <trained_in rdf:resource="#medicine"/>
+  <has_feat rdf:resource="#battle_medicine"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">In the chaotic rush of battle, you learned to adapt to rapidly changing conditions as you administered to battle casualties. You patched up soldiers, guards, or other combatants, and learned a fair amount about the logistics of war.</rdfs:comment>
+  <lore_speciality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the Warfare Lore skill</lore_speciality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#fortune_teller">
+  <rdf:type rdf:resource="#Background"/>
+  <ability_boost rdf:resource="#intelligence"/>
+  <ability_boost rdf:resource="#charisma"/>
+  <trained_in rdf:resource="#occultism"/>
+  <has_feat rdf:resource="#oddity_identification"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The strands of fate are clear to you, as you have learned many traditional forms by which laypeople can divine the future. You might have used these skills to guide your community, or simply to make money. But even the slightest peek into these practices connects you to the occult mysteries of the universe.</rdfs:comment>
+  <lore_speciality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the Fortune-Telling Lore skill</lore_speciality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#gambler">
+  <rdf:type rdf:resource="#Background"/>
+  <ability_boost rdf:resource="#dexterity"/>
+  <ability_boost rdf:resource="#charisma"/>
+  <trained_in rdf:resource="#deception"/>
+  <has_feat rdf:resource="#lie_to_me"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The thrill of the win drew you into games of chance. This might have been a lucrative sideline that paled in comparison to the real risks of adventuring, or you might have fallen on hard times due to your gambling and pursued adventuring as a way out of a spiral.</rdfs:comment>
+  <lore_speciality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the Games Lore skill</lore_speciality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#gladiator">
+  <rdf:type rdf:resource="#Background"/>
+  <ability_boost rdf:resource="#strength"/>
+  <ability_boost rdf:resource="#charisma"/>
+  <trained_in rdf:resource="#performance"/>
+  <has_feat rdf:resource="#impressive_performance"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The bloody games of the arena taught you the art of combat. Before you attained true fame, you departed—or escaped—the arena to explore the world. Your skill at drawing both blood and a crowd’s attention pay off in a new adventuring life.</rdfs:comment>
+  <lore_speciality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the Gladiatorial Lore skill</lore_speciality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#guard">
+  <rdf:type rdf:resource="#Background"/>
+  <ability_boost rdf:resource="#strength"/>
+  <ability_boost rdf:resource="#charisma"/>
+  <trained_in rdf:resource="#intimidation"/>
+  <has_feat rdf:resource="#quick_coercion"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You served in the guard, out of either patriotism or the need for coin. Either way, you know how to get a difficult suspect to talk. However you left the guard, you might think of adventuring as a way to use your skills on a wider stage.</rdfs:comment>
+  <lore_speciality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the Legal Lore or Warfare Lore skill</lore_speciality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#herbalist">
+  <rdf:type rdf:resource="#Background"/>
+  <ability_boost rdf:resource="#constitution"/>
+  <ability_boost rdf:resource="#wisdom"/>
+  <trained_in rdf:resource="#nature"/>
+  <has_feat rdf:resource="#natural_medicine"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">As a formally trained apothecary or a rural practitioner of folk medicine, you learned the healing properties of various herbs. You’re adept at collecting the right natural cures in all sorts of environments and preparing them properly.</rdfs:comment>
+  <lore_speciality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the Herbalism Lore skill</lore_speciality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#hermit">
+  <rdf:type rdf:resource="#Background"/>
+  <ability_boost rdf:resource="#constitution"/>
+  <ability_boost rdf:resource="#intelligence"/>
+  <trained_in rdf:resource="#nature"/>
+  <has_feat rdf:resource="#dubious_knowledge"/>
+  <trained_in rdf:resource="#occultism"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">In an isolated place—like a cave, remote oasis, or secluded mansion—you lived a life of solitude. Adventuring might represent your first foray out among other people in some time. This might be a welcome reprieve from solitude or an unwanted change, but in either case, you’re likely still rough around the edges.</rdfs:comment>
+  <lore_speciality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a Lore skill related to the terrain you lived in as a hermit (such as Cave Lore or Desert Lore)</lore_speciality>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You’re trained in the Nature or Occultism skill</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#hunter">
+  <rdf:type rdf:resource="#Background"/>
+  <ability_boost rdf:resource="#dexterity"/>
+  <ability_boost rdf:resource="#wisdom"/>
+  <trained_in rdf:resource="#survival"/>
+  <has_feat rdf:resource="#survey_wildlife"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You stalked and took down animals and other creatures of the wild. Skinning animals, harvesting their flesh, and cooking them were also part of your training, all of which can give you useful resources while you adventure.</rdfs:comment>
+  <lore_speciality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the Tanning Lore skill</lore_speciality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#laborer">
+  <rdf:type rdf:resource="#Background"/>
+  <ability_boost rdf:resource="#strength"/>
+  <ability_boost rdf:resource="#constitution"/>
+  <trained_in rdf:resource="#athletics"/>
+  <has_feat rdf:resource="#hefty_hauler"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You’ve spent years performing arduous physical labor. It was a difficult life, but you somehow survived. You may have embraced adventuring as an easier method to make your way in the world, or you might adventure under someone else’s command.</rdfs:comment>
+  <lore_speciality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the Labor Lore skill</lore_speciality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#martial_disciple">
+  <rdf:type rdf:resource="#Background"/>
+  <ability_boost rdf:resource="#strength"/>
+  <ability_boost rdf:resource="#dexterity"/>
+  <trained_in rdf:resource="#acrobatics"/>
+  <has_feat rdf:resource="#cat_fall"/>
+  <trained_in rdf:resource="#athletics"/>
+  <has_feat rdf:resource="#quick_jump"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You dedicated yourself to intense training and rigorous study to become a great warrior. The school you attended might have been a traditionalist monastery, an elite military academy, or the local branch of a prestigious mercenary organization.</rdfs:comment>
+  <lore_speciality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the Warfare Lore skill</lore_speciality>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You’re trained in your choice of the Acrobatics or Athletics skill. You gain a skill feat: Cat Fall if you chose Acrobatics or Quick Jump if you chose Athletics.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#merchant">
+  <rdf:type rdf:resource="#Background"/>
+  <ability_boost rdf:resource="#intelligence"/>
+  <ability_boost rdf:resource="#charisma"/>
+  <trained_in rdf:resource="#diplomacy"/>
+  <has_feat rdf:resource="#bargain_hunter"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">In a dusty shop, market stall, or merchant caravan, you bartered wares for coin and trade goods. The skills you picked up still apply in the adventuring life, in which a good deal on a suit of armor could prevent your death.</rdfs:comment>
+  <lore_speciality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the Mercantile Lore skill</lore_speciality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#miner">
+  <rdf:type rdf:resource="#Background"/>
+  <ability_boost rdf:resource="#strength"/>
+  <ability_boost rdf:resource="#wisdom"/>
+  <trained_in rdf:resource="#survival"/>
+  <has_feat rdf:resource="#terrain_expertise"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You earned a living wrenching precious minerals from the lightless depths of the earth. Adventuring might have seemed lucrative or glamorous compared to this backbreaking labor— and if you have to head back underground, this time you plan to do so armed with a real weapon instead of a miner’s pick.</rdfs:comment>
+  <lore_speciality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the Mining Lore skill</lore_speciality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#noble">
+  <rdf:type rdf:resource="#Background"/>
+  <ability_boost rdf:resource="#intelligence"/>
+  <ability_boost rdf:resource="#charisma"/>
+  <trained_in rdf:resource="#society"/>
+  <has_feat rdf:resource="#courtly_graces"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">To the common folk, the life of a noble seems one of idyllic luxury, but growing up as a noble or member of the aspiring gentry, you know the reality: a noble’s lot is obligation and intrigue. Whether you seek to escape your duties by adventuring or to better your station, you have traded silks and pageantry for an adventurer’s life.</rdfs:comment>
+  <lore_speciality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">your choice of the Genealogy Lore or Heraldry Lore skill</lore_speciality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#nomad">
+  <rdf:type rdf:resource="#Background"/>
+  <ability_boost rdf:resource="#constitution"/>
+  <ability_boost rdf:resource="#wisdom"/>
+  <trained_in rdf:resource="#survival"/>
+  <has_feat rdf:resource="#assurance"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Traveling far and wide, you picked up basic tactics for surviving on the road and in unknown lands, getting by with few supplies and even fewer comforts. As an adventurer, you travel still, often into even more dangerous places.</rdfs:comment>
+  <lore_speciality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a Lore skill related to one terrain you traveled in (such as Desert Lore or Swamp Lore)</lore_speciality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#prisoner">
+  <rdf:type rdf:resource="#Background"/>
+  <ability_boost rdf:resource="#strength"/>
+  <ability_boost rdf:resource="#constitution"/>
+  <trained_in rdf:resource="#stealth"/>
+  <has_feat rdf:resource="#experienced_smuggler"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You might have been imprisoned for crimes (whether you were guilty or not), or enslaved for some part of your upbringing. In your adventuring life, you take full advantage of your newfound freedom.</rdfs:comment>
+  <lore_speciality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the Underworld Lore skill</lore_speciality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#sailor">
+  <rdf:type rdf:resource="#Background"/>
+  <ability_boost rdf:resource="#strength"/>
+  <ability_boost rdf:resource="#dexterity"/>
+  <trained_in rdf:resource="#athletics"/>
+  <has_feat rdf:resource="#underwater_marauder"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You heard the call of the sea from a young age. Perhaps you signed onto a merchant’s vessel, joined the navy, or even fell in with a crew of pirates and scalawags.</rdfs:comment>
+  <lore_speciality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the Sailing Lore skill</lore_speciality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#scholar">
+  <rdf:type rdf:resource="#Background"/>
+  <ability_boost rdf:resource="#intelligence"/>
+  <ability_boost rdf:resource="#wisdom"/>
+  <trained_in rdf:resource="#arcana"/>
+  <has_feat rdf:resource="#assurance"/>
+  <trained_in rdf:resource="#occultism"/>
+  <trained_in rdf:resource="#nature"/>
+  <trained_in rdf:resource="#religion"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You have a knack for learning, and sequestered yourself from the outside world to learn all you could. You read about so many wondrous places and things in your books, and always dreamed about one day seeing the real things. Eventually, that curiosity led you to leave your studies and become an adventurer.</rdfs:comment>
+  <lore_speciality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the Academia Lore skill</lore_speciality>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You’re trained in your choice of the Arcana, Nature, Occultism, or Religion skill, and gain the Assurance skill feat in your chosen skill.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#scout">
+  <rdf:type rdf:resource="#Background"/>
+  <ability_boost rdf:resource="#dexterity"/>
+  <ability_boost rdf:resource="#wisdom"/>
+  <trained_in rdf:resource="#survival"/>
+  <has_feat rdf:resource="#forager"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You called the wilderness home as you found trails and guided travelers. Your wanderlust could have called you to the adventuring life, or perhaps you served as a scout for soldiers and found you liked battle.</rdfs:comment>
+  <lore_speciality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a Lore skill related to one terrain you scouted in (such as Forest Lore or Cavern Lore)</lore_speciality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#street_urchin">
+  <rdf:type rdf:resource="#Background"/>
+  <ability_boost rdf:resource="#dexterity"/>
+  <ability_boost rdf:resource="#constitution"/>
+  <trained_in rdf:resource="#thievery"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You eked out a living by picking pockets on the streets of a major city, never knowing where you’d find your next meal. While some folk adventure for the glory, you do so to survive.</rdfs:comment>
+  <lore_speciality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a Lore skill for the city you lived in as a street urchin (such as Absalom Lore or Magnimar Lore)</lore_speciality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#tinker">
+  <rdf:type rdf:resource="#Background"/>
+  <ability_boost rdf:resource="#dexterity"/>
+  <ability_boost rdf:resource="#intelligence"/>
+  <trained_in rdf:resource="#crafting"/>
+  <has_feat rdf:resource="#specialty_crafting"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Creating all sorts of minor inventions scratches your itch for problem-solving. Your engineering skills take a particularly creative bent, and no one know what you’ll come up with next. It might be a genius device with tremendous potential... or it might explode.</rdfs:comment>
+  <lore_speciality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the Engineering Lore skill</lore_speciality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#warrior">
+  <rdf:type rdf:resource="#Background"/>
+  <ability_boost rdf:resource="#strength"/>
+  <ability_boost rdf:resource="#constitution"/>
+  <trained_in rdf:resource="#intimidation"/>
+  <has_feat rdf:resource="#intimidating_glare"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">In your younger days, you waded into battle as a mercenary, a warrior defending a nomadic people, or a member of a militia or army. You might have wanted to break out from the regimented structure of these forces, or you could have always been as independent a warrior as you are now.</rdfs:comment>
+  <lore_speciality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the Warfare Lore skill</lore_speciality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#art_ancestries_and_backgrounds">
   <rdf:type rdf:resource="#Art"/>
+  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://ibb.co/Vqqtsw5</sche:image>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#art_dwarf_1">
+  <rdf:type rdf:resource="#Art"/>
+  <depicts rdf:resource="#dwarf"/>
   <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://2e.aonprd.com/Images/Ancestries/Dwarf01.png</sche:image>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#art_dwarf_2">
-  <depicts rdf:resource="#dwarf"/>
   <rdf:type rdf:resource="#Art"/>
+  <depicts rdf:resource="#dwarf"/>
   <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://2e.aonprd.com/Images/Ancestries/Dwarf02.png</sche:image>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#art_elf_1">
-  <depicts rdf:resource="#elf"/>
   <rdf:type rdf:resource="#Art"/>
+  <depicts rdf:resource="#elf"/>
   <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://2e.aonprd.com/Images/Ancestries/Elf01.png</sche:image>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#art_elf_2">
-  <depicts rdf:resource="#elf"/>
   <rdf:type rdf:resource="#Art"/>
+  <depicts rdf:resource="#elf"/>
   <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://2e.aonprd.com/Images/Ancestries/Elf02.png</sche:image>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#art_gnome_1">
-  <depicts rdf:resource="#gnome"/>
   <rdf:type rdf:resource="#Art"/>
+  <depicts rdf:resource="#gnome"/>
   <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://2e.aonprd.com/Images/Ancestries/Gnome01.png</sche:image>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#art_gnome_2">
-  <depicts rdf:resource="#gnome"/>
   <rdf:type rdf:resource="#Art"/>
+  <depicts rdf:resource="#gnome"/>
   <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://2e.aonprd.com/Images/Ancestries/Gnome02.png</sche:image>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#art_goblin_1">
-  <depicts rdf:resource="#goblin"/>
   <rdf:type rdf:resource="#Art"/>
+  <depicts rdf:resource="#goblin"/>
   <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://2e.aonprd.com/Images/Ancestries/Goblin01.png</sche:image>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#art_goblin_2">
-  <depicts rdf:resource="#goblin"/>
   <rdf:type rdf:resource="#Art"/>
+  <depicts rdf:resource="#goblin"/>
   <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://2e.aonprd.com/Images/Ancestries/Goblin02.png</sche:image>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#art_halfling_1">
-  <depicts rdf:resource="#halfling"/>
   <rdf:type rdf:resource="#Art"/>
+  <depicts rdf:resource="#halfling"/>
   <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://2e.aonprd.com/Images/Ancestries/Halfling01.png</sche:image>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#art_halfling_2">
-  <depicts rdf:resource="#halfling"/>
   <rdf:type rdf:resource="#Art"/>
+  <depicts rdf:resource="#halfling"/>
   <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://2e.aonprd.com/Images/Ancestries/Halfling02.png</sche:image>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#art_human">
-  <depicts rdf:resource="#human"/>
   <rdf:type rdf:resource="#Art"/>
+  <depicts rdf:resource="#human"/>
   <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://2e.aonprd.com/Images/Ancestries/Human01.png</sche:image>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#art_halfelf">
-  <depicts rdf:resource="#human"/>
   <rdf:type rdf:resource="#Art"/>
+  <depicts rdf:resource="#human"/>
   <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://2e.aonprd.com/Images/Ancestries/HalfElf01.png</sche:image>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#art_halforc">
-  <depicts rdf:resource="#human"/>
   <rdf:type rdf:resource="#Art"/>
+  <depicts rdf:resource="#human"/>
   <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://2e.aonprd.com/Images/Ancestries/HalfOrc01.png</sche:image>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#art_backgrounds_1">
+  <rdf:type rdf:resource="#Art"/>
+  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://ibb.co/yYf7w1L</sche:image>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#art_backgrounds_2">
+  <rdf:type rdf:resource="#Art"/>
+  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://ibb.co/gVhP0Ds</sche:image>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#art_backgrounds_3">
+  <rdf:type rdf:resource="#Art"/>
+  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://ibb.co/2sr4NTn</sche:image>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#art_classes">
+  <rdf:type rdf:resource="#Art"/>
+  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://ibb.co/mz6STqn</sche:image>
 </owl:NamedIndividual>
 
 

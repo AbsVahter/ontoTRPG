@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1694390830068" name="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl" uri="pzo2101.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1694390830068" name="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf" uri="tmp.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1694463067071" name="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl" uri="pzo2101.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1694463067071" name="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.rdf" uri="tmp.rdf"/>
     </group>
 </catalog>

@@ -1,0 +1,99 @@
+name
+Assurance
+Dubious Knowledge
+Quick Identification
+Recognize Spell
+Skill Training
+Trick Magic Item
+Automatic Knowledge
+Magical Shorthand
+Quick Recognition
+Cat Fall
+Quick Squeeze
+Steady Balance
+Nimble Crawl
+Kip Up
+Arcane Sense
+Unified Theory
+Combat Climber
+Hefty Hauler
+Quick Jump
+Titan Wrestler
+Underwater Marauder
+Powerful Leap
+Rapid Mantel
+Quick Climb
+Quick Swim
+Wall Jump
+Cloud Jump
+Alchemical Crafting
+Quick Repair
+Snare Crafting
+Specialty Crafting
+Magical Crafting
+Impeccable Crafting
+Inventor
+Craft Anything
+Charming Liar
+Lengthy Diversion
+Lie to Me
+Confabulator
+Quick Disguise
+Slippery Secrets
+Bargain Hunter
+Group Impression
+Hobnobber
+Glad-Hand
+Shameless Request
+Legendary Negotiation
+Group Coercion
+Intimidating Glare
+Quick Coercion
+Intimidating Prowess
+Lasting Coercion
+Battle Cry
+Terrified Retreat
+Scare to Death
+Additional Lore
+Experienced Professional
+Unmistakable Lore
+Legendary Professional
+Battle Medicine
+Continual Recovery
+Robust Recovery
+Ward Medic
+Legendary Medic
+Natural Medicine
+Train Animal
+Bonded Animal
+Oddity Identification
+Bizarre Magic
+Fascinating Performance
+Impressive Performance
+Virtuosic Performer
+Legendary Performer
+Student of the Canon
+Divine Guidance
+Courtly Graces
+Multilingual
+Read Lips
+Sign Language
+Streetwise
+Connections
+Legendary Codebreaker
+Legendary Linguist
+Experienced Smuggler
+Terrain Stalker
+Quiet Allies
+Foil Senses
+Swift Sneak
+Legendary Sneak
+Experienced Tracker
+Forager
+Survey Wildlife
+Terrain Expertise
+Planar Survival
+Legendary Survivalist
+Pickpocket Subtle Theft Wary Disarmament
+Quick Unlock
+Legendary Thief

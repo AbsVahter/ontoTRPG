@@ -3,7 +3,14 @@ from owlready2 import *
 
 def fill(pzo2101: Ontology):
     with pzo2101:
-        class Ancestry(Thing): pass
+        class Concept(Thing): pass
+
+        class Ancestry(Concept):
+            comment = ("Your character’s ancestry determines which people they call their own, whether it’s diverse "
+                       "and ambitious humans, insular but vivacious elves, traditionalist and family-focused dwarves, "
+                       "or any of the other folk who call Golarion home. A character’s ancestry and their experiences "
+                       "prior to their life as an adventurer—represented by a background—might be key parts of their "
+                       "identity, shape how they see the world, and help them find their place in it.")
 
         class hp(Ancestry >> int, FunctionalProperty): pass
 
@@ -11,19 +18,18 @@ def fill(pzo2101: Ontology):
 
         class size(Ancestry >> str, FunctionalProperty): pass
 
-        class speed(Ancestry >> int, FunctionalProperty): pass
+        class speed(Ancestry >> int, FunctionalProperty):
+            comment = "speed in feet"
 
-        pzo2101.speed.comment = 'speed in feet'
-
-        class ability_boost(Ancestry >> pzo2101.Ability_score): pass
+        class ability_boost(Concept >> pzo2101.Ability_score): pass
 
         class ability_flaw(Ancestry >> pzo2101.Ability_score): pass
 
-        class has_feat(Ancestry >> pzo2101.Feat): pass
+        class has_feat(Concept >> pzo2101.Feat): pass
 
         class has_selectable_feat(Ancestry >> pzo2101.Feat): pass
 
-        Ancestry.is_a = [has_feat.value(pzo2101.common_language) & has_selectable_feat.value(pzo2101.local_language)]
+        Ancestry.is_a.extend([has_feat.value(pzo2101.common_language) & has_selectable_feat.value(pzo2101.local_language)])
 
         ancs = {
             'dwarf': {
