@@ -39,3 +39,12 @@ def fill(pzo2101: Ontology):
             )
 
         Art("art_classes", image = "https://ibb.co/mz6STqn")
+
+        class Icon(Art): pass
+
+        for cl in pzo2101.Gameclass.instances():
+            Icon(
+                name = f"art_{cl.name}_icon",
+                image = f"https://2e.aonprd.com/Images/Class/{cl.name.capitalize()}_Icon.png",
+                depicts = [cl],
+            )

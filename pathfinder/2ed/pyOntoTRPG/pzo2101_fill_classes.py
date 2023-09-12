@@ -1,7 +1,16 @@
+import pandas as pd
 from owlready2 import *
+import main
 
 
 def fill(pzo2101: Ontology):
+    fill_class_props(pzo2101)
+    fill_weapon(pzo2101)
+    fill_armor(pzo2101)
+    fill_feats(pzo2101)
+
+
+def fill_class_props(pzo2101: Ontology):
     with pzo2101:
         class Gameclass(pzo2101.Concept):
             comment = ["Just as your character’s ancestry plays a key role in expressing their identity and "
@@ -11,4 +20,112 @@ def fill(pzo2101: Ontology):
                        "complement each other mechanically—for example, ensuring your party includes a healer, "
                        "a combatoriented character, a stealthy character, and someone with command over magic—so you "
                        "may wish to discuss options with your group before deciding."]
-        
+
+        trained = pzo2101.trained
+
+        Gameclass.is_a.extend(
+            [trained.value(pzo2101.perception) & trained.value(pzo2101.fortitude)
+                & trained.value(pzo2101.reflex) & trained.value(pzo2101.will)]
+        )
+
+        class experted(trained): pass
+
+        class is_experted_by(ObjectProperty):
+            inverse_property = experted
+
+        class additional_skills(Gameclass >> int, FunctionalProperty): pass
+
+        for index, row in main.iterrows('Classes'):
+            skills = []
+            if row['skills'] == row['skills']: skills = row['skills'].split(",")
+            cl = Gameclass(
+                name = main.prepare_name(row['name']),
+                comment = [row['comment_1'], row['comment_2']],
+                ability_boost = [pzo2101.search(is_a = pzo2101.Ability_score, iri = main.iri_for_search(x)).first()
+                                 for x in row['boost'].split(",")],
+                hp = int(row['hp']),
+                experted = [pzo2101.search(is_a = pzo2101.Characteristic,
+                                            iri = main.iri_for_search(x)).first()
+                             for x in row['expert'].split(",")],
+                trained = [pzo2101.search(is_a = pzo2101.Skill,
+                                            iri = main.iri_for_search(x)).first()
+                              for x in skills],
+                additional_skills = row['additional_skills'],
+            )
+            if "," in row['boost']:
+                cl.comment.append("your class gives you an ability boost to your choice")
+
+        pzo2101.champion.comment.append("Trained in one skill determined by your choice of deity")
+        pzo2101.cleric.comment.extend([
+            "Trained in one skill determined by your choice of deity",
+            "Trained in the favored weapon of your deity. If your deity’s favored weapon is uncommon, you also gain "
+            "access to that weapon."
+        ])
+        pzo2101.druid.comment.append("Trained in one skill determined by your druidic order")
+        pzo2101.fighter.comment.append("Trained in your choice of Acrobatics or Athletics")
+        pzo2101.rogue.comment.append("Trained in one or more skills determined by your rogue’s racket")
+        pzo2101.sorcerer.comment.append("Trained in one or more skills determined by your bloodline")
+
+
+def fill_weapon(pzo2101: Ontology):
+    with pzo2101:
+        fist = pzo2101.fist
+        Gameclass = pzo2101.Gameclass
+        Gameclass.is_a.append(pzo2101.trained.value(fist))
+
+        wizard = pzo2101.wizard
+        for cl in filter(lambda x: x is not wizard, Gameclass.instances()):
+            pzo2101.Simple_weapon.is_a.append(pzo2101.is_trained_by.value(cl))
+        for cl in [pzo2101.barbarian, pzo2101.champion, pzo2101.ranger]:
+            pzo2101.Martial_weapon.is_a.append(pzo2101.is_trained_by.value(cl))
+        pzo2101.alchemist.trained.append(pzo2101.alchemical_bomb)
+
+        fighter = pzo2101.fighter
+        for weapon_cl in [pzo2101.Simple_weapon, pzo2101.Martial_weapon]:
+            weapon_cl.is_a.append(pzo2101.is_experted_by.value(fighter))
+        pzo2101.Advanced_weapon.is_a.append(pzo2101.is_trained_by.value(fighter))
+        fighter.experted.append(fist)
+
+        w_dict = {
+            pzo2101.bard: ['longsword', 'rapier', 'sap', 'shortbow', 'shortsword', 'whip'],
+            pzo2101.rogue: ['rapier', 'sap', 'shortbow', 'shortsword'],
+            wizard: ['club', 'crossbow', 'dagger', 'heavy_crossbow', 'staff']
+        }
+        for cl in w_dict:
+            for w in w_dict[cl]:
+                cl.trained.append(
+                    pzo2101.search(is_a = pzo2101.Weapon, iri = main.iri_for_search(w)).first())
+
+
+def fill_armor(pzo2101: Ontology):
+    with pzo2101:
+        Gameclass = pzo2101.Gameclass
+        for arm in pzo2101.Unarmored_as_armor.instances():
+            Gameclass.is_a.append(pzo2101.trained.value(arm))
+        arm_dict = {
+            pzo2101.Light_armor: [pzo2101.alchemist, pzo2101.barbarian, pzo2101.bard, pzo2101.champion, pzo2101.druid,
+                                  pzo2101.fighter, pzo2101.ranger, pzo2101.rogue],
+            pzo2101.Medium_armor: [pzo2101.alchemist, pzo2101.barbarian, pzo2101.champion, pzo2101.druid,
+                                   pzo2101.fighter, pzo2101.ranger],
+            pzo2101.Heavy_armor: [pzo2101.champion, pzo2101.fighter],
+        }
+        for arm_cl in arm_dict:
+            for cl in arm_dict[arm_cl]:
+                arm_cl.is_a.append(pzo2101.is_trained_by.value(cl))
+
+
+def fill_feats(pzo2101: Ontology):
+    with pzo2101:
+        Feat = pzo2101.Feat
+        for index, row in main.iterrows("Class_feats"):
+            cl = pzo2101[row['gameclass']]
+            f = Feat(
+                name = main.prepare_name(row['name']),
+                level = row['level'],
+                prereq = [pzo2101.search(is_a = Feat, iri = main.iri_for_search(x)).first()
+                          for x in row['prereq'].split(",")] if not pd.isnull(row['prereq']) else [],
+            )
+            if row['property'] == 'feat_of':
+                f.feat_of.append(cl)
+            elif row['property'] == 'selectable_feat_of':
+                f.selectable_feat_of.append(cl)

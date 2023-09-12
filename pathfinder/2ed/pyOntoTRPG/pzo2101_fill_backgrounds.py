@@ -15,9 +15,7 @@ def fill(pzo2101: Ontology):
 
         class lore_speciality(Background >> str, FunctionalProperty): pass
 
-        class trained_in(Background >> pzo2101.Skill): pass
-
-        Background.is_a.extend([trained_in.value(pzo2101.lore)])
+        Background.is_a.extend([pzo2101.trained.value(pzo2101.lore)])
 
         for index, row in main.iterrows('Backgrounds'):
             x = re.search(
@@ -30,19 +28,19 @@ def fill(pzo2101: Ontology):
                     pzo2101.search(is_a = pzo2101.Ability_score, iri = main.iri_for_search(x[2])).first(),
                     pzo2101.search(is_a = pzo2101.Ability_score, iri = main.iri_for_search(x[3])).first(),
                 ],
-                trained_in = pzo2101.search(is_a = pzo2101.Skill, iri = main.iri_for_search(x[4])),
+                trained = pzo2101.search(is_a = pzo2101.Skill, iri = main.iri_for_search(x[4])),
                 lore_speciality = x[5],
                 has_feat = pzo2101.search(is_a = pzo2101.Skill_feat, iri = main.iri_for_search(x[6])),
             )
 
         # exceptions in background's descriptions
-        pzo2101.hermit.trained_in.append(pzo2101.occultism)
+        pzo2101.hermit.trained.append(pzo2101.occultism)
         pzo2101.hermit.comment.append("You’re trained in the Nature or Occultism skill")
-        pzo2101.martial_disciple.trained_in.append(pzo2101.athletics)
+        pzo2101.martial_disciple.trained.append(pzo2101.athletics)
         pzo2101.martial_disciple.has_feat.append(pzo2101.quick_jump)
         pzo2101.martial_disciple.comment.append("You’re trained in your choice of the Acrobatics or Athletics skill. "
                                                 "You gain a skill feat: Cat Fall if you chose Acrobatics or Quick "
                                                 "Jump if you chose Athletics.")
-        pzo2101.scholar.trained_in.extend([pzo2101.nature, pzo2101.occultism, pzo2101.religion])
+        pzo2101.scholar.trained.extend([pzo2101.nature, pzo2101.occultism, pzo2101.religion])
         pzo2101.scholar.comment.append("You’re trained in your choice of the Arcana, Nature, Occultism, or Religion "
                                        "skill, and gain the Assurance skill feat in your chosen skill.")

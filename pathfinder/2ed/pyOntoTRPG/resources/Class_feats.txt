@@ -1,0 +1,64 @@
+name	gameclass	property	level	prereq
+Alchemy	alchemist	feat_of	1	
+Formula Book	alchemist	feat_of	1	
+Research Field	alchemist	feat_of	1	
+Field Discovery	alchemist	feat_of	5	
+Powerful Alchemy	alchemist	feat_of	5	
+Alchemical Weapon Expertise	alchemist	feat_of	7	
+Iron Will	alchemist	feat_of	7	
+Perpetual Infusions	alchemist	feat_of	7	
+Alchemical Expertise	alchemist	feat_of	9	
+Alertness	alchemist	feat_of	9	
+Double Brew	alchemist	feat_of	9	
+Juggernaut alchemist	alchemist	feat_of	11	
+Perpetual Potency	alchemist	feat_of	11	
+Greater Field Discovery	alchemist	feat_of	13	
+Medium Armor Expertise	alchemist	feat_of	13	
+Weapon Specialization	alchemist	feat_of	13	
+Alchemical Alacrity	alchemist	feat_of	15	
+Evasion	alchemist	feat_of	15	
+Alchemical Mastery	alchemist	feat_of	17	
+Perpetual Perfection	alchemist	feat_of	17	
+Medium Armor Mastery	alchemist	feat_of	19	
+ALCHEMICAL FAMILIAR	alchemist	selectable_feat_of	1	
+ALCHEMICAL SAVANT	alchemist	selectable_feat_of	1	
+FAR LOBBER	alchemist	selectable_feat_of	1	
+QUICK BOMBER	alchemist	selectable_feat_of	1	
+POISON RESISTANCE	alchemist	selectable_feat_of	2	
+REVIVIFYING MUTAGEN	alchemist	selectable_feat_of	2	
+SMOKE BOMB	alchemist	selectable_feat_of	2	
+CALCULATED SPLASH	alchemist	selectable_feat_of	4	
+EFFICIENT ALCHEMY	alchemist	selectable_feat_of	4	
+ENDURING ALCHEMY	alchemist	selectable_feat_of	4	
+COMBINE ELIXIRS	alchemist	selectable_feat_of	6	
+DEBILITATING BOMB	alchemist	selectable_feat_of	6	
+DIRECTIONAL BOMBS	alchemist	selectable_feat_of	6	
+FERAL MUTAGEN	alchemist	selectable_feat_of	8	
+STICKY BOMB	alchemist	selectable_feat_of	8	
+ELASTIC MUTAGEN	alchemist	selectable_feat_of	10	
+EXPANDED SPLASH	alchemist	selectable_feat_of	10	Calculated Splash
+GREATER DEBILITATING BOMB	alchemist	selectable_feat_of	10	Debilitating Bomb
+MERCIFUL ELIXIR	alchemist	selectable_feat_of	10	
+POTENT POISONER	alchemist	selectable_feat_of	10	
+EXTEND ELIXIR	alchemist	selectable_feat_of	12	
+INVINCIBLE MUTAGEN	alchemist	selectable_feat_of	12	
+UNCANNY BOMBS	alchemist	selectable_feat_of	12	Far Lobber
+GLIB MUTAGEN	alchemist	selectable_feat_of	14	
+GREATER MERCIFUL ELIXIR	alchemist	selectable_feat_of	14	Merciful Elixir
+TRUE DEBILITATING BOMB	alchemist	selectable_feat_of	14	Greater Debilitating Bomb
+ETERNAL ELIXIR	alchemist	selectable_feat_of	16	Extend Elixir
+EXPLOITIVE BOMB	alchemist	selectable_feat_of	16	
+GENIUS MUTAGEN	alchemist	selectable_feat_of	16	
+PERSISTENT MUTAGEN	alchemist	selectable_feat_of	16	Extend Elixir
+IMPROBABLE ELIXIRS	alchemist	selectable_feat_of	18	
+MINDBLANK MUTAGEN	alchemist	selectable_feat_of	18	
+MIRACLE WORKER	alchemist	selectable_feat_of	18	
+PERFECT DEBILITATION	alchemist	selectable_feat_of	18	
+CRAFT PHILOSOPHER’S STONE	alchemist	selectable_feat_of	20	
+MEGA BOMB	alchemist	selectable_feat_of	20	Expanded Splash
+PERFECT MUTAGEN	alchemist	selectable_feat_of	20	
+Rage	barbarian	feat_of	1	
+Instinct	barbarian	feat_of	1	
+Deny Advantage	barbarian	feat_of	3	
+Brutality	barbarian	feat_of	5	
+Juggernaut barbarian	barbarian	feat_of	7	

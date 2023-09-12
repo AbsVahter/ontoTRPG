@@ -1,0 +1,81 @@
+name	class_1	class_2
+Fist	Unarmed_as_weapon	Common_weapon
+Club	Simple_weapon	Common_weapon
+Dagger	Simple_weapon	Common_weapon
+Gauntlet	Simple_weapon	Common_weapon
+Light mace	Simple_weapon	Common_weapon
+Longspear	Simple_weapon	Common_weapon
+Mace	Simple_weapon	Common_weapon
+Morningstar	Simple_weapon	Common_weapon
+Sickle	Simple_weapon	Common_weapon
+Spear	Simple_weapon	Common_weapon
+Spiked gauntlet	Simple_weapon	Common_weapon
+Staff	Simple_weapon	Common_weapon
+Clan dagger	Simple_weapon	Uncommon_weapon
+Katar	Simple_weapon	Uncommon_weapon
+Bastard sword	Martial_weapon	Common_weapon
+Battle axe	Martial_weapon	Common_weapon
+Bo staff	Martial_weapon	Common_weapon
+Falchion	Martial_weapon	Common_weapon
+Flail	Martial_weapon	Common_weapon
+Glaive	Martial_weapon	Common_weapon
+Great axe	Martial_weapon	Common_weapon
+Greatclub	Martial_weapon	Common_weapon
+Greatpick	Martial_weapon	Common_weapon
+Greatsword	Martial_weapon	Common_weapon
+Guisarme	Martial_weapon	Common_weapon
+Halberd	Martial_weapon	Common_weapon
+Hatchet	Martial_weapon	Common_weapon
+Lance	Martial_weapon	Common_weapon
+Light hammer	Martial_weapon	Common_weapon
+Light pick	Martial_weapon	Common_weapon
+Longsword	Martial_weapon	Common_weapon
+Main-gauche	Martial_weapon	Common_weapon
+Maul	Martial_weapon	Common_weapon
+Pick	Martial_weapon	Common_weapon
+Ranseur	Martial_weapon	Common_weapon
+Rapier	Martial_weapon	Common_weapon
+Sap	Martial_weapon	Common_weapon
+Scimitar	Martial_weapon	Common_weapon
+Scythe	Martial_weapon	Common_weapon
+Shield bash	Martial_weapon	Common_weapon
+Shield boss	Martial_weapon	Common_weapon
+Shield spikes	Martial_weapon	Common_weapon
+Shortsword	Martial_weapon	Common_weapon
+Starknife	Martial_weapon	Common_weapon
+Trident	Martial_weapon	Common_weapon
+War flail	Martial_weapon	Common_weapon
+Warhammer	Martial_weapon	Common_weapon
+Whip	Martial_weapon	Common_weapon
+Dogslicer	Martial_weapon	Uncommon_weapon
+Elven curve blade	Martial_weapon	Uncommon_weapon
+Pilcher’s fork	Martial_weapon	Uncommon_weapon
+Gnome hooked	Martial_weapon	Uncommon_weapon
+hammer	Martial_weapon	Uncommon_weapon
+Horsechopper	Martial_weapon	Uncommon_weapon
+Kama	Martial_weapon	Uncommon_weapon
+Katana	Martial_weapon	Uncommon_weapon
+Kukri	Martial_weapon	Uncommon_weapon
+Nunchaku	Martial_weapon	Uncommon_weapon
+Orc knuckle dagger	Martial_weapon	Uncommon_weapon
+Sai	Martial_weapon	Uncommon_weapon
+Spiked chain	Martial_weapon	Uncommon_weapon
+Temple sword	Martial_weapon	Uncommon_weapon
+Dwarven waraxe	Advanced_weapon	Uncommon_weapon
+Gnome flickmace	Advanced_weapon	Uncommon_weapon
+Orc necksplitter	Advanced_weapon	Uncommon_weapon
+Sawtooth saber	Advanced_weapon	Uncommon_weapon
+Blowgun	Simple_weapon	Common_weapon
+Crossbow	Simple_weapon	Common_weapon
+Dart	Simple_weapon	Common_weapon
+Hand crossbow	Simple_weapon	Common_weapon
+Heavy crossbow	Simple_weapon	Common_weapon
+Javelin	Simple_weapon	Common_weapon
+Sling	Simple_weapon	Common_weapon
+Alchemical bomb	Martial_weapon	Common_weapon
+Composite longbow	Martial_weapon	Common_weapon
+Composite shortbow	Martial_weapon	Common_weapon
+Longbow	Martial_weapon	Common_weapon
+Shortbow	Martial_weapon	Common_weapon
+Halfling sling staff	Martial_weapon	Uncommon_weapon
+Shuriken	Martial_weapon	Uncommon_weapon

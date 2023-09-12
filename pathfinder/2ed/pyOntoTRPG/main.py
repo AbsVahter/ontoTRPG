@@ -5,6 +5,7 @@ import pzo2101_fill_art
 import pzo2101_fill_backgrounds
 import pzo2101_fill_characteristics
 import pzo2101_fill_classes
+import pzo2101_fill_equipment
 import pzo2101_fill_feats
 
 if __name__ == '__main__':
@@ -17,11 +18,16 @@ if __name__ == '__main__':
     pzo2101_fill_feats.fill(pzo2101)
     pzo2101_fill_ancestries.fill(pzo2101)
     pzo2101_fill_backgrounds.fill(pzo2101)
+    pzo2101_fill_equipment.fill(pzo2101)
     pzo2101_fill_classes.fill(pzo2101)
     pzo2101_fill_art.fill(pzo2101)
 
     pzo2101.save()
-
+'''
+    for k in filter(lambda x: (pzo2101.feat_of in x.get_properties()) and (len(x.feat_of) > 1)
+                              and (any(pzo2101.Gameclass in m.is_a for m in x.feat_of)), pzo2101.Feat.instances()):
+        print(k.name)
+'''
 
 def prepare_name(s):
     return re.sub('\W+', '_', s.lower())

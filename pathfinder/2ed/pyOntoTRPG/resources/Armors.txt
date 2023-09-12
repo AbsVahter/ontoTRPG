@@ -1,0 +1,14 @@
+name	class
+No armor	Unarmored_as_armor
+Explorer’s clothing	Unarmored_as_armor
+Padded armor	Light_armor
+Leather	Light_armor
+Studded leather	Light_armor
+Chain shirt	Light_armor
+Hide	Medium_armor
+Scale mail	Medium_armor
+Chain mail	Medium_armor
+Breastplate	Medium_armor
+Splint mail	Heavy_armor
+Half plate	Heavy_armor
+Full plate	Heavy_armor
