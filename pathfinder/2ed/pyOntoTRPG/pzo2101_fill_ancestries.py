@@ -2,65 +2,26 @@ import pandas as pd
 from owlready2 import *
 
 import main
+from pzo2101_hierarchy import create
 
 
 def fill(pzo2101: Ontology):
-    create_hierarchy(pzo2101)
+    fill_languages(pzo2101)
     fill_props(pzo2101)
     fill_feats(pzo2101)
-
-def create_hierarchy(pzo2101: Ontology):
-    with pzo2101:
-        class Concept(Thing): pass
-        class has_feat(Concept >> pzo2101.Feat):
-            class_property_type = ["some"]
-        class trained(Concept >> pzo2101.With_proficiency_rank): pass
-        class is_trained_by(ObjectProperty):
-            inverse_property = trained
-        class has_selectable_feat(Concept >> pzo2101.Feat):
-            class_property_type = ["some"]
-
-        class selectable_feat_of(ObjectProperty):
-            inverse_property = has_selectable_feat
-            class_property_type = ["some"]
-
-        class Ancestry(Concept):
-            comment = ("Your character’s ancestry determines which people they call their own, whether it’s diverse "
-                       "and ambitious humans, insular but vivacious elves, traditionalist and family-focused dwarves, "
-                       "or any of the other folk who call Golarion home. A character’s ancestry and their experiences "
-                       "prior to their life as an adventurer—represented by a background—might be key parts of their "
-                       "identity, shape how they see the world, and help them find their place in it.")
-            has_feat = pzo2101.common_language
-            has_selectable_feat = pzo2101.local_language
-
-        class hp(Concept >> int, FunctionalProperty):
-            comment = 'hit points'
-
-        class size(Ancestry >> str, FunctionalProperty): pass
-
-        class speed(Ancestry >> int, FunctionalProperty):
-            comment = "speed in feet"
-
-        Ability_score = pzo2101.Ability_score
-        class ability_boost(Concept >> Ability_score): pass
-
-        class ability_flaw(Ancestry >> Ability_score): pass
-
-        class feat_of(ObjectProperty):
-            inverse_property = has_feat
-
-        class Trait(Thing): pass
-
-        class has_trait(Ancestry >> Trait):
-            class_property_type = ["some"]
-
-        tHumanoid = Trait('humanoid_trait')
-        Ancestry.has_trait.append(tHumanoid)
 
 
 def fill_props(pzo2101: Ontology):
     with pzo2101:
         Ancestry = pzo2101.Ancestry
+        Ancestry.comment.append("Your character’s ancestry determines which people they call their own, whether it’s diverse "
+                   "and ambitious humans, insular but vivacious elves, traditionalist and family-focused dwarves, "
+                   "or any of the other folk who call Golarion home. A character’s ancestry and their experiences "
+                   "prior to their life as an adventurer—represented by a background—might be key parts of their "
+                   "identity, shape how they see the world, and help them find their place in it.")
+        Ancestry.has_feat.append(pzo2101.common_language)
+        Ancestry.has_selectable_feat.append(pzo2101.local_language)
+
         for index, row in main.iterrows("Ancestries"):
             Ancestry(
                 name = row['name'],
@@ -79,6 +40,8 @@ def fill_props(pzo2101: Ontology):
             )
 
         pzo2101.Language_common.selectable_feat_of.append(pzo2101.human)
+        tHumanoid = pzo2101.Trait('humanoid_trait')
+        Ancestry.has_trait.append(tHumanoid)
 
 
 def fill_feats(pzo2101: Ontology):
@@ -104,3 +67,30 @@ def fill_feats(pzo2101: Ontology):
                 prereq = [pzo2101.search(is_a = Feat, iri = main.iri_for_search(x)).first()
                                  for x in row['prereq'].split(",")] if not pd.isnull(row['prereq']) else [],
             )
+
+
+def fill_languages(pzo2101: Ontology):
+    with pzo2101:
+        class Language(pzo2101.Feat):
+            comment = ["The people of the Inner Sea region speak dozens of different languages, along with hundreds "
+                       "of dialects and regional variations. While a character can generally get by with Taldane, "
+                       "also known as Common, knowing another language is vital in some regions. Being able to speak "
+                       "these tongues can help you with negotiation, spying on enemies, or just conducting simple "
+                       "commerce. Languages also afford you the chance to contextualize your character in the world "
+                       "and give meaning to your other character choices."]
+
+        class Language_common(Language): pass
+
+        lst_common = ['Common', 'Draconic', 'Dwarven', 'Elven', 'Gnomish', 'Goblin', 'Halfling', 'Jotun', 'Orcish', 'Sylvan', 'Undercommon', 'Local']
+        for lang in lst_common:
+            Language_common(lang.lower() + "_language")
+
+        class Language_uncommon(Language): pass
+
+        lst_uncommon = ['Abyssal', 'Akio', 'Aquan', 'Auran', 'Celestial', 'Gnoll', 'Ignan', 'Infernal', 'Necril', 'Shadowtongue', 'Terran']
+        for lang in lst_uncommon:
+            Language_uncommon(lang.lower() + "_language")
+
+        class Language_secret(Language): pass
+
+        Language_secret('druidic_language')

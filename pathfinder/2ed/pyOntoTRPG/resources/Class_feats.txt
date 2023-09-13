@@ -1,64 +1,783 @@
-name	gameclass	property	level	prereq
-Alchemy	alchemist	feat_of	1	
-Formula Book	alchemist	feat_of	1	
-Research Field	alchemist	feat_of	1	
-Field Discovery	alchemist	feat_of	5	
-Powerful Alchemy	alchemist	feat_of	5	
-Alchemical Weapon Expertise	alchemist	feat_of	7	
-Iron Will	alchemist	feat_of	7	
-Perpetual Infusions	alchemist	feat_of	7	
-Alchemical Expertise	alchemist	feat_of	9	
-Alertness	alchemist	feat_of	9	
-Double Brew	alchemist	feat_of	9	
-Juggernaut alchemist	alchemist	feat_of	11	
-Perpetual Potency	alchemist	feat_of	11	
-Greater Field Discovery	alchemist	feat_of	13	
-Medium Armor Expertise	alchemist	feat_of	13	
-Weapon Specialization	alchemist	feat_of	13	
-Alchemical Alacrity	alchemist	feat_of	15	
-Evasion	alchemist	feat_of	15	
-Alchemical Mastery	alchemist	feat_of	17	
-Perpetual Perfection	alchemist	feat_of	17	
-Medium Armor Mastery	alchemist	feat_of	19	
-ALCHEMICAL FAMILIAR	alchemist	selectable_feat_of	1	
-ALCHEMICAL SAVANT	alchemist	selectable_feat_of	1	
-FAR LOBBER	alchemist	selectable_feat_of	1	
-QUICK BOMBER	alchemist	selectable_feat_of	1	
-POISON RESISTANCE	alchemist	selectable_feat_of	2	
-REVIVIFYING MUTAGEN	alchemist	selectable_feat_of	2	
-SMOKE BOMB	alchemist	selectable_feat_of	2	
-CALCULATED SPLASH	alchemist	selectable_feat_of	4	
-EFFICIENT ALCHEMY	alchemist	selectable_feat_of	4	
-ENDURING ALCHEMY	alchemist	selectable_feat_of	4	
-COMBINE ELIXIRS	alchemist	selectable_feat_of	6	
-DEBILITATING BOMB	alchemist	selectable_feat_of	6	
-DIRECTIONAL BOMBS	alchemist	selectable_feat_of	6	
-FERAL MUTAGEN	alchemist	selectable_feat_of	8	
-STICKY BOMB	alchemist	selectable_feat_of	8	
-ELASTIC MUTAGEN	alchemist	selectable_feat_of	10	
-EXPANDED SPLASH	alchemist	selectable_feat_of	10	Calculated Splash
-GREATER DEBILITATING BOMB	alchemist	selectable_feat_of	10	Debilitating Bomb
-MERCIFUL ELIXIR	alchemist	selectable_feat_of	10	
-POTENT POISONER	alchemist	selectable_feat_of	10	
-EXTEND ELIXIR	alchemist	selectable_feat_of	12	
-INVINCIBLE MUTAGEN	alchemist	selectable_feat_of	12	
-UNCANNY BOMBS	alchemist	selectable_feat_of	12	Far Lobber
-GLIB MUTAGEN	alchemist	selectable_feat_of	14	
-GREATER MERCIFUL ELIXIR	alchemist	selectable_feat_of	14	Merciful Elixir
-TRUE DEBILITATING BOMB	alchemist	selectable_feat_of	14	Greater Debilitating Bomb
-ETERNAL ELIXIR	alchemist	selectable_feat_of	16	Extend Elixir
-EXPLOITIVE BOMB	alchemist	selectable_feat_of	16	
-GENIUS MUTAGEN	alchemist	selectable_feat_of	16	
-PERSISTENT MUTAGEN	alchemist	selectable_feat_of	16	Extend Elixir
-IMPROBABLE ELIXIRS	alchemist	selectable_feat_of	18	
-MINDBLANK MUTAGEN	alchemist	selectable_feat_of	18	
-MIRACLE WORKER	alchemist	selectable_feat_of	18	
-PERFECT DEBILITATION	alchemist	selectable_feat_of	18	
-CRAFT PHILOSOPHER’S STONE	alchemist	selectable_feat_of	20	
-MEGA BOMB	alchemist	selectable_feat_of	20	Expanded Splash
-PERFECT MUTAGEN	alchemist	selectable_feat_of	20	
-Rage	barbarian	feat_of	1	
-Instinct	barbarian	feat_of	1	
-Deny Advantage	barbarian	feat_of	3	
-Brutality	barbarian	feat_of	5	
-Juggernaut barbarian	barbarian	feat_of	7	
+name	level	gameclass	property
+Alchemy	1	alchemist	feat_of
+Formula Book	1	alchemist	feat_of
+Research Field	1	alchemist	feat_of
+Field Discovery	5	alchemist	feat_of
+Powerful Alchemy	5	alchemist	feat_of
+Alchemical Weapon Expertise	7	alchemist	feat_of
+Iron Will alchemist	7	alchemist	feat_of
+Perpetual Infusions	7	alchemist	feat_of
+Alchemical Expertise	9	alchemist	feat_of
+Alertness alchemist	9	alchemist	feat_of
+Double Brew	9	alchemist	feat_of
+Juggernaut alchemist	11	alchemist	feat_of
+Perpetual Potency	11	alchemist	feat_of
+Greater Field Discovery	13	alchemist	feat_of
+Medium Armor Expertise alchemist	13	alchemist	feat_of
+Weapon Specialization alchemist	13	alchemist	feat_of
+Alchemical Alacrity	15	alchemist	feat_of
+Evasion alchemist	15	alchemist	feat_of
+Alchemical Mastery	17	alchemist	feat_of
+Perpetual Perfection	17	alchemist	feat_of
+Medium Armor Mastery	19	alchemist	feat_of
+ALCHEMICAL FAMILIAR	1	alchemist	selectable_feat_of
+ALCHEMICAL SAVANT	1	alchemist	selectable_feat_of
+FAR LOBBER	1	alchemist	selectable_feat_of
+QUICK BOMBER	1	alchemist	selectable_feat_of
+POISON RESISTANCE	2	alchemist	selectable_feat_of
+REVIVIFYING MUTAGEN	2	alchemist	selectable_feat_of
+SMOKE BOMB	2	alchemist	selectable_feat_of
+CALCULATED SPLASH	4	alchemist	selectable_feat_of
+EFFICIENT ALCHEMY	4	alchemist	selectable_feat_of
+ENDURING ALCHEMY	4	alchemist	selectable_feat_of
+COMBINE ELIXIRS	6	alchemist	selectable_feat_of
+DEBILITATING BOMB	6	alchemist	selectable_feat_of
+DIRECTIONAL BOMBS	6	alchemist	selectable_feat_of
+FERAL MUTAGEN	8	alchemist	selectable_feat_of
+STICKY BOMB	8	alchemist	selectable_feat_of
+ELASTIC MUTAGEN	10	alchemist	selectable_feat_of
+EXPANDED SPLASH	10	alchemist	selectable_feat_of
+GREATER DEBILITATING BOMB	10	alchemist	selectable_feat_of
+MERCIFUL ELIXIR	10	alchemist	selectable_feat_of
+POTENT POISONER	10	alchemist	selectable_feat_of
+EXTEND ELIXIR	12	alchemist	selectable_feat_of
+INVINCIBLE MUTAGEN	12	alchemist	selectable_feat_of
+UNCANNY BOMBS	12	alchemist	selectable_feat_of
+GLIB MUTAGEN	14	alchemist	selectable_feat_of
+GREATER MERCIFUL ELIXIR	14	alchemist	selectable_feat_of
+TRUE DEBILITATING BOMB	14	alchemist	selectable_feat_of
+ETERNAL ELIXIR	16	alchemist	selectable_feat_of
+EXPLOITIVE BOMB	16	alchemist	selectable_feat_of
+GENIUS MUTAGEN	16	alchemist	selectable_feat_of
+PERSISTENT MUTAGEN	16	alchemist	selectable_feat_of
+IMPROBABLE ELIXIRS	18	alchemist	selectable_feat_of
+MINDBLANK MUTAGEN	18	alchemist	selectable_feat_of
+MIRACLE WORKER	18	alchemist	selectable_feat_of
+PERFECT DEBILITATION	18	alchemist	selectable_feat_of
+CRAFT PHILOSOPHERвЂ™S STONE	20	alchemist	selectable_feat_of
+MEGA BOMB	20	alchemist	selectable_feat_of
+PERFECT MUTAGEN	20	alchemist	selectable_feat_of
+Rage	1	barbarian	feat_of
+Instinct	1	barbarian	feat_of
+Deny Advantage	3	barbarian	feat_of
+Brutality	5	barbarian	feat_of
+Juggernaut barbarian	7	barbarian	feat_of
+Weapon Specialization barbarian	7	barbarian	feat_of
+Lightning Reflexes barbarian	9	barbarian	feat_of
+Raging Resistance	9	barbarian	feat_of
+Mighty Rage	11	barbarian	feat_of
+Greater Juggernaut	13	barbarian	feat_of
+Medium Armor Expertise barbarian	13	barbarian	feat_of
+Weapon Fury	13	barbarian	feat_of
+Greater Weapon Specialization	15	barbarian	feat_of
+Indomitable Will	15	barbarian	feat_of
+Heightened Senses	17	barbarian	feat_of
+Quick Rage	17	barbarian	feat_of
+Armor of Fury	19	barbarian	feat_of
+Devastator	19	barbarian	feat_of
+Acute Scent	2	barbarian	selectable_feat_of
+Acute Vision	1	barbarian	selectable_feat_of
+Animal Rage	8	barbarian	selectable_feat_of
+Animal Skin	6	barbarian	selectable_feat_of
+Attack of Opportunity barbarian	6	barbarian	selectable_feat_of
+Awesome Blow	14	barbarian	selectable_feat_of
+Brutal Bully	6	barbarian	selectable_feat_of
+Brutal Critical	18	barbarian	selectable_feat_of
+Cleave	6	barbarian	selectable_feat_of
+Collateral Thrash	16	barbarian	selectable_feat_of
+Come and Get Me	10	barbarian	selectable_feat_of
+Contagious Rage	20	barbarian	selectable_feat_of
+Dragon's Rage Breath	6	barbarian	selectable_feat_of
+Dragon's Rage Wings	12	barbarian	selectable_feat_of
+Dragon Transformation	16	barbarian	selectable_feat_of
+Fast Movement	4	barbarian	selectable_feat_of
+Furious Bully	8	barbarian	selectable_feat_of
+Furious Finish	2	barbarian	selectable_feat_of
+Furious Grab	12	barbarian	selectable_feat_of
+Furious Sprint	10	barbarian	selectable_feat_of
+Giant’s Lunge	14	barbarian	selectable_feat_of
+Giant’s Stature	6	barbarian	selectable_feat_of
+Great Cleave	10	barbarian	selectable_feat_of
+Knockback	10	barbarian	selectable_feat_of
+Moment of Clarity	1	barbarian	selectable_feat_of
+No Escape	2	barbarian	selectable_feat_of
+Perfect Clarity	18	barbarian	selectable_feat_of
+Predator’s Pounce	12	barbarian	selectable_feat_of
+Quaking Stomp	20	barbarian	selectable_feat_of
+Raging Athlete	4	barbarian	selectable_feat_of
+Raging Intimidation	1	barbarian	selectable_feat_of
+Raging Thrower	1	barbarian	selectable_feat_of
+Reckless Abandon	16	barbarian	selectable_feat_of
+Renewed Vigor	8	barbarian	selectable_feat_of
+Second Wind	2	barbarian	selectable_feat_of
+Shake It Off	2	barbarian	selectable_feat_of
+Share Rage	8	barbarian	selectable_feat_of
+Spirits’ Interference	6	barbarian	selectable_feat_of
+Spirit’s Wrath	12	barbarian	selectable_feat_of
+Sudden Charge	1	barbarian	selectable_feat_of
+Sudden Leap	8	barbarian	selectable_feat_of
+Swipe	4	barbarian	selectable_feat_of
+Terrifying Howl	10	barbarian	selectable_feat_of
+Thrash	8	barbarian	selectable_feat_of
+Titan’s Stature	12	barbarian	selectable_feat_of
+Vengeful Strike	14	barbarian	selectable_feat_of
+Vicious Evisceration	18	barbarian	selectable_feat_of
+Whirlwind Strike	14	barbarian	selectable_feat_of
+Wounded Rage	4	barbarian	selectable_feat_of
+Occult Spellcasting	1	bard	feat_of
+Spell Repertoire	1	bard	feat_of
+Composition Spells	1	bard	feat_of
+Muses	1	bard	feat_of
+Lightning Reflexes bard	3	bard	feat_of
+Signature Spells	3	bard	feat_of
+Expert Spellcaster	7	bard	feat_of
+Great Fortitude bard	9	bard	feat_of
+Resolve bard	9	bard	feat_of
+Bard Weapon Expertise	11	bard	feat_of
+Vigilant Senses bard	11	bard	feat_of
+Light Armor Expertise	13	bard	feat_of
+Weapon Specialization bard	13	bard	feat_of
+Master Spellcaster	15	bard	feat_of
+Greater Resolve	17	bard	feat_of
+Magnum Opus	19	bard	feat_of
+Legendary Spellcaster	19	bard	feat_of
+Allegro	14	bard	selectable_feat_of
+Bardic Lore	1	bard	selectable_feat_of
+Cantrip Expansion	2	bard	selectable_feat_of
+Deep Lore	18	bard	selectable_feat_of
+Dirge of Doom	6	bard	selectable_feat_of
+Eclectic Polymath	12	bard	selectable_feat_of
+Eclectic Skill	8	bard	selectable_feat_of
+Effortless Concentration	16	bard	selectable_feat_of
+Esoteric Polymath	2	bard	selectable_feat_of
+Eternal Composition	18	bard	selectable_feat_of
+Fatal Aria	20	bard	selectable_feat_of
+Harmonize	6	bard	selectable_feat_of
+House of Imaginary Walls	10	bard	selectable_feat_of
+Impossible Polymath	18	bard	selectable_feat_of
+Inspire Competence	2	bard	selectable_feat_of
+Inspire Defense	4	bard	selectable_feat_of
+Inspire Heroics	8	bard	selectable_feat_of
+Inspirational Focus	12	bard	selectable_feat_of
+Know-It-All	8	bard	selectable_feat_of
+Lingering Composition	1	bard	selectable_feat_of
+Loremaster’s Etude	2	bard	selectable_feat_of
+Melodious Spell	4	bard	selectable_feat_of
+Multifarious Muse	2	bard	selectable_feat_of
+Perfect Encore	20	bard	selectable_feat_of
+Quickened Casting	10	bard	selectable_feat_of
+Reach Spell	1	bard	selectable_feat_of
+Soothing Ballad	14	bard	selectable_feat_of
+Steady Spellcasting	6	bard	selectable_feat_of
+Studious Capacity	16	bard	selectable_feat_of
+Symphony of the Muse	20	bard	selectable_feat_of
+Triple Time	4	bard	selectable_feat_of
+True Hypercognition	14	bard	selectable_feat_of
+Unusual Composition	10	bard	selectable_feat_of
+Versatile Performance	1	bard	selectable_feat_of
+Versatile Signature	4	bard	selectable_feat_of
+Champion’s Code	1	champion	feat_of
+Deity and Cause	1	champion	feat_of
+Deific Weapon	1	champion	feat_of
+Champion’s Reaction	1	champion	feat_of
+Devotion Spells	1	champion	feat_of
+Shield Block	1	champion	feat_of
+Divine Ally	3	champion	feat_of
+Weapon Expertise	5	champion	feat_of
+Armor Expertise champion	7	champion	feat_of
+Weapon Specialization champion	7	champion	feat_of
+Champion Expertise	9	champion	feat_of
+Divine Smite	9	champion	feat_of
+Juggernaut champion	9	champion	feat_of
+Lightning Reflexes champion	9	champion	feat_of
+Alertness champion	11	champion	feat_of
+Divine Will	11	champion	feat_of
+Exalt	11	champion	feat_of
+Armor Mastery champion	13	champion	feat_of
+Weapon Mastery	13	champion	feat_of
+Greater Weapon Specialization	15	champion	feat_of
+Champion Mastery	17	champion	feat_of
+Legendary Armor	17	champion	feat_of
+Hero’s Defiance	19	champion	feat_of
+Advanced Deity’s Domain	8	champion	selectable_feat_of
+Affliction Mercy	12	champion	selectable_feat_of
+Anchoring Aura	14	champion	selectable_feat_of
+Attack of Opportunity champion	6	champion	selectable_feat_of
+Aura of Courage	4	champion	selectable_feat_of
+Aura of Faith	12	champion	selectable_feat_of
+Aura of Life	14	champion	selectable_feat_of
+Aura of Righteousness	14	champion	selectable_feat_of
+Aura of Vengeance	14	champion	selectable_feat_of
+Auspicious Mount	16	champion	selectable_feat_of
+Blade of Justice	12	champion	selectable_feat_of
+Celestial Form	18	champion	selectable_feat_of
+Celestial Mount	20	champion	selectable_feat_of
+Champion’s Sacrifice	12	champion	selectable_feat_of
+Deity’s Domain	1	champion	selectable_feat_of
+Devoted Focus	10	champion	selectable_feat_of
+Divine Grace	2	champion	selectable_feat_of
+Divine Health	4	champion	selectable_feat_of
+Divine Reflexes	14	champion	selectable_feat_of
+Divine Wall	12	champion	selectable_feat_of
+Dragonslayer Oath	2	champion	selectable_feat_of
+Fiendsbane Oath	2	champion	selectable_feat_of
+Greater Mercy	8	champion	selectable_feat_of
+Heal Mount	8	champion	selectable_feat_of
+Imposing Destrier	10	champion	selectable_feat_of
+Instrument of Zeal	16	champion	selectable_feat_of
+Lasting Doubt	12	champion	selectable_feat_of
+Liberating Stride	12	champion	selectable_feat_of
+Litany against Sloth	10	champion	selectable_feat_of
+Litany against Wrath	6	champion	selectable_feat_of
+Litany of Righteousness	14	champion	selectable_feat_of
+Loyal Warhorse	6	champion	selectable_feat_of
+Mercy	4	champion	selectable_feat_of
+Quick Shield Block	8	champion	selectable_feat_of
+Radiant Blade Master	20	champion	selectable_feat_of
+Radiant Blade Spirit	10	champion	selectable_feat_of
+Ranged Reprisal	1	champion	selectable_feat_of
+Second Ally	8	champion	selectable_feat_of
+Sense Evil	8	champion	selectable_feat_of
+Shield Paragon	20	champion	selectable_feat_of
+Shield of Grace	16	champion	selectable_feat_of
+Shield of Reckoning	10	champion	selectable_feat_of
+Shield Warden	6	champion	selectable_feat_of
+Shining Oath	2	champion	selectable_feat_of
+Smite Evil	6	champion	selectable_feat_of
+Ultimate Mercy	18	champion	selectable_feat_of
+Unimpeded Step	1	champion	selectable_feat_of
+Vengeful Oath	2	champion	selectable_feat_of
+Weight of Guilt	1	champion	selectable_feat_of
+Wyrmbane Aura	14	champion	selectable_feat_of
+Deity	1	cleric	feat_of
+Divine Spellcasting	1	cleric	feat_of
+Divine Font	1	cleric	feat_of
+Doctrine	1	cleric	feat_of
+Alertness cleric	5	cleric	feat_of
+Resolve cleric	9	cleric	feat_of
+Lightning Reflexes cleric	11	cleric	feat_of
+Divine Defense	13	cleric	feat_of
+Weapon Specialization cleric	13	cleric	feat_of
+Miraculous Spell	19	cleric	feat_of
+Advanced Domain	8	cleric	selectable_feat_of
+Align Armament	8	cleric	selectable_feat_of
+Avatar’s Audience	20	cleric	selectable_feat_of
+Cantrip Expansion	2	cleric	selectable_feat_of
+Cast Down	6	cleric	selectable_feat_of
+Castigating Weapon	10	cleric	selectable_feat_of
+Channel Smite	4	cleric	selectable_feat_of
+Channeled Succor	8	cleric	selectable_feat_of
+Command Undead	4	cleric	selectable_feat_of
+Communal Healing	2	cleric	selectable_feat_of
+Cremate Undead	8	cleric	selectable_feat_of
+Deadly Simplicity	1	cleric	selectable_feat_of
+Defensive Recovery	12	cleric	selectable_feat_of
+Deity’s Protection	14	cleric	selectable_feat_of
+Directed Channel	4	cleric	selectable_feat_of
+Divine Weapon	6	cleric	selectable_feat_of
+Domain Focus	12	cleric	selectable_feat_of
+Domain Initiate	1	cleric	selectable_feat_of
+Domain Wellspring	16	cleric	selectable_feat_of
+Echoing Channel	18	cleric	selectable_feat_of
+Emblazon Antimagic	12	cleric	selectable_feat_of
+Emblazon Armament	2	cleric	selectable_feat_of
+Emblazon Energy	8	cleric	selectable_feat_of
+Eternal Bane	16	cleric	selectable_feat_of
+Eternal Blessing	16	cleric	selectable_feat_of
+Extend Armament Alignment	14	cleric	selectable_feat_of
+Fast Channel	14	cleric	selectable_feat_of
+Harming Hands	1	cleric	selectable_feat_of
+Healing Hands	1	cleric	selectable_feat_of
+Heroic Recovery	10	cleric	selectable_feat_of
+Holy Castigation	1	cleric	selectable_feat_of
+Improved Command Undead	10	cleric	selectable_feat_of
+Improved Communal Healing	4	cleric	selectable_feat_of
+Improved Swift Banishment	18	cleric	selectable_feat_of
+Maker of Miracles	20	cleric	selectable_feat_of
+Metamagic Channel	20	cleric	selectable_feat_of
+Necrotic Infusion	4	cleric	selectable_feat_of
+Reach Spell	1	cleric	selectable_feat_of
+Replenishment of War	10	cleric	selectable_feat_of
+Resurrectionist	16	cleric	selectable_feat_of
+Sap Life	2	cleric	selectable_feat_of
+Selective Energy	6	cleric	selectable_feat_of
+Shared Replenishment	12	cleric	selectable_feat_of
+Steady Spellcasting	6	cleric	selectable_feat_of
+Swift Banishment	14	cleric	selectable_feat_of
+Turn Undead	2	cleric	selectable_feat_of
+Versatile Font	2	cleric	selectable_feat_of
+Primal Spellcasting	1	druid	feat_of
+Anathema	1	druid	feat_of
+Druidic Language	1	druid	feat_of
+Druidic Order	1	druid	feat_of
+Shield Block	1	druid	feat_of
+Wild Empathy	1	druid	feat_of
+Alertness druid	3	druid	feat_of
+Great Fortitude	3	druid	feat_of
+Lightning Reflexes	5	druid	feat_of
+Expert Spellcaster	7	druid	feat_of
+Druid Weapon Expertise	11	druid	feat_of
+Resolve	11	druid	feat_of
+Medium Armor Expertise druid	13	druid	feat_of
+Weapon Specialization druid	13	druid	feat_of
+Master Spellcaster	15	druid	feat_of
+Legendary Spellcaster	19	druid	feat_of
+Primal Hierophant	19	druid	feat_of
+Animal Companion	1	druid	selectable_feat_of
+Call of the Wild	2	druid	selectable_feat_of
+Dragon Shape	12	druid	selectable_feat_of
+Effortless Concentration	16	druid	selectable_feat_of
+Elemental Shape	10	druid	selectable_feat_of
+Enhanced Familiar	2	druid	selectable_feat_of
+Ferocious Shape	8	druid	selectable_feat_of
+Fey Caller	8	druid	selectable_feat_of
+Form Control	4	druid	selectable_feat_of
+Green Empathy	6	druid	selectable_feat_of
+Green Tongue	12	druid	selectable_feat_of
+Healing Transformation	10	druid	selectable_feat_of
+Hierophant’s Power	20	druid	selectable_feat_of
+Impaling Briars	16	druid	selectable_feat_of
+Incredible Companion	8	druid	selectable_feat_of
+Insect Shape	6	druid	selectable_feat_of
+Invoke Disaster	18	druid	selectable_feat_of
+Leshy Familiar	1	druid	selectable_feat_of
+Leyline Conduit	20	druid	selectable_feat_of
+Mature Animal Companion	4	druid	selectable_feat_of
+Monstrosity Shape	16	druid	selectable_feat_of
+Order Explorer	2	druid	selectable_feat_of
+Order Magic	4	druid	selectable_feat_of
+Overwhelming Energy	10	druid	selectable_feat_of
+Perfect Form Control	18	druid	selectable_feat_of
+Plant Shape	10	druid	selectable_feat_of
+Poison Resistance	2	druid	selectable_feat_of
+Primal Focus	12	druid	selectable_feat_of
+Primal Summons	12	druid	selectable_feat_of
+Primal Wellspring	18	druid	selectable_feat_of
+Reach Spell	1	druid	selectable_feat_of
+Side by Side	10	druid	selectable_feat_of
+Soaring Shape	8	druid	selectable_feat_of
+Specialized Companion	14	druid	selectable_feat_of
+Steady Spellcasting	6	druid	selectable_feat_of
+Storm Born	1	druid	selectable_feat_of
+Storm Retribution	6	druid	selectable_feat_of
+Thousand Faces	4	druid	selectable_feat_of
+Timeless Nature	14	druid	selectable_feat_of
+True Shapeshifter	20	druid	selectable_feat_of
+Verdant Metamorphosis	14	druid	selectable_feat_of
+Widen Spell	1	druid	selectable_feat_of
+Wild Shape	1	druid	selectable_feat_of
+Wind Caller	8	druid	selectable_feat_of
+Woodland Stride	4	druid	selectable_feat_of
+Attack of Opportunity	1	fighter	feat_of
+Shield Block	1	fighter	feat_of
+Bravery	3	fighter	feat_of
+Fighter Weapon Mastery	5	fighter	feat_of
+Battlefield Surveyor	7	fighter	feat_of
+Weapon Specialization	7	fighter	feat_of
+Combat Flexibility	9	fighter	feat_of
+Juggernaut fighter	9	fighter	feat_of
+Armor Expertise	11	fighter	feat_of
+Fighter Expertise	11	fighter	feat_of
+Weapon Legend	13	fighter	feat_of
+Evasion fighter	15	fighter	feat_of
+Greater Weapon Specialization	15	fighter	feat_of
+Improved Flexibility	15	fighter	feat_of
+Armor Mastery	17	fighter	feat_of
+Versatile Legend	19	fighter	feat_of
+Advanced Weapon Training	6	fighter	selectable_feat_of
+Advantageous Assault	6	fighter	selectable_feat_of
+Aggressive Block	2	fighter	selectable_feat_of
+Agile Grace	10	fighter	selectable_feat_of
+Assisting Shot	2	fighter	selectable_feat_of
+Blind-Fight	8	fighter	selectable_feat_of
+Boundless Reprisals	20	fighter	selectable_feat_of
+Brutal Finish	12	fighter	selectable_feat_of
+Brutish Shove	2	fighter	selectable_feat_of
+Certain Strike	10	fighter	selectable_feat_of
+Combat Grab	2	fighter	selectable_feat_of
+Combat Reflexes	10	fighter	selectable_feat_of
+Debilitating Shot	10	fighter	selectable_feat_of
+Desperate Finisher	14	fighter	selectable_feat_of
+Determination	14	fighter	selectable_feat_of
+Disarming Stance	6	fighter	selectable_feat_of
+Disarming Twist	10	fighter	selectable_feat_of
+Disruptive Stance	10	fighter	selectable_feat_of
+Double Shot	4	fighter	selectable_feat_of
+Double Slice	1	fighter	selectable_feat_of
+Dual-Handed Assault	4	fighter	selectable_feat_of
+Dueling Dance	12	fighter	selectable_feat_of
+Dueling Parry	2	fighter	selectable_feat_of
+Dueling Riposte	8	fighter	selectable_feat_of
+Exacting Strike	1	fighter	selectable_feat_of
+Fearsome Brute	10	fighter	selectable_feat_of
+Felling Strike	8	fighter	selectable_feat_of
+Flinging Shove	12	fighter	selectable_feat_of
+Furious Focus	6	fighter	selectable_feat_of
+Graceful Poise	16	fighter	selectable_feat_of
+Guardian’s Deflection	6	fighter	selectable_feat_of
+Guiding Finish	14	fighter	selectable_feat_of
+Guiding Riposte	14	fighter	selectable_feat_of
+Impossible Volley	18	fighter	selectable_feat_of
+Improved Dueling Riposte	12	fighter	selectable_feat_of
+Improved Knockdown	10	fighter	selectable_feat_of
+Improved Reflexive Shield	16	fighter	selectable_feat_of
+Improved Twin Riposte fighter	14	fighter	selectable_feat_of
+Incredible Aim	8	fighter	selectable_feat_of
+Incredible Ricochet	12	fighter	selectable_feat_of
+Intimidating Strike	2	fighter	selectable_feat_of
+Knockdown	4	fighter	selectable_feat_of
+Lunge	2	fighter	selectable_feat_of
+Lunging Stance	12	fighter	selectable_feat_of
+Mirror Shield	10	fighter	selectable_feat_of
+Mobile Shot Stance	8	fighter	selectable_feat_of
+Multishot Stance	16	fighter	selectable_feat_of
+Paragon's Guard	12	fighter	selectable_feat_of
+Point-Blank Shot	1	fighter	selectable_feat_of
+Positioning Assault	8	fighter	selectable_feat_of
+Power Attack	1	fighter	selectable_feat_of
+Powerful Shove	4	fighter	selectable_feat_of
+Quick Reversal	4	fighter	selectable_feat_of
+Quick Shield Block	8	fighter	selectable_feat_of
+Reactive Shield	1	fighter	selectable_feat_of
+Reflexive Shield	6	fighter	selectable_feat_of
+Revealing Stab	6	fighter	selectable_feat_of
+Savage Critical	18	fighter	selectable_feat_of
+Shatter Defenses	6	fighter	selectable_feat_of
+Shield Warden	6	fighter	selectable_feat_of
+Shielded Stride	4	fighter	selectable_feat_of
+Snagging Strike	1	fighter	selectable_feat_of
+Spring Attack	12	fighter	selectable_feat_of
+Stance Savant fighter	14	fighter	selectable_feat_of
+Sudden Charge	1	fighter	selectable_feat_of
+Sudden Leap	8	fighter	selectable_feat_of
+Swipe	4	fighter	selectable_feat_of
+Triple Shot	6	fighter	selectable_feat_of
+Twinned Defense	16	fighter	selectable_feat_of
+Twin Parry	4	fighter	selectable_feat_of
+Twin Riposte	10	fighter	selectable_feat_of
+Two-Weapon Flurry	14	fighter	selectable_feat_of
+Weapon Supremacy	20	fighter	selectable_feat_of
+Whirlwind Strike	14	fighter	selectable_feat_of
+Flurry of Blows	1	monk	feat_of
+Powerful Fist	1	monk	feat_of
+Incredible Movement	3	monk	feat_of
+Mystic Strikes	3	monk	feat_of
+Alertness	5	monk	feat_of
+Expert Strikes	5	monk	feat_of
+Path to Perfection	7	monk	feat_of
+Weapon Specialization	7	monk	feat_of
+Metal Strikes	9	monk	feat_of
+Monk Expertise	9	monk	feat_of
+Second Path to Perfection	11	monk	feat_of
+Graceful Mastery	13	monk	feat_of
+Master Strikes	13	monk	feat_of
+Greater Weapon Specialization	15	monk	feat_of
+Third Path to Perfection	15	monk	feat_of
+Adamantine Strikes	17	monk	feat_of
+Graceful Legend	17	monk	feat_of
+Perfected Form	19	monk	feat_of
+Abundant Step	6	monk	selectable_feat_of
+Arrow Snatching	8	monk	selectable_feat_of
+Brawling Focus	2	monk	selectable_feat_of
+Crane Flutter	6	monk	selectable_feat_of
+Crane Stance	1	monk	selectable_feat_of
+Crushing Grab	2	monk	selectable_feat_of
+Dancing Leaf	2	monk	selectable_feat_of
+Deflect Arrow	4	monk	selectable_feat_of
+Diamond Fists	18	monk	selectable_feat_of
+Diamond Soul	12	monk	selectable_feat_of
+Disrupt Ki	12	monk	selectable_feat_of
+Dragon Roar	6	monk	selectable_feat_of
+Dragon Stance	1	monk	selectable_feat_of
+Elemental Fist	2	monk	selectable_feat_of
+Empty Body	18	monk	selectable_feat_of
+Enduring Quickness	20	monk	selectable_feat_of
+Enlightened Presence	16	monk	selectable_feat_of
+Flurry of Maneuvers	4	monk	selectable_feat_of
+Flying Kick	4	monk	selectable_feat_of
+Fuse Stance	20	monk	selectable_feat_of
+Guarded Movement	4	monk	selectable_feat_of
+Impossible Technique	20	monk	selectable_feat_of
+Improved Knockback	12	monk	selectable_feat_of
+Ironblood Stance	8	monk	selectable_feat_of
+Ironblood Surge	14	monk	selectable_feat_of
+Ki Blast	6	monk	selectable_feat_of
+Ki Rush	1	monk	selectable_feat_of
+Ki Strike	1	monk	selectable_feat_of
+Knockback Strike	10	monk	selectable_feat_of
+Master of Many Styles	16	monk	selectable_feat_of
+Meditative Focus	12	monk	selectable_feat_of
+Meditative Wellspring	18	monk	selectable_feat_of
+Mixed Maneuver	8	monk	selectable_feat_of
+Monastic Weaponry	1	monk	selectable_feat_of
+Mountain Quake	14	monk	selectable_feat_of
+Mountain Stance	1	monk	selectable_feat_of
+Mountain Stronghold	6	monk	selectable_feat_of
+Quivering Palm	16	monk	selectable_feat_of
+Shattering Strike	16	monk	selectable_feat_of
+Sleeper Hold	10	monk	selectable_feat_of
+Stance Savant	12	monk	selectable_feat_of
+Stand Still	4	monk	selectable_feat_of
+Stunning Fist	2	monk	selectable_feat_of
+Swift River	18	monk	selectable_feat_of
+Tangled Forest Rake	14	monk	selectable_feat_of
+Tangled Forest Stance	8	monk	selectable_feat_of
+Tiger Slash	6	monk	selectable_feat_of
+Tiger Stance	1	monk	selectable_feat_of
+Timeless Body	14	monk	selectable_feat_of
+Tongue of Sun and Moon	14	monk	selectable_feat_of
+Wall Run	8	monk	selectable_feat_of
+Water Step	6	monk	selectable_feat_of
+Whirling Throw	6	monk	selectable_feat_of
+Wholeness of Body	4	monk	selectable_feat_of
+Wild Winds Gust	14	monk	selectable_feat_of
+Wild Winds Initiate	8	monk	selectable_feat_of
+Wind Jump	10	monk	selectable_feat_of
+Winding Flow	10	monk	selectable_feat_of
+Wolf Drag	6	monk	selectable_feat_of
+Wolf Stance	1	monk	selectable_feat_of
+Hunt Prey	1	ranger	feat_of
+Hunter’s Edge	1	ranger	feat_of
+Iron Will	3	ranger	feat_of
+Ranger Weapon Expertise	5	ranger	feat_of
+Trackless Step	5	ranger	feat_of
+Evasion	7	ranger	feat_of
+Vigilant Senses	7	ranger	feat_of
+Weapon Specialization	7	ranger	feat_of
+Nature’s Edge	9	ranger	feat_of
+Ranger Expertise	9	ranger	feat_of
+Juggernaut	11	ranger	feat_of
+Medium Armor Expertise	11	ranger	feat_of
+Wild Stride	11	ranger	feat_of
+Weapon Mastery	13	ranger	feat_of
+Greater Weapon Specialization	15	ranger	feat_of
+Improved Evasion	15	ranger	feat_of
+Incredible Senses	15	ranger	feat_of
+Masterful Hunter	17	ranger	feat_of
+Second Skin	19	ranger	feat_of
+Swift Prey	19	ranger	feat_of
+Animal Companion	1	ranger	selectable_feat_of
+Blind-Fight	8	ranger	selectable_feat_of
+Camouflage	10	ranger	selectable_feat_of
+Companion’s Cry	4	ranger	selectable_feat_of
+Crossbow Ace	1	ranger	selectable_feat_of
+Deadly Aim	8	ranger	selectable_feat_of
+Disrupt Prey	4	ranger	selectable_feat_of
+Distracting Shot	12	ranger	selectable_feat_of
+Double Prey	12	ranger	selectable_feat_of
+Far Shot	4	ranger	selectable_feat_of
+Favored Enemy	4	ranger	selectable_feat_of
+Favored Terrain	2	ranger	selectable_feat_of
+Greater Distracting Shot	16	ranger	selectable_feat_of
+Hazard Finder	8	ranger	selectable_feat_of
+Hunted Shot	1	ranger	selectable_feat_of
+Hunter’s Aim	2	ranger	selectable_feat_of
+Impossible Flurry	18	ranger	selectable_feat_of
+Impossible Volley	18	ranger	selectable_feat_of
+Improved Twin Riposte	16	ranger	selectable_feat_of
+Incredible Companion ranger	10	ranger	selectable_feat_of
+Legendary Monster Hunter	16	ranger	selectable_feat_of
+Legendary Shot	20	ranger	selectable_feat_of
+Lightning Snares	12	ranger	selectable_feat_of
+Manifold Edge	18	ranger	selectable_feat_of
+Master Monster Hunter	10	ranger	selectable_feat_of
+Masterful Companion	18	ranger	selectable_feat_of
+Mature Animal Companion ranger	6	ranger	selectable_feat_of
+Monster Hunter	1	ranger	selectable_feat_of
+Monster Warden	2	ranger	selectable_feat_of
+Penetrating Shot	10	ranger	selectable_feat_of
+Perfect Shot	18	ranger	selectable_feat_of
+Powerful Snares	8	ranger	selectable_feat_of
+Quick Draw	2	ranger	selectable_feat_of
+Quick Snares	6	ranger	selectable_feat_of
+Running Reload	4	ranger	selectable_feat_of
+Scout’s Warning	4	ranger	selectable_feat_of
+Second Sting	12	ranger	selectable_feat_of
+Sense the Unseen	14	ranger	selectable_feat_of
+Shadow Hunter	18	ranger	selectable_feat_of
+Shared Prey	14	ranger	selectable_feat_of
+Side by Side ranger	12	ranger	selectable_feat_of
+Skirmish Strike	6	ranger	selectable_feat_of
+Snap Shot	6	ranger	selectable_feat_of
+Snare Specialist	4	ranger	selectable_feat_of
+Specialized Companion ranger	16	ranger	selectable_feat_of
+Stealthy Companion	14	ranger	selectable_feat_of
+Swift Tracker	6	ranger	selectable_feat_of
+Targeting Shot	14	ranger	selectable_feat_of
+Terrain Master	8	ranger	selectable_feat_of
+To the Ends of the Earth	20	ranger	selectable_feat_of
+Triple Threat	20	ranger	selectable_feat_of
+Twin Parry	4	ranger	selectable_feat_of
+Twin Riposte	10	ranger	selectable_feat_of
+Twin Takedown	1	ranger	selectable_feat_of
+Ubiquitous Snares	16	ranger	selectable_feat_of
+Ultimate Skirmisher	20	ranger	selectable_feat_of
+Warden’s Boon	8	ranger	selectable_feat_of
+Warden’s Guidance	14	ranger	selectable_feat_of
+Warden’s Step	10	ranger	selectable_feat_of
+Wild Empathy ranger	2	ranger	selectable_feat_of
+Rogue’s Racket	1	rogue	feat_of
+Sneak Attack	1	rogue	feat_of
+Surprise Attack	1	rogue	feat_of
+Deny Advantage	3	rogue	feat_of
+Weapon Tricks	5	rogue	feat_of
+Evasion	7	rogue	feat_of
+Vigilant Senses	7	rogue	feat_of
+Weapon Specialization	7	rogue	feat_of
+Debilitating Strike	9	rogue	feat_of
+Great Fortitude rogue	9	rogue	feat_of
+Rogue Expertise	11	rogue	feat_of
+Improved Evasion rogue	13	rogue	feat_of
+Incredible Senses rogue	13	rogue	feat_of
+Light Armor Expertise	13	rogue	feat_of
+Master Tricks	13	rogue	feat_of
+Double Debilitation	15	rogue	feat_of
+Greater Weapon Specialization	15	rogue	feat_of
+Slippery Mind	17	rogue	feat_of
+Light Armor Mastery	19	rogue	feat_of
+Master Strike	19	rogue	feat_of
+Battle Assessment	4	rogue	selectable_feat_of
+Blank Slate	16	rogue	selectable_feat_of
+Blind-Fight	8	rogue	selectable_feat_of
+Brutal Beating	2	rogue	selectable_feat_of
+Cloud Step	16	rogue	selectable_feat_of
+Cognitive Loophole	16	rogue	selectable_feat_of
+Critical Debilitation	12	rogue	selectable_feat_of
+Defensive Roll	14	rogue	selectable_feat_of
+Delay Trap	8	rogue	selectable_feat_of
+Dispelling Slice	16	rogue	selectable_feat_of
+Distracting Feint	2	rogue	selectable_feat_of
+Dread Striker	4	rogue	selectable_feat_of
+Fantastic Leap	12	rogue	selectable_feat_of
+Felling Shot	12	rogue	selectable_feat_of
+Gang Up	6	rogue	selectable_feat_of
+Hidden Paragon	20	rogue	selectable_feat_of
+Implausible Infiltration	18	rogue	selectable_feat_of
+Impossible Striker	20	rogue	selectable_feat_of
+Improved Poison Weapon	8	rogue	selectable_feat_of
+Instant Opening	14	rogue	selectable_feat_of
+Leave an Opening	14	rogue	selectable_feat_of
+Light Step	6	rogue	selectable_feat_of
+Magical Trickster	4	rogue	selectable_feat_of
+Minor Magic	2	rogue	selectable_feat_of
+Mobility	2	rogue	selectable_feat_of
+Nimble Dodge	1	rogue	selectable_feat_of
+Nimble Roll	8	rogue	selectable_feat_of
+Opportune Backstab	8	rogue	selectable_feat_of
+Perfect Distraction	16	rogue	selectable_feat_of
+Poison Weapon	4	rogue	selectable_feat_of
+Powerful Sneak	18	rogue	selectable_feat_of
+Precise Debilitations	10	rogue	selectable_feat_of
+Quick Draw	2	rogue	selectable_feat_of
+Reactive Distraction	20	rogue	selectable_feat_of
+Reactive Interference	12	rogue	selectable_feat_of
+Reactive Pursuit	4	rogue	selectable_feat_of
+Sabotage	4	rogue	selectable_feat_of
+Scout’s Warning	4	rogue	selectable_feat_of
+Sense the Unseen	14	rogue	selectable_feat_of
+Sidestep	8	rogue	selectable_feat_of
+Skirmish Strike	6	rogue	selectable_feat_of
+Sly Striker	8	rogue	selectable_feat_of
+Sneak Savant	10	rogue	selectable_feat_of
+Spring from the Shadows	12	rogue	selectable_feat_of
+Tactical Debilitations	10	rogue	selectable_feat_of
+Trap Finder	1	rogue	selectable_feat_of
+Trickster’s Ace	18	rogue	selectable_feat_of
+Twin Feint	1	rogue	selectable_feat_of
+Twist the Knife	6	rogue	selectable_feat_of
+Unbalancing Blow	2	rogue	selectable_feat_of
+Vicious Debilitations	10	rogue	selectable_feat_of
+You're Next	1	rogue	selectable_feat_of
+Bloodline	1	sorcerer	feat_of
+Sorcerer Spellcasting	1	sorcerer	feat_of
+Spell Repertoire	1	sorcerer	feat_of
+Signature Spells	3	sorcerer	feat_of
+Magical Fortitude	5	sorcerer	feat_of
+Expert Spellcaster	7	sorcerer	feat_of
+Lightning Reflexes sorcerer	9	sorcerer	feat_of
+Alertness sorcerer	11	sorcerer	feat_of
+Weapon Expertise sorcerer	11	sorcerer	feat_of
+Defensive Robes	13	sorcerer	feat_of
+Weapon Specialization sorcerer	13	sorcerer	feat_of
+Master Spellcaster	15	sorcerer	feat_of
+Resolve sorcerer	17	sorcerer	feat_of
+Bloodline Paragon	19	sorcerer	feat_of
+Legendary Spellcaster	19	sorcerer	feat_of
+Advanced Bloodline	6	sorcerer	selectable_feat_of
+Arcane Evolution	4	sorcerer	selectable_feat_of
+Bespell Weapon	4	sorcerer	selectable_feat_of
+Bloodline Conduit	20	sorcerer	selectable_feat_of
+Bloodline Focus	12	sorcerer	selectable_feat_of
+Bloodline Perfection	20	sorcerer	selectable_feat_of
+Bloodline Resistance	8	sorcerer	selectable_feat_of
+Bloodline Wellspring	18	sorcerer	selectable_feat_of
+Cantrip Expansion	2	sorcerer	selectable_feat_of
+Counterspell	1	sorcerer	selectable_feat_of
+Crossblooded Evolution	8	sorcerer	selectable_feat_of
+Dangerous Sorcery	1	sorcerer	selectable_feat_of
+Divine Evolution	4	sorcerer	selectable_feat_of
+Effortless Concentration	16	sorcerer	selectable_feat_of
+Enhanced Familiar	2	sorcerer	selectable_feat_of
+Familiar	1	sorcerer	selectable_feat_of
+Greater Bloodline	10	sorcerer	selectable_feat_of
+Greater Crossblooded Evolution	18	sorcerer	selectable_feat_of
+Greater Mental Evolution	16	sorcerer	selectable_feat_of
+Greater Vital Evolution	16	sorcerer	selectable_feat_of
+Interweave Dispel	14	sorcerer	selectable_feat_of
+Magic Sense	12	sorcerer	selectable_feat_of
+Metamagic Mastery	20	sorcerer	selectable_feat_of
+Occult Evolution	4	sorcerer	selectable_feat_of
+Overwhelming Energy	10	sorcerer	selectable_feat_of
+Primal Evolution	4	sorcerer	selectable_feat_of
+Quickened Casting	10	sorcerer	selectable_feat_of
+Reach Spell	1	sorcerer	selectable_feat_of
+Reflect Spell	14	sorcerer	selectable_feat_of
+Steady Spellcasting	6	sorcerer	selectable_feat_of
+Widen Spell	1	sorcerer	selectable_feat_of
+Arcane Spellcasting	1	wizard	feat_of
+Arcane School	1	wizard	feat_of
+Arcane Bond	1	wizard	feat_of
+Arcane Thesis	1	wizard	feat_of
+Lightning Reflexes	5	wizard	feat_of
+Expert Spellcaster	7	wizard	feat_of
+Magical Fortitude wizard	9	wizard	feat_of
+Alertness wizard	11	wizard	feat_of
+Wizard Weapon Expertise	11	wizard	feat_of
+Defensive Robes	13	wizard	feat_of
+Weapon Specialization wizard	13	wizard	feat_of
+Master Spellcaster	15	wizard	feat_of
+Resolve wizard	17	wizard	feat_of
+Archwizard’s Spellcraft	19	wizard	feat_of
+Legendary Spellcaster	19	wizard	feat_of
+Advanced School Spell	8	wizard	selectable_feat_of
+Archwizard’s Might	20	wizard	selectable_feat_of
+Bespell Weapon	4	wizard	selectable_feat_of
+Bond Conservation	8	wizard	selectable_feat_of
+Bonded Focus	14	wizard	selectable_feat_of
+Cantrip Expansion	2	wizard	selectable_feat_of
+Clever Counterspell	12	wizard	selectable_feat_of
+Conceal Spell	2	wizard	selectable_feat_of
+Counterspell	1	wizard	selectable_feat_of
+Effortless Concentration	16	wizard	selectable_feat_of
+Enhanced Familiar	2	wizard	selectable_feat_of
+Eschew Materials	1	wizard	selectable_feat_of
+Familiar	1	wizard	selectable_feat_of
+Hand of the Apprentice	1	wizard	selectable_feat_of
+Infinite Possibilities	18	wizard	selectable_feat_of
+Linked Focus	4	wizard	selectable_feat_of
+Magic Sense	12	wizard	selectable_feat_of
+Metamagic Mastery	20	wizard	selectable_feat_of
+Overwhelming Energy	10	wizard	selectable_feat_of
+Quickened Casting	10	wizard	selectable_feat_of
+Reach Spell	1	wizard	selectable_feat_of
+Reflect Spell	14	wizard	selectable_feat_of
+Reprepare Spell	18	wizard	selectable_feat_of
+Scroll Savant	10	wizard	selectable_feat_of
+Silent Spell	4	wizard	selectable_feat_of
+Spell Combination	20	wizard	selectable_feat_of
+Spell Penetration	6	wizard	selectable_feat_of
+Spell Tinker	16	wizard	selectable_feat_of
+Steady Spellcasting	6	wizard	selectable_feat_of
+Superior Bond	14	wizard	selectable_feat_of
+Universal Versatility	8	wizard	selectable_feat_of
+Widen Spell	1	wizard	selectable_feat_of

@@ -3,16 +3,7 @@ from owlready2 import *
 
 def fill(pzo2101: Ontology):
     with pzo2101:
-
-        class Art(Thing): pass
-
-        class image(AnnotationProperty):
-            namespace = pzo2101.get_namespace("http://schema.org/")
-
-        class depicts(Art >> Thing): pass
-
-        class is_depicted_by(ObjectProperty):
-            inverse_property = depicts
+        Art = pzo2101.Art
 
         Art("art_ancestries_and_backgrounds", image = "https://ibb.co/Vqqtsw5")
 

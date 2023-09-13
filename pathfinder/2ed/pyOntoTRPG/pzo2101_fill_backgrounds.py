@@ -5,17 +5,16 @@ import re
 
 def fill(pzo2101: Ontology):
     with pzo2101:
-        class Background(pzo2101.Concept):
-            comment = ("Backgrounds allow you to customize your character based on their life before adventuring. This "
-                       "is the next step in their life story after their ancestry, which reflects the circumstances "
-                       "of their birth. Your character’s background can help you learn or portray more about their "
-                       "personality while also suggesting what sorts of things they’re likely to know. Consider what "
-                       "events set your character on their path to the life of an adventurer and how those "
-                       "circumstances relate to their background.")
+        Background = pzo2101.Background
+        Background.comment.append(
+           "Backgrounds allow you to customize your character based on their life before adventuring. This "
+           "is the next step in their life story after their ancestry, which reflects the circumstances "
+           "of their birth. Your character’s background can help you learn or portray more about their "
+           "personality while also suggesting what sorts of things they’re likely to know. Consider what "
+           "events set your character on their path to the life of an adventurer and how those "
+           "circumstances relate to their background.")
 
-        class lore_speciality(Background >> str, FunctionalProperty): pass
-
-        Background.is_a.extend([pzo2101.trained.value(pzo2101.lore)])
+        Background.trained.append(pzo2101.lore)
 
         for index, row in main.iterrows('Backgrounds'):
             x = re.search(

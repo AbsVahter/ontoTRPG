@@ -4,8 +4,6 @@ import main
 
 def fill(pzo2101: Ontology):
     with pzo2101:
-        class Equipment(Thing): pass
-
         fill_weapon(pzo2101)
         fill_armor(pzo2101)
 
