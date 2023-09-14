@@ -1,0 +1,7 @@
+name
+Cantrip Connection
+Extra Reagents
+Familiar Focus
+Lifelink
+Spell Battery
+Spell Delivery

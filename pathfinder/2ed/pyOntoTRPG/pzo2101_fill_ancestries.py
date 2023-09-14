@@ -5,15 +5,48 @@ import main
 from pzo2101_hierarchy import create
 
 
+def fill_animal_companions(pzo2101):
+    with pzo2101:
+        for index, row in main.iterrows("Animal_companions"):
+            anim = pzo2101.Animal_companion(
+                name = main.prepare_name(row['name']),
+                comment = row['comment'],
+                size = main.prepare_name(row['size']),
+                hp = row['hp'],
+                speed = row['speed']
+            )
+            if not pd.isna(row['special_speed']): anim.special_speed = row['special_speed']
+
+        for index, row in main.iterrows("Animal_companion_specializations"):
+            pzo2101.Animal_companion_specialization(
+                name = main.prepare_name(row['name']),
+            )
+
+
+def fill_familiar(pzo2101):
+    with pzo2101:
+        for index, row in main.iterrows("Familiar_abilities"):
+            pzo2101.Familiar_ability(
+                name = main.prepare_name(row['name']),
+            )
+
+        for index, row in main.iterrows("Master_abilities"):
+            pzo2101.Master_ability(
+                name = main.prepare_name(row['name']),
+            )
+
+
 def fill(pzo2101: Ontology):
     fill_languages(pzo2101)
     fill_props(pzo2101)
     fill_feats(pzo2101)
+    fill_animal_companions(pzo2101)
+    fill_familiar(pzo2101)
 
 
 def fill_props(pzo2101: Ontology):
     with pzo2101:
-        Ancestry = pzo2101.Ancestry
+        Ancestry = pzo2101.Playable_ancestry
         Ancestry.comment.append("Your character’s ancestry determines which people they call their own, whether it’s diverse "
                    "and ambitious humans, insular but vivacious elves, traditionalist and family-focused dwarves, "
                    "or any of the other folk who call Golarion home. A character’s ancestry and their experiences "

@@ -1,4 +1,7 @@
+import pandas as pd
 from owlready2 import *
+
+import main
 
 
 def fill(pzo2101: Ontology):
@@ -7,7 +10,7 @@ def fill(pzo2101: Ontology):
 
         Art("art_ancestries_and_backgrounds", image = "https://ibb.co/Vqqtsw5")
 
-        for anc in filter(lambda x: x.name != 'human',pzo2101.Ancestry.instances()):
+        for anc in filter(lambda x: x.name != 'human',pzo2101.Playable_ancestry.instances()):
             for i in range(2):
                 art_path = f"https://2e.aonprd.com/Images/Ancestries/{anc.name.capitalize()}0{i+1}.png"
                 art = Art(f"art_{anc.name}_{i+1}", image = [art_path])
@@ -38,4 +41,11 @@ def fill(pzo2101: Ontology):
                 name = f"art_{cl.name}_icon",
                 image = f"https://2e.aonprd.com/Images/Class/{cl.name.capitalize()}_Icon.png",
                 depicts = [cl],
+            )
+
+        for index, row in main.iterrows("Art"):
+            Art(
+                name = f"art_{row['name']}",
+                image = row['link'],
+                depicts = [pzo2101[x] for x in row['target'].split(",")] if not pd.isna(row['target']) else [],
             )

@@ -14,9 +14,12 @@ def create(pzo2101: Ontology):
 
         class Character_backbone_feat(Feat): pass
         class Ancestry(Character_backbone_feat): pass
+        class Playable_ancestry(Ancestry): pass
+        class Animal_companion(Ancestry): comment = "An animal companion is a loyal comrade who follows your orders."
         class hp(Character_backbone_feat >> int, FunctionalProperty): comment = 'hit points'
         class size(Ancestry >> str, FunctionalProperty): pass
-        class speed(Ancestry >> int, FunctionalProperty): comment = "speed in feet"
+        class speed(Ancestry >> int, FunctionalProperty): comment = "land speed in feet"
+        class special_speed(Ancestry >> str, FunctionalProperty): comment = "speed different from land speed"
 
         class Characteristic(Thing): pass
         class Ability_score(Characteristic): pass
@@ -47,3 +50,14 @@ def create(pzo2101: Ontology):
         class image(AnnotationProperty): namespace = pzo2101.get_namespace("http://schema.org/")
         class depicts(Art >> Thing): pass
         class is_depicted_by(ObjectProperty): inverse_property = depicts
+
+        class Spellcaster_class(Gameclass): pass
+        class spells_per_day(Spellcaster_class >> int, FunctionalProperty):
+            comment = ("Base count of spells per day, X.\n"
+                       "Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; level = (2*n - "
+                       "1): X - 1; level >= 2*n: X}.")
+
+        class Animal_companion_specialization(Feat):
+            comment = "Specialized animal companions are more intelligent and engage in more complex behaviors."
+        class Familiar_ability(Feat): pass
+        class Master_ability(Feat): pass

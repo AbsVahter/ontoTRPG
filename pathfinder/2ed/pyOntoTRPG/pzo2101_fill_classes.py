@@ -58,6 +58,11 @@ def fill_class_props(pzo2101: Ontology):
         pzo2101.rogue.comment.append("Trained in one or more skills determined by your rogue’s racket")
         pzo2101.sorcerer.comment.append("Trained in one or more skills determined by your bloodline")
 
+        spell_dict = {3: [pzo2101.bard, pzo2101.cleric, pzo2101.druid, pzo2101.wizard], 4: [pzo2101.sorcerer]}
+        for k in spell_dict:
+            for cl in spell_dict[k]:
+                cl.spells_per_day = k
+
 
 def fill_weapon(pzo2101: Ontology):
     with pzo2101:
