@@ -8,13 +8,13 @@ mutagenist	https://cdnb.artstation.com/p/assets/images/images/039/803/913/large/
 barbarian_1	https://cdn.paizo.com/a7d62ac8-7f03-00ef-f1f0-83fb8bf332e2/a55f5324-d382-4d34-af69-164d12b2a3ee/P2_Header_Amiri.png	barbarian
 barbarian_2	https://2e.aonprd.com/Images/Classes/Iconic_Amiri.png	barbarian
 barbarian_3	https://cdn.paizo.com/image/content/PathfinderRPG/20190307-Amiri.jpg	barbarian
-animal_instinct	https://ibb.co/4T6rGHy	animal_instinct,barbarian
-fury_instinct	https://ibb.co/HKPsS0r	fury_instinct,barbarian
+animal_instinct	https://i.ibb.co/WybJwL9/art-animal-rager.jpg	animal_instinct,barbarian
+fury_instinct	https://i.ibb.co/yNk19D8/art-fury-instinct.jpg	fury_instinct,barbarian
 bard_1	https://cdn.paizo.com/image/content/Secondary/PZO2213-1.jpg	bard
 bard_2	https://static.wikia.nocookie.net/pathfinderkingmaker/images/e/e9/%D0%91%D0%B0%D1%80%D0%B4.jpeg/revision/latest?cb=20210215032750&path-prefix=ru	bard
 bard_3	https://cdn.paizo.com/image/content/PathfinderRPG/20190404-Harpies.jpg	bard
 dancer	https://cdn.paizo.com/image/content/Blog/20190624-2.jpg	maestro,bard
-champion_1	https://ibb.co/fDt4sRz	champion
+champion_1	https://i.ibb.co/qJ9kvG3/art-champion.jpg	champion
 champion_2	https://2e.aonprd.com/Images/Classes/Iconic_Seelah.png	champion
 champion_3	https://cdn.paizo.com/image/content/PathfinderRPG/20190501-Encounter.jpg	champion
 redeemer	https://cdnb.artstation.com/p/assets/images/images/031/795/817/4k/michele-esposito-5.jpg?1604606397	redeemer,champion
@@ -27,9 +27,9 @@ cleric_3	https://cdnb.artstation.com/p/assets/images/images/053/731/057/large/ha
 druid_1	https://cdn.paizo.com/image/content/Secondary/PZO2215-1.jpg	druid
 druid_2	https://2e.aonprd.com/Images/Classes/Iconic_Lini.png	druid
 wild_order	https://dnd.su/bestiary/5005-shifter/	wild_order,druid
-storm_order	https://ibb.co/8YKNmF1	storm_order,druid
+storm_order	https://i.ibb.co/Sfs56qF/art-storm-order.jpg	storm_order,druid
 druid_3	https://cdn.paizo.com/image/content/PathfinderRPG/20190411-Lini.jpg	druid
-leaf_order	https://ibb.co/FwNqqgD	druid
+leaf_order	https://i.ibb.co/T8pqqmg/art-leaf-order.jpg	druid
 fighter_1	https://scontent.ftgd2-1.fna.fbcdn.net/v/t1.6435-9/104220663_3086063021480416_8853282941021455166_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=730e14&_nc_ohc=1tUyG2WRs3UAX_1TkpP&_nc_ht=scontent.ftgd2-1.fna&oh=00_AfBFSLFwFar-TWx4A5gltzdsSrzWBhpfiTFKNxG8jO1WeA&oe=652A5CC2	fighter
 fighter_2	https://2e.aonprd.com/Images/Classes/Iconic_Valeros.png	fighter
 fighter_3	https://cdn.paizo.com/image/content/PathfinderRPG/20190516-Encounter.jpg	fighter
@@ -39,12 +39,12 @@ fighter_6	https://cdna.artstation.com/p/assets/images/images/031/795/830/large/m
 monk_1	https://scontent.ftgd2-1.fna.fbcdn.net/v/t1.6435-9/102662893_3056407654445953_2820138572378537984_n.jpg?stp=dst-jpg_p526x296&_nc_cat=110&ccb=1-7&_nc_sid=730e14&_nc_ohc=C5vdAyObdQkAX9JUkwR&_nc_ht=scontent.ftgd2-1.fna&oh=00_AfBfuUMNMocd5r4aPyz26NFYfThBrS2I5tY2jkSmaoAUrw&oe=652A5F30	monk
 monk_2	https://static.wixstatic.com/media/0a2620_25f16d3b6bc54f4480f0d50d6eb6b53e~mv2.jpg/v1/fill/w_539,h_758,al_c,q_85,enc_auto/0a2620_25f16d3b6bc54f4480f0d50d6eb6b53e~mv2.jpg	monk
 monk_3	https://cdn.paizo.com/image/content/PathfinderRPG/20190425-Encounter.jpg	monk
-monk_4	https://ibb.co/R954dkr	monk
+monk_4	https://i.ibb.co/s2BJzdx/art-monk-4.jpg	monk
 monk_5	https://cdn.paizo.com/image/content/Blog/20190624-5.jpg	monk
 ranger_1	https://scontent.ftgd2-1.fna.fbcdn.net/v/t1.6435-9/103278923_3069070079846377_7004001286681888993_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=730e14&_nc_ohc=l0bk9dFme54AX_S3lp0&_nc_ht=scontent.ftgd2-1.fna&oh=00_AfC2-55z45-sp3ETQqKjF1KqpmEP02Wrc1-Y0yO0kUGdpw&oe=652A85DA	ranger
 ranger_2	https://2e.aonprd.com/Images/Classes/Iconic_Harsk.png	ranger
 ranger_3	https://cdn.paizo.com/image/content/PathfinderRPG/PZO2101-HarskHalfPage.jpg	ranger
-outwit_edge	https://ibb.co/FBxQnFq	outwit_edge,ranger
+outwit_edge	https://i.ibb.co/NLV07Mn/art-outwit-edge.jpg	outwit_edge,ranger
 flurry_edge	https://cdna.artstation.com/p/assets/images/images/022/609/780/large/valera-lutfullina-ranger-hildegaard-tiny.jpg?1576065793	flurry_edge,ranger
 rogue_1	https://scontent.ftgd2-1.fna.fbcdn.net/v/t1.6435-9/105034384_3090923697661015_8939600966791836701_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=730e14&_nc_ohc=uSszEK4868kAX9UI51G&_nc_oc=AQlyaGN2c9xgqtktqZ7sGhBz6sN-AFFjIw6uj6EPQJ2xw5d_94PQiqeksfzZA05imPY&_nc_ht=scontent.ftgd2-1.fna&oh=00_AfANJ15PXPvLKrnO-p9LHGzJX2RKiGseJcLVMuv2hAEZYw&oe=652A792A	rogue
 rogue_2	https://cdn.paizo.com/image/content/PathfinderRPG/20190416-Merisiel.jpg	rogue
@@ -60,7 +60,19 @@ wizard_1	https://i0.wp.com/shopthesquirrel.com/wp-content/uploads/2020/10/Spell-
 wizard_2	https://static.wikia.nocookie.net/pathfinderkingmaker/images/4/43/%D0%9C%D0%B0%D0%B3.jpeg/revision/latest?cb=20210215031535&path-prefix=ru	wizard
 conjuration_arcane_school	https://i.pinimg.com/originals/1c/74/a4/1c74a48391b592d7f35b84d5436c1ced.png	conjuration_arcane_school,wizard
 wizard_3	https://cdn.paizo.com/image/content/PathfinderRPG/20190314-Ezren.jpg	wizard
-illusion_arcane_school	https://ibb.co/VLF0Wbb	illusion_arcane_school,wizard
-animal_companions_and_familiars_1	https://ibb.co/N13YKvK	
-animal_companions_and_familiars_2	https://ibb.co/yY1m6gK	
+illusion_arcane_school	https://i.ibb.co/mRnrCdd/art-illusion-arcane-sschool.jpg	illusion_arcane_school,wizard
+animal_companions_and_familiars_1	https://i.ibb.co/WD3Kfhf/animal-companions-and-familiars-1.jpg	
+animal_companions_and_familiars_2	https://i.ibb.co/1d5YrRB/animal-companions-and-familiars-2.jpg	
 animal_companions_and_familiars_3	https://cdnb.artstation.com/p/assets/images/images/020/126/389/large/giorgio-falconi-talking-bat.jpg?1566475283	
+alchemist_archetype	https://i.ibb.co/thmrqPt/alchemist-archetype.jpg	alchemist_archetype
+barbarian_archetype	https://i.ibb.co/c27m3P3/barbarian-archetype.jpg	barbarian_archetype
+bard_archetype	https://roll20.net/v2/images/pathfinder2/launch-character.png	bard_archetype
+champion_archetype	https://i.ibb.co/Gx2zYJF/champion-archetype.jpg	champion_archetype
+cleric_archetype	https://i.ibb.co/Fw78nsQ/cleric-archetype.jpg	cleric_archetype
+druid_archetype	https://i.ibb.co/p1hKPHw/druid-archetype.jpg	druid_archetype
+fighter_archetype	https://i.pinimg.com/564x/2e/70/3e/2e703e690b7dc1a7925409516f159968.jpg	fighter_archetype
+monk_archetype	https://pbs.twimg.com/media/FMC7_r5aAAA4qWG?format=webp&name=900x900	monk_archetype
+ranger_archetype	https://i.ibb.co/2vs0NdS/ranger-archetype.jpg	ranger_archetype
+rogue_archetype	https://i.ibb.co/7bYKc18/rogue-archetype.jpg	rogue_archetype
+sorcerer_archetype	https://i.ibb.co/YQVRXnd/sorcerer-archetype.jpg	sorcerer_archetype
+wizard_archetype	https://cdn.paizo.com/image/content/Blog/20190715-cast_500.jpeg	wizard_archetype

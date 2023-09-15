@@ -80,6 +80,12 @@
   <owl:inverseOf rdf:resource="#depicts"/>
 </owl:ObjectProperty>
 
+<owl:ObjectProperty rdf:about="#is_tied_to_ability">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Skill"/>
+  <rdfs:range rdf:resource="#Ability_score"/>
+</owl:ObjectProperty>
+
 <owl:DatatypeProperty rdf:about="#hp">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Character_backbone_feat"/>
@@ -289,6 +295,7 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 <owl:Class rdf:about="#Skill">
   <rdfs:subClassOf rdf:resource="#Characteristic"/>
   <rdfs:subClassOf rdf:resource="#With_proficiency_rank"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">While your character’s ability scores represent their raw talent and potential, skills represent their training and experience at performing certain tasks. Each skill is keyed to one of your character’s ability scores and used for an array of related actions. Your character’s expertise in a skill comes from several sources, including their background and class.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#Skill_feat">
@@ -574,6 +581,11 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
   </rdfs:subClassOf>
 </owl:Class>
 
+<owl:Class rdf:about="#Archetype">
+  <rdfs:subClassOf rdf:resource="#Feat"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">There are infinite possible character concepts, but you might find that the feats and skill choices from a single class aren’t sufficient to fully realize your character. Archetypes allow you to expand the scope of your character’s class.</rdfs:comment>
+</owl:Class>
+
 <owl:Class rdf:about="#Icon">
   <rdfs:subClassOf rdf:resource="#Art"/>
 </owl:Class>
@@ -610,34 +622,42 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 
 <owl:NamedIndividual rdf:about="#acrobatics">
   <rdf:type rdf:resource="#Skill"/>
+  <is_tied_to_ability rdf:resource="#dexterity"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#arcana">
   <rdf:type rdf:resource="#Skill"/>
+  <is_tied_to_ability rdf:resource="#intelligence"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#athletics">
   <rdf:type rdf:resource="#Skill"/>
+  <is_tied_to_ability rdf:resource="#strength"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#crafting">
   <rdf:type rdf:resource="#Skill"/>
+  <is_tied_to_ability rdf:resource="#intelligence"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#deception">
   <rdf:type rdf:resource="#Skill"/>
+  <is_tied_to_ability rdf:resource="#charisma"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#diplomacy">
   <rdf:type rdf:resource="#Skill"/>
+  <is_tied_to_ability rdf:resource="#charisma"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#intimidation">
   <rdf:type rdf:resource="#Skill"/>
+  <is_tied_to_ability rdf:resource="#charisma"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#lore">
   <rdf:type rdf:resource="#Skill"/>
+  <is_tied_to_ability rdf:resource="#intelligence"/>
   <rdf:type>
     <owl:Restriction>
       <owl:onProperty rdf:resource="#is_trained_by"/>
@@ -648,38 +668,47 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 
 <owl:NamedIndividual rdf:about="#medicine">
   <rdf:type rdf:resource="#Skill"/>
+  <is_tied_to_ability rdf:resource="#wisdom"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#nature">
   <rdf:type rdf:resource="#Skill"/>
+  <is_tied_to_ability rdf:resource="#wisdom"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#occultism">
   <rdf:type rdf:resource="#Skill"/>
+  <is_tied_to_ability rdf:resource="#intelligence"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#performance">
   <rdf:type rdf:resource="#Skill"/>
+  <is_tied_to_ability rdf:resource="#charisma"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#religion">
   <rdf:type rdf:resource="#Skill"/>
+  <is_tied_to_ability rdf:resource="#wisdom"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#society">
   <rdf:type rdf:resource="#Skill"/>
+  <is_tied_to_ability rdf:resource="#intelligence"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#stealth">
   <rdf:type rdf:resource="#Skill"/>
+  <is_tied_to_ability rdf:resource="#dexterity"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#survival">
   <rdf:type rdf:resource="#Skill"/>
+  <is_tied_to_ability rdf:resource="#wisdom"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#thievery">
   <rdf:type rdf:resource="#Skill"/>
+  <is_tied_to_ability rdf:resource="#dexterity"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#perception">
@@ -2600,8 +2629,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
   <trained rdf:resource="#arcana"/>
   <has_feat rdf:resource="#assurance"/>
   <trained rdf:resource="#nature"/>
-  <trained rdf:resource="#religion"/>
   <trained rdf:resource="#occultism"/>
+  <trained rdf:resource="#religion"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You have a knack for learning, and sequestered yourself from the outside world to learn all you could. You read about so many wondrous places and things in your books, and always dreamed about one day seeing the real things. Eventually, that curiosity led you to leave your studies and become an adventurer.</rdfs:comment>
   <lore_speciality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the Academia Lore skill</lore_speciality>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You’re trained in your choice of the Arcana, Nature, Occultism, or Religion skill, and gain the Assurance skill feat in your chosen skill.</rdfs:comment>
@@ -3265,8 +3294,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Deities work their will upon the world in infinite ways, and you serve as one of their most stalwart mortal servants. Blessed with divine magic, you live the ideals of your faith, adorn yourself with the symbols of your church, and train diligently to wield your deity’s favored weapon. Your spells might protect and heal your allies, or they might punish foes and enemies of your faith, as your deity wills. Yours is a life of devotion, spreading the teachings of your faith through both word and deed.</rdfs:comment>
   <hp rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</hp>
   <additional_skills rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</additional_skills>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in one skill determined by your choice of deity</rdfs:comment>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in the favored weapon of your deity. If your deity’s favored weapon is uncommon, you also gain access to that weapon.</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in one skill determined by your choice of deity</rdfs:comment>
   <spells_per_day rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</spells_per_day>
 </owl:NamedIndividual>
 
@@ -8036,6 +8065,637 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
   <selectable_feat_of rdf:resource="#arcane_school"/>
 </owl:NamedIndividual>
 
+<owl:NamedIndividual rdf:about="#alchemist_dedication">
+  <rdf:type rdf:resource="#Feat"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#alchemist_archetype">
+  <rdf:type rdf:resource="#Archetype"/>
+  <has_selectable_feat rdf:resource="#alchemist_dedication"/>
+  <has_selectable_feat rdf:resource="#basic_concoction"/>
+  <has_selectable_feat rdf:resource="#quick_alchemy"/>
+  <has_selectable_feat rdf:resource="#advanced_concoction"/>
+  <has_selectable_feat rdf:resource="#expert_alchemy"/>
+  <has_selectable_feat rdf:resource="#master_alchemy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#basic_concoction">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#alchemist_dedication"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#quick_alchemy">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#alchemist_dedication"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#advanced_concoction">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#basic_concoction"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#expert_alchemy">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#alchemist_dedication"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#master_alchemy">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#expert_alchemy"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#barbarian_dedication">
+  <rdf:type rdf:resource="#Feat"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#barbarian_archetype">
+  <rdf:type rdf:resource="#Archetype"/>
+  <has_selectable_feat rdf:resource="#barbarian_dedication"/>
+  <has_selectable_feat rdf:resource="#barbarian_resiliency"/>
+  <has_selectable_feat rdf:resource="#basic_fury"/>
+  <has_selectable_feat rdf:resource="#advanced_fury"/>
+  <has_selectable_feat rdf:resource="#instinct_ability"/>
+  <has_selectable_feat rdf:resource="#juggernaut_s_fortitude"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#barbarian_resiliency">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#barbarian_dedication"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#basic_fury">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#barbarian_dedication"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#advanced_fury">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#basic_fury"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#instinct_ability">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#barbarian_dedication"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#juggernaut_s_fortitude">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#barbarian_dedication"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#bard_dedication">
+  <rdf:type rdf:resource="#Feat"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#bard_archetype">
+  <rdf:type rdf:resource="#Archetype"/>
+  <has_selectable_feat rdf:resource="#bard_dedication"/>
+  <has_selectable_feat rdf:resource="#basic_bard_spellcasting"/>
+  <has_selectable_feat rdf:resource="#basic_muse_s_whispers"/>
+  <has_selectable_feat rdf:resource="#advanced_muse_s_whispers"/>
+  <has_selectable_feat rdf:resource="#counter_perform"/>
+  <has_selectable_feat rdf:resource="#inspirational_performance"/>
+  <has_selectable_feat rdf:resource="#occult_breadth"/>
+  <has_selectable_feat rdf:resource="#expert_bard_spellcasting"/>
+  <has_selectable_feat rdf:resource="#master_bard_spellcasting"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#basic_bard_spellcasting">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#bard_dedication"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#basic_muse_s_whispers">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#bard_dedication"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#advanced_muse_s_whispers">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#basic_muse_s_whispers"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#counter_perform">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#bard_dedication"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#inspirational_performance">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#bard_dedication"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#occult_breadth">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#basic_bard_spellcasting"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#expert_bard_spellcasting">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#basic_bard_spellcasting"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#master_bard_spellcasting">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#expert_bard_spellcasting"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#champion_dedication">
+  <rdf:type rdf:resource="#Feat"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#champion_archetype">
+  <rdf:type rdf:resource="#Archetype"/>
+  <has_selectable_feat rdf:resource="#champion_dedication"/>
+  <has_selectable_feat rdf:resource="#basic_devotion"/>
+  <has_selectable_feat rdf:resource="#champion_resiliency"/>
+  <has_selectable_feat rdf:resource="#healing_touch"/>
+  <has_selectable_feat rdf:resource="#advanced_devotion"/>
+  <has_selectable_feat rdf:resource="#champion_s_reaction_archetype"/>
+  <has_selectable_feat rdf:resource="#divine_ally_archetype"/>
+  <has_selectable_feat rdf:resource="#diverse_armor_expert"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#basic_devotion">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#champion_dedication"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#champion_resiliency">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#champion_dedication"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#healing_touch">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#champion_dedication"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#advanced_devotion">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#basic_devotion"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#champion_s_reaction_archetype">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#champion_dedication"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#divine_ally_archetype">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#champion_dedication"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#diverse_armor_expert">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#champion_dedication"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">14</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#cleric_dedication">
+  <rdf:type rdf:resource="#Feat"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#cleric_archetype">
+  <rdf:type rdf:resource="#Archetype"/>
+  <has_selectable_feat rdf:resource="#cleric_dedication"/>
+  <has_selectable_feat rdf:resource="#basic_cleric_spellcasting"/>
+  <has_selectable_feat rdf:resource="#basic_dogma"/>
+  <has_selectable_feat rdf:resource="#advanced_dogma"/>
+  <has_selectable_feat rdf:resource="#divine_breadth"/>
+  <has_selectable_feat rdf:resource="#expert_cleric_spellcasting"/>
+  <has_selectable_feat rdf:resource="#master_cleric_spellcasting"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#basic_cleric_spellcasting">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#cleric_dedication"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#basic_dogma">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#cleric_dedication"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#advanced_dogma">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#basic_dogma"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#divine_breadth">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#basic_cleric_spellcasting"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#expert_cleric_spellcasting">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#basic_cleric_spellcasting"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#master_cleric_spellcasting">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#expert_cleric_spellcasting"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#druid_dedication">
+  <rdf:type rdf:resource="#Feat"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#druid_archetype">
+  <rdf:type rdf:resource="#Archetype"/>
+  <has_selectable_feat rdf:resource="#druid_dedication"/>
+  <has_selectable_feat rdf:resource="#basic_druid_spellcasting"/>
+  <has_selectable_feat rdf:resource="#basic_wilding"/>
+  <has_selectable_feat rdf:resource="#order_spell"/>
+  <has_selectable_feat rdf:resource="#advanced_wilding"/>
+  <has_selectable_feat rdf:resource="#primal_breadth"/>
+  <has_selectable_feat rdf:resource="#expert_druid_spellcasting"/>
+  <has_selectable_feat rdf:resource="#master_druid_spellcasting"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#basic_druid_spellcasting">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#druid_dedication"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#basic_wilding">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#druid_dedication"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#order_spell">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#druid_dedication"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#advanced_wilding">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#basic_wilding"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#primal_breadth">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#basic_druid_spellcasting"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#expert_druid_spellcasting">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#basic_druid_spellcasting"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#master_druid_spellcasting">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#expert_druid_spellcasting"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#fighter_dedication">
+  <rdf:type rdf:resource="#Feat"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#fighter_archetype">
+  <rdf:type rdf:resource="#Archetype"/>
+  <has_selectable_feat rdf:resource="#fighter_dedication"/>
+  <has_selectable_feat rdf:resource="#basic_maneuver"/>
+  <has_selectable_feat rdf:resource="#fighter_resiliency"/>
+  <has_selectable_feat rdf:resource="#opportunist"/>
+  <has_selectable_feat rdf:resource="#advanced_maneuver"/>
+  <has_selectable_feat rdf:resource="#diverse_weapon_expert"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#basic_maneuver">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#fighter_dedication"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#fighter_resiliency">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#fighter_dedication"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#opportunist">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#fighter_dedication"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#advanced_maneuver">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#basic_maneuver"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#diverse_weapon_expert">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#fighter_dedication"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#monk_dedication">
+  <rdf:type rdf:resource="#Feat"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#monk_archetype">
+  <rdf:type rdf:resource="#Archetype"/>
+  <has_selectable_feat rdf:resource="#monk_dedication"/>
+  <has_selectable_feat rdf:resource="#basic_kata"/>
+  <has_selectable_feat rdf:resource="#monk_resiliency"/>
+  <has_selectable_feat rdf:resource="#advanced_kata"/>
+  <has_selectable_feat rdf:resource="#monk_moves"/>
+  <has_selectable_feat rdf:resource="#monk_s_flurry"/>
+  <has_selectable_feat rdf:resource="#perfection_s_path"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#basic_kata">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#monk_dedication"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#monk_resiliency">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#monk_dedication"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#advanced_kata">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#basic_kata"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#monk_moves">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#monk_dedication"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#monk_s_flurry">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#monk_dedication"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#perfection_s_path">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#monk_dedication"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ranger_dedication">
+  <rdf:type rdf:resource="#Feat"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ranger_archetype">
+  <rdf:type rdf:resource="#Archetype"/>
+  <has_selectable_feat rdf:resource="#ranger_dedication"/>
+  <has_selectable_feat rdf:resource="#basic_hunter_s_trick"/>
+  <has_selectable_feat rdf:resource="#ranger_resiliency"/>
+  <has_selectable_feat rdf:resource="#advanced_hunter_s_trick"/>
+  <has_selectable_feat rdf:resource="#master_spotter"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#basic_hunter_s_trick">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#ranger_dedication"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ranger_resiliency">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#ranger_dedication"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#advanced_hunter_s_trick">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#basic_hunter_s_trick"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#master_spotter">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#ranger_dedication"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rogue_dedication">
+  <rdf:type rdf:resource="#Feat"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rogue_archetype">
+  <rdf:type rdf:resource="#Archetype"/>
+  <has_selectable_feat rdf:resource="#rogue_dedication"/>
+  <has_selectable_feat rdf:resource="#basic_trickery"/>
+  <has_selectable_feat rdf:resource="#sneak_attacker"/>
+  <has_selectable_feat rdf:resource="#advanced_trickery"/>
+  <has_selectable_feat rdf:resource="#skill_mastery"/>
+  <has_selectable_feat rdf:resource="#uncanny_dodge"/>
+  <has_selectable_feat rdf:resource="#evasiveness"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#basic_trickery">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#rogue_dedication"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#sneak_attacker">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#rogue_dedication"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#advanced_trickery">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#basic_trickery"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#skill_mastery">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#rogue_dedication"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#uncanny_dodge">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#rogue_dedication"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#evasiveness">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#rogue_dedication"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#sorcerer_dedication">
+  <rdf:type rdf:resource="#Feat"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#sorcerer_archetype">
+  <rdf:type rdf:resource="#Archetype"/>
+  <has_selectable_feat rdf:resource="#sorcerer_dedication"/>
+  <has_selectable_feat rdf:resource="#basic_sorcerer_spellcasting"/>
+  <has_selectable_feat rdf:resource="#basic_blood_potency"/>
+  <has_selectable_feat rdf:resource="#basic_bloodline_spell"/>
+  <has_selectable_feat rdf:resource="#advanced_blood_potency"/>
+  <has_selectable_feat rdf:resource="#bloodline_breadth"/>
+  <has_selectable_feat rdf:resource="#expert_sorcerer_spellcasting"/>
+  <has_selectable_feat rdf:resource="#master_sorcerer_spellcasting"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#basic_sorcerer_spellcasting">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#sorcerer_dedication"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#basic_blood_potency">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#sorcerer_dedication"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#basic_bloodline_spell">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#sorcerer_dedication"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#advanced_blood_potency">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#basic_blood_potency"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#bloodline_breadth">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#basic_sorcerer_spellcasting"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#expert_sorcerer_spellcasting">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#basic_sorcerer_spellcasting"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#master_sorcerer_spellcasting">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#expert_sorcerer_spellcasting"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#wizard_dedication">
+  <rdf:type rdf:resource="#Feat"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#wizard_archetype">
+  <rdf:type rdf:resource="#Archetype"/>
+  <has_selectable_feat rdf:resource="#wizard_dedication"/>
+  <has_selectable_feat rdf:resource="#arcane_school_spell"/>
+  <has_selectable_feat rdf:resource="#basic_arcana"/>
+  <has_selectable_feat rdf:resource="#basic_wizard_spellcasting"/>
+  <has_selectable_feat rdf:resource="#advanced_arcana"/>
+  <has_selectable_feat rdf:resource="#arcane_breadth"/>
+  <has_selectable_feat rdf:resource="#expert_wizard_spellcasting"/>
+  <has_selectable_feat rdf:resource="#master_wizard_spellcasting"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#arcane_school_spell">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#wizard_dedication"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#basic_arcana">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#wizard_dedication"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#basic_wizard_spellcasting">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#wizard_dedication"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#advanced_arcana">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#basic_arcana"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#arcane_breadth">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#basic_wizard_spellcasting"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#expert_wizard_spellcasting">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#basic_wizard_spellcasting"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#master_wizard_spellcasting">
+  <rdf:type rdf:resource="#Feat"/>
+  <prereq rdf:resource="#expert_wizard_spellcasting"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18</level>
+</owl:NamedIndividual>
+
 <owl:NamedIndividual rdf:about="#art_ancestries_and_backgrounds">
   <rdf:type rdf:resource="#Art"/>
   <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://ibb.co/Vqqtsw5</sche:image>
@@ -8270,14 +8930,14 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
   <rdf:type rdf:resource="#Art"/>
   <depicts rdf:resource="#animal_instinct"/>
   <depicts rdf:resource="#barbarian"/>
-  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://ibb.co/4T6rGHy</sche:image>
+  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://i.ibb.co/WybJwL9/art-animal-rager.jpg</sche:image>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#art_fury_instinct">
   <rdf:type rdf:resource="#Art"/>
   <depicts rdf:resource="#fury_instinct"/>
   <depicts rdf:resource="#barbarian"/>
-  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://ibb.co/HKPsS0r</sche:image>
+  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://i.ibb.co/yNk19D8/art-fury-instinct.jpg</sche:image>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#art_bard_1">
@@ -8308,7 +8968,7 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 <owl:NamedIndividual rdf:about="#art_champion_1">
   <rdf:type rdf:resource="#Art"/>
   <depicts rdf:resource="#champion"/>
-  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://ibb.co/fDt4sRz</sche:image>
+  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://i.ibb.co/qJ9kvG3/art-champion.jpg</sche:image>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#art_champion_2">
@@ -8392,7 +9052,7 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
   <rdf:type rdf:resource="#Art"/>
   <depicts rdf:resource="#storm_order"/>
   <depicts rdf:resource="#druid"/>
-  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://ibb.co/8YKNmF1</sche:image>
+  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://i.ibb.co/Sfs56qF/art-storm-order.jpg</sche:image>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#art_druid_3">
@@ -8404,7 +9064,7 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 <owl:NamedIndividual rdf:about="#art_leaf_order">
   <rdf:type rdf:resource="#Art"/>
   <depicts rdf:resource="#druid"/>
-  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://ibb.co/FwNqqgD</sche:image>
+  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://i.ibb.co/T8pqqmg/art-leaf-order.jpg</sche:image>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#art_fighter_1">
@@ -8464,7 +9124,7 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 <owl:NamedIndividual rdf:about="#art_monk_4">
   <rdf:type rdf:resource="#Art"/>
   <depicts rdf:resource="#monk"/>
-  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://ibb.co/R954dkr</sche:image>
+  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://i.ibb.co/s2BJzdx/art-monk-4.jpg</sche:image>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#art_monk_5">
@@ -8495,7 +9155,7 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
   <rdf:type rdf:resource="#Art"/>
   <depicts rdf:resource="#outwit_edge"/>
   <depicts rdf:resource="#ranger"/>
-  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://ibb.co/FBxQnFq</sche:image>
+  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://i.ibb.co/NLV07Mn/art-outwit-edge.jpg</sche:image>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#art_flurry_edge">
@@ -8597,22 +9257,94 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
   <rdf:type rdf:resource="#Art"/>
   <depicts rdf:resource="#illusion_arcane_school"/>
   <depicts rdf:resource="#wizard"/>
-  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://ibb.co/VLF0Wbb</sche:image>
+  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://i.ibb.co/mRnrCdd/art-illusion-arcane-sschool.jpg</sche:image>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#art_animal_companions_and_familiars_1">
   <rdf:type rdf:resource="#Art"/>
-  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://ibb.co/N13YKvK</sche:image>
+  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://i.ibb.co/WD3Kfhf/animal-companions-and-familiars-1.jpg</sche:image>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#art_animal_companions_and_familiars_2">
   <rdf:type rdf:resource="#Art"/>
-  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://ibb.co/yY1m6gK</sche:image>
+  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://i.ibb.co/1d5YrRB/animal-companions-and-familiars-2.jpg</sche:image>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#art_animal_companions_and_familiars_3">
   <rdf:type rdf:resource="#Art"/>
   <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://cdnb.artstation.com/p/assets/images/images/020/126/389/large/giorgio-falconi-talking-bat.jpg?1566475283</sche:image>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#art_alchemist_archetype">
+  <rdf:type rdf:resource="#Art"/>
+  <depicts rdf:resource="#alchemist_archetype"/>
+  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://i.ibb.co/thmrqPt/alchemist-archetype.jpg</sche:image>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#art_barbarian_archetype">
+  <rdf:type rdf:resource="#Art"/>
+  <depicts rdf:resource="#barbarian_archetype"/>
+  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://i.ibb.co/c27m3P3/barbarian-archetype.jpg</sche:image>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#art_bard_archetype">
+  <rdf:type rdf:resource="#Art"/>
+  <depicts rdf:resource="#bard_archetype"/>
+  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://roll20.net/v2/images/pathfinder2/launch-character.png</sche:image>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#art_champion_archetype">
+  <rdf:type rdf:resource="#Art"/>
+  <depicts rdf:resource="#champion_archetype"/>
+  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://i.ibb.co/Gx2zYJF/champion-archetype.jpg</sche:image>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#art_cleric_archetype">
+  <rdf:type rdf:resource="#Art"/>
+  <depicts rdf:resource="#cleric_archetype"/>
+  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://i.ibb.co/Fw78nsQ/cleric-archetype.jpg</sche:image>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#art_druid_archetype">
+  <rdf:type rdf:resource="#Art"/>
+  <depicts rdf:resource="#druid_archetype"/>
+  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://i.ibb.co/p1hKPHw/druid-archetype.jpg</sche:image>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#art_fighter_archetype">
+  <rdf:type rdf:resource="#Art"/>
+  <depicts rdf:resource="#fighter_archetype"/>
+  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://i.pinimg.com/564x/2e/70/3e/2e703e690b7dc1a7925409516f159968.jpg</sche:image>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#art_monk_archetype">
+  <rdf:type rdf:resource="#Art"/>
+  <depicts rdf:resource="#monk_archetype"/>
+  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://pbs.twimg.com/media/FMC7_r5aAAA4qWG?format=webp&amp;name=900x900</sche:image>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#art_ranger_archetype">
+  <rdf:type rdf:resource="#Art"/>
+  <depicts rdf:resource="#ranger_archetype"/>
+  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://i.ibb.co/2vs0NdS/ranger-archetype.jpg</sche:image>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#art_rogue_archetype">
+  <rdf:type rdf:resource="#Art"/>
+  <depicts rdf:resource="#rogue_archetype"/>
+  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://i.ibb.co/7bYKc18/rogue-archetype.jpg</sche:image>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#art_sorcerer_archetype">
+  <rdf:type rdf:resource="#Art"/>
+  <depicts rdf:resource="#sorcerer_archetype"/>
+  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://i.ibb.co/YQVRXnd/sorcerer-archetype.jpg</sche:image>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#art_wizard_archetype">
+  <rdf:type rdf:resource="#Art"/>
+  <depicts rdf:resource="#wizard_archetype"/>
+  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://cdn.paizo.com/image/content/Blog/20190715-cast_500.jpeg</sche:image>
 </owl:NamedIndividual>
 
 

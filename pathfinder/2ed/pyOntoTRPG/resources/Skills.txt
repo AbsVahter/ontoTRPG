@@ -1,18 +1,18 @@
-name
-Acrobatics
-Arcana
-Athletics
-Crafting
-Deception
-Diplomacy
-Intimidation
-Lore
-Medicine
-Nature
-Occultism
-Performance
-Religion
-Society
-Stealth
-Survival
-Thievery
+name	key_ability
+Acrobatics	dexterity
+Arcana	intelligence
+Athletics	strength
+Crafting	intelligence
+Deception	charisma
+Diplomacy	charisma
+Intimidation	charisma
+Lore	intelligence
+Medicine	wisdom
+Nature	wisdom
+Occultism	intelligence
+Performance	charisma
+Religion	wisdom
+Society	intelligence
+Stealth	dexterity
+Survival	wisdom
+Thievery	dexterity

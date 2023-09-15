@@ -3,12 +3,35 @@ from owlready2 import *
 import main
 
 
+def fill_archetypes(pzo2101):
+    with pzo2101:
+        Feat = pzo2101.Feat
+
+        class Archetype(Feat):
+            comment = ("There are infinite possible character concepts, but you might find that the feats and skill "
+                       "choices from a single class aren’t sufficient to fully realize your character. Archetypes "
+                       "allow you to expand the scope of your character’s class.")
+
+        for index, row in main.iterrows("Archetypes"):
+            f = Feat(
+                name = main.prepare_name(row['feat']),
+                level = row['level'],
+                prereq = pzo2101.search(is_a = Feat, iri = main.iri_for_search(row['prereq']))
+                if not pd.isna(row['prereq']) else [],
+            )
+            arch = Archetype(
+                name = f"{main.prepare_name(row['name'])}_archetype",
+            )
+            arch.has_selectable_feat.append(f)
+
+
 def fill(pzo2101: Ontology):
     fill_class_props(pzo2101)
     fill_weapon(pzo2101)
     fill_armor(pzo2101)
     fill_feats(pzo2101)
     fill_specializations(pzo2101)
+    fill_archetypes(pzo2101)
 
 
 def fill_class_props(pzo2101: Ontology):
@@ -16,12 +39,12 @@ def fill_class_props(pzo2101: Ontology):
         Gameclass = pzo2101.Gameclass
 
         Gameclass.comment.append("Just as your character’s ancestry plays a key role in expressing their identity and "
-                   "worldview, their class indicates the training they have and will improve upon as an "
-                   "adventurer. Choosing your character’s class is perhaps the most important decision you will "
-                   "make for them. Groups of players often create characters whose skills and abilities "
-                   "complement each other mechanically—for example, ensuring your party includes a healer, "
-                   "a combatoriented character, a stealthy character, and someone with command over magic—so you "
-                   "may wish to discuss options with your group before deciding.")
+                                 "worldview, their class indicates the training they have and will improve upon as an "
+                                 "adventurer. Choosing your character’s class is perhaps the most important decision you will "
+                                 "make for them. Groups of players often create characters whose skills and abilities "
+                                 "complement each other mechanically—for example, ensuring your party includes a healer, "
+                                 "a combatoriented character, a stealthy character, and someone with command over magic—so you "
+                                 "may wish to discuss options with your group before deciding.")
 
         trained = pzo2101.trained
         for k in [pzo2101.perception, pzo2101.fortitude, pzo2101.reflex, pzo2101.will]:
@@ -37,11 +60,11 @@ def fill_class_props(pzo2101: Ontology):
                                  for x in row['boost'].split(",")],
                 hp = int(row['hp']),
                 experted = [pzo2101.search(is_a = pzo2101.Characteristic,
-                                            iri = main.iri_for_search(x)).first()
-                             for x in row['expert'].split(",")],
+                                           iri = main.iri_for_search(x)).first()
+                            for x in row['expert'].split(",")],
                 trained = [pzo2101.search(is_a = pzo2101.Skill,
-                                            iri = main.iri_for_search(x)).first()
-                              for x in skills],
+                                          iri = main.iri_for_search(x)).first()
+                           for x in skills],
                 additional_skills = row['additional_skills'],
             )
             if "," in row['boost']:
