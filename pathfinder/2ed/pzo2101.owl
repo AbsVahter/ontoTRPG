@@ -64,7 +64,7 @@
 
 <owl:ObjectProperty rdf:about="#prereq">
   <rdfs:domain rdf:resource="#Feat"/>
-  <rdfs:range rdf:resource="#Feat"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#experted">
@@ -119,6 +119,11 @@
   <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
 </owl:DatatypeProperty>
 
+<owl:DatatypeProperty rdf:about="#prereq_details">
+  <rdfs:domain rdf:resource="#Feat"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
 <owl:DatatypeProperty rdf:about="#additional_skills">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Gameclass"/>
@@ -156,6 +161,7 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 
 <owl:Class rdf:about="#Feat">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">All kinds of experiences and training can shape your character beyond what you learn by advancing in your class. Abilities that require a degree of training but can be learned by anyone—not only members of certain ancestries or classes—are called general feats.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#Character_backbone_feat">
@@ -306,8 +312,12 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">While your character’s ability scores represent their raw talent and potential, skills represent their training and experience at performing certain tasks. Each skill is keyed to one of your character’s ability scores and used for an array of related actions. Your character’s expertise in a skill comes from several sources, including their background and class.</rdfs:comment>
 </owl:Class>
 
-<owl:Class rdf:about="#Skill_feat">
+<owl:Class rdf:about="#General_feat">
   <rdfs:subClassOf rdf:resource="#Feat"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Skill_feat">
+  <rdfs:subClassOf rdf:resource="#General_feat"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Language">
@@ -1287,396 +1297,821 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
   </rdf:type>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#assurance">
+<owl:NamedIndividual rdf:about="#additional_lore">
   <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#lore"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Lore</prereq_details>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#dubious_knowledge">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#quick_identification">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#recognize_spell">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#skill_training">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#trick_magic_item">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#automatic_knowledge">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#magical_shorthand">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#quick_recognition">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#cat_fall">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#quick_squeeze">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#steady_balance">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#nimble_crawl">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#kip_up">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#arcane_sense">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#unified_theory">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#combat_climber">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#hefty_hauler">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#quick_jump">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#titan_wrestler">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#underwater_marauder">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#powerful_leap">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#rapid_mantel">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#quick_climb">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#quick_swim">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#wall_jump">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#cloud_jump">
-  <rdf:type rdf:resource="#Skill_feat"/>
+<owl:NamedIndividual rdf:about="#adopted_ancestry">
+  <rdf:type rdf:resource="#General_feat"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#alchemical_crafting">
   <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#crafting"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Crafting</prereq_details>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#quick_repair">
+<owl:NamedIndividual rdf:about="#arcane_sense">
   <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#arcana"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Arcana</prereq_details>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#snare_crafting">
-  <rdf:type rdf:resource="#Skill_feat"/>
+<owl:NamedIndividual rdf:about="#armor_proficiency">
+  <rdf:type rdf:resource="#General_feat"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#specialty_crafting">
+<owl:NamedIndividual rdf:about="#assurance">
   <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#magical_crafting">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#impeccable_crafting">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#inventor">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#craft_anything">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#charming_liar">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#lengthy_diversion">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#lie_to_me">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#confabulator">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#quick_disguise">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#slippery_secrets">
-  <rdf:type rdf:resource="#Skill_feat"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in at least one skill</prereq_details>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#bargain_hunter">
   <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#group_impression">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#hobnobber">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#glad_hand">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#shameless_request">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#legendary_negotiation">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#group_coercion">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#intimidating_glare">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#quick_coercion">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#intimidating_prowess">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#lasting_coercion">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#battle_cry">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#terrified_retreat">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#scare_to_death">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#additional_lore">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#experienced_professional">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#unmistakable_lore">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#legendary_professional">
-  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#diplomacy"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Diplomacy</prereq_details>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#battle_medicine">
   <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#medicine"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Medicine</prereq_details>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#continual_recovery">
-  <rdf:type rdf:resource="#Skill_feat"/>
+<owl:NamedIndividual rdf:about="#breath_control">
+  <rdf:type rdf:resource="#General_feat"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#robust_recovery">
-  <rdf:type rdf:resource="#Skill_feat"/>
+<owl:NamedIndividual rdf:about="#canny_acumen">
+  <rdf:type rdf:resource="#General_feat"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#ward_medic">
+<owl:NamedIndividual rdf:about="#cat_fall">
   <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#acrobatics"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Acrobatics</prereq_details>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#legendary_medic">
+<owl:NamedIndividual rdf:about="#charming_liar">
   <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#deception"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Deception</prereq_details>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#natural_medicine">
+<owl:NamedIndividual rdf:about="#combat_climber">
   <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#train_animal">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#bonded_animal">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#oddity_identification">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#bizarre_magic">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#fascinating_performance">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#impressive_performance">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#virtuosic_performer">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#legendary_performer">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#student_of_the_canon">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#divine_guidance">
-  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#athletics"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Athletics</prereq_details>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#courtly_graces">
   <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#society"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Society</prereq_details>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#multilingual">
-  <rdf:type rdf:resource="#Skill_feat"/>
+<owl:NamedIndividual rdf:about="#diehard">
+  <rdf:type rdf:resource="#General_feat"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#read_lips">
+<owl:NamedIndividual rdf:about="#dubious_knowledge">
   <rdf:type rdf:resource="#Skill_feat"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Recall Knowledge skill</prereq_details>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#sign_language">
+<owl:NamedIndividual rdf:about="#experienced_professional">
   <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#streetwise">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#connections">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#legendary_codebreaker">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#legendary_linguist">
-  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#lore"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Lore</prereq_details>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#experienced_smuggler">
   <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#terrain_stalker">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#quiet_allies">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#foil_senses">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#swift_sneak">
-  <rdf:type rdf:resource="#Skill_feat"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#legendary_sneak">
-  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#stealth"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Stealth</prereq_details>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#experienced_tracker">
   <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#survival"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Survival</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#fascinating_performance">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#performance"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Performance</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#fast_recovery">
+  <rdf:type rdf:resource="#General_feat"/>
+  <prereq rdf:resource="#constitution"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Constitution 14</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#feather_step">
+  <rdf:type rdf:resource="#General_feat"/>
+  <prereq rdf:resource="#dexterity"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dexterity 14</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#fleet">
+  <rdf:type rdf:resource="#General_feat"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#forager">
   <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#survival"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Survival</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#group_coercion">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#intimidation"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Intimidation</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#group_impression">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#diplomacy"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Diplomacy</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#hefty_hauler">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#athletics"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Athletics</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#hobnobber">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#diplomacy"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Diplomacy</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#impressive_performance">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#performance"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Performance</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#incredible_initiative">
+  <rdf:type rdf:resource="#General_feat"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#intimidating_glare">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#intimidation"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Intimidation</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#lengthy_diversion">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#deception"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Deception</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#lie_to_me">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#deception"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Deception</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#multilingual">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#society"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Society</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#natural_medicine">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#nature"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Nature</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#oddity_identification">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#occultism"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Occultism</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#pickpocket">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#thievery"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Thievery</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#quick_coercion">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#intimidation"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Intimidation</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#quick_identification">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#arcana"/>
+  <prereq rdf:resource="#nature"/>
+  <prereq rdf:resource="#occultism"/>
+  <prereq rdf:resource="#religion"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Arcana, Nature, Occultism, or Religion</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#quick_jump">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#athletics"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Athletics</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#quick_repair">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#crafting"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Crafting</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#quick_squeeze">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#acrobatics"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Acrobatics</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#read_lips">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#society"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Society</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#recognize_spell">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#arcana"/>
+  <prereq rdf:resource="#nature"/>
+  <prereq rdf:resource="#occultism"/>
+  <prereq rdf:resource="#religion"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Arcana, Nature, Occultism, or Religion</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ride">
+  <rdf:type rdf:resource="#General_feat"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#shield_block">
+  <rdf:type rdf:resource="#General_feat"/>
+  <feat_of rdf:resource="#champion"/>
+  <feat_of rdf:resource="#druid"/>
+  <feat_of rdf:resource="#fighter"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#sign_language">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#society"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Society</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#skill_training">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#intelligence"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Intelligence 12</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#snare_crafting">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#crafting"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Crafting</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#specialty_crafting">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#crafting"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Crafting</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#steady_balance">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#acrobatics"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Acrobatics</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#streetwise">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#society"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Society</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#student_of_the_canon">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#religion"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Religion</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#subtle_theft">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#thievery"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Thievery</prereq_details>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#survey_wildlife">
   <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#survival"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Survival</prereq_details>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#terrain_expertise">
   <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#survival"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Survival</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#terrain_stalker">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#stealth"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Stealth</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#titan_wrestler">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#athletics"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Athletics</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#toughness">
+  <rdf:type rdf:resource="#General_feat"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#train_animal">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#nature"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Nature</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#trick_magic_item">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#arcana"/>
+  <prereq rdf:resource="#nature"/>
+  <prereq rdf:resource="#occultism"/>
+  <prereq rdf:resource="#religion"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Arcana, Nature, Occultism, or Religion</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#underwater_marauder">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#athletics"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Athletics</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#virtuosic_performer">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#performance"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in Performance</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#weapon_proficiency">
+  <rdf:type rdf:resource="#General_feat"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#automatic_knowledge">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#assurance"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Expert in Recall Knowledge action, Assurance in the relevant skill</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#bonded_animal">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#nature"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Expert in Nature</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#confabulator">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#deception"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Expert in Deception</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#connections">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#society"/>
+  <prereq rdf:resource="#courtly_graces"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Expert in Society, Courtly Graces</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#continual_recovery">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#medicine"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Expert in Medicine</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#glad_hand">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#diplomacy"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Expert in Diplomacy</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#intimidating_prowess">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#strength"/>
+  <prereq rdf:resource="#intimidation"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Strength 16, expert in Intimidation</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#lasting_coercion">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#intimidation"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Expert in Intimidation</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#magical_crafting">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#crafting"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Expert in Crafting</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#magical_shorthand">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#arcana"/>
+  <prereq rdf:resource="#nature"/>
+  <prereq rdf:resource="#occultism"/>
+  <prereq rdf:resource="#religion"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Expert in Arcana, Nature, Occultism, or Religion</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#nimble_crawl">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#acrobatics"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Expert in Acrobatics</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#powerful_leap">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#athletics"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Expert in Athletics</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#quick_disguise">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#deception"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Expert in Deception</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#quiet_allies">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#stealth"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Expert in Stealth</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rapid_mantel">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#athletics"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Expert in Athletics</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#robust_recovery">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#medicine"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Expert in Medicine</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#unmistakable_lore">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#lore"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Expert in Lore</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ward_medic">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#medicine"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Expert in Medicine</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#wary_disarmament">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#thievery"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Expert in Thievery</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ancestral_paragon">
+  <rdf:type rdf:resource="#General_feat"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#untrained_improvisation">
+  <rdf:type rdf:resource="#General_feat"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</level>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#battle_cry">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#intimidation"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Master in Intimidation</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#bizarre_magic">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#occultism"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Master in Occultism</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#expeditious_search">
+  <rdf:type rdf:resource="#General_feat"/>
+  <prereq rdf:resource="#perception"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Master Perception</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#foil_senses">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#stealth"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Master in Stealth</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#impeccable_crafting">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#crafting"/>
+  <prereq rdf:resource="#specialty_crafting"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Master in Crafting, Specialty Crafting</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#inventor">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#crafting"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Master in Crafting</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#kip_up">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#acrobatics"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Master in Acrobatics</prereq_details>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#planar_survival">
   <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#survival"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Master in Survival</prereq_details>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#legendary_survivalist">
+<owl:NamedIndividual rdf:about="#quick_climb">
   <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#athletics"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Master in Athletics</prereq_details>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#pickpocket_subtle_theft_wary_disarmament">
+<owl:NamedIndividual rdf:about="#quick_recognition">
   <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#arcana"/>
+  <prereq rdf:resource="#nature"/>
+  <prereq rdf:resource="#occultism"/>
+  <prereq rdf:resource="#religion"/>
+  <prereq rdf:resource="#recognize_spell"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Master in Arcana, Nature, Occultism, or Religion</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#quick_swim">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#athletics"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Master in Athletics</prereq_details>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#quick_unlock">
   <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#thievery"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Master in Thievery</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#shameless_request">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#diplomacy"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Master in Diplomacy</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#slippery_secrets">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#deception"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Master in Deception</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#swift_sneak">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#stealth"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Master in Stealth</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#terrified_retreat">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#intimidation"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Master in Intimidation</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#wall_jump">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#athletics"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Master in Athletics</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#incredible_investiture">
+  <rdf:type rdf:resource="#General_feat"/>
+  <prereq rdf:resource="#charisma"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">11</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Charisma 16</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#cloud_jump">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#athletics"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Legendary in Athletics</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#craft_anything">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#crafting"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Legendary in Crafting</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#divine_guidance">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#religion"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Legendary in Religion</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#legendary_codebreaker">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#society"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Legendary in Society</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#legendary_linguist">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#society"/>
+  <prereq rdf:resource="#multilingual"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Legendary in Society, Multilingual</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#legendary_medic">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#medicine"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Legendary in Medicine</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#legendary_negotiation">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#diplomacy"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Legendary in Diplomacy</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#legendary_performer">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#performance"/>
+  <prereq rdf:resource="#virtuosic_performer"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Legendary in Performance, Virtuosic Performer</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#legendary_professional">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#lore"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Legendary in Lore</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#legendary_sneak">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#stealth"/>
+  <prereq rdf:resource="#swift_sneak"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Legendary in Stealth, Swift Sneak</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#legendary_survivalist">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#survival"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Legendary in Survival</prereq_details>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#legendary_thief">
   <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#thievery"/>
+  <prereq rdf:resource="#pickpocket"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Legendary in Thievery, Pickpocket</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#scare_to_death">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#intimidation"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Legendary in Intimidation</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#unified_theory">
+  <rdf:type rdf:resource="#Skill_feat"/>
+  <prereq rdf:resource="#arcana"/>
+  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</level>
+  <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Legendary in Arcana</prereq_details>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#common_language">
@@ -3164,9 +3599,9 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
   <ability_boost rdf:resource="#wisdom"/>
   <trained rdf:resource="#arcana"/>
   <has_feat rdf:resource="#assurance"/>
-  <trained rdf:resource="#nature"/>
-  <trained rdf:resource="#occultism"/>
   <trained rdf:resource="#religion"/>
+  <trained rdf:resource="#occultism"/>
+  <trained rdf:resource="#nature"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You have a knack for learning, and sequestered yourself from the outside world to learn all you could. You read about so many wondrous places and things in your books, and always dreamed about one day seeing the real things. Eventually, that curiosity led you to leave your studies and become an adventurer.</rdfs:comment>
   <lore_speciality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the Academia Lore skill</lore_speciality>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You’re trained in your choice of the Arcana, Nature, Occultism, or Religion skill, and gain the Assurance skill feat in your chosen skill.</rdfs:comment>
@@ -3187,6 +3622,7 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
   <ability_boost rdf:resource="#dexterity"/>
   <ability_boost rdf:resource="#constitution"/>
   <trained rdf:resource="#thievery"/>
+  <has_feat rdf:resource="#pickpocket"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You eked out a living by picking pockets on the streets of a major city, never knowing where you’d find your next meal. While some folk adventure for the glory, you do so to survive.</rdfs:comment>
   <lore_speciality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a Lore skill for the city you lived in as a street urchin (such as Absalom Lore or Magnimar Lore)</lore_speciality>
 </owl:NamedIndividual>
@@ -5169,14 +5605,6 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 <owl:NamedIndividual rdf:about="#devotion_spells">
   <rdf:type rdf:resource="#Feat"/>
   <feat_of rdf:resource="#champion"/>
-  <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#shield_block">
-  <rdf:type rdf:resource="#Feat"/>
-  <feat_of rdf:resource="#champion"/>
-  <feat_of rdf:resource="#druid"/>
-  <feat_of rdf:resource="#fighter"/>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
 </owl:NamedIndividual>
 
@@ -9892,6 +10320,26 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 <owl:NamedIndividual rdf:about="#art_skills_3">
   <rdf:type rdf:resource="#Art"/>
   <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://legendary-digital-network-assets.s3.amazonaws.com/geekandsundry/wp-content/uploads/2019/11/Pathfinder-Skills-Image-1.png</sche:image>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#art_feats_1">
+  <rdf:type rdf:resource="#Art"/>
+  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://cdn.paizo.com/image/content/Blog/20190702-walljump_500.jpeg</sche:image>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#art_feats_2">
+  <rdf:type rdf:resource="#Art"/>
+  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://i0.wp.com/www.teilzeithelden.de/wp-content/uploads/2019/08/C-2.png?ssl=1</sche:image>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#art_feats_3">
+  <rdf:type rdf:resource="#Art"/>
+  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://i.ibb.co/swLxJ04/feat-3.jpg</sche:image>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#art_feats_4">
+  <rdf:type rdf:resource="#Art"/>
+  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://black-book-editions.fr/contenu/image/Tony/PZO2101--underwater-marauder.jpg</sche:image>
 </owl:NamedIndividual>
 
 

@@ -79,3 +79,7 @@ wizard_archetype	https://cdn.paizo.com/image/content/Blog/20190715-cast_500.jpeg
 skills_1	https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSw3Z408ZNRe_wZx7k0fFsdHeksY-eEcDPJbQiljd1JEQYlewEU	
 skills_2	https://legendary-digital-network-assets.s3.amazonaws.com/geekandsundry/wp-content/uploads/2019/11/Pathfinder-Skills-Image-2.png	
 skills_3	https://legendary-digital-network-assets.s3.amazonaws.com/geekandsundry/wp-content/uploads/2019/11/Pathfinder-Skills-Image-1.png	
+feats_1	https://cdn.paizo.com/image/content/Blog/20190702-walljump_500.jpeg	
+feats_2	https://i0.wp.com/www.teilzeithelden.de/wp-content/uploads/2019/08/C-2.png?ssl=1	
+feats_3	https://i.ibb.co/swLxJ04/feat-3.jpg	
+feats_4	https://black-book-editions.fr/contenu/image/Tony/PZO2101--underwater-marauder.jpg	

@@ -1,0 +1,118 @@
+name	level	is_skill_feat	prereq_details	prereq
+Additional Lore	1	1	Trained in Lore	Lore
+Adopted Ancestry	1	0		
+Alchemical Crafting	1	1	Trained in Crafting	Crafting
+Arcane Sense	1	1	Trained in Arcana	Arcana
+Armor Proficiency	1	0		
+Assurance	1	1	Trained in at least one skill	
+Bargain Hunter	1	1	Trained in Diplomacy	Diplomacy
+Battle Medicine	1	1	Trained in Medicine	Medicine
+Breath Control	1	0		
+Canny Acumen	1	0		
+Cat Fall	1	1	Trained in Acrobatics	Acrobatics
+Charming Liar	1	1	Trained in Deception	Deception
+Combat Climber	1	1	Trained in Athletics	Athletics
+Courtly Graces	1	1	Trained in Society	Society
+Diehard	1	0		
+Dubious Knowledge	1	1	Trained in Recall Knowledge skill	
+Experienced Professional	1	1	Trained in Lore	Lore
+Experienced Smuggler	1	1	Trained in Stealth	Stealth
+Experienced Tracker	1	1	Trained in Survival	Survival
+Fascinating Performance	1	1	Trained in Performance	Performance
+Fast Recovery	1	0	Constitution 14	Constitution
+Feather Step	1	0	Dexterity 14	Dexterity
+Fleet	1	0		
+Forager	1	1	Trained in Survival	Survival
+Group Coercion	1	1	Trained in Intimidation	Intimidation
+Group Impression	1	1	Trained in Diplomacy	Diplomacy
+Hefty Hauler	1	1	Trained in Athletics	Athletics
+Hobnobber	1	1	Trained in Diplomacy	Diplomacy
+Impressive Performance	1	1	Trained in Performance	Performance
+Incredible Initiative	1	0		
+Intimidating Glare	1	1	Trained in Intimidation	Intimidation
+Lengthy Diversion	1	1	Trained in Deception	Deception
+Lie to Me	1	1	Trained in Deception	Deception
+Multilingual	1	1	Trained in Society	Society
+Natural Medicine	1	1	Trained in Nature	Nature
+Oddity Identification	1	1	Trained in Occultism	Occultism
+Pickpocket	1	1	Trained in Thievery	Thievery
+Quick Coercion	1	1	Trained in Intimidation	Intimidation
+Quick Identification	1	1	Trained in Arcana, Nature, Occultism, or Religion	Arcana, Nature, Occultism, Religion
+Quick Jump	1	1	Trained in Athletics	Athletics
+Quick Repair	1	1	Trained in Crafting	Crafting
+Quick Squeeze	1	1	Trained in Acrobatics	Acrobatics
+Read Lips	1	1	Trained in Society	Society
+Recognize Spell	1	1	Trained in Arcana, Nature, Occultism, or Religion	Arcana, Nature, Occultism, Religion
+Ride	1	0		
+Shield Block	1	0		
+Sign Language	1	1	Trained in Society	Society
+Skill Training	1	1	Intelligence 12	Intelligence
+Snare Crafting	1	1	Trained in Crafting	Crafting
+Specialty Crafting	1	1	Trained in Crafting	Crafting
+Steady Balance	1	1	Trained in Acrobatics	Acrobatics
+Streetwise	1	1	Trained in Society	Society
+Student of the Canon	1	1	Trained in Religion	Religion
+Subtle Theft	1	1	Trained in Thievery	Thievery
+Survey Wildlife	1	1	Trained in Survival	Survival
+Terrain Expertise	1	1	Trained in Survival	Survival
+Terrain Stalker	1	1	Trained in Stealth	Stealth
+Titan Wrestler	1	1	Trained in Athletics	Athletics
+Toughness	1	0		
+Train Animal	1	1	Trained in Nature	Nature
+Trick Magic Item	1	1	Trained in Arcana, Nature, Occultism, or Religion	Arcana, Nature, Occultism, Religion
+Underwater Marauder	1	1	Trained in Athletics	Athletics
+Virtuosic Performer	1	1	Trained in Performance	Performance
+Weapon Proficiency	1	0		
+Automatic Knowledge	2	1	Expert in Recall Knowledge action, Assurance in the relevant skill	Assurance
+Bonded Animal	2	1	Expert in Nature	Nature
+Confabulator	2	1	Expert in Deception	Deception
+Connections	2	1	Expert in Society, Courtly Graces	Society, Courtly Graces
+Continual Recovery	2	1	Expert in Medicine	Medicine
+Glad-Hand	2	1	Expert in Diplomacy	Diplomacy
+Intimidating Prowess	2	1	Strength 16, expert in Intimidation	Strength, Intimidation
+Lasting Coercion	2	1	Expert in Intimidation	Intimidation
+Magical Crafting	2	1	Expert in Crafting	Crafting
+Magical Shorthand	2	1	Expert in Arcana, Nature, Occultism, or Religion	Arcana, Nature, Occultism, Religion
+Nimble Crawl	2	1	Expert in Acrobatics	Acrobatics
+Powerful Leap	2	1	Expert in Athletics	Athletics
+Quick Disguise	2	1	Expert in Deception	Deception
+Quiet Allies	2	1	Expert in Stealth	Stealth
+Rapid Mantel	2	1	Expert in Athletics	Athletics
+Robust Recovery	2	1	Expert in Medicine	Medicine
+Unmistakable Lore	2	1	Expert in Lore	Lore
+Ward Medic	2	1	Expert in Medicine	Medicine
+Wary Disarmament	2	1	Expert in Thievery	Thievery
+Ancestral Paragon	3	0		
+Untrained Improvisation	3	0		
+Battle Cry	7	1	Master in Intimidation	Intimidation
+Bizarre Magic	7	1	Master in Occultism	Occultism
+Expeditious Search	7	0	Master Perception	Perception
+Foil Senses	7	1	Master in Stealth	Stealth
+Impeccable Crafting	7	1	Master in Crafting, Specialty Crafting	Crafting, Specialty Crafting
+Inventor	7	1	Master in Crafting	Crafting
+Kip Up	7	1	Master in Acrobatics	Acrobatics
+Planar Survival	7	1	Master in Survival	Survival
+Quick Climb	7	1	Master in Athletics	Athletics
+Quick Recognition	7	1	Master in Arcana, Nature, Occultism, or Religion	Arcana, Nature, Occultism, Religion,Recognize Spell
+Quick Swim	7	1	Master in Athletics	Athletics
+Quick Unlock	7	1	Master in Thievery	Thievery
+Shameless Request	7	1	Master in Diplomacy	Diplomacy
+Slippery Secrets	7	1	Master in Deception	Deception
+Swift Sneak	7	1	Master in Stealth	Stealth
+Terrified Retreat	7	1	Master in Intimidation	Intimidation
+Wall Jump	7	1	Master in Athletics	Athletics
+Incredible Investiture	11	0	Charisma 16	Charisma
+Cloud Jump	15	1	Legendary in Athletics	Athletics
+Craft Anything	15	1	Legendary in Crafting	Crafting
+Divine Guidance	15	1	Legendary in Religion	Religion
+Legendary Codebreaker	15	1	Legendary in Society	Society
+Legendary Linguist	15	1	Legendary in Society, Multilingual	Society, Multilingual
+Legendary Medic	15	1	Legendary in Medicine	Medicine
+Legendary Negotiation	15	1	Legendary in Diplomacy	Diplomacy
+Legendary Performer	15	1	Legendary in Performance, Virtuosic Performer	Performance, Virtuosic Performer
+Legendary Professional	15	1	Legendary in Lore	Lore
+Legendary Sneak	15	1	Legendary in Stealth, Swift Sneak	Stealth, Swift Sneak
+Legendary Survivalist	15	1	Legendary in Survival	Survival
+Legendary Thief	15	1	Legendary in Thievery, Pickpocket	Thievery, Pickpocket
+Scare to Death	15	1	Legendary in Intimidation	Intimidation
+Unified Theory	15	1	Legendary in Arcana	Arcana

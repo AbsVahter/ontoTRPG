@@ -32,7 +32,7 @@ if __name__ == '__main__':
 '''
 
 def prepare_name(s):
-    return re.sub('\W+', '_', s.lower())
+    return re.sub('\W+', '_', s.lower().strip())
 
 
 def iri_for_search(s):

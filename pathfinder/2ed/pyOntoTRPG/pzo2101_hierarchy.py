@@ -4,7 +4,10 @@ from owlready2 import *
 def create(pzo2101: Ontology):
     with pzo2101:
         class relates_to(Thing >> Thing, SymmetricProperty): pass
-        class Feat(Thing): pass
+        class Feat(Thing):
+            comment = ("All kinds of experiences and training can shape your character beyond what you learn by "
+                       "advancing in your class. Abilities that require a degree of training but can be learned by "
+                       "anyone—not only members of certain ancestries or classes—are called general feats.")
 
         class has_feat(Feat >> Feat): class_property_type = ["some"]
 
@@ -50,7 +53,8 @@ def create(pzo2101: Ontology):
 
         class Heritage(Feat): pass
 
-        class prereq(Feat >> Feat): pass
+        class prereq(Feat >> Thing): pass
+        class prereq_details(Feat >> str): pass
 
         class Gameclass(Character_backbone_feat): pass
 
