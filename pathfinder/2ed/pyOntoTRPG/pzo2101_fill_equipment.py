@@ -10,7 +10,7 @@ def fill(pzo2101: Ontology):
 
 def fill_weapon(pzo2101: Ontology):
     with pzo2101:
-        class Weapon(pzo2101.Equipment, pzo2101.With_proficiency_rank): pass
+        class Weapon(pzo2101.Equipment): pass
 
         class Weapon_by_complexity(Weapon): pass
         class Weapon_by_commonness(Weapon): pass
@@ -28,7 +28,7 @@ def fill_weapon(pzo2101: Ontology):
 
 def fill_armor(pzo2101: Ontology):
     with pzo2101:
-        class Armor(pzo2101.Equipment, pzo2101.With_proficiency_rank): pass
+        class Armor(pzo2101.Equipment): pass
 
         for index, row in main.iterrows("Armors"):
             cl = pzo2101.search(is_a = Armor, iri = main.iri_for_search(row['class'])).first()

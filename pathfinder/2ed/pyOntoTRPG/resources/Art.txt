@@ -76,3 +76,6 @@ ranger_archetype	https://i.ibb.co/2vs0NdS/ranger-archetype.jpg	ranger_archetype
 rogue_archetype	https://i.ibb.co/7bYKc18/rogue-archetype.jpg	rogue_archetype
 sorcerer_archetype	https://i.ibb.co/YQVRXnd/sorcerer-archetype.jpg	sorcerer_archetype
 wizard_archetype	https://cdn.paizo.com/image/content/Blog/20190715-cast_500.jpeg	wizard_archetype
+skills_1	https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSw3Z408ZNRe_wZx7k0fFsdHeksY-eEcDPJbQiljd1JEQYlewEU	
+skills_2	https://legendary-digital-network-assets.s3.amazonaws.com/geekandsundry/wp-content/uploads/2019/11/Pathfinder-Skills-Image-2.png	
+skills_3	https://legendary-digital-network-assets.s3.amazonaws.com/geekandsundry/wp-content/uploads/2019/11/Pathfinder-Skills-Image-1.png	

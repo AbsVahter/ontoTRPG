@@ -1,0 +1,50 @@
+name	traits	comment
+Decipher Writing	CONCENTRATE EXPLORATION SECRET	You attempt to decipher complicated writing or literature on an obscure topic.
+EARN INCOME	DOWNTIME	You use one of your skills to make money during downtime.
+IDENTIFY MAGIC	CONCENTRATE EXPLORATION SECRET	Once you discover that an item, location, or ongoing effect is magical, you can spend 10 minutes to try to identify the particulars of its magic.
+LEARN A SPELL	CONCENTRATE EXPLORATION	You can gain access to a new spell of your tradition from someone who knows that spell or from magical writing like a spellbook or scroll.
+RECALL KNOWLEDGE	CONCENTRATE SECRET	The following skills can be used to Recall Knowledge, getting information about the listed topics.
+SUBSIST	DOWNTIME	You try to provide food and shelter for yourself, and possibly others as well, with a standard of living.
+BALANCE	MOVE	You move across a narrow surface or uneven ground.
+TUMBLE THROUGH	MOVE	You Stride up to your Speed. During this movement, you can try to move through the space of one enemy.
+MANEUVER IN FLIGHT	MOVE	You try a difficult maneuver while flying.
+SQUEEZE	EXPLORATION MOVE	You contort yourself to squeeze through a space so small you can barely fit through.
+BORROW AN ARCANE SPELL	CONCENTRATE EXPLORATION	If you’re an arcane spellcaster who prepares from a spellbook, you can attempt to prepare a spell from someone else’s spellbook.
+CLIMB	MOVE	You move up, down, or across an incline.
+FORCE OPEN	ATTACK	Using your body, a lever, or some other tool, you attempt to forcefully open a door, window, container or heavy gate. With a high enough result, you can even smash through walls.
+GRAPPLE	ATTACK	You attempt to grab a creature or object with your free hand.
+HIGH JUMP	MOVE	You Stride, then make a vertical Leap.
+LONG JUMP	MOVE	You Stride, then make a horizontal Leap.
+SHOVE	ATTACK	You push a creature away from you.
+SWIM	MOVE	You propel yourself through water.
+TRIP	ATTACK	You try to knock a creature to the ground.
+DISARM	ATTACK	You try to knock something out of a creature’s grasp.
+REPAIR	EXPLORATION MANIPULATE	You spend 10 minutes attempting to fix a damaged item, placing the item on a stable surface and using the repair kit with both hands.
+CRAFT	DOWNTIME MANIPULATE	You can make an item from raw materials.
+IDENTIFY ALCHEMY	CONCENTRATE EXPLORATION SECRET	You can identify the nature of an alchemical item with 10 minutes of testing using alchemist’s tools.
+CREATE A DIVERSION	MENTAL	With a gesture, a trick, or some distracting words, you can create a diversion that draws creatures’ attention elsewhere.
+IMPERSONATE	CONCENTRATE EXPLORATION MANIPULATE SECRET	You create a disguise to pass yourself off as someone or something you are not.
+LIE	AUDITORY CONCENTRATE LINGUISTIC MENTAL SECRET	You try to fool someone with an untruth.
+FEINT	MENTAL	With a misleading flourish, you leave an opponent unprepared for your real attack.
+GATHER INFORMATION	EXPLORATION SECRET	You canvass local markets, taverns, and gathering places in an attempt to learn about a specific individual or topic.
+MAKE AN IMPRESSION	AUDITORY CONCENTRATE EXPLORATION LINGUISTIC MENTAL	With at least 1 minute of conversation, during which you engage in charismatic overtures, flattery, and other acts of goodwill, you seek to make a good impression on someone to make them temporarily agreeable.
+REQUEST	AUDITORY CONCENTRATE LINGUISTIC MENTAL	You can make a request of a creature that’s friendly or helpful to you. You must couch the request in terms that the target would accept given their current attitude toward you.
+COERCE	AUDITORY CONCENTRATE EMOTION EXPLORATION LINGUISTIC MENTAL	With threats either veiled or overt, you attempt to bully a creature into doing what you want. You must spend at least 1 minute of conversation with a creature you can see and that can either see or sense you.
+DEMORALIZE	AUDITORY CONCENTRATE EMOTION FEAR MENTAL	With a sudden shout, a well-timed taunt, or a cutting putdown, you can shake an enemy’s resolve.
+ADMINISTER FIRST AID	MANIPULATE	You perform first aid on an adjacent creature that is dying or bleeding.
+TREAT DISEASE	DOWNTIME MANIPULATE	You spend at least 8 hours caring for a diseased creature.
+TREAT POISON	MANIPULATE	You treat a patient to prevent the spread of poison.
+TREAT WOUNDS	EXPLORATION HEALING MANIPULATE	You spend 10 minutes treating one injured living creature.
+COMMAND AN ANIMAL	AUDITORY CONCENTRATE	You issue an order to an animal.
+PERFORM	CONCENTRATE	When making a brief performance—one song, a quick dance, or a few jokes.
+CREATE FORGERY	DOWNTIME SECRET	You create a forged document, usually over the course of a day or a week.
+CONCEAL AN OBJECT	MANIPULATE SECRET	You hide a small object on your person (such as a weapon of light Bulk).
+HIDE	SECRET	You huddle behind cover or greater cover or deeper into concealment to become hidden, rather than observed.
+SNEAK	MOVE SECRET	You can attempt to move to another place while becoming or staying undetected.
+SENSE DIRECTION	EXPLORATION SECRET	Using the stars, the position of the sun, traits of the geography or flora, or the behavior of fauna, you can stay oriented in the wild.
+COVER TRACKS	CONCENTRATE EXPLORATION MOVE	You cover your tracks, moving up to half your travel Speed.
+TRACK	CONCENTRATE EXPLORATION MOVE	You follow tracks, moving at up to half your travel Speed.
+PALM AN OBJECT	MANIPULATE	Palming a small, unattended object without being noticed
+STEAL	MANIPULATE	You try to take a small object from another creature without being noticed.
+DISABLE A DEVICE	MANIPULATE	This action allows you to disarm a trap or another complex device.
+PICK A LOCK	MANIPULATE	Opening a lock without a key

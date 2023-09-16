@@ -1,18 +1,18 @@
-name	key_ability
-Acrobatics	dexterity
-Arcana	intelligence
-Athletics	strength
-Crafting	intelligence
-Deception	charisma
-Diplomacy	charisma
-Intimidation	charisma
-Lore	intelligence
-Medicine	wisdom
-Nature	wisdom
-Occultism	intelligence
-Performance	charisma
-Religion	wisdom
-Society	intelligence
-Stealth	dexterity
-Survival	wisdom
-Thievery	dexterity
+name	key_ability	untrained_actions	trained_actions	comment	recall_knowledge
+Acrobatics	dexterity	Balance,Tumble Through	Maneuver in Flight,Squeeze	Acrobatics measures your ability to perform tasks requiring coordination and grace.	
+Arcana	intelligence	Recall Knowledge	Borrow an Arcane Spell,Decipher Writing,Identify Magic,Learn a Spell	Arcana measures how much you know about arcane magic and creatures.	arcane theories; magic traditions; creatures of arcane significance (like dragons and beasts); and the Elemental, Astral, and Shadow Planes
+Athletics	strength	Climb,Force Open,Grapple,High Jump,Long Jump,Shove,Swim,Trip	Disarm	Athletics allows you to perform deeds of physical prowess.	
+Crafting	intelligence	Recall Knowledge,Repair	Craft,Earn Income,Identify Alchemy	You can use this skill to create and repair items.	alchemical reactions, the value of items, engineering, unusual materials, and alchemical or mechanical creatures
+Deception	charisma	Create a Diversion,Impersonate,Lie	Feint	You can trick and mislead others using disguises, lies, and other forms of subterfuge.	
+Diplomacy	charisma	Gather Information,Make an Impression,Request	You influence others through negotiation and flattery.	
+Intimidation	charisma	Coerce,Demoralize	You bend others to your will using threats.	
+Lore	intelligence	Recall Knowledge	Earn Income	You have specialized information on a narrow topic.	subject of your Lore skill’s subcategory
+Medicine	wisdom	Administer First Aid,Recall Knowledge	Treat Disease,Treat Poison,Treat Wounds	You can patch up wounds and help people recover from diseases and poisons.	diseases, injuries, poisons, and other ailments
+Nature	wisdom	Command an Animal,Recall Knowledge	Identify Magic,Learn a Spell	You know about the natural world, and you command and train animals and magical beasts.	fauna, flora, geography, weather, the environment, creatures of natural origin (like animals, beasts, fey, and plants), the First World, the Material Plane, and the Elemental Planes
+Occultism	intelligence	Recall Knowledge	Decipher Writing,Identify Magic,Learn a Spell	You know a great deal about ancient philosophies, esoteric lore, obscure mysticism, and supernatural creatures.	ancient mysteries; obscure philosophies; creatures of occult significance (like aberrations, spirits, and oozes); and the Positive Energy, Negative Energy, Shadow, Astral, and Ethereal Planes
+Performance	charisma	Perform	Earn Income	You are skilled at a form of performance, using your talents to impress a crowd or make a living.	
+Religion	wisdom	Recall Knowledge	Decipher Writing,Identify Magic,Learn a Spell	The secrets of deities, dogma, faith, and the realms of divine creatures both sublime and sinister are open to you. You also understand how magic works, though your training imparts a religious slant to that knowledge.	divine agents, the finer points of theology, obscure myths regarding a faith, and creatures of religious significance (like celestials, fiends, and undead), the Outer Sphere, and the Positive and Negative Energy Planes
+Society	intelligence	Recall Knowledge,Subsist	Decipher Writing,Create Forgery	You understand the people and systems that make civilization run, and you know the historical events that make societies what they are today.	local history, important personalities, legal institutions, societal structure, and humanoid cultures
+Stealth	dexterity	Conceal an Object,Hide,Sneak		You are skilled at avoiding detection, allowing you to slip past foes, hide, or conceal an item.	
+Survival	wisdom	Sense Direction,Subsist	Cover Tracks,Track	You are adept at living in the wilderness, foraging for food and building shelter, and with training you discover the secrets of tracking and hiding your trail.	
+Thievery	dexterity	Palm an Object,Steal	Disable a Device,Pick a Lock	You are trained in a particular set of skills favored by thieves and miscreants.	

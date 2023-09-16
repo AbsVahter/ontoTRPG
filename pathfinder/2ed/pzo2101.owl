@@ -10,6 +10,12 @@
 
 <owl:Ontology rdf:about="https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl"/>
 
+<owl:ObjectProperty rdf:about="#relates_to">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+  <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:ObjectProperty>
+
 <owl:ObjectProperty rdf:about="#has_feat">
   <rdfs:domain rdf:resource="#Feat"/>
   <rdfs:range rdf:resource="#Feat"/>
@@ -23,7 +29,7 @@
 
 <owl:ObjectProperty rdf:about="#trained">
   <rdfs:domain rdf:resource="#Feat"/>
-  <rdfs:range rdf:resource="#With_proficiency_rank"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
   <owl:inverseOf rdf:resource="#is_trained_by"/>
 </owl:ObjectProperty>
 
@@ -51,7 +57,7 @@
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#has_trait">
-  <rdfs:domain rdf:resource="#Ancestry"/>
+  <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
   <rdfs:range rdf:resource="#Trait"/>
   <owlr:class_property_type>some</owlr:class_property_type>
 </owl:ObjectProperty>
@@ -78,12 +84,6 @@
 
 <owl:ObjectProperty rdf:about="#is_depicted_by">
   <owl:inverseOf rdf:resource="#depicts"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#is_tied_to_ability">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#Skill"/>
-  <rdfs:range rdf:resource="#Ability_score"/>
 </owl:ObjectProperty>
 
 <owl:DatatypeProperty rdf:about="#hp">
@@ -115,7 +115,7 @@
 
 <owl:DatatypeProperty rdf:about="#level">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#With_level"/>
+  <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
   <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
 </owl:DatatypeProperty>
 
@@ -139,13 +139,22 @@
 Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0; level = (2*n - 1): X - 1; level &gt;= 2*n: X}.</rdfs:comment>
 </owl:DatatypeProperty>
 
+<owl:DatatypeProperty rdf:about="#need_training">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Action"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anyone can use a skill’s untrained actions, but you can use trained actions only if you have a proficiency rank of trained or better in that skill.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#recall_knowledge_specialization">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Skill"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
 <owl:AnnotationProperty rdf:about="http://schema.org/image"/>
 
 <owl:Class rdf:about="#Feat">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-</owl:Class>
-
-<owl:Class rdf:about="#With_proficiency_rank">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
@@ -194,10 +203,6 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:Class>
 
 <owl:Class rdf:about="#Trait">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-</owl:Class>
-
-<owl:Class rdf:about="#With_level">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
@@ -292,9 +297,12 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
   <rdfs:subClassOf rdf:resource="#Feat"/>
 </owl:Class>
 
+<owl:Class rdf:about="#Action">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
 <owl:Class rdf:about="#Skill">
   <rdfs:subClassOf rdf:resource="#Characteristic"/>
-  <rdfs:subClassOf rdf:resource="#With_proficiency_rank"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">While your character’s ability scores represent their raw talent and potential, skills represent their training and experience at performing certain tasks. Each skill is keyed to one of your character’s ability scores and used for an array of related actions. Your character’s expertise in a skill comes from several sources, including their background and class.</rdfs:comment>
 </owl:Class>
 
@@ -327,7 +335,6 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 
 <owl:Class rdf:about="#Weapon">
   <rdfs:subClassOf rdf:resource="#Equipment"/>
-  <rdfs:subClassOf rdf:resource="#With_proficiency_rank"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Weapon_by_complexity">
@@ -466,7 +473,6 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 
 <owl:Class rdf:about="#Armor">
   <rdfs:subClassOf rdf:resource="#Equipment"/>
-  <rdfs:subClassOf rdf:resource="#With_proficiency_rank"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Unarmored_as_armor">
@@ -622,93 +628,623 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 
 <owl:NamedIndividual rdf:about="#acrobatics">
   <rdf:type rdf:resource="#Skill"/>
-  <is_tied_to_ability rdf:resource="#dexterity"/>
+  <relates_to rdf:resource="#dexterity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Acrobatics measures your ability to perform tasks requiring coordination and grace.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#balance">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#acrobatics"/>
+  <has_trait rdf:resource="#move"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You move across a narrow surface or uneven ground.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#tumble_through">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#acrobatics"/>
+  <has_trait rdf:resource="#move"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You Stride up to your Speed. During this movement, you can try to move through the space of one enemy.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#maneuver_in_flight">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#acrobatics"/>
+  <has_trait rdf:resource="#move"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You try a difficult maneuver while flying.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#squeeze">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#acrobatics"/>
+  <has_trait rdf:resource="#exploration"/>
+  <has_trait rdf:resource="#move"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You contort yourself to squeeze through a space so small you can barely fit through.</rdfs:comment>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#arcana">
   <rdf:type rdf:resource="#Skill"/>
-  <is_tied_to_ability rdf:resource="#intelligence"/>
+  <relates_to rdf:resource="#intelligence"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Arcana measures how much you know about arcane magic and creatures.</rdfs:comment>
+  <recall_knowledge_specialization rdf:datatype="http://www.w3.org/2001/XMLSchema#string">arcane theories; magic traditions; creatures of arcane significance (like dragons and beasts); and the Elemental, Astral, and Shadow Planes</recall_knowledge_specialization>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#recall_knowledge">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#society"/>
+  <has_trait rdf:resource="#concentrate"/>
+  <has_trait rdf:resource="#secret"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The following skills can be used to Recall Knowledge, getting information about the listed topics.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#borrow_an_arcane_spell">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#arcana"/>
+  <has_trait rdf:resource="#concentrate"/>
+  <has_trait rdf:resource="#exploration"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">If you’re an arcane spellcaster who prepares from a spellbook, you can attempt to prepare a spell from someone else’s spellbook.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#decipher_writing">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#society"/>
+  <has_trait rdf:resource="#concentrate"/>
+  <has_trait rdf:resource="#exploration"/>
+  <has_trait rdf:resource="#secret"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You attempt to decipher complicated writing or literature on an obscure topic.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#identify_magic">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#religion"/>
+  <has_trait rdf:resource="#concentrate"/>
+  <has_trait rdf:resource="#exploration"/>
+  <has_trait rdf:resource="#secret"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Once you discover that an item, location, or ongoing effect is magical, you can spend 10 minutes to try to identify the particulars of its magic.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#learn_a_spell">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#religion"/>
+  <has_trait rdf:resource="#concentrate"/>
+  <has_trait rdf:resource="#exploration"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You can gain access to a new spell of your tradition from someone who knows that spell or from magical writing like a spellbook or scroll.</rdfs:comment>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#athletics">
   <rdf:type rdf:resource="#Skill"/>
-  <is_tied_to_ability rdf:resource="#strength"/>
+  <relates_to rdf:resource="#strength"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Athletics allows you to perform deeds of physical prowess.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#climb">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#athletics"/>
+  <has_trait rdf:resource="#move"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You move up, down, or across an incline.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#force_open">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#athletics"/>
+  <has_trait rdf:resource="#attack"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Using your body, a lever, or some other tool, you attempt to forcefully open a door, window, container or heavy gate. With a high enough result, you can even smash through walls.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#grapple">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#athletics"/>
+  <has_trait rdf:resource="#attack"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You attempt to grab a creature or object with your free hand.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#high_jump">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#athletics"/>
+  <has_trait rdf:resource="#move"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You Stride, then make a vertical Leap.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#long_jump">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#athletics"/>
+  <has_trait rdf:resource="#move"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You Stride, then make a horizontal Leap.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#shove">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#athletics"/>
+  <has_trait rdf:resource="#attack"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You push a creature away from you.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#swim">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#athletics"/>
+  <has_trait rdf:resource="#move"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You propel yourself through water.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#trip">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#athletics"/>
+  <has_trait rdf:resource="#attack"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You try to knock a creature to the ground.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#disarm">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#athletics"/>
+  <has_trait rdf:resource="#attack"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You try to knock something out of a creature’s grasp.</rdfs:comment>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#crafting">
   <rdf:type rdf:resource="#Skill"/>
-  <is_tied_to_ability rdf:resource="#intelligence"/>
+  <relates_to rdf:resource="#intelligence"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You can use this skill to create and repair items.</rdfs:comment>
+  <recall_knowledge_specialization rdf:datatype="http://www.w3.org/2001/XMLSchema#string">alchemical reactions, the value of items, engineering, unusual materials, and alchemical or mechanical creatures</recall_knowledge_specialization>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#repair">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#crafting"/>
+  <has_trait rdf:resource="#exploration"/>
+  <has_trait rdf:resource="#manipulate"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You spend 10 minutes attempting to fix a damaged item, placing the item on a stable surface and using the repair kit with both hands.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#craft">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#crafting"/>
+  <has_trait rdf:resource="#downtime"/>
+  <has_trait rdf:resource="#manipulate"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You can make an item from raw materials.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#earn_income">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#performance"/>
+  <has_trait rdf:resource="#downtime"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You use one of your skills to make money during downtime.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#identify_alchemy">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#crafting"/>
+  <has_trait rdf:resource="#concentrate"/>
+  <has_trait rdf:resource="#exploration"/>
+  <has_trait rdf:resource="#secret"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You can identify the nature of an alchemical item with 10 minutes of testing using alchemist’s tools.</rdfs:comment>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#deception">
   <rdf:type rdf:resource="#Skill"/>
-  <is_tied_to_ability rdf:resource="#charisma"/>
+  <relates_to rdf:resource="#charisma"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You can trick and mislead others using disguises, lies, and other forms of subterfuge.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#create_a_diversion">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#deception"/>
+  <has_trait rdf:resource="#mental"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">With a gesture, a trick, or some distracting words, you can create a diversion that draws creatures’ attention elsewhere.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#impersonate">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#deception"/>
+  <has_trait rdf:resource="#concentrate"/>
+  <has_trait rdf:resource="#exploration"/>
+  <has_trait rdf:resource="#manipulate"/>
+  <has_trait rdf:resource="#secret"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You create a disguise to pass yourself off as someone or something you are not.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#lie">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#deception"/>
+  <has_trait rdf:resource="#auditory"/>
+  <has_trait rdf:resource="#concentrate"/>
+  <has_trait rdf:resource="#linguistic"/>
+  <has_trait rdf:resource="#mental"/>
+  <has_trait rdf:resource="#secret"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You try to fool someone with an untruth.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#feint">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#deception"/>
+  <has_trait rdf:resource="#mental"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">With a misleading flourish, you leave an opponent unprepared for your real attack.</rdfs:comment>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#diplomacy">
   <rdf:type rdf:resource="#Skill"/>
-  <is_tied_to_ability rdf:resource="#charisma"/>
+  <relates_to rdf:resource="#charisma"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">None</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#gather_information">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#diplomacy"/>
+  <has_trait rdf:resource="#exploration"/>
+  <has_trait rdf:resource="#secret"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You canvass local markets, taverns, and gathering places in an attempt to learn about a specific individual or topic.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#make_an_impression">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#diplomacy"/>
+  <has_trait rdf:resource="#auditory"/>
+  <has_trait rdf:resource="#concentrate"/>
+  <has_trait rdf:resource="#exploration"/>
+  <has_trait rdf:resource="#linguistic"/>
+  <has_trait rdf:resource="#mental"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">With at least 1 minute of conversation, during which you engage in charismatic overtures, flattery, and other acts of goodwill, you seek to make a good impression on someone to make them temporarily agreeable.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#request">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#diplomacy"/>
+  <has_trait rdf:resource="#auditory"/>
+  <has_trait rdf:resource="#concentrate"/>
+  <has_trait rdf:resource="#linguistic"/>
+  <has_trait rdf:resource="#mental"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You can make a request of a creature that’s friendly or helpful to you. You must couch the request in terms that the target would accept given their current attitude toward you.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#you_influence_others_through_negotiation_and_flattery_">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#diplomacy"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</need_training>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#intimidation">
   <rdf:type rdf:resource="#Skill"/>
-  <is_tied_to_ability rdf:resource="#charisma"/>
+  <relates_to rdf:resource="#charisma"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">None</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#coerce">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#intimidation"/>
+  <has_trait rdf:resource="#auditory"/>
+  <has_trait rdf:resource="#concentrate"/>
+  <has_trait rdf:resource="#emotion"/>
+  <has_trait rdf:resource="#exploration"/>
+  <has_trait rdf:resource="#linguistic"/>
+  <has_trait rdf:resource="#mental"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">With threats either veiled or overt, you attempt to bully a creature into doing what you want. You must spend at least 1 minute of conversation with a creature you can see and that can either see or sense you.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#demoralize">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#intimidation"/>
+  <has_trait rdf:resource="#auditory"/>
+  <has_trait rdf:resource="#concentrate"/>
+  <has_trait rdf:resource="#emotion"/>
+  <has_trait rdf:resource="#fear"/>
+  <has_trait rdf:resource="#mental"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">With a sudden shout, a well-timed taunt, or a cutting putdown, you can shake an enemy’s resolve.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#you_bend_others_to_your_will_using_threats_">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#intimidation"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</need_training>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#lore">
   <rdf:type rdf:resource="#Skill"/>
-  <is_tied_to_ability rdf:resource="#intelligence"/>
+  <relates_to rdf:resource="#intelligence"/>
   <rdf:type>
     <owl:Restriction>
       <owl:onProperty rdf:resource="#is_trained_by"/>
       <owl:someValuesFrom rdf:resource="#Background"/>
     </owl:Restriction>
   </rdf:type>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You have specialized information on a narrow topic.</rdfs:comment>
+  <recall_knowledge_specialization rdf:datatype="http://www.w3.org/2001/XMLSchema#string">subject of your Lore skill’s subcategory</recall_knowledge_specialization>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#medicine">
   <rdf:type rdf:resource="#Skill"/>
-  <is_tied_to_ability rdf:resource="#wisdom"/>
+  <relates_to rdf:resource="#wisdom"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You can patch up wounds and help people recover from diseases and poisons.</rdfs:comment>
+  <recall_knowledge_specialization rdf:datatype="http://www.w3.org/2001/XMLSchema#string">diseases, injuries, poisons, and other ailments</recall_knowledge_specialization>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#administer_first_aid">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#medicine"/>
+  <has_trait rdf:resource="#manipulate"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You perform first aid on an adjacent creature that is dying or bleeding.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#treat_disease">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#medicine"/>
+  <has_trait rdf:resource="#downtime"/>
+  <has_trait rdf:resource="#manipulate"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You spend at least 8 hours caring for a diseased creature.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#treat_poison">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#medicine"/>
+  <has_trait rdf:resource="#manipulate"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You treat a patient to prevent the spread of poison.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#treat_wounds">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#medicine"/>
+  <has_trait rdf:resource="#exploration"/>
+  <has_trait rdf:resource="#healing"/>
+  <has_trait rdf:resource="#manipulate"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You spend 10 minutes treating one injured living creature.</rdfs:comment>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#nature">
   <rdf:type rdf:resource="#Skill"/>
-  <is_tied_to_ability rdf:resource="#wisdom"/>
+  <relates_to rdf:resource="#wisdom"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You know about the natural world, and you command and train animals and magical beasts.</rdfs:comment>
+  <recall_knowledge_specialization rdf:datatype="http://www.w3.org/2001/XMLSchema#string">fauna, flora, geography, weather, the environment, creatures of natural origin (like animals, beasts, fey, and plants), the First World, the Material Plane, and the Elemental Planes</recall_knowledge_specialization>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#command_an_animal">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#nature"/>
+  <has_trait rdf:resource="#auditory"/>
+  <has_trait rdf:resource="#concentrate"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You issue an order to an animal.</rdfs:comment>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#occultism">
   <rdf:type rdf:resource="#Skill"/>
-  <is_tied_to_ability rdf:resource="#intelligence"/>
+  <relates_to rdf:resource="#intelligence"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You know a great deal about ancient philosophies, esoteric lore, obscure mysticism, and supernatural creatures.</rdfs:comment>
+  <recall_knowledge_specialization rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ancient mysteries; obscure philosophies; creatures of occult significance (like aberrations, spirits, and oozes); and the Positive Energy, Negative Energy, Shadow, Astral, and Ethereal Planes</recall_knowledge_specialization>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#performance">
   <rdf:type rdf:resource="#Skill"/>
-  <is_tied_to_ability rdf:resource="#charisma"/>
+  <relates_to rdf:resource="#charisma"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You are skilled at a form of performance, using your talents to impress a crowd or make a living.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#perform">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#performance"/>
+  <has_trait rdf:resource="#concentrate"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">When making a brief performance—one song, a quick dance, or a few jokes.</rdfs:comment>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#religion">
   <rdf:type rdf:resource="#Skill"/>
-  <is_tied_to_ability rdf:resource="#wisdom"/>
+  <relates_to rdf:resource="#wisdom"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The secrets of deities, dogma, faith, and the realms of divine creatures both sublime and sinister are open to you. You also understand how magic works, though your training imparts a religious slant to that knowledge.</rdfs:comment>
+  <recall_knowledge_specialization rdf:datatype="http://www.w3.org/2001/XMLSchema#string">divine agents, the finer points of theology, obscure myths regarding a faith, and creatures of religious significance (like celestials, fiends, and undead), the Outer Sphere, and the Positive and Negative Energy Planes</recall_knowledge_specialization>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#society">
   <rdf:type rdf:resource="#Skill"/>
-  <is_tied_to_ability rdf:resource="#intelligence"/>
+  <relates_to rdf:resource="#intelligence"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You understand the people and systems that make civilization run, and you know the historical events that make societies what they are today.</rdfs:comment>
+  <recall_knowledge_specialization rdf:datatype="http://www.w3.org/2001/XMLSchema#string">local history, important personalities, legal institutions, societal structure, and humanoid cultures</recall_knowledge_specialization>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#subsist">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#survival"/>
+  <has_trait rdf:resource="#downtime"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You try to provide food and shelter for yourself, and possibly others as well, with a standard of living.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#create_forgery">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#society"/>
+  <has_trait rdf:resource="#downtime"/>
+  <has_trait rdf:resource="#secret"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You create a forged document, usually over the course of a day or a week.</rdfs:comment>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#stealth">
   <rdf:type rdf:resource="#Skill"/>
-  <is_tied_to_ability rdf:resource="#dexterity"/>
+  <relates_to rdf:resource="#dexterity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You are skilled at avoiding detection, allowing you to slip past foes, hide, or conceal an item.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#conceal_an_object">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#stealth"/>
+  <has_trait rdf:resource="#manipulate"/>
+  <has_trait rdf:resource="#secret"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You hide a small object on your person (such as a weapon of light Bulk).</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#hide">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#stealth"/>
+  <has_trait rdf:resource="#secret"/>
+  <rdf:type rdf:resource="#Medium_armor"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You huddle behind cover or greater cover or deeper into concealment to become hidden, rather than observed.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#sneak">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#stealth"/>
+  <has_trait rdf:resource="#move"/>
+  <has_trait rdf:resource="#secret"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You can attempt to move to another place while becoming or staying undetected.</rdfs:comment>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#survival">
   <rdf:type rdf:resource="#Skill"/>
-  <is_tied_to_ability rdf:resource="#wisdom"/>
+  <relates_to rdf:resource="#wisdom"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You are adept at living in the wilderness, foraging for food and building shelter, and with training you discover the secrets of tracking and hiding your trail.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#sense_direction">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#survival"/>
+  <has_trait rdf:resource="#exploration"/>
+  <has_trait rdf:resource="#secret"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Using the stars, the position of the sun, traits of the geography or flora, or the behavior of fauna, you can stay oriented in the wild.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#cover_tracks">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#survival"/>
+  <has_trait rdf:resource="#concentrate"/>
+  <has_trait rdf:resource="#exploration"/>
+  <has_trait rdf:resource="#move"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You cover your tracks, moving up to half your travel Speed.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#track">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#survival"/>
+  <has_trait rdf:resource="#concentrate"/>
+  <has_trait rdf:resource="#exploration"/>
+  <has_trait rdf:resource="#move"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You follow tracks, moving at up to half your travel Speed.</rdfs:comment>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#thievery">
   <rdf:type rdf:resource="#Skill"/>
-  <is_tied_to_ability rdf:resource="#dexterity"/>
+  <relates_to rdf:resource="#dexterity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You are trained in a particular set of skills favored by thieves and miscreants.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#palm_an_object">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#thievery"/>
+  <has_trait rdf:resource="#manipulate"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Palming a small, unattended object without being noticed</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#steal">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#thievery"/>
+  <has_trait rdf:resource="#manipulate"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You try to take a small object from another creature without being noticed.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#disable_a_device">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#thievery"/>
+  <has_trait rdf:resource="#manipulate"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This action allows you to disarm a trap or another complex device.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#pick_a_lock">
+  <rdf:type rdf:resource="#Action"/>
+  <relates_to rdf:resource="#thievery"/>
+  <has_trait rdf:resource="#manipulate"/>
+  <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</need_training>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Opening a lock without a key</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#concentrate">
+  <rdf:type rdf:resource="#Trait"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#exploration">
+  <rdf:type rdf:resource="#Trait"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#secret">
+  <rdf:type rdf:resource="#Trait"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#downtime">
+  <rdf:type rdf:resource="#Trait"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#move">
+  <rdf:type rdf:resource="#Trait"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#attack">
+  <rdf:type rdf:resource="#Trait"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#manipulate">
+  <rdf:type rdf:resource="#Trait"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#mental">
+  <rdf:type rdf:resource="#Trait"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#auditory">
+  <rdf:type rdf:resource="#Trait"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#linguistic">
+  <rdf:type rdf:resource="#Trait"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#emotion">
+  <rdf:type rdf:resource="#Trait"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#fear">
+  <rdf:type rdf:resource="#Trait"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#healing">
+  <rdf:type rdf:resource="#Trait"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#perception">
@@ -3106,10 +3642,6 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
   <rdf:type rdf:resource="#Light_armor"/>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#hide">
-  <rdf:type rdf:resource="#Medium_armor"/>
-</owl:NamedIndividual>
-
 <owl:NamedIndividual rdf:about="#scale_mail">
   <rdf:type rdf:resource="#Medium_armor"/>
 </owl:NamedIndividual>
@@ -3294,8 +3826,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Deities work their will upon the world in infinite ways, and you serve as one of their most stalwart mortal servants. Blessed with divine magic, you live the ideals of your faith, adorn yourself with the symbols of your church, and train diligently to wield your deity’s favored weapon. Your spells might protect and heal your allies, or they might punish foes and enemies of your faith, as your deity wills. Yours is a life of devotion, spreading the teachings of your faith through both word and deed.</rdfs:comment>
   <hp rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</hp>
   <additional_skills rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</additional_skills>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in the favored weapon of your deity. If your deity’s favored weapon is uncommon, you also gain access to that weapon.</rdfs:comment>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in one skill determined by your choice of deity</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trained in the favored weapon of your deity. If your deity’s favored weapon is uncommon, you also gain access to that weapon.</rdfs:comment>
   <spells_per_day rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</spells_per_day>
 </owl:NamedIndividual>
 
@@ -9345,6 +9877,21 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
   <rdf:type rdf:resource="#Art"/>
   <depicts rdf:resource="#wizard_archetype"/>
   <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://cdn.paizo.com/image/content/Blog/20190715-cast_500.jpeg</sche:image>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#art_skills_1">
+  <rdf:type rdf:resource="#Art"/>
+  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSw3Z408ZNRe_wZx7k0fFsdHeksY-eEcDPJbQiljd1JEQYlewEU</sche:image>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#art_skills_2">
+  <rdf:type rdf:resource="#Art"/>
+  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://legendary-digital-network-assets.s3.amazonaws.com/geekandsundry/wp-content/uploads/2019/11/Pathfinder-Skills-Image-2.png</sche:image>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#art_skills_3">
+  <rdf:type rdf:resource="#Art"/>
+  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://legendary-digital-network-assets.s3.amazonaws.com/geekandsundry/wp-content/uploads/2019/11/Pathfinder-Skills-Image-1.png</sche:image>
 </owl:NamedIndividual>
 
 

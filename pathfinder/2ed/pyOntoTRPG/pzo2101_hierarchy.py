@@ -3,15 +3,14 @@ from owlready2 import *
 
 def create(pzo2101: Ontology):
     with pzo2101:
+        class relates_to(Thing >> Thing, SymmetricProperty): pass
         class Feat(Thing): pass
-
-        class With_proficiency_rank(Thing): pass
 
         class has_feat(Feat >> Feat): class_property_type = ["some"]
 
         class feat_of(ObjectProperty): inverse_property = has_feat
 
-        class trained(Feat >> With_proficiency_rank): pass
+        class trained(Feat >> Thing): pass
 
         class is_trained_by(ObjectProperty): inverse_property = trained
 
@@ -45,11 +44,9 @@ def create(pzo2101: Ontology):
 
         class Trait(Thing): pass
 
-        class has_trait(Ancestry >> Trait): class_property_type = ["some"]
+        class has_trait(Thing >> Trait): class_property_type = ["some"]
 
-        class With_level(Thing): pass
-
-        class level(With_level >> int, FunctionalProperty): pass
+        class level(Thing >> int, FunctionalProperty): pass
 
         class Heritage(Feat): pass
 
@@ -92,3 +89,8 @@ def create(pzo2101: Ontology):
         class Familiar_ability(Feat): pass
 
         class Master_ability(Feat): pass
+
+        class Action(Thing): pass
+        class need_training(Action>>bool, FunctionalProperty):
+            comment = ("Anyone can use a skill’s untrained actions, but you can use trained actions only if you have a "
+                       "proficiency rank of trained or better in that skill.")
