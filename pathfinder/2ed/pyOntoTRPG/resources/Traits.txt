@@ -1,0 +1,10 @@
+name	comment	spec_eff
+Bulwark	The armor covers you so completely that it provides benefits against some damaging effects.	0
+Comfort	The armor is so comfortable that you can rest normally while wearing it.	0
+Flexible	The armor is flexible enough that it doesn’t hinder most actions.	0
+Noisy	This armor is loud and likely to alert others to your presence.	0
+Chain	The armor is so flexible it can bend with a critical hit and absorb some of the blow.	1
+Composite	The numerous overlapping pieces of this armor protect you from piercing attacks.	1
+Leather	The thick second skin of the armor disperses blunt force to reduce bludgeoning damage.	1
+Plate	The sturdy plate provides no purchase for a cutting edge.	1
+Cloth		0

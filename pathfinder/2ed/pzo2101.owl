@@ -157,6 +157,60 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
   <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
 </owl:DatatypeProperty>
 
+<owl:DatatypeProperty rdf:about="#price">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Equipment"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#bulk">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Equipment"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">As a general rule, an item that weighs 5 to 10 pounds is 1 Bulk, an item weighing less than a few ounces is negligible, and anything in between is light. Particularly awkward or unwieldy items might have higher Bulk values.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hardness">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Equipment"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#ac_bonus">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Armor"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This number is the item bonus you add for the armor when determining Armor Class.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#dex_cap">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Armor"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This number is the maximum amount of your Dexterity modifier that can apply to your AC while you are wearing a given suit of armor.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#check_penalty">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Armor"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">While wearing your armor, you take this penalty to Strength- and Dexterity-based skill checks, except for those that have the attack trait. If you meet the armor’s Strength threshold, you don’t take this penalty.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#speed_penalty">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Armor"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">While wearing a suit of armor, you take the penalty listed in this entry to your Speed, as well as to any other movement types you have, such as a climb Speed or swim Speed, to a minimum Speed of 5 feet. If you meet the armor’s Strength threshold you reduce the penalty by 5 feet.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#str_threshold">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Armor"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This entry indicates the Strength score at which you are strong enough to overcome some of the armor’s penalties. If your Strength is equal to or greater than this value, you no longer take the armor’s check penalty, and you decrease the Speed penalty by 5 feet</rdfs:comment>
+</owl:DatatypeProperty>
+
 <owl:AnnotationProperty rdf:about="http://schema.org/image"/>
 
 <owl:Class rdf:about="#Feat">
@@ -278,10 +332,6 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Backgrounds allow you to customize your character based on their life before adventuring. This is the next step in their life story after their ancestry, which reflects the circumstances of their birth. Your character’s background can help you learn or portray more about their personality while also suggesting what sorts of things they’re likely to know. Consider what events set your character on their path to the life of an adventurer and how those circumstances relate to their background.</rdfs:comment>
 </owl:Class>
 
-<owl:Class rdf:about="#Equipment">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-</owl:Class>
-
 <owl:Class rdf:about="#Art">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
@@ -320,6 +370,10 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
   <rdfs:subClassOf rdf:resource="#General_feat"/>
 </owl:Class>
 
+<owl:Class rdf:about="#Specialization_effect">
+  <rdfs:subClassOf rdf:resource="#Trait"/>
+</owl:Class>
+
 <owl:Class rdf:about="#Language">
   <rdfs:subClassOf rdf:resource="#Feat"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The people of the Inner Sea region speak dozens of different languages, along with hundreds of dialects and regional variations. While a character can generally get by with Taldane, also known as Common, knowing another language is vital in some regions. Being able to speak these tongues can help you with negotiation, spying on enemies, or just conducting simple commerce. Languages also afford you the chance to contextualize your character in the world and give meaning to your other character choices.</rdfs:comment>
@@ -341,6 +395,128 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 
 <owl:Class rdf:about="#Language_secret">
   <rdfs:subClassOf rdf:resource="#Language"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Equipment">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">To make your mark on the world, you’ll need to have the right equipment, including armor, weapons, and other gear. The various equipment that you can purchase during character creation. You can usually find these items for sale in most cities and other large settlements.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Armor">
+  <rdfs:subClassOf rdf:resource="#Equipment"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Armor increases your character’s defenses, but some medium or heavy armor can hamper movement. If you want to increase your character’s defense beyond the protection your armor provides, they can use a shield. Armor protects your character only while they’re wearing it.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Unarmored_as_armor">
+  <rdfs:subClassOf rdf:resource="#Armor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Light_armor">
+  <rdfs:subClassOf rdf:resource="#Armor"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#is_trained_by"/>
+      <owl:hasValue rdf:resource="#alchemist"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#is_trained_by"/>
+      <owl:hasValue rdf:resource="#barbarian"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#is_trained_by"/>
+      <owl:hasValue rdf:resource="#bard"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#is_trained_by"/>
+      <owl:hasValue rdf:resource="#champion"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#is_trained_by"/>
+      <owl:hasValue rdf:resource="#druid"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#is_trained_by"/>
+      <owl:hasValue rdf:resource="#fighter"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#is_trained_by"/>
+      <owl:hasValue rdf:resource="#ranger"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#is_trained_by"/>
+      <owl:hasValue rdf:resource="#rogue"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Medium_armor">
+  <rdfs:subClassOf rdf:resource="#Armor"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#is_trained_by"/>
+      <owl:hasValue rdf:resource="#alchemist"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#is_trained_by"/>
+      <owl:hasValue rdf:resource="#barbarian"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#is_trained_by"/>
+      <owl:hasValue rdf:resource="#champion"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#is_trained_by"/>
+      <owl:hasValue rdf:resource="#druid"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#is_trained_by"/>
+      <owl:hasValue rdf:resource="#fighter"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#is_trained_by"/>
+      <owl:hasValue rdf:resource="#ranger"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Heavy_armor">
+  <rdfs:subClassOf rdf:resource="#Armor"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#is_trained_by"/>
+      <owl:hasValue rdf:resource="#champion"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#is_trained_by"/>
+      <owl:hasValue rdf:resource="#fighter"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
 </owl:Class>
 
 <owl:Class rdf:about="#Weapon">
@@ -473,122 +649,6 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 
 <owl:Class rdf:about="#Advanced_weapon">
   <rdfs:subClassOf rdf:resource="#Weapon_by_complexity"/>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#is_trained_by"/>
-      <owl:hasValue rdf:resource="#fighter"/>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-</owl:Class>
-
-<owl:Class rdf:about="#Armor">
-  <rdfs:subClassOf rdf:resource="#Equipment"/>
-</owl:Class>
-
-<owl:Class rdf:about="#Unarmored_as_armor">
-  <rdfs:subClassOf rdf:resource="#Armor"/>
-</owl:Class>
-
-<owl:Class rdf:about="#Light_armor">
-  <rdfs:subClassOf rdf:resource="#Armor"/>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#is_trained_by"/>
-      <owl:hasValue rdf:resource="#alchemist"/>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#is_trained_by"/>
-      <owl:hasValue rdf:resource="#barbarian"/>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#is_trained_by"/>
-      <owl:hasValue rdf:resource="#bard"/>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#is_trained_by"/>
-      <owl:hasValue rdf:resource="#champion"/>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#is_trained_by"/>
-      <owl:hasValue rdf:resource="#druid"/>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#is_trained_by"/>
-      <owl:hasValue rdf:resource="#fighter"/>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#is_trained_by"/>
-      <owl:hasValue rdf:resource="#ranger"/>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#is_trained_by"/>
-      <owl:hasValue rdf:resource="#rogue"/>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-</owl:Class>
-
-<owl:Class rdf:about="#Medium_armor">
-  <rdfs:subClassOf rdf:resource="#Armor"/>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#is_trained_by"/>
-      <owl:hasValue rdf:resource="#alchemist"/>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#is_trained_by"/>
-      <owl:hasValue rdf:resource="#barbarian"/>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#is_trained_by"/>
-      <owl:hasValue rdf:resource="#champion"/>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#is_trained_by"/>
-      <owl:hasValue rdf:resource="#druid"/>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#is_trained_by"/>
-      <owl:hasValue rdf:resource="#fighter"/>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#is_trained_by"/>
-      <owl:hasValue rdf:resource="#ranger"/>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-</owl:Class>
-
-<owl:Class rdf:about="#Heavy_armor">
-  <rdfs:subClassOf rdf:resource="#Armor"/>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#is_trained_by"/>
-      <owl:hasValue rdf:resource="#champion"/>
-    </owl:Restriction>
-  </rdfs:subClassOf>
   <rdfs:subClassOf>
     <owl:Restriction>
       <owl:onProperty rdf:resource="#is_trained_by"/>
@@ -1117,10 +1177,18 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 <owl:NamedIndividual rdf:about="#hide">
   <rdf:type rdf:resource="#Action"/>
   <relates_to rdf:resource="#stealth"/>
-  <has_trait rdf:resource="#secret"/>
   <rdf:type rdf:resource="#Medium_armor"/>
+  <has_trait rdf:resource="#leather"/>
   <need_training rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</need_training>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You huddle behind cover or greater cover or deeper into concealment to become hidden, rather than observed.</rdfs:comment>
+  <ac_bonus rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</ac_bonus>
+  <check_penalty rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-2</check_penalty>
+  <speed_penalty rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-5</speed_penalty>
+  <bulk rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2</bulk>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A mix of furs, sturdy hide, and sometimes molded boiled leather, this armor provides protection due to its layers of leather, though its bulkiness slows the wearer down and decreases mobility.</rdfs:comment>
+  <price rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2 gp</price>
+  <dex_cap rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</dex_cap>
+  <str_threshold rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">14.0</str_threshold>
+  <hardness rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hardness>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#sneak">
@@ -2112,6 +2180,51 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
   <prereq rdf:resource="#arcana"/>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</level>
   <prereq_details rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Legendary in Arcana</prereq_details>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#bulwark">
+  <rdf:type rdf:resource="#Specialization_effect"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The armor covers you so completely that it provides benefits against some damaging effects.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#comfort">
+  <rdf:type rdf:resource="#Specialization_effect"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The armor is so comfortable that you can rest normally while wearing it.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#flexible">
+  <rdf:type rdf:resource="#Specialization_effect"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The armor is flexible enough that it doesn’t hinder most actions.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#noisy">
+  <rdf:type rdf:resource="#Specialization_effect"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This armor is loud and likely to alert others to your presence.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#chain">
+  <rdf:type rdf:resource="#Trait"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The armor is so flexible it can bend with a critical hit and absorb some of the blow.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#composite">
+  <rdf:type rdf:resource="#Trait"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The numerous overlapping pieces of this armor protect you from piercing attacks.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#leather">
+  <rdf:type rdf:resource="#Trait"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The thick second skin of the armor disperses blunt force to reduce bludgeoning damage.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#plate">
+  <rdf:type rdf:resource="#Trait"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The sturdy plate provides no purchase for a cutting edge.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#cloth">
+  <rdf:type rdf:resource="#Specialization_effect"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">None</rdfs:comment>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#common_language">
@@ -3599,9 +3712,9 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
   <ability_boost rdf:resource="#wisdom"/>
   <trained rdf:resource="#arcana"/>
   <has_feat rdf:resource="#assurance"/>
+  <trained rdf:resource="#nature"/>
   <trained rdf:resource="#religion"/>
   <trained rdf:resource="#occultism"/>
-  <trained rdf:resource="#nature"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You have a knack for learning, and sequestered yourself from the outside world to learn all you could. You read about so many wondrous places and things in your books, and always dreamed about one day seeing the real things. Eventually, that curiosity led you to leave your studies and become an adventurer.</rdfs:comment>
   <lore_speciality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the Academia Lore skill</lore_speciality>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You’re trained in your choice of the Arcana, Nature, Occultism, or Religion skill, and gain the Assurance skill feat in your chosen skill.</rdfs:comment>
@@ -3645,6 +3758,194 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
   <has_feat rdf:resource="#intimidating_glare"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">In your younger days, you waded into battle as a mercenary, a warrior defending a nomadic people, or a member of a militia or army. You might have wanted to break out from the regimented structure of these forces, or you could have always been as independent a warrior as you are now.</rdfs:comment>
   <lore_speciality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the Warfare Lore skill</lore_speciality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#coin">
+  <rdf:type rdf:resource="#Equipment"/>
+  <price rdf:datatype="http://www.w3.org/2001/XMLSchema#string">100 cp = 10 sp = 1 gp = 1/10 pp</price>
+  <bulk rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A thousand coins of any denomination or combination of denominations count as 1 Bulk.</bulk>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#no_armor">
+  <rdf:type rdf:resource="#Unarmored_as_armor"/>
+  <rdf:type>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#is_trained_by"/>
+      <owl:someValuesFrom rdf:resource="#Gameclass"/>
+    </owl:Restriction>
+  </rdf:type>
+  <ac_bonus rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</ac_bonus>
+  <check_penalty rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</check_penalty>
+  <speed_penalty rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</speed_penalty>
+  <bulk rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0</bulk>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">no armor</rdfs:comment>
+  <hardness rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</hardness>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#explorer_s_clothing">
+  <rdf:type rdf:resource="#Unarmored_as_armor"/>
+  <has_trait rdf:resource="#cloth"/>
+  <has_trait rdf:resource="#comfort"/>
+  <rdf:type>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#is_trained_by"/>
+      <owl:someValuesFrom rdf:resource="#Gameclass"/>
+    </owl:Restriction>
+  </rdf:type>
+  <ac_bonus rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</ac_bonus>
+  <check_penalty rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</check_penalty>
+  <speed_penalty rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</speed_penalty>
+  <bulk rdf:datatype="http://www.w3.org/2001/XMLSchema#string">L</bulk>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Adventurers who don’t wear armor travel in durable clothing.</rdfs:comment>
+  <price rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1 sp</price>
+  <dex_cap rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5.0</dex_cap>
+  <hardness rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hardness>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#padded_armor">
+  <rdf:type rdf:resource="#Light_armor"/>
+  <has_trait rdf:resource="#cloth"/>
+  <has_trait rdf:resource="#comfort"/>
+  <ac_bonus rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ac_bonus>
+  <check_penalty rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</check_penalty>
+  <speed_penalty rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</speed_penalty>
+  <bulk rdf:datatype="http://www.w3.org/2001/XMLSchema#string">L</bulk>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This armor is simply a layer of heavy, quilted cloth, but it is sometimes used because it’s so inexpensive. Padded armor is easier to damage and destroy than other types of armor.</rdfs:comment>
+  <price rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2 sp</price>
+  <dex_cap rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.0</dex_cap>
+  <str_threshold rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">10.0</str_threshold>
+  <hardness rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hardness>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#leather_armor">
+  <rdf:type rdf:resource="#Light_armor"/>
+  <has_trait rdf:resource="#leather"/>
+  <ac_bonus rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ac_bonus>
+  <check_penalty rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</check_penalty>
+  <speed_penalty rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</speed_penalty>
+  <bulk rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1</bulk>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A mix of flexible and molded boiled leather, a suit of this type of armor provides some protection with maximum flexibility.</rdfs:comment>
+  <price rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2 gp</price>
+  <dex_cap rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.0</dex_cap>
+  <str_threshold rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">10.0</str_threshold>
+  <hardness rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hardness>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#studded_leather">
+  <rdf:type rdf:resource="#Light_armor"/>
+  <has_trait rdf:resource="#leather"/>
+  <ac_bonus rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ac_bonus>
+  <check_penalty rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</check_penalty>
+  <speed_penalty rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</speed_penalty>
+  <bulk rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1</bulk>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This leather armor is reinforced with metal studs and sometimes small metal plates, providing most of the flexibility of leather armor with more robust protection.</rdfs:comment>
+  <price rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3 gp</price>
+  <dex_cap rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.0</dex_cap>
+  <str_threshold rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">12.0</str_threshold>
+  <hardness rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hardness>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#chain_shirt">
+  <rdf:type rdf:resource="#Light_armor"/>
+  <has_trait rdf:resource="#chain"/>
+  <has_trait rdf:resource="#flexible"/>
+  <has_trait rdf:resource="#noisy"/>
+  <ac_bonus rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ac_bonus>
+  <check_penalty rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</check_penalty>
+  <speed_penalty rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</speed_penalty>
+  <bulk rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1</bulk>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sometimes called a hauberk, this is a long shirt constructed of the same metal rings as chainmail. However, it is much lighter than chainmail and protects only the torso, upper arms, and upper legs of its wearer.</rdfs:comment>
+  <price rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5 gp</price>
+  <dex_cap rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.0</dex_cap>
+  <str_threshold rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">12.0</str_threshold>
+  <hardness rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</hardness>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#scale_mail">
+  <rdf:type rdf:resource="#Medium_armor"/>
+  <has_trait rdf:resource="#composite"/>
+  <ac_bonus rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</ac_bonus>
+  <check_penalty rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-2</check_penalty>
+  <speed_penalty rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-5</speed_penalty>
+  <bulk rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2</bulk>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Scale mail consists of many metal scales sewn onto a reinforced leather backing, often in the form of a long shirt that protects the torso, arms, and legs.</rdfs:comment>
+  <price rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4 gp</price>
+  <dex_cap rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</dex_cap>
+  <str_threshold rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">14.0</str_threshold>
+  <hardness rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</hardness>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#chain_mail">
+  <rdf:type rdf:resource="#Medium_armor"/>
+  <has_trait rdf:resource="#chain"/>
+  <has_trait rdf:resource="#flexible"/>
+  <has_trait rdf:resource="#noisy"/>
+  <ac_bonus rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</ac_bonus>
+  <check_penalty rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-2</check_penalty>
+  <speed_penalty rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-5</speed_penalty>
+  <bulk rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2</bulk>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A suit of chain mail consists of several pieces of armor composed of small metal rings linked together in a protective mesh. It typically includes a chain shirt, leggings, a pair of arms, and a coif, collectively protecting most of the body.</rdfs:comment>
+  <price rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6 gp</price>
+  <dex_cap rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</dex_cap>
+  <str_threshold rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">16.0</str_threshold>
+  <hardness rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</hardness>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#breastplate">
+  <rdf:type rdf:resource="#Medium_armor"/>
+  <has_trait rdf:resource="#plate"/>
+  <ac_bonus rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</ac_bonus>
+  <check_penalty rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-2</check_penalty>
+  <speed_penalty rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-5</speed_penalty>
+  <bulk rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2</bulk>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Though referred to as a breastplate, this type of armor consists of several pieces of plate or half‑plate armor (page 276) that protect the torso, chest, neck, and sometimes the hips and lower legs. It strategically grants some of the protection of plate while allowing greater flexibility and speed.</rdfs:comment>
+  <price rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8 gp</price>
+  <dex_cap rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</dex_cap>
+  <str_threshold rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">16.0</str_threshold>
+  <hardness rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</hardness>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#splint_mail">
+  <rdf:type rdf:resource="#Heavy_armor"/>
+  <has_trait rdf:resource="#composite"/>
+  <ac_bonus rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</ac_bonus>
+  <check_penalty rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-3</check_penalty>
+  <speed_penalty rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-10</speed_penalty>
+  <bulk rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3</bulk>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This type of armor is chain mail reinforced with flexible, interlocking metal plates, typically located on the wearer’s torso, upper arms, and legs. A suit of this armor comes with an undercoat of padded armor and a pair of gauntlets.</rdfs:comment>
+  <price rdf:datatype="http://www.w3.org/2001/XMLSchema#string">13 gp</price>
+  <dex_cap rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</dex_cap>
+  <str_threshold rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">16.0</str_threshold>
+  <hardness rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</hardness>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#half_plate">
+  <rdf:type rdf:resource="#Heavy_armor"/>
+  <has_trait rdf:resource="#plate"/>
+  <ac_bonus rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</ac_bonus>
+  <check_penalty rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-3</check_penalty>
+  <speed_penalty rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-10</speed_penalty>
+  <bulk rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3</bulk>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Half plate consists of most of the upper body plates used in full plate, with lighter or sparser steel plate protection for the arms and legs. This provides some of the protection of full plate with greater flexibility and speed. A suit of this armor comes with an undercoat of padded armor (see below) and a pair of gauntlets</rdfs:comment>
+  <price rdf:datatype="http://www.w3.org/2001/XMLSchema#string">18 gp</price>
+  <dex_cap rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</dex_cap>
+  <str_threshold rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">16.0</str_threshold>
+  <hardness rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</hardness>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#full_plate">
+  <rdf:type rdf:resource="#Heavy_armor"/>
+  <has_trait rdf:resource="#plate"/>
+  <has_trait rdf:resource="#bulwark"/>
+  <ac_bonus rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</ac_bonus>
+  <check_penalty rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-3</check_penalty>
+  <speed_penalty rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-10</speed_penalty>
+  <bulk rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4</bulk>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Plate mail consists of interlocking plates that encase nearly the entire body in a carapace of steel. It is costly and heavy, and the wearer often requires help to don it correctly, but it provides some of the best defense armor can supply. A suit of this armor comes with an undercoat of padded armor (see below) and a pair of gauntlets.</rdfs:comment>
+  <price rdf:datatype="http://www.w3.org/2001/XMLSchema#string">30 gp</price>
+  <dex_cap rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.0</dex_cap>
+  <str_threshold rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">18.0</str_threshold>
+  <hardness rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</hardness>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#fist">
@@ -4040,66 +4341,6 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 <owl:NamedIndividual rdf:about="#shuriken">
   <rdf:type rdf:resource="#Martial_weapon"/>
   <rdf:type rdf:resource="#Uncommon_weapon"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#no_armor">
-  <rdf:type rdf:resource="#Unarmored_as_armor"/>
-  <rdf:type>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#is_trained_by"/>
-      <owl:someValuesFrom rdf:resource="#Gameclass"/>
-    </owl:Restriction>
-  </rdf:type>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#explorer_s_clothing">
-  <rdf:type rdf:resource="#Unarmored_as_armor"/>
-  <rdf:type>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#is_trained_by"/>
-      <owl:someValuesFrom rdf:resource="#Gameclass"/>
-    </owl:Restriction>
-  </rdf:type>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#padded_armor">
-  <rdf:type rdf:resource="#Light_armor"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#leather">
-  <rdf:type rdf:resource="#Light_armor"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#studded_leather">
-  <rdf:type rdf:resource="#Light_armor"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#chain_shirt">
-  <rdf:type rdf:resource="#Light_armor"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#scale_mail">
-  <rdf:type rdf:resource="#Medium_armor"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#chain_mail">
-  <rdf:type rdf:resource="#Medium_armor"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#breastplate">
-  <rdf:type rdf:resource="#Medium_armor"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#splint_mail">
-  <rdf:type rdf:resource="#Heavy_armor"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#half_plate">
-  <rdf:type rdf:resource="#Heavy_armor"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#full_plate">
-  <rdf:type rdf:resource="#Heavy_armor"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#alchemist">
@@ -9658,7 +9899,7 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 
 <owl:NamedIndividual rdf:about="#art_ancestries_and_backgrounds">
   <rdf:type rdf:resource="#Art"/>
-  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://ibb.co/Vqqtsw5</sche:image>
+  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://i.ibb.co/nLLbFPt/art-ancestries-and-backgrounds.jpg</sche:image>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#art_dwarf_1">
@@ -9741,22 +9982,22 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 
 <owl:NamedIndividual rdf:about="#art_backgrounds_1">
   <rdf:type rdf:resource="#Art"/>
-  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://ibb.co/yYf7w1L</sche:image>
+  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://i.ibb.co/nngtHvh/art-background-1.jpg</sche:image>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#art_backgrounds_2">
   <rdf:type rdf:resource="#Art"/>
-  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://ibb.co/gVhP0Ds</sche:image>
+  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://i.ibb.co/QdtCW6s/art-background-2.jpg</sche:image>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#art_backgrounds_3">
   <rdf:type rdf:resource="#Art"/>
-  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://ibb.co/2sr4NTn</sche:image>
+  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://i.ibb.co/jWYXRS6/art-background-3.jpg</sche:image>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#art_classes">
   <rdf:type rdf:resource="#Art"/>
-  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://ibb.co/mz6STqn</sche:image>
+  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://i.ibb.co/XJSVLsn/art-classes.jpg</sche:image>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#art_alchemist_icon">
@@ -10340,6 +10581,21 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 <owl:NamedIndividual rdf:about="#art_feats_4">
   <rdf:type rdf:resource="#Art"/>
   <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://black-book-editions.fr/contenu/image/Tony/PZO2101--underwater-marauder.jpg</sche:image>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#art_equipment_1">
+  <rdf:type rdf:resource="#Art"/>
+  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://i.ibb.co/sgNY3Lj/art-equipment.jpg</sche:image>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#art_equipment_2">
+  <rdf:type rdf:resource="#Art"/>
+  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://cdnb.artstation.com/p/assets/images/images/019/976/601/large/rogier-van-de-beek-valeros-1paint.jpg?1565817340</sche:image>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#art_equipment_3">
+  <rdf:type rdf:resource="#Art"/>
+  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://cdnb.artstation.com/p/assets/images/images/019/976/599/large/rogier-van-de-beek-kyra-1paint.jpg?1565817339</sche:image>
 </owl:NamedIndividual>
 
 

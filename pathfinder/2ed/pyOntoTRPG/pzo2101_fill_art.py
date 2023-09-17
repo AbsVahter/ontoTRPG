@@ -8,7 +8,7 @@ def fill(pzo2101: Ontology):
     with pzo2101:
         Art = pzo2101.Art
 
-        Art("art_ancestries_and_backgrounds", image = "https://ibb.co/Vqqtsw5")
+        Art("art_ancestries_and_backgrounds", image = "https://i.ibb.co/nLLbFPt/art-ancestries-and-backgrounds.jpg")
 
         for anc in filter(lambda x: x.name != 'human',pzo2101.Playable_ancestry.instances()):
             for i in range(2):
@@ -22,9 +22,9 @@ def fill(pzo2101: Ontology):
             art.depicts.append(pzo2101.human)
 
         bg_art_links = [
-            "https://ibb.co/yYf7w1L",
-            "https://ibb.co/gVhP0Ds",
-            "https://ibb.co/2sr4NTn",
+            "https://i.ibb.co/nngtHvh/art-background-1.jpg",
+            "https://i.ibb.co/QdtCW6s/art-background-2.jpg",
+            "https://i.ibb.co/jWYXRS6/art-background-3.jpg",
         ]
         for i in range(len(bg_art_links)):
             Art(
@@ -32,7 +32,7 @@ def fill(pzo2101: Ontology):
                 image = [bg_art_links[i]],
             )
 
-        Art("art_classes", image = "https://ibb.co/mz6STqn")
+        Art("art_classes", image = "https://i.ibb.co/XJSVLsn/art-classes.jpg")
 
         class Icon(Art): pass
 

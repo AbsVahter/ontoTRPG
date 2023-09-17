@@ -83,3 +83,6 @@ feats_1	https://cdn.paizo.com/image/content/Blog/20190702-walljump_500.jpeg
 feats_2	https://i0.wp.com/www.teilzeithelden.de/wp-content/uploads/2019/08/C-2.png?ssl=1	
 feats_3	https://i.ibb.co/swLxJ04/feat-3.jpg	
 feats_4	https://black-book-editions.fr/contenu/image/Tony/PZO2101--underwater-marauder.jpg	
+equipment_1	https://i.ibb.co/sgNY3Lj/art-equipment.jpg	
+equipment_2	https://cdnb.artstation.com/p/assets/images/images/019/976/601/large/rogier-van-de-beek-valeros-1paint.jpg?1565817340	
+equipment_3	https://cdnb.artstation.com/p/assets/images/images/019/976/599/large/rogier-van-de-beek-kyra-1paint.jpg?1565817339	

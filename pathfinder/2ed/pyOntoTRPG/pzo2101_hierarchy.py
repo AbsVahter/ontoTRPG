@@ -70,8 +70,6 @@ def create(pzo2101: Ontology):
 
         class lore_speciality(Background >> str, FunctionalProperty): pass
 
-        class Equipment(Thing): pass
-
         class Art(Thing): pass
 
         class image(AnnotationProperty): namespace = pzo2101.get_namespace("http://schema.org/")

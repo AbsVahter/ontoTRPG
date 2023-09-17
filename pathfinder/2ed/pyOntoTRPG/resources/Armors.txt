@@ -1,14 +1,14 @@
-name	class
-No armor	Unarmored_as_armor
-Explorer’s clothing	Unarmored_as_armor
-Padded armor	Light_armor
-Leather	Light_armor
-Studded leather	Light_armor
-Chain shirt	Light_armor
-Hide	Medium_armor
-Scale mail	Medium_armor
-Chain mail	Medium_armor
-Breastplate	Medium_armor
-Splint mail	Heavy_armor
-Half plate	Heavy_armor
-Full plate	Heavy_armor
+name	class	price	ac_bonus	dex_cap	check_penalty	speed_penalty	str_threshold	bulk	traits	comment
+No armor	Unarmored_as_armor		0		0	0		0		no armor
+Explorer’s clothing	Unarmored_as_armor	1 sp	0	5	0	0		L	Cloth,Comfort	Adventurers who don’t wear armor travel in durable clothing.
+Padded armor	Light_armor	2 sp	1	3	0	0	10	L	Cloth,Comfort	This armor is simply a layer of heavy, quilted cloth, but it is sometimes used because it’s so inexpensive. Padded armor is easier to damage and destroy than other types of armor.
+Leather armor	Light_armor	2 gp	1	4	-1	0	10	1	Leather	A mix of flexible and molded boiled leather, a suit of this type of armor provides some protection with maximum flexibility.
+Studded leather	Light_armor	3 gp	2	3	-1	0	12	1	Leather	This leather armor is reinforced with metal studs and sometimes small metal plates, providing most of the flexibility of leather armor with more robust protection.
+Chain shirt	Light_armor	5 gp	2	3	-1	0	12	1	Chain,Flexible,Noisy	Sometimes called a hauberk, this is a long shirt constructed of the same metal rings as chainmail. However, it is much lighter than chainmail and protects only the torso, upper arms, and upper legs of its wearer.
+Hide	Medium_armor	2 gp	3	2	-2	-5	14	2	Leather	A mix of furs, sturdy hide, and sometimes molded boiled leather, this armor provides protection due to its layers of leather, though its bulkiness slows the wearer down and decreases mobility.
+Scale mail	Medium_armor	4 gp	3	2	-2	-5	14	2	Composite	Scale mail consists of many metal scales sewn onto a reinforced leather backing, often in the form of a long shirt that protects the torso, arms, and legs.
+Chain mail	Medium_armor	6 gp	4	1	-2	-5	16	2	Chain,Flexible,noisy	A suit of chain mail consists of several pieces of armor composed of small metal rings linked together in a protective mesh. It typically includes a chain shirt, leggings, a pair of arms, and a coif, collectively protecting most of the body.
+Breastplate	Medium_armor	8 gp	4	1	-2	-5	16	2	Plate	Though referred to as a breastplate, this type of armor consists of several pieces of plate or half‑plate armor (page 276) that protect the torso, chest, neck, and sometimes the hips and lower legs. It strategically grants some of the protection of plate while allowing greater flexibility and speed.
+Splint mail	Heavy_armor	13 gp	5	1	-3	-10	16	3	Composite	This type of armor is chain mail reinforced with flexible, interlocking metal plates, typically located on the wearer’s torso, upper arms, and legs. A suit of this armor comes with an undercoat of padded armor and a pair of gauntlets.
+Half plate	Heavy_armor	18 gp	5	1	-3	-10	16	3	Plate	Half plate consists of most of the upper body plates used in full plate, with lighter or sparser steel plate protection for the arms and legs. This provides some of the protection of full plate with greater flexibility and speed. A suit of this armor comes with an undercoat of padded armor (see below) and a pair of gauntlets
+Full plate	Heavy_armor	30 gp	6	0	-3	-10	18	4	Plate,Bulwark	Plate mail consists of interlocking plates that encase nearly the entire body in a carapace of steel. It is costly and heavy, and the wearer often requires help to don it correctly, but it provides some of the best defense armor can supply. A suit of this armor comes with an undercoat of padded armor (see below) and a pair of gauntlets.

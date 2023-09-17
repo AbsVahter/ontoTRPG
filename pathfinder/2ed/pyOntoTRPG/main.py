@@ -7,6 +7,7 @@ import pzo2101_fill_characteristics
 import pzo2101_fill_classes
 import pzo2101_fill_equipment
 import pzo2101_fill_feats
+import pzo2101_fill_traits
 import pzo2101_hierarchy
 
 if __name__ == '__main__':
@@ -18,6 +19,7 @@ if __name__ == '__main__':
     pzo2101_hierarchy.create(pzo2101)
     pzo2101_fill_characteristics.fill(pzo2101)
     pzo2101_fill_feats.fill(pzo2101)
+    pzo2101_fill_traits.fill(pzo2101)
     pzo2101_fill_ancestries.fill(pzo2101)
     pzo2101_fill_backgrounds.fill(pzo2101)
     pzo2101_fill_equipment.fill(pzo2101)
