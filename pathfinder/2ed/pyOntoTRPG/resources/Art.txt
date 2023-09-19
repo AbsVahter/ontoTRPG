@@ -86,3 +86,8 @@ feats_4	https://black-book-editions.fr/contenu/image/Tony/PZO2101--underwater-ma
 equipment_1	https://i.ibb.co/sgNY3Lj/art-equipment.jpg	
 equipment_2	https://cdnb.artstation.com/p/assets/images/images/019/976/601/large/rogier-van-de-beek-valeros-1paint.jpg?1565817340	
 equipment_3	https://cdnb.artstation.com/p/assets/images/images/019/976/599/large/rogier-van-de-beek-kyra-1paint.jpg?1565817339	
+weapon_1	https://i.ibb.co/94PpZ5P/art-weapon-1.jpg	
+weapon_2	https://i.ibb.co/yf1j40R/art-weapon-2.jpg	
+gear	https://i.ibb.co/m6C3nTD/art-gear.jpg	
+spells_1	https://i.ibb.co/7JtvTLQ/art-spells-1.jpg
+spellbook	https://2e.aonprd.com/Images/Treasure/Spellbook.webp	spellbook_blank

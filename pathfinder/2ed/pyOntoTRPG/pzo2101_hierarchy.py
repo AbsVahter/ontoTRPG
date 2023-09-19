@@ -3,6 +3,7 @@ from owlready2 import *
 
 def create(pzo2101: Ontology):
     with pzo2101:
+        class relation_value(AnnotationProperty): pass
         class relates_to(Thing >> Thing, SymmetricProperty): pass
         class Feat(Thing):
             comment = ("All kinds of experiences and training can shape your character beyond what you learn by "

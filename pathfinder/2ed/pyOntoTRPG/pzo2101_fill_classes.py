@@ -25,6 +25,13 @@ def fill_archetypes(pzo2101):
             arch.has_selectable_feat.append(f)
 
 
+def fill_rel_class_kits(pzo2101):
+    with pzo2101:
+        for index, row in main.iterrows('Equipment_packs'):
+            pack = pzo2101[main.prepare_name(row['name'])]
+            if not pd.isna(row['relates']): pack.relates_to.append(pzo2101[row['relates']])
+
+
 def fill(pzo2101: Ontology):
     fill_class_props(pzo2101)
     fill_weapon(pzo2101)
@@ -32,6 +39,7 @@ def fill(pzo2101: Ontology):
     fill_feats(pzo2101)
     fill_specializations(pzo2101)
     fill_archetypes(pzo2101)
+    fill_rel_class_kits(pzo2101)
 
 
 def fill_class_props(pzo2101: Ontology):

@@ -1,10 +1,61 @@
-name	comment	spec_eff
-Bulwark	The armor covers you so completely that it provides benefits against some damaging effects.	0
-Comfort	The armor is so comfortable that you can rest normally while wearing it.	0
-Flexible	The armor is flexible enough that it doesn’t hinder most actions.	0
-Noisy	This armor is loud and likely to alert others to your presence.	0
-Chain	The armor is so flexible it can bend with a critical hit and absorb some of the blow.	1
-Composite	The numerous overlapping pieces of this armor protect you from piercing attacks.	1
-Leather	The thick second skin of the armor disperses blunt force to reduce bludgeoning damage.	1
-Plate	The sturdy plate provides no purchase for a cutting edge.	1
-Cloth		0
+name	comment	spec_eff	is_weapon_group
+Bulwark	The armor covers you so completely that it provides benefits against some damaging effects.	0	
+Comfort	The armor is so comfortable that you can rest normally while wearing it.	0	
+Flexible	The armor is flexible enough that it doesn’t hinder most actions.	0	
+Noisy	This armor is loud and likely to alert others to your presence.	0	
+Chain	The armor is so flexible it can bend with a critical hit and absorb some of the blow.	1	
+Composite	The numerous overlapping pieces of this armor protect you from piercing attacks.	1	
+Leather	The thick second skin of the armor disperses blunt force to reduce bludgeoning damage.	1	
+Plate	The sturdy plate provides no purchase for a cutting edge.	1	
+Cloth		0	
+Axe		1	1
+Bomb		1	1
+Bow		1	1
+Brawling		1	1
+Club		1	1
+Dart		1	1
+Flail		1	1
+Hammer		1	1
+Knife		1	1
+Pick		1	1
+Polearm		1	1
+Shield weapon		1	1
+Sling		1	1
+Spear		1	1
+Sword		1	1
+bludgeoning		0	
+piercing		0	
+slashing		0	
+Agile		0	
+Attached		0	
+Backstabber		0	
+Backswing		0	
+Deadly		0	
+Disarm		0	
+Dwarf		0	
+Elf		0	
+Fatal		0	
+Finesse		0	
+Forceful		0	
+Free-Hand		0	
+Gnome		0	
+Goblin		0	
+Grapple		0	
+Halfling		0	
+Jousting		0	
+Monk		0	
+Nonlethal		0	
+Orc		0	
+Parry		0	
+Propulsive		0	
+Reach		0	
+Shove		0	
+Sweep		0	
+Thrown		0	
+Trip		0	
+Twin		0	
+Two-Hand		0	
+Unarmed		0	
+Versatile		0	
+Volley		0	
+Uncommon		0	

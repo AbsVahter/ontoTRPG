@@ -2,6 +2,7 @@ import pandas as pd
 from owlready2 import *
 
 import main
+import pzo2101_fill_traits
 from pzo2101_hierarchy import create
 
 
@@ -73,7 +74,7 @@ def fill_props(pzo2101: Ontology):
             )
 
         pzo2101.Language_common.selectable_feat_of.append(pzo2101.human)
-        tHumanoid = pzo2101.Trait('humanoid_trait')
+        tHumanoid = pzo2101.Trait(pzo2101_fill_traits.prepare_trait_name('humanoid'))
         Ancestry.has_trait.append(tHumanoid)
 
 

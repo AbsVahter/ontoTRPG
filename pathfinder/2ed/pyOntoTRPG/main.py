@@ -7,6 +7,7 @@ import pzo2101_fill_characteristics
 import pzo2101_fill_classes
 import pzo2101_fill_equipment
 import pzo2101_fill_feats
+import pzo2101_fill_spells
 import pzo2101_fill_traits
 import pzo2101_hierarchy
 
@@ -24,17 +25,14 @@ if __name__ == '__main__':
     pzo2101_fill_backgrounds.fill(pzo2101)
     pzo2101_fill_equipment.fill(pzo2101)
     pzo2101_fill_classes.fill(pzo2101)
+    pzo2101_fill_spells.fill(pzo2101)
     pzo2101_fill_art.fill(pzo2101)
 
     pzo2101.save()
-'''
-    for k in filter(lambda x: (pzo2101.feat_of in x.get_properties()) and (len(x.feat_of) > 1)
-                              and (any(pzo2101.Gameclass in m.is_a for m in x.feat_of)), pzo2101.Feat.instances()):
-        print(k.name)
-'''
+
 
 def prepare_name(s):
-    return re.sub('\W+', '_', s.lower().strip())
+    return re.sub('\W+', '_', s.split("@")[0].lower().strip())
 
 
 def iri_for_search(s):
@@ -43,3 +41,24 @@ def iri_for_search(s):
 
 def iterrows(file_name):
     return pd.read_csv(f'resources/{file_name}.txt', sep = '\t').iterrows()
+
+
+def make_dict(lst, func=None):
+    f = func if func is not None else prepare_name
+    dict = {}
+    for k in filter(lambda x: x is not None, lst):
+        comment = None if '@' not in k else k.split('@')[1]
+        dict[f(k.split('@')[0])] = comment
+    return dict
+
+
+def set_relation(onto, subj, pred, obj_lst, func=None):
+    dict = make_dict(obj_lst, func)
+    pred.python_name = "tmp"
+    for k in dict:
+        obj = onto[k]
+        subj.tmp.append(obj)
+        if dict[k] is not None:
+            onto.relation_value[subj, pred, obj] = [dict[k]]
+
+    pred.python_name = pred.name

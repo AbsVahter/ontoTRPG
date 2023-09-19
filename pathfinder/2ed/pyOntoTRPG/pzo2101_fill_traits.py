@@ -1,13 +1,22 @@
+import pandas as pd
+
 import main
 
 
 def fill(pzo2101):
     with pzo2101:
         Trait = pzo2101.Trait
-        class Specialization_effect(Trait): pass
+
+        class Specialization_effect(Trait):
+            pass
+
         for index, row in main.iterrows("Traits"):
-            cl = Trait if row['spec_eff'] == 1 else Specialization_effect
-            cl(
-                name = main.prepare_name(row['name']),
-                comment = row['comment'],
+            cl = Trait if row['spec_eff'] == 0 else Specialization_effect
+            trait = cl(
+                name = prepare_trait_name(row['name']),
             )
+            if not pd.isna(row['comment']): trait.comment = row['comment']
+
+
+def prepare_trait_name(s):
+    return main.prepare_name(s) + "_trait"

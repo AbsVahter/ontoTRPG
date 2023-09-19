@@ -1,0 +1,5 @@
+name	price	bulk	weapon	comment
+Blowgun dart	5 cp for 10 items	L	blowgun	These thin, light darts are typically made of hardwood and stabilized with fletching of down or fur. They are often hollow so they can be used to deliver poison.
+Bolt	1 sp for 10 items	L	crossbow,hand_crossbow,heavy_crossbow	Shorter than traditional arrows but similar in construction, bolts are the ammunition used by crossbows.
+Sling bullet	1 cp for 10 items	L	sling,halfling_sling_staff	These are small metal balls, typically either iron or lead, designed to be used as ammunition in slings.
+Arrow	1 sp for 10 items	L	composite_longbow,longbow,composite_shortbow,shortbow	These projectiles are the ammunition for bows. The shaft of an arrow is made of wood. It is stabilized in flight by fletching at one end and bears a metal head on the other.
