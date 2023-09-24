@@ -11,6 +11,11 @@ def prepare_school_name(s):
 def prepare_tradition_name(s):
     return f"{main.prepare_name(s).capitalize()}_tradition"
 
+
+def prepare_spell_name(s):
+    return f"{main.prepare_name(s)}_spell"
+
+
 def fill(pzo2101):
     with pzo2101:
         class Spell(Thing):
@@ -28,3 +33,31 @@ def fill(pzo2101):
             category = Spell_by_school if row['category'] == 'school' else Spell_by_magical_tradition
             cl = types.new_class(name, (category,))
             cl.comment = row['comment']
+
+        for index, row in main.iterrows("Spells_corpus"):
+            for spell_text in filter(lambda x: x != "", row['corpus'].split('.')):
+                txt = spell_text.split(':')[0].strip()
+                name, school_name = re.search(
+                    r'(.*)\((.*)\)', txt).groups()
+                name = name.strip()
+                if len(name.split(' ')[-1]) == 1:
+                    name = ' '.join(name.split(' ')[0:-1])
+                if name.split(' ')[-1][-1] == ',':
+                    name = ' '.join(name.split(' ')[0:-1])
+                school = pzo2101.search(is_a = pzo2101.Spell_by_school, iri = f"*{school_name.capitalize()}*").first()
+                comment = spell_text.split(':')[1].strip()
+                sp = Spell(
+                    name = prepare_spell_name(name),
+                    comment = comment,
+                    level = row['level'],
+                )
+                sp.is_a.extend([pzo2101[prepare_tradition_name(row['tradition'])], school])
+
+        class Ritual(Spell):
+            comment = ("A ritual is an esoteric and complex spell that anyone can cast. It takes much longer to cast a "
+                       "ritual than a normal spell, but rituals can have more powerful effects.")
+        for index, row in main.iterrows("Rituals"):
+            Ritual(
+                name = prepare_spell_name(row['name']),
+                level = row['level'],
+            )

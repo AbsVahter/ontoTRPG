@@ -4,6 +4,10 @@ from owlready2 import *
 import main
 
 
+def prepare_name_map(s):
+    return f"map_{main.prepare_name(s)}"
+
+
 def fill(pzo2101: Ontology):
     with pzo2101:
         Art = pzo2101.Art
@@ -47,5 +51,13 @@ def fill(pzo2101: Ontology):
             Art(
                 name = f"art_{row['name']}",
                 image = row['link'],
-                depicts = [pzo2101[x] for x in row['target'].split(",")] if not pd.isna(row['target']) else [],
+                depicts = [pzo2101[x.strip()] for x in row['target'].split(",")] if not pd.isna(row['target']) else [],
             )
+
+        class Map(Art): pass
+        for index, row in main.iterrows("Maps"):
+            m = Map(
+                name = prepare_name_map(row['name']),
+                image = row['link'],
+            )
+            main.set_relation(pzo2101, m, m.depicts, row['depicts'], main.prepare_name)

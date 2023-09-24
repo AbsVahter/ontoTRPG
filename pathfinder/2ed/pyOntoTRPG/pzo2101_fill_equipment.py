@@ -65,7 +65,7 @@ def fill_packs(pzo2101):
                 bulk = row['bulk'],
                 comment = row['comment'],
             )
-            main.set_relation(pzo2101, pack, contains, row['inside'].split(","))
+            main.set_relation(pzo2101, pack, contains, row['inside'], func = main.prepare_name)
 
 
 def fill(pzo2101: Ontology):
@@ -168,7 +168,7 @@ def fill_weapon(pzo2101: Ontology):
                 bulk = row['bulk'],
                 hands = row['hands'],
             )
-            main.set_relation(pzo2101, w, pzo2101['has_trait'], row['traits'].split(","), pzo2101_fill_traits.prepare_trait_name)
+            main.set_relation(pzo2101, w, pzo2101['has_trait'], row['traits'], pzo2101_fill_traits.prepare_trait_name)
             if not pd.isna(row['price']): w.price = row['price']
             if not pd.isna(row['range']): w.range = row['range']
             if not pd.isna(row['reload']): w.reload = row['reload']

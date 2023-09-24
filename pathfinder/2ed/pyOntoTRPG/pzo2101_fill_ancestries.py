@@ -1,3 +1,5 @@
+import types
+
 import pandas as pd
 from owlready2 import *
 
@@ -103,6 +105,10 @@ def fill_feats(pzo2101: Ontology):
             )
 
 
+def prepare_name_lang(s):
+    return f"{main.prepare_name(s)}_language"
+
+
 def fill_languages(pzo2101: Ontology):
     with pzo2101:
         class Language(pzo2101.Feat):
@@ -113,18 +119,9 @@ def fill_languages(pzo2101: Ontology):
                        "commerce. Languages also afford you the chance to contextualize your character in the world "
                        "and give meaning to your other character choices."]
 
-        class Language_common(Language): pass
+        for index, row in main.iterrows("Languages"):
+            cl = types.new_class(row['group'], (Language,))
+            cl(prepare_name_lang(row['name']))
 
-        lst_common = ['Common', 'Draconic', 'Dwarven', 'Elven', 'Gnomish', 'Goblin', 'Halfling', 'Jotun', 'Orcish', 'Sylvan', 'Undercommon', 'Local']
-        for lang in lst_common:
-            Language_common(lang.lower() + "_language")
-
-        class Language_uncommon(Language): pass
-
-        lst_uncommon = ['Abyssal', 'Akio', 'Aquan', 'Auran', 'Celestial', 'Gnoll', 'Ignan', 'Infernal', 'Necril', 'Shadowtongue', 'Terran']
-        for lang in lst_uncommon:
-            Language_uncommon(lang.lower() + "_language")
-
-        class Language_secret(Language): pass
-
-        Language_secret('druidic_language')
+        pzo2101['Language_regional'].relates_to.append(pzo2101[prepare_name_lang('local')])
+        pzo2101[prepare_name_lang('Taldane')].equivalent_to.append(pzo2101[prepare_name_lang('Common')])

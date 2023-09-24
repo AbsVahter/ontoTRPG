@@ -1,0 +1,35 @@
+name	group	region
+Common	Language_common
+Draconic	Language_common
+Dwarven	Language_common
+Elven	Language_common
+Gnomish	Language_common
+Goblin	Language_common
+Halfling	Language_common
+Jotun	Language_common
+Orcish	Language_common
+Sylvan	Language_common
+Undercommon	Language_common
+Local	Language_common
+Abyssal	Language_uncommon
+Akio	Language_uncommon
+Aquan	Language_uncommon
+Auran	Language_uncommon
+Celestial	Language_uncommon
+Gnoll	Language_uncommon
+Ignan	Language_uncommon
+Infernal	Language_uncommon
+Necril	Language_uncommon
+Shadowtongue	Language_uncommon
+Terran	Language_uncommon
+Druidic	Language_secret
+Hallit	Language_regional	Irrisen, Mendev, Numeria, Realm of the Mammoth Lords, Sarkoris, Ustalav
+Kelish	Language_regional	Katapesh, Kelesh, Osirion, Qadira
+Mwangi	Language_regional	Mwangi Expanse, the Shackles, Thuvia, Vidrian
+Osiriani	Language_regional	Geb, Katapesh, Mana Wastes, Nex, Osirion, Rahadoum, Thuvia
+Shoanti	Language_regional	Hold of Belkzen, Varisia
+Skald	Language_regional	Irrisen, Lands of the Linnorm Kings
+Tien	Language_regional	Lands of the Linnorm Kings, Realm of the Mammoth Lords, Tian Xia
+Varisian	Language_regional	Brevoy, the Gravelands, Nidal, Nirmathas, Ustalav, Varisia
+Vudrani	Language_regional	Jalmeray, Katapesh, Nex, Vudra
+Taldane	Language_common

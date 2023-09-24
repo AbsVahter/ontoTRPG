@@ -1,0 +1,155 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 920px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "rgb(130,94,184)", "id": "golden_road", "label": "golden_road", "shape": "dot"}, {"color": "rgb(130,94,184)", "id": "tian_xia", "label": "tian_xia", "shape": "dot"}, {"color": "rgb(130,94,184)", "id": "kelesh", "label": "kelesh", "shape": "dot"}, {"color": "rgb(130,94,184)", "id": "broken_lands", "label": "broken_lands", "shape": "dot"}, {"color": "rgb(130,94,184)", "id": "the_gravelands", "label": "the_gravelands", "shape": "dot"}, {"color": "rgb(130,94,184)", "id": "katapesh", "label": "katapesh", "shape": "dot"}, {"color": "rgb(130,94,184)", "id": "golarion", "label": "golarion", "shape": "dot"}, {"color": "rgb(130,94,184)", "id": "realm_of_the_mammoth_lords", "label": "realm_of_the_mammoth_lords", "shape": "dot"}, {"color": "rgb(130,94,184)", "id": "geb", "label": "geb", "shape": "dot"}, {"color": "rgb(254,113,57)", "id": "skald_language", "label": "skald_language", "shape": "dot"}, {"color": "rgb(130,94,184)", "id": "qadira", "label": "qadira", "shape": "dot"}, {"color": "rgb(130,94,184)", "id": "lands_of_the_linnorm_kings", "label": "lands_of_the_linnorm_kings", "shape": "dot"}, {"color": "rgb(130,94,184)", "id": "mana_wastes", "label": "mana_wastes", "shape": "dot"}, {"color": "rgb(130,94,184)", "id": "mendev", "label": "mendev", "shape": "dot"}, {"color": "rgb(130,94,184)", "id": "irrisen", "label": "irrisen", "shape": "dot"}, {"color": "rgb(130,94,184)", "id": "vudra", "label": "vudra", "shape": "dot"}, {"color": "rgb(130,94,184)", "id": "ustalav", "label": "ustalav", "shape": "dot"}, {"color": "rgb(254,113,57)", "id": "mwangi_language", "label": "mwangi_language", "shape": "dot"}, {"color": "rgb(130,94,184)", "id": "vidrian", "label": "vidrian", "shape": "dot"}, {"color": "rgb(130,94,184)", "id": "numeria", "label": "numeria", "shape": "dot"}, {"color": "rgb(130,94,184)", "id": "nex", "label": "nex", "shape": "dot"}, {"color": "rgb(254,113,57)", "id": "varisian_language", "label": "varisian_language", "shape": "dot"}, {"color": "rgb(254,113,57)", "id": "kelish_language", "label": "kelish_language", "shape": "dot"}, {"color": "rgb(130,94,184)", "id": "thuvia", "label": "thuvia", "shape": "dot"}, {"color": "rgb(130,94,184)", "id": "brevoy", "label": "brevoy", "shape": "dot"}, {"color": "rgb(130,94,184)", "id": "hold_of_belkzen", "label": "hold_of_belkzen", "shape": "dot"}, {"color": "rgb(254,113,57)", "id": "tien_language", "label": "tien_language", "shape": "dot"}, {"color": "rgb(130,94,184)", "id": "rahadoum", "label": "rahadoum", "shape": "dot"}, {"color": "rgb(130,94,184)", "id": "saga_lands", "label": "saga_lands", "shape": "dot"}, {"color": "rgb(130,94,184)", "id": "sarkoris", "label": "sarkoris", "shape": "dot"}, {"color": "rgb(254,113,57)", "id": "vudrani_language", "label": "vudrani_language", "shape": "dot"}, {"color": "rgb(130,94,184)", "id": "jalmeray", "label": "jalmeray", "shape": "dot"}, {"color": "rgb(130,94,184)", "id": "osirion", "label": "osirion", "shape": "dot"}, {"color": "rgb(130,94,184)", "id": "mwangi_expanse", "label": "mwangi_expanse", "shape": "dot"}, {"color": "rgb(130,94,184)", "id": "high_seas", "label": "high_seas", "shape": "dot"}, {"color": "rgb(254,113,57)", "id": "shoanti_language", "label": "shoanti_language", "shape": "dot"}, {"color": "rgb(130,94,184)", "id": "eye_of_dread", "label": "eye_of_dread", "shape": "dot"}, {"color": "rgb(254,113,57)", "id": "osiriani_language", "label": "osiriani_language", "shape": "dot"}, {"color": "rgb(130,94,184)", "id": "old_cheliax", "label": "old_cheliax", "shape": "dot"}, {"color": "rgb(130,94,184)", "id": "the_shackles", "label": "the_shackles", "shape": "dot"}, {"color": "rgb(130,94,184)", "id": "nidal", "label": "nidal", "shape": "dot"}, {"color": "rgb(130,94,184)", "id": "varisia", "label": "varisia", "shape": "dot"}, {"color": "rgb(130,94,184)", "id": "nirmathas", "label": "nirmathas", "shape": "dot"}, {"color": "rgb(254,113,57)", "id": "hallit_language", "label": "hallit_language", "shape": "dot"}, {"color": "rgb(130,94,184)", "id": "impossible_lands", "label": "impossible_lands", "shape": "dot"}, {"color": "rgb(130,94,184)", "id": "inner_sea", "label": "inner_sea", "shape": "dot"}]);
+                  edges = new vis.DataSet([{"arrows": "to", "from": "hallit_language", "title": "location", "to": "mendev"}, {"arrows": "to", "from": "mendev", "title": "location", "to": "broken_lands"}, {"arrows": "to", "from": "hallit_language", "title": "location", "to": "sarkoris"}, {"arrows": "to", "from": "sarkoris", "title": "location", "to": "broken_lands"}, {"arrows": "to", "from": "hallit_language", "title": "location", "to": "numeria"}, {"arrows": "to", "from": "numeria", "title": "location", "to": "broken_lands"}, {"arrows": "to", "from": "hallit_language", "title": "location", "to": "ustalav"}, {"arrows": "to", "from": "ustalav", "title": "location", "to": "eye_of_dread"}, {"arrows": "to", "from": "hallit_language", "title": "location", "to": "irrisen"}, {"arrows": "to", "from": "irrisen", "title": "location", "to": "saga_lands"}, {"arrows": "to", "from": "hallit_language", "title": "location", "to": "realm_of_the_mammoth_lords"}, {"arrows": "to", "from": "realm_of_the_mammoth_lords", "title": "location", "to": "saga_lands"}, {"arrows": "to", "from": "kelish_language", "title": "location", "to": "katapesh"}, {"arrows": "to", "from": "katapesh", "title": "location", "to": "golden_road"}, {"arrows": "to", "from": "kelish_language", "title": "location", "to": "qadira"}, {"arrows": "to", "from": "qadira", "title": "location", "to": "golden_road"}, {"arrows": "to", "from": "kelish_language", "title": "location", "to": "kelesh"}, {"arrows": "to", "from": "kelesh", "title": "location", "to": "golden_road"}, {"arrows": "to", "from": "kelish_language", "title": "location", "to": "osirion"}, {"arrows": "to", "from": "osirion", "title": "location", "to": "golden_road"}, {"arrows": "to", "from": "mwangi_language", "title": "location", "to": "thuvia"}, {"arrows": "to", "from": "thuvia", "title": "location", "to": "golden_road"}, {"arrows": "to", "from": "mwangi_language", "title": "location", "to": "the_shackles"}, {"arrows": "to", "from": "the_shackles", "title": "location", "to": "high_seas"}, {"arrows": "to", "from": "mwangi_language", "title": "location", "to": "mwangi_expanse"}, {"arrows": "to", "from": "mwangi_expanse", "title": "location", "to": "inner_sea"}, {"arrows": "to", "from": "mwangi_language", "title": "location", "to": "vidrian"}, {"arrows": "to", "from": "vidrian", "title": "location", "to": "mwangi_expanse"}, {"arrows": "to", "from": "osiriani_language", "title": "location", "to": "katapesh"}, {"arrows": "to", "from": "osiriani_language", "title": "location", "to": "thuvia"}, {"arrows": "to", "from": "osiriani_language", "title": "location", "to": "rahadoum"}, {"arrows": "to", "from": "rahadoum", "title": "location", "to": "golden_road"}, {"arrows": "to", "from": "osiriani_language", "title": "location", "to": "osirion"}, {"arrows": "to", "from": "osiriani_language", "title": "location", "to": "geb"}, {"arrows": "to", "from": "geb", "title": "location", "to": "impossible_lands"}, {"arrows": "to", "from": "osiriani_language", "title": "location", "to": "nex"}, {"arrows": "to", "from": "nex", "title": "location", "to": "impossible_lands"}, {"arrows": "to", "from": "osiriani_language", "title": "location", "to": "mana_wastes"}, {"arrows": "to", "from": "mana_wastes", "title": "location", "to": "impossible_lands"}, {"arrows": "to", "from": "shoanti_language", "title": "location", "to": "hold_of_belkzen"}, {"arrows": "to", "from": "hold_of_belkzen", "title": "location", "to": "eye_of_dread"}, {"arrows": "to", "from": "shoanti_language", "title": "location", "to": "varisia"}, {"arrows": "to", "from": "varisia", "title": "location", "to": "saga_lands"}, {"arrows": "to", "from": "skald_language", "title": "location", "to": "lands_of_the_linnorm_kings"}, {"arrows": "to", "from": "lands_of_the_linnorm_kings", "title": "location", "to": "saga_lands"}, {"arrows": "to", "from": "skald_language", "title": "location", "to": "irrisen"}, {"arrows": "to", "from": "tien_language", "title": "location", "to": "tian_xia"}, {"arrows": "to", "from": "tian_xia", "title": "location", "to": "golarion"}, {"arrows": "to", "from": "tien_language", "title": "location", "to": "lands_of_the_linnorm_kings"}, {"arrows": "to", "from": "tien_language", "title": "location", "to": "realm_of_the_mammoth_lords"}, {"arrows": "to", "from": "varisian_language", "title": "location", "to": "brevoy"}, {"arrows": "to", "from": "brevoy", "title": "location", "to": "broken_lands"}, {"arrows": "to", "from": "varisian_language", "title": "location", "to": "ustalav"}, {"arrows": "to", "from": "varisian_language", "title": "location", "to": "nirmathas"}, {"arrows": "to", "from": "nirmathas", "title": "location", "to": "eye_of_dread"}, {"arrows": "to", "from": "varisian_language", "title": "location", "to": "the_gravelands"}, {"arrows": "to", "from": "the_gravelands", "title": "location", "to": "eye_of_dread"}, {"arrows": "to", "from": "varisian_language", "title": "location", "to": "nidal"}, {"arrows": "to", "from": "nidal", "title": "location", "to": "old_cheliax"}, {"arrows": "to", "from": "varisian_language", "title": "location", "to": "varisia"}, {"arrows": "to", "from": "vudrani_language", "title": "location", "to": "katapesh"}, {"arrows": "to", "from": "vudrani_language", "title": "location", "to": "nex"}, {"arrows": "to", "from": "vudrani_language", "title": "location", "to": "jalmeray"}, {"arrows": "to", "from": "jalmeray", "title": "location", "to": "impossible_lands"}, {"arrows": "to", "from": "vudrani_language", "title": "location", "to": "vudra"}, {"arrows": "to", "from": "vudra", "title": "location", "to": "jalmeray"}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>

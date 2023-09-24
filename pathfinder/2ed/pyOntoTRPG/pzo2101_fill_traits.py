@@ -11,7 +11,7 @@ def fill(pzo2101):
             pass
 
         for index, row in main.iterrows("Traits"):
-            cl = Trait if row['spec_eff'] == 0 else Specialization_effect
+            cl = Specialization_effect if row['spec_eff'] == 1 else Trait
             trait = cl(
                 name = prepare_trait_name(row['name']),
             )

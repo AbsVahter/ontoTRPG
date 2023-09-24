@@ -91,3 +91,48 @@ weapon_2	https://i.ibb.co/yf1j40R/art-weapon-2.jpg
 gear	https://i.ibb.co/m6C3nTD/art-gear.jpg	
 spells_1	https://i.ibb.co/7JtvTLQ/art-spells-1.jpg
 spellbook	https://2e.aonprd.com/Images/Treasure/Spellbook.webp	spellbook_blank
+material component pouch	https://2e.aonprd.com/Images/Treasure/Material_Component_Pouch.webp	material_component_pouch
+handheld musical instrument	https://2e.aonprd.com/Images/Treasure/Musical_Instrument.webp	handheld_musical_instrument
+spells_2	https://images2.minutemediacdn.com/image/fetch/c_fill,g_auto,f_auto,h_432,w_648/https%3A%2F%2Fapptrigger.com%2Ffiles%2F2019%2F08%2FPathfinder-2nd-Edition-spell-preparation.jpg	
+spells_3	https://legendary-digital-network-assets.s3.amazonaws.com/geekandsundry/wp-content/uploads/2019/11/Pathfinder-Magic-Image-2.png	
+spells_4	https://rollforcombat.com/wp-content/uploads/2019/08/7.jpg	
+spells_5	https://rollforcombat.com/wp-content/uploads/2019/08/8.jpg	
+spells_6	https://legendary-digital-network-assets.s3.amazonaws.com/geekandsundry/wp-content/uploads/2019/11/Pathfinder-Spells-Image.png	
+spells_7	https://i.ibb.co/Hn6wPjv/art-spells-7.jpg	
+spells_8	https://i.ibb.co/rFfg5kB/art-spells-8.jpg	
+spells_9	https://www.wargamer.com/wp-content/sites/wargamer/2023/01/pathfinder-wizard-2e-casting.jpg	
+spells_10	https://i.ibb.co/fX0SnL2/art-spells-10.jpg	
+spells_11	https://i.ibb.co/WPg8qgq/art-spells-11.jpg	
+spells_12	https://i.ibb.co/m52d3vp/art-spells-12.jpg	
+spells_13	https://i.ibb.co/JpfJMkg/art-spells-13.jpg	
+spells_14	https://cdn.paizo.com/image/content/PathfinderRPG/20190327-Kyra_500.jpeg	
+spells_15	https://i.ibb.co/C2HzRv5/art-spells-15.jpg	
+age_of_lost_omens_1	https://guildberkeley.files.wordpress.com/2020/04/sheila-heidmarch.jpg	
+absalom_and_starsone_isle	https://cdn.paizo.com/image/content/PathfinderWorldGuides/20190529-Opener_500.jpeg	absalom,starstone_isle
+broken_lands	https://cdn.paizo.com/image/content/PathfinderLostOmens/20190604-BrokenLands_500.jpeg	broken_lands
+eye_of_dread	https://pathfinderwiki.com/w/images/e/e5/Zombies.jpg	eye_of_dread
+golden_road	https://cdn.paizo.com/image/content/PathfinderLostOmens/20190618-GoldenRoad.jpg	golden_road
+high_seas	https://cdn.paizo.com/image/content/Blog/20190625-highseas.jpg	high_seas
+impossible_lands	http://bpfindley.com/Impossible%20Lands.jpg	impossible_lands
+mwangi_expanse	https://cdn.paizo.com/image/content/Blog/20190709-mwangiexpanse.jpg	mwangi_expanse
+old_cheliax	https://cdn.paizo.com/image/content/Blog/20190716-cheliax.jpg	old_cheliax
+saga_lands	https://cdn.paizo.com/image/content/Blog/20190723-sagalands.jpg	saga_lands
+shining_kingdoms	https://cdn.paizo.com/image/content/Blog/20190730-shiningkingdoms.jpg	shining_kingdoms
+garundi	https://i.ibb.co/9YsXxqf/garundi.jpg	garundi
+keleshite	https://i.ibb.co/0BxnJvG/keleshite.jpg	keleshite
+kellid	https://i.ibb.co/Dt96MgF/Kellid.jpg	kellid
+mwangi	https://i.ibb.co/4gdwDjZ/mwangi.jpg	mwangi
+nidalese	https://i.ibb.co/64sFjxV/nidalese.jpg	nidalese
+shoanti	https://i.ibb.co/NrMws0K/shoanti.jpg	shoanti
+taldan	https://i.ibb.co/m4GcWxf/taldan.jpg	taldan
+tian	https://i.ibb.co/BzR6DhZ/tian.jpg	tian
+ulfen	https://i.ibb.co/37T1nPF/ulfen.jpg	ulfen
+varisian	https://i.ibb.co/k0QsfKn/varisian.jpg	varisian
+vudrani	https://i.ibb.co/848F6Jm/vudrani.jpg	vudrani
+dwarf_3	https://i.ibb.co/rcGzXqh/dwarf.jpg	dwarf
+elf_3	https://i.ibb.co/tYQHGvg/elf.jpg	elf
+gnome_3	https://i.ibb.co/JHbDRrd/gnome.jpg	gnome
+goblin_3	https://i.ibb.co/6rh4Ltc/goblin.jpg	goblin
+halfling_3	https://i.ibb.co/r38k3HK/halfling.jpg	halfling
+halfelf_2	https://i.ibb.co/56x7Lkp/halfelf.jpg	half_elf
+halforc_2	https://i.ibb.co/wLtsQsy/halforc.jpg	half_orc
