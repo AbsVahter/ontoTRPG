@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<root>
+  <row name="Bulwark">
+    <comment>The armor covers you so completely that it provides benefits against some damaging effects.</comment>
+  </row>
+  <row name="Comfort">
+    <comment>The armor is so comfortable that you can rest normally while wearing it.</comment>
+  </row>
+  <row name="Flexible">
+    <comment>The armor is flexible enough that it doesn’t hinder most actions.</comment>
+  </row>
+  <row name="Noisy">
+    <comment>This armor is loud and likely to alert others to your presence.</comment>
+  </row>
+  <row name="Chain" subclass="Specialization_effect">
+    <comment>The armor is so flexible it can bend with a critical hit and absorb some of the blow.</comment>
+  </row>
+  <row name="Composite" subclass="Specialization_effect">
+    <comment>The numerous overlapping pieces of this armor protect you from piercing attacks.</comment>
+  </row>
+  <row name="Leather" subclass="Specialization_effect">
+    <comment>The thick second skin of the armor disperses blunt force to reduce bludgeoning damage.</comment>
+  </row>
+  <row name="Plate" subclass="Specialization_effect">
+    <comment>The sturdy plate provides no purchase for a cutting edge.</comment>
+  </row>
+  <row name="Cloth">
+  </row>
+  <row name="Axe" subclass="Specialization_effect">
+  </row>
+  <row name="Bomb" subclass="Specialization_effect">
+  </row>
+  <row name="Bow" subclass="Specialization_effect">
+  </row>
+  <row name="Brawling" subclass="Specialization_effect">
+  </row>
+  <row name="Club" subclass="Specialization_effect">
+  </row>
+  <row name="Dart" subclass="Specialization_effect">
+  </row>
+  <row name="Flail" subclass="Specialization_effect">
+  </row>
+  <row name="Hammer" subclass="Specialization_effect">
+  </row>
+  <row name="Knife" subclass="Specialization_effect">
+  </row>
+  <row name="Pick" subclass="Specialization_effect">
+  </row>
+  <row name="Polearm" subclass="Specialization_effect">
+  </row>
+  <row name="Shield weapon" subclass="Specialization_effect">
+  </row>
+  <row name="Sling" subclass="Specialization_effect">
+  </row>
+  <row name="Spear" subclass="Specialization_effect">
+  </row>
+  <row name="Sword" subclass="Specialization_effect">
+  </row>
+  <row name="bludgeoning">
+  </row>
+  <row name="piercing">
+  </row>
+  <row name="slashing">
+  </row>
+  <row name="Agile">
+  </row>
+  <row name="Attached">
+  </row>
+  <row name="Backstabber">
+  </row>
+  <row name="Backswing">
+  </row>
+  <row name="Deadly">
+  </row>
+  <row name="Disarm">
+  </row>
+  <row name="Dwarf">
+  </row>
+  <row name="Elf">
+  </row>
+  <row name="Fatal">
+  </row>
+  <row name="Finesse">
+  </row>
+  <row name="Forceful">
+  </row>
+  <row name="Free-Hand">
+  </row>
+  <row name="Gnome">
+  </row>
+  <row name="Goblin">
+  </row>
+  <row name="Grapple">
+  </row>
+  <row name="Halfling">
+  </row>
+  <row name="Jousting">
+  </row>
+  <row name="Monk">
+  </row>
+  <row name="Nonlethal">
+  </row>
+  <row name="Orc">
+  </row>
+  <row name="Parry">
+  </row>
+  <row name="Propulsive">
+  </row>
+  <row name="Reach">
+  </row>
+  <row name="Shove">
+  </row>
+  <row name="Sweep">
+  </row>
+  <row name="Thrown">
+  </row>
+  <row name="Trip">
+  </row>
+  <row name="Twin">
+  </row>
+  <row name="Two-Hand">
+  </row>
+  <row name="Unarmed">
+  </row>
+  <row name="Versatile">
+  </row>
+  <row name="Volley">
+  </row>
+  <row name="Uncommon">
+  </row>
+  <row name="Matter">
+    <comment>Also called body, material essence, or physical essence, matter is the fundamental building block that makes up all physical things in the universe. The arcane and primal traditions are especially attuned toward manipulating and shaping matter. Spells that are used to create or alter matter most often come from the conjuration, evocation, or transmutation schools.</comment>
+  </row>
+  <row name="Spirit">
+    <comment>Also called soul, ethereal essence, or spiritual essence, spirit is an otherworldly building block that makes up a being’s immaterial and immortal self. The spirit travels through the Ethereal Plane and into the Great Beyond after the death of the physical body. The spirit is most easily affected by divine and occult spells. Spirit spells are usually of the divination or necromancy schools.</comment>
+  </row>
+  <row name="Mind">
+    <comment>Also called thought, mental, or astral essence, mind is what allows thinking creatures to have rational thoughts, ideas, plans, logic, and memories. Mind touches even nonsapient creatures like animals, though in a more limited capacity. Arcane and occult casters usually excel at mind spells. Spells that use mind essence are usually found in the divination, enchantment, and illusion schools.</comment>
+  </row>
+  <row name="Life">
+    <comment>Also called heart, faith, instinct, or vital essence, life represents the animating universal force within all things. Whereas matter provides the base materials for a body, life keeps it alive and well. This essence is responsible for unconscious responses and belief, such as ancestral instincts and divine guidance. The divine and primal traditions hold power over life. Life spells are usually necromancy.</comment>
+  </row>
+  <row name="Material component">
+    <comment>A material component is a bit of physical matter consumed in the casting of the spell.</comment>
+  </row>
+  <row name="Somatic component">
+    <comment>A somatic component is a specific hand movement or gesture that generates a magical nexus.</comment>
+  </row>
+  <row name="Verbal component">
+    <comment>A verbal component is a vocalization of words of power.</comment>
+  </row>
+  <row name="Focus component">
+    <comment>A focus is an object that funnels the magical energy of the spell.</comment>
+  </row>
+</root>

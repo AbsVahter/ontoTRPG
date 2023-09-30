@@ -1,5 +1,0 @@
-name	price	ac_bonus	speed_penalty	bulk	hardness	comment
-Buckler	1 gp	1	0	L	3	This very small shield is a favorite of duelists and quick, lightly armored warriors. It’s typically made of steel and strapped to your forearm. You can Raise a Shield with your buckler as long as you have that hand free or are holding a light object that’s not a weapon in that hand.
-Wooden shield	1 gp	2	0	1	3	Though they come in a variety of shapes and sizes, the protection offered by wooden shields comes from the stoutness of their materials. While wooden shields are less expensive than steel shields, they break more easily.
-Steel shield	2 gp	2	0	1	5	Like wooden shields, steel shields come in a variety of shapes and sizes. Though more expensive than wooden shields, they are much more durable.
-Tower shield	10 gp	2	-5	4	5	These massive shields can be used to provide cover to nearly the entire body. Due to their size, they are typically made of wood reinforced with metal.

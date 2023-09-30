@@ -12,24 +12,18 @@ def fill_archetypes(pzo2101):
                        "choices from a single class aren’t sufficient to fully realize your character. Archetypes "
                        "allow you to expand the scope of your character’s class.")
 
-        for index, row in main.iterrows("Archetypes"):
-            f = Feat(
-                name = main.prepare_name(row['feat']),
-                level = row['level'],
-                prereq = pzo2101.search(is_a = Feat, iri = main.iri_for_search(row['prereq']))
-                if not pd.isna(row['prereq']) else [],
-            )
-            arch = Archetype(
-                name = f"{main.prepare_name(row['name'])}_archetype",
-            )
-            arch.has_selectable_feat.append(f)
+        for gc in pzo2101.Gameclass.instances():
+            Archetype(main.render_text(gc.name, object_class = "Archetype"))
+
+        main.fill_onto_from_xml(pzo2101, "Archetype feats", Feat)
 
 
 def fill_rel_class_kits(pzo2101):
     with pzo2101:
-        for index, row in main.iterrows('Equipment_packs'):
-            pack = pzo2101[main.prepare_name(row['name'])]
-            if not pd.isna(row['relates']): pack.relates_to.append(pzo2101[row['relates']])
+        for pack in pzo2101.Starter_kit.instances():
+            gameclass_name = pack.name.split("_s_")[0]
+            gc = pzo2101[gameclass_name]
+            pack.relates_to.append(gc)
 
 
 def fill(pzo2101: Ontology):
@@ -37,7 +31,6 @@ def fill(pzo2101: Ontology):
     fill_weapon(pzo2101)
     fill_armor(pzo2101)
     fill_feats(pzo2101)
-    fill_specializations(pzo2101)
     fill_archetypes(pzo2101)
     fill_rel_class_kits(pzo2101)
 
@@ -54,45 +47,10 @@ def fill_class_props(pzo2101: Ontology):
                                  "a combatoriented character, a stealthy character, and someone with command over magic—so you "
                                  "may wish to discuss options with your group before deciding.")
 
-        trained = pzo2101.trained
         for k in [pzo2101.perception, pzo2101.fortitude, pzo2101.reflex, pzo2101.will]:
             Gameclass.trained.append(k)
 
-        for index, row in main.iterrows('Classes'):
-            skills = []
-            if row['skills'] == row['skills']: skills = row['skills'].split(",")
-            cl = Gameclass(
-                name = main.prepare_name(row['name']),
-                comment = [row['comment_1'], row['comment_2']],
-                ability_boost = [pzo2101.search(is_a = pzo2101.Ability_score, iri = main.iri_for_search(x)).first()
-                                 for x in row['boost'].split(",")],
-                hp = int(row['hp']),
-                experted = [pzo2101.search(is_a = pzo2101.Characteristic,
-                                           iri = main.iri_for_search(x)).first()
-                            for x in row['expert'].split(",")],
-                trained = [pzo2101.search(is_a = pzo2101.Skill,
-                                          iri = main.iri_for_search(x)).first()
-                           for x in skills],
-                additional_skills = row['additional_skills'],
-            )
-            if "," in row['boost']:
-                cl.comment.append("your class gives you an ability boost to your choice")
-
-        pzo2101.champion.comment.append("Trained in one skill determined by your choice of deity")
-        pzo2101.cleric.comment.extend([
-            "Trained in one skill determined by your choice of deity",
-            "Trained in the favored weapon of your deity. If your deity’s favored weapon is uncommon, you also gain "
-            "access to that weapon."
-        ])
-        pzo2101.druid.comment.append("Trained in one skill determined by your druidic order")
-        pzo2101.fighter.comment.append("Trained in your choice of Acrobatics or Athletics")
-        pzo2101.rogue.comment.append("Trained in one or more skills determined by your rogue’s racket")
-        pzo2101.sorcerer.comment.append("Trained in one or more skills determined by your bloodline")
-
-        spell_dict = {3: [pzo2101.bard, pzo2101.cleric, pzo2101.druid, pzo2101.wizard], 4: [pzo2101.sorcerer]}
-        for k in spell_dict:
-            for cl in spell_dict[k]:
-                cl.spells_per_day = k
+        main.fill_onto_from_xml(pzo2101, "Classes", Gameclass)
 
 
 def fill_weapon(pzo2101: Ontology):
@@ -100,29 +58,20 @@ def fill_weapon(pzo2101: Ontology):
         fist = pzo2101.fist
         Gameclass = pzo2101.Gameclass
         Gameclass.is_a.append(pzo2101.trained.value(fist))
+        trained = pzo2101.trained
 
         wizard = pzo2101.wizard
         for cl in filter(lambda x: x is not wizard, Gameclass.instances()):
-            pzo2101.Simple_weapon.is_trained_by.append(cl)
+            pzo2101.Simple_weapon.is_a.append(Inverse(trained).value(cl))
         for cl in [pzo2101.barbarian, pzo2101.champion, pzo2101.ranger]:
-            pzo2101.Martial_weapon.is_trained_by.append(cl)
+            pzo2101.Martial_weapon.is_a.append(Inverse(trained).value(cl))
         pzo2101.alchemist.trained.append(pzo2101.alchemical_bomb)
 
         fighter = pzo2101.fighter
         for weapon_cl in [pzo2101.Simple_weapon, pzo2101.Martial_weapon]:
             weapon_cl.is_experted_by.append(fighter)
-        pzo2101.Advanced_weapon.is_trained_by.append(fighter)
+        pzo2101.Advanced_weapon.is_a.append(Inverse(trained).value(fighter))
         fighter.experted.append(fist)
-
-        w_dict = {
-            pzo2101.bard: ['longsword', 'rapier', 'sap', 'shortbow', 'shortsword', 'whip'],
-            pzo2101.rogue: ['rapier', 'sap', 'shortbow', 'shortsword'],
-            wizard: ['club', 'crossbow', 'dagger', 'heavy_crossbow', 'staff']
-        }
-        for cl in w_dict:
-            for w in w_dict[cl]:
-                cl.trained.append(
-                    pzo2101.search(is_a = pzo2101.Weapon, iri = main.iri_for_search(w)).first())
 
 
 def fill_armor(pzo2101: Ontology):
@@ -139,28 +88,11 @@ def fill_armor(pzo2101: Ontology):
         }
         for arm_cl in arm_dict:
             for cl in arm_dict[arm_cl]:
-                arm_cl.is_trained_by.append(cl)
+                arm_cl.is_a.append(Inverse(pzo2101.trained).value(cl))
 
 
 def fill_feats(pzo2101: Ontology):
     with pzo2101:
-        for index, row in main.iterrows("Class_feats"):
-            cl = pzo2101[row['gameclass']]
-            f = pzo2101.Feat(
-                name = main.prepare_name(row['name']),
-                level = int(row['level']),
-            )
-            if row['property'] == 'feat_of':
-                f.feat_of.append(cl)
-            elif row['property'] == 'selectable_feat_of':
-                f.selectable_feat_of.append(cl)
+        main.fill_onto_from_xml(pzo2101, "Class feats", pzo2101.Feat)
+        main.fill_onto_from_xml(pzo2101, "Class specialization feats", pzo2101.Class_specialization)
 
-
-def fill_specializations(pzo2101):
-    with pzo2101:
-        for index, row in main.iterrows("Class_specialization_feats"):
-            parent_feat = pzo2101.search(is_a = pzo2101.Feat, iri = main.iri_for_search(row['parent'])).first()
-            pzo2101.Class_specialization(
-                name = main.prepare_name(row['name']),
-                selectable_feat_of = [parent_feat],
-            )

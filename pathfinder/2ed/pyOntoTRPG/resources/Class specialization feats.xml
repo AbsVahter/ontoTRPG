@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+<root>
+<row name="Bomber">
+  <selectable_feat_of>Research Field</selectable_feat_of>
+</row>
+<row name="Chirurgeon">
+  <selectable_feat_of>Research Field</selectable_feat_of>
+</row>
+<row name="Mutagenist">
+  <selectable_feat_of>Research Field</selectable_feat_of>
+</row>
+<row name="Animal Instinct">
+  <selectable_feat_of>Instinct</selectable_feat_of>
+</row>
+<row name="Dragon Instinct">
+  <selectable_feat_of>Instinct</selectable_feat_of>
+</row>
+<row name="Fury Instinct">
+  <selectable_feat_of>Instinct</selectable_feat_of>
+</row>
+<row name="Giant Instinct">
+  <selectable_feat_of>Instinct</selectable_feat_of>
+</row>
+<row name="Spirit Instinct">
+  <selectable_feat_of>Instinct</selectable_feat_of>
+</row>
+<row name="Enigma">
+  <selectable_feat_of>Muses</selectable_feat_of>
+</row>
+<row name="Maestro">
+  <selectable_feat_of>Muses</selectable_feat_of>
+</row>
+<row name="Polymath">
+  <selectable_feat_of>Muses</selectable_feat_of>
+</row>
+<row name="Paladin">
+  <selectable_feat_of>Deity and Cause</selectable_feat_of>
+</row>
+<row name="Redeemer">
+  <selectable_feat_of>Deity and Cause</selectable_feat_of>
+</row>
+<row name="Liberator">
+  <selectable_feat_of>Deity and Cause</selectable_feat_of>
+</row>
+<row name="Healing Font">
+  <selectable_feat_of>Divine Font feat</selectable_feat_of>
+</row>
+<row name="Harmful Font">
+  <selectable_feat_of>Divine Font feat</selectable_feat_of>
+</row>
+<row name="Cloistered Cleric">
+  <selectable_feat_of>Doctrine</selectable_feat_of>
+</row>
+<row name="Warpriest">
+  <selectable_feat_of>Doctrine</selectable_feat_of>
+</row>
+<row name="Animal order">
+  <selectable_feat_of>Druidic Order</selectable_feat_of>
+</row>
+<row name="Leaf order">
+  <selectable_feat_of>Druidic Order</selectable_feat_of>
+</row>
+<row name="Storm order">
+  <selectable_feat_of>Druidic Order</selectable_feat_of>
+</row>
+<row name="Wild order">
+  <selectable_feat_of>Druidic Order</selectable_feat_of>
+</row>
+<row name="Flurry edge">
+  <selectable_feat_of>Hunter’s Edge</selectable_feat_of>
+</row>
+<row name="Precision edge">
+  <selectable_feat_of>Hunter’s Edge</selectable_feat_of>
+</row>
+<row name="Outwit edge">
+  <selectable_feat_of>Hunter’s Edge</selectable_feat_of>
+</row>
+<row name="Ruffian">
+  <selectable_feat_of>Rogue’s Racket</selectable_feat_of>
+</row>
+<row name="Scoundrel">
+  <selectable_feat_of>Rogue’s Racket</selectable_feat_of>
+</row>
+<row name="Thief">
+  <selectable_feat_of>Rogue’s Racket</selectable_feat_of>
+</row>
+<row name="Aberrant bloodline">
+  <selectable_feat_of>Bloodline</selectable_feat_of>
+</row>
+<row name="Angelic bloodline">
+  <selectable_feat_of>Bloodline</selectable_feat_of>
+</row>
+<row name="Demonic bloodline">
+  <selectable_feat_of>Bloodline</selectable_feat_of>
+</row>
+<row name="Diabolic bloodline">
+  <selectable_feat_of>Bloodline</selectable_feat_of>
+</row>
+<row name="Draconic bloodline">
+  <selectable_feat_of>Bloodline</selectable_feat_of>
+</row>
+<row name="Elemental bloodline">
+  <selectable_feat_of>Bloodline</selectable_feat_of>
+</row>
+<row name="Fey bloodline">
+  <selectable_feat_of>Bloodline</selectable_feat_of>
+</row>
+<row name="Hag bloodline">
+  <selectable_feat_of>Bloodline</selectable_feat_of>
+</row>
+<row name="Imperial bloodline">
+  <selectable_feat_of>Bloodline</selectable_feat_of>
+</row>
+<row name="Undead bloodline">
+  <selectable_feat_of>Bloodline</selectable_feat_of>
+</row>
+<row name="Abjuration arcane school">
+  <selectable_feat_of>Arcane School</selectable_feat_of>
+</row>
+<row name="Conjuration arcane school">
+  <selectable_feat_of>Arcane School</selectable_feat_of>
+</row>
+<row name="Divination arcane school">
+  <selectable_feat_of>Arcane School</selectable_feat_of>
+</row>
+<row name="Enchantment arcane school">
+  <selectable_feat_of>Arcane School</selectable_feat_of>
+</row>
+<row name="Evocation arcane school">
+  <selectable_feat_of>Arcane School</selectable_feat_of>
+</row>
+<row name="Illusion arcane school">
+  <selectable_feat_of>Arcane School</selectable_feat_of>
+</row>
+<row name="Necromancy arcane school">
+  <selectable_feat_of>Arcane School</selectable_feat_of>
+</row>
+<row name="Transmutation arcane school">
+  <selectable_feat_of>Arcane School</selectable_feat_of>
+</row>
+<row name="universalist wizard">
+  <selectable_feat_of>Arcane School</selectable_feat_of>
+</row>
+</root>

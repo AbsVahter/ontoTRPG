@@ -3,16 +3,9 @@ from owlready2 import *
 
 import main
 
-
-def prepare_name_map(s):
-    return f"map_{main.prepare_name(s)}"
-
-
 def fill(pzo2101: Ontology):
     with pzo2101:
         Art = pzo2101.Art
-
-        Art("art_ancestries_and_backgrounds", image = "https://i.ibb.co/nLLbFPt/art-ancestries-and-backgrounds.jpg")
 
         for anc in filter(lambda x: x.name != 'human',pzo2101.Playable_ancestry.instances()):
             for i in range(2):
@@ -25,18 +18,6 @@ def fill(pzo2101: Ontology):
             art = Art(f"art_{heritage.lower()}", image = [art_path])
             art.depicts.append(pzo2101.human)
 
-        bg_art_links = [
-            "https://i.ibb.co/nngtHvh/art-background-1.jpg",
-            "https://i.ibb.co/QdtCW6s/art-background-2.jpg",
-            "https://i.ibb.co/jWYXRS6/art-background-3.jpg",
-        ]
-        for i in range(len(bg_art_links)):
-            Art(
-                f"art_backgrounds_{i+1}",
-                image = [bg_art_links[i]],
-            )
-
-        Art("art_classes", image = "https://i.ibb.co/XJSVLsn/art-classes.jpg")
 
         class Icon(Art): pass
 
@@ -47,17 +28,22 @@ def fill(pzo2101: Ontology):
                 depicts = [cl],
             )
 
-        for index, row in main.iterrows("Art"):
-            Art(
-                name = f"art_{row['name']}",
-                image = row['link'],
-                depicts = [pzo2101[x.strip()] for x in row['target'].split(",")] if not pd.isna(row['target']) else [],
+        class Map(Art):
+            pass
+
+        main.fill_onto_from_xml(pzo2101, "Art", Art)
+
+        religions = list(pzo2101.Deity.instances()) + list(pzo2101.Faith.instances())
+        religions.remove(pzo2101['atheism'])
+        for religion in religions:
+            n = religion.name.replace('_', '') if religion.name != 'prophecies_of_kalistrade' else "ProphetsOfKalistrade"
+
+            Icon(
+                name = prepare_name_icon(religion.name),
+                image = f"https://2e.aonprd.com/Images/Deities/{n}.png",
+                depicts = [religion],
             )
 
-        class Map(Art): pass
-        for index, row in main.iterrows("Maps"):
-            m = Map(
-                name = prepare_name_map(row['name']),
-                image = row['link'],
-            )
-            main.set_relation(pzo2101, m, m.depicts, row['depicts'], main.prepare_name)
+
+def prepare_name_icon(s):
+    return f"art_{main.prepare_name(s)}_icon"

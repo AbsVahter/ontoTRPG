@@ -16,7 +16,7 @@ def fill(pzo2101: Ontology):
 
         Background.trained.append(pzo2101.lore)
 
-        for index, row in main.iterrows('Backgrounds'):
+        for index, row in main.read_text_for_parse('Backgrounds'):
             x = re.search(
                 r'(.*) BACKGROUND (.*) Choose two ability boosts. One must be to (.*) or (.*), and one is a free ability boost. You’re trained in the (.*) skill and (.*). You gain the (.*) skill feat.',
                 row['description']).groups()

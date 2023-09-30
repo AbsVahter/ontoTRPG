@@ -1,9 +1,0 @@
-name	comment	size	hp	speed	special_speed
-Badger	Your companion is a badger, wolverine, or other big mustelid.	Small	8	25	burrow 10 feet, climb 10 feet
-Bear	Your companion is a black, grizzly, polar, or other type of bear.	Small	8	35	
-Bird	Your companion is a bird of prey, such as an eagle, hawk, or owl.	Small	4	10	fly 60 feet
-Cat	Your companion is a big cat, such as a leopard or tiger.	Small	4	35	
-Dromaeosaur	Your companion is a dromaeosaur (also called a raptor), such as a velociraptor or deinonychus.	Small	6	50	
-Horse	Your companion is a horse, pony, or similar equine.	Medium or Large	8	40	
-Snake	Your companion is a constrictor snake, such as a boa or python.	Small	6	20	climb 20 feet, swim 20 feet
-Wolf	Your companion is a wolf or other canine creature, such as a dog.	Small	6	40	

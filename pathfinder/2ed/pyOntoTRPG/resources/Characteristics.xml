@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<root>
+<row name="perception" subclass="Characteristic_with_proficiency"></row>
+<row name="fortitude" subclass="Characteristic_with_proficiency"></row>
+<row name="reflex" subclass="Characteristic_with_proficiency"></row>
+<row name="will" subclass="Characteristic_with_proficiency"></row>
+<row name="level of character"></row>
+<row name="weapon proficiency" subclass="Characteristic_with_proficiency"></row>
+<row name="equipment"></row>
+<row name="armor proficiency" subclass="Characteristic_with_proficiency"></row>
+<row name="spell proficiency" subclass="Characteristic_with_proficiency"></row>
+</root>

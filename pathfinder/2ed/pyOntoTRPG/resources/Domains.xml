@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+<domain name="Air">
+  <comment>You can control winds and the weather.</comment>
+  <spell>Pushing gust</spell>
+  <spell>Disperse into air</spell>
+</domain>
+<domain name="Ambition">
+  <comment>You strive to keep up with and outpace the competition.</comment>
+  <spell>Blind ambition</spell>
+  <spell>Competitive edge</spell>
+</domain>
+<domain name="Cities">
+  <comment>You have powers over urban environments and denizens.</comment>
+  <spell>Face in the crowd</spell>
+  <spell>Pulse of the city</spell>
+</domain>
+<domain name="Confidence">
+  <comment>You overcome your fear and project pride.</comment>
+  <spell>Veil of confidence</spell>
+  <spell>Delusional pride</spell>
+</domain>
+<domain name="Creation">
+  <comment>You have divine abilities related to crafting and art.</comment>
+  <spell>Splash of art</spell>
+  <spell>Artistic flourish</spell>
+</domain>
+<domain name="Darkness">
+  <comment>You operate in the darkness and take away the light.</comment>
+  <spell>Cloak of shadow</spell>
+  <spell>Darkened eyes</spell>
+</domain>
+<domain name="Death">
+  <comment>You have the power to end lives and destroy undead.</comment>
+  <spell>Death’s call</spell>
+  <spell>Eradicate undeath</spell>
+</domain>
+<domain name="Destruction">
+  <comment>You are a conduit for divine devastation.</comment>
+  <spell>Cry of destruction</spell>
+  <spell>Destructive aura</spell>
+</domain>
+<domain name="Dreams">
+  <comment>You have the power to enter and manipulate dreams.</comment>
+  <spell>Sweet dream</spell>
+  <spell>Dreamer&apos;s call</spell>
+</domain>
+<domain name="Earth">
+  <comment>You control soil and stone.</comment>
+  <spell>Hurtling stone</spell>
+  <spell>Localized quake</spell>
+</domain>
+<domain name="Family">
+  <comment>You aid and protect your family and community more effectively.</comment>
+  <spell>Soothing words</spell>
+  <spell>Unity</spell>
+</domain>
+<domain name="Fate">
+  <comment>You see and understand hidden inevitabilities.</comment>
+  <spell>Read fate</spell>
+  <spell>Tempt fate</spell>
+</domain>
+<domain name="Fire">
+  <comment>You control flame.</comment>
+  <spell>Fire ray</spell>
+  <spell>Flame barrier</spell>
+</domain>
+<domain name="Freedom">
+  <comment>You liberate yourself and others from shackles and constraints.</comment>
+  <spell>Unimpeded stride</spell>
+  <spell>Word of freedom</spell>
+</domain>
+<domain name="Healing">
+  <comment>Your healing magic is particularly potent.</comment>
+  <spell>Healer’s blessing</spell>
+  <spell>Rebuke death</spell>
+</domain>
+<domain name="Indulgence">
+  <comment>You feast mightily and can shake off the effects of overindulging.</comment>
+  <spell>Overstuff</spell>
+  <spell>Take its course</spell>
+</domain>
+<domain name="Knowledge">
+  <comment>You receive divine insights.</comment>
+  <spell>Scholarly recollection</spell>
+  <spell>Know the enemy</spell>
+</domain>
+<domain name="Luck">
+  <comment>You’re unnaturally lucky and keep out of harm’s way.</comment>
+  <spell>Bit of luck</spell>
+  <spell>Lucky break</spell>
+</domain>
+<domain name="Magic">
+  <comment>You perform the unexpected and inexplicable.</comment>
+  <spell>Magic&apos;s vessel</spell>
+  <spell>Mystic beacon</spell>
+</domain>
+<domain name="Might">
+  <comment>Your physical power is bolstered by divine strength.</comment>
+  <spell>Athletic rush</spell>
+  <spell>Enduring might</spell>
+</domain>
+<domain name="Moon">
+  <comment>You command powers associated with the moon.</comment>
+  <spell>Moonbeam</spell>
+  <spell>Touch of the moon</spell>
+</domain>
+<domain name="Nature">
+  <comment>You hold power over animals and plants.</comment>
+  <spell>Vibrant thorns</spell>
+  <spell>Nature’s bounty</spell>
+</domain>
+<domain name="Nightmares">
+  <comment>You fill minds with horror and dread.</comment>
+  <spell>Waking nightmare</spell>
+  <spell>Shared nightmare</spell>
+</domain>
+<domain name="Pain">
+  <comment>You punish those who displease you with the sharp sting of pain.</comment>
+  <spell>Savor the sting</spell>
+  <spell>Retributive pain</spell>
+</domain>
+<domain name="Passion">
+  <comment>You evoke passion, whether as love or lust.</comment>
+  <spell>Charming touch</spell>
+  <spell>Captivating adoration</spell>
+</domain>
+<domain name="Perfection">
+  <comment>You strive to perfect your mind, body, and spirit.</comment>
+  <spell>Perfected mind</spell>
+  <spell>Perfected form</spell>
+</domain>
+<domain name="Protection">
+  <comment>You ward yourself and others.</comment>
+  <spell>Protector’s sacrifice</spell>
+  <spell>Protector&apos;s sphere</spell>
+</domain>
+<domain name="Secrecy">
+  <comment>You protect secrets and keep them hidden.</comment>
+  <spell>Forced quiet</spell>
+  <spell>Safeguard secret</spell>
+</domain>
+<domain name="Sun">
+  <comment>You harness the power of the sun and other light sources, and punish undead.</comment>
+  <spell>Dazzling flash</spell>
+  <spell>Positive luminance</spell>
+</domain>
+<domain name="Travel">
+  <comment>You have power over movement and journeys.</comment>
+  <spell>Agile feet</spell>
+  <spell>Traveler&apos;s transit</spell>
+</domain>
+<domain name="Trickery">
+  <comment>You deceive others and cause mischief.</comment>
+  <spell>Sudden shift</spell>
+  <spell>Trickster’s twin</spell>
+</domain>
+<domain name="Truth">
+  <comment>You pierce lies and discover the truth.</comment>
+  <spell>Word of truth</spell>
+  <spell>Glimpse the truth</spell>
+</domain>
+<domain name="Tyranny">
+  <comment>You wield power to rule and enslave others.</comment>
+  <spell>Touch of obedience</spell>
+  <spell>Commanding lash</spell>
+</domain>
+<domain name="Undeath">
+  <comment>Your magic carries close ties to the undead.</comment>
+  <spell>Touch of undeath</spell>
+  <spell>Malignant sustenance</spell>
+</domain>
+<domain name="Water">
+  <comment>You control water and bodies of water.</comment>
+  <spell>Tidal surge</spell>
+  <spell>Downpour</spell>
+</domain>
+<domain name="Wealth">
+  <comment>You hold power over wealth, trade, and treasure.</comment>
+  <spell>Appearance of wealth</spell>
+  <spell>Precious metals</spell>
+</domain>
+<domain name="Zeal">
+  <comment>Your inner fire increases your combat prowess.</comment>
+  <spell>Weapon surge</spell>
+  <spell>Zeal for battle</spell>
+</domain>
+</root>

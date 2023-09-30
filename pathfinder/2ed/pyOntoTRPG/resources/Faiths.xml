@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+<faith name="Atheism">
+  <comment>While most concede that the gods exist, some do not view them as worthy of worship, and a few even deny their presence altogether.</comment>
+  <edicts>pursue your own agenda with faith in your own ability to excel</edicts>
+  <anathema>offer prayers to a deity</anathema>
+</faith>
+<faith name="Green Faith">
+  <comment>The worshippers of the Green Faith count many druids among their number. They view nature as divine and draw strength from the knowledge of their place in the natural order.</comment>
+  <edicts>guide civilization to grow in harmony with nature, preserve areas of natural wilderness, protect endangered species</edicts>
+  <anathema>cause damage to natural settings, kill animals for reasons other than self-defense or sustenance, allow abuse of natural resources</anathema>
+  <follower_alignment>chaotic_neutral</follower_alignment>
+  <follower_alignment>lawful_neutral</follower_alignment>
+  <follower_alignment>true_neutral</follower_alignment>
+  <follower_alignment>neutral_evil</follower_alignment>
+  <follower_alignment>neutral_good</follower_alignment>
+</faith>
+<faith name="Prophecies of Kalistrade">
+  <comment>The dream-records of an eccentric mystic teach that wealth can be achieved through a strict and abstemious code of behavior.</comment>
+  <edicts>accumulate personal wealth, foster and aid mercantile pursuits, welcome newcomers regardless of gender or ancestry</edicts>
+  <anathema>spend money frivolously; offer money to those who don’t deserve wealth; overindulge in physical pleasures</anathema>
+  <follower_alignment>lawful_good</follower_alignment>
+  <follower_alignment>lawful_neutral</follower_alignment>
+  <follower_alignment>lawful_evil</follower_alignment>
+</faith>
+<faith name="Whispering Way">
+  <comment>These cultists believe undeath is the truest form of existence, and life is meant to be spent in preparation for transition to a more glorious unlife after death.</comment>
+  <edicts>seek methods to become undead (a lich if possible), oppose those who seek to destroy undead, protect necromantic secrets, serve the Whispering Tyrant</edicts>
+  <anathema>destroy necromantic texts (unless they reveal secrets of the Whispering Way), teach others of the Whispering Way other than by whispering, use positive energy to harm undead</anathema>
+  <follower_alignment>lawful_evil</follower_alignment>
+  <follower_alignment>neutral_evil</follower_alignment>
+  <follower_alignment>chaotic_evil</follower_alignment>
+</faith>
+</root>

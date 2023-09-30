@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<root>
+  <row name="Alchemist">
+    <comment>The alchemist uses their skill at crafting to create alchemical items—such as bombs, elixirs, and poisons—that they use to defeat foes and aid allies. Smart and resourceful, an alchemist often has just the right tool for the job and esoteric knowledge to help their friends get out of a jam.</comment>
+    <comment>There’s no sight more beautiful to you than a strange brew bubbling in a beaker, and you consume your ingenious elixirs with abandon. You’re fascinated by uncovering the secrets of science and the natural world, and you’re constantly experimenting in your lab or on the go with inventive concoctions for every eventuality. You are fearless in the face of risk, hurling explosive or toxic creations at your foes. Your unique path toward greatness is lined with alchemical brews that push your mind and body to their limits.</comment>
+    <ability_boost>INTELLIGENCE</ability_boost>
+    <hp>8</hp>
+    <experted>Fortitude</experted>
+    <experted>Reflex</experted>
+    <trained>Crafting</trained>
+    <additional_skills>3</additional_skills>
+  </row>
+  <row name="Barbarian">
+    <comment>The barbarian is a fearsome embodiment of rage, focusing the deadly power of their anger against anyone who stands in their way. A barbarian is quick to enter battle and, once their fury has been unleashed, is immensely strong, often unpredictable, and nearly unstoppable.</comment>
+    <comment>Rage consumes you in battle. You delight in wreaking havoc and using powerful weapons to carve through your enemies, relying on astonishing durability without needing complicated techniques or rigid training. Your rages draw upon a vicious instinct, which you might associate with an animal, a spirit, or some part of yourself. To many barbarians, brute force is a hammer and every problem looks like a nail, whereas others try to hold back the storm of emotions inside them and release their rage only when it matters most.</comment>
+    <ability_boost>STRENGTH</ability_boost>
+    <hp>12</hp>
+    <experted>Fortitude</experted>
+    <experted>Perception</experted>
+    <experted>Will</experted>
+    <trained>Athletics</trained>
+    <additional_skills>3</additional_skills>
+  </row>
+  <row name="Bard">
+    <comment>An artist and a scholar, the bard uses performance and esoteric learning to bolster their companions and foil their enemies. Sometimes sneaky and quite often charming, the bard adventures with pizzazz and talent backed up by an impressive repertoire of occult magic.</comment>
+    <comment>You are a master of artistry, a scholar of hidden secrets, and a captivating persuader. Using powerful performances, you influence minds and elevate souls to new levels of heroics. You might use your powers to become a charismatic leader, or perhaps you might instead be a counselor, manipulator, scholar, scoundrel, or virtuoso. While your versatility leads some to consider you a beguiling ne’erdo- well and a jack-of-all-trades, it’s dangerous to dismiss you as a master of none.</comment>
+    <ability_boost>CHARISMA</ability_boost>
+    <hp>8</hp>
+    <experted>Perception</experted>
+    <experted>Will</experted>
+    <trained>Occultism</trained>
+    <trained>Performance</trained>
+    <trained>longsword</trained>
+    <trained>rapier</trained>
+    <trained>sap</trained>
+    <trained>shortbow</trained>
+    <trained>shortsword</trained>
+    <trained>whip</trained>
+    <additional_skills>4</additional_skills>
+    <spells_per_day>3</spells_per_day>
+  </row>
+  <row name="Champion">
+    <comment>A defender of good who straps on armor and wields a righteous weapon, the champion protects the innocent and vanquishes evil. Steadfast in their beliefs, and devoted to both a deity and an aspect of good, they follow a strict code as they fight to make the world a better place.</comment>
+    <comment>You are an emissary of a deity, a devoted servant who has taken up a weighty mantle, and you adhere to a code that holds you apart from those around you. While champions exist for every alignment, as a champion of good, you provide certainty and hope to the innocent. You have powerful defenses that you share freely with your allies and innocent bystanders, as well as holy power you use to end the threat of evil. Your devotion even attracts the attention of holy spirits who aid you on your journey.</comment>
+    <ability_boost>STRENGTH</ability_boost>
+    <ability_boost>DEXTERITY</ability_boost>
+    <comment>Your class gives you an ability boost to your choice</comment>
+    <comment>Trained in one skill determined by your choice of deity</comment>
+    <hp>10</hp>
+    <experted>Fortitude</experted>
+    <experted>Will</experted>
+    <trained>Religion</trained>
+    <additional_skills>2</additional_skills>
+  </row>
+  <row name="Cleric">
+    <comment>The cleric is dedicated to the worship of a single deity and draws divine magic from this devotion. Clerics can be vastly different depending on who they worship, and whether they’re cloistered clerics who pursue one of their deity’s domains or war priests who serve as the sword arm of their god.</comment>
+    <comment>Deities work their will upon the world in infinite ways, and you serve as one of their most stalwart mortal servants. Blessed with divine magic, you live the ideals of your faith, adorn yourself with the symbols of your church, and train diligently to wield your deity’s favored weapon. Your spells might protect and heal your allies, or they might punish foes and enemies of your faith, as your deity wills. Yours is a life of devotion, spreading the teachings of your faith through both word and deed.</comment>
+    <comment>Trained in one skill determined by your choice of deity.</comment>
+    <comment>Trained in the favored weapon of your deity. If your deity’s favored weapon is uncommon, you also gain access to that weapon.</comment>
+    <ability_boost>WISDOM</ability_boost>
+    <hp>8</hp>
+    <experted>Will</experted>
+    <trained>Religion</trained>
+    <additional_skills>2</additional_skills>
+    <spells_per_day>3</spells_per_day>
+  </row>
+  <row name="Druid">
+    <comment>The druid walks the wild, primordial places of the world without fear, harnessing the primal magic of nature and controlling it with calm purpose. A devotee of the wilderness, the druid finds nourishment in its power, allies among its creatures, and strength in its fury.</comment>
+    <comment>The power of nature is impossible to resist. It can bring ruin to the stoutest fortress in minutes, reducing even the mightiest works to rubble, burning them to ash, burying them beneath an avalanche of snow, or drowning them beneath the waves. It can provide endless bounty and breathtaking splendor to those who respect it— and an agonizing death to those who take it too lightly. You are one of those who hear nature’s call. You stand in awe of the majesty of its power and give yourself over to its service.</comment>
+    <comment>Trained in one skill determined by your druidic order</comment>
+    <ability_boost>WISDOM</ability_boost>
+    <hp>8</hp>
+    <experted>Will</experted>
+    <trained>Nature</trained>
+    <additional_skills>2</additional_skills>
+    <spells_per_day>3</spells_per_day>
+  </row>
+  <row name="Fighter">
+    <comment>With calculated daring and fearless determination, the fighter tracks down and confronts their enemies while defending allies from harm. A master of the battlefield, the fighter is quick to exploit opportunities and strike any who stumble within reach of their sword or bow.</comment>
+    <comment>Fighting for honor, greed, loyalty, or simply the thrill of battle, you are an undisputed master of weaponry and combat techniques. You combine your actions through clever combinations of opening moves, finishing strikes, and counterattacks whenever your foes are unwise enough to drop their guard. Whether you are a knight, mercenary, sharpshooter, or blade master, you have honed your martial skills into an art form and perform devastating critical attacks on your enemies.</comment>
+    <comment>Trained in your choice of Acrobatics or Athletics.</comment>
+    <ability_boost>STRENGTH</ability_boost>
+    <ability_boost>DEXTERITY</ability_boost>
+    <comment>Your class gives you an ability boost to your choice</comment>
+    <hp>10</hp>
+    <experted>Fortitude</experted>
+    <experted>Perception</experted>
+    <experted>Reflex</experted>
+    <trained>Acrobatics</trained>
+    <trained>Athletics</trained>
+    <additional_skills>3</additional_skills>
+  </row>
+  <row name="Monk">
+    <comment>The monk seeks perfection in all things, and that includes transforming their body into the perfect weapon. They can be walking with calm purpose and contemplating the subtleties of existence in one minute and then transform into a blur of deadly blows in the next.</comment>
+    <comment>The strength of your fist flows from your mind and spirit. You seek perfection—honing your body into a flawless instrument and your mind into an orderly bastion of wisdom. You’re a fierce combatant renowned for martial arts skills and combat stances that grant you unique fighting moves. While the challenge of mastering many fighting styles drives you to great heights, you also enjoy meditating on philosophical questions and discovering new ways to obtain peace and enlightenment.</comment>
+    <ability_boost>STRENGTH</ability_boost>
+    <ability_boost>DEXTERITY</ability_boost>
+    <comment>Your class gives you an ability boost to your choice</comment>
+    <hp>10</hp>
+    <experted>Fortitude</experted>
+    <experted>Reflex</experted>
+    <experted>Will</experted>
+    <additional_skills>4</additional_skills>
+  </row>
+  <row name="Ranger">
+    <comment>Resourceful and cunning, the ranger is a hunter, tracker, and warrior who preserves the natural world and protects civilization from its ravages. Whether they use a bow, crossbow, a pair of weapons, or snares, the ranger is a fearsome enemy and great ally in the wild.</comment>
+    <comment>Some rangers believe civilization wears down the soul, but still needs to be protected from wild creatures. Others say nature needs to be protected from the greedy, who wish to tame its beauty and plunder its treasures. You could champion either goal, or both. You might be a scout, tracker, or hunter of fugitives or beasts, haunting the edge of civilization or exploring the wilds. You know how to live off the land and are skilled at spotting and taking down both opportune prey and hated enemies.</comment>
+    <ability_boost>STRENGTH</ability_boost>
+    <ability_boost>DEXTERITY</ability_boost>
+    <comment>Your class gives you an ability boost to your choice</comment>
+    <hp>10</hp>
+    <experted>Fortitude</experted>
+    <experted>Perception</experted>
+    <experted>Reflex</experted>
+    <trained>Nature</trained>
+    <trained>Survival</trained>
+    <additional_skills>4</additional_skills>
+  </row>
+  <row name="Rogue">
+    <comment>Cunning and quick, the rogue brings skill and expertise few of their comrades can match. In battle, they excel at sneak attacks and ambushes. Their racket gives them the tools they need to get the job done, and their wide array of skill choices lets them specialize as they see fit.</comment>
+    <comment>You are skilled and opportunistic. Using your sharp wits and quick reactions, you take advantage of your opponents’ missteps and strike where it hurts most. You play a dangerous game, seeking thrills and testing your skills, and likely don’t care much for any laws that happen to get in your way. While the path of every rogue is unique and riddled with danger, the one thing you all share in common is the breadth and depth of your skills.</comment>
+    <comment>Trained in one or more skills determined by your rogue’s racket.</comment>
+    <ability_boost>DEXTERITY</ability_boost>
+    <hp>8</hp>
+    <experted>Reflex</experted>
+    <experted>Perception</experted>
+    <experted>Will</experted>
+    <trained>Stealth</trained>
+    <trained>rapier</trained>
+    <trained>sap</trained>
+    <trained>shortbow</trained>
+    <trained>shortsword</trained>
+    <additional_skills>7</additional_skills>
+  </row>
+  <row name="Sorcerer">
+    <comment>The intense magic the sorcerer commands comes from neither study nor worship—it comes from their blood. Their magical abilities depend on whether they have the blood of dragons, angels, fey, aberrant creatures, or some other being flowing through their veins and powering their spells.</comment>
+    <comment>You didn’t choose to become a spellcaster—you were born one. There’s magic in your blood, whether a divinity touched one of your ancestors, a forebear communed with a primal creature, or a powerful occult ritual influenced your line. Self-reflection and study allow you to refine your inherent magical skills and unlock new, more powerful abilities. The power in your blood carries a risk, however, and you constantly face the choice of whether you’ll rise to become a master spellcaster or fall into destruction.</comment>
+    <comment>Trained in one or more skills determined by your bloodline.</comment>
+    <ability_boost>CHARISMA</ability_boost>
+    <hp>6</hp>
+    <experted>Will</experted>
+    <additional_skills>2</additional_skills>
+    <spells_per_day>4</spells_per_day>
+  </row>
+  <row name="Wizard">
+    <comment>The wizard is the arcane master of spellcasting, plucking incredible power from reality through complicated spell formulas. They stride with confidence, without a need for armor or weapons, enacting their will upon the world and bringing woe upon their enemies.</comment>
+    <comment>You are an eternal student of the arcane secrets of the universe, using your mastery of magic to cast powerful and devastating spells. You treat magic like a science, cross-referencing the latest texts on practical spellcraft with ancient esoteric tomes to discover and understand how magic works. Yet magical theory is vast, and there’s no way you can study it all. You either specialize in one of the eight schools of magic, gaining deeper understanding of the nuances of those spells above all others, or favor a broader approach that emphasizes the way all magic comes together at the expense of depth.</comment>
+    <ability_boost>INTELLIGENCE</ability_boost>
+    <hp>6</hp>
+    <experted>Will</experted>
+    <trained>Arcana</trained>
+    <trained>club</trained>
+    <trained>crossbow</trained>
+    <trained>dagger</trained>
+    <trained>heavy_crossbow</trained>
+    <trained>staff</trained>
+    <additional_skills>2</additional_skills>
+    <spells_per_day>3</spells_per_day>
+  </row>
+</root>

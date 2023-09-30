@@ -12,16 +12,7 @@ def fill_shield(pzo2101):
                        "bonus to AC only if they use an action to Raise a Shield. This action grants the shield’s "
                        "bonus to AC as a circumstance bonus until their next turn starts. A shield’s Speed penalty "
                        "applies whenever your character is holding the shield, whether they have raised it or not.")
-        for index,row in main.iterrows("Shields"):
-            Shield(
-                name = main.prepare_name(row['name']),
-                price = row['price'],
-                ac_bonus = row['ac_bonus'],
-                speed_penalty = row['speed_penalty'],
-                bulk = row['bulk'],
-                hardness = row['hardness'],
-                comment = row['comment'],
-            )
+        main.fill_onto_from_xml(pzo2101, "Shields", Shield)
 
 
 def fill_gear(pzo2101):
@@ -29,19 +20,9 @@ def fill_gear(pzo2101):
         class Gear_and_services(pzo2101.Equipment):
             comment = ("Your character needs all sorts of items both while exploring and in downtime, ranging from "
                        "rations to climbing gear to fancy clothing, depending on the situation.")
-        for index, row in main.iterrows("Adventuring_gear"):
-            g = Gear_and_services(
-                name = main.prepare_name(row['name']),
-                price = row['price'],
-            )
-            if not pd.isna(row['bulk']): g.bulk = row['bulk']
-            if not pd.isna(row['hands']): g.hands = row['hands']
-            if not pd.isna(row['level']): g.level = row['level']
-            if not pd.isna(row['is_uncommon']):
-                g.has_trait.append(pzo2101[pzo2101_fill_traits.prepare_trait_name('uncommon')])
-            if not pd.isna(row['comment']): g.comment = row['comment']
+        main.fill_onto_from_xml(pzo2101, "Adventuring gear", Gear_and_services)
 
-        for index, row in main.iterrows("Adventuring_gear_corpus"):
+        for index, row in main.read_text_for_parse("Adventuring_gear_corpus"):
             corpus = row['corpus']
             lst_corpus = corpus.split(":")
             for i in range(1, len(lst_corpus)):
@@ -57,16 +38,10 @@ def fill_packs(pzo2101):
         Equipment = pzo2101.Equipment
         class Equipment_pack(Equipment): pass
         class contains(Equipment_pack >> Equipment): pass
+        class Starter_kit(Equipment_pack): pass
 
-        for index, row in main.iterrows('Equipment_packs'):
-            pack = Equipment_pack(
-                name = main.prepare_name(row['name']),
-                price = row['price'],
-                bulk = row['bulk'],
-                comment = row['comment'],
-            )
-            main.set_relation(pzo2101, pack, contains, row['inside'], func = main.prepare_name)
-
+        main.fill_onto_from_xml(pzo2101, 'Equipment packs', Equipment_pack)
+        Starter_kit.contains.append(pzo2101[main.prepare_name("Adventurer’s pack")])
 
 def fill(pzo2101: Ontology):
     with pzo2101:
@@ -107,9 +82,8 @@ def fill(pzo2101: Ontology):
 def fill_weapon_groups(pzo2101):
     with pzo2101:
         Weapon_by_group = pzo2101.Weapon_by_group
-        for index, row in main.iterrows("Traits"):
-            if not pd.isna(row['is_weapon_group']) and row['is_weapon_group'] == 1:
-                trait = pzo2101[pzo2101_fill_traits.prepare_trait_name(row['name'])]
+        for trait in pzo2101.Specialization_effect.instances():
+            if any([trait in w.has_trait for w in pzo2101.Weapon.instances()]):
                 cl = types.new_class(trait.name.split("_trait")[0].capitalize() + "_group", (Weapon_by_group,))
                 cl.defined_class = True
                 cl.has_trait = trait
@@ -148,9 +122,11 @@ def fill_weapon(pzo2101: Ontology):
             comment = ("Most characters in Pathfinder carry weapons, ranging from mighty warhammers to graceful bows "
                        "to even simple clubs.")
 
-        class Weapon_by_complexity(Weapon):
-            pass
+        class Ammunition(Equipment): pass
+        class ammunition(Weapon >> Ammunition, FunctionalProperty): pass
+        main.fill_onto_from_xml(pzo2101, "Ammunition", Ammunition)
 
+        class Weapon_by_complexity(Weapon): pass
         class damage(Weapon >> str, FunctionalProperty): pass
         class range(Weapon >> int, FunctionalProperty): pass
         class reload(Weapon >> int, FunctionalProperty):
@@ -160,32 +136,11 @@ def fill_weapon(pzo2101: Ontology):
 
         class Weapon_by_group(pzo2101.Weapon): pass
 
-        for index, row in main.iterrows("Weapons"):
-            cl = types.new_class(row['class'], (Weapon_by_complexity,))
-            w = cl(
-                name = main.prepare_name(row['name']),
-                damage = row['damage'],
-                bulk = row['bulk'],
-                hands = row['hands'],
-            )
-            main.set_relation(pzo2101, w, pzo2101['has_trait'], row['traits'], pzo2101_fill_traits.prepare_trait_name)
-            if not pd.isna(row['price']): w.price = row['price']
-            if not pd.isna(row['range']): w.range = row['range']
-            if not pd.isna(row['reload']): w.reload = row['reload']
-            w.is_a.append(Weapon_by_group)
-            w.comment.append(row['comment'])
+        main.fill_onto_from_xml(pzo2101, "Weapons", Weapon_by_complexity)
+        for weapon in Weapon.instances():
+            weapon.is_a.append(Weapon_by_group)
 
-        class Ammunition(Equipment): pass
-        class ammunition(Weapon >> Ammunition, FunctionalProperty): pass
-        for index, row in main.iterrows("Ammunition"):
-            ammo = Ammunition(
-                name = main.prepare_name(row['name']),
-                price = row['price'],
-                bulk = row['bulk'],
-                comment = row['comment']
-            )
-            for w in row['weapon'].split(","):
-                pzo2101[w].ammunition = ammo
+
 
 def fill_armor(pzo2101: Ontology):
     with pzo2101:
@@ -208,24 +163,8 @@ def fill_armor(pzo2101: Ontology):
                        "armor’s penalties. If your Strength is equal to or greater than this value, you no longer "
                        "take the armor’s check penalty, and you decrease the Speed penalty by 5 feet")
 
-        for index, row in main.iterrows("Armors"):
-            cl = pzo2101[row['class']]
-            if cl is None:
-                cl = types.new_class(row['class'], (Armor,))
-            armor = cl(
-                name = main.prepare_name(row['name']),
-                ac_bonus = row['ac_bonus'],
-                check_penalty = row['check_penalty'],
-                speed_penalty = row['speed_penalty'],
-                bulk = row['bulk'],
-                has_trait = [pzo2101[pzo2101_fill_traits.prepare_trait_name(t)] for t in str(row['traits']).split(",")]
-                    if not pd.isna(row['traits']) else [],
-                comment = row['comment'],
-            )
-            if not pd.isna(row['price']): armor.price = row['price']
-            if not pd.isna(row['dex_cap']): armor.dex_cap = row['dex_cap']
-            if not pd.isna(row['str_threshold']): armor.str_threshold = row['str_threshold']
-            if not pd.isna(row['level']): armor.level = row['level']
+        main.fill_onto_from_xml(pzo2101, "Armor", Armor)
+        for armor in Armor.instances():
             traits = armor.has_trait
             if pzo2101.cloth_trait in traits:
                 hardness = 1

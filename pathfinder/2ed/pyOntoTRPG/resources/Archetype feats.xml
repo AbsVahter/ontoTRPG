@@ -1,0 +1,416 @@
+<?xml version="1.0"?>
+<root>
+<row name="ALCHEMIST DEDICATION">
+  <selectable_feat_of object_class="Archetype">Alchemist</selectable_feat_of>
+  <level>2</level>
+</row>
+<row name="BASIC CONCOCTION">
+  <selectable_feat_of object_class="Archetype">Alchemist</selectable_feat_of>
+  <level>4</level>
+  <prereq>ALCHEMIST DEDICATION</prereq>
+</row>
+<row name="QUICK ALCHEMY">
+  <selectable_feat_of object_class="Archetype">Alchemist</selectable_feat_of>
+  <level>4</level>
+  <prereq>ALCHEMIST DEDICATION</prereq>
+</row>
+<row name="ADVANCED CONCOCTION">
+  <selectable_feat_of object_class="Archetype">Alchemist</selectable_feat_of>
+  <level>6</level>
+  <prereq>BASIC CONCOCTION</prereq>
+</row>
+<row name="EXPERT ALCHEMY">
+  <selectable_feat_of object_class="Archetype">Alchemist</selectable_feat_of>
+  <level>6</level>
+  <prereq>ALCHEMIST DEDICATION</prereq>
+</row>
+<row name="MASTER ALCHEMY">
+  <selectable_feat_of object_class="Archetype">Alchemist</selectable_feat_of>
+  <level>12</level>
+  <prereq>EXPERT ALCHEMY</prereq>
+</row>
+<row name="BARBARIAN DEDICATION">
+  <selectable_feat_of object_class="Archetype">Barbarian</selectable_feat_of>
+  <level>2</level>
+</row>
+<row name="BARBARIAN RESILIENCY">
+  <selectable_feat_of object_class="Archetype">Barbarian</selectable_feat_of>
+  <level>4</level>
+  <prereq>BARBARIAN DEDICATION</prereq>
+</row>
+<row name="BASIC FURY">
+  <selectable_feat_of object_class="Archetype">Barbarian</selectable_feat_of>
+  <level>4</level>
+  <prereq>BARBARIAN DEDICATION</prereq>
+</row>
+<row name="ADVANCED FURY">
+  <selectable_feat_of object_class="Archetype">Barbarian</selectable_feat_of>
+  <level>6</level>
+  <prereq>BASIC FURY</prereq>
+</row>
+<row name="INSTINCT ABILITY">
+  <selectable_feat_of object_class="Archetype">Barbarian</selectable_feat_of>
+  <level>6</level>
+  <prereq>BARBARIAN DEDICATION</prereq>
+</row>
+<row name="JUGGERNAUT’S FORTITUDE">
+  <selectable_feat_of object_class="Archetype">Barbarian</selectable_feat_of>
+  <level>12</level>
+  <prereq>BARBARIAN DEDICATION</prereq>
+</row>
+<row name="BARD DEDICATION">
+  <selectable_feat_of object_class="Archetype">Bard</selectable_feat_of>
+  <level>2</level>
+</row>
+<row name="BASIC BARD SPELLCASTING">
+  <selectable_feat_of object_class="Archetype">Bard</selectable_feat_of>
+  <level>4</level>
+  <prereq>BARD DEDICATION</prereq>
+</row>
+<row name="BASIC MUSE’S WHISPERS">
+  <selectable_feat_of object_class="Archetype">Bard</selectable_feat_of>
+  <level>4</level>
+  <prereq>BARD DEDICATION</prereq>
+</row>
+<row name="ADVANCED MUSE’S WHISPERS">
+  <selectable_feat_of object_class="Archetype">Bard</selectable_feat_of>
+  <level>6</level>
+  <prereq>BASIC MUSE’S WHISPERS</prereq>
+</row>
+<row name="COUNTER PERFORM">
+  <selectable_feat_of object_class="Archetype">Bard</selectable_feat_of>
+  <level>6</level>
+  <prereq>BARD DEDICATION</prereq>
+</row>
+<row name="INSPIRATIONAL PERFORMANCE">
+  <selectable_feat_of object_class="Archetype">Bard</selectable_feat_of>
+  <level>8</level>
+  <prereq>BARD DEDICATION</prereq>
+</row>
+<row name="OCCULT BREADTH">
+  <selectable_feat_of object_class="Archetype">Bard</selectable_feat_of>
+  <level>8</level>
+  <prereq>BASIC BARD SPELLCASTING</prereq>
+</row>
+<row name="EXPERT BARD SPELLCASTING">
+  <selectable_feat_of object_class="Archetype">Bard</selectable_feat_of>
+  <level>12</level>
+  <prereq>BASIC BARD SPELLCASTING</prereq>
+</row>
+<row name="MASTER BARD SPELLCASTING">
+  <selectable_feat_of object_class="Archetype">Bard</selectable_feat_of>
+  <level>18</level>
+  <prereq>EXPERT BARD SPELLCASTING</prereq>
+</row>
+<row name="CHAMPION DEDICATION">
+  <selectable_feat_of object_class="Archetype">Champion</selectable_feat_of>
+  <level>2</level>
+</row>
+<row name="BASIC DEVOTION">
+  <selectable_feat_of object_class="Archetype">Champion</selectable_feat_of>
+  <level>4</level>
+  <prereq>CHAMPION DEDICATION</prereq>
+</row>
+<row name="CHAMPION RESILIENCY">
+  <selectable_feat_of object_class="Archetype">Champion</selectable_feat_of>
+  <level>4</level>
+  <prereq>CHAMPION DEDICATION</prereq>
+</row>
+<row name="HEALING TOUCH">
+  <selectable_feat_of object_class="Archetype">Champion</selectable_feat_of>
+  <level>4</level>
+  <prereq>CHAMPION DEDICATION</prereq>
+</row>
+<row name="ADVANCED DEVOTION">
+  <selectable_feat_of object_class="Archetype">Champion</selectable_feat_of>
+  <level>6</level>
+  <prereq>BASIC DEVOTION</prereq>
+</row>
+<row name="CHAMPION’S REACTION archetype">
+  <selectable_feat_of object_class="Archetype">Champion</selectable_feat_of>
+  <level>6</level>
+  <prereq>CHAMPION DEDICATION</prereq>
+</row>
+<row name="DIVINE ALLY archetype">
+  <selectable_feat_of object_class="Archetype">Champion</selectable_feat_of>
+  <level>6</level>
+  <prereq>CHAMPION DEDICATION</prereq>
+</row>
+<row name="DIVERSE ARMOR EXPERT">
+  <selectable_feat_of object_class="Archetype">Champion</selectable_feat_of>
+  <level>14</level>
+  <prereq>CHAMPION DEDICATION</prereq>
+</row>
+<row name="CLERIC DEDICATION">
+  <selectable_feat_of object_class="Archetype">Cleric</selectable_feat_of>
+  <level>2</level>
+</row>
+<row name="BASIC CLERIC SPELLCASTING">
+  <selectable_feat_of object_class="Archetype">Cleric</selectable_feat_of>
+  <level>4</level>
+  <prereq>CLERIC DEDICATION</prereq>
+</row>
+<row name="BASIC DOGMA">
+  <selectable_feat_of object_class="Archetype">Cleric</selectable_feat_of>
+  <level>4</level>
+  <prereq>CLERIC DEDICATION</prereq>
+</row>
+<row name="ADVANCED DOGMA">
+  <selectable_feat_of object_class="Archetype">Cleric</selectable_feat_of>
+  <level>6</level>
+  <prereq>BASIC DOGMA</prereq>
+</row>
+<row name="DIVINE BREADTH">
+  <selectable_feat_of object_class="Archetype">Cleric</selectable_feat_of>
+  <level>8</level>
+  <prereq>BASIC CLERIC SPELLCASTING</prereq>
+</row>
+<row name="EXPERT CLERIC SPELLCASTING">
+  <selectable_feat_of object_class="Archetype">Cleric</selectable_feat_of>
+  <level>12</level>
+  <prereq>BASIC CLERIC SPELLCASTING</prereq>
+</row>
+<row name="MASTER CLERIC SPELLCASTING">
+  <selectable_feat_of object_class="Archetype">Cleric</selectable_feat_of>
+  <level>18</level>
+  <prereq>EXPERT CLERIC SPELLCASTING</prereq>
+</row>
+<row name="DRUID DEDICATION">
+  <selectable_feat_of object_class="Archetype">Druid</selectable_feat_of>
+  <level>2</level>
+</row>
+<row name="BASIC DRUID SPELLCASTING">
+  <selectable_feat_of object_class="Archetype">Druid</selectable_feat_of>
+  <level>4</level>
+  <prereq>DRUID DEDICATION</prereq>
+</row>
+<row name="BASIC WILDING">
+  <selectable_feat_of object_class="Archetype">Druid</selectable_feat_of>
+  <level>4</level>
+  <prereq>DRUID DEDICATION</prereq>
+</row>
+<row name="ORDER SPELL">
+  <selectable_feat_of object_class="Archetype">Druid</selectable_feat_of>
+  <level>4</level>
+  <prereq>DRUID DEDICATION</prereq>
+</row>
+<row name="ADVANCED WILDING">
+  <selectable_feat_of object_class="Archetype">Druid</selectable_feat_of>
+  <level>6</level>
+  <prereq>BASIC WILDING</prereq>
+</row>
+<row name="PRIMAL BREADTH">
+  <selectable_feat_of object_class="Archetype">Druid</selectable_feat_of>
+  <level>8</level>
+  <prereq>BASIC DRUID SPELLCASTING</prereq>
+</row>
+<row name="EXPERT DRUID SPELLCASTING">
+  <selectable_feat_of object_class="Archetype">Druid</selectable_feat_of>
+  <level>12</level>
+  <prereq>BASIC DRUID SPELLCASTING</prereq>
+</row>
+<row name="MASTER DRUID SPELLCASTING">
+  <selectable_feat_of object_class="Archetype">Druid</selectable_feat_of>
+  <level>18</level>
+  <prereq>EXPERT DRUID SPELLCASTING</prereq>
+</row>
+<row name="FIGHTER DEDICATION">
+  <selectable_feat_of object_class="Archetype">Fighter</selectable_feat_of>
+  <level>2</level>
+</row>
+<row name="BASIC MANEUVER">
+  <selectable_feat_of object_class="Archetype">Fighter</selectable_feat_of>
+  <level>4</level>
+  <prereq>FIGHTER DEDICATION</prereq>
+</row>
+<row name="FIGHTER RESILIENCY">
+  <selectable_feat_of object_class="Archetype">Fighter</selectable_feat_of>
+  <level>4</level>
+  <prereq>FIGHTER DEDICATION</prereq>
+</row>
+<row name="OPPORTUNIST">
+  <selectable_feat_of object_class="Archetype">Fighter</selectable_feat_of>
+  <level>4</level>
+  <prereq>FIGHTER DEDICATION</prereq>
+</row>
+<row name="ADVANCED MANEUVER">
+  <selectable_feat_of object_class="Archetype">Fighter</selectable_feat_of>
+  <level>6</level>
+  <prereq>BASIC MANEUVER</prereq>
+</row>
+<row name="DIVERSE WEAPON EXPERT">
+  <selectable_feat_of object_class="Archetype">Fighter</selectable_feat_of>
+  <level>12</level>
+  <prereq>FIGHTER DEDICATION</prereq>
+</row>
+<row name="MONK DEDICATION">
+  <selectable_feat_of object_class="Archetype">Monk</selectable_feat_of>
+  <level>2</level>
+</row>
+<row name="BASIC KATA">
+  <selectable_feat_of object_class="Archetype">Monk</selectable_feat_of>
+  <level>4</level>
+  <prereq>MONK DEDICATION</prereq>
+</row>
+<row name="MONK RESILIENCY">
+  <selectable_feat_of object_class="Archetype">Monk</selectable_feat_of>
+  <level>4</level>
+  <prereq>MONK DEDICATION</prereq>
+</row>
+<row name="ADVANCED KATA">
+  <selectable_feat_of object_class="Archetype">Monk</selectable_feat_of>
+  <level>6</level>
+  <prereq>BASIC KATA</prereq>
+</row>
+<row name="MONK MOVES">
+  <selectable_feat_of object_class="Archetype">Monk</selectable_feat_of>
+  <level>8</level>
+  <prereq>MONK DEDICATION</prereq>
+</row>
+<row name="MONK&apos;S FLURRY">
+  <selectable_feat_of object_class="Archetype">Monk</selectable_feat_of>
+  <level>10</level>
+  <prereq>MONK DEDICATION</prereq>
+</row>
+<row name="PERFECTION&apos;S PATH">
+  <selectable_feat_of object_class="Archetype">Monk</selectable_feat_of>
+  <level>12</level>
+  <prereq>MONK DEDICATION</prereq>
+</row>
+<row name="RANGER DEDICATION">
+  <selectable_feat_of object_class="Archetype">Ranger</selectable_feat_of>
+  <level>2</level>
+</row>
+<row name="BASIC HUNTER&apos;S TRICK">
+  <selectable_feat_of object_class="Archetype">Ranger</selectable_feat_of>
+  <level>4</level>
+  <prereq>RANGER DEDICATION</prereq>
+</row>
+<row name="RANGER RESILIENCY">
+  <selectable_feat_of object_class="Archetype">Ranger</selectable_feat_of>
+  <level>4</level>
+  <prereq>RANGER DEDICATION</prereq>
+</row>
+<row name="ADVANCED HUNTER&apos;S TRICK">
+  <selectable_feat_of object_class="Archetype">Ranger</selectable_feat_of>
+  <level>6</level>
+  <prereq>BASIC HUNTER&apos;S TRICK</prereq>
+</row>
+<row name="MASTER SPOTTER">
+  <selectable_feat_of object_class="Archetype">Ranger</selectable_feat_of>
+  <level>12</level>
+  <prereq>RANGER DEDICATION</prereq>
+</row>
+<row name="ROGUE DEDICATION">
+  <selectable_feat_of object_class="Archetype">Rogue</selectable_feat_of>
+  <level>2</level>
+</row>
+<row name="BASIC TRICKERY">
+  <selectable_feat_of object_class="Archetype">Rogue</selectable_feat_of>
+  <level>4</level>
+  <prereq>ROGUE DEDICATION</prereq>
+</row>
+<row name="SNEAK ATTACKER">
+  <selectable_feat_of object_class="Archetype">Rogue</selectable_feat_of>
+  <level>4</level>
+  <prereq>ROGUE DEDICATION</prereq>
+</row>
+<row name="ADVANCED TRICKERY">
+  <selectable_feat_of object_class="Archetype">Rogue</selectable_feat_of>
+  <level>6</level>
+  <prereq>BASIC TRICKERY</prereq>
+</row>
+<row name="SKILL MASTERY">
+  <selectable_feat_of object_class="Archetype">Rogue</selectable_feat_of>
+  <level>8</level>
+  <prereq>ROGUE DEDICATION</prereq>
+</row>
+<row name="UNCANNY DODGE">
+  <selectable_feat_of object_class="Archetype">Rogue</selectable_feat_of>
+  <level>10</level>
+  <prereq>ROGUE DEDICATION</prereq>
+</row>
+<row name="EVASIVENESS">
+  <selectable_feat_of object_class="Archetype">Rogue</selectable_feat_of>
+  <level>12</level>
+  <prereq>ROGUE DEDICATION</prereq>
+</row>
+<row name="SORCERER DEDICATION">
+  <selectable_feat_of object_class="Archetype">Sorcerer</selectable_feat_of>
+  <level>2</level>
+</row>
+<row name="BASIC SORCERER SPELLCASTING">
+  <selectable_feat_of object_class="Archetype">Sorcerer</selectable_feat_of>
+  <level>4</level>
+  <prereq>SORCERER DEDICATION</prereq>
+</row>
+<row name="BASIC BLOOD POTENCY">
+  <selectable_feat_of object_class="Archetype">Sorcerer</selectable_feat_of>
+  <level>4</level>
+  <prereq>SORCERER DEDICATION</prereq>
+</row>
+<row name="BASIC BLOODLINE SPELL">
+  <selectable_feat_of object_class="Archetype">Sorcerer</selectable_feat_of>
+  <level>4</level>
+  <prereq>SORCERER DEDICATION</prereq>
+</row>
+<row name="ADVANCED BLOOD POTENCY">
+  <selectable_feat_of object_class="Archetype">Sorcerer</selectable_feat_of>
+  <level>6</level>
+  <prereq>BASIC BLOOD POTENCY</prereq>
+</row>
+<row name="BLOODLINE BREADTH">
+  <selectable_feat_of object_class="Archetype">Sorcerer</selectable_feat_of>
+  <level>8</level>
+  <prereq>BASIC SORCERER SPELLCASTING</prereq>
+</row>
+<row name="EXPERT SORCERER SPELLCASTING">
+  <selectable_feat_of object_class="Archetype">Sorcerer</selectable_feat_of>
+  <level>12</level>
+  <prereq>BASIC SORCERER SPELLCASTING</prereq>
+</row>
+<row name="MASTER SORCERER SPELLCASTING">
+  <selectable_feat_of object_class="Archetype">Sorcerer</selectable_feat_of>
+  <level>18</level>
+  <prereq>EXPERT SORCERER SPELLCASTING</prereq>
+</row>
+<row name="WIZARD DEDICATION">
+  <selectable_feat_of object_class="Archetype">Wizard</selectable_feat_of>
+  <level>2</level>
+</row>
+<row name="ARCANE SCHOOL SPELL">
+  <selectable_feat_of object_class="Archetype">Wizard</selectable_feat_of>
+  <level>4</level>
+  <prereq>WIZARD DEDICATION</prereq>
+</row>
+<row name="BASIC ARCANA">
+  <selectable_feat_of object_class="Archetype">Wizard</selectable_feat_of>
+  <level>4</level>
+  <prereq>WIZARD DEDICATION</prereq>
+</row>
+<row name="BASIC WIZARD SPELLCASTING">
+  <selectable_feat_of object_class="Archetype">Wizard</selectable_feat_of>
+  <level>4</level>
+  <prereq>WIZARD DEDICATION</prereq>
+</row>
+<row name="ADVANCED ARCANA">
+  <selectable_feat_of object_class="Archetype">Wizard</selectable_feat_of>
+  <level>6</level>
+  <prereq>BASIC ARCANA</prereq>
+</row>
+<row name="ARCANE BREADTH">
+  <selectable_feat_of object_class="Archetype">Wizard</selectable_feat_of>
+  <level>8</level>
+  <prereq>BASIC WIZARD SPELLCASTING</prereq>
+</row>
+<row name="EXPERT WIZARD SPELLCASTING">
+  <selectable_feat_of object_class="Archetype">Wizard</selectable_feat_of>
+  <level>12</level>
+  <prereq>BASIC WIZARD SPELLCASTING</prereq>
+</row>
+<row name="MASTER WIZARD SPELLCASTING">
+  <selectable_feat_of object_class="Archetype">Wizard</selectable_feat_of>
+  <level>18</level>
+  <prereq>EXPERT WIZARD SPELLCASTING</prereq>
+</row>
+</root>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<rule name="Encounter mode">
+		<comment>This is where most of the intense action takes place, and it’s most often used for combat or other high-stakes situations.</comment>
+	</rule>
+	<rule name="Exploration mode">
+		<comment>In exploration mode, time is more flexible and the play more free form. In this mode, minutes, hours, or even days in the game world pass quickly in the real world, as the characters travel cross country, explore uninhabited sections of a dungeon, or roleplay during a social gathering.</comment>
+	</rule>
+	<rule name="Downtime">
+		<comment>During downtime, the characters are at little risk, and the passage of time is measured in days or longer. This is when you might forge a magic sword, research a new spell, or prepare for your next adventure.</comment>
+	</rule>
+	<rule name="The GM Has the Final Say">
+		<comment>If you’re ever uncertain how to apply a rule, the GM decides.</comment>
+	</rule>
+	<rule name="Specific Overrides General">
+		<comment>A core principle of Pathfinder is that specific rules override general ones. If two rules conflict, the more specific one takes precedence. If there’s still ambiguity, the GM determines which rule to use.</comment>
+	</rule>
+	<rule name="Rounding">
+		<comment>Always round down unless otherwise specified.</comment>
+		<calculations>result = IntegerDivide(numerator, denominator)</calculations>
+	</rule>
+	<rule name="Multiplying">
+		<comment>When more than one effect would multiply the same number, don’t multiply more than once. Instead, combine all the multipliers into a single multiplier, with each multiple after the first adding 1 less than its value.</comment>
+		<calculations>total multiplier = Sum(multiplier) - Count(multiplier) + 1</calculations>
+	</rule>
+	<rule name="Duplicate effects">
+		<comment>When you’re affected by the same thing multiple times, only one instance applies, using the higher level of the effects, or the newer effect if the two are the same level.</comment>
+		<calculations>total modifier = Sum(Max(modifier, Group By type))</calculations>
+	</rule>
+	<rule name="Proficiency rank order">
+		<comment>untrained (0), trained (1), expert (2), master (3), legendary (4)</comment>
+	</rule>
+	<rule name="Order of check results">
+		<comment>critical failure, failure, success, critical success</comment>
+	</rule>
+	<rule name="Multiple attack penalty">
+		<comment>The more attacks you make beyond your first in a single turn, the less accurate you become.</comment>
+		<calculations>penalty = Max((i - 1) * (-5), -10), for i-th attack in turn</calculations>
+	</rule>
+	<rule name="Range penalty">
+		<comment>Ranged and thrown weapons each have a listed range increment, and attacks with them grow less accurate against targets farther away.</comment>
+		<calculations>range penalty = IntegerDivide(distance to target, equipment's range) * (-2)</calculations>
+		<uses>equipment</uses>
+	</rule>
+	<rule name="Maximum weapon range">
+		<comment>You can attempt to attack with a ranged weapon or thrown weapon up to six range increments away.</comment>
+		<calculations>maximum weapon range = 6 * (equipment's range)</calculations>
+		<uses>equipment</uses>
+	</rule>
+	<rule name="Melee attack roll">
+		<comment>Roll for strike with melee weapon.</comment>
+		<uses>strength modifier</uses>
+		<uses>weapon proficiency bonus</uses>
+		<uses>multiple attack penalty</uses>
+	</rule>
+	<rule name="Melee attack check" subclass="Check">
+		<comment>Strike with melee weapon against target's armor class.</comment>
+	</rule>
+</root>

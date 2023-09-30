@@ -1,0 +1,3131 @@
+<?xml version="1.0"?>
+<root>
+  <row name="Alchemy">
+    <level>1</level>
+    <feat_of>alchemist</feat_of>
+  </row>
+  <row name="Formula Book">
+    <level>1</level>
+    <feat_of>alchemist</feat_of>
+  </row>
+  <row name="Research Field">
+    <level>1</level>
+    <feat_of>alchemist</feat_of>
+  </row>
+  <row name="Field Discovery">
+    <level>5</level>
+    <feat_of>alchemist</feat_of>
+  </row>
+  <row name="Powerful Alchemy">
+    <level>5</level>
+    <feat_of>alchemist</feat_of>
+  </row>
+  <row name="Alchemical Weapon Expertise">
+    <level>7</level>
+    <feat_of>alchemist</feat_of>
+  </row>
+  <row name="Iron Will alchemist">
+    <level>7</level>
+    <feat_of>alchemist</feat_of>
+  </row>
+  <row name="Perpetual Infusions">
+    <level>7</level>
+    <feat_of>alchemist</feat_of>
+  </row>
+  <row name="Alchemical Expertise">
+    <level>9</level>
+    <feat_of>alchemist</feat_of>
+  </row>
+  <row name="Alertness alchemist">
+    <level>9</level>
+    <feat_of>alchemist</feat_of>
+  </row>
+  <row name="Double Brew">
+    <level>9</level>
+    <feat_of>alchemist</feat_of>
+  </row>
+  <row name="Juggernaut alchemist">
+    <level>11</level>
+    <feat_of>alchemist</feat_of>
+  </row>
+  <row name="Perpetual Potency">
+    <level>11</level>
+    <feat_of>alchemist</feat_of>
+  </row>
+  <row name="Greater Field Discovery">
+    <level>13</level>
+    <feat_of>alchemist</feat_of>
+  </row>
+  <row name="Medium Armor Expertise alchemist">
+    <level>13</level>
+    <feat_of>alchemist</feat_of>
+  </row>
+  <row name="Weapon Specialization alchemist">
+    <level>13</level>
+    <feat_of>alchemist</feat_of>
+  </row>
+  <row name="Alchemical Alacrity">
+    <level>15</level>
+    <feat_of>alchemist</feat_of>
+  </row>
+  <row name="Evasion alchemist">
+    <level>15</level>
+    <feat_of>alchemist</feat_of>
+  </row>
+  <row name="Alchemical Mastery">
+    <level>17</level>
+    <feat_of>alchemist</feat_of>
+  </row>
+  <row name="Perpetual Perfection">
+    <level>17</level>
+    <feat_of>alchemist</feat_of>
+  </row>
+  <row name="Medium Armor Mastery">
+    <level>19</level>
+    <feat_of>alchemist</feat_of>
+  </row>
+  <row name="ALCHEMICAL FAMILIAR">
+    <level>1</level>
+    <selectable_feat_of>alchemist</selectable_feat_of>
+  </row>
+  <row name="ALCHEMICAL SAVANT">
+    <level>1</level>
+    <selectable_feat_of>alchemist</selectable_feat_of>
+  </row>
+  <row name="FAR LOBBER">
+    <level>1</level>
+    <selectable_feat_of>alchemist</selectable_feat_of>
+  </row>
+  <row name="QUICK BOMBER">
+    <level>1</level>
+    <selectable_feat_of>alchemist</selectable_feat_of>
+  </row>
+  <row name="POISON RESISTANCE">
+    <level>2</level>
+    <selectable_feat_of>alchemist</selectable_feat_of>
+  </row>
+  <row name="REVIVIFYING MUTAGEN">
+    <level>2</level>
+    <selectable_feat_of>alchemist</selectable_feat_of>
+  </row>
+  <row name="SMOKE BOMB">
+    <level>2</level>
+    <selectable_feat_of>alchemist</selectable_feat_of>
+  </row>
+  <row name="CALCULATED SPLASH">
+    <level>4</level>
+    <selectable_feat_of>alchemist</selectable_feat_of>
+  </row>
+  <row name="EFFICIENT ALCHEMY">
+    <level>4</level>
+    <selectable_feat_of>alchemist</selectable_feat_of>
+  </row>
+  <row name="ENDURING ALCHEMY">
+    <level>4</level>
+    <selectable_feat_of>alchemist</selectable_feat_of>
+  </row>
+  <row name="COMBINE ELIXIRS">
+    <level>6</level>
+    <selectable_feat_of>alchemist</selectable_feat_of>
+  </row>
+  <row name="DEBILITATING BOMB">
+    <level>6</level>
+    <selectable_feat_of>alchemist</selectable_feat_of>
+  </row>
+  <row name="DIRECTIONAL BOMBS">
+    <level>6</level>
+    <selectable_feat_of>alchemist</selectable_feat_of>
+  </row>
+  <row name="FERAL MUTAGEN">
+    <level>8</level>
+    <selectable_feat_of>alchemist</selectable_feat_of>
+  </row>
+  <row name="STICKY BOMB">
+    <level>8</level>
+    <selectable_feat_of>alchemist</selectable_feat_of>
+  </row>
+  <row name="ELASTIC MUTAGEN">
+    <level>10</level>
+    <selectable_feat_of>alchemist</selectable_feat_of>
+  </row>
+  <row name="EXPANDED SPLASH">
+    <level>10</level>
+    <selectable_feat_of>alchemist</selectable_feat_of>
+  </row>
+  <row name="GREATER DEBILITATING BOMB">
+    <level>10</level>
+    <selectable_feat_of>alchemist</selectable_feat_of>
+  </row>
+  <row name="MERCIFUL ELIXIR">
+    <level>10</level>
+    <selectable_feat_of>alchemist</selectable_feat_of>
+  </row>
+  <row name="POTENT POISONER">
+    <level>10</level>
+    <selectable_feat_of>alchemist</selectable_feat_of>
+  </row>
+  <row name="EXTEND ELIXIR">
+    <level>12</level>
+    <selectable_feat_of>alchemist</selectable_feat_of>
+  </row>
+  <row name="INVINCIBLE MUTAGEN">
+    <level>12</level>
+    <selectable_feat_of>alchemist</selectable_feat_of>
+  </row>
+  <row name="UNCANNY BOMBS">
+    <level>12</level>
+    <selectable_feat_of>alchemist</selectable_feat_of>
+  </row>
+  <row name="GLIB MUTAGEN">
+    <level>14</level>
+    <selectable_feat_of>alchemist</selectable_feat_of>
+  </row>
+  <row name="GREATER MERCIFUL ELIXIR">
+    <level>14</level>
+    <selectable_feat_of>alchemist</selectable_feat_of>
+  </row>
+  <row name="TRUE DEBILITATING BOMB">
+    <level>14</level>
+    <selectable_feat_of>alchemist</selectable_feat_of>
+  </row>
+  <row name="ETERNAL ELIXIR">
+    <level>16</level>
+    <selectable_feat_of>alchemist</selectable_feat_of>
+  </row>
+  <row name="EXPLOITIVE BOMB">
+    <level>16</level>
+    <selectable_feat_of>alchemist</selectable_feat_of>
+  </row>
+  <row name="GENIUS MUTAGEN">
+    <level>16</level>
+    <selectable_feat_of>alchemist</selectable_feat_of>
+  </row>
+  <row name="PERSISTENT MUTAGEN">
+    <level>16</level>
+    <selectable_feat_of>alchemist</selectable_feat_of>
+  </row>
+  <row name="IMPROBABLE ELIXIRS">
+    <level>18</level>
+    <selectable_feat_of>alchemist</selectable_feat_of>
+  </row>
+  <row name="MINDBLANK MUTAGEN">
+    <level>18</level>
+    <selectable_feat_of>alchemist</selectable_feat_of>
+  </row>
+  <row name="MIRACLE WORKER">
+    <level>18</level>
+    <selectable_feat_of>alchemist</selectable_feat_of>
+  </row>
+  <row name="PERFECT DEBILITATION">
+    <level>18</level>
+    <selectable_feat_of>alchemist</selectable_feat_of>
+  </row>
+  <row name="CRAFT PHILOSOPHERвЂ™S STONE">
+    <level>20</level>
+    <selectable_feat_of>alchemist</selectable_feat_of>
+  </row>
+  <row name="MEGA BOMB">
+    <level>20</level>
+    <selectable_feat_of>alchemist</selectable_feat_of>
+  </row>
+  <row name="PERFECT MUTAGEN">
+    <level>20</level>
+    <selectable_feat_of>alchemist</selectable_feat_of>
+  </row>
+  <row name="Rage">
+    <level>1</level>
+    <feat_of>barbarian</feat_of>
+  </row>
+  <row name="Instinct">
+    <level>1</level>
+    <feat_of>barbarian</feat_of>
+  </row>
+  <row name="Deny Advantage">
+    <level>3</level>
+    <feat_of>barbarian</feat_of>
+  </row>
+  <row name="Brutality">
+    <level>5</level>
+    <feat_of>barbarian</feat_of>
+  </row>
+  <row name="Juggernaut barbarian">
+    <level>7</level>
+    <feat_of>barbarian</feat_of>
+  </row>
+  <row name="Weapon Specialization barbarian">
+    <level>7</level>
+    <feat_of>barbarian</feat_of>
+  </row>
+  <row name="Lightning Reflexes barbarian">
+    <level>9</level>
+    <feat_of>barbarian</feat_of>
+  </row>
+  <row name="Raging Resistance">
+    <level>9</level>
+    <feat_of>barbarian</feat_of>
+  </row>
+  <row name="Mighty Rage">
+    <level>11</level>
+    <feat_of>barbarian</feat_of>
+  </row>
+  <row name="Greater Juggernaut">
+    <level>13</level>
+    <feat_of>barbarian</feat_of>
+  </row>
+  <row name="Medium Armor Expertise barbarian">
+    <level>13</level>
+    <feat_of>barbarian</feat_of>
+  </row>
+  <row name="Weapon Fury">
+    <level>13</level>
+    <feat_of>barbarian</feat_of>
+  </row>
+  <row name="Greater Weapon Specialization">
+    <level>15</level>
+    <feat_of>barbarian</feat_of>
+  </row>
+  <row name="Indomitable Will">
+    <level>15</level>
+    <feat_of>barbarian</feat_of>
+  </row>
+  <row name="Heightened Senses">
+    <level>17</level>
+    <feat_of>barbarian</feat_of>
+  </row>
+  <row name="Quick Rage">
+    <level>17</level>
+    <feat_of>barbarian</feat_of>
+  </row>
+  <row name="Armor of Fury">
+    <level>19</level>
+    <feat_of>barbarian</feat_of>
+  </row>
+  <row name="Devastator">
+    <level>19</level>
+    <feat_of>barbarian</feat_of>
+  </row>
+  <row name="Acute Scent">
+    <level>2</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Acute Vision">
+    <level>1</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Animal Rage">
+    <level>8</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Animal Skin">
+    <level>6</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Attack of Opportunity barbarian">
+    <level>6</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Awesome Blow">
+    <level>14</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Brutal Bully">
+    <level>6</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Brutal Critical">
+    <level>18</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Cleave">
+    <level>6</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Collateral Thrash">
+    <level>16</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Come and Get Me">
+    <level>10</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Contagious Rage">
+    <level>20</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Dragon&apos;s Rage Breath">
+    <level>6</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Dragon&apos;s Rage Wings">
+    <level>12</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Dragon Transformation">
+    <level>16</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Fast Movement">
+    <level>4</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Furious Bully">
+    <level>8</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Furious Finish">
+    <level>2</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Furious Grab">
+    <level>12</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Furious Sprint">
+    <level>10</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Giant’s Lunge">
+    <level>14</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Giant’s Stature">
+    <level>6</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Great Cleave">
+    <level>10</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Knockback">
+    <level>10</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Moment of Clarity">
+    <level>1</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="No Escape">
+    <level>2</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Perfect Clarity">
+    <level>18</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Predator’s Pounce">
+    <level>12</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Quaking Stomp">
+    <level>20</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Raging Athlete">
+    <level>4</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Raging Intimidation">
+    <level>1</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Raging Thrower">
+    <level>1</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Reckless Abandon">
+    <level>16</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Renewed Vigor">
+    <level>8</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Second Wind">
+    <level>2</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Shake It Off">
+    <level>2</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Share Rage">
+    <level>8</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Spirits’ Interference">
+    <level>6</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Spirit’s Wrath">
+    <level>12</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Sudden Charge">
+    <level>1</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Sudden Leap">
+    <level>8</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Swipe">
+    <level>4</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Terrifying Howl">
+    <level>10</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Thrash">
+    <level>8</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Titan’s Stature">
+    <level>12</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Vengeful Strike">
+    <level>14</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Vicious Evisceration">
+    <level>18</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Whirlwind Strike">
+    <level>14</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Wounded Rage">
+    <level>4</level>
+    <selectable_feat_of>barbarian</selectable_feat_of>
+  </row>
+  <row name="Occult Spellcasting">
+    <level>1</level>
+    <feat_of>bard</feat_of>
+  </row>
+  <row name="Spell Repertoire">
+    <level>1</level>
+    <feat_of>bard</feat_of>
+  </row>
+  <row name="Composition Spells">
+    <level>1</level>
+    <feat_of>bard</feat_of>
+  </row>
+  <row name="Muses">
+    <level>1</level>
+    <feat_of>bard</feat_of>
+  </row>
+  <row name="Lightning Reflexes bard">
+    <level>3</level>
+    <feat_of>bard</feat_of>
+  </row>
+  <row name="Signature Spells">
+    <level>3</level>
+    <feat_of>bard</feat_of>
+  </row>
+  <row name="Expert Spellcaster">
+    <level>7</level>
+    <feat_of>bard</feat_of>
+  </row>
+  <row name="Great Fortitude bard">
+    <level>9</level>
+    <feat_of>bard</feat_of>
+  </row>
+  <row name="Resolve bard">
+    <level>9</level>
+    <feat_of>bard</feat_of>
+  </row>
+  <row name="Bard Weapon Expertise">
+    <level>11</level>
+    <feat_of>bard</feat_of>
+  </row>
+  <row name="Vigilant Senses bard">
+    <level>11</level>
+    <feat_of>bard</feat_of>
+  </row>
+  <row name="Light Armor Expertise">
+    <level>13</level>
+    <feat_of>bard</feat_of>
+  </row>
+  <row name="Weapon Specialization bard">
+    <level>13</level>
+    <feat_of>bard</feat_of>
+  </row>
+  <row name="Master Spellcaster">
+    <level>15</level>
+    <feat_of>bard</feat_of>
+  </row>
+  <row name="Greater Resolve">
+    <level>17</level>
+    <feat_of>bard</feat_of>
+  </row>
+  <row name="Magnum Opus">
+    <level>19</level>
+    <feat_of>bard</feat_of>
+  </row>
+  <row name="Legendary Spellcaster">
+    <level>19</level>
+    <feat_of>bard</feat_of>
+  </row>
+  <row name="Allegro">
+    <level>14</level>
+    <selectable_feat_of>bard</selectable_feat_of>
+  </row>
+  <row name="Bardic Lore">
+    <level>1</level>
+    <selectable_feat_of>bard</selectable_feat_of>
+  </row>
+  <row name="Cantrip Expansion">
+    <level>2</level>
+    <selectable_feat_of>bard</selectable_feat_of>
+  </row>
+  <row name="Deep Lore">
+    <level>18</level>
+    <selectable_feat_of>bard</selectable_feat_of>
+  </row>
+  <row name="Dirge of Doom">
+    <level>6</level>
+    <selectable_feat_of>bard</selectable_feat_of>
+  </row>
+  <row name="Eclectic Polymath">
+    <level>12</level>
+    <selectable_feat_of>bard</selectable_feat_of>
+  </row>
+  <row name="Eclectic Skill">
+    <level>8</level>
+    <selectable_feat_of>bard</selectable_feat_of>
+  </row>
+  <row name="Effortless Concentration">
+    <level>16</level>
+    <selectable_feat_of>bard</selectable_feat_of>
+  </row>
+  <row name="Esoteric Polymath">
+    <level>2</level>
+    <selectable_feat_of>bard</selectable_feat_of>
+  </row>
+  <row name="Eternal Composition">
+    <level>18</level>
+    <selectable_feat_of>bard</selectable_feat_of>
+  </row>
+  <row name="Fatal Aria">
+    <level>20</level>
+    <selectable_feat_of>bard</selectable_feat_of>
+  </row>
+  <row name="Harmonize">
+    <level>6</level>
+    <selectable_feat_of>bard</selectable_feat_of>
+  </row>
+  <row name="House of Imaginary Walls">
+    <level>10</level>
+    <selectable_feat_of>bard</selectable_feat_of>
+  </row>
+  <row name="Impossible Polymath">
+    <level>18</level>
+    <selectable_feat_of>bard</selectable_feat_of>
+  </row>
+  <row name="Inspire Competence">
+    <level>2</level>
+    <selectable_feat_of>bard</selectable_feat_of>
+  </row>
+  <row name="Inspire Defense">
+    <level>4</level>
+    <selectable_feat_of>bard</selectable_feat_of>
+  </row>
+  <row name="Inspire Heroics">
+    <level>8</level>
+    <selectable_feat_of>bard</selectable_feat_of>
+  </row>
+  <row name="Inspirational Focus">
+    <level>12</level>
+    <selectable_feat_of>bard</selectable_feat_of>
+  </row>
+  <row name="Know-It-All">
+    <level>8</level>
+    <selectable_feat_of>bard</selectable_feat_of>
+  </row>
+  <row name="Lingering Composition">
+    <level>1</level>
+    <selectable_feat_of>bard</selectable_feat_of>
+  </row>
+  <row name="Loremaster’s Etude">
+    <level>2</level>
+    <selectable_feat_of>bard</selectable_feat_of>
+  </row>
+  <row name="Melodious Spell">
+    <level>4</level>
+    <selectable_feat_of>bard</selectable_feat_of>
+  </row>
+  <row name="Multifarious Muse">
+    <level>2</level>
+    <selectable_feat_of>bard</selectable_feat_of>
+  </row>
+  <row name="Perfect Encore">
+    <level>20</level>
+    <selectable_feat_of>bard</selectable_feat_of>
+  </row>
+  <row name="Quickened Casting">
+    <level>10</level>
+    <selectable_feat_of>bard</selectable_feat_of>
+  </row>
+  <row name="Reach Spell">
+    <level>1</level>
+    <selectable_feat_of>bard</selectable_feat_of>
+  </row>
+  <row name="Soothing Ballad">
+    <level>14</level>
+    <selectable_feat_of>bard</selectable_feat_of>
+  </row>
+  <row name="Steady Spellcasting">
+    <level>6</level>
+    <selectable_feat_of>bard</selectable_feat_of>
+  </row>
+  <row name="Studious Capacity">
+    <level>16</level>
+    <selectable_feat_of>bard</selectable_feat_of>
+  </row>
+  <row name="Symphony of the Muse">
+    <level>20</level>
+    <selectable_feat_of>bard</selectable_feat_of>
+  </row>
+  <row name="Triple Time">
+    <level>4</level>
+    <selectable_feat_of>bard</selectable_feat_of>
+  </row>
+  <row name="True Hypercognition">
+    <level>14</level>
+    <selectable_feat_of>bard</selectable_feat_of>
+  </row>
+  <row name="Unusual Composition">
+    <level>10</level>
+    <selectable_feat_of>bard</selectable_feat_of>
+  </row>
+  <row name="Versatile Performance">
+    <level>1</level>
+    <selectable_feat_of>bard</selectable_feat_of>
+  </row>
+  <row name="Versatile Signature">
+    <level>4</level>
+    <selectable_feat_of>bard</selectable_feat_of>
+  </row>
+  <row name="Champion’s Code">
+    <level>1</level>
+    <feat_of>champion</feat_of>
+  </row>
+  <row name="Deity and Cause">
+    <level>1</level>
+    <feat_of>champion</feat_of>
+  </row>
+  <row name="Deific Weapon">
+    <level>1</level>
+    <feat_of>champion</feat_of>
+  </row>
+  <row name="Champion’s Reaction">
+    <level>1</level>
+    <feat_of>champion</feat_of>
+  </row>
+  <row name="Devotion Spells">
+    <level>1</level>
+    <feat_of>champion</feat_of>
+  </row>
+  <row name="Shield Block">
+    <level>1</level>
+    <feat_of>champion</feat_of>
+  </row>
+  <row name="Divine Ally">
+    <level>3</level>
+    <feat_of>champion</feat_of>
+  </row>
+  <row name="Weapon Expertise">
+    <level>5</level>
+    <feat_of>champion</feat_of>
+  </row>
+  <row name="Armor Expertise champion">
+    <level>7</level>
+    <feat_of>champion</feat_of>
+  </row>
+  <row name="Weapon Specialization champion">
+    <level>7</level>
+    <feat_of>champion</feat_of>
+  </row>
+  <row name="Champion Expertise">
+    <level>9</level>
+    <feat_of>champion</feat_of>
+  </row>
+  <row name="Divine Smite">
+    <level>9</level>
+    <feat_of>champion</feat_of>
+  </row>
+  <row name="Juggernaut champion">
+    <level>9</level>
+    <feat_of>champion</feat_of>
+  </row>
+  <row name="Lightning Reflexes champion">
+    <level>9</level>
+    <feat_of>champion</feat_of>
+  </row>
+  <row name="Alertness champion">
+    <level>11</level>
+    <feat_of>champion</feat_of>
+  </row>
+  <row name="Divine Will">
+    <level>11</level>
+    <feat_of>champion</feat_of>
+  </row>
+  <row name="Exalt">
+    <level>11</level>
+    <feat_of>champion</feat_of>
+  </row>
+  <row name="Armor Mastery champion">
+    <level>13</level>
+    <feat_of>champion</feat_of>
+  </row>
+  <row name="Weapon Mastery">
+    <level>13</level>
+    <feat_of>champion</feat_of>
+  </row>
+  <row name="Greater Weapon Specialization">
+    <level>15</level>
+    <feat_of>champion</feat_of>
+  </row>
+  <row name="Champion Mastery">
+    <level>17</level>
+    <feat_of>champion</feat_of>
+  </row>
+  <row name="Legendary Armor">
+    <level>17</level>
+    <feat_of>champion</feat_of>
+  </row>
+  <row name="Hero’s Defiance">
+    <level>19</level>
+    <feat_of>champion</feat_of>
+  </row>
+  <row name="Advanced Deity’s Domain">
+    <level>8</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Affliction Mercy">
+    <level>12</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Anchoring Aura">
+    <level>14</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Attack of Opportunity champion">
+    <level>6</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Aura of Courage">
+    <level>4</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Aura of Faith">
+    <level>12</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Aura of Life">
+    <level>14</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Aura of Righteousness">
+    <level>14</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Aura of Vengeance">
+    <level>14</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Auspicious Mount">
+    <level>16</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Blade of Justice">
+    <level>12</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Celestial Form">
+    <level>18</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Celestial Mount">
+    <level>20</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Champion’s Sacrifice">
+    <level>12</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Deity’s Domain">
+    <level>1</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Devoted Focus">
+    <level>10</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Divine Grace">
+    <level>2</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Divine Health">
+    <level>4</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Divine Reflexes">
+    <level>14</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Divine Wall">
+    <level>12</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Dragonslayer Oath">
+    <level>2</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Fiendsbane Oath">
+    <level>2</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Greater Mercy">
+    <level>8</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Heal Mount">
+    <level>8</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Imposing Destrier">
+    <level>10</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Instrument of Zeal">
+    <level>16</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Lasting Doubt">
+    <level>12</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Liberating Stride">
+    <level>12</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Litany against Sloth">
+    <level>10</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Litany against Wrath">
+    <level>6</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Litany of Righteousness">
+    <level>14</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Loyal Warhorse">
+    <level>6</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Mercy">
+    <level>4</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Quick Shield Block">
+    <level>8</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Radiant Blade Master">
+    <level>20</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Radiant Blade Spirit">
+    <level>10</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Ranged Reprisal">
+    <level>1</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Second Ally">
+    <level>8</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Sense Evil">
+    <level>8</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Shield Paragon">
+    <level>20</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Shield of Grace">
+    <level>16</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Shield of Reckoning">
+    <level>10</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Shield Warden">
+    <level>6</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Shining Oath">
+    <level>2</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Smite Evil">
+    <level>6</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Ultimate Mercy">
+    <level>18</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Unimpeded Step">
+    <level>1</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Vengeful Oath">
+    <level>2</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Weight of Guilt">
+    <level>1</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Wyrmbane Aura">
+    <level>14</level>
+    <selectable_feat_of>champion</selectable_feat_of>
+  </row>
+  <row name="Deity">
+    <level>1</level>
+    <feat_of>cleric</feat_of>
+  </row>
+  <row name="Divine Spellcasting">
+    <level>1</level>
+    <feat_of>cleric</feat_of>
+  </row>
+  <row name="Divine Font feat">
+    <level>1</level>
+    <feat_of>cleric</feat_of>
+  </row>
+  <row name="Doctrine">
+    <level>1</level>
+    <feat_of>cleric</feat_of>
+  </row>
+  <row name="Alertness cleric">
+    <level>5</level>
+    <feat_of>cleric</feat_of>
+  </row>
+  <row name="Resolve cleric">
+    <level>9</level>
+    <feat_of>cleric</feat_of>
+  </row>
+  <row name="Lightning Reflexes cleric">
+    <level>11</level>
+    <feat_of>cleric</feat_of>
+  </row>
+  <row name="Divine Defense">
+    <level>13</level>
+    <feat_of>cleric</feat_of>
+  </row>
+  <row name="Weapon Specialization cleric">
+    <level>13</level>
+    <feat_of>cleric</feat_of>
+  </row>
+  <row name="Miraculous Spell">
+    <level>19</level>
+    <feat_of>cleric</feat_of>
+  </row>
+  <row name="Advanced Domain">
+    <level>8</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Align Armament">
+    <level>8</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Avatar’s Audience">
+    <level>20</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Cantrip Expansion">
+    <level>2</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Cast Down">
+    <level>6</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Castigating Weapon">
+    <level>10</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Channel Smite">
+    <level>4</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Channeled Succor">
+    <level>8</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Command Undead">
+    <level>4</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Communal Healing">
+    <level>2</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Cremate Undead">
+    <level>8</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Deadly Simplicity">
+    <level>1</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Defensive Recovery">
+    <level>12</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Deity’s Protection">
+    <level>14</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Directed Channel">
+    <level>4</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Divine Weapon">
+    <level>6</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Domain Focus">
+    <level>12</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Domain Initiate">
+    <level>1</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Domain Wellspring">
+    <level>16</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Echoing Channel">
+    <level>18</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Emblazon Antimagic">
+    <level>12</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Emblazon Armament">
+    <level>2</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Emblazon Energy">
+    <level>8</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Eternal Bane">
+    <level>16</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Eternal Blessing">
+    <level>16</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Extend Armament Alignment">
+    <level>14</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Fast Channel">
+    <level>14</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Harming Hands">
+    <level>1</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Healing Hands">
+    <level>1</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Heroic Recovery">
+    <level>10</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Holy Castigation">
+    <level>1</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Improved Command Undead">
+    <level>10</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Improved Communal Healing">
+    <level>4</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Improved Swift Banishment">
+    <level>18</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Maker of Miracles">
+    <level>20</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Metamagic Channel">
+    <level>20</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Necrotic Infusion">
+    <level>4</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Reach Spell">
+    <level>1</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Replenishment of War">
+    <level>10</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Resurrectionist">
+    <level>16</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Sap Life">
+    <level>2</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Selective Energy">
+    <level>6</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Shared Replenishment">
+    <level>12</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Steady Spellcasting">
+    <level>6</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Swift Banishment">
+    <level>14</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Turn Undead">
+    <level>2</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Versatile Font">
+    <level>2</level>
+    <selectable_feat_of>cleric</selectable_feat_of>
+  </row>
+  <row name="Primal Spellcasting">
+    <level>1</level>
+    <feat_of>druid</feat_of>
+  </row>
+  <row name="Anathema feat">
+    <level>1</level>
+    <feat_of>druid</feat_of>
+  </row>
+  <row name="Druidic Language">
+    <level>1</level>
+    <feat_of>druid</feat_of>
+  </row>
+  <row name="Druidic Order">
+    <level>1</level>
+    <feat_of>druid</feat_of>
+  </row>
+  <row name="Shield Block">
+    <level>1</level>
+    <feat_of>druid</feat_of>
+  </row>
+  <row name="Wild Empathy">
+    <level>1</level>
+    <feat_of>druid</feat_of>
+  </row>
+  <row name="Alertness druid">
+    <level>3</level>
+    <feat_of>druid</feat_of>
+  </row>
+  <row name="Great Fortitude">
+    <level>3</level>
+    <feat_of>druid</feat_of>
+  </row>
+  <row name="Lightning Reflexes">
+    <level>5</level>
+    <feat_of>druid</feat_of>
+  </row>
+  <row name="Expert Spellcaster">
+    <level>7</level>
+    <feat_of>druid</feat_of>
+  </row>
+  <row name="Druid Weapon Expertise">
+    <level>11</level>
+    <feat_of>druid</feat_of>
+  </row>
+  <row name="Resolve">
+    <level>11</level>
+    <feat_of>druid</feat_of>
+  </row>
+  <row name="Medium Armor Expertise druid">
+    <level>13</level>
+    <feat_of>druid</feat_of>
+  </row>
+  <row name="Weapon Specialization druid">
+    <level>13</level>
+    <feat_of>druid</feat_of>
+  </row>
+  <row name="Master Spellcaster">
+    <level>15</level>
+    <feat_of>druid</feat_of>
+  </row>
+  <row name="Legendary Spellcaster">
+    <level>19</level>
+    <feat_of>druid</feat_of>
+  </row>
+  <row name="Primal Hierophant">
+    <level>19</level>
+    <feat_of>druid</feat_of>
+  </row>
+  <row name="Animal Companion">
+    <level>1</level>
+    <selectable_feat_of>druid</selectable_feat_of>
+  </row>
+  <row name="Call of the Wild">
+    <level>2</level>
+    <selectable_feat_of>druid</selectable_feat_of>
+  </row>
+  <row name="Dragon Shape">
+    <level>12</level>
+    <selectable_feat_of>druid</selectable_feat_of>
+  </row>
+  <row name="Effortless Concentration">
+    <level>16</level>
+    <selectable_feat_of>druid</selectable_feat_of>
+  </row>
+  <row name="Elemental Shape">
+    <level>10</level>
+    <selectable_feat_of>druid</selectable_feat_of>
+  </row>
+  <row name="Enhanced Familiar">
+    <level>2</level>
+    <selectable_feat_of>druid</selectable_feat_of>
+  </row>
+  <row name="Ferocious Shape">
+    <level>8</level>
+    <selectable_feat_of>druid</selectable_feat_of>
+  </row>
+  <row name="Fey Caller">
+    <level>8</level>
+    <selectable_feat_of>druid</selectable_feat_of>
+  </row>
+  <row name="Form Control">
+    <level>4</level>
+    <selectable_feat_of>druid</selectable_feat_of>
+  </row>
+  <row name="Green Empathy">
+    <level>6</level>
+    <selectable_feat_of>druid</selectable_feat_of>
+  </row>
+  <row name="Green Tongue">
+    <level>12</level>
+    <selectable_feat_of>druid</selectable_feat_of>
+  </row>
+  <row name="Healing Transformation">
+    <level>10</level>
+    <selectable_feat_of>druid</selectable_feat_of>
+  </row>
+  <row name="Hierophant’s Power">
+    <level>20</level>
+    <selectable_feat_of>druid</selectable_feat_of>
+  </row>
+  <row name="Impaling Briars">
+    <level>16</level>
+    <selectable_feat_of>druid</selectable_feat_of>
+  </row>
+  <row name="Incredible Companion">
+    <level>8</level>
+    <selectable_feat_of>druid</selectable_feat_of>
+  </row>
+  <row name="Insect Shape">
+    <level>6</level>
+    <selectable_feat_of>druid</selectable_feat_of>
+  </row>
+  <row name="Invoke Disaster">
+    <level>18</level>
+    <selectable_feat_of>druid</selectable_feat_of>
+  </row>
+  <row name="Leshy Familiar">
+    <level>1</level>
+    <selectable_feat_of>druid</selectable_feat_of>
+  </row>
+  <row name="Leyline Conduit">
+    <level>20</level>
+    <selectable_feat_of>druid</selectable_feat_of>
+  </row>
+  <row name="Mature Animal Companion">
+    <level>4</level>
+    <selectable_feat_of>druid</selectable_feat_of>
+  </row>
+  <row name="Monstrosity Shape">
+    <level>16</level>
+    <selectable_feat_of>druid</selectable_feat_of>
+  </row>
+  <row name="Order Explorer">
+    <level>2</level>
+    <selectable_feat_of>druid</selectable_feat_of>
+  </row>
+  <row name="Order Magic">
+    <level>4</level>
+    <selectable_feat_of>druid</selectable_feat_of>
+  </row>
+  <row name="Overwhelming Energy">
+    <level>10</level>
+    <selectable_feat_of>druid</selectable_feat_of>
+  </row>
+  <row name="Perfect Form Control">
+    <level>18</level>
+    <selectable_feat_of>druid</selectable_feat_of>
+  </row>
+  <row name="Plant Shape">
+    <level>10</level>
+    <selectable_feat_of>druid</selectable_feat_of>
+  </row>
+  <row name="Poison Resistance">
+    <level>2</level>
+    <selectable_feat_of>druid</selectable_feat_of>
+  </row>
+  <row name="Primal Focus">
+    <level>12</level>
+    <selectable_feat_of>druid</selectable_feat_of>
+  </row>
+  <row name="Primal Summons">
+    <level>12</level>
+    <selectable_feat_of>druid</selectable_feat_of>
+  </row>
+  <row name="Primal Wellspring">
+    <level>18</level>
+    <selectable_feat_of>druid</selectable_feat_of>
+  </row>
+  <row name="Reach Spell">
+    <level>1</level>
+    <selectable_feat_of>druid</selectable_feat_of>
+  </row>
+  <row name="Side by Side">
+    <level>10</level>
+    <selectable_feat_of>druid</selectable_feat_of>
+  </row>
+  <row name="Soaring Shape">
+    <level>8</level>
+    <selectable_feat_of>druid</selectable_feat_of>
+  </row>
+  <row name="Specialized Companion">
+    <level>14</level>
+    <selectable_feat_of>druid</selectable_feat_of>
+  </row>
+  <row name="Steady Spellcasting">
+    <level>6</level>
+    <selectable_feat_of>druid</selectable_feat_of>
+  </row>
+  <row name="Storm Born">
+    <level>1</level>
+    <selectable_feat_of>druid</selectable_feat_of>
+  </row>
+  <row name="Storm Retribution">
+    <level>6</level>
+    <selectable_feat_of>druid</selectable_feat_of>
+  </row>
+  <row name="Thousand Faces">
+    <level>4</level>
+    <selectable_feat_of>druid</selectable_feat_of>
+  </row>
+  <row name="Timeless Nature">
+    <level>14</level>
+    <selectable_feat_of>druid</selectable_feat_of>
+  </row>
+  <row name="True Shapeshifter">
+    <level>20</level>
+    <selectable_feat_of>druid</selectable_feat_of>
+  </row>
+  <row name="Verdant Metamorphosis">
+    <level>14</level>
+    <selectable_feat_of>druid</selectable_feat_of>
+  </row>
+  <row name="Widen Spell">
+    <level>1</level>
+    <selectable_feat_of>druid</selectable_feat_of>
+  </row>
+  <row name="Wild Shape">
+    <level>1</level>
+    <selectable_feat_of>druid</selectable_feat_of>
+  </row>
+  <row name="Wind Caller">
+    <level>8</level>
+    <selectable_feat_of>druid</selectable_feat_of>
+  </row>
+  <row name="Woodland Stride">
+    <level>4</level>
+    <selectable_feat_of>druid</selectable_feat_of>
+  </row>
+  <row name="Attack of Opportunity">
+    <level>1</level>
+    <feat_of>fighter</feat_of>
+  </row>
+  <row name="Shield Block">
+    <level>1</level>
+    <feat_of>fighter</feat_of>
+  </row>
+  <row name="Bravery">
+    <level>3</level>
+    <feat_of>fighter</feat_of>
+  </row>
+  <row name="Fighter Weapon Mastery">
+    <level>5</level>
+    <feat_of>fighter</feat_of>
+  </row>
+  <row name="Battlefield Surveyor">
+    <level>7</level>
+    <feat_of>fighter</feat_of>
+  </row>
+  <row name="Weapon Specialization">
+    <level>7</level>
+    <feat_of>fighter</feat_of>
+  </row>
+  <row name="Combat Flexibility">
+    <level>9</level>
+    <feat_of>fighter</feat_of>
+  </row>
+  <row name="Juggernaut fighter">
+    <level>9</level>
+    <feat_of>fighter</feat_of>
+  </row>
+  <row name="Armor Expertise">
+    <level>11</level>
+    <feat_of>fighter</feat_of>
+  </row>
+  <row name="Fighter Expertise">
+    <level>11</level>
+    <feat_of>fighter</feat_of>
+  </row>
+  <row name="Weapon Legend">
+    <level>13</level>
+    <feat_of>fighter</feat_of>
+  </row>
+  <row name="Evasion fighter">
+    <level>15</level>
+    <feat_of>fighter</feat_of>
+  </row>
+  <row name="Greater Weapon Specialization">
+    <level>15</level>
+    <feat_of>fighter</feat_of>
+  </row>
+  <row name="Improved Flexibility">
+    <level>15</level>
+    <feat_of>fighter</feat_of>
+  </row>
+  <row name="Armor Mastery">
+    <level>17</level>
+    <feat_of>fighter</feat_of>
+  </row>
+  <row name="Versatile Legend">
+    <level>19</level>
+    <feat_of>fighter</feat_of>
+  </row>
+  <row name="Advanced Weapon Training">
+    <level>6</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Advantageous Assault">
+    <level>6</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Aggressive Block">
+    <level>2</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Agile Grace">
+    <level>10</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Assisting Shot">
+    <level>2</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Blind-Fight">
+    <level>8</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Boundless Reprisals">
+    <level>20</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Brutal Finish">
+    <level>12</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Brutish Shove">
+    <level>2</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Certain Strike">
+    <level>10</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Combat Grab">
+    <level>2</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Combat Reflexes">
+    <level>10</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Debilitating Shot">
+    <level>10</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Desperate Finisher">
+    <level>14</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Determination">
+    <level>14</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Disarming Stance">
+    <level>6</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Disarming Twist">
+    <level>10</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Disruptive Stance">
+    <level>10</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Double Shot">
+    <level>4</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Double Slice">
+    <level>1</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Dual-Handed Assault">
+    <level>4</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Dueling Dance">
+    <level>12</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Dueling Parry">
+    <level>2</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Dueling Riposte">
+    <level>8</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Exacting Strike">
+    <level>1</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Fearsome Brute">
+    <level>10</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Felling Strike">
+    <level>8</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Flinging Shove">
+    <level>12</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Furious Focus">
+    <level>6</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Graceful Poise">
+    <level>16</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Guardian’s Deflection">
+    <level>6</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Guiding Finish">
+    <level>14</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Guiding Riposte">
+    <level>14</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Impossible Volley">
+    <level>18</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Improved Dueling Riposte">
+    <level>12</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Improved Knockdown">
+    <level>10</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Improved Reflexive Shield">
+    <level>16</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Improved Twin Riposte fighter">
+    <level>14</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Incredible Aim">
+    <level>8</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Incredible Ricochet">
+    <level>12</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Intimidating Strike">
+    <level>2</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Knockdown">
+    <level>4</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Lunge">
+    <level>2</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Lunging Stance">
+    <level>12</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Mirror Shield">
+    <level>10</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Mobile Shot Stance">
+    <level>8</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Multishot Stance">
+    <level>16</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Paragon&apos;s Guard">
+    <level>12</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Point-Blank Shot">
+    <level>1</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Positioning Assault">
+    <level>8</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Power Attack">
+    <level>1</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Powerful Shove">
+    <level>4</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Quick Reversal">
+    <level>4</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Quick Shield Block">
+    <level>8</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Reactive Shield">
+    <level>1</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Reflexive Shield">
+    <level>6</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Revealing Stab">
+    <level>6</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Savage Critical">
+    <level>18</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Shatter Defenses">
+    <level>6</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Shield Warden">
+    <level>6</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Shielded Stride">
+    <level>4</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Snagging Strike">
+    <level>1</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Spring Attack">
+    <level>12</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Stance Savant fighter">
+    <level>14</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Sudden Charge">
+    <level>1</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Sudden Leap">
+    <level>8</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Swipe">
+    <level>4</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Triple Shot">
+    <level>6</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Twinned Defense">
+    <level>16</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Twin Parry">
+    <level>4</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Twin Riposte">
+    <level>10</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Two-Weapon Flurry">
+    <level>14</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Weapon Supremacy">
+    <level>20</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Whirlwind Strike">
+    <level>14</level>
+    <selectable_feat_of>fighter</selectable_feat_of>
+  </row>
+  <row name="Flurry of Blows">
+    <level>1</level>
+    <feat_of>monk</feat_of>
+  </row>
+  <row name="Powerful Fist">
+    <level>1</level>
+    <feat_of>monk</feat_of>
+  </row>
+  <row name="Incredible Movement">
+    <level>3</level>
+    <feat_of>monk</feat_of>
+  </row>
+  <row name="Mystic Strikes">
+    <level>3</level>
+    <feat_of>monk</feat_of>
+  </row>
+  <row name="Alertness">
+    <level>5</level>
+    <feat_of>monk</feat_of>
+  </row>
+  <row name="Expert Strikes">
+    <level>5</level>
+    <feat_of>monk</feat_of>
+  </row>
+  <row name="Path to Perfection">
+    <level>7</level>
+    <feat_of>monk</feat_of>
+  </row>
+  <row name="Weapon Specialization">
+    <level>7</level>
+    <feat_of>monk</feat_of>
+  </row>
+  <row name="Metal Strikes">
+    <level>9</level>
+    <feat_of>monk</feat_of>
+  </row>
+  <row name="Monk Expertise">
+    <level>9</level>
+    <feat_of>monk</feat_of>
+  </row>
+  <row name="Second Path to Perfection">
+    <level>11</level>
+    <feat_of>monk</feat_of>
+  </row>
+  <row name="Graceful Mastery">
+    <level>13</level>
+    <feat_of>monk</feat_of>
+  </row>
+  <row name="Master Strikes">
+    <level>13</level>
+    <feat_of>monk</feat_of>
+  </row>
+  <row name="Greater Weapon Specialization">
+    <level>15</level>
+    <feat_of>monk</feat_of>
+  </row>
+  <row name="Third Path to Perfection">
+    <level>15</level>
+    <feat_of>monk</feat_of>
+  </row>
+  <row name="Adamantine Strikes">
+    <level>17</level>
+    <feat_of>monk</feat_of>
+  </row>
+  <row name="Graceful Legend">
+    <level>17</level>
+    <feat_of>monk</feat_of>
+  </row>
+  <row name="Perfected Form">
+    <level>19</level>
+    <feat_of>monk</feat_of>
+  </row>
+  <row name="Abundant Step">
+    <level>6</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Arrow Snatching">
+    <level>8</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Brawling Focus">
+    <level>2</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Crane Flutter">
+    <level>6</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Crane Stance">
+    <level>1</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Crushing Grab">
+    <level>2</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Dancing Leaf">
+    <level>2</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Deflect Arrow">
+    <level>4</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Diamond Fists">
+    <level>18</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Diamond Soul">
+    <level>12</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Disrupt Ki">
+    <level>12</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Dragon Roar">
+    <level>6</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Dragon Stance">
+    <level>1</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Elemental Fist">
+    <level>2</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Empty Body">
+    <level>18</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Enduring Quickness">
+    <level>20</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Enlightened Presence">
+    <level>16</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Flurry of Maneuvers">
+    <level>4</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Flying Kick">
+    <level>4</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Fuse Stance">
+    <level>20</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Guarded Movement">
+    <level>4</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Impossible Technique">
+    <level>20</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Improved Knockback">
+    <level>12</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Ironblood Stance">
+    <level>8</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Ironblood Surge">
+    <level>14</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Ki Blast">
+    <level>6</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Ki Rush">
+    <level>1</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Ki Strike">
+    <level>1</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Knockback Strike">
+    <level>10</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Master of Many Styles">
+    <level>16</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Meditative Focus">
+    <level>12</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Meditative Wellspring">
+    <level>18</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Mixed Maneuver">
+    <level>8</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Monastic Weaponry">
+    <level>1</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Mountain Quake">
+    <level>14</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Mountain Stance">
+    <level>1</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Mountain Stronghold">
+    <level>6</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Quivering Palm">
+    <level>16</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Shattering Strike">
+    <level>16</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Sleeper Hold">
+    <level>10</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Stance Savant">
+    <level>12</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Stand Still">
+    <level>4</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Stunning Fist">
+    <level>2</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Swift River">
+    <level>18</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Tangled Forest Rake">
+    <level>14</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Tangled Forest Stance">
+    <level>8</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Tiger Slash">
+    <level>6</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Tiger Stance">
+    <level>1</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Timeless Body">
+    <level>14</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Tongue of Sun and Moon">
+    <level>14</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Wall Run">
+    <level>8</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Water Step">
+    <level>6</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Whirling Throw">
+    <level>6</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Wholeness of Body">
+    <level>4</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Wild Winds Gust">
+    <level>14</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Wild Winds Initiate">
+    <level>8</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Wind Jump">
+    <level>10</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Winding Flow">
+    <level>10</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Wolf Drag">
+    <level>6</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Wolf Stance">
+    <level>1</level>
+    <selectable_feat_of>monk</selectable_feat_of>
+  </row>
+  <row name="Hunt Prey">
+    <level>1</level>
+    <feat_of>ranger</feat_of>
+  </row>
+  <row name="Hunter’s Edge">
+    <level>1</level>
+    <feat_of>ranger</feat_of>
+  </row>
+  <row name="Iron Will">
+    <level>3</level>
+    <feat_of>ranger</feat_of>
+  </row>
+  <row name="Ranger Weapon Expertise">
+    <level>5</level>
+    <feat_of>ranger</feat_of>
+  </row>
+  <row name="Trackless Step">
+    <level>5</level>
+    <feat_of>ranger</feat_of>
+  </row>
+  <row name="Evasion">
+    <level>7</level>
+    <feat_of>ranger</feat_of>
+  </row>
+  <row name="Vigilant Senses">
+    <level>7</level>
+    <feat_of>ranger</feat_of>
+  </row>
+  <row name="Weapon Specialization">
+    <level>7</level>
+    <feat_of>ranger</feat_of>
+  </row>
+  <row name="Nature’s Edge">
+    <level>9</level>
+    <feat_of>ranger</feat_of>
+  </row>
+  <row name="Ranger Expertise">
+    <level>9</level>
+    <feat_of>ranger</feat_of>
+  </row>
+  <row name="Juggernaut">
+    <level>11</level>
+    <feat_of>ranger</feat_of>
+  </row>
+  <row name="Medium Armor Expertise">
+    <level>11</level>
+    <feat_of>ranger</feat_of>
+  </row>
+  <row name="Wild Stride">
+    <level>11</level>
+    <feat_of>ranger</feat_of>
+  </row>
+  <row name="Weapon Mastery">
+    <level>13</level>
+    <feat_of>ranger</feat_of>
+  </row>
+  <row name="Greater Weapon Specialization">
+    <level>15</level>
+    <feat_of>ranger</feat_of>
+  </row>
+  <row name="Improved Evasion">
+    <level>15</level>
+    <feat_of>ranger</feat_of>
+  </row>
+  <row name="Incredible Senses">
+    <level>15</level>
+    <feat_of>ranger</feat_of>
+  </row>
+  <row name="Masterful Hunter">
+    <level>17</level>
+    <feat_of>ranger</feat_of>
+  </row>
+  <row name="Second Skin">
+    <level>19</level>
+    <feat_of>ranger</feat_of>
+  </row>
+  <row name="Swift Prey">
+    <level>19</level>
+    <feat_of>ranger</feat_of>
+  </row>
+  <row name="Animal Companion">
+    <level>1</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Blind-Fight">
+    <level>8</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Camouflage">
+    <level>10</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Companion’s Cry">
+    <level>4</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Crossbow Ace">
+    <level>1</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Deadly Aim">
+    <level>8</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Disrupt Prey">
+    <level>4</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Distracting Shot">
+    <level>12</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Double Prey">
+    <level>12</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Far Shot">
+    <level>4</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Favored Enemy">
+    <level>4</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Favored Terrain">
+    <level>2</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Greater Distracting Shot">
+    <level>16</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Hazard Finder">
+    <level>8</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Hunted Shot">
+    <level>1</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Hunter’s Aim">
+    <level>2</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Impossible Flurry">
+    <level>18</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Impossible Volley">
+    <level>18</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Improved Twin Riposte">
+    <level>16</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Incredible Companion ranger">
+    <level>10</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Legendary Monster Hunter">
+    <level>16</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Legendary Shot">
+    <level>20</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Lightning Snares">
+    <level>12</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Manifold Edge">
+    <level>18</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Master Monster Hunter">
+    <level>10</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Masterful Companion">
+    <level>18</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Mature Animal Companion ranger">
+    <level>6</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Monster Hunter">
+    <level>1</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Monster Warden">
+    <level>2</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Penetrating Shot">
+    <level>10</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Perfect Shot">
+    <level>18</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Powerful Snares">
+    <level>8</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Quick Draw">
+    <level>2</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Quick Snares">
+    <level>6</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Running Reload">
+    <level>4</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Scout’s Warning">
+    <level>4</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Second Sting">
+    <level>12</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Sense the Unseen">
+    <level>14</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Shadow Hunter">
+    <level>18</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Shared Prey">
+    <level>14</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Side by Side ranger">
+    <level>12</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Skirmish Strike">
+    <level>6</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Snap Shot">
+    <level>6</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Snare Specialist">
+    <level>4</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Specialized Companion ranger">
+    <level>16</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Stealthy Companion">
+    <level>14</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Swift Tracker">
+    <level>6</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Targeting Shot">
+    <level>14</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Terrain Master">
+    <level>8</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="To the Ends of the Earth">
+    <level>20</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Triple Threat">
+    <level>20</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Twin Parry">
+    <level>4</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Twin Riposte">
+    <level>10</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Twin Takedown">
+    <level>1</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Ubiquitous Snares">
+    <level>16</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Ultimate Skirmisher">
+    <level>20</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Warden’s Boon">
+    <level>8</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Warden’s Guidance">
+    <level>14</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Warden’s Step">
+    <level>10</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Wild Empathy ranger">
+    <level>2</level>
+    <selectable_feat_of>ranger</selectable_feat_of>
+  </row>
+  <row name="Rogue’s Racket">
+    <level>1</level>
+    <feat_of>rogue</feat_of>
+  </row>
+  <row name="Sneak Attack">
+    <level>1</level>
+    <feat_of>rogue</feat_of>
+  </row>
+  <row name="Surprise Attack">
+    <level>1</level>
+    <feat_of>rogue</feat_of>
+  </row>
+  <row name="Deny Advantage">
+    <level>3</level>
+    <feat_of>rogue</feat_of>
+  </row>
+  <row name="Weapon Tricks">
+    <level>5</level>
+    <feat_of>rogue</feat_of>
+  </row>
+  <row name="Evasion">
+    <level>7</level>
+    <feat_of>rogue</feat_of>
+  </row>
+  <row name="Vigilant Senses">
+    <level>7</level>
+    <feat_of>rogue</feat_of>
+  </row>
+  <row name="Weapon Specialization">
+    <level>7</level>
+    <feat_of>rogue</feat_of>
+  </row>
+  <row name="Debilitating Strike">
+    <level>9</level>
+    <feat_of>rogue</feat_of>
+  </row>
+  <row name="Great Fortitude rogue">
+    <level>9</level>
+    <feat_of>rogue</feat_of>
+  </row>
+  <row name="Rogue Expertise">
+    <level>11</level>
+    <feat_of>rogue</feat_of>
+  </row>
+  <row name="Improved Evasion rogue">
+    <level>13</level>
+    <feat_of>rogue</feat_of>
+  </row>
+  <row name="Incredible Senses rogue">
+    <level>13</level>
+    <feat_of>rogue</feat_of>
+  </row>
+  <row name="Light Armor Expertise">
+    <level>13</level>
+    <feat_of>rogue</feat_of>
+  </row>
+  <row name="Master Tricks">
+    <level>13</level>
+    <feat_of>rogue</feat_of>
+  </row>
+  <row name="Double Debilitation">
+    <level>15</level>
+    <feat_of>rogue</feat_of>
+  </row>
+  <row name="Greater Weapon Specialization">
+    <level>15</level>
+    <feat_of>rogue</feat_of>
+  </row>
+  <row name="Slippery Mind">
+    <level>17</level>
+    <feat_of>rogue</feat_of>
+  </row>
+  <row name="Light Armor Mastery">
+    <level>19</level>
+    <feat_of>rogue</feat_of>
+  </row>
+  <row name="Master Strike">
+    <level>19</level>
+    <feat_of>rogue</feat_of>
+  </row>
+  <row name="Battle Assessment">
+    <level>4</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Blank Slate">
+    <level>16</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Blind-Fight">
+    <level>8</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Brutal Beating">
+    <level>2</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Cloud Step">
+    <level>16</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Cognitive Loophole">
+    <level>16</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Critical Debilitation">
+    <level>12</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Defensive Roll">
+    <level>14</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Delay Trap">
+    <level>8</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Dispelling Slice">
+    <level>16</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Distracting Feint">
+    <level>2</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Dread Striker">
+    <level>4</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Fantastic Leap">
+    <level>12</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Felling Shot">
+    <level>12</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Gang Up">
+    <level>6</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Hidden Paragon">
+    <level>20</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Implausible Infiltration">
+    <level>18</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Impossible Striker">
+    <level>20</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Improved Poison Weapon">
+    <level>8</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Instant Opening">
+    <level>14</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Leave an Opening">
+    <level>14</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Light Step">
+    <level>6</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Magical Trickster">
+    <level>4</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Minor Magic">
+    <level>2</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Mobility">
+    <level>2</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Nimble Dodge">
+    <level>1</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Nimble Roll">
+    <level>8</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Opportune Backstab">
+    <level>8</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Perfect Distraction">
+    <level>16</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Poison Weapon">
+    <level>4</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Powerful Sneak">
+    <level>18</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Precise Debilitations">
+    <level>10</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Quick Draw">
+    <level>2</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Reactive Distraction">
+    <level>20</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Reactive Interference">
+    <level>12</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Reactive Pursuit">
+    <level>4</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Sabotage">
+    <level>4</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Scout’s Warning">
+    <level>4</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Sense the Unseen">
+    <level>14</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Sidestep">
+    <level>8</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Skirmish Strike">
+    <level>6</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Sly Striker">
+    <level>8</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Sneak Savant">
+    <level>10</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Spring from the Shadows">
+    <level>12</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Tactical Debilitations">
+    <level>10</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Trap Finder">
+    <level>1</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Trickster’s Ace">
+    <level>18</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Twin Feint">
+    <level>1</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Twist the Knife">
+    <level>6</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Unbalancing Blow">
+    <level>2</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Vicious Debilitations">
+    <level>10</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="You&apos;re Next">
+    <level>1</level>
+    <selectable_feat_of>rogue</selectable_feat_of>
+  </row>
+  <row name="Bloodline">
+    <level>1</level>
+    <feat_of>sorcerer</feat_of>
+  </row>
+  <row name="Sorcerer Spellcasting">
+    <level>1</level>
+    <feat_of>sorcerer</feat_of>
+  </row>
+  <row name="Spell Repertoire">
+    <level>1</level>
+    <feat_of>sorcerer</feat_of>
+  </row>
+  <row name="Signature Spells">
+    <level>3</level>
+    <feat_of>sorcerer</feat_of>
+  </row>
+  <row name="Magical Fortitude">
+    <level>5</level>
+    <feat_of>sorcerer</feat_of>
+  </row>
+  <row name="Expert Spellcaster">
+    <level>7</level>
+    <feat_of>sorcerer</feat_of>
+  </row>
+  <row name="Lightning Reflexes sorcerer">
+    <level>9</level>
+    <feat_of>sorcerer</feat_of>
+  </row>
+  <row name="Alertness sorcerer">
+    <level>11</level>
+    <feat_of>sorcerer</feat_of>
+  </row>
+  <row name="Weapon Expertise sorcerer">
+    <level>11</level>
+    <feat_of>sorcerer</feat_of>
+  </row>
+  <row name="Defensive Robes">
+    <level>13</level>
+    <feat_of>sorcerer</feat_of>
+  </row>
+  <row name="Weapon Specialization sorcerer">
+    <level>13</level>
+    <feat_of>sorcerer</feat_of>
+  </row>
+  <row name="Master Spellcaster">
+    <level>15</level>
+    <feat_of>sorcerer</feat_of>
+  </row>
+  <row name="Resolve sorcerer">
+    <level>17</level>
+    <feat_of>sorcerer</feat_of>
+  </row>
+  <row name="Bloodline Paragon">
+    <level>19</level>
+    <feat_of>sorcerer</feat_of>
+  </row>
+  <row name="Legendary Spellcaster">
+    <level>19</level>
+    <feat_of>sorcerer</feat_of>
+  </row>
+  <row name="Advanced Bloodline">
+    <level>6</level>
+    <selectable_feat_of>sorcerer</selectable_feat_of>
+  </row>
+  <row name="Arcane Evolution">
+    <level>4</level>
+    <selectable_feat_of>sorcerer</selectable_feat_of>
+  </row>
+  <row name="Bespell Weapon">
+    <level>4</level>
+    <selectable_feat_of>sorcerer</selectable_feat_of>
+  </row>
+  <row name="Bloodline Conduit">
+    <level>20</level>
+    <selectable_feat_of>sorcerer</selectable_feat_of>
+  </row>
+  <row name="Bloodline Focus">
+    <level>12</level>
+    <selectable_feat_of>sorcerer</selectable_feat_of>
+  </row>
+  <row name="Bloodline Perfection">
+    <level>20</level>
+    <selectable_feat_of>sorcerer</selectable_feat_of>
+  </row>
+  <row name="Bloodline Resistance">
+    <level>8</level>
+    <selectable_feat_of>sorcerer</selectable_feat_of>
+  </row>
+  <row name="Bloodline Wellspring">
+    <level>18</level>
+    <selectable_feat_of>sorcerer</selectable_feat_of>
+  </row>
+  <row name="Cantrip Expansion">
+    <level>2</level>
+    <selectable_feat_of>sorcerer</selectable_feat_of>
+  </row>
+  <row name="Counterspell">
+    <level>1</level>
+    <selectable_feat_of>sorcerer</selectable_feat_of>
+  </row>
+  <row name="Crossblooded Evolution">
+    <level>8</level>
+    <selectable_feat_of>sorcerer</selectable_feat_of>
+  </row>
+  <row name="Dangerous Sorcery">
+    <level>1</level>
+    <selectable_feat_of>sorcerer</selectable_feat_of>
+  </row>
+  <row name="Divine Evolution">
+    <level>4</level>
+    <selectable_feat_of>sorcerer</selectable_feat_of>
+  </row>
+  <row name="Effortless Concentration">
+    <level>16</level>
+    <selectable_feat_of>sorcerer</selectable_feat_of>
+  </row>
+  <row name="Enhanced Familiar">
+    <level>2</level>
+    <selectable_feat_of>sorcerer</selectable_feat_of>
+  </row>
+  <row name="Familiar">
+    <level>1</level>
+    <selectable_feat_of>sorcerer</selectable_feat_of>
+  </row>
+  <row name="Greater Bloodline">
+    <level>10</level>
+    <selectable_feat_of>sorcerer</selectable_feat_of>
+  </row>
+  <row name="Greater Crossblooded Evolution">
+    <level>18</level>
+    <selectable_feat_of>sorcerer</selectable_feat_of>
+  </row>
+  <row name="Greater Mental Evolution">
+    <level>16</level>
+    <selectable_feat_of>sorcerer</selectable_feat_of>
+  </row>
+  <row name="Greater Vital Evolution">
+    <level>16</level>
+    <selectable_feat_of>sorcerer</selectable_feat_of>
+  </row>
+  <row name="Interweave Dispel">
+    <level>14</level>
+    <selectable_feat_of>sorcerer</selectable_feat_of>
+  </row>
+  <row name="Magic Sense">
+    <level>12</level>
+    <selectable_feat_of>sorcerer</selectable_feat_of>
+  </row>
+  <row name="Metamagic Mastery">
+    <level>20</level>
+    <selectable_feat_of>sorcerer</selectable_feat_of>
+  </row>
+  <row name="Occult Evolution">
+    <level>4</level>
+    <selectable_feat_of>sorcerer</selectable_feat_of>
+  </row>
+  <row name="Overwhelming Energy">
+    <level>10</level>
+    <selectable_feat_of>sorcerer</selectable_feat_of>
+  </row>
+  <row name="Primal Evolution">
+    <level>4</level>
+    <selectable_feat_of>sorcerer</selectable_feat_of>
+  </row>
+  <row name="Quickened Casting">
+    <level>10</level>
+    <selectable_feat_of>sorcerer</selectable_feat_of>
+  </row>
+  <row name="Reach Spell">
+    <level>1</level>
+    <selectable_feat_of>sorcerer</selectable_feat_of>
+  </row>
+  <row name="Reflect Spell">
+    <level>14</level>
+    <selectable_feat_of>sorcerer</selectable_feat_of>
+  </row>
+  <row name="Steady Spellcasting">
+    <level>6</level>
+    <selectable_feat_of>sorcerer</selectable_feat_of>
+  </row>
+  <row name="Widen Spell">
+    <level>1</level>
+    <selectable_feat_of>sorcerer</selectable_feat_of>
+  </row>
+  <row name="Arcane Spellcasting">
+    <level>1</level>
+    <feat_of>wizard</feat_of>
+  </row>
+  <row name="Arcane School">
+    <level>1</level>
+    <feat_of>wizard</feat_of>
+  </row>
+  <row name="Arcane Bond">
+    <level>1</level>
+    <feat_of>wizard</feat_of>
+  </row>
+  <row name="Arcane Thesis">
+    <level>1</level>
+    <feat_of>wizard</feat_of>
+  </row>
+  <row name="Lightning Reflexes">
+    <level>5</level>
+    <feat_of>wizard</feat_of>
+  </row>
+  <row name="Expert Spellcaster">
+    <level>7</level>
+    <feat_of>wizard</feat_of>
+  </row>
+  <row name="Magical Fortitude wizard">
+    <level>9</level>
+    <feat_of>wizard</feat_of>
+  </row>
+  <row name="Alertness wizard">
+    <level>11</level>
+    <feat_of>wizard</feat_of>
+  </row>
+  <row name="Wizard Weapon Expertise">
+    <level>11</level>
+    <feat_of>wizard</feat_of>
+  </row>
+  <row name="Defensive Robes">
+    <level>13</level>
+    <feat_of>wizard</feat_of>
+  </row>
+  <row name="Weapon Specialization wizard">
+    <level>13</level>
+    <feat_of>wizard</feat_of>
+  </row>
+  <row name="Master Spellcaster">
+    <level>15</level>
+    <feat_of>wizard</feat_of>
+  </row>
+  <row name="Resolve wizard">
+    <level>17</level>
+    <feat_of>wizard</feat_of>
+  </row>
+  <row name="Archwizard’s Spellcraft">
+    <level>19</level>
+    <feat_of>wizard</feat_of>
+  </row>
+  <row name="Legendary Spellcaster">
+    <level>19</level>
+    <feat_of>wizard</feat_of>
+  </row>
+  <row name="Advanced School Spell">
+    <level>8</level>
+    <selectable_feat_of>wizard</selectable_feat_of>
+  </row>
+  <row name="Archwizard’s Might">
+    <level>20</level>
+    <selectable_feat_of>wizard</selectable_feat_of>
+  </row>
+  <row name="Bespell Weapon">
+    <level>4</level>
+    <selectable_feat_of>wizard</selectable_feat_of>
+  </row>
+  <row name="Bond Conservation">
+    <level>8</level>
+    <selectable_feat_of>wizard</selectable_feat_of>
+  </row>
+  <row name="Bonded Focus">
+    <level>14</level>
+    <selectable_feat_of>wizard</selectable_feat_of>
+  </row>
+  <row name="Cantrip Expansion">
+    <level>2</level>
+    <selectable_feat_of>wizard</selectable_feat_of>
+  </row>
+  <row name="Clever Counterspell">
+    <level>12</level>
+    <selectable_feat_of>wizard</selectable_feat_of>
+  </row>
+  <row name="Conceal Spell">
+    <level>2</level>
+    <selectable_feat_of>wizard</selectable_feat_of>
+  </row>
+  <row name="Counterspell">
+    <level>1</level>
+    <selectable_feat_of>wizard</selectable_feat_of>
+  </row>
+  <row name="Effortless Concentration">
+    <level>16</level>
+    <selectable_feat_of>wizard</selectable_feat_of>
+  </row>
+  <row name="Enhanced Familiar">
+    <level>2</level>
+    <selectable_feat_of>wizard</selectable_feat_of>
+  </row>
+  <row name="Eschew Materials">
+    <level>1</level>
+    <selectable_feat_of>wizard</selectable_feat_of>
+  </row>
+  <row name="Familiar">
+    <level>1</level>
+    <selectable_feat_of>wizard</selectable_feat_of>
+  </row>
+  <row name="Hand of the Apprentice">
+    <level>1</level>
+    <selectable_feat_of>wizard</selectable_feat_of>
+  </row>
+  <row name="Infinite Possibilities">
+    <level>18</level>
+    <selectable_feat_of>wizard</selectable_feat_of>
+  </row>
+  <row name="Linked Focus">
+    <level>4</level>
+    <selectable_feat_of>wizard</selectable_feat_of>
+  </row>
+  <row name="Magic Sense">
+    <level>12</level>
+    <selectable_feat_of>wizard</selectable_feat_of>
+  </row>
+  <row name="Metamagic Mastery">
+    <level>20</level>
+    <selectable_feat_of>wizard</selectable_feat_of>
+  </row>
+  <row name="Overwhelming Energy">
+    <level>10</level>
+    <selectable_feat_of>wizard</selectable_feat_of>
+  </row>
+  <row name="Quickened Casting">
+    <level>10</level>
+    <selectable_feat_of>wizard</selectable_feat_of>
+  </row>
+  <row name="Reach Spell">
+    <level>1</level>
+    <selectable_feat_of>wizard</selectable_feat_of>
+  </row>
+  <row name="Reflect Spell">
+    <level>14</level>
+    <selectable_feat_of>wizard</selectable_feat_of>
+  </row>
+  <row name="Reprepare Spell">
+    <level>18</level>
+    <selectable_feat_of>wizard</selectable_feat_of>
+  </row>
+  <row name="Scroll Savant">
+    <level>10</level>
+    <selectable_feat_of>wizard</selectable_feat_of>
+  </row>
+  <row name="Silent Spell">
+    <level>4</level>
+    <selectable_feat_of>wizard</selectable_feat_of>
+  </row>
+  <row name="Spell Combination">
+    <level>20</level>
+    <selectable_feat_of>wizard</selectable_feat_of>
+  </row>
+  <row name="Spell Penetration">
+    <level>6</level>
+    <selectable_feat_of>wizard</selectable_feat_of>
+  </row>
+  <row name="Spell Tinker">
+    <level>16</level>
+    <selectable_feat_of>wizard</selectable_feat_of>
+  </row>
+  <row name="Steady Spellcasting">
+    <level>6</level>
+    <selectable_feat_of>wizard</selectable_feat_of>
+  </row>
+  <row name="Superior Bond">
+    <level>14</level>
+    <selectable_feat_of>wizard</selectable_feat_of>
+  </row>
+  <row name="Universal Versatility">
+    <level>8</level>
+    <selectable_feat_of>wizard</selectable_feat_of>
+  </row>
+  <row name="Widen Spell">
+    <level>1</level>
+    <selectable_feat_of>wizard</selectable_feat_of>
+  </row>
+</root>

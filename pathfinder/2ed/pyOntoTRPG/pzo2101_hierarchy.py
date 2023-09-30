@@ -16,8 +16,6 @@ def create(pzo2101: Ontology):
 
         class trained(Feat >> Thing): pass
 
-        class is_trained_by(ObjectProperty): inverse_property = trained
-
         class has_selectable_feat(has_feat): pass
 
         class selectable_feat_of(ObjectProperty): inverse_property = has_selectable_feat
@@ -39,12 +37,8 @@ def create(pzo2101: Ontology):
         class special_speed(Ancestry >> str, FunctionalProperty): comment = "speed different from land speed"
 
         class Characteristic(Thing): pass
-
-        class Ability_score(Characteristic): pass
-
+        class Ability_score(pzo2101.Characteristic): pass
         class ability_boost(Character_backbone_feat >> Ability_score): pass
-
-        class ability_flaw(Ancestry >> Ability_score): pass
 
         class Trait(Thing): pass
 
@@ -54,8 +48,8 @@ def create(pzo2101: Ontology):
 
         class Heritage(Feat): pass
 
-        class prereq(Feat >> Thing): pass
-        class prereq_details(Feat >> str): pass
+        class prereq(Thing >> Thing): pass
+        class prereq_details(Thing >> str): pass
 
         class Gameclass(Character_backbone_feat): pass
 
@@ -93,7 +87,4 @@ def create(pzo2101: Ontology):
 
         class Master_ability(Feat): pass
 
-        class Action(Thing): pass
-        class need_training(Action>>bool, FunctionalProperty):
-            comment = ("Anyone can use a skill’s untrained actions, but you can use trained actions only if you have a "
-                       "proficiency rank of trained or better in that skill.")
+        class abbreviation(AnnotationProperty): pass

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<root>
+<row name="Lawful Good">
+  <abbreviation>LG</abbreviation>
+</row>
+<row name="Lawful Neutral">
+  <abbreviation>LN</abbreviation>
+</row>
+<row name="Lawful Evil">
+  <abbreviation>LE</abbreviation>
+</row>
+<row name="Neutral Good">
+  <abbreviation>NG</abbreviation>
+</row>
+<row name="True Neutral">
+  <abbreviation>N</abbreviation>
+</row>
+<row name="Neutral Evil">
+  <abbreviation>NE</abbreviation>
+</row>
+<row name="Chaotic Good">
+  <abbreviation>CG</abbreviation>
+</row>
+<row name="Chaotic Neutral">
+  <abbreviation>CN</abbreviation>
+</row>
+<row name="Chaotic Evil">
+  <abbreviation>CE</abbreviation>
+</row>
+</root>

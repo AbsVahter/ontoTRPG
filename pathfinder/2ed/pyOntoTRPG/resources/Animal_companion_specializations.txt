@@ -1,7 +1,0 @@
-name
-Ambusher
-Bully
-Daredevil
-Racer
-Tracker
-Wrecker

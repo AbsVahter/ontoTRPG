@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <culture name="Human">
+    <comment>A variety of ethnic groups make up the human populace of the continents bordering Golarion’s Inner Sea. Many of these groups have origins on distant lands, but the Inner Sea region has a diverse population drawn from across the globe. Human characters can be from any of these ethnicities, regardless of what land they call home.</comment>
+    <location>Golarion</location>
+  </culture>
+  <culture name="Garundi">
+    <ethnicity_of>Human</ethnicity_of>
+    <comment>Garundi span the nations of northern Garund along the shores of the Inner Sea, and their clans are known for strength and empathy, treating their neighbors with compassion and respect. Their skin tones often range from dark brown to beige, and they often have tall statures, broad shoulders, and high cheekbones.</comment>
+    <relates_to object_class="Language">Osiriani</relates_to>
+    <location>Garund</location>
+  </culture>
+  <culture name="Keleshite">
+    <ethnicity_of>Human</ethnicity_of>
+    <comment>Tracing their origins to the Keleshite Empire in the eastern deserts, Keleshites often have black hair, brown eyes, and dark- to cool-brown skin. Their culture takes pride in the empire’s legacy, valuing boldness, wit, and luxury. Fashions tend to incorporate flowing fabrics, headdresses, and turbans.</comment>
+    <relates_to object_class="Language">Kelish</relates_to>
+    <location>Kelesh</location>
+  </culture>
+  <culture name="Kellid">
+    <ethnicity_of>Human</ethnicity_of>
+    <comment>In the mountains and steppes of northern Avistan, Kellids live hard lives to survive the threats of the wild, wary of magic and relying on skill and might when hunting and fighting. They are typically a brawny and dark-haired people, tanned and bearing eyes that are often black, blue, or gray.</comment>
+    <relates_to object_class="Language">Hallit</relates_to>
+    <location>Avistan</location>
+  </culture>
+  <culture name="Mwangi">
+    <ethnicity_of>Human</ethnicity_of>
+    <comment>Spread across the vast continent of Garund, from the parched deserts in the north to the dense jungles of the Mwangi Expanse, the Mwangi people are divided into four diverse subgroups: Bekyar, Bonuwat, Mauxi, and Zenj. Mwangi skin tones range from black to dark-brown to ocher, and they have black or dark-brown hair.</comment>
+    <relates_to object_class="Language">Mwangi</relates_to>
+    <location>Garund</location>
+    <location>Mwangi Expanse</location>
+  </culture>
+  <culture name="Nidalese">
+    <ethnicity_of>Human</ethnicity_of>
+    <comment>Nidalese hail from a culture that escaped destruction during the Earthfall, when a swarm of meteoroids carved out the Inner Sea. The ancient Nidalese pledged fealty to an evil shadow god to obtain salvation, and the grip of Zon-Kuthon has tainted these people ever since. Nidalese tend toward gray, ashy skin tones, with white, gray, or black hair.</comment>
+    <relates_to object_class="Language">Shadowtongue</relates_to>
+  </culture>
+  <culture name="Shoanti">
+    <ethnicity_of>Human</ethnicity_of>
+    <comment>The Shoanti clans called quahs were long ago pushed out of lush territory in the nation of Varisia into the harsh badlands of the Storval Plateau. Stalwart and tenacious, they remain oath-sworn to someday retake what they’ve lost. Their skin tones typically range from sepia to russet, and quah members are easily identified by their shaved heads and traditional tattoos.</comment>
+    <relates_to object_class="Language">Shoanti</relates_to>
+    <location>Varisia</location>
+  </culture>
+  <culture name="Taldan">
+    <ethnicity_of>Human</ethnicity_of>
+    <comment>Renowned as artisans, scholars, and soldiers, Taldans have spread throughout Avistan, as the empire of Taldor once spanned almost half of the northern continent. Taldans often have brown hair, pale-white to deep-bronze skin, and green, gray, or amber eyes.</comment>
+    <relates_to object_class="Language">Taldane</relates_to>
+    <location>Taldor</location>
+  </culture>
+  <culture name="Tian">
+    <ethnicity_of>Human</ethnicity_of>
+    <comment>Few in number in the Inner Sea region, Tians originally come from myriad nations in Tian Xia, a continent on the opposite side of the world. They typically have dark hair, but their body types, skin tones, and eye colors vary greatly, as &apos;Tian&apos; is in fact a general term describing several ethnicities.</comment>
+    <relates_to object_class="Language">Tien</relates_to>
+    <location>Tian Xia</location>
+  </culture>
+  <culture name="Ulfen">
+    <ethnicity_of>Human</ethnicity_of>
+    <comment>The coastal raiders of the Ulfen clans are skilled sailors and bodyguards. They’re often tall, with pale to ruddy skin and blond, light-brown, or red hair. They typically show pride in their appearances by adorning themselves with furs, horn, and ivory.</comment>
+    <relates_to object_class="Language">Skald</relates_to>
+  </culture>
+  <culture name="Varisian">
+    <ethnicity_of>Human</ethnicity_of>
+    <comment>Varisians historically favored a nomadic life of roving caravans, but today many lead a settled lifestyle in places like Ustalav and their namesake land. Their skin tones typically range from tawny beige to khaki. They have a wide variety of hair colors from platinum to red to brown, and their large, expressive eyes range into even rarer colors like violet and gold.</comment>
+    <relates_to object_class="Language">Varisian</relates_to>
+    <location>Ustalav</location>
+  </culture>
+  <culture name="Vudrani">
+    <ethnicity_of>Human</ethnicity_of>
+    <comment>Though the empire of Vudra is far to the east, it has a foothold in the Inner Sea on the island of Jalmeray. A widespread belief in reincarnation makes dedication to self-improvement a hallmark of Vudrani culture. Vudrani typically have dark eyes and skin tones that run from umber to tawny. Their hair is often black and ranges in thickness and texture. Piercings, jewelry, and makeup are common adornments among Vudrani.</comment>
+    <relates_to object_class="Language">Vudrani</relates_to>
+    <location>Jalmeray</location>
+    <location>Vudra</location>
+  </culture>
+  <culture name="dwarf">
+    <comment>For untold eons, the dwarven people dwelled in the lightless reaches of the Darklands.</comment>
+    <location>Darklands</location>
+    <location>Golarion</location>
+  </culture>
+  <culture name="Grondaksen dwarves">
+    <ethnicity_of>Dwarf</ethnicity_of>
+    <comment>still dwell in the upper reaches of the Darklands</comment>
+  </culture>
+  <culture name="Ergaksen dwarves">
+    <ethnicity_of>Dwarf</ethnicity_of>
+    <comment>the most widespread heritage, and those who dwell on or adjacent to the surface world</comment>
+  </culture>
+  <culture name="Holtaksen dwarves">
+    <ethnicity_of>Dwarf</ethnicity_of>
+    <comment>the least populous—dwarves who dwell only among the highest mountain reaches</comment>
+  </culture>
+  <culture name="Elf">
+    <comment>Golarion is not the original elven home world, but those elves who dwell here today are considered native to the planet. These people first came to Golarion from the neighboring planet of Castrovel via a network of portals known as aiudara. While elves abandoned Golarion for several thousand years after the devastation of Earthfall, they have since returned in force.</comment>
+    <location>Golarion</location>
+    <location>Castrovel</location>
+  </culture>
+  <culture name="Aiudeen">
+    <ethnicity_of>Elf</ethnicity_of>
+    <comment>The most populous elves are the Aiudeen, elves who have acclimated to temperate forest lands. These are the elves who rule the nation of Kyonin and are most often encountered in other societies.</comment>
+    <location>Kyonin</location>
+    <location>Golarion</location>
+  </culture>
+  <culture name="Mualijae elves">
+    <ethnicity_of>Elf</ethnicity_of>
+    <comment>To the south, the Mualijae elves have acclimated to the sweltering jungles of the Mwangi Expanse.</comment>
+    <location>Mwangi Expanse</location>
+  </culture>
+  <culture name="Ilverani elves">
+    <ethnicity_of>Elf</ethnicity_of>
+    <comment>Far to the north the Ilverani elves (known to some as the snowcasters) dwell in the frozen reaches of Irrisen and beyond in the Crown of the World.</comment>
+    <location>Irrisen</location>
+  </culture>
+  <culture name="Vourinoi elves">
+    <ethnicity_of>Elf</ethnicity_of>
+    <comment>The Vourinoi elves of Garund’s deserts are the most secretive of the elven ethnicities.</comment>
+    <location>Garund</location>
+  </culture>
+  <culture name="Gnome">
+    <comment>Since arriving on Golarion, gnomes have transitioned fully to creatures of the Material Plane, although they all live in fear of the life-threatening condition known as Bleaching.</comment>
+    <location>Golarion</location>
+    <location>First World</location>
+  </culture>
+  <culture name="Feychild gnomes">
+    <ethnicity_of>Gnome</ethnicity_of>
+    <comment>Feychild gnomes are the most widespread.</comment>
+    <location>Golarion</location>
+  </culture>
+  <culture name="Glimmer gnomes">
+    <ethnicity_of>Gnome</ethnicity_of>
+    <comment>Glimmer gnomes retain a stronger tie to the First World, while others known as fell gnomes have embraced the darker traditions of their fey heritage.</comment>
+    <location>Golarion</location>
+  </culture>
+  <culture name="Keenspark gnomes">
+    <ethnicity_of>Gnome</ethnicity_of>
+    <comment>Keenspark gnomes (jokingly referred to as "sour gnomes") seek to avoid the Bleaching by exploring new innovations rather than seeking new experiences or exploring the world.</comment>
+    <location>Golarion</location>
+  </culture>
+  <culture name="Goblin">
+    <comment>Although many adventurers might assume a goblin is a goblin, these scrappy and creative people are as diverse as any other ancestry.</comment>
+    <location>Golarion</location>
+  </culture>
+  <culture name="Rasp goblins">
+    <ethnicity_of>Goblin</ethnicity_of>
+    <comment>The most widespread are the rasp goblins, so named for the large numbers who have traditionally dwelled along the rugged coastlines of Varisia’s west coast, a region known as the Rasp.</comment>
+    <location>Varisia</location>
+    <location>Golarion</location>
+  </culture>
+  <culture name="Forest goblins">
+    <ethnicity_of>Goblin</ethnicity_of>
+    <comment>Forest goblins tend to be smaller than the other ethnicities and are located mostly in central Avistan. Their numbers are only now beginning to recover from the horrors of the Goblinblood Wars.</comment>
+    <location>Avistan</location>
+  </culture>
+  <culture name="Frost goblins">
+    <ethnicity_of>Goblin</ethnicity_of>
+    <comment>The frost goblins of Irrisen’s eternal winter are unusual among their kind for their propensity to grow blue fur on their bodies.</comment>
+    <location>Irrisen</location>
+  </culture>
+  <culture name="Monkey goblins">
+    <ethnicity_of>Goblin</ethnicity_of>
+    <comment>The monkey goblins of Mediogalti Island are known for their prehensile tails and arboreal habitats.</comment>
+    <location>Mediogalti Island</location>
+  </culture>
+  <culture name="Halfling">
+    <comment>Many halflings have lived in the shadow of other societies for as long as they can remember, living in much the same way as their neighboring cultures and adding their own unique variations over time or as necessity demands. However, numerous distinct halfling cultures exist outside of the context of other peoples and nations.</comment>
+    <location>Golarion</location>
+  </culture>
+  <culture name="Halflings of Cheliax">
+    <ethnicity_of>Halfling</ethnicity_of>
+    <comment>The oppressed halflings of Cheliax who have been forced into slavery.</comment>
+    <location>Old Cheliax</location>
+  </culture>
+  <culture name="Song’o halflings">
+    <ethnicity_of>Halfling</ethnicity_of>
+    <comment>The Song’o halflings of the Mwangi Expanse, who hid from all other cultures to avoid a fate of slavery.</comment>
+    <location>Mwangi Expanse</location>
+  </culture>
+  <culture name="Local halflings">
+    <ethnicity_of>Halfling</ethnicity_of>
+    <comment>The Jaric, Mihrini, Othoban, and Uhlam halflings, simply formed their own traditions without the influence of humans and other creatures.</comment>
+    <location>Golarion</location>
+  </culture>
+</root>

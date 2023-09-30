@@ -1,0 +1,518 @@
+<?xml version="1.0"?>
+<root>
+  <row name="Ancient-Blooded Dwarf" subclass="Heritage">
+    <selectable_feat_of>dwarf</selectable_feat_of>
+    <level>0</level>
+  </row>
+  <row name="Death Warden Dwarf" subclass="Heritage">
+    <selectable_feat_of>dwarf</selectable_feat_of>
+    <level>0</level>
+  </row>
+  <row name="Forge Dwarf" subclass="Heritage">
+    <selectable_feat_of>dwarf</selectable_feat_of>
+    <level>0</level>
+  </row>
+  <row name="Rock Dwarf" subclass="Heritage">
+    <selectable_feat_of>dwarf</selectable_feat_of>
+    <level>0</level>
+  </row>
+  <row name="Strong-Blooded Dwarf" subclass="Heritage">
+    <selectable_feat_of>dwarf</selectable_feat_of>
+    <level>0</level>
+  </row>
+  <row name="DWARVEN LORE">
+    <selectable_feat_of>dwarf</selectable_feat_of>
+    <level>1</level>
+  </row>
+  <row name="DWARVEN WEAPON FAMILIARITY">
+    <selectable_feat_of>dwarf</selectable_feat_of>
+    <level>1</level>
+  </row>
+  <row name="ROCK RUNNER">
+    <selectable_feat_of>dwarf</selectable_feat_of>
+    <level>1</level>
+  </row>
+  <row name="STONECUNNING">
+    <selectable_feat_of>dwarf</selectable_feat_of>
+    <level>1</level>
+  </row>
+  <row name="UNBURDENED IRON">
+    <selectable_feat_of>dwarf</selectable_feat_of>
+    <level>1</level>
+  </row>
+  <row name="VENGEFUL HATRED">
+    <selectable_feat_of>dwarf</selectable_feat_of>
+    <level>1</level>
+  </row>
+  <row name="BOULDER ROLL">
+    <selectable_feat_of>dwarf</selectable_feat_of>
+    <level>5</level>
+    <prereq>Rock Runner</prereq>
+  </row>
+  <row name="DWARVEN WEAPON CUNNING">
+    <selectable_feat_of>dwarf</selectable_feat_of>
+    <level>5</level>
+    <prereq>Dwarven Weapon Familiarity</prereq>
+  </row>
+  <row name="MOUNTAIN’S STOUTNESS">
+    <selectable_feat_of>dwarf</selectable_feat_of>
+    <level>9</level>
+  </row>
+  <row name="STONEWALKER">
+    <selectable_feat_of>dwarf</selectable_feat_of>
+    <level>9</level>
+  </row>
+  <row name="DWARVEN WEAPON EXPERTISE">
+    <selectable_feat_of>dwarf</selectable_feat_of>
+    <level>13</level>
+    <prereq>Dwarven Weapon Familiarity</prereq>
+  </row>
+  <row name="Arctic Elf" subclass="Heritage">
+    <selectable_feat_of>elf</selectable_feat_of>
+    <level>0</level>
+  </row>
+  <row name="Cavern Elf" subclass="Heritage">
+    <selectable_feat_of>elf</selectable_feat_of>
+    <level>0</level>
+  </row>
+  <row name="Seer Elf" subclass="Heritage">
+    <selectable_feat_of>elf</selectable_feat_of>
+    <level>0</level>
+  </row>
+  <row name="Whisper Elf" subclass="Heritage">
+    <selectable_feat_of>elf</selectable_feat_of>
+    <level>0</level>
+  </row>
+  <row name="Woodland Elf" subclass="Heritage">
+    <selectable_feat_of>elf</selectable_feat_of>
+    <level>0</level>
+  </row>
+  <row name="ANCESTRAL LONGEVITY">
+    <selectable_feat_of>elf</selectable_feat_of>
+    <level>1</level>
+  </row>
+  <row name="ELVEN LORE">
+    <selectable_feat_of>elf</selectable_feat_of>
+    <level>1</level>
+  </row>
+  <row name="ELVEN WEAPON FAMILIARITY">
+    <selectable_feat_of>elf</selectable_feat_of>
+    <level>1</level>
+  </row>
+  <row name="FORLORN">
+    <selectable_feat_of>elf</selectable_feat_of>
+    <level>1</level>
+  </row>
+  <row name="NIMBLE ELF">
+    <selectable_feat_of>elf</selectable_feat_of>
+    <level>1</level>
+  </row>
+  <row name="OTHERWORLDLY MAGIC">
+    <selectable_feat_of>elf</selectable_feat_of>
+    <level>1</level>
+  </row>
+  <row name="UNWAVERING MIEN">
+    <selectable_feat_of>elf</selectable_feat_of>
+    <level>1</level>
+  </row>
+  <row name="AGELESS PATIENCE">
+    <selectable_feat_of>elf</selectable_feat_of>
+    <level>5</level>
+  </row>
+  <row name="ELVEN WEAPON ELEGANCE">
+    <selectable_feat_of>elf</selectable_feat_of>
+    <level>5</level>
+    <prereq>Elven Weapon Familiarity</prereq>
+  </row>
+  <row name="ELF STEP">
+    <selectable_feat_of>elf</selectable_feat_of>
+    <level>9</level>
+  </row>
+  <row name="EXPERT LONGEVITY">
+    <selectable_feat_of>elf</selectable_feat_of>
+    <level>9</level>
+    <prereq>Ancestral Longevity</prereq>
+  </row>
+  <row name="UNIVERSAL LONGEVITY">
+    <selectable_feat_of>elf</selectable_feat_of>
+    <level>13</level>
+    <prereq>Expert Longevity</prereq>
+  </row>
+  <row name="ELVEN WEAPON EXPERTISE">
+    <selectable_feat_of>elf</selectable_feat_of>
+    <level>13</level>
+    <prereq>Elven Weapon Familiarity</prereq>
+  </row>
+  <row name="Chameleon Gnome" subclass="Heritage">
+    <selectable_feat_of>gnome</selectable_feat_of>
+    <level>0</level>
+  </row>
+  <row name="Fey-touched Gnome" subclass="Heritage">
+    <selectable_feat_of>gnome</selectable_feat_of>
+    <level>0</level>
+  </row>
+  <row name="Sensate Gnome" subclass="Heritage">
+    <selectable_feat_of>gnome</selectable_feat_of>
+    <level>0</level>
+  </row>
+  <row name="Umbral Gnome" subclass="Heritage">
+    <selectable_feat_of>gnome</selectable_feat_of>
+    <level>0</level>
+  </row>
+  <row name="Wellspring Gnome" subclass="Heritage">
+    <selectable_feat_of>gnome</selectable_feat_of>
+    <level>0</level>
+  </row>
+  <row name="ANIMAL ACCOMPLICE">
+    <selectable_feat_of>gnome</selectable_feat_of>
+    <level>1</level>
+  </row>
+  <row name="BURROW ELOCUTIONIST">
+    <selectable_feat_of>gnome</selectable_feat_of>
+    <level>1</level>
+  </row>
+  <row name="FEY FELLOWSHIP">
+    <selectable_feat_of>gnome</selectable_feat_of>
+    <level>1</level>
+  </row>
+  <row name="FIRST WORLD MAGIC">
+    <selectable_feat_of>gnome</selectable_feat_of>
+    <level>1</level>
+  </row>
+  <row name="GNOME OBSESSION">
+    <selectable_feat_of>gnome</selectable_feat_of>
+    <level>1</level>
+  </row>
+  <row name="GNOME WEAPON FAMILIARITY">
+    <selectable_feat_of>gnome</selectable_feat_of>
+    <level>1</level>
+  </row>
+  <row name="ILLUSION SENSE">
+    <selectable_feat_of>gnome</selectable_feat_of>
+    <level>1</level>
+  </row>
+  <row name="ANIMAL ELOCUTIONIST">
+    <selectable_feat_of>gnome</selectable_feat_of>
+    <level>5</level>
+    <prereq>Burrow Elocutionist</prereq>
+  </row>
+  <row name="ENERGIZED FONT">
+    <selectable_feat_of>gnome</selectable_feat_of>
+    <level>5</level>
+  </row>
+  <row name="GNOME WEAPON INNOVATOR">
+    <selectable_feat_of>gnome</selectable_feat_of>
+    <level>5</level>
+    <prereq>Gnome Weapon Familiarity</prereq>
+  </row>
+  <row name="FIRST WORLD ADEPT">
+    <selectable_feat_of>gnome</selectable_feat_of>
+    <level>9</level>
+  </row>
+  <row name="VIVACIOUS CONDUIT">
+    <selectable_feat_of>gnome</selectable_feat_of>
+    <level>9</level>
+  </row>
+  <row name="GNOME WEAPON EXPERTISE">
+    <selectable_feat_of>gnome</selectable_feat_of>
+    <level>13</level>
+    <prereq>Gnome Weapon Familiarity</prereq>
+  </row>
+  <row name="Charhide Goblin" subclass="Heritage">
+    <selectable_feat_of>goblin</selectable_feat_of>
+    <level>0</level>
+  </row>
+  <row name="Irongut Goblin" subclass="Heritage">
+    <selectable_feat_of>goblin</selectable_feat_of>
+    <level>0</level>
+  </row>
+  <row name="Razortooth Goblin" subclass="Heritage">
+    <selectable_feat_of>goblin</selectable_feat_of>
+    <level>0</level>
+  </row>
+  <row name="Snow Goblin" subclass="Heritage">
+    <selectable_feat_of>goblin</selectable_feat_of>
+    <level>0</level>
+  </row>
+  <row name="Unbreakable Goblin" subclass="Heritage">
+    <selectable_feat_of>goblin</selectable_feat_of>
+    <level>0</level>
+  </row>
+  <row name="BURN IT!">
+    <selectable_feat_of>goblin</selectable_feat_of>
+    <level>1</level>
+  </row>
+  <row name="CITY SCAVENGER">
+    <selectable_feat_of>goblin</selectable_feat_of>
+    <level>1</level>
+  </row>
+  <row name="GOBLIN LORE">
+    <selectable_feat_of>goblin</selectable_feat_of>
+    <level>1</level>
+  </row>
+  <row name="GOBLIN SCUTTLE">
+    <selectable_feat_of>goblin</selectable_feat_of>
+    <level>1</level>
+  </row>
+  <row name="GOBLIN SONG">
+    <selectable_feat_of>goblin</selectable_feat_of>
+    <level>1</level>
+  </row>
+  <row name="GOBLIN WEAPON FAMILIARITY">
+    <selectable_feat_of>goblin</selectable_feat_of>
+    <level>1</level>
+  </row>
+  <row name="JUNK TINKER">
+    <selectable_feat_of>goblin</selectable_feat_of>
+    <level>1</level>
+  </row>
+  <row name="ROUGH RIDER">
+    <selectable_feat_of>goblin</selectable_feat_of>
+    <level>1</level>
+  </row>
+  <row name="VERY SNEAKY">
+    <selectable_feat_of>goblin</selectable_feat_of>
+    <level>1</level>
+  </row>
+  <row name="GOBLIN WEAPON FRENZY">
+    <selectable_feat_of>goblin</selectable_feat_of>
+    <level>5</level>
+    <prereq>Goblin Weapon Familiarity</prereq>
+  </row>
+  <row name="CAVE CLIMBER">
+    <selectable_feat_of>goblin</selectable_feat_of>
+    <level>9</level>
+  </row>
+  <row name="SKITTERING SCUTTLE">
+    <selectable_feat_of>goblin</selectable_feat_of>
+    <level>9</level>
+    <prereq>Goblin Scuttle</prereq>
+  </row>
+  <row name="GOBLIN WEAPON EXPERTISE">
+    <selectable_feat_of>goblin</selectable_feat_of>
+    <level>13</level>
+    <prereq>Goblin Weapon Familiarity</prereq>
+  </row>
+  <row name="VERY, VERY SNEAKY">
+    <selectable_feat_of>goblin</selectable_feat_of>
+    <level>13</level>
+    <prereq>Very Sneaky</prereq>
+  </row>
+  <row name="Gutsy Halfling" subclass="Heritage">
+    <selectable_feat_of>halfling</selectable_feat_of>
+    <level>0</level>
+  </row>
+  <row name="Hillock Halfling" subclass="Heritage">
+    <selectable_feat_of>halfling</selectable_feat_of>
+    <level>0</level>
+  </row>
+  <row name="Nomadic Halfling" subclass="Heritage">
+    <selectable_feat_of>halfling</selectable_feat_of>
+    <level>0</level>
+  </row>
+  <row name="Twilight Halfling" subclass="Heritage">
+    <selectable_feat_of>halfling</selectable_feat_of>
+    <level>0</level>
+  </row>
+  <row name="Wildwood Halfling" subclass="Heritage">
+    <selectable_feat_of>halfling</selectable_feat_of>
+    <level>0</level>
+  </row>
+  <row name="DISTRACTING SHADOWS">
+    <selectable_feat_of>halfling</selectable_feat_of>
+    <level>1</level>
+  </row>
+  <row name="HALFLING LORE">
+    <selectable_feat_of>halfling</selectable_feat_of>
+    <level>1</level>
+  </row>
+  <row name="HALFLING LUCK">
+    <selectable_feat_of>halfling</selectable_feat_of>
+    <level>1</level>
+  </row>
+  <row name="HALFLING WEAPON FAMILIARITY">
+    <selectable_feat_of>halfling</selectable_feat_of>
+    <level>1</level>
+  </row>
+  <row name="SURE FEET">
+    <selectable_feat_of>halfling</selectable_feat_of>
+    <level>1</level>
+  </row>
+  <row name="TITAN SLINGER">
+    <selectable_feat_of>halfling</selectable_feat_of>
+    <level>1</level>
+  </row>
+  <row name="UNFETTERED HALFLING">
+    <selectable_feat_of>halfling</selectable_feat_of>
+    <level>1</level>
+  </row>
+  <row name="WATCHFUL HALFLING">
+    <selectable_feat_of>halfling</selectable_feat_of>
+    <level>1</level>
+  </row>
+  <row name="CULTURAL ADAPTABILITY">
+    <selectable_feat_of>halfling</selectable_feat_of>
+    <level>5</level>
+  </row>
+  <row name="HALFLING WEAPON TRICKSTER">
+    <selectable_feat_of>halfling</selectable_feat_of>
+    <level>5</level>
+    <prereq>Halfling Weapon Familiarity</prereq>
+  </row>
+  <row name="GUIDING LUCK">
+    <selectable_feat_of>halfling</selectable_feat_of>
+    <level>9</level>
+    <prereq>Halfling Luck</prereq>
+  </row>
+  <row name="IRREPRESSIBLE">
+    <selectable_feat_of>halfling</selectable_feat_of>
+    <level>9</level>
+  </row>
+  <row name="CEASELESS SHADOWS">
+    <selectable_feat_of>halfling</selectable_feat_of>
+    <level>13</level>
+    <prereq>Distracting Shadows</prereq>
+  </row>
+  <row name="HALFLING WEAPON EXPERTISE">
+    <selectable_feat_of>halfling</selectable_feat_of>
+    <level>13</level>
+    <prereq>Halfling Weapon Familiarity</prereq>
+  </row>
+  <row name="Half-Elf" subclass="Heritage">
+    <selectable_feat_of>human</selectable_feat_of>
+    <level>0</level>
+  </row>
+  <row name="Half-Orc" subclass="Heritage">
+    <selectable_feat_of>human</selectable_feat_of>
+    <level>0</level>
+  </row>
+  <row name="Skilled Heritage" subclass="Heritage">
+    <selectable_feat_of>human</selectable_feat_of>
+    <level>0</level>
+  </row>
+  <row name="Versatile Heritage" subclass="Heritage">
+    <selectable_feat_of>human</selectable_feat_of>
+    <level>0</level>
+  </row>
+  <row name="ADAPTED CANTRIP">
+    <selectable_feat_of>human</selectable_feat_of>
+    <level>1</level>
+  </row>
+  <row name="COOPERATIVE NATURE">
+    <selectable_feat_of>human</selectable_feat_of>
+    <level>1</level>
+  </row>
+  <row name="GENERAL TRAINING">
+    <selectable_feat_of>human</selectable_feat_of>
+    <level>1</level>
+  </row>
+  <row name="HAUGHTY OBSTINACY">
+    <selectable_feat_of>human</selectable_feat_of>
+    <level>1</level>
+  </row>
+  <row name="NATURAL AMBITION">
+    <selectable_feat_of>human</selectable_feat_of>
+    <level>1</level>
+  </row>
+  <row name="NATURAL SKILL">
+    <selectable_feat_of>human</selectable_feat_of>
+    <level>1</level>
+  </row>
+  <row name="UNCONVENTIONAL WEAPONRY">
+    <selectable_feat_of>human</selectable_feat_of>
+    <level>1</level>
+  </row>
+  <row name="ADAPTIVE ADEPT">
+    <selectable_feat_of>human</selectable_feat_of>
+    <level>5</level>
+    <prereq>Adapted Cantrip</prereq>
+  </row>
+  <row name="CLEVER IMPROVISER">
+    <selectable_feat_of>human</selectable_feat_of>
+    <level>5</level>
+  </row>
+  <row name="COOPERATIVE SOUL">
+    <selectable_feat_of>human</selectable_feat_of>
+    <level>9</level>
+    <prereq>Cooperative Nature</prereq>
+  </row>
+  <row name="INCREDIBLE IMPROVISATION">
+    <selectable_feat_of>human</selectable_feat_of>
+    <level>9</level>
+    <prereq>Clever Improviser</prereq>
+  </row>
+  <row name="MULTITALENTED">
+    <selectable_feat_of>human</selectable_feat_of>
+    <level>9</level>
+  </row>
+  <row name="UNCONVENTIONAL EXPERTISE">
+    <selectable_feat_of>human</selectable_feat_of>
+    <level>13</level>
+    <prereq>Unconventional Weaponry</prereq>
+  </row>
+  <row name="ELF ATAVISM">
+    <selectable_feat_of>human</selectable_feat_of>
+    <level>1</level>
+    <prereq>Half-Elf</prereq>
+  </row>
+  <row name="INSPIRE IMITATION">
+    <selectable_feat_of>human</selectable_feat_of>
+    <level>5</level>
+    <prereq>Half-Elf</prereq>
+  </row>
+  <row name="SUPERNATURAL CHARM">
+    <selectable_feat_of>human</selectable_feat_of>
+    <level>5</level>
+    <prereq>Half-Elf</prereq>
+  </row>
+  <row name="MONSTROUS PEACEMAKER">
+    <selectable_feat_of>human</selectable_feat_of>
+    <level>1</level>
+    <prereq>Half-Orc</prereq>
+  </row>
+  <row name="ORC FEROCITY">
+    <selectable_feat_of>human</selectable_feat_of>
+    <level>1</level>
+    <prereq>Half-Orc</prereq>
+  </row>
+  <row name="ORC SIGHT">
+    <selectable_feat_of>human</selectable_feat_of>
+    <level>1</level>
+    <prereq>Half-Orc,low-light vision</prereq>
+  </row>
+  <row name="ORC SUPERSTITION">
+    <selectable_feat_of>human</selectable_feat_of>
+    <level>1</level>
+    <prereq>Half-Orc</prereq>
+  </row>
+  <row name="ORC WEAPON FAMILIARITY">
+    <selectable_feat_of>human</selectable_feat_of>
+    <level>1</level>
+    <prereq>Half-Orc</prereq>
+  </row>
+  <row name="ORC WEAPON CARNAGE">
+    <selectable_feat_of>human</selectable_feat_of>
+    <level>5</level>
+    <prereq>Half-Orc,Orc Weapon Familiarity</prereq>
+  </row>
+  <row name="VICTORIOUS VIGOR">
+    <selectable_feat_of>human</selectable_feat_of>
+    <level>5</level>
+    <prereq>Half-Orc</prereq>
+  </row>
+  <row name="PERVASIVE SUPERSTITION">
+    <selectable_feat_of>human</selectable_feat_of>
+    <level>9</level>
+    <prereq>Half-Orc,Orc Superstition</prereq>
+  </row>
+  <row name="INCREDIBLE FEROCITY">
+    <selectable_feat_of>human</selectable_feat_of>
+    <level>13</level>
+    <prereq>Half-Orc,Orc Ferocity</prereq>
+  </row>
+  <row name="ORC WEAPON EXPERTISE">
+    <selectable_feat_of>human</selectable_feat_of>
+    <level>13</level>
+    <prereq>Half-Orc,Orc Weapon Familiarity</prereq>
+  </row>
+</root>

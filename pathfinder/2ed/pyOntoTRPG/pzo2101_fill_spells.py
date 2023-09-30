@@ -28,13 +28,13 @@ def fill(pzo2101):
         class Spell_by_magical_tradition(Spell): pass
         class Spell_by_school(Spell): pass
 
-        for index, row in main.iterrows("Spell_categories"):
+        for index, row in main.read_text_for_parse("Spell_categories"):
             name = prepare_school_name(row['name']) if row['category'] == 'school' else prepare_tradition_name(row['name'])
             category = Spell_by_school if row['category'] == 'school' else Spell_by_magical_tradition
             cl = types.new_class(name, (category,))
             cl.comment = row['comment']
 
-        for index, row in main.iterrows("Spells_corpus"):
+        for index, row in main.read_text_for_parse("Spells_corpus"):
             for spell_text in filter(lambda x: x != "", row['corpus'].split('.')):
                 txt = spell_text.split(':')[0].strip()
                 name, school_name = re.search(
@@ -56,8 +56,4 @@ def fill(pzo2101):
         class Ritual(Spell):
             comment = ("A ritual is an esoteric and complex spell that anyone can cast. It takes much longer to cast a "
                        "ritual than a normal spell, but rituals can have more powerful effects.")
-        for index, row in main.iterrows("Rituals"):
-            Ritual(
-                name = prepare_spell_name(row['name']),
-                level = row['level'],
-            )
+        main.fill_onto_from_xml(pzo2101, "Rituals", Ritual)

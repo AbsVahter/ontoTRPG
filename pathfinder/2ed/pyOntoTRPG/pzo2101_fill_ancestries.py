@@ -10,33 +10,27 @@ from pzo2101_hierarchy import create
 
 def fill_animal_companions(pzo2101):
     with pzo2101:
-        for index, row in main.iterrows("Animal_companions"):
-            anim = pzo2101.Animal_companion(
-                name = main.prepare_name(row['name']),
-                comment = row['comment'],
-                size = main.prepare_name(row['size']),
-                hp = row['hp'],
-                speed = row['speed']
-            )
-            if not pd.isna(row['special_speed']): anim.special_speed = row['special_speed']
-
-        for index, row in main.iterrows("Animal_companion_specializations"):
-            pzo2101.Animal_companion_specialization(
-                name = main.prepare_name(row['name']),
-            )
+        main.fill_onto_from_xml(pzo2101, 'Animal companions', pzo2101.Animal_companion)
+        main.fill_onto_from_xml(pzo2101, 'Animal companion specializations',
+                                pzo2101.Animal_companion_specialization)
 
 
 def fill_familiar(pzo2101):
     with pzo2101:
-        for index, row in main.iterrows("Familiar_abilities"):
-            pzo2101.Familiar_ability(
-                name = main.prepare_name(row['name']),
-            )
+        main.fill_onto_from_xml(pzo2101, "Familiar abilities", pzo2101.Familiar_ability)
+        main.fill_onto_from_xml(pzo2101, "Master abilities", pzo2101.Master_ability)
 
-        for index, row in main.iterrows("Master_abilities"):
-            pzo2101.Master_ability(
-                name = main.prepare_name(row['name']),
-            )
+
+def fill_creatures(pzo2101):
+    with pzo2101:
+        class Creature(pzo2101.Ancestry):
+            comment = ("The six humanoid ancestries are far from Golarion’s only inhabitants. Many other creatures "
+                       "dwell in the world, some kindly and others cruel, some wild and others organized, "
+                       "some anthropomorphic and others completely monstrous. Even creatures that are usually foes of "
+                       "civilization, and whom brave adventurers face in battle, can sometimes be reasoned with or "
+                       "even befriended. Not all of them are evil, and some are actively helpful to their neighbors. "
+                       "And some, of course, simply want to be left alone.")
+        main.fill_onto_from_xml(pzo2101,"Creatures", Creature)
 
 
 def fill(pzo2101: Ontology):
@@ -45,6 +39,7 @@ def fill(pzo2101: Ontology):
     fill_feats(pzo2101)
     fill_animal_companions(pzo2101)
     fill_familiar(pzo2101)
+    fill_creatures(pzo2101)
 
 
 def fill_props(pzo2101: Ontology):
@@ -57,23 +52,8 @@ def fill_props(pzo2101: Ontology):
                    "identity, shape how they see the world, and help them find their place in it.")
         Ancestry.has_feat.append(pzo2101.common_language)
         Ancestry.has_selectable_feat.append(pzo2101.local_language)
-
-        for index, row in main.iterrows("Ancestries"):
-            Ancestry(
-                name = row['name'],
-                comment = row['comment'],
-                hp = row['hp'],
-                size = row['size'],
-                speed = row['speed'],
-                ability_boost = [pzo2101.search(is_a = pzo2101.Ability_score, iri = main.iri_for_search(x)).first()
-                                 for x in row['boosts'].split(",")] if not pd.isnull(row['boosts']) else [],
-                ability_flaw = [pzo2101.search(is_a = pzo2101.Ability_score, iri = main.iri_for_search(x)).first()
-                                 for x in row['flaw'].split(",")] if not pd.isnull(row['flaw']) else [],
-                has_feat = [pzo2101.search(is_a = pzo2101.Language, iri = main.iri_for_search(x)).first()
-                                 for x in row['lang'].split(",")] if not pd.isnull(row['lang']) else [],
-                has_selectable_feat = [pzo2101.search(is_a = pzo2101.Language, iri = main.iri_for_search(x)).first()
-                                 for x in row['sel_lang'].split(",")] if not pd.isnull(row['sel_lang']) else [],
-            )
+        class ability_flaw(Ancestry >> pzo2101.Ability_score): pass
+        main.fill_onto_from_xml(pzo2101, "Ancestries", Ancestry)
 
         pzo2101.Language_common.selectable_feat_of.append(pzo2101.human)
         tHumanoid = pzo2101.Trait(pzo2101_fill_traits.prepare_trait_name('humanoid'))
@@ -82,27 +62,7 @@ def fill_props(pzo2101: Ontology):
 
 def fill_feats(pzo2101: Ontology):
     with pzo2101:
-        Feat = pzo2101.Feat
-        f_dict = {
-            'Darkvision': [pzo2101.dwarf, pzo2101.goblin],
-            'Clan Dagger': [pzo2101.dwarf,],
-            'Low-Light Vision': [pzo2101.elf, pzo2101.gnome],
-            'Keen Eyes': [pzo2101.halfling]
-        }
-        for f in f_dict:
-            for anc in f_dict[f]:
-                anc.has_feat.append(Feat(main.prepare_name(f)))
-
-        for index, row in main.iterrows("Ancestry_feats"):
-            cl = pzo2101.search(is_a = Feat, iri = f"*{row['class']}").first()
-            anc = pzo2101.search(is_a = pzo2101.Ancestry, iri = main.iri_for_search(row['ancestry'])).first()
-            cl(
-                name = main.prepare_name(row['name']),
-                level = row['level'],
-                selectable_feat_of = [anc],
-                prereq = [pzo2101.search(is_a = Feat, iri = main.iri_for_search(x)).first()
-                                 for x in row['prereq'].split(",")] if not pd.isnull(row['prereq']) else [],
-            )
+        main.fill_onto_from_xml(pzo2101, "Ancestry feats", pzo2101.Feat)
 
 
 def prepare_name_lang(s):
@@ -119,9 +79,7 @@ def fill_languages(pzo2101: Ontology):
                        "commerce. Languages also afford you the chance to contextualize your character in the world "
                        "and give meaning to your other character choices."]
 
-        for index, row in main.iterrows("Languages"):
-            cl = types.new_class(row['group'], (Language,))
-            cl(prepare_name_lang(row['name']))
+        main.fill_onto_from_xml(pzo2101, "Languages", Language)
 
         pzo2101['Language_regional'].relates_to.append(pzo2101[prepare_name_lang('local')])
         pzo2101[prepare_name_lang('Taldane')].equivalent_to.append(pzo2101[prepare_name_lang('Common')])
