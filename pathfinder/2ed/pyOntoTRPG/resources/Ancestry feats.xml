@@ -478,7 +478,8 @@
   <row name="ORC SIGHT">
     <selectable_feat_of>human</selectable_feat_of>
     <level>1</level>
-    <prereq>Half-Orc,low-light vision</prereq>
+    <prereq>Half-Orc</prereq>
+    <prereq>low-light vision</prereq>
   </row>
   <row name="ORC SUPERSTITION">
     <selectable_feat_of>human</selectable_feat_of>
@@ -493,7 +494,8 @@
   <row name="ORC WEAPON CARNAGE">
     <selectable_feat_of>human</selectable_feat_of>
     <level>5</level>
-    <prereq>Half-Orc,Orc Weapon Familiarity</prereq>
+    <prereq>Half-Orc</prereq>
+    <prereq>Orc Weapon Familiarity</prereq>
   </row>
   <row name="VICTORIOUS VIGOR">
     <selectable_feat_of>human</selectable_feat_of>
@@ -503,16 +505,46 @@
   <row name="PERVASIVE SUPERSTITION">
     <selectable_feat_of>human</selectable_feat_of>
     <level>9</level>
-    <prereq>Half-Orc,Orc Superstition</prereq>
+    <prereq>Half-Orc</prereq>
+    <prereq>Orc Superstition</prereq>
   </row>
   <row name="INCREDIBLE FEROCITY">
     <selectable_feat_of>human</selectable_feat_of>
     <level>13</level>
-    <prereq>Half-Orc,Orc Ferocity</prereq>
+    <prereq>Half-Orc</prereq>
+    <prereq>Orc Ferocity</prereq>
   </row>
   <row name="ORC WEAPON EXPERTISE">
     <selectable_feat_of>human</selectable_feat_of>
     <level>13</level>
-    <prereq>Half-Orc,Orc Weapon Familiarity</prereq>
+    <prereq>Half-Orc</prereq>
+    <prereq>Orc Weapon Familiarity</prereq>
+  </row>
+  <row name="Darkvision">
+    <comment>A creature with darkvision can see perfectly well in areas of darkness and dim light, though such vision is in black and white only. Magical darkness blocks darkvision</comment>
+    <blocks>Darkness</blocks>
+    <blocks>Dim light</blocks>
+    <leads_to>Precise senses</leads_to>
+  </row>
+  <row name="Greater darkvision">
+    <comment>A creature with greater darkvision can see perfectly well in areas of darkness or magical darkness and dim light, though such vision is in black and white only.</comment>
+    <blocks>Darkness</blocks>
+    <blocks>Dim light</blocks>
+    <blocks>Magical darkness</blocks>
+    <leads_to>Precise senses</leads_to>
+  </row>
+  <row name="Low-light vision">
+    <comment>A creature with low-light vision can see in dim light as though it were bright light, so it ignores the concealed condition due to dim light.</comment>
+    <blocks>Dim light</blocks>
+    <leads_to>Precise senses</leads_to>
+  </row>
+  <row name="Scent">
+    <comment>Scent involves sensing creatures or objects by smell.</comment>
+    <comment>The range is listed in the ability, and it functions only if the creature or object being detected emits an aroma. If a creature emits a heavy aroma or is upwind, the GM can double or even triple the range of scent abilities used to detect that creature, and the GM can reduce the range if a creature is downwind.</comment>
+    <leads_to>Vague senses</leads_to>
+  </row>
+  <row name="Tremorsense">
+    <comment>Tremorsense allows a creature to feel the vibrations through a solid surface caused by movement. Tremorsense functions only if the detecting creature is on the same surface as the subject, and only if the subject is moving along (or burrowing through) the surface.</comment>
+    <leads_to>Imprecise senses</leads_to>
   </row>
 </root>

@@ -1,12 +1,51 @@
 <?xml version="1.0"?>
 <root>
-<row name="perception" subclass="Characteristic_with_proficiency"></row>
-<row name="fortitude" subclass="Characteristic_with_proficiency"></row>
-<row name="reflex" subclass="Characteristic_with_proficiency"></row>
-<row name="will" subclass="Characteristic_with_proficiency"></row>
-<row name="level of character"></row>
-<row name="weapon proficiency" subclass="Characteristic_with_proficiency"></row>
-<row name="equipment"></row>
-<row name="armor proficiency" subclass="Characteristic_with_proficiency"></row>
-<row name="spell proficiency" subclass="Characteristic_with_proficiency"></row>
+    <row name="Perception" subclass="Characteristic_with_proficiency">
+        <comment>Perception measures your ability to be aware of your environment. Every creature has Perception, which works  with and is limited by a creature’s senses</comment>
+    </row>
+    <row name="Fortitude" subclass="Characteristic_with_proficiency"/>
+    <row name="Reflex" subclass="Characteristic_with_proficiency"/>
+    <row name="Will" subclass="Characteristic_with_proficiency"/>
+    <row name="Level of character"/>
+    <row name="Weapon proficiency" subclass="Characteristic_with_proficiency"/>
+    <row name="Equipment"/>
+    <row name="Armor proficiency" subclass="Characteristic_with_proficiency"/>
+    <row name="Spell proficiency" subclass="Characteristic_with_proficiency"/>
+    <row name="Hit points">
+        <comment>Your maximum Hit Point value represents your health, wherewithal, and heroic drive when you are in good health and rested.</comment>
+        <comment>Creatures cannot be reduced to fewer than 0 Hit Points.</comment>
+        <comment>(maximum value, current value)</comment>
+        <abbreviation>hp</abbreviation>
+    </row>
+    <row name="Immunities">
+        <comment>List of immunities to damage types, specific conditions or effects.</comment>
+    </row>
+    <row name="Weaknesses and resistances">
+        <comment>Dictionary of {damage type or damage source: damage modifier}, where (damage bonus) = weakness, (damage penalty) = resistance or hardness of item.</comment>
+    </row>
+    <row name="Active afflictions">
+        <comment>Dictionary of {active affliction: [onset period, current stage, remained duration]}</comment>
+    </row>
+    <row name="Active conditions">
+        <comment>Dictionary of {active condition: [condition value, remained duration]}</comment>
+        <comment>Deactivate condition if value &lt;= 0</comment>
+    </row>
+    <row name="Ancestry of character"/>
+    <row name="Initiative position">
+        <comment>only for encounters</comment>
+    </row>
+    <row name="Hero points">
+        <comment>Your heroic deeds earn you Hero Points, which grant you good fortune or let you recover from the brink of death. Unlike most aspects of your character, which persist over the long term, Hero Points last for only a single session.</comment>
+        <comment>Hero points = 1 at the start of a session. Maximum 3 hero points at a time.</comment>
+    </row>
+    <row name="Speed of character">
+        <comment>Land speed, which indicates how quickly they can move across the ground.</comment>
+    </row>
+    <row name="Special speed of character">
+        <comment>{speed type: value}</comment>
+        <comment>Burrow speed: lets you tunnel through the ground. Burrowing doesn't normally leave behind a tunnel.</comment>
+        <comment>Climb speed: allows you to move up or down inclines and vertical surfaces.</comment>
+        <comment>Fly speed: you can use the Fly and Arrest a Fall actions.</comment>
+        <comment>Swim speed: you can propel yourself through the water with little impediment.</comment>
+    </row>
 </root>

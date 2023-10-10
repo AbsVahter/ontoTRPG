@@ -302,7 +302,7 @@
   <prereq_details>Trained in Performance</prereq_details>
   <prereq>Performance</prereq>
 </feat>
-<feat name="Weapon Proficiency">
+<feat name="Weapon Proficiency feat">
   <level>1</level>
 </feat>
 <feat name="Automatic Knowledge" subclass="Skill_feat">

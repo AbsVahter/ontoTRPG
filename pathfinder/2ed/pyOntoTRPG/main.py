@@ -3,44 +3,15 @@ import xml.etree.ElementTree as ET
 import pandas as pd
 from owlready2 import *
 
-import pzo2101_fill_actions
-import pzo2101_fill_age_of_lost_omens
-import pzo2101_fill_ancestries
-import pzo2101_fill_art
-import pzo2101_fill_backgrounds
-import pzo2101_fill_characteristics
-import pzo2101_fill_classes
-import pzo2101_fill_equipment
-import pzo2101_fill_feats
-import pzo2101_fill_rules
-import pzo2101_fill_spells
-import pzo2101_fill_traits
-import pzo2101_hierarchy
+import pzo2101_fill
 import visualization
 
 if __name__ == '__main__':
     owlready2.JAVA_EXE = r"C:\Program Files\Java\jre-1.8\bin\java.exe"
     path = r"D:\Ontologies\Created ontologies\trpgontologies\pathfinder\2ed"
     onto_path.append(path)
-    pzo2101 = get_ontology(
-        "https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#")
-
-    pzo2101_hierarchy.create(pzo2101)
-    pzo2101_fill_characteristics.fill(pzo2101)
-    pzo2101_fill_rules.fill(pzo2101)
-    pzo2101_fill_feats.fill(pzo2101)
-    pzo2101_fill_traits.fill(pzo2101)
-    pzo2101_fill_actions.fill(pzo2101)
-    pzo2101_fill_ancestries.fill(pzo2101)
-    pzo2101_fill_backgrounds.fill(pzo2101)
-    pzo2101_fill_equipment.fill(pzo2101)
-    pzo2101_fill_classes.fill(pzo2101)
-    pzo2101_fill_spells.fill(pzo2101)
-    pzo2101_fill_age_of_lost_omens.fill(pzo2101)
-    pzo2101_fill_art.fill(pzo2101)
-
-    # visualization.show(pzo2101, path)
-
+    pzo2101 = pzo2101_fill.fill()
+    #visualization.show(pzo2101, path)
     pzo2101.save()
 
 
@@ -55,35 +26,58 @@ def iri_for_search(s):
 def read_text_for_parse(file_name):
     return pd.read_csv(get_resource_path(file_name + '.txt'), sep = '\t').iterrows()
 
+
 def iterate_xml_tree(file_name):
     tree = ET.parse(f'resources/{file_name}.xml')
     return tree.getroot()
+
 
 def get_resource_path(file_name):
     return f'resources/{file_name}'
 
 
-def set_relations(onto, subj, data_xml):
-    with onto:
+def set_relation_annotation(ontology, relation, child_xml, property_name):
+    property_value = child_xml.get(property_name)
+    relation_annotation = ontology[property_value] or ontology[render_text(property_value)] or property_value
+    relation.append(relation_annotation)
+
+
+def set_relation_annotations(ontology, child_xml, subject, predicate, obj):
+    if predicate:
+        for property_name in child_xml.attrib:
+            if property_name != "object_class":
+                relation = getattr(ontology, f"relation_{property_name}")[subject, predicate, obj]
+                set_relation_annotation(ontology, relation, child_xml, property_name)
+
+
+def create_new_entity(predicate, obj_text):
+    if len(predicate.range) > 0:
+        cl = predicate.range[0]
+    else:
+        cl = list(filter(lambda x: len(x.range) > 0, predicate.ancestors()))[0].range[0]
+    return cl(obj_text)
+
+
+def set_relations(ontology, subject, data_xml):
+    with ontology:
         annotations_lst = ['comment', 'image', 'abbreviation']
-        for prop in data_xml:
-            pred = onto[prop.tag]
-            is_str = prop.tag in annotations_lst or (pred and any(x in pred.range for x in [str, int, bool]))
-            obj_text = render_text(prop.text, prop.tag, prop.get('object_class'), is_str)
-            if prop.tag in annotations_lst:
+        for child_xml in data_xml:
+            predicate = ontology[child_xml.tag]
+            is_str = child_xml.tag in annotations_lst or (
+                        predicate and any(x in predicate.range for x in [str, int, bool]))
+            obj_text = render_text(child_xml.text, child_xml.tag, child_xml.get('object_class'), is_str)
+            if child_xml.tag in annotations_lst:
                 obj = obj_text
             else:
                 if is_str:
-                    obj = pred.range[0](obj_text)
+                    obj = predicate.range[0](obj_text)
                 else:
-                    obj = onto[obj_text] or pred.range[0](obj_text)
-            if pred and FunctionalProperty in pred.is_a:
-                setattr(subj, pred.name, obj)
+                    obj = ontology[obj_text] or create_new_entity(predicate, obj_text)
+            if predicate and FunctionalProperty in predicate.is_a:
+                setattr(subject, predicate.name, obj)
             else:
-                getattr(subj, prop.tag).append(obj)
-            val = prop.get('value')
-            if pred and val:
-                onto.relation_value[subj, pred, obj] = val
+                getattr(subject, child_xml.tag).append(obj)
+            set_relation_annotations(ontology, child_xml, subject, predicate, obj)
 
 
 def render_text(s, prop_name=None, object_class=None, is_str=False):
@@ -92,7 +86,7 @@ def render_text(s, prop_name=None, object_class=None, is_str=False):
     else:
         scenario = object_class or prop_name
         match scenario:
-            case x if "Language" in x:
+            case str(x) if "Language" in x:
                 return f"{prepare_name(s)}_language"
             case "Icon":
                 return f"art_{prepare_name(s)}_icon"
@@ -102,12 +96,18 @@ def render_text(s, prop_name=None, object_class=None, is_str=False):
                 return f"art_{prepare_name(s)}"
             case "has_trait" | "Specialization_effect" | "Trait":
                 return f"{prepare_name(s)}_trait"
-            case "spell":
+            case str(x) if "Damage_type" in x:
+                return f"{prepare_name(s)}_trait"
+            case "spell" | "Spell":
                 return f"{prepare_name(s)}_spell"
             case "Cleric_domain":
                 return f"{prepare_name(s)}_domain"
             case "Archetype":
                 return f"{prepare_name(s)}_archetype"
+            case "Spell_by_magical_tradition" | "Tradition":
+                return f"{prepare_name(s).capitalize()}_tradition"
+            case "Spell_by_school" | "School":
+                return f"{prepare_name(s).capitalize()}_school"
             case _:
                 return prepare_name(s)
 

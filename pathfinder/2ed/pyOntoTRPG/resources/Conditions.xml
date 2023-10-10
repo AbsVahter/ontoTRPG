@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<root>
+  <row name="Blinded">
+    <comment>You’re unable to see.</comment>
+  </row>
+  <row name="Broken">
+    <comment>This item can’t be used for its normal function until repaired.</comment>
+  </row>
+  <row name="Clumsy">
+    <comment>You can’t move as easily or gracefully as usual.</comment>
+  </row>
+  <row name="Concealed">
+    <comment>Fog or similar obscuration makes you difficult to see and target.</comment>
+    <comment>This condition protects a creature if it’s in mist, within dim light, or amid something else that obscures sight but does not provide a physical barrier to effects. An effect or type of terrain that describes an area of concealment makes all creatures within it concealed.</comment>
+  </row>
+  <row name="Confused">
+    <comment>You attack indiscriminately.</comment>
+  </row>
+  <row name="Controlled">
+    <comment>Another creature determines your actions.</comment>
+  </row>
+  <row name="Dazzled">
+    <comment>Everything is concealed to you.</comment>
+  </row>
+  <row name="Deafened">
+    <comment>You’re unable to hear.</comment>
+  </row>
+  <row name="Doomed">
+    <comment>With your soul in peril, you are now closer to death.</comment>
+    <comment>Your life is ebbing away, bringing you ever closer to death. Some powerful spells and evil creatures can inflict the doomed condition on you.</comment>
+  </row>
+  <row name="Drained">
+    <comment>Blood loss or something similar has leached your vitality.</comment>
+  </row>
+  <row name="Dying">
+    <comment>You’re slipping closer to death.</comment>
+    <comment>You're bleeding out or otherwise at death's door. While you have this condition, you are unconscious.</comment>
+  </row>
+  <row name="Encumbered">
+    <comment>You’re carrying more weight than you can manage.</comment>
+  </row>
+  <row name="Enfeebled">
+    <comment>Your strength has been sapped away.</comment>
+  </row>
+  <row name="Fascinated">
+    <comment>You are compelled to focus your attention on something.</comment>
+  </row>
+  <row name="Fatigued">
+    <comment>Your defenses are lower and you can’t use exploration activities while traveling.</comment>
+  </row>
+  <row name="Flat-Footed">
+    <comment>You’re unable to defend yourself to your full capability.</comment>
+  </row>
+  <row name="Fleeing">
+    <comment>You must run away.</comment>
+  </row>
+  <row name="Friendly">
+    <comment>An NPC with this condition has a good attitude toward you.</comment>
+  </row>
+  <row name="Frightened">
+    <comment>Fear makes you less capable of attacking and defending.</comment>
+  </row>
+  <row name="Grabbed">
+    <comment>A creature, object, or magic holds you in place.</comment>
+  </row>
+  <row name="Helpful">
+    <comment>An NPC with this condition wants to assist you.</comment>
+  </row>
+  <row name="Hidden">
+    <comment>A creature you’re hidden from knows your location but can’t see you.</comment>
+    <comment>A creature that’s hidden is only barely perceptible. You know what space a hidden creature occupies, but little else.</comment>
+    <activates prereq="on target, relative to hidden creature">Flat-Footed</activates>
+  </row>
+  <row name="Hostile">
+    <comment>An NPC with this condition wants to harm you.</comment>
+  </row>
+  <row name="Immobilized">
+    <comment>You can’t move.</comment>
+  </row>
+  <row name="Indifferent">
+    <comment>An NPC with this condition doesn’t have a strong opinion about you.</comment>
+  </row>
+  <row name="Invisible">
+    <comment>Creatures can’t see you.</comment>
+    <comment>A creature with the invisible condition is automatically undetected to any creatures relying on sight as their only precise sense. Precise senses other than sight ignore the invisible condition.</comment>
+  </row>
+  <row name="Observed">
+    <comment>You’re in plain view.</comment>
+  </row>
+  <row name="Paralyzed">
+    <comment>Your body is frozen in place.</comment>
+  </row>
+  <row name="Persistent Damage">
+    <comment>You keep taking damage every round.</comment>
+  </row>
+  <row name="Petrified">
+    <comment>You’ve been turned to stone.</comment>
+  </row>
+  <row name="Prone">
+    <comment>You’re lying on the ground and easier to attack.</comment>
+  </row>
+  <row name="Quickened">
+    <comment>You get an extra action each turn.</comment>
+  </row>
+  <row name="Restrained">
+    <comment>You’re tied up and can’t move, or a grappling creature has you pinned.</comment>
+  </row>
+  <row name="Sickened">
+    <comment>You’re sick to your stomach.</comment>
+  </row>
+  <row name="Slowed">
+    <comment>You lose actions each turn.</comment>
+  </row>
+  <row name="Stunned">
+    <comment>You can’t use actions.</comment>
+  </row>
+  <row name="Stupefied">
+    <comment>You can’t access your full mental faculties, and you have trouble casting spells.</comment>
+  </row>
+  <row name="Unconscious">
+    <comment>You’re asleep or knocked out. You can't act</comment>
+    <duration>restful night's sleep or effect's duration</duration>
+  </row>
+  <row name="Undetected">
+    <comment>A creature you’re undetected by doesn’t know where you are.</comment>
+    <comment>If a creature is undetected, you don’t know what space it occupies, you’re flat-footed to it, and you can’t easily target it.</comment>
+  </row>
+  <row name="Unfriendly">
+    <comment>An NPC with this condition doesn’t like you.</comment>
+  </row>
+  <row name="Unnoticed">
+    <comment>A creature is entirely unaware you’re present.</comment>
+  </row>
+  <row name="Wounded">
+    <comment>You’ve been brought back from the brink of death but haven’t fully recovered.</comment>
+    <comment>You have been seriously injured during a fight.</comment>
+  </row>
+  <row name="Destroyed"/>
+  <row name="Dead">
+    <comment>After you die, you can't act or regain actions, can't be affected by spells that target living creatures, and for all other purposes you are an object.</comment>
+  </row>
+  <row name="Temporary hit points">
+    <comment>Some spells or abilities give you temporary hit points for a limited duration. You can have temporary hit points from only one source at time.</comment>
+  </row>
+</root>

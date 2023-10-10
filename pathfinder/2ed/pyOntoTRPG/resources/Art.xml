@@ -627,4 +627,24 @@
   <art name="playing the game 2">
     <image>https://i.pinimg.com/564x/4b/25/dc/4b25dc0c649d4193e42b8cf71a7bc49f.jpg</image>
   </art>
+  <art name="conditions">
+    <image>https://i.ibb.co/RcP1ZC2/art-conditions.jpg</image>
+    <depicts>petrified</depicts>
+  </art>
+  <art name="playing the game 3">
+    <image>https://rollforcombat.com/wp-content/uploads/2019/08/10.jpg</image>
+  </art>
+  <art name="areas">
+    <image>https://2e.aonprd.com/Images/Rules/Rules354.png</image>
+    <depicts>Burst area rule</depicts>
+    <depicts>Cone area rule</depicts>
+    <depicts>Emanation area rule</depicts>
+    <depicts>Line area rule</depicts>
+  </art>
+  <art name="playing the game 4">
+    <image>https://i.ibb.co/wsk1BRP/dead-goblin.jpg</image>
+  </art>
+  <art name="playing the game 5">
+    <image>https://sun9-38.userapi.com/impg/siHOsKXY1yu4-ND-KAT2rfRWP-7IMj3Dzc38ww/9cKfON6CZls.jpg?size=1197x780&amp;quality=95&amp;sign=c0b3c7e6a6c9d750c75ae2af5fbe57ab&amp;type=album</image>
+  </art>
 </root>

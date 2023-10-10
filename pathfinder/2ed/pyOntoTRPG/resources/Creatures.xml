@@ -42,4 +42,6 @@
   <row name="Serpentfolk">
     <comment>Serpentfolk once ruled the second layer of the Darklands along with much of the surface of Garund and Avistan. Azlant’s expansion into the Inner Sea region long before Earthfall led to a terrible war between the two peoples. When Azlant proved the victor, the surviving serpentfolk fled into the Darklands; they are nearly extinct today.</comment>
   </row>
+  <row name="Undead"/>
+  <row name="Construct"/>
 </root>

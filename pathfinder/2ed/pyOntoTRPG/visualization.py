@@ -4,7 +4,7 @@ from owlready2 import *
 
 
 def get_random_color():
-    color = list(np.random.choice(range(256), size=3))
+    color = list(np.random.choice(range(256), size = 3))
     return f"rgb({color[0]},{color[1]},{color[2]})"
 
 
@@ -32,12 +32,11 @@ def check_unique(for_edges, to_add):
     return True
 
 
-
 def get_data_for_edges(results):
     for_edges = []
     for res in results:
         for i in range(1, len(res), 2):
-            to_add = res[(i-1):(i+2)]
+            to_add = res[(i - 1):(i + 2)]
             if None not in to_add and check_unique(for_edges, to_add):
                 for_edges.append(to_add)
     return for_edges
@@ -74,7 +73,7 @@ def fill_net_by_sparql(net):
         )
 
 
-def add_to_net(net, nodes, colors = None, root = None, edge_title = ''):
+def add_to_net(net, nodes, colors=None, root=None, edge_title=''):
     if not isinstance(nodes, list): nodes = [nodes]
     for n in nodes:
         if isinstance(n, (str, int, bool)):
@@ -100,27 +99,30 @@ def add_to_net(net, nodes, colors = None, root = None, edge_title = ''):
 
 
 def fill_net_by_owlready(net):
-    pzo2101 = default_world.ontologies["https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#"]
+    pzo2101 = default_world.ontologies[
+        "https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#"]
     sync_reasoner_pellet(debug = 0, infer_property_values = True, infer_data_property_values = True)
 
     color = get_random_color()
 
-    root = pzo2101['melee_attack_roll']
+    root = pzo2101['melee_attack_check']
     add_to_net(net, root)
     add_to_net(net, root.calculations, color, root)
-    neighbors = root.uses
+    neighbors = root.uses + root.check_result
     neighbors_colors = get_class_colors(neighbors)
     add_to_net(net, neighbors, neighbors_colors, root, 'uses')
     for neighbor in neighbors:
         add_to_net(net, neighbor.calculations, color, neighbor)
 
+
 def show(onto, path):
     net = Network(height = '920px', width = '100%', directed = True)
-    type = 0
-    if type == 1:
+    scenario = 0
+    if scenario == 1:
         fill_net_by_sparql(net)
     else:
         fill_net_by_owlready(net)
 
+    net.toggle_physics(False)
     net.show_buttons(filter_ = ['physics'])
     net.show('graph.html', notebook = False)
