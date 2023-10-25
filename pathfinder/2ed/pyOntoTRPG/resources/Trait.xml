@@ -12,57 +12,57 @@
   <row name="Noisy">
     <comment>This armor is loud and likely to alert others to your presence.</comment>
   </row>
-  <row name="Chain" subclass="Specialization_effect">
+  <row name="Chain" subclass="SpecializationEffect">
     <comment>The armor is so flexible it can bend with a critical hit and absorb some of the blow.</comment>
   </row>
-  <row name="Composite" subclass="Specialization_effect">
+  <row name="Composite" subclass="SpecializationEffect">
     <comment>The numerous overlapping pieces of this armor protect you from piercing attacks.</comment>
   </row>
-  <row name="Leather" subclass="Specialization_effect">
+  <row name="Leather" subclass="SpecializationEffect">
     <comment>The thick second skin of the armor disperses blunt force to reduce bludgeoning damage.</comment>
   </row>
-  <row name="Plate" subclass="Specialization_effect">
+  <row name="Plate" subclass="SpecializationEffect">
     <comment>The sturdy plate provides no purchase for a cutting edge.</comment>
   </row>
   <row name="Cloth">
   </row>
-  <row name="Axe" subclass="Specialization_effect">
+  <row name="Axe" subclass="SpecializationEffect">
   </row>
-  <row name="Bomb" subclass="Specialization_effect">
+  <row name="Bomb" subclass="SpecializationEffect">
   </row>
-  <row name="Bow" subclass="Specialization_effect">
+  <row name="Bow" subclass="SpecializationEffect">
   </row>
-  <row name="Brawling" subclass="Specialization_effect">
+  <row name="Brawling" subclass="SpecializationEffect">
   </row>
-  <row name="Club" subclass="Specialization_effect">
+  <row name="Club" subclass="SpecializationEffect">
   </row>
-  <row name="Dart" subclass="Specialization_effect">
+  <row name="Dart" subclass="SpecializationEffect">
   </row>
-  <row name="Flail" subclass="Specialization_effect">
+  <row name="Flail" subclass="SpecializationEffect">
   </row>
-  <row name="Hammer" subclass="Specialization_effect">
+  <row name="Hammer" subclass="SpecializationEffect">
   </row>
-  <row name="Knife" subclass="Specialization_effect">
+  <row name="Knife" subclass="SpecializationEffect">
   </row>
-  <row name="Pick" subclass="Specialization_effect">
+  <row name="Pick" subclass="SpecializationEffect">
   </row>
-  <row name="Polearm" subclass="Specialization_effect">
+  <row name="Polearm" subclass="SpecializationEffect">
   </row>
-  <row name="Shield weapon" subclass="Specialization_effect">
+  <row name="ShieldWeapon" subclass="SpecializationEffect">
   </row>
-  <row name="Sling" subclass="Specialization_effect">
+  <row name="Sling" subclass="SpecializationEffect">
   </row>
-  <row name="Spear" subclass="Specialization_effect">
+  <row name="Spear" subclass="SpecializationEffect">
   </row>
-  <row name="Sword" subclass="Specialization_effect">
+  <row name="Sword" subclass="SpecializationEffect">
   </row>
-  <row name="Bludgeoning" subclass="Damage_type_physical">
+  <row name="Bludgeoning" subclass="DamageTypePhysical">
     <comment>comes from weapons and hazards that deal blunt-force trauma, like a hit from a club or being dashed against rocks</comment>
   </row>
-  <row name="Piercing" subclass="Damage_type_physical">
+  <row name="Piercing" subclass="DamageTypePhysical">
     <comment>is dealt from stabs and punctures, whether from a dragon’s fangs or the thrust of a spear</comment>
   </row>
-  <row name="Slashing" subclass="Damage_type_physical">
+  <row name="Slashing" subclass="DamageTypePhysical">
     <comment>is delivered by a cut, be it the swing of the sword or the blow from a scythe blades trap</comment>
   </row>
   <row name="Agile">
@@ -101,7 +101,7 @@
   </row>
   <row name="Monk">
   </row>
-  <row name="Nonlethal" subclass="Damage_type">
+  <row name="Nonlethal" subclass="DamageType">
     <comment>are used to knock creatures unconscious instead of kill them.</comment>
   </row>
   <row name="Orc">
@@ -152,6 +152,7 @@
   </row>
   <row name="Verbal component">
     <comment>A verbal component is a vocalization of words of power.</comment>
+    <leadsTo>Spend all air</leadsTo>
   </row>
   <row name="Focus component">
     <comment>A focus is an object that funnels the magical energy of the spell.</comment>
@@ -159,55 +160,67 @@
   <row name="Secret">
     <comment>Sometimes you as the player shouldn’t know the exact result and effect of a check.</comment>
   </row>
-  <row name="Acid" subclass="Damage_type_energy">
+  <row name="Acid" subclass="DamageTypeEnergy">
     <comment>can be delivered by gases, liquids, and certain solids that dissolve flesh, and sometimes harder materials</comment>
   </row>
-  <row name="Cold" subclass="Damage_type_energy">
+  <row name="Cold" subclass="DamageTypeEnergy">
     <comment>freezes material by way of contact with chilling gases and ice</comment>
   </row>
-  <row name="Electricity" subclass="Damage_type_energy">
+  <row name="Electricity" subclass="DamageTypeEnergy">
     <comment>comes from the discharge of powerful lightning and sparks</comment>
   </row>
-  <row name="Fire" subclass="Damage_type_energy">
+  <row name="Fire" subclass="DamageTypeEnergy">
     <comment>burns through heat and combustion</comment>
   </row>
-  <row name="Sonic" subclass="Damage_type_energy">
+  <row name="Sonic" subclass="DamageTypeEnergy">
     <comment>assaults matter with high-frequency vibration and sound waves</comment>
   </row>
-  <row name="Positive" subclass="Damage_type_energy">
+  <row name="Positive" subclass="DamageTypeEnergy">
     <comment>harms only undead creatures, withering undead bodies and disrupting incorporeal undead</comment>
   </row>
-  <row name="Negative" subclass="Damage_type_energy">
+  <row name="Negative" subclass="DamageTypeEnergy">
     <comment>saps life, damaging only living creatures</comment>
   </row>
-  <row name="Force" subclass="Damage_type_energy">
+  <row name="Force" subclass="DamageTypeEnergy">
     <comment>Powerful and pure magical energy can manifest itself as force damage. Few things can resist this type of damage—not even incorporeal creatures such as ghosts and wraiths.</comment>
   </row>
-  <row name="Chaotic" subclass="Damage_type_alignment">
+  <row name="Chaotic" subclass="DamageTypeAlignment">
     <comment>harms only lawful creatures</comment>
   </row>
-  <row name="Evil" subclass="Damage_type_alignment">
+  <row name="Evil" subclass="DamageTypeAlignment">
     <comment>harms only good creatures</comment>
   </row>
-  <row name="Good" subclass="Damage_type_alignment">
+  <row name="Good" subclass="DamageTypeAlignment">
     <comment>harms only evil creatures</comment>
   </row>
-  <row name="Lawful" subclass="Damage_type_alignment">
+  <row name="Lawful" subclass="DamageTypeAlignment">
     <comment>harms only chaotic creatures</comment>
   </row>
-  <row name="Mental" subclass="Damage_type">
+  <row name="Mental" subclass="DamageType">
     <comment>Sometimes an effect can target the mind with enough psychic force to actually deal damage to the creature. Mindless creatures and those with only programmed or rudimentary intelligence are often immune to mental damage and effects.</comment>
   </row>
-  <row name="Poison" subclass="Damage_type">
+  <row name="Poison" subclass="DamageType">
     <comment>Venoms, toxins and the like can deal poison damage, which affects creatures by way of contact, ingestion, inhalation, or injury. In addition to coming from monster attacks, alchemical items, and spells, poison damage is often caused by ongoing afflictions.</comment>
   </row>
-  <row name="Bleed" subclass="Damage_type">
+  <row name="Bleed" subclass="DamageType">
     <comment>This is persistent damage that represents loss of blood. As such, it has no effect on nonliving creatures or living creatures that don’t need blood to live. Weaknesses and resistances to physical damage apply. Bleed damage ends automatically if you’re healed to your full Hit Points.</comment>
   </row>
-  <row name="Precision" subclass="Damage_type">
+  <row name="Precision" subclass="DamageType">
     <comment>increase the attack’s listed damage, using the same damage type, rather than tracking a separate pool of damage</comment>
   </row>
   <row name="Virulent"/>
   <row name="On self"/>
+  <row name="On target"/>
+  <row name="On all party"/>
   <row name="Fortune"/>
+  <row name="Without trigger"/>
+  <row name="Does not trigger reaction"/>
+  <row name="Trigger reaction"/>
+  <row name="Move">
+    <uses>Grid movement rule</uses>
+    <uses>Moving through space of other creature</uses>
+    <uses>Moving through space of object</uses>
+    <uses>Share space with other creature</uses>
+    <leadsTo>Change position</leadsTo>
+  </row>
 </root>

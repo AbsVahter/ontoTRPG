@@ -463,28 +463,28 @@
   <bulk>L</bulk>
   <hands>1</hands>
   <level>3</level>
-  <has_trait>uncommon</has_trait>
+  <trait>uncommon</trait>
 </row>
 <row name="Scholarly journal compendium">
   <price>30 gp</price>
   <bulk>L</bulk>
   <hands>2</hands>
   <level>3</level>
-  <has_trait>uncommon</has_trait>
+  <trait>uncommon</trait>
 </row>
 <row name="Survey map">
   <price>10 gp</price>
   <bulk>L</bulk>
   <hands>1</hands>
   <level>3</level>
-  <has_trait>uncommon</has_trait>
+  <trait>uncommon</trait>
 </row>
 <row name="Survey map atlas">
   <price>50 gp</price>
   <bulk>L</bulk>
   <hands>2</hands>
   <level>3</level>
-  <has_trait>uncommon</has_trait>
+  <trait>uncommon</trait>
 </row>
 <row name="Lesser acid flask">
   <price>3 gp</price>

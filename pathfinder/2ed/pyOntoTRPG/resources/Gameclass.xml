@@ -1,0 +1,732 @@
+<?xml version="1.0"?>
+<root>
+  <row name="Alchemist">
+    <comment>The alchemist uses their skill at crafting to create alchemical items—such as bombs, elixirs, and poisons—that they use to defeat foes and aid allies. Smart and resourceful, an alchemist often has just the right tool for the job and esoteric knowledge to help their friends get out of a jam.</comment>
+    <comment>There’s no sight more beautiful to you than a strange brew bubbling in a beaker, and you consume your ingenious elixirs with abandon. You’re fascinated by uncovering the secrets of science and the natural world, and you’re constantly experimenting in your lab or on the go with inventive concoctions for every eventuality. You are fearless in the face of risk, hurling explosive or toxic creations at your foes. Your unique path toward greatness is lined with alchemical brews that push your mind and body to their limits.</comment>
+    <abilityBoost>INTELLIGENCE</abilityBoost>
+    <hp>8</hp>
+    <experted>Fortitude</experted>
+    <experted>Reflex</experted>
+    <trained>Crafting</trained>
+    <additionalSkills>3</additionalSkills>
+    <selects>ALCHEMICAL FAMILIAR</selects>
+    <selects>ALCHEMICAL SAVANT</selects>
+    <selects>CALCULATED SPLASH</selects>
+    <selects>COMBINE ELIXIRS</selects>
+    <selects>CRAFT PHILOSOPHERвЂ™S STONE</selects>
+    <selects>DEBILITATING BOMB</selects>
+    <selects>DIRECTIONAL BOMBS</selects>
+    <selects>EFFICIENT ALCHEMY</selects>
+    <selects>ELASTIC MUTAGEN</selects>
+    <selects>ENDURING ALCHEMY</selects>
+    <selects>ETERNAL ELIXIR</selects>
+    <selects>EXPANDED SPLASH</selects>
+    <selects>EXPLOITIVE BOMB</selects>
+    <selects>EXTEND ELIXIR</selects>
+    <selects>FAR LOBBER</selects>
+    <selects>FERAL MUTAGEN</selects>
+    <selects>GENIUS MUTAGEN</selects>
+    <selects>GLIB MUTAGEN</selects>
+    <selects>GREATER DEBILITATING BOMB</selects>
+    <selects>GREATER MERCIFUL ELIXIR</selects>
+    <selects>IMPROBABLE ELIXIRS</selects>
+    <selects>INVINCIBLE MUTAGEN</selects>
+    <selects>MEGA BOMB</selects>
+    <selects>MERCIFUL ELIXIR</selects>
+    <selects>MINDBLANK MUTAGEN</selects>
+    <selects>MIRACLE WORKER</selects>
+    <selects>PERFECT DEBILITATION</selects>
+    <selects>PERFECT MUTAGEN</selects>
+    <selects>PERSISTENT MUTAGEN</selects>
+    <selects>Poison Resistance</selects>
+    <selects>POTENT POISONER</selects>
+    <selects>QUICK BOMBER</selects>
+    <selects>REVIVIFYING MUTAGEN</selects>
+    <selects>SMOKE BOMB</selects>
+    <selects>STICKY BOMB</selects>
+    <selects>TRUE DEBILITATING BOMB</selects>
+    <selects>UNCANNY BOMBS</selects>
+  </row>
+  <row name="Barbarian">
+    <comment>The barbarian is a fearsome embodiment of rage, focusing the deadly power of their anger against anyone who stands in their way. A barbarian is quick to enter battle and, once their fury has been unleashed, is immensely strong, often unpredictable, and nearly unstoppable.</comment>
+    <comment>Rage consumes you in battle. You delight in wreaking havoc and using powerful weapons to carve through your enemies, relying on astonishing durability without needing complicated techniques or rigid training. Your rages draw upon a vicious instinct, which you might associate with an animal, a spirit, or some part of yourself. To many barbarians, brute force is a hammer and every problem looks like a nail, whereas others try to hold back the storm of emotions inside them and release their rage only when it matters most.</comment>
+    <abilityBoost>STRENGTH</abilityBoost>
+    <hp>12</hp>
+    <experted>Fortitude</experted>
+    <experted>Perception</experted>
+    <experted>Will</experted>
+    <trained>Athletics</trained>
+    <additionalSkills>3</additionalSkills>
+    <selects>Acute Scent</selects>
+    <selects>Acute Vision</selects>
+    <selects>Animal Rage</selects>
+    <selects>Animal Skin</selects>
+    <selects>Attack of Opportunity barbarian</selects>
+    <selects>Awesome Blow</selects>
+    <selects>Brutal Bully</selects>
+    <selects>Brutal Critical</selects>
+    <selects>Cleave</selects>
+    <selects>Collateral Thrash</selects>
+    <selects>Come and Get Me</selects>
+    <selects>Contagious Rage</selects>
+    <selects>Dragon's Rage Breath</selects>
+    <selects>Dragon's Rage Wings</selects>
+    <selects>Dragon Transformation</selects>
+    <selects>Fast Movement</selects>
+    <selects>Furious Bully</selects>
+    <selects>Furious Finish</selects>
+    <selects>Furious Grab</selects>
+    <selects>Furious Sprint</selects>
+    <selects>Giant’s Lunge</selects>
+    <selects>Giant’s Stature</selects>
+    <selects>Great Cleave</selects>
+    <selects>Knockback</selects>
+    <selects>Moment of Clarity</selects>
+    <selects>No Escape</selects>
+    <selects>Perfect Clarity</selects>
+    <selects>Predator’s Pounce</selects>
+    <selects>Quaking Stomp</selects>
+    <selects>Raging Athlete</selects>
+    <selects>Raging Intimidation</selects>
+    <selects>Raging Thrower</selects>
+    <selects>Reckless Abandon</selects>
+    <selects>Renewed Vigor</selects>
+    <selects>Second Wind</selects>
+    <selects>Shake It Off</selects>
+    <selects>Share Rage</selects>
+    <selects>Spirit’s Wrath</selects>
+    <selects>Spirits’ Interference</selects>
+    <selects>Sudden Charge</selects>
+    <selects>Sudden Leap</selects>
+    <selects>Swipe</selects>
+    <selects>Terrifying Howl</selects>
+    <selects>Thrash</selects>
+    <selects>Titan’s Stature</selects>
+    <selects>Vengeful Strike</selects>
+    <selects>Vicious Evisceration</selects>
+    <selects>Whirlwind Strike</selects>
+    <selects>Wounded Rage</selects>
+  </row>
+  <row name="Bard">
+    <comment>An artist and a scholar, the bard uses performance and esoteric learning to bolster their companions and foil their enemies. Sometimes sneaky and quite often charming, the bard adventures with pizzazz and talent backed up by an impressive repertoire of occult magic.</comment>
+    <comment>You are a master of artistry, a scholar of hidden secrets, and a captivating persuader. Using powerful performances, you influence minds and elevate souls to new levels of heroics. You might use your powers to become a charismatic leader, or perhaps you might instead be a counselor, manipulator, scholar, scoundrel, or virtuoso. While your versatility leads some to consider you a beguiling ne’erdo- well and a jack-of-all-trades, it’s dangerous to dismiss you as a master of none.</comment>
+    <abilityBoost>CHARISMA</abilityBoost>
+    <hp>8</hp>
+    <experted>Perception</experted>
+    <experted>Will</experted>
+    <trained>Occultism</trained>
+    <trained>Performance</trained>
+    <trained>longsword</trained>
+    <trained>rapier</trained>
+    <trained>sap</trained>
+    <trained>shortbow</trained>
+    <trained>shortsword</trained>
+    <trained>whip</trained>
+    <additionalSkills>4</additionalSkills>
+    <spellsPerDay>3</spellsPerDay>
+    <selects>Allegro</selects>
+    <selects>Bardic Lore</selects>
+    <selects>Cantrip Expansion</selects>
+    <selects>Deep Lore</selects>
+    <selects>Dirge of Doom</selects>
+    <selects>Eclectic Polymath</selects>
+    <selects>Eclectic Skill</selects>
+    <selects>Effortless Concentration</selects>
+    <selects>Esoteric Polymath</selects>
+    <selects>Eternal Composition</selects>
+    <selects>Fatal Aria</selects>
+    <selects>Harmonize</selects>
+    <selects>House of Imaginary Walls</selects>
+    <selects>Impossible Polymath</selects>
+    <selects>Inspirational Focus</selects>
+    <selects>Inspire Competence</selects>
+    <selects>Inspire Defense</selects>
+    <selects>Inspire Heroics</selects>
+    <selects>Know-It-All</selects>
+    <selects>Lingering Composition</selects>
+    <selects>Loremaster’s Etude</selects>
+    <selects>Melodious Spell</selects>
+    <selects>Multifarious Muse</selects>
+    <selects>Perfect Encore</selects>
+    <selects>Quickened Casting</selects>
+    <selects>Reach Spell</selects>
+    <selects>Soothing Ballad</selects>
+    <selects>Steady Spellcasting</selects>
+    <selects>Studious Capacity</selects>
+    <selects>Symphony of the Muse</selects>
+    <selects>Triple Time</selects>
+    <selects>True Hypercognition</selects>
+    <selects>Unusual Composition</selects>
+    <selects>Versatile Performance</selects>
+    <selects>Versatile Signature</selects>
+  </row>
+  <row name="Champion">
+    <comment>A defender of good who straps on armor and wields a righteous weapon, the champion protects the innocent and vanquishes evil. Steadfast in their beliefs, and devoted to both a deity and an aspect of good, they follow a strict code as they fight to make the world a better place.</comment>
+    <comment>You are an emissary of a deity, a devoted servant who has taken up a weighty mantle, and you adhere to a code that holds you apart from those around you. While champions exist for every alignment, as a champion of good, you provide certainty and hope to the innocent. You have powerful defenses that you share freely with your allies and innocent bystanders, as well as holy power you use to end the threat of evil. Your devotion even attracts the attention of holy spirits who aid you on your journey.</comment>
+    <abilityBoost>STRENGTH</abilityBoost>
+    <abilityBoost>DEXTERITY</abilityBoost>
+    <comment>Your class gives you an ability boost to your choice</comment>
+    <comment>Trained in one skill determined by your choice of deity</comment>
+    <hp>10</hp>
+    <experted>Fortitude</experted>
+    <experted>Will</experted>
+    <trained>Religion</trained>
+    <additionalSkills>2</additionalSkills>
+    <selects>Advanced Deity’s Domain</selects>
+    <selects>Affliction Mercy</selects>
+    <selects>Anchoring Aura</selects>
+    <selects>Attack of Opportunity champion</selects>
+    <selects>Aura of Courage</selects>
+    <selects>Aura of Faith</selects>
+    <selects>Aura of Life</selects>
+    <selects>Aura of Righteousness</selects>
+    <selects>Aura of Vengeance</selects>
+    <selects>Auspicious Mount</selects>
+    <selects>Blade of Justice</selects>
+    <selects>Celestial Form</selects>
+    <selects>Celestial Mount</selects>
+    <selects>Champion’s Sacrifice</selects>
+    <selects>Deity’s Domain</selects>
+    <selects>Devoted Focus</selects>
+    <selects>Divine Grace</selects>
+    <selects>Divine Health</selects>
+    <selects>Divine Reflexes</selects>
+    <selects>Divine Wall</selects>
+    <selects>Dragonslayer Oath</selects>
+    <selects>Fiendsbane Oath</selects>
+    <selects>Greater Mercy</selects>
+    <selects>Heal Mount</selects>
+    <selects>Imposing Destrier</selects>
+    <selects>Instrument of Zeal</selects>
+    <selects>Lasting Doubt</selects>
+    <selects>Liberating Stride</selects>
+    <selects>Litany against Sloth</selects>
+    <selects>Litany against Wrath</selects>
+    <selects>Litany of Righteousness</selects>
+    <selects>Loyal Warhorse</selects>
+    <selects>Mercy</selects>
+    <selects>Quick Shield Block</selects>
+    <selects>Radiant Blade Master</selects>
+    <selects>Radiant Blade Spirit</selects>
+    <selects>Ranged Reprisal</selects>
+    <selects>Second Ally</selects>
+    <selects>Sense Evil</selects>
+    <selects>Shield of Grace</selects>
+    <selects>Shield of Reckoning</selects>
+    <selects>Shield Paragon</selects>
+    <selects>Shield Warden</selects>
+    <selects>Shining Oath</selects>
+    <selects>Smite Evil</selects>
+    <selects>Ultimate Mercy</selects>
+    <selects>Unimpeded Step</selects>
+    <selects>Vengeful Oath</selects>
+    <selects>Weight of Guilt</selects>
+    <selects>Wyrmbane Aura</selects>
+  </row>
+  <row name="Cleric">
+    <comment>The cleric is dedicated to the worship of a single deity and draws divine magic from this devotion. Clerics can be vastly different depending on who they worship, and whether they’re cloistered clerics who pursue one of their deity’s domains or war priests who serve as the sword arm of their god.</comment>
+    <comment>Deities work their will upon the world in infinite ways, and you serve as one of their most stalwart mortal servants. Blessed with divine magic, you live the ideals of your faith, adorn yourself with the symbols of your church, and train diligently to wield your deity’s favored weapon. Your spells might protect and heal your allies, or they might punish foes and enemies of your faith, as your deity wills. Yours is a life of devotion, spreading the teachings of your faith through both word and deed.</comment>
+    <comment>Trained in one skill determined by your choice of deity.</comment>
+    <comment>Trained in the favored weapon of your deity. If your deity’s favored weapon is uncommon, you also gain access to that weapon.</comment>
+    <abilityBoost>WISDOM</abilityBoost>
+    <hp>8</hp>
+    <experted>Will</experted>
+    <trained>Religion</trained>
+    <additionalSkills>2</additionalSkills>
+    <spellsPerDay>3</spellsPerDay>
+    <selects>Advanced Domain</selects>
+    <selects>Align Armament</selects>
+    <selects>Avatar’s Audience</selects>
+    <selects>Cantrip Expansion</selects>
+    <selects>Cast Down</selects>
+    <selects>Castigating Weapon</selects>
+    <selects>Channel Smite</selects>
+    <selects>Channeled Succor</selects>
+    <selects>Command Undead</selects>
+    <selects>Communal Healing</selects>
+    <selects>Cremate Undead</selects>
+    <selects>Deadly Simplicity</selects>
+    <selects>Defensive Recovery</selects>
+    <selects>Deity’s Protection</selects>
+    <selects>Directed Channel</selects>
+    <selects>Divine Weapon</selects>
+    <selects>Domain Focus</selects>
+    <selects>Domain Initiate</selects>
+    <selects>Domain Wellspring</selects>
+    <selects>Echoing Channel</selects>
+    <selects>Emblazon Antimagic</selects>
+    <selects>Emblazon Armament</selects>
+    <selects>Emblazon Energy</selects>
+    <selects>Eternal Bane</selects>
+    <selects>Eternal Blessing</selects>
+    <selects>Extend Armament Alignment</selects>
+    <selects>Fast Channel</selects>
+    <selects>Harming Hands</selects>
+    <selects>Healing Hands</selects>
+    <selects>Heroic Recovery</selects>
+    <selects>Holy Castigation</selects>
+    <selects>Improved Command Undead</selects>
+    <selects>Improved Communal Healing</selects>
+    <selects>Improved Swift Banishment</selects>
+    <selects>Maker of Miracles</selects>
+    <selects>Metamagic Channel</selects>
+    <selects>Necrotic Infusion</selects>
+    <selects>Reach Spell</selects>
+    <selects>Replenishment of War</selects>
+    <selects>Resurrectionist</selects>
+    <selects>Sap Life</selects>
+    <selects>Selective Energy</selects>
+    <selects>Shared Replenishment</selects>
+    <selects>Steady Spellcasting</selects>
+    <selects>Swift Banishment</selects>
+    <selects>Turn Undead</selects>
+    <selects>Versatile Font</selects>
+  </row>
+  <row name="Druid">
+    <comment>The druid walks the wild, primordial places of the world without fear, harnessing the primal magic of nature and controlling it with calm purpose. A devotee of the wilderness, the druid finds nourishment in its power, allies among its creatures, and strength in its fury.</comment>
+    <comment>The power of nature is impossible to resist. It can bring ruin to the stoutest fortress in minutes, reducing even the mightiest works to rubble, burning them to ash, burying them beneath an avalanche of snow, or drowning them beneath the waves. It can provide endless bounty and breathtaking splendor to those who respect it— and an agonizing death to those who take it too lightly. You are one of those who hear nature’s call. You stand in awe of the majesty of its power and give yourself over to its service.</comment>
+    <comment>Trained in one skill determined by your druidic order</comment>
+    <abilityBoost>WISDOM</abilityBoost>
+    <hp>8</hp>
+    <experted>Will</experted>
+    <trained>Nature</trained>
+    <additionalSkills>2</additionalSkills>
+    <spellsPerDay>3</spellsPerDay>
+    <selects>Animal Companion</selects>
+    <selects>Call of the Wild</selects>
+    <selects>Dragon Shape</selects>
+    <selects>Effortless Concentration</selects>
+    <selects>Elemental Shape</selects>
+    <selects>Enhanced Familiar</selects>
+    <selects>Ferocious Shape</selects>
+    <selects>Fey Caller</selects>
+    <selects>Form Control</selects>
+    <selects>Green Empathy</selects>
+    <selects>Green Tongue</selects>
+    <selects>Healing Transformation</selects>
+    <selects>Hierophant’s Power</selects>
+    <selects>Impaling Briars</selects>
+    <selects>Incredible Companion</selects>
+    <selects>Insect Shape</selects>
+    <selects>Invoke Disaster</selects>
+    <selects>Leshy Familiar</selects>
+    <selects>Leyline Conduit</selects>
+    <selects>Mature Animal Companion</selects>
+    <selects>Monstrosity Shape</selects>
+    <selects>Order Explorer</selects>
+    <selects>Order Magic</selects>
+    <selects>Overwhelming Energy</selects>
+    <selects>Perfect Form Control</selects>
+    <selects>Plant Shape</selects>
+    <selects>Poison Resistance</selects>
+    <selects>Primal Focus</selects>
+    <selects>Primal Summons</selects>
+    <selects>Primal Wellspring</selects>
+    <selects>Reach Spell</selects>
+    <selects>Side by Side</selects>
+    <selects>Soaring Shape</selects>
+    <selects>Specialized Companion</selects>
+    <selects>Steady Spellcasting</selects>
+    <selects>Storm Born</selects>
+    <selects>Storm Retribution</selects>
+    <selects>Thousand Faces</selects>
+    <selects>Timeless Nature</selects>
+    <selects>True Shapeshifter</selects>
+    <selects>Verdant Metamorphosis</selects>
+    <selects>Widen Spell</selects>
+    <selects>Wild Shape</selects>
+    <selects>Wind Caller</selects>
+    <selects>Woodland Stride</selects>
+  </row>
+  <row name="Fighter">
+    <comment>With calculated daring and fearless determination, the fighter tracks down and confronts their enemies while defending allies from harm. A master of the battlefield, the fighter is quick to exploit opportunities and strike any who stumble within reach of their sword or bow.</comment>
+    <comment>Fighting for honor, greed, loyalty, or simply the thrill of battle, you are an undisputed master of weaponry and combat techniques. You combine your actions through clever combinations of opening moves, finishing strikes, and counterattacks whenever your foes are unwise enough to drop their guard. Whether you are a knight, mercenary, sharpshooter, or blade master, you have honed your martial skills into an art form and perform devastating critical attacks on your enemies.</comment>
+    <comment>Trained in your choice of Acrobatics or Athletics.</comment>
+    <abilityBoost>STRENGTH</abilityBoost>
+    <abilityBoost>DEXTERITY</abilityBoost>
+    <comment>Your class gives you an ability boost to your choice</comment>
+    <hp>10</hp>
+    <experted>Fortitude</experted>
+    <experted>Perception</experted>
+    <experted>Reflex</experted>
+    <trained>Acrobatics</trained>
+    <trained>Athletics</trained>
+    <additionalSkills>3</additionalSkills>
+    <selects>Advanced Weapon Training</selects>
+    <selects>Advantageous Assault</selects>
+    <selects>Aggressive Block</selects>
+    <selects>Agile Grace</selects>
+    <selects>Assisting Shot</selects>
+    <selects>Blind-Fight</selects>
+    <selects>Boundless Reprisals</selects>
+    <selects>Brutal Finish</selects>
+    <selects>Brutish Shove</selects>
+    <selects>Certain Strike</selects>
+    <selects>Combat Grab</selects>
+    <selects>Combat Reflexes</selects>
+    <selects>Debilitating Shot</selects>
+    <selects>Desperate Finisher</selects>
+    <selects>Determination</selects>
+    <selects>Disarming Stance</selects>
+    <selects>Disarming Twist</selects>
+    <selects>Disruptive Stance</selects>
+    <selects>Double Shot</selects>
+    <selects>Double Slice</selects>
+    <selects>Dual-Handed Assault</selects>
+    <selects>Dueling Dance</selects>
+    <selects>Dueling Parry</selects>
+    <selects>Dueling Riposte</selects>
+    <selects>Exacting Strike</selects>
+    <selects>Fearsome Brute</selects>
+    <selects>Felling Strike</selects>
+    <selects>Flinging Shove</selects>
+    <selects>Furious Focus</selects>
+    <selects>Graceful Poise</selects>
+    <selects>Guardian’s Deflection</selects>
+    <selects>Guiding Finish</selects>
+    <selects>Guiding Riposte</selects>
+    <selects>Impossible Volley</selects>
+    <selects>Improved Dueling Riposte</selects>
+    <selects>Improved Knockdown</selects>
+    <selects>Improved Reflexive Shield</selects>
+    <selects>Improved Twin Riposte fighter</selects>
+    <selects>Incredible Aim</selects>
+    <selects>Incredible Ricochet</selects>
+    <selects>Intimidating Strike</selects>
+    <selects>Knockdown</selects>
+    <selects>Lunge</selects>
+    <selects>Lunging Stance</selects>
+    <selects>Mirror Shield</selects>
+    <selects>Mobile Shot Stance</selects>
+    <selects>Multishot Stance</selects>
+    <selects>Paragon's Guard</selects>
+    <selects>Point-Blank Shot</selects>
+    <selects>Positioning Assault</selects>
+    <selects>Power Attack</selects>
+    <selects>Powerful Shove</selects>
+    <selects>Quick Reversal</selects>
+    <selects>Quick Shield Block</selects>
+    <selects>Reactive Shield</selects>
+    <selects>Reflexive Shield</selects>
+    <selects>Revealing Stab</selects>
+    <selects>Savage Critical</selects>
+    <selects>Shatter Defenses</selects>
+    <selects>Shield Warden</selects>
+    <selects>Shielded Stride</selects>
+    <selects>Snagging Strike</selects>
+    <selects>Spring Attack</selects>
+    <selects>Stance Savant fighter</selects>
+    <selects>Sudden Charge</selects>
+    <selects>Sudden Leap</selects>
+    <selects>Swipe</selects>
+    <selects>Triple Shot</selects>
+    <selects>Twin Parry</selects>
+    <selects>Twin Riposte</selects>
+    <selects>Twinned Defense</selects>
+    <selects>Two-Weapon Flurry</selects>
+    <selects>Weapon Supremacy</selects>
+    <selects>Whirlwind Strike</selects>
+  </row>
+  <row name="Monk">
+    <comment>The monk seeks perfection in all things, and that includes transforming their body into the perfect weapon. They can be walking with calm purpose and contemplating the subtleties of existence in one minute and then transform into a blur of deadly blows in the next.</comment>
+    <comment>The strength of your fist flows from your mind and spirit. You seek perfection—honing your body into a flawless instrument and your mind into an orderly bastion of wisdom. You’re a fierce combatant renowned for martial arts skills and combat stances that grant you unique fighting moves. While the challenge of mastering many fighting styles drives you to great heights, you also enjoy meditating on philosophical questions and discovering new ways to obtain peace and enlightenment.</comment>
+    <abilityBoost>STRENGTH</abilityBoost>
+    <abilityBoost>DEXTERITY</abilityBoost>
+    <comment>Your class gives you an ability boost to your choice</comment>
+    <hp>10</hp>
+    <experted>Fortitude</experted>
+    <experted>Reflex</experted>
+    <experted>Will</experted>
+    <additionalSkills>4</additionalSkills>
+    <selects>Abundant Step</selects>
+    <selects>Arrow Snatching</selects>
+    <selects>Brawling Focus</selects>
+    <selects>Crane Flutter</selects>
+    <selects>Crane Stance</selects>
+    <selects>Crushing Grab</selects>
+    <selects>Dancing Leaf</selects>
+    <selects>Deflect Arrow</selects>
+    <selects>Diamond Fists</selects>
+    <selects>Diamond Soul</selects>
+    <selects>Disrupt Ki</selects>
+    <selects>Dragon Roar</selects>
+    <selects>Dragon Stance</selects>
+    <selects>Elemental Fist</selects>
+    <selects>Empty Body</selects>
+    <selects>Enduring Quickness</selects>
+    <selects>Enlightened Presence</selects>
+    <selects>Flurry of Maneuvers</selects>
+    <selects>Flying Kick</selects>
+    <selects>Fuse Stance</selects>
+    <selects>Guarded Movement</selects>
+    <selects>Impossible Technique</selects>
+    <selects>Improved Knockback</selects>
+    <selects>Ironblood Stance</selects>
+    <selects>Ironblood Surge</selects>
+    <selects>Ki Blast</selects>
+    <selects>Ki Rush</selects>
+    <selects>Ki Strike</selects>
+    <selects>Knockback Strike</selects>
+    <selects>Master of Many Styles</selects>
+    <selects>Meditative Focus</selects>
+    <selects>Meditative Wellspring</selects>
+    <selects>Mixed Maneuver</selects>
+    <selects>Monastic Weaponry</selects>
+    <selects>Mountain Quake</selects>
+    <selects>Mountain Stance</selects>
+    <selects>Mountain Stronghold</selects>
+    <selects>Quivering Palm</selects>
+    <selects>Shattering Strike</selects>
+    <selects>Sleeper Hold</selects>
+    <selects>Stance Savant</selects>
+    <selects>Stand Still</selects>
+    <selects>Stunning Fist</selects>
+    <selects>Swift River</selects>
+    <selects>Tangled Forest Rake</selects>
+    <selects>Tangled Forest Stance</selects>
+    <selects>Tiger Slash</selects>
+    <selects>Tiger Stance</selects>
+    <selects>Timeless Body</selects>
+    <selects>Tongue of Sun and Moon</selects>
+    <selects>Wall Run</selects>
+    <selects>Water Step</selects>
+    <selects>Whirling Throw</selects>
+    <selects>Wholeness of Body</selects>
+    <selects>Wild Winds Gust</selects>
+    <selects>Wild Winds Initiate</selects>
+    <selects>Wind Jump</selects>
+    <selects>Winding Flow</selects>
+    <selects>Wolf Drag</selects>
+    <selects>Wolf Stance</selects>
+  </row>
+  <row name="Ranger">
+    <comment>Resourceful and cunning, the ranger is a hunter, tracker, and warrior who preserves the natural world and protects civilization from its ravages. Whether they use a bow, crossbow, a pair of weapons, or snares, the ranger is a fearsome enemy and great ally in the wild.</comment>
+    <comment>Some rangers believe civilization wears down the soul, but still needs to be protected from wild creatures. Others say nature needs to be protected from the greedy, who wish to tame its beauty and plunder its treasures. You could champion either goal, or both. You might be a scout, tracker, or hunter of fugitives or beasts, haunting the edge of civilization or exploring the wilds. You know how to live off the land and are skilled at spotting and taking down both opportune prey and hated enemies.</comment>
+    <abilityBoost>STRENGTH</abilityBoost>
+    <abilityBoost>DEXTERITY</abilityBoost>
+    <comment>Your class gives you an ability boost to your choice</comment>
+    <hp>10</hp>
+    <experted>Fortitude</experted>
+    <experted>Perception</experted>
+    <experted>Reflex</experted>
+    <trained>Nature</trained>
+    <trained>Survival</trained>
+    <additionalSkills>4</additionalSkills>
+    <selects>Animal Companion</selects>
+    <selects>Blind-Fight</selects>
+    <selects>Camouflage</selects>
+    <selects>Companion’s Cry</selects>
+    <selects>Crossbow Ace</selects>
+    <selects>Deadly Aim</selects>
+    <selects>Disrupt Prey</selects>
+    <selects>Distracting Shot</selects>
+    <selects>Double Prey</selects>
+    <selects>Far Shot</selects>
+    <selects>Favored Enemy</selects>
+    <selects>Favored Terrain</selects>
+    <selects>Greater Distracting Shot</selects>
+    <selects>Hazard Finder</selects>
+    <selects>Hunted Shot</selects>
+    <selects>Hunter’s Aim</selects>
+    <selects>Impossible Flurry</selects>
+    <selects>Impossible Volley</selects>
+    <selects>Improved Twin Riposte</selects>
+    <selects>Incredible Companion ranger</selects>
+    <selects>Legendary Monster Hunter</selects>
+    <selects>Legendary Shot</selects>
+    <selects>Lightning Snares</selects>
+    <selects>Manifold Edge</selects>
+    <selects>Master Monster Hunter</selects>
+    <selects>Masterful Companion</selects>
+    <selects>Mature Animal Companion ranger</selects>
+    <selects>Monster Hunter</selects>
+    <selects>Monster Warden</selects>
+    <selects>Penetrating Shot</selects>
+    <selects>Perfect Shot</selects>
+    <selects>Powerful Snares</selects>
+    <selects>Quick Draw</selects>
+    <selects>Quick Snares</selects>
+    <selects>Running Reload</selects>
+    <selects>Scout’s Warning</selects>
+    <selects>Second Sting</selects>
+    <selects>Sense the Unseen</selects>
+    <selects>Shadow Hunter</selects>
+    <selects>Shared Prey</selects>
+    <selects>Side by Side ranger</selects>
+    <selects>Skirmish Strike</selects>
+    <selects>Snap Shot</selects>
+    <selects>Snare Specialist</selects>
+    <selects>Specialized Companion ranger</selects>
+    <selects>Stealthy Companion</selects>
+    <selects>Swift Tracker</selects>
+    <selects>Targeting Shot</selects>
+    <selects>Terrain Master</selects>
+    <selects>To the Ends of the Earth</selects>
+    <selects>Triple Threat</selects>
+    <selects>Twin Parry</selects>
+    <selects>Twin Riposte</selects>
+    <selects>Twin Takedown</selects>
+    <selects>Ubiquitous Snares</selects>
+    <selects>Ultimate Skirmisher</selects>
+    <selects>Warden’s Boon</selects>
+    <selects>Warden’s Guidance</selects>
+    <selects>Warden’s Step</selects>
+    <selects>Wild Empathy ranger</selects>
+  </row>
+  <row name="Rogue">
+    <comment>Cunning and quick, the rogue brings skill and expertise few of their comrades can match. In battle, they excel at sneak attacks and ambushes. Their racket gives them the tools they need to get the job done, and their wide array of skill choices lets them specialize as they see fit.</comment>
+    <comment>You are skilled and opportunistic. Using your sharp wits and quick reactions, you take advantage of your opponents’ missteps and strike where it hurts most. You play a dangerous game, seeking thrills and testing your skills, and likely don’t care much for any laws that happen to get in your way. While the path of every rogue is unique and riddled with danger, the one thing you all share in common is the breadth and depth of your skills.</comment>
+    <comment>Trained in one or more skills determined by your rogue’s racket.</comment>
+    <abilityBoost>DEXTERITY</abilityBoost>
+    <hp>8</hp>
+    <experted>Reflex</experted>
+    <experted>Perception</experted>
+    <experted>Will</experted>
+    <trained>Stealth</trained>
+    <trained>rapier</trained>
+    <trained>sap</trained>
+    <trained>shortbow</trained>
+    <trained>shortsword</trained>
+    <additionalSkills>7</additionalSkills>
+    <selects>Battle Assessment</selects>
+    <selects>Blank Slate</selects>
+    <selects>Blind-Fight</selects>
+    <selects>Brutal Beating</selects>
+    <selects>Cloud Step</selects>
+    <selects>Cognitive Loophole</selects>
+    <selects>Critical Debilitation</selects>
+    <selects>Defensive Roll</selects>
+    <selects>Delay Trap</selects>
+    <selects>Dispelling Slice</selects>
+    <selects>Distracting Feint</selects>
+    <selects>Dread Striker</selects>
+    <selects>Fantastic Leap</selects>
+    <selects>Felling Shot</selects>
+    <selects>Gang Up</selects>
+    <selects>Hidden Paragon</selects>
+    <selects>Implausible Infiltration</selects>
+    <selects>Impossible Striker</selects>
+    <selects>Improved Poison Weapon</selects>
+    <selects>Instant Opening</selects>
+    <selects>Leave an Opening</selects>
+    <selects>Light Step</selects>
+    <selects>Magical Trickster</selects>
+    <selects>Minor Magic</selects>
+    <selects>Mobility</selects>
+    <selects>Nimble Dodge</selects>
+    <selects>Nimble Roll</selects>
+    <selects>Opportune Backstab</selects>
+    <selects>Perfect Distraction</selects>
+    <selects>Poison Weapon</selects>
+    <selects>Powerful Sneak</selects>
+    <selects>Precise Debilitations</selects>
+    <selects>Quick Draw</selects>
+    <selects>Reactive Distraction</selects>
+    <selects>Reactive Interference</selects>
+    <selects>Reactive Pursuit</selects>
+    <selects>Sabotage</selects>
+    <selects>Scout’s Warning</selects>
+    <selects>Sense the Unseen</selects>
+    <selects>Sidestep</selects>
+    <selects>Skirmish Strike</selects>
+    <selects>Sly Striker</selects>
+    <selects>Sneak Savant</selects>
+    <selects>Spring from the Shadows</selects>
+    <selects>Tactical Debilitations</selects>
+    <selects>Trap Finder</selects>
+    <selects>Trickster’s Ace</selects>
+    <selects>Twin Feint</selects>
+    <selects>Twist the Knife</selects>
+    <selects>Unbalancing Blow</selects>
+    <selects>Vicious Debilitations</selects>
+    <selects>You're Next</selects>
+  </row>
+  <row name="Sorcerer">
+    <comment>The intense magic the sorcerer commands comes from neither study nor worship—it comes from their blood. Their magical abilities depend on whether they have the blood of dragons, angels, fey, aberrant creatures, or some other being flowing through their veins and powering their spells.</comment>
+    <comment>You didn’t choose to become a spellcaster—you were born one. There’s magic in your blood, whether a divinity touched one of your ancestors, a forebear communed with a primal creature, or a powerful occult ritual influenced your line. Self-reflection and study allow you to refine your inherent magical skills and unlock new, more powerful abilities. The power in your blood carries a risk, however, and you constantly face the choice of whether you’ll rise to become a master spellcaster or fall into destruction.</comment>
+    <comment>Trained in one or more skills determined by your bloodline.</comment>
+    <abilityBoost>CHARISMA</abilityBoost>
+    <hp>6</hp>
+    <experted>Will</experted>
+    <additionalSkills>2</additionalSkills>
+    <spellsPerDay>4</spellsPerDay>
+    <selects>Advanced Bloodline</selects>
+    <selects>Arcane Evolution</selects>
+    <selects>Bespell Weapon</selects>
+    <selects>Bloodline Conduit</selects>
+    <selects>Bloodline Focus</selects>
+    <selects>Bloodline Perfection</selects>
+    <selects>Bloodline Resistance</selects>
+    <selects>Bloodline Wellspring</selects>
+    <selects>Cantrip Expansion</selects>
+    <selects>Counterspell</selects>
+    <selects>Crossblooded Evolution</selects>
+    <selects>Dangerous Sorcery</selects>
+    <selects>Divine Evolution</selects>
+    <selects>Effortless Concentration</selects>
+    <selects>Enhanced Familiar</selects>
+    <selects>Familiar</selects>
+    <selects>Greater Bloodline</selects>
+    <selects>Greater Crossblooded Evolution</selects>
+    <selects>Greater Mental Evolution</selects>
+    <selects>Greater Vital Evolution</selects>
+    <selects>Interweave Dispel</selects>
+    <selects>Magic Sense</selects>
+    <selects>Metamagic Mastery</selects>
+    <selects>Occult Evolution</selects>
+    <selects>Overwhelming Energy</selects>
+    <selects>Primal Evolution</selects>
+    <selects>Quickened Casting</selects>
+    <selects>Reach Spell</selects>
+    <selects>Reflect Spell</selects>
+    <selects>Steady Spellcasting</selects>
+    <selects>Widen Spell</selects>
+  </row>
+  <row name="Wizard">
+    <comment>The wizard is the arcane master of spellcasting, plucking incredible power from reality through complicated spell formulas. They stride with confidence, without a need for armor or weapons, enacting their will upon the world and bringing woe upon their enemies.</comment>
+    <comment>You are an eternal student of the arcane secrets of the universe, using your mastery of magic to cast powerful and devastating spells. You treat magic like a science, cross-referencing the latest texts on practical spellcraft with ancient esoteric tomes to discover and understand how magic works. Yet magical theory is vast, and there’s no way you can study it all. You either specialize in one of the eight schools of magic, gaining deeper understanding of the nuances of those spells above all others, or favor a broader approach that emphasizes the way all magic comes together at the expense of depth.</comment>
+    <abilityBoost>INTELLIGENCE</abilityBoost>
+    <hp>6</hp>
+    <experted>Will</experted>
+    <trained>Arcana</trained>
+    <trained>club</trained>
+    <trained>crossbow</trained>
+    <trained>dagger</trained>
+    <trained>heavy_crossbow</trained>
+    <trained>staff</trained>
+    <additionalSkills>2</additionalSkills>
+    <spellsPerDay>3</spellsPerDay>
+    <selects>Advanced School Spell</selects>
+    <selects>Archwizard’s Might</selects>
+    <selects>Bespell Weapon</selects>
+    <selects>Bond Conservation</selects>
+    <selects>Bonded Focus</selects>
+    <selects>Cantrip Expansion</selects>
+    <selects>Clever Counterspell</selects>
+    <selects>Conceal Spell</selects>
+    <selects>Counterspell</selects>
+    <selects>Effortless Concentration</selects>
+    <selects>Enhanced Familiar</selects>
+    <selects>Eschew Materials</selects>
+    <selects>Familiar</selects>
+    <selects>Hand of the Apprentice</selects>
+    <selects>Infinite Possibilities</selects>
+    <selects>Linked Focus</selects>
+    <selects>Magic Sense</selects>
+    <selects>Metamagic Mastery</selects>
+    <selects>Overwhelming Energy</selects>
+    <selects>Quickened Casting</selects>
+    <selects>Reach Spell</selects>
+    <selects>Reflect Spell</selects>
+    <selects>Reprepare Spell</selects>
+    <selects>Scroll Savant</selects>
+    <selects>Silent Spell</selects>
+    <selects>Spell Combination</selects>
+    <selects>Spell Penetration</selects>
+    <selects>Spell Tinker</selects>
+    <selects>Steady Spellcasting</selects>
+    <selects>Superior Bond</selects>
+    <selects>Universal Versatility</selects>
+    <selects>Widen Spell</selects>
+  </row>
+</root>

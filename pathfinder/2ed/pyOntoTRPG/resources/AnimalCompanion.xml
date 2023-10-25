@@ -1,54 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
-  <animal_companion name="Badger">
+  <row name="Badger">
     <comment>Your companion is a badger, wolverine, or other big mustelid.</comment>
     <size>Small</size>
     <hp>8</hp>
     <speed>25</speed>
-    <special_speed>burrow 10 feet, climb 10 feet</special_speed>
-  </animal_companion>
-  <animal_companion name="Bear">
+    <specialSpeed>burrow 10 feet, climb 10 feet</specialSpeed>
+  </row>
+  <row name="Bear">
     <comment>Your companion is a black, grizzly, polar, or other type of bear.</comment>
     <size>Small</size>
     <hp>8</hp>
     <speed>35</speed>
-  </animal_companion>
-  <animal_companion name="Bird">
+  </row>
+  <row name="Bird">
     <comment>Your companion is a bird of prey, such as an eagle, hawk, or owl.</comment>
     <size>Small</size>
     <hp>4</hp>
     <speed>10</speed>
-    <special_speed>fly 60 feet</special_speed>
-  </animal_companion>
-  <animal_companion name="Cat">
+    <specialSpeed>fly 60 feet</specialSpeed>
+  </row>
+  <row name="Cat">
     <comment>Your companion is a big cat, such as a leopard or tiger.</comment>
     <size>Small</size>
     <hp>4</hp>
     <speed>35</speed>
-  </animal_companion>
-  <animal_companion name="Dromaeosaur">
+  </row>
+  <row name="Dromaeosaur">
     <comment>Your companion is a dromaeosaur (also called a raptor), such as a velociraptor or deinonychus.</comment>
     <size>Small</size>
     <hp>6</hp>
     <speed>50</speed>
-  </animal_companion>
-  <animal_companion name="Horse">
+  </row>
+  <row name="Medium horse">
     <comment>Your companion is a horse, pony, or similar equine.</comment>
-    <size>Medium or Large</size>
+    <size>Medium</size>
     <hp>8</hp>
     <speed>40</speed>
-  </animal_companion>
-  <animal_companion name="Snake">
+  </row>
+  <row name="Large horse">
+    <comment>Your companion is a horse, pony, or similar equine.</comment>
+    <size>Large</size>
+    <hp>8</hp>
+    <speed>40</speed>
+  </row>
+  <row name="Snake">
     <comment>Your companion is a constrictor snake, such as a boa or python.</comment>
     <size>Small</size>
     <hp>6</hp>
     <speed>20</speed>
-    <special_speed>climb 20 feet, swim 20 feet</special_speed>
-  </animal_companion>
-  <animal_companion name="Wolf">
+    <specialSpeed>climb 20 feet, swim 20 feet</specialSpeed>
+  </row>
+  <row name="Wolf">
     <comment>Your companion is a wolf or other canine creature, such as a dog.</comment>
     <size>Small</size>
     <hp>6</hp>
     <speed>40</speed>
-  </animal_companion>
+  </row>
 </root>

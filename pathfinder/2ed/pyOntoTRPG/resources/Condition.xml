@@ -47,9 +47,18 @@
   </row>
   <row name="Fatigued">
     <comment>Your defenses are lower and you can’t use exploration activities while traveling.</comment>
+    <blocks>Daily preparations</blocks>
   </row>
-  <row name="Flat-Footed">
+  <row name="Flat-footed">
     <comment>You’re unable to defend yourself to your full capability.</comment>
+    <calculations>penalty = -2</calculations>
+    <modifies>Armor class</modifies>
+  </row>
+  <row name="Flanked" subclass="RelativeCondition">
+    <comment>Flat-footed while flanking to melee attacks from creatures that are flanking it.</comment>
+    <calculations>penalty = -2</calculations>
+    <modifies>Armor class for melee attack</modifies>
+    <duration>while flanking</duration>
   </row>
   <row name="Fleeing">
     <comment>You must run away.</comment>
@@ -66,10 +75,10 @@
   <row name="Helpful">
     <comment>An NPC with this condition wants to assist you.</comment>
   </row>
-  <row name="Hidden">
+  <row name="Hidden" subclass="DetectionCondition">
     <comment>A creature you’re hidden from knows your location but can’t see you.</comment>
     <comment>A creature that’s hidden is only barely perceptible. You know what space a hidden creature occupies, but little else.</comment>
-    <activates prereq="on target, relative to hidden creature">Flat-Footed</activates>
+    <activates prereq="on target, relative to hidden creature">Flat-footed</activates>
   </row>
   <row name="Hostile">
     <comment>An NPC with this condition wants to harm you.</comment>
@@ -84,7 +93,7 @@
     <comment>Creatures can’t see you.</comment>
     <comment>A creature with the invisible condition is automatically undetected to any creatures relying on sight as their only precise sense. Precise senses other than sight ignore the invisible condition.</comment>
   </row>
-  <row name="Observed">
+  <row name="Observed" subclass="DetectionCondition">
     <comment>You’re in plain view.</comment>
   </row>
   <row name="Paralyzed">
@@ -121,14 +130,14 @@
     <comment>You’re asleep or knocked out. You can't act</comment>
     <duration>restful night's sleep or effect's duration</duration>
   </row>
-  <row name="Undetected">
+  <row name="Undetected" subclass="DetectionCondition">
     <comment>A creature you’re undetected by doesn’t know where you are.</comment>
     <comment>If a creature is undetected, you don’t know what space it occupies, you’re flat-footed to it, and you can’t easily target it.</comment>
   </row>
   <row name="Unfriendly">
     <comment>An NPC with this condition doesn’t like you.</comment>
   </row>
-  <row name="Unnoticed">
+  <row name="Unnoticed" subclass="DetectionCondition">
     <comment>A creature is entirely unaware you’re present.</comment>
   </row>
   <row name="Wounded">
@@ -141,5 +150,53 @@
   </row>
   <row name="Temporary hit points">
     <comment>Some spells or abilities give you temporary hit points for a limited duration. You can have temporary hit points from only one source at time.</comment>
+  </row>
+  <row name="Lesser cover" subclass="RelativeCondition">
+    <calculations>bonus = +1, circumstance</calculations>
+    <modifies>Armor class</modifies>
+  </row>
+  <row name="Cover" subclass="CoverCondition">
+    <calculations>bonus = +2, circumstance</calculations>
+  </row>
+  <row name="Greater cover" subclass="CoverCondition">
+    <calculations>bonus = +4, circumstance</calculations>
+  </row>
+  <row name="Near to cover"/>
+  <row name="Averted gaze">
+    <comment>You avert your gaze from danger.</comment>
+    <duration>1 turn</duration>
+    <calculations>bonus = +2, circumstance</calculations>
+  </row>
+  <row name="Unrestrained hands">
+    <comment>Your hands are not tied behind your back or otherwise restrained.</comment>
+  </row>
+  <row name="Free hand"/>
+  <row name="Be mount"/>
+  <row name="With raised shield">
+    <comment>You position your shield to protect yourself.</comment>
+    <duration>1 turn</duration>
+    <calculations>bonus = + condition value</calculations>
+    <modifies>Armor class</modifies>
+  </row>
+  <row name="Willing"/>
+  <row name="Mounted">
+    <leadsTo>Large_mount</leadsTo>
+    <calculations>reflex penalty = -2, circumstance</calculations>
+    <modifies>Reflex saving roll</modifies>
+  </row>
+  <row name="Underwater">
+    <leadsTo>Flat-footed underwater</leadsTo>
+    <leadsTo>Underwater resistances</leadsTo>
+    <leadsTo>Underwater penalty to melee attacks</leadsTo>
+    <leadsTo>Underwater ranged attacks</leadsTo>
+    <leadsTo>Underwater piercing ranged attacks</leadsTo>
+    <blocks object_class="Trait">Fire</blocks>
+  </row>
+  <row name="Hold breath">
+    <uses>constitution modifier</uses>
+    <duration>5 + constitution modifier</duration>
+  </row>
+  <row name="Suffocating">
+    <blocks>Deactivate unconscious</blocks>
   </row>
 </root>

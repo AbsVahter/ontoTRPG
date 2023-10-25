@@ -115,7 +115,7 @@ def fill_net_by_owlready(net):
         add_to_net(net, neighbor.calculations, color, neighbor)
 
 
-def show(onto, path):
+def show(path):
     net = Network(height = '920px', width = '100%', directed = True)
     scenario = 0
     if scenario == 1:

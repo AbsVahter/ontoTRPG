@@ -14,7 +14,7 @@
         <contains>waterskin</contains>
         <comment>contains a backpack, a bedroll, 10 pieces of chalk, flint and steel, 50 feet of rope, 2 weeks’ rations, soap, 5 torches, and a waterskin</comment>
     </pack>
-    <pack name="Alchemist's starter kit" subclass="Starter_kit">
+    <pack name="Alchemist's starter kit" subclass="StarterKit">
         <price>8 gp, 4 sp, 2 cp</price>
         <bulk>3, 7L</bulk>
         <contains>studded leather</contains>
@@ -26,7 +26,7 @@
         <contains value="2">caltrops</contains>
         <comment>Armor: studded leather armor. Weapons: dagger, sling with 20 sling bullets. Gear: adventurer’s pack, alchemist’s tools, basic crafter’s book, 2 sets of caltrops. Options: repair kit (2 gp)</comment>
     </pack>
-    <pack name="Barbarian's starter kit" subclass="Starter_kit">
+    <pack name="Barbarian's starter kit" subclass="StarterKit">
         <price>4 gp</price>
         <bulk>3, 5L</bulk>
         <contains>hide armor</contains>
@@ -34,7 +34,7 @@
         <contains>grappling hook</contains>
         <comment>Armor: hide armor. Weapons: 4 javelins. Gear: adventurer’s pack, grappling hook. Options: greataxe (2 gp), greatclub (1 gp), greatsword (2 gp), or battle axe and steel shield (3 gp).</comment>
     </pack>
-    <pack name="Bard's starter kit" subclass="Starter_kit">
+    <pack name="Bard's starter kit" subclass="StarterKit">
         <price>7 gp, 5 sp, 2 cp</price>
         <bulk>4, 4L</bulk>
         <contains>studded leather</contains>
@@ -45,7 +45,7 @@
         <contains>handheld_musical_instrument</contains>
         <comment>Armor: studded leather armor. Weapons: dagger, rapier, sling with 20 sling bullets. Gear: adventurer’s pack, handheld instrument.</comment>
     </pack>
-    <pack name="Champion's starter kit" subclass="Starter_kit">
+    <pack name="Champion's starter kit" subclass="StarterKit">
         <price>4 gp, 7 sp</price>
         <bulk>3, 7L</bulk>
         <contains>hide armor</contains>
@@ -55,14 +55,14 @@
         <contains>grappling hook</contains>
         <comment>Armor: hide armor. Weapons: dagger, 4 javelins. Gear: adventurer’s pack, crowbar, grappling hook. Options: steel shield (2 gp), your deity’s favored weapon.</comment>
     </pack>
-    <pack name="Cleric's starter kit" subclass="Starter_kit">
+    <pack name="Cleric's starter kit" subclass="StarterKit">
         <price>2 gp, 2 sp</price>
         <bulk>1, 3L</bulk>
         <contains value="2">caltrops</contains>
         <contains>wooden religious symbol</contains>
         <comment>Gear: adventurer’s pack, 2 sets of caltrops, religious symbol (wooden). Options: your deity’s favored weapon.</comment>
     </pack>
-    <pack name="Druid's starter kit" subclass="Starter_kit">
+    <pack name="Druid's starter kit" subclass="StarterKit">
         <price>4 gp, 4 sp</price>
         <bulk>4, 4L</bulk>
         <contains>leather armor</contains>
@@ -71,7 +71,7 @@
         <contains>holly and mistletoe</contains>
         <comment>Armor: leather armor. Weapons: 4 javelins, longspear. Gear: adventurer’s pack, holly and mistletoe. Options: healer’s tools (5 gp).</comment>
     </pack>
-    <pack name="Fighter's starter kit" subclass="Starter_kit">
+    <pack name="Fighter's starter kit" subclass="StarterKit">
         <price>3 gp, 8 sp</price>
         <bulk>3, 2L</bulk>
         <contains>hide armor</contains>
@@ -79,7 +79,7 @@
         <contains>grappling hook</contains>
         <comment>Armor: hide armor. Weapons: dagger Gear adventurer’s pack, grappling hook. Options: greatsword (2 gp), longbow with 20 arrows (6 gp, 2 sp), or longsword and steel shield (3 gp).</comment>
     </pack>
-    <pack name="Monk's starter kit" subclass="Starter_kit">
+    <pack name="Monk's starter kit" subclass="StarterKit">
         <price>5 gp, 3 sp</price>
         <bulk>3, 2L</bulk>
         <contains value="10">dart</contains>
@@ -88,14 +88,14 @@
         <contains>lesser smokestick</contains>
         <comment>Weapons: 10 darts. Gear: adventurer’s pack, climbing kit, grappling hook, lesser smokestick. Options: staff (0 sp), longspear (5 sp).</comment>
     </pack>
-    <pack name="Ranger's starter kit" subclass="Starter_kit">
+    <pack name="Ranger's starter kit" subclass="StarterKit">
         <price>3 gp, 7 sp</price>
         <bulk>2, 1L</bulk>
         <contains>leather armor</contains>
         <contains>dagger</contains>
         <comment>Armor: leather armor. Weapons: dagger. Gear: adventurer’s pack. Options: longbow with 20 arrows (6 gp, 2 sp), longsword and steel shield (3 gp), 2 shortswords (1 gp, 8 sp), snare kit (5 gp).</comment>
     </pack>
-    <pack name="Rogue's starter kit" subclass="Starter_kit">
+    <pack name="Rogue's starter kit" subclass="StarterKit">
         <price>6 gp, 2 sp</price>
         <bulk>4, 1L</bulk>
         <contains>leather armor</contains>
@@ -104,7 +104,7 @@
         <contains>climbing kit</contains>
         <comment>Armor: leather armor. Weapons: dagger, rapier. Gear: adventurer’s pack, climbing kit. Options: thieves’ tools (3 gp).</comment>
     </pack>
-    <pack name="Sorcerer's starter kit" subclass="Starter_kit">
+    <pack name="Sorcerer's starter kit" subclass="StarterKit">
         <price>2 gp, 3 sp, 2 cp</price>
         <bulk>1, 6L</bulk>
         <contains>dagger</contains>
@@ -113,7 +113,7 @@
         <contains value="2">caltrops</contains>
         <comment>Weapons: dagger, sling with 20 sling bullets. Gear: adventurer’s pack, 2 sets of caltrops.</comment>
     </pack>
-    <pack name="Wizard's starter kit" subclass="Starter_kit">
+    <pack name="Wizard's starter kit" subclass="StarterKit">
         <price>3 gp</price>
         <bulk>2, 2L</bulk>
         <contains>staff</contains>

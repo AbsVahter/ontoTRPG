@@ -1,0 +1,768 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<row name="Exploration mode">
+		<comment>In exploration mode, time is more flexible and the play more free form. In this mode, minutes, hours, or even days in the game world pass quickly in the real world, as the characters travel cross-country, explore uninhabited sections of a dungeon, or roleplay during a social gathering.</comment>
+	</row>
+	<row name="Downtime">
+		<comment>During downtime, the characters are at little risk, and the passage of time is measured in days or longer. This is when you might forge a magic sword, research a new spell, or prepare for your next adventure.</comment>
+	</row>
+	<row name="The GM Has the Final Say">
+		<comment>If you’re ever uncertain how to apply a rule, the GM decides.</comment>
+	</row>
+	<row name="Specific Overrides General">
+		<comment>A core principle of Pathfinder is that specific rules override general ones. If two rules conflict, the more specific one takes precedence. If there’s still ambiguity, the GM determines which rule to use.</comment>
+	</row>
+	<row name="Rounding">
+		<comment>Always round down unless otherwise specified.</comment>
+		<calculations>result = IntegerDivide(numerator, denominator)</calculations>
+	</row>
+	<row name="Multiplying">
+		<comment>When more than one effect would multiply the same number, don’t multiply more than once. Instead, combine all the multipliers into a single multiplier, with each multiple after the first adding 1 less than its value.</comment>
+		<calculations>total multiplier = Sum(multiplier) - Count(multiplier) + 1</calculations>
+	</row>
+	<row name="Duplicate effects">
+		<comment>When you’re affected by the same thing multiple times, only one instance applies, using the higher level of the effects, or the newer effect if the two are the same level.</comment>
+		<calculations>total modifier = Sum(Max(modifier, Group By type))</calculations>
+	</row>
+	<row name="Proficiency rank order">
+		<comment>untrained (0), trained (1), expert (2), master (3), legendary (4)</comment>
+	</row>
+	<row name="Order of check results">
+		<comment>critical failure, failure, success, critical success</comment>
+	</row>
+	<row name="Multiple attack penalty">
+		<comment>The more attacks you make beyond your first in a single turn, the less accurate you become.</comment>
+		<calculations>penalty = Max((i - 1) * (-5), -10), for i-th attack in turn</calculations>
+	</row>
+	<row name="Range penalty">
+		<comment>Ranged and thrown weapons each have a listed range increment, and attacks with them grow less accurate against targets farther away.</comment>
+		<calculations>range penalty = IntegerDivide(distance to target, equipment's range) * (-2)</calculations>
+		<uses>equipment</uses>
+	</row>
+	<row name="Maximum weapon range">
+		<comment>You can attempt to attack with a ranged weapon or thrown weapon up to six range increments away.</comment>
+		<calculations>maximum weapon range = 6 * (equipment's range)</calculations>
+		<uses>equipment</uses>
+	</row>
+	<row name="Armor class">
+		<abbreviation>AC</abbreviation>
+		<comment>measures how hard it is for your foes to hit you with Strikes and other attack actions</comment>
+		<calculations>ac = 10 + Min(dexterity modifier, dex cap of armor) + armor proficiency bonus + item bonus of armor + other modifiers</calculations>
+		<uses>Dexterity modifier</uses>
+		<uses>Armor proficiency bonus</uses>
+		<uses>equipment</uses>
+	</row>
+	<row name="Armor class for melee attack">
+		<uses>Armor class</uses>
+		<calculations>ac melee = ac + other modifiers</calculations>
+	</row>
+	<row name="Melee attack roll">
+		<comment>Roll for strike with melee weapon.</comment>
+		<uses>Strength modifier</uses>
+		<uses>Weapon proficiency bonus</uses>
+		<uses>multiple attack penalty</uses>
+	</row>
+	<row name="Ranged attack roll">
+		<comment>Roll for strike with ranged weapon.</comment>
+		<uses>Dexterity modifier</uses>
+		<uses>Weapon proficiency bonus</uses>
+		<uses>multiple attack penalty</uses>
+		<uses>range penalty</uses>
+	</row>
+	<row name="Spellcasting ability modifier">
+		<comment>The ability modifier for a spell attack roll depends on  how you gained access to your spells.</comment>
+		<calculations>ability modifier = {class spell: modifier of class key ability; innate spell: charisma modifier; other: modifier of ability that granted spell}</calculations>
+	</row>
+	<row name="Spell attack roll">
+		<comment>Roll for spell attack</comment>
+		<uses>Spellcasting ability modifier</uses>
+		<uses>Spell proficiency bonus</uses>
+		<uses>multiple attack penalty</uses>
+	</row>
+	<row name="Zero hp listener">
+		<comment>Creatures cannot be reduced to fewer than 0 Hit Points. When most creatures reach 0 Hit Points, they die and are removed from play unless the attack was nonlethal, in which case they are instead knocked out for a significant amount of time (usually 1 minute or more). When undead and construct creatures reach 0 Hit Points, they are destroyed.</comment>
+		<prereq object_class="Statement">Zero hp listener</prereq>
+		<uses>Ancestry of character</uses>
+		<uses>Wounded</uses>
+		<calculations>dying value = 1 + (1 if critical check result) + wounded condition value</calculations>
+		<activates prereq="Undead">Destroyed</activates>
+		<activates prereq="Construct">Destroyed</activates>
+		<activates prereq="Nonlethal damage, not undead and construct" value="duration = from 10 minutes to several hours">Unconscious</activates>
+		<activates prereq="Lethal damage, not undead and construct" value="+ dying value">Dying</activates>
+		<changes value="to directly before the current turn">Initiative position</changes>
+	</row>
+	<row name="Massive damage">
+		<prereq object_class="Statement">Massive damage</prereq>
+		<leadsTo>Become dead</leadsTo>
+	</row>
+	<row name="Damage check">
+		<comment>In the midst of combat, you attempt checks to determine if you can damage your foe with weapons, spells, or  alchemical concoctions. On a successful check, you hit  and deal damage. Damage decreases a creature’s Hit  Points on a 1-to-1 basis.</comment>
+		<calculations>damage intermediate = ((damage roll) + Max(weakness) + Min(resistance)) * (0 if immunity to damage type)</calculations>
+		<calculations>damage = temporary hit points - damage intermediate</calculations>
+		<calculations>Hit points change = - damage</calculations>
+		<changes>Hit points</changes>
+		<uses>Immunities</uses>
+		<uses>Weaknesses and resistances</uses>
+		<leadsTo value="damage type, type of check result">Zero hp listener</leadsTo>
+		<uses>Hit points</uses>
+		<leadsTo>Deactivate unconscious</leadsTo>
+		<leadsTo>Massive damage</leadsTo>
+		<deactivates value="- damage intermediate">Temporary hit points</deactivates>
+		<activates prereq="damage > 0, from a fall">Prone</activates>
+	</row>
+	<row name="Damage roll">
+		<calculations>damage = Max((damage dices roll) + (strength modifier if damage from melee or thrown weapon) + (other modifiers), 1)</calculations>
+		<uses>Strength modifier</uses>
+		<leadsTo>Damage check</leadsTo>
+	</row>
+	<row name="Doubled damage roll">
+		<comment>You deal or get double damage.</comment>
+		<uses>Damage roll</uses>
+		<calculations>damage = 2 * damage roll</calculations>
+		<leadsTo>Damage check</leadsTo>
+	</row>
+	<row name="Halved damage roll">
+		<comment>You deal or get halved damage.</comment>
+		<uses>Damage roll</uses>
+		<uses>Rounding</uses>
+		<calculations>damage = 1/2 * damage roll</calculations>
+		<leadsTo>Damage check</leadsTo>
+	</row>
+	<row name="Quartered damage roll">
+		<comment>You deal or get quartered damage.</comment>
+		<uses>Damage roll</uses>
+		<uses>Rounding</uses>
+		<calculations>damage = 1/4 * damage roll</calculations>
+		<leadsTo>Damage check</leadsTo>
+	</row>
+	<row name="Attack a hidden creature" subclass="FlatCheck">
+		<comment>Against hidden or undetected target</comment>
+		<prereq>Hidden</prereq>
+		<prereq>Undetected</prereq>
+		<dc>11</dc>
+		<checkFailure>Take no damage</checkFailure>
+	</row>
+	<row name="Attack a concealed creature" subclass="FlatCheck">
+		<prereq>Concealed</prereq>
+		<dc>5</dc>
+		<checkFailure>Take no damage</checkFailure>
+	</row>
+	<row name="Disrupt manipulate action"/>
+	<row name="Melee attack check" subclass="AttackCheck">
+		<comment>Strike with melee weapon against target's armor class.</comment>
+		<usesRoll value="used weapon">Melee attack roll</usesRoll>
+		<usesDC>Armor class for melee attack</usesDC>
+		<uses value="used melee weapon">equipment</uses>
+		<prereqDetails>Reach is how far you can physically reach with your body or a weapon. Your reach also creates an area around your space where other creatures could trigger your reactions.</prereqDetails>
+		<checkSuccess value="damage of used melee weapon">Damage roll</checkSuccess>
+		<checkCriticalSuccess>Doubled damage roll</checkCriticalSuccess>
+		<checkCriticalSuccess>Disrupt manipulate action</checkCriticalSuccess>
+		<checkCriticalSuccess>Take breath away</checkCriticalSuccess>
+	</row>
+	<row name="Line of effect">
+		<comment>When creating an effect, you usually need an unblocked path to the target of a spell, the origin point of an effect’s area, or the place where you create something with a spell or other ability. You have line of effect unless a creature is entirely behind a solid physical barrier. Visibility doesn’t matter for line of effect, nor do portcullises and other barriers that aren’t totally solid. Usually a 1-foot-square gap is enough to maintain a line of effect, though the GM makes the final call.</comment>
+	</row>
+	<row name="Ranged attack check" subclass="AttackCheck">
+		<comment>Strike with ranged weapon against target's armor class.</comment>
+		<usesRoll value="used weapon">Ranged attack roll</usesRoll>
+		<usesDC>Armor class</usesDC>
+		<prereq>Maximum weapon range</prereq>
+		<prereqDetails>You can attempt to attack with a ranged weapon or thrown weapon up to maximum weapon range.</prereqDetails>
+		<uses value="used ranged or thrown weapon">equipment</uses>
+		<prereq>Line of effect</prereq>
+		<prereqDetails>In an area effect, creatures or targets must have line of effect to the point of origin to be affected.</prereqDetails>
+		<checkSuccess value="damage of used ranged or thrown weapon">Damage roll</checkSuccess>
+		<checkCriticalSuccess>Doubled damage roll</checkCriticalSuccess>
+		<checkCriticalSuccess>Take breath away</checkCriticalSuccess>
+	</row>
+	<row name="Spell attack check" subclass="AttackCheck">
+		<comment>Spell attack against target's armor class</comment>
+		<usesRoll>Spell attack roll</usesRoll>
+		<usesDC>Armor class</usesDC>
+		<checkSuccess value="damage of used spell">Damage roll</checkSuccess>
+		<checkCriticalSuccess>Take breath away</checkCriticalSuccess>
+	</row>
+	<row name="Perception roll">
+		<comment>Roll for perception check</comment>
+		<uses>Wisdom modifier</uses>
+		<uses>Perception proficiency bonus</uses>
+	</row>
+	<row name="Waking up rule">
+		<leadsTo>Deactivate unconscious</leadsTo>
+	</row>
+	<row name="Perception check" subclass="Check">
+		<comment>Whenever you need to attempt a check based  on your awareness, you’ll attempt a Perception check.</comment>
+		<usesRoll>perception roll</usesRoll>
+		<dc>dc of noice or stealth dc of opponents</dc>
+		<checkSuccess>Waking up rule</checkSuccess>
+	</row>
+	<row name="Fortitude saving roll">
+		<uses>Constitution modifier</uses>
+		<uses>Fortitude proficiency bonus</uses>
+		<comment>allow you to reduce the effects of abilities and afflictions that can debilitate the body</comment>
+	</row>
+	<row name="Reflex saving roll">
+		<uses>Dexterity modifier</uses>
+		<uses>Reflex proficiency bonus</uses>
+		<comment>measure how well you can respond quickly to a situation and how gracefully you  can avoid effects that have been thrown at you</comment>
+	</row>
+	<row name="Will saving roll">
+		<uses>Wisdom modifier</uses>
+		<uses>Will proficiency bonus</uses>
+		<comment>measure how well you can resist attacks to your mind and spirit</comment>
+	</row>
+	<row name="Take no damage">
+		<comment>You take no damage from the spell, hazard, or  effect.</comment>
+		<blocks>Damage roll</blocks>
+	</row>
+	<row name="Basic saving throw" subclass="Check">
+		<comment>Saving throws measure your ability to shrug off harmful effects in the form of afflictions, damage, or conditions.</comment>
+		<selectsRoll>Fortitude saving roll</selectsRoll>
+		<selectsRoll>Reflex saving roll</selectsRoll>
+		<selectsRoll>Will saving roll</selectsRoll>
+		<checkCriticalSuccess>Take no damage</checkCriticalSuccess>
+		<checkSuccess>Halved damage roll</checkSuccess>
+		<checkCriticalFailure>Doubled damage roll</checkCriticalFailure>
+	</row>
+	<row name="Persistent damage check" subclass="FlatCheck">
+		<comment>You take persistent damage at the end of your turns, after which you attempt a DC 15 flat check to see if you recover from the persistent damage.</comment>
+		<dc>15</dc>
+		<deactivates prereq="success check">Persistent Damage</deactivates>
+	</row>
+	<row name="Attack with unsuitable weapon">
+		<comment>You take a –2 circumstance penalty to the attack roll when you make a nonlethal attack using a weapon that doesn’t have the nonlethal trait. You also take this penalty when making a lethal attack using a nonlethal weapon.</comment>
+		<calculations>penalty = -2, circumstance</calculations>
+		<uses object_class="Trait">Nonlethal</uses>
+	</row>
+	<row name="Duration rule">
+		<comment>For an effect that lasts a number of rounds, the remaining duration decreases by 1 at the start of each turn of the creature that created the effect. This is common for beneficial effects that target you or your allies. Detrimental effects decreases at the end of the creature’s turn.</comment>
+	</row>
+	<row name="Burst area rule" subclass="AreaRule">
+		<comment>A burst effect issues forth in all directions from a single corner of a square within the range of the effect, spreading in all directions to a specified radius.</comment>
+	</row>
+	<row name="Burst area rule 15ft" subclass="AreaRule">
+		<uses>Burst area rule</uses>
+		<distance>15</distance>
+	</row>
+	<row name="Cone area rule" subclass="AreaRule">
+		<comment>A cone shoots out from you in a quarter circle on the grid. When you aim a cone, the first square of that cone must share an edge with your space if you’re aiming orthogonally, or it must touch a corner of your space if you’re aiming diagonally. If you’re Large or larger, the first square can run along the edge of any square of your space. You can’t aim a cone so that it overlaps your space.</comment>
+	</row>
+	<row name="Cone area rule 30ft" subclass="AreaRule">
+		<uses>Cone area rule</uses>
+		<distance>30</distance>
+	</row>
+	<row name="Emanation area rule" subclass="AreaRule">
+		<comment>An emanation issues forth from each side of your space, extending out to a specified number of feet in all directions.</comment>
+	</row>
+	<row name="Adjacent square area rule 10ft" subclass="AreaRule">
+		<distance>10</distance>
+		<trait>Adjacent</trait>
+	</row>
+	<row name="Line area rule" subclass="AreaRule">
+		<comment>A line shoots forth from you, following a straight path in a direction of your choosing. The line affects each creature whose space it overlaps.</comment>
+	</row>
+	<row name="Line of sight">
+		<comment>Some effects require you to have line of sight to your target. As long as you can precisely sense the area, and it is not blocked by a solid barrier, you have line of sight. An area of darkness prevents line of sight if you don’t have darkvision, but portcullises and other obstacles that aren’t totally solid do not. If you’re unsure whether a barrier is solid enough to block line of sight, usually a 1-foot-square gap is enough to maintain line of sight, though the GM makes the final call.</comment>
+	</row>
+	<row name="Affliction improving">
+		<changes value="value from check result">Active afflictions</changes>
+		<calculations>stage = current stage - value from check result</calculations>
+		<calculations>final stage = {stage &lt; 1: unaffected; stage &lt;= max affliction stage: stage; stage &gt; max affliction stage: max affliction stage}</calculations>
+	</row>
+	<row name="Affliction saving throw" subclass="Check">
+		<comment>When you’re exposed to the affliction, you must attempt a saving throw against it. This first attempt to stave off the affliction is called the initial save.</comment>
+		<usesRoll>Fortitude saving roll</usesRoll>
+		<dc>dc of caused affliction</dc>
+		<checkCriticalSuccess value="-2 stage to caused affliction">Affliction improving</checkCriticalSuccess>
+		<checkSuccess value="-1 stage to caused affliction">Affliction improving</checkSuccess>
+		<checkFailure value="+1 stage to caused affliction">Affliction improving</checkFailure>
+		<checkCriticalFailure value="+2 stage to caused affliction">Affliction improving</checkCriticalFailure>
+	</row>
+	<row name="Virulent affliction saving throw" subclass="Check">
+		<comment>Afflictions with the virulent trait are harder to remove. You must succeed at two consecutive saves to reduce a virulent affliction’s stage by 1. A critical success reduces a virulent affliction’s stage by only 1 instead of by 2.</comment>
+		<usesRoll>Fortitude saving roll</usesRoll>
+		<dc>dc of caused affliction</dc>
+		<checkCriticalSuccess value="-1 stage to caused affliction">Affliction improving</checkCriticalSuccess>
+		<checkSuccess value="-1 stage to caused affliction if two success consecutive check">Affliction improving</checkSuccess>
+		<checkFailure value="+1 stage to caused affliction">Affliction improving</checkFailure>
+		<checkCriticalFailure value="+2 stage to caused affliction">Affliction improving</checkCriticalFailure>
+		<prereq object_class="Trait">virulent</prereq>
+	</row>
+	<row name="Counteract rule"/>
+	<row name="Counteract check" subclass="Check">
+		<comment>Some effects try to counteract spells, afflictions, conditions, or other effects. Counteract checks compare the power of two forces and determine which defeats the other. Successfully counteracting an effect ends it unless noted otherwise.</comment>
+		<calculations>counteract level = (level of counteracting effect) or (1/2 * level of creator of effect)</calculations>
+		<uses>Rounding</uses>
+		<calculations>final check result = {(critical success) and (your counteract level >= target counteract level - 3): success; (success) and (your counteract level >= target counteract level - 1): success; (failure) and (your counteract level > target counteract level): success; other: failure}</calculations>
+		<checkSuccess>Counteract rule</checkSuccess>
+	</row>
+	<row name="Recovery check" subclass="FlatCheck">
+		<comment>When you’re dying, at the start of each of your turns, you must attempt a flat check with a DC equal to 10 + your current dying value to see if you get better or worse.</comment>
+		<uses>Dying</uses>
+dc		<prereq>Dying</prereq>
+		<prereqDetails>active dying condition</prereqDetails>
+		<activates value="{failure: +1; critical failure: +2}">Dying</activates>
+		<deactivates value="{critical success: -2; success: -1}">Dying</deactivates>
+	</row>
+	<row name="Dead threshold">
+		<uses>Doomed</uses>
+		<calculations>dead threshold = 4 - doomed condition value</calculations>
+	</row>
+	<row name="Dying to dead listener">
+		<prereq object_class="Statement">Dying to dead listener</prereq>
+		<activates>Dead</activates>
+		<deactivates>Dying</deactivates>
+		<deactivates>Doomed</deactivates>
+	</row>
+	<row name="Recover hp rule">
+		<changes value="+ healed value">Hit points</changes>
+		<deactivates>Dying</deactivates>
+		<leadsTo>Deactivate unconscious</leadsTo>
+		<deactivates prereq="hp = maximum value, rest for 10 minutes">Wounded</deactivates>
+	</row>
+	<row name="Lose dying condition listener">
+		<prereq object_class="Statement">Lose dying condition listener</prereq>
+		<activates>Wounded</activates>
+	</row>
+	<row name="Dying">
+		<activates>Unconscious</activates>
+	</row>
+	<row name="Unconscious natural deactivated">
+		<leadsTo>Deactivate unconscious</leadsTo>
+		<uses>Dying</uses>
+		<changes value="+1" prereq="hit points = 0, not dying condition">Hit points</changes>
+	</row>
+	<row name="Unconscious">
+		<modifies value="-4, status penalty">Armor class</modifies>
+		<modifies value="-4, status penalty">Perception roll</modifies>
+		<modifies value="-4, status penalty">Reflex saving roll</modifies>
+		<activates>Blinded</activates>
+		<activates>Flat-footed</activates>
+		<activates>Prone</activates>
+		<leadsTo prereq="upon completion of the duration">Unconscious natural deactivated</leadsTo>
+	</row>
+	<row name="Full night rest rule">
+		<deactivates value="-1">Doomed</deactivates>
+	</row>
+	<row name="Simultaneous actions">
+		<comment>You can use only one action at a time. You must complete one before beginning another.</comment>
+	</row>
+	<row name="Subordinate actions">
+		<comment>An action might allow you to use a simpler action in a different circumstances or with different effects. This subordinate action still has its normal traits and effects, but is modified in any ways listed in large action. The subordinate action doesn’t gain any of the traits of the larger action unless specified. The action that allows you to use a subordinate action doesn’t require you to spend more actions or reactions to do so; that cost is already factored in.</comment>
+	</row>
+	<row name="Falling damage roll">
+		<comment>You fall about 500 feet in the first round of falling and about 1,500 feet each round thereafter.</comment>
+		<uses>Rounding</uses>
+		<leadsTo>Damage roll</leadsTo>
+		<trait>On self</trait>
+		<trait>Bludgeoning</trait>
+		<calculations>damage = Min(Max((height - Max(5, substance correction))/2, 0), 750)</calculations>
+		<calculations>substance correction = {relately soft substance: 20; intentionally dove in soft substance: 30}</calculations>
+		<leadsTo>Damage roll</leadsTo>
+	</row>
+	<row name="Falling">
+		<leadsTo>Falling damage roll</leadsTo>
+		<leadsTo prereq="falling on creature" value="damage">Falling on a Creature saving throw</leadsTo>
+	</row>
+	<row name="Falling on a Creature saving throw" subclass="Check">
+		<comment>Agent = target of falling.</comment>
+		<comment>Landing exactly on a creature after a long fall is almost impossible.</comment>
+		<usesRoll>Reflex saving roll</usesRoll>
+		<dc>15 or (1 if long fall)</dc>
+		<checkCriticalSuccess>Take no damage</checkCriticalSuccess>
+		<checkSuccess>Quartered damage roll</checkSuccess>
+		<checkFailure>Halved damage roll</checkFailure>
+	</row>
+	<row name="Bright light">
+		<comment>In bright light, such as sunlight, creatures and objects can be observed clearly by anyone with average vision or better. Some types of creatures are dazzled or blinded by bright light</comment>
+	</row>
+	<row name="Dim light">
+		<comment>Areas in shadow or lit by weak light sources are in dim light.</comment>
+		<activates>Concealed</activates>
+	</row>
+	<row name="Darkness">
+		<activates>Hidden</activates>
+		<activates>Undetected</activates>
+		<activates prereq="relative to objects in area of darkness">Blinded</activates>
+		<comment>After being in darkness, sudden exposure to bright light might make you dazzled for a short time, as determined by the GM.</comment>
+		<activates prereq="Bright light">Dazzled</activates>
+	</row>
+	<row name="Magical darkness">
+		<activates>Hidden</activates>
+		<activates>Undetected</activates>
+		<activates prereq="relative to objects in area of darkness">Blinded</activates>
+		<comment>After being in darkness, sudden exposure to bright light might make you dazzled for a short time, as determined by the GM.</comment>
+		<activates prereq="Bright light">Dazzled</activates>
+	</row>
+	<row name="Precise senses">
+		<comment>Sense that can be used to perceive the world in nuanced detail. The only way to target a creature without having drawbacks is to use a precise sense.</comment>
+		<activates>Observed</activates>
+	</row>
+	<row name="Imprecise senses">
+		<comment>It cannot detect the full range of detail that a precise sense can.</comment>
+		<activates>Hidden</activates>
+		<deactivates>Undetected</deactivates>
+	</row>
+	<row name="Vague senses">
+		<comment>A character also has many vague senses — ones that can alert you that something is there but aren’t useful for zeroing in on it to determine exactly what it is. The most useful of these for a typical character is the sense of smell.</comment>
+		<activates>Undetected</activates>
+		<deactivates>Unnoticed</deactivates>
+	</row>
+	<row name="Reroll">
+	  <comment>Reroll a check. You must use the second result.</comment>
+	  <trait>Fortune</trait>
+	</row>
+	<row name="Reroll for hero point">
+		<prereq value=">0">Hero points</prereq>
+		<leadsTo>Reroll</leadsTo>
+		<uses>Hero points</uses>
+		<changes value="-1">Hero points</changes>
+		<comment>you should describe the deed or task your character accomplishes with it to the other players</comment>
+	</row>
+	<row name="Avoid death for hero points">
+		<prereq value=">0">Hero points</prereq>
+		<comment>at the start of your turn or when your dying value would increase</comment>
+		<sets value="0">Hero points</sets>
+		<deactivates>Dying</deactivates>
+		<comment>you should describe the deed or task your character accomplishes with it to the other players</comment>
+	</row>
+	<row name="Start of turn">
+		<comment>If you created an effect lasting for a certain number of rounds, reduce the number of rounds remaining by 1.</comment>
+		<leadsTo prereq="Dying">Recovery check</leadsTo>
+		<leadsTo>Acting phase of turn</leadsTo>
+	</row>
+	<row name="Acting phase of turn">
+		<calculations>actions pool = 3 actions + 1 reaction</calculations>
+		<comment>If you begin a 2-action or 3-action activity on your turn, you must be able to complete it on your turn.</comment>
+		<leadsTo>End of turn</leadsTo>
+	</row>
+	<row name="End of turn">
+		<leadsTo order="1" prereq="Persistent Damage" value="value of persistent damage">Damage roll</leadsTo>
+		<leadsTo order="2" prereq="Persistent Damage">Persistent damage check</leadsTo>
+		<leadsTo order="3">Start of turn</leadsTo>
+		<changes>Hold breath</changes>
+		<leadsTo>Suffocating check</leadsTo>
+	</row>
+	<row name="Initiative roll">
+		<comment>When the GM calls for it, you’ll roll initiative to determine your place in the initiative order, which is the sequence in which the encounter’s participants will take their turns. Rolling initiative marks the start of an encounter. More often than not, you’ll roll initiative when you enter a battle.</comment>
+		<calculations>initiative order = roll value in descending order with priority for adversary</calculations>
+		<sets value="roll value">Initiative position</sets>
+	</row>
+	<row name="Encounter mode">
+		<comment>This is where most of the intense action takes place, and it’s most often used for combat or other high-stakes situations.</comment>
+		<comment>When every individual action counts, you enter the encounter mode of play. In this mode, time is divided into rounds, each of which is 6 seconds of time in the game world. Every round, each participant takes a turn in an established order. During your turn, you can use actions, and depending on the details of the encounter, you might have the opportunity to use reactions and free actions on your own turn and on others’ turns.</comment>
+		<calculations>duration of round = 6 seconds, turns in initiative order until end of encounter</calculations>
+		<uses argument="required roll">Initiative roll</uses>
+		<leadsTo>Start of turn</leadsTo>
+	</row>
+	<row name="Combat encounter">
+		<leadsTo argument="Perception roll">Encounter mode</leadsTo>
+	</row>
+	<row name="Aid modifier">
+		<trait>On target</trait>
+	</row>
+	<row name="Aid modifier critical success">
+		<trait>On target</trait>
+		<calculations>bonus = {legendary proficiency: +4; master proficiency: +3; other: +2}, circumstance</calculations>
+	</row>
+	<row name="Follow the expert modifier">
+		<calculations>proficiency = skill proficiency of ally</calculations>
+		<calculations>bonus = {legendary proficiency: +4; master proficiency: +3; expert proficiency: +2}, circumstance</calculations>
+		<trait>On self</trait>
+	</row>
+	<row name="Get free">
+		<comment>You get free and remove the grabbed, immobilized, and restrained conditions imposed by your chosen target.</comment>
+		<deactivates prereq="imposed by your chosen target">Grabbed</deactivates>
+		<deactivates prereq="imposed by your chosen target">Immobilized</deactivates>
+		<deactivates prereq="imposed by your chosen target">Restrained</deactivates>
+	</row>
+	<row name="Stride reaction">
+		<performs>Stride</performs>
+	</row>
+	<row name="Blocked until next turn">
+		<blocks>Escape</blocks>
+		<duration>1 turn</duration>
+	</row>
+	<row name="Critical seek">
+		<comment>If you were searching for creatures, any undetected or hidden creature you critically succeeded against becomes observed by you. If you were searching for an object, you learn its location.</comment>
+		<deactivates>Undetected</deactivates>
+		<deactivates>Hidden</deactivates>
+		<activates>Observed</activates>
+	</row>
+	<row name="Change detection condition by one step">
+		<comment>Change active condition for current target by one step.</comment>
+	</row>
+	<row name="Success seek">
+		<comment>If you were searching for creatures, any undetected creature you succeeded against becomes hidden from you instead of undetected, and any hidden creature you succeeded against becomes observed by you. If you were searching for an object, you learn its location or get a clue to its whereabouts, as determined by the GM.</comment>
+		<leadsTo>Change detection condition by one step</leadsTo>
+	</row>
+	<row name="Sense motive critical success">
+		<comment>You determine the creature’s true intentions and get a solid idea of any mental magic affecting it.</comment>
+	</row>
+	<row name="Sense motive success">
+		<comment>You can tell whether the creature is behaving normally, but you don’t know its exact intentions or what magic might be affecting it.</comment>
+	</row>
+	<row name="Sense motive failure">
+		<comment>You detect what a deceptive creature wants you to believe. If they’re not being deceptive, you believe they’re behaving normally.</comment>
+	</row>
+	<row name="Sense motive critical failure">
+		<comment>You get a false sense of the creature’s intentions.</comment>
+	</row>
+	<row name="Take lesser cover">
+		<activates>Lesser cover</activates>
+	</row>
+	<row name="Take standard cover">
+		<prereq object_class="Statement">Take standard cover</prereq>
+		<activates>Cover</activates>
+		<leadsToElse>Take lesser cover</leadsToElse>
+	</row>
+	<row name="Take greater cover">
+		<prereq>Cover</prereq>
+		<deactivates>Cover</deactivates>
+		<activates>Greater cover</activates>
+		<leadsToElse>Take standard cover</leadsToElse>
+	</row>
+	<row name="Deactivation of cover condition"/>
+	<row name="Gently fall">
+		<comment>You fall gently, taking no damage from the fall.</comment>
+		<blocks>Falling</blocks>
+	</row>
+	<row name="Arrest a fall check" subclass="Check">
+		<usesRoll>Acrobatics roll</usesRoll>
+		<dc>15 (by default, but it might be higher due to air turbulence or other circumstances)</dc>
+		<checkSuccess>Gently fall</checkSuccess>
+	</row>
+	<row name="Visual saving roll">
+		<comment>Saves against visual abilities that require you to look at a creature or object, such as a medusa’s petrifying gaze</comment>
+		<uses>Averted gaze</uses>
+	</row>
+	<row name="Burrow through substances with low density">
+		<comment>You can’t burrow through rock or other substances denser than dirt unless you have an ability that allows you to do so.</comment>
+	</row>
+	<row name="Grab the edge with critical success">
+		<comment>You grab the edge or handhold, whether you have a hand free, typically by using a suitable held item to catch yourself (catching a battleaxe on a ledge, for example).</comment>
+		<blocks>Falling</blocks>
+		<calculations>height = fallen height - 30</calculations>
+		<leadsTo>Falling damage roll</leadsTo>
+	</row>
+	<row name="Grab the edge with success">
+		<comment>If you have at least one hand free, you grab the edge or handhold, stopping your fall.</comment>
+		<prereq>Free hand</prereq>
+		<blocks>Falling</blocks>
+		<calculations>height = fallen height - 20</calculations>
+		<leadsTo>Falling damage roll</leadsTo>
+	</row>
+	<row name="Grab the edge with critical failure">
+		<comment>You continue to fall, and if you’ve fallen 20 feet or more before you use this reaction, you take 10 bludgeoning damage from the impact for every 20 feet fallen.</comment>
+		<trait>Bludgeoning</trait>
+		<calculations>damage = 10 * IntegerDivide(fallen height, 20), bludgeoning</calculations>
+		<leadsTo>Damage roll</leadsTo>
+	</row>
+	<row name="Size delta">
+		<uses>Ancestry of character</uses>
+		<calculations>delta = your size rank - target size rank</calculations>
+	</row>
+	<row name="Believe the target in different location"/>
+	<row name="Point out check" subclass="Check">
+		<usesRoll>Perception roll</usesRoll>
+		<usesDC>Stealth roll</usesDC>
+		<checkSuccess>Change detection condition by one step from undetected to hidden</checkSuccess>
+		<checkFailure>Believe the target in different location</checkFailure>
+	</row>
+	<row name="Point out rule">
+		<prereq object_class="Statement">Point out with understanding</prereq>
+		<leadsTo>Change detection condition by one step from undetected to hidden</leadsTo>
+		<leadsToElse>Point out check</leadsToElse>
+	</row>
+	<row name="Difficult terrain">
+		<comment>Difficult terrain is any terrain that impedes your movement, ranging from particularly rough or unstable surfaces to thick ground cover and countless other impediments.</comment>
+		<blocks>Step</blocks>
+		<leadsTo>Halved travel speed</leadsTo>
+	</row>
+	<row name="Greater difficult terrain">
+		<comment>Difficult terrain is any terrain that impedes your movement, ranging from particularly rough or unstable surfaces to thick ground cover and countless other impediments.</comment>
+		<blocks>Step</blocks>
+		<calculations>travel speed *= 1/3</calculations>
+		<uses>Rounding</uses>
+		<modifies>Travel speed</modifies>
+	</row>
+	<row name="Grid movement rule">
+		<comment>When a character moves on a grid, every 1-inch square of the play area is 5 feet across in the game world. The first square of diagonal movement you make in a turn counts as 5 feet, but the second counts as 10 feet, and your count thereafter  alternates between the two.</comment>
+		<uses>Difficult terrain</uses>
+		<uses>Greater difficult terrain</uses>
+		<calculations>standard grid square distance = 5 feet</calculations>
+		<calculations>count of impeded movements = (count of grid movements in turn through difficult terrain) + 2 * (count of grid movements in turn through greater difficult terrain)</calculations>
+		<calculations>distance = ((count of straight grid movements in turn) + (count of diagonal grid movements in turn) + IntegerDivide(count of diagonal grid movements in turn, 2) + (count of impeded movements)) * (standard grid square distance)</calculations>
+	</row>
+	<row name="Moving through space of unwilling creature">
+		<performs>Tumble through</performs>
+	</row>
+	<row name="Moving through space of other creature">
+		<comment>You can move through the space of a willing creature. If you want to move through an unwilling creature’s space, you can Tumble Through that creature’s space using Acrobatics.</comment>
+		<comment>In most cases, you can move through the space of a creature at least three sizes larger than you.</comment>
+		<comment>You can’t end your turn in a square occupied by another creature, though you can end a move action in its square provided that you immediately use another move action to leave that square. If two creatures end up in the same square by accident, the GM determines which one is forced out of the square (or whether one falls prone).</comment>
+		<comment>Tiny creatures are an exception. They can move through creatures’ spaces and can even end their movement there.</comment>
+		<prereq object_class="Statement">Moving through space of other creature</prereq>
+		<leadsToElse>Moving through space of unwilling creature</leadsToElse>
+	</row>
+	<row name="Moving through space of object">
+		<comment>The GM determines whether you can move into an object’s square normally, whether special rules apply, or if you are unable to move into the square at all.</comment>
+	</row>
+	<row name="Share space with other creature">
+		<comment>You can share a space with a prone creature if that creature is willing, unconscious, or dead and if it is your size or smaller. The GM might allow you to climb atop the corpse or unconscious body of a larger creature in some situations. A prone creature can’t stand up while someone else occupies its space.</comment>
+		<prereq object_class="Statement">Share space with other creature</prereq>
+		<blocks>Stand</blocks>
+	</row>
+	<row name="Change position"/>
+	<row name="Hazardous terrain">
+		<comment>Hazardous terrain damages you whenever you move through it. An acid pool and a pit of burning embers are both examples of hazardous terrain. The amount and type of damage depend on the specific hazardous terrain.</comment>
+		<leadsTo>Damage roll</leadsTo>
+		<modifies>Grid movement rule</modifies>
+	</row>
+	<row name="Narrow surface">
+		<comment>A narrow surface is so precariously thin that you need to Balance or risk falling.</comment>
+		<comment>Each time you are hit by an attack or fail a save on a narrow surface, you must succeed at a Reflex save (with the same DC as the Acrobatics check to Balance) or fall.</comment>
+		<activates>Flat-footed</activates>
+	</row>
+	<row name="Uneven ground">
+		<comment>Uneven ground is an area unsteady enough that you need to Balance or risk falling prone and possibly injuring yourself, depending on the specifics of the uneven ground.</comment>
+		<comment>Each time you are hit by an attack or fail a save on uneven ground, you must succeed at a Reflex save (with the same DC as the Acrobatics check to Balance) or fall prone.</comment>
+		<activates>Flat-footed</activates>
+	</row>
+	<row name="Incline">
+		<comment>An incline is an area so steep that you need to Climb using the Athletics skill in order to progress upward.</comment>
+		<activates>Flat-footed</activates>
+	</row>
+	<row name="Flanking">
+		<prereq object_class="Statement">Flanking</prereq>
+		<trait>On target</trait>
+		<activates>Flanked</activates>
+	</row>
+	<row name="Large mount">
+		<prereq object_class="Statement">Large mount</prereq>
+		<calculations>reach = -5</calculations>
+		<modifies object_class="Trait">Reach</modifies>
+	</row>
+	<row name="Flat-footed underwater">
+		<trait>On self</trait>
+		<prereq object_class="Statement">Flat-footed underwater</prereq>
+		<activates>Flat-footed</activates>
+	</row>
+	<row name="Underwater resistances">
+		<trait>On self</trait>
+		<trait>Acid</trait>
+		<trait>Fire</trait>
+		<calculations>resistance = 5, acid and fire</calculations>
+		<changes>Weaknesses and resistances</changes>
+	</row>
+	<row name="Underwater penalty to melee attacks">
+		<trait>On self</trait>
+		<prereq object_class="Statement">Slashing or bludgeoning</prereq>
+		<calculations>melee attack penalty = -2, circumstance</calculations>
+		<modifies>Melee attack roll</modifies>
+	</row>
+	<row name="Underwater ranged attacks">
+		<trait>On self</trait>
+		<prereq object_class="Statement">Slashing or bludgeoning</prereq>
+		<blocks>Ranged attack check</blocks>
+	</row>
+	<row name="Underwater piercing ranged attacks">
+		<trait>On self</trait>
+		<prereq object_class="Trait">Piercing</prereq>
+		<uses>Rounding</uses>
+		<calculations>range increment = * 1/2</calculations>
+		<modifies>Ranged attack check</modifies>
+	</row>
+	<row name="Aquatic combat">
+		<activates>Underwater</activates>
+		<activates>Hold breath</activates>
+	</row>
+	<row name="Spend two air point">
+		<trait>On self</trait>
+		<prereq>Hold breath</prereq>
+		<calculations>duration = -2</calculations>
+		<changes>Hold breath</changes>
+	</row>
+	<row name="Spend one air point">
+		<trait>On self</trait>
+		<prereq>Hold breath</prereq>
+		<changes>Hold breath</changes>
+	</row>
+	<row name="Spend all air">
+		<trait>On self</trait>
+		<prereq>Hold breath</prereq>
+		<calculations>duration = 0</calculations>
+		<changes>Hold breath</changes>
+	</row>
+	<row name="Take breath away">
+		<trait>On target</trait>
+		<prereq>Hold breath</prereq>
+		<changes>Hold breath</changes>
+	</row>
+	<row name="Saving throw against damaging effect">
+		<checkCriticalFailure>Spend one air point</checkCriticalFailure>
+	</row>
+	<row name="Suffocating listener">
+		<prereq object_class="Statement">Suffocating listener</prereq>
+		<activates>Unconscious</activates>
+		<activates>Suffocating</activates>
+	</row>
+	<row name="Deactivate unconscious">
+		<deactivates>Unconscious</deactivates>
+	</row>
+	<row name="Become dead">
+		<activates>Dead</activates>
+	</row>
+	<row name="Suffocating check" subclass="Check">
+		<prereq>Suffocating</prereq>
+		<dc>15 + 5 * (count of consecutive checks)</dc>
+		<usesRoll>Fortitude saving roll</usesRoll>
+		<calculations>damage = (count of consecutive checks)d10</calculations>
+		<checkCriticalFailure>Become dead</checkCriticalFailure>
+		<checkFailure>Damage roll</checkFailure>
+	</row>
+	<row name="Deactivate unconscious after access to air">
+		<prereq object_class="Statement">Nonzero hit points</prereq>
+		<deactivates>Unconscious</deactivates>
+	</row>
+	<row name="Access to air">
+		<deactivates>Suffocating</deactivates>
+		<deactivates>Hold breath</deactivates>
+		<leadsTo>Deactivate unconscious after access to air</leadsTo>
+	</row>
+	<row name="Halved travel speed">
+		<comment>Maximum travel speed for current activity</comment>
+		<calculations>travel speed *= 1/2</calculations>
+		<uses>Rounding</uses>
+		<modifies>Travel speed</modifies>
+	</row>
+	<row name="Travel speed">
+		<uses>Speed of character</uses>
+		<calculations>distance = speed * 10 (feet per minute) = speed / 10 (miles per hour) = 8 * speed / 10 (miles per day)</calculations>
+	</row>
+	<row name="Stealth check" subclass="Check">
+		<usesRoll>Stealth roll</usesRoll>
+	</row>
+	<row name="Second exploration activity"/>
+	<row name="Detect something with travel speed">
+		<leadsTo>Detect something from inside</leadsTo>
+    	<leadsTo>Detect something before moving into</leadsTo>
+	</row>
+	<row name="Detect something from inside">
+		<prereq object_class="Statement">Travel speed up to 300 feet per minute</prereq>
+	</row>
+	<row name="Detect something before moving into">
+		<prereq object_class="Statement">Travel speed up to 150 feet per minute</prereq>
+	</row>
+	<row name="Sleeping in armor">
+		<prereq object_class="Statement">Sleeping in armor</prereq>
+		<activates>Fatigued</activates>
+	</row>
+	<row name="Without rest">
+		<duration>16 hours</duration>
+		<activates>Fatigued</activates>
+	</row>
+	<row name="Invest magic items">
+		<comment>You invest up to 10 worn magic items to gain their benefits for the day.</comment>
+	</row>
+</root>

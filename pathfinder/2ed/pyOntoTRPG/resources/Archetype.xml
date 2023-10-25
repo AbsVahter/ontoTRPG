@@ -1,0 +1,258 @@
+<?xml version="1.0"?>
+<root>
+  <row name="alchemist">
+    <selects>ADVANCED CONCOCTION</selects>
+  </row>
+  <row name="alchemist">
+    <selects>ALCHEMIST DEDICATION</selects>
+  </row>
+  <row name="alchemist">
+    <selects>BASIC CONCOCTION</selects>
+  </row>
+  <row name="alchemist">
+    <selects>EXPERT ALCHEMY</selects>
+  </row>
+  <row name="alchemist">
+    <selects>MASTER ALCHEMY</selects>
+  </row>
+  <row name="alchemist">
+    <selects>QUICK ALCHEMY</selects>
+  </row>
+  <row name="barbarian">
+    <selects>ADVANCED FURY</selects>
+  </row>
+  <row name="barbarian">
+    <selects>BARBARIAN DEDICATION</selects>
+  </row>
+  <row name="barbarian">
+    <selects>BARBARIAN RESILIENCY</selects>
+  </row>
+  <row name="barbarian">
+    <selects>BASIC FURY</selects>
+  </row>
+  <row name="barbarian">
+    <selects>INSTINCT ABILITY</selects>
+  </row>
+  <row name="barbarian">
+    <selects>JUGGERNAUT’S FORTITUDE</selects>
+  </row>
+  <row name="bard">
+    <selects>ADVANCED MUSE’S WHISPERS</selects>
+  </row>
+  <row name="bard">
+    <selects>BARD DEDICATION</selects>
+  </row>
+  <row name="bard">
+    <selects>BASIC BARD SPELLCASTING</selects>
+  </row>
+  <row name="bard">
+    <selects>BASIC MUSE’S WHISPERS</selects>
+  </row>
+  <row name="bard">
+    <selects>COUNTER PERFORM</selects>
+  </row>
+  <row name="bard">
+    <selects>EXPERT BARD SPELLCASTING</selects>
+  </row>
+  <row name="bard">
+    <selects>INSPIRATIONAL PERFORMANCE</selects>
+  </row>
+  <row name="bard">
+    <selects>MASTER BARD SPELLCASTING</selects>
+  </row>
+  <row name="bard">
+    <selects>OCCULT BREADTH</selects>
+  </row>
+  <row name="champion">
+    <selects>ADVANCED DEVOTION</selects>
+  </row>
+  <row name="champion">
+    <selects>BASIC DEVOTION</selects>
+  </row>
+  <row name="champion">
+    <selects>CHAMPION DEDICATION</selects>
+  </row>
+  <row name="champion">
+    <selects>CHAMPION RESILIENCY</selects>
+  </row>
+  <row name="champion">
+    <selects>CHAMPION’S REACTION archetype</selects>
+  </row>
+  <row name="champion">
+    <selects>DIVERSE ARMOR EXPERT</selects>
+  </row>
+  <row name="champion">
+    <selects>DIVINE ALLY archetype</selects>
+  </row>
+  <row name="champion">
+    <selects>HEALING TOUCH</selects>
+  </row>
+  <row name="cleric">
+    <selects>ADVANCED DOGMA</selects>
+  </row>
+  <row name="cleric">
+    <selects>BASIC CLERIC SPELLCASTING</selects>
+  </row>
+  <row name="cleric">
+    <selects>BASIC DOGMA</selects>
+  </row>
+  <row name="cleric">
+    <selects>CLERIC DEDICATION</selects>
+  </row>
+  <row name="cleric">
+    <selects>DIVINE BREADTH</selects>
+  </row>
+  <row name="cleric">
+    <selects>EXPERT CLERIC SPELLCASTING</selects>
+  </row>
+  <row name="cleric">
+    <selects>MASTER CLERIC SPELLCASTING</selects>
+  </row>
+  <row name="druid">
+    <selects>ADVANCED WILDING</selects>
+  </row>
+  <row name="druid">
+    <selects>BASIC DRUID SPELLCASTING</selects>
+  </row>
+  <row name="druid">
+    <selects>BASIC WILDING</selects>
+  </row>
+  <row name="druid">
+    <selects>DRUID DEDICATION</selects>
+  </row>
+  <row name="druid">
+    <selects>EXPERT DRUID SPELLCASTING</selects>
+  </row>
+  <row name="druid">
+    <selects>MASTER DRUID SPELLCASTING</selects>
+  </row>
+  <row name="druid">
+    <selects>ORDER SPELL</selects>
+  </row>
+  <row name="druid">
+    <selects>PRIMAL BREADTH</selects>
+  </row>
+  <row name="fighter">
+    <selects>ADVANCED MANEUVER</selects>
+  </row>
+  <row name="fighter">
+    <selects>BASIC MANEUVER</selects>
+  </row>
+  <row name="fighter">
+    <selects>DIVERSE WEAPON EXPERT</selects>
+  </row>
+  <row name="fighter">
+    <selects>FIGHTER DEDICATION</selects>
+  </row>
+  <row name="fighter">
+    <selects>FIGHTER RESILIENCY</selects>
+  </row>
+  <row name="fighter">
+    <selects>OPPORTUNIST</selects>
+  </row>
+  <row name="monk">
+    <selects>ADVANCED KATA</selects>
+  </row>
+  <row name="monk">
+    <selects>BASIC KATA</selects>
+  </row>
+  <row name="monk">
+    <selects>MONK DEDICATION</selects>
+  </row>
+  <row name="monk">
+    <selects>MONK MOVES</selects>
+  </row>
+  <row name="monk">
+    <selects>MONK RESILIENCY</selects>
+  </row>
+  <row name="monk">
+    <selects>MONK&apos;S FLURRY</selects>
+  </row>
+  <row name="monk">
+    <selects>PERFECTION&apos;S PATH</selects>
+  </row>
+  <row name="ranger">
+    <selects>ADVANCED HUNTER&apos;S TRICK</selects>
+  </row>
+  <row name="ranger">
+    <selects>BASIC HUNTER&apos;S TRICK</selects>
+  </row>
+  <row name="ranger">
+    <selects>MASTER SPOTTER</selects>
+  </row>
+  <row name="ranger">
+    <selects>RANGER DEDICATION</selects>
+  </row>
+  <row name="ranger">
+    <selects>RANGER RESILIENCY</selects>
+  </row>
+  <row name="rogue">
+    <selects>ADVANCED TRICKERY</selects>
+  </row>
+  <row name="rogue">
+    <selects>BASIC TRICKERY</selects>
+  </row>
+  <row name="rogue">
+    <selects>EVASIVENESS</selects>
+  </row>
+  <row name="rogue">
+    <selects>ROGUE DEDICATION</selects>
+  </row>
+  <row name="rogue">
+    <selects>SKILL MASTERY</selects>
+  </row>
+  <row name="rogue">
+    <selects>SNEAK ATTACKER</selects>
+  </row>
+  <row name="rogue">
+    <selects>UNCANNY DODGE</selects>
+  </row>
+  <row name="sorcerer">
+    <selects>ADVANCED BLOOD POTENCY</selects>
+  </row>
+  <row name="sorcerer">
+    <selects>BASIC BLOOD POTENCY</selects>
+  </row>
+  <row name="sorcerer">
+    <selects>BASIC BLOODLINE SPELL</selects>
+  </row>
+  <row name="sorcerer">
+    <selects>BASIC SORCERER SPELLCASTING</selects>
+  </row>
+  <row name="sorcerer">
+    <selects>BLOODLINE BREADTH</selects>
+  </row>
+  <row name="sorcerer">
+    <selects>EXPERT SORCERER SPELLCASTING</selects>
+  </row>
+  <row name="sorcerer">
+    <selects>MASTER SORCERER SPELLCASTING</selects>
+  </row>
+  <row name="sorcerer">
+    <selects>SORCERER DEDICATION</selects>
+  </row>
+  <row name="wizard">
+    <selects>ADVANCED ARCANA</selects>
+  </row>
+  <row name="wizard">
+    <selects>ARCANE BREADTH</selects>
+  </row>
+  <row name="wizard">
+    <selects>ARCANE SCHOOL SPELL</selects>
+  </row>
+  <row name="wizard">
+    <selects>BASIC ARCANA</selects>
+  </row>
+  <row name="wizard">
+    <selects>BASIC WIZARD SPELLCASTING</selects>
+  </row>
+  <row name="wizard">
+    <selects>EXPERT WIZARD SPELLCASTING</selects>
+  </row>
+  <row name="wizard">
+    <selects>MASTER WIZARD SPELLCASTING</selects>
+  </row>
+  <row name="wizard">
+    <selects>WIZARD DEDICATION</selects>
+  </row>
+</root>

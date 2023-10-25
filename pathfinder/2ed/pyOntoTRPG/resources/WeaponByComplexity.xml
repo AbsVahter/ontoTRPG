@@ -1,914 +1,914 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
-  <weapon name="Alchemical bomb" subclass="Martial_weapon">
+  <weapon name="Alchemical bomb" subclass="MartialWeapon">
     <price>varies</price>
     <damage>varies</damage>
-    <range>20</range>
+    <distance>20</distance>
     <bulk>L</bulk>
     <hands>1</hands>
-    <has_trait>bludgeoning</has_trait>
-    <has_trait>piercing</has_trait>
-    <has_trait>slashing</has_trait>
-    <has_trait>Bomb</has_trait>
+    <trait>bludgeoning</trait>
+    <trait>piercing</trait>
+    <trait>slashing</trait>
+    <trait>Bomb</trait>
     <comment>These bombs come in a variety of types and levels of power, but no matter the variety, you throw the bomb at the target and it explodes, unleashing its alchemical blast.</comment>
   </weapon>
-  <weapon name="Bastard sword" subclass="Martial_weapon">
+  <weapon name="Bastard sword" subclass="MartialWeapon">
     <price>4gp</price>
     <damage>1d8</damage>
     <bulk>1</bulk>
     <hands>1</hands>
-    <has_trait>slashing</has_trait>
-    <has_trait>Sword</has_trait>
-    <has_trait value="d12">Two-hand</has_trait>
+    <trait>slashing</trait>
+    <trait>Sword</trait>
+    <trait value="d12">Two-hand</trait>
     <comment>This broad-bladed  sometimes called the hand?and?a?half  has a longer grip so it can be held in one hand or used with two hands to provide extra slashing power.</comment>
   </weapon>
-  <weapon name="Battle axe" subclass="Martial_weapon">
+  <weapon name="Battle axe" subclass="MartialWeapon">
     <price>1 gp</price>
     <damage>1d8</damage>
     <bulk>1</bulk>
     <hands>1</hands>
-    <has_trait>Axe</has_trait>
+    <trait>Axe</trait>
     <comment>These axes are designed explicitly as weapons, rather than tools. They typically weigh less, with a shaft reinforced with metal bands or bolts, and have a sharper blade, making them ideal for chopping limbs rather than wood.</comment>
   </weapon>
-  <weapon name="Blowgun" subclass="Simple_weapon">
+  <weapon name="Blowgun" subclass="SimpleWeapon">
     <price>1 sp</price>
     <damage>1</damage>
-    <range>20</range>
+    <distance>20</distance>
     <reload>1</reload>
     <bulk>L</bulk>
     <hands>1</hands>
-    <has_trait>Dart</has_trait>
-    <has_trait>Agile</has_trait>
-    <has_trait>Nonlethal</has_trait>
+    <trait>Dart</trait>
+    <trait>Agile</trait>
+    <trait>Nonlethal</trait>
     <comment>This long, narrow tube is used for shooting blowgun darts, using only the power of a forcefully exhaled breath.</comment>
     <ammunition>Blowgun dart</ammunition>
   </weapon>
-  <weapon name="Bo staff" subclass="Martial_weapon">
+  <weapon name="Bo staff" subclass="MartialWeapon">
     <price>2 sp</price>
     <damage>1d8</damage>
     <bulk>2</bulk>
     <hands>2</hands>
-    <has_trait>Club</has_trait>
-    <has_trait>Monk</has_trait>
-    <has_trait>Parry</has_trait>
-    <has_trait>Reach</has_trait>
-    <has_trait>Trip</has_trait>
+    <trait>Club</trait>
+    <trait>Monk</trait>
+    <trait>Parry</trait>
+    <trait>Reach</trait>
+    <trait>Trip</trait>
     <comment>This strong but slender staff is tapered at the ends and well balanced. It’s designed to be an offensive and defensive weapon.</comment>
   </weapon>
-  <weapon name="Clan dagger" subclass="Simple_weapon">
+  <weapon name="Clan dagger" subclass="SimpleWeapon">
     <price>2 gp</price>
     <damage>1d4</damage>
     <bulk>L</bulk>
     <hands>1</hands>
-    <has_trait>piercing</has_trait>
-    <has_trait>Knife</has_trait>
-    <has_trait>bludgeoning</has_trait>
-    <has_trait>dwarf</has_trait>
-    <has_trait>parry</has_trait>
-    <has_trait>versatile</has_trait>
-    <has_trait>uncommon</has_trait>
+    <trait>piercing</trait>
+    <trait>Knife</trait>
+    <trait>bludgeoning</trait>
+    <trait>dwarf</trait>
+    <trait>parry</trait>
+    <trait>versatile</trait>
+    <trait>uncommon</trait>
     <comment>This broad dagger is carried by dwarves as a weapon, tool, and designation of clan. Losing or having to surrender a clan dagger is considered a mark of embarrassment to most dwarves.</comment>
   </weapon>
-  <weapon name="Club" subclass="Simple_weapon">
+  <weapon name="Club" subclass="SimpleWeapon">
     <price>0</price>
     <damage>1d6</damage>
-    <range>10</range>
+    <distance>10</distance>
     <bulk>1</bulk>
     <hands>1</hands>
-    <has_trait>Club</has_trait>
-    <has_trait>Thrown</has_trait>
+    <trait>Club</trait>
+    <trait>Thrown</trait>
     <comment>This is a piece of stout wood shaped or repurposed to bludgeon an enemy. Clubs can be intricately carved pieces of martial art or as simple as a tree branch or piece of wood.</comment>
   </weapon>
-  <weapon name="Composite longbow" subclass="Martial_weapon">
+  <weapon name="Composite longbow" subclass="MartialWeapon">
     <price>20 gp</price>
     <damage>1d8</damage>
-    <range>100</range>
+    <distance>100</distance>
     <reload>0</reload>
     <bulk>2</bulk>
     <hands>1</hands>
-    <has_trait>Bow</has_trait>
-    <has_trait value="d10">Deadly</has_trait>
-    <has_trait>propulsive</has_trait>
-    <has_trait>volley</has_trait>
+    <trait>Bow</trait>
+    <trait value="d10">Deadly</trait>
+    <trait>propulsive</trait>
+    <trait>volley</trait>
     <ammunition>Arrow</ammunition>
     <comment>This projectile weapon is made from horn, wood, and sinew laminated together to increase the power of its pull and the force of its projectile. Like all longbows, its great size also increases the bow’s range and power. You must use two hands to fire it, and it cannot be used while mounted. Any time an ability is specifically restricted to a longbow, such as Erastil’s favored weapon, it also applies to composite longbows unless otherwise stated.</comment>
   </weapon>
-  <weapon name="Composite shortbow" subclass="Martial_weapon">
+  <weapon name="Composite shortbow" subclass="MartialWeapon">
     <price>14 gp</price>
     <damage>1d6</damage>
-    <range>60</range>
+    <distance>60</distance>
     <reload>0</reload>
     <bulk>1</bulk>
     <hands>1</hands>
-    <has_trait>Bow</has_trait>
-    <has_trait value="d10">Deadly</has_trait>
-    <has_trait>propulsive</has_trait>
+    <trait>Bow</trait>
+    <trait value="d10">Deadly</trait>
+    <trait>propulsive</trait>
     <ammunition>Arrow</ammunition>
     <comment>This shortbow is made from horn, wood, and sinew laminated together to increase the power of its pull and the force of its projectile. Its compact size and power make it a favorite of mounted archers. Any time an ability is specifically restricted to a shortbow, it also applies to composite shortbows unless otherwise stated.</comment>
   </weapon>
-  <weapon name="Crossbow" subclass="Simple_weapon">
+  <weapon name="Crossbow" subclass="SimpleWeapon">
     <price>3 gp</price>
     <damage>1d8</damage>
-    <range>120</range>
+    <distance>120</distance>
     <reload>1</reload>
     <bulk>1</bulk>
     <hands>2</hands>
-    <has_trait>Bow</has_trait>
+    <trait>Bow</trait>
     <comment>This ranged weapon has a bow-like assembly mounted on a handled frame called a tiller. The tiller has a mechanism to lock the bowstring in place, attached to a trigger mechanism that releases the tension and launches a bolt.</comment>
     <ammunition>Bolt</ammunition>
   </weapon>
-  <weapon name="Dagger" subclass="Simple_weapon">
+  <weapon name="Dagger" subclass="SimpleWeapon">
     <price>2 sp</price>
     <damage>1d4</damage>
-    <range>10</range>
+    <distance>10</distance>
     <bulk>L</bulk>
     <hands>1</hands>
-    <has_trait>piercing</has_trait>
-    <has_trait>Knife</has_trait>
-    <has_trait>versatile</has_trait>
-    <has_trait>Thrown</has_trait>
-    <has_trait>slashing</has_trait>
-    <has_trait>finesse</has_trait>
+    <trait>piercing</trait>
+    <trait>Knife</trait>
+    <trait>versatile</trait>
+    <trait>Thrown</trait>
+    <trait>slashing</trait>
+    <trait>finesse</trait>
     <comment>This small, bladed weapon is held in one hand and used to stab a creature in close combat. It can also be thrown.</comment>
   </weapon>
-  <weapon name="Dart" subclass="Simple_weapon">
+  <weapon name="Dart" subclass="SimpleWeapon">
     <price>1 cp</price>
     <damage>1d4</damage>
-    <range>20</range>
+    <distance>20</distance>
     <bulk>L</bulk>
     <hands>1</hands>
-    <has_trait>Thrown</has_trait>
-    <has_trait>Dart</has_trait>
-    <has_trait>Agile</has_trait>
+    <trait>Thrown</trait>
+    <trait>Dart</trait>
+    <trait>Agile</trait>
     <comment>This thrown weapon is larger than an arrow but shorter than a javelin. It typically has a short shaft of wood ending in a metal tip and is sometimes stabilized by feathers or fur.</comment>
   </weapon>
-  <weapon name="Dogslicer" subclass="Martial_weapon">
+  <weapon name="Dogslicer" subclass="MartialWeapon">
     <price>1 sp</price>
     <damage>1d6</damage>
     <bulk>L</bulk>
     <hands>1</hands>
-    <has_trait>uncommon</has_trait>
-    <has_trait>slashing</has_trait>
-    <has_trait>Sword</has_trait>
-    <has_trait>Agile</has_trait>
-    <has_trait>Backstabber</has_trait>
-    <has_trait>Finesse</has_trait>
-    <has_trait>Goblin</has_trait>
+    <trait>uncommon</trait>
+    <trait>slashing</trait>
+    <trait>Sword</trait>
+    <trait>Agile</trait>
+    <trait>Backstabber</trait>
+    <trait>Finesse</trait>
+    <trait>Goblin</trait>
     <comment>This short, curved, and crude makeshift blade often has holes drilled into it to reduce its weight. It’s a favored weapon of goblins.</comment>
   </weapon>
-  <weapon name="Dwarven waraxe" subclass="Advanced_weapon">
+  <weapon name="Dwarven waraxe" subclass="AdvancedWeapon">
     <price>3 gp</price>
     <damage>1d8</damage>
     <bulk>2</bulk>
     <hands>1</hands>
-    <has_trait>dwarf</has_trait>
-    <has_trait>uncommon</has_trait>
-    <has_trait>Axe</has_trait>
-    <has_trait>Axe</has_trait>
-    <has_trait value="d12">Two-hand</has_trait>
+    <trait>dwarf</trait>
+    <trait>uncommon</trait>
+    <trait>Axe</trait>
+    <trait>Axe</trait>
+    <trait value="d12">Two-hand</trait>
     <comment>This favored weapon of the dwarves has a large, ornate head mounted on a thick handle. This powerful axe can be wielded with one hand or two.</comment>
   </weapon>
-  <weapon name="Elven curve blade" subclass="Martial_weapon">
+  <weapon name="Elven curve blade" subclass="MartialWeapon">
     <price>4 gp</price>
     <damage>1d8</damage>
     <bulk>2</bulk>
     <hands>2</hands>
-    <has_trait>uncommon</has_trait>
-    <has_trait>slashing</has_trait>
-    <has_trait>Sword</has_trait>
-    <has_trait>Finesse</has_trait>
-    <has_trait>Elf</has_trait>
-    <has_trait>Forceful</has_trait>
+    <trait>uncommon</trait>
+    <trait>slashing</trait>
+    <trait>Sword</trait>
+    <trait>Finesse</trait>
+    <trait>Elf</trait>
+    <trait>Forceful</trait>
     <comment>Essentially a longer version of the scimitar, this traditional elven weapon has a thinner blade than its cousin.</comment>
   </weapon>
-  <weapon name="Falchion" subclass="Martial_weapon">
+  <weapon name="Falchion" subclass="MartialWeapon">
     <price>3gp</price>
     <damage>1d10</damage>
     <bulk>2</bulk>
     <hands>2</hands>
-    <has_trait>slashing</has_trait>
-    <has_trait>Sword</has_trait>
-    <has_trait>Forceful</has_trait>
-    <has_trait>Sweep</has_trait>
+    <trait>slashing</trait>
+    <trait>Sword</trait>
+    <trait>Forceful</trait>
+    <trait>Sweep</trait>
     <comment>This weapon is a heavier, two?handed version of the curved-bladed scimitar. It is weighted toward the blade’s end, making it a powerful slashing weapon.</comment>
   </weapon>
-  <weapon name="Filcher's fork" subclass="Martial_weapon">
+  <weapon name="Filcher's fork" subclass="MartialWeapon">
     <price>1 gp</price>
     <damage>1d4</damage>
-    <range>20</range>
+    <distance>20</distance>
     <bulk>L</bulk>
     <hands>1</hands>
-    <has_trait>uncommon</has_trait>
-    <has_trait>Thrown</has_trait>
-    <has_trait>Agile</has_trait>
-    <has_trait>Backstabber</has_trait>
-    <has_trait>Finesse</has_trait>
-    <has_trait>Spear</has_trait>
-    <has_trait value="d6">Deadly</has_trait>
-    <has_trait>Halfling</has_trait>
+    <trait>uncommon</trait>
+    <trait>Thrown</trait>
+    <trait>Agile</trait>
+    <trait>Backstabber</trait>
+    <trait>Finesse</trait>
+    <trait>Spear</trait>
+    <trait value="d6">Deadly</trait>
+    <trait>Halfling</trait>
     <comment>This halfling weapon looks like a long, two-pronged fork and is used as both a weapon and a cooking implement.</comment>
   </weapon>
-  <weapon name="Fist" subclass="Unarmed_as_weapon">
+  <weapon name="Fist" subclass="UnarmedAsWeapon">
     <damage>1d4</damage>
     <bulk>0</bulk>
     <hands>1</hands>
-    <has_trait>bludgeoning</has_trait>
-    <has_trait>Finesse</has_trait>
-    <has_trait>Brawling</has_trait>
-    <has_trait>Nonlethal</has_trait>
-    <has_trait>Unarmed</has_trait>
+    <trait>bludgeoning</trait>
+    <trait>Finesse</trait>
+    <trait>Brawling</trait>
+    <trait>Nonlethal</trait>
+    <trait>Unarmed</trait>
     <comment>Fist</comment>
   </weapon>
-  <weapon name="Flail" subclass="Martial_weapon">
+  <weapon name="Flail" subclass="MartialWeapon">
     <price>8 sp</price>
     <damage>1d6</damage>
     <bulk>1</bulk>
     <hands>1</hands>
-    <has_trait>bludgeoning</has_trait>
-    <has_trait>Flail</has_trait>
-    <has_trait>Disarm</has_trait>
-    <has_trait>Sweep</has_trait>
-    <has_trait>Trip</has_trait>
+    <trait>bludgeoning</trait>
+    <trait>Flail</trait>
+    <trait>Disarm</trait>
+    <trait>Sweep</trait>
+    <trait>Trip</trait>
     <comment>This weapon consists of a wooden handle attached to a spiked ball or cylinder by a chain, rope, or strap of leather.</comment>
   </weapon>
-  <weapon name="Gauntlet" subclass="Simple_weapon">
+  <weapon name="Gauntlet" subclass="SimpleWeapon">
     <price>2 sp</price>
     <damage>1d4</damage>
     <bulk>L</bulk>
     <hands>1</hands>
-    <has_trait>bludgeoning</has_trait>
-    <has_trait>Brawling</has_trait>
-    <has_trait>Free-hand</has_trait>
+    <trait>bludgeoning</trait>
+    <trait>Brawling</trait>
+    <trait>Free-hand</trait>
     <comment>A pair of these metal gloves comes with full plate, half plate, and splint armor; they can also be purchased separately and worn with other types of armor. They not only protect your hands but also transform your hands into lethal weapons.</comment>
   </weapon>
-  <weapon name="Glaive" subclass="Martial_weapon">
+  <weapon name="Glaive" subclass="MartialWeapon">
     <price>1 gp</price>
     <damage>1d8</damage>
     <bulk>2</bulk>
     <hands>2</hands>
-    <has_trait>slashing</has_trait>
-    <has_trait>Polearm</has_trait>
-    <has_trait value="d8">Deadly</has_trait>
-    <has_trait>Forceful</has_trait>
-    <has_trait>Reach</has_trait>
+    <trait>slashing</trait>
+    <trait>Polearm</trait>
+    <trait value="d8">Deadly</trait>
+    <trait>Forceful</trait>
+    <trait>Reach</trait>
     <comment>This polearm consists of a long, single-edged blade on the end of a 7-foot pole. It is extremely effective at delivering lethal cuts at a distance.</comment>
   </weapon>
-  <weapon name="Gnome flickmace" subclass="Advanced_weapon">
+  <weapon name="Gnome flickmace" subclass="AdvancedWeapon">
     <price>3 gp</price>
     <damage>1d6</damage>
     <bulk>1</bulk>
     <hands>1</hands>
-    <has_trait>bludgeoning</has_trait>
-    <has_trait>uncommon</has_trait>
-    <has_trait>Flail</has_trait>
-    <has_trait>Gnome</has_trait>
-    <has_trait>Reach</has_trait>
-    <has_trait>Sweep</has_trait>
+    <trait>bludgeoning</trait>
+    <trait>uncommon</trait>
+    <trait>Flail</trait>
+    <trait>Gnome</trait>
+    <trait>Reach</trait>
+    <trait>Sweep</trait>
     <comment>More a flail than a mace, this weapon has a short handle attached to a length of chain with a ball at the end. The ball is propelled to its reach with the flick of the wrist, the momentum of which brings the ball back to the wielder after the strike.</comment>
   </weapon>
-  <weapon name="Gnome hooked hammer" subclass="Martial_weapon">
+  <weapon name="Gnome hooked hammer" subclass="MartialWeapon">
     <price>2 gp</price>
     <damage>1d6</damage>
     <bulk>1</bulk>
     <hands>1</hands>
-    <has_trait>piercing</has_trait>
-    <has_trait>versatile</has_trait>
-    <has_trait>uncommon</has_trait>
-    <has_trait>Hammer</has_trait>
-    <has_trait>Gnome</has_trait>
-    <has_trait>Trip</has_trait>
-    <has_trait value="d10">Two-hand</has_trait>
+    <trait>piercing</trait>
+    <trait>versatile</trait>
+    <trait>uncommon</trait>
+    <trait>Hammer</trait>
+    <trait>Gnome</trait>
+    <trait>Trip</trait>
+    <trait value="d10">Two-hand</trait>
     <comment>This gnome tool and weapon features a hammer at one end and a curved pick on the other. It’s such a strange and awkward weapon that others think the gnomes are slightly erratic for using it.</comment>
   </weapon>
-  <weapon name="Great axe" subclass="Martial_weapon">
+  <weapon name="Great axe" subclass="MartialWeapon">
     <price>2 gp</price>
     <damage>1d12</damage>
     <bulk>2</bulk>
     <hands>2</hands>
-    <has_trait>Axe</has_trait>
+    <trait>Axe</trait>
     <comment>This large battle axe is too heavy to wield with only one hand. Many greataxes incorporate two blades, and they are often &apos;bearded,&apos; having a hook at the bottom to increase the strength of their chopping power.</comment>
   </weapon>
-  <weapon name="Greatclub" subclass="Martial_weapon">
+  <weapon name="Greatclub" subclass="MartialWeapon">
     <price>1 gp</price>
     <damage>1d10</damage>
     <bulk>2</bulk>
     <hands>2</hands>
-    <has_trait>Club</has_trait>
-    <has_trait>Backswing</has_trait>
-    <has_trait>Shove</has_trait>
+    <trait>Club</trait>
+    <trait>Backswing</trait>
+    <trait>Shove</trait>
     <comment>While many greatclubs are intricately carved, others are little more than a sturdy tree branch. These massive clubs are too heavy to wield with only one hand.</comment>
   </weapon>
-  <weapon name="Greatpick" subclass="Martial_weapon">
+  <weapon name="Greatpick" subclass="MartialWeapon">
     <price>1 gp</price>
     <damage>1d10</damage>
     <bulk>2</bulk>
     <hands>2</hands>
-    <has_trait>Pick</has_trait>
-    <has_trait value="d12">Fatal</has_trait>
+    <trait>Pick</trait>
+    <trait value="d12">Fatal</trait>
     <comment>This pick has a longer handle and broader head than a regular pick. It is too heavy to wield in one hand.</comment>
   </weapon>
-  <weapon name="Greatsword" subclass="Martial_weapon">
+  <weapon name="Greatsword" subclass="MartialWeapon">
     <price>2 gp</price>
     <damage>1d12</damage>
     <bulk>2</bulk>
     <hands>2</hands>
-    <has_trait>piercing</has_trait>
-    <has_trait>versatile</has_trait>
-    <has_trait>slashing</has_trait>
-    <has_trait>Sword</has_trait>
+    <trait>piercing</trait>
+    <trait>versatile</trait>
+    <trait>slashing</trait>
+    <trait>Sword</trait>
     <comment>This immense two-handed sword is nearly as tall as its wielder. Its lower blade is often somewhat dulled to allow it to be gripped for extra leverage in close-quarter fights.</comment>
   </weapon>
-  <weapon name="Guisarme" subclass="Martial_weapon">
+  <weapon name="Guisarme" subclass="MartialWeapon">
     <price>2 gp</price>
     <damage>1d10</damage>
     <bulk>2</bulk>
     <hands>2</hands>
-    <has_trait>slashing</has_trait>
-    <has_trait>Polearm</has_trait>
-    <has_trait>Reach</has_trait>
-    <has_trait>Trip</has_trait>
+    <trait>slashing</trait>
+    <trait>Polearm</trait>
+    <trait>Reach</trait>
+    <trait>Trip</trait>
     <comment>This polearm bears a long, often one?sided, curved blade with a hook protruding from the blunt side of the blade, which can allow its wielder to trip opponents at a distance. Its shaft is usually 8 feet long.</comment>
   </weapon>
-  <weapon name="Halberd" subclass="Martial_weapon">
+  <weapon name="Halberd" subclass="MartialWeapon">
     <price>2 gp</price>
     <damage>1d10</damage>
     <bulk>2</bulk>
     <hands>2</hands>
-    <has_trait>piercing</has_trait>
-    <has_trait>versatile</has_trait>
-    <has_trait>slashing</has_trait>
-    <has_trait>Polearm</has_trait>
-    <has_trait>Reach</has_trait>
+    <trait>piercing</trait>
+    <trait>versatile</trait>
+    <trait>slashing</trait>
+    <trait>Polearm</trait>
+    <trait>Reach</trait>
     <comment>This polearm has a relatively short, 5-foot shaft. The business end is a long spike with an axe blade attached.</comment>
   </weapon>
-  <weapon name="Halfling sling staff" subclass="Martial_weapon">
+  <weapon name="Halfling sling staff" subclass="MartialWeapon">
     <price>5 gp</price>
     <damage>1d10</damage>
-    <range>80</range>
+    <distance>80</distance>
     <reload>1</reload>
     <bulk>1</bulk>
     <hands>2</hands>
-    <has_trait>uncommon</has_trait>
-    <has_trait>Sling</has_trait>
-    <has_trait>Halfling</has_trait>
+    <trait>uncommon</trait>
+    <trait>Sling</trait>
+    <trait>Halfling</trait>
     <ammunition>Sling bullet</ammunition>
     <comment>This staff ends in a Y-shaped split that cradles a sling. The length of the staff provides excellent leverage when used two?handed to fling rocks or bullets from the sling.</comment>
   </weapon>
-  <weapon name="Hand crossbow" subclass="Simple_weapon">
+  <weapon name="Hand crossbow" subclass="SimpleWeapon">
     <price>3 gp</price>
     <damage>1d6</damage>
-    <range>60</range>
+    <distance>60</distance>
     <reload>1</reload>
     <bulk>L</bulk>
     <hands>1</hands>
-    <has_trait>Bow</has_trait>
+    <trait>Bow</trait>
     <ammunition>Bolt</ammunition>
     <comment>Sometimes referred to as an alley bow by rogues or ruffians, this small crossbow fires small bolts that are sometimes used to deliver poison to the target. It’s small enough to be shot one-handed, but it still requires two hands to load.</comment>
   </weapon>
-  <weapon name="Hatchet" subclass="Martial_weapon">
+  <weapon name="Hatchet" subclass="MartialWeapon">
     <price>4 sp</price>
     <damage>1d6</damage>
-    <range>10</range>
+    <distance>10</distance>
     <bulk>L</bulk>
     <hands>1</hands>
-    <has_trait>Thrown</has_trait>
-    <has_trait>Agile</has_trait>
-    <has_trait>Axe</has_trait>
+    <trait>Thrown</trait>
+    <trait>Agile</trait>
+    <trait>Axe</trait>
     <comment>This small axe can be used in close combat or thrown.</comment>
   </weapon>
-  <weapon name="Heavy crossbow" subclass="Simple_weapon">
+  <weapon name="Heavy crossbow" subclass="SimpleWeapon">
     <price>4 gp</price>
     <damage>1d10</damage>
-    <range>120</range>
+    <distance>120</distance>
     <reload>2</reload>
     <bulk>2</bulk>
     <hands>2</hands>
-    <has_trait>Bow</has_trait>
+    <trait>Bow</trait>
     <ammunition>Bolt</ammunition>
     <comment>This large crossbow is harder to load and more substantial than a regular crossbow, but it packs a greater punch.</comment>
   </weapon>
-  <weapon name="Horsechopper" subclass="Martial_weapon">
+  <weapon name="Horsechopper" subclass="MartialWeapon">
     <price>9 sp</price>
     <damage>1d8</damage>
     <bulk>2</bulk>
     <hands>2</hands>
-    <has_trait>piercing</has_trait>
-    <has_trait>versatile</has_trait>
-    <has_trait>uncommon</has_trait>
-    <has_trait>slashing</has_trait>
-    <has_trait>Polearm</has_trait>
-    <has_trait>Goblin</has_trait>
-    <has_trait>Reach</has_trait>
-    <has_trait>Trip</has_trait>
+    <trait>piercing</trait>
+    <trait>versatile</trait>
+    <trait>uncommon</trait>
+    <trait>slashing</trait>
+    <trait>Polearm</trait>
+    <trait>Goblin</trait>
+    <trait>Reach</trait>
+    <trait>Trip</trait>
     <comment>Created by goblins to battle horses, this weapon is essentially a long shaft ending in a blade with a large hook.</comment>
   </weapon>
-  <weapon name="Javelin" subclass="Simple_weapon">
+  <weapon name="Javelin" subclass="SimpleWeapon">
     <price>1 sp</price>
     <damage>1d6</damage>
-    <range>30</range>
+    <distance>30</distance>
     <bulk>L</bulk>
     <hands>1</hands>
-    <has_trait>Thrown</has_trait>
-    <has_trait>Dart</has_trait>
+    <trait>Thrown</trait>
+    <trait>Dart</trait>
     <comment>This thin spear is well balanced for throwing but is not designed for melee use.</comment>
   </weapon>
-  <weapon name="Kama" subclass="Martial_weapon">
+  <weapon name="Kama" subclass="MartialWeapon">
     <price>1 gp</price>
     <damage>1d6</damage>
     <bulk>L</bulk>
     <hands>1</hands>
-    <has_trait>Knife</has_trait>
-    <has_trait>uncommon</has_trait>
-    <has_trait>slashing</has_trait>
-    <has_trait>Monk</has_trait>
-    <has_trait>Trip</has_trait>
+    <trait>Knife</trait>
+    <trait>uncommon</trait>
+    <trait>slashing</trait>
+    <trait>Monk</trait>
+    <trait>Trip</trait>
     <comment>Similar to a sickle and used in some regions to reap grain, a kama has a short, slightly curved blade and a wooden handle.</comment>
   </weapon>
-  <weapon name="Katana" subclass="Martial_weapon">
+  <weapon name="Katana" subclass="MartialWeapon">
     <price>2 gp</price>
     <damage>1d6</damage>
     <bulk>1</bulk>
     <hands>1</hands>
-    <has_trait>piercing</has_trait>
-    <has_trait>versatile</has_trait>
-    <has_trait>uncommon</has_trait>
-    <has_trait>slashing</has_trait>
-    <has_trait>Sword</has_trait>
-    <has_trait value="d8">Deadly</has_trait>
-    <has_trait value="d10">Two-hand</has_trait>
+    <trait>piercing</trait>
+    <trait>versatile</trait>
+    <trait>uncommon</trait>
+    <trait>slashing</trait>
+    <trait>Sword</trait>
+    <trait value="d8">Deadly</trait>
+    <trait value="d10">Two-hand</trait>
     <comment>A katana is a curved, single-edged sword known for its wickedly sharped blade.</comment>
   </weapon>
-  <weapon name="Katar" subclass="Simple_weapon">
+  <weapon name="Katar" subclass="SimpleWeapon">
     <price>3 sp</price>
     <damage>1d4</damage>
     <bulk>L</bulk>
     <hands>1</hands>
-    <has_trait>piercing</has_trait>
-    <has_trait>Knife</has_trait>
-    <has_trait>uncommon</has_trait>
-    <has_trait value="d6">Deadly</has_trait>
-    <has_trait>Monk</has_trait>
+    <trait>piercing</trait>
+    <trait>Knife</trait>
+    <trait>uncommon</trait>
+    <trait value="d6">Deadly</trait>
+    <trait>Monk</trait>
     <comment>Also known as punching daggers, katars are characterized by their H-shaped hand grip that allows the blade to jut out from the knuckles.</comment>
   </weapon>
-  <weapon name="Kukri" subclass="Martial_weapon">
+  <weapon name="Kukri" subclass="MartialWeapon">
     <price>6 sp</price>
     <damage>1d6</damage>
     <bulk>L</bulk>
     <hands>1</hands>
-    <has_trait>Knife</has_trait>
-    <has_trait>uncommon</has_trait>
-    <has_trait>slashing</has_trait>
-    <has_trait>Finesse</has_trait>
-    <has_trait>Trip</has_trait>
+    <trait>Knife</trait>
+    <trait>uncommon</trait>
+    <trait>slashing</trait>
+    <trait>Finesse</trait>
+    <trait>Trip</trait>
     <comment>The blade of this foot-long knife curves inward and lacks a cross guard at the hilt.</comment>
   </weapon>
-  <weapon name="Lance" subclass="Martial_weapon">
+  <weapon name="Lance" subclass="MartialWeapon">
     <price>1 gp</price>
     <damage>1d8</damage>
     <bulk>2</bulk>
     <hands>2</hands>
-    <has_trait>Spear</has_trait>
-    <has_trait value="d8">Deadly</has_trait>
-    <has_trait value="d6">Jousting</has_trait>
-    <has_trait>Reach</has_trait>
+    <trait>Spear</trait>
+    <trait value="d8">Deadly</trait>
+    <trait value="d6">Jousting</trait>
+    <trait>Reach</trait>
     <comment>This spear-like weapon is used by a mounted creature to deal a great deal of damage.</comment>
   </weapon>
-  <weapon name="Light hammer" subclass="Martial_weapon">
+  <weapon name="Light hammer" subclass="MartialWeapon">
     <price>3 sp</price>
     <damage>1d6</damage>
-    <range>20</range>
+    <distance>20</distance>
     <bulk>L</bulk>
     <hands>1</hands>
-    <has_trait>Thrown</has_trait>
-    <has_trait>Agile</has_trait>
-    <has_trait>Hammer</has_trait>
+    <trait>Thrown</trait>
+    <trait>Agile</trait>
+    <trait>Hammer</trait>
     <comment>This smaller version of the warhammer has a wooden or metal shaft ending in a metal head. Unlike its heavier cousin, it is light enough to throw.</comment>
   </weapon>
-  <weapon name="Light mace" subclass="Simple_weapon">
+  <weapon name="Light mace" subclass="SimpleWeapon">
     <price>4 sp</price>
     <damage>1d4</damage>
     <bulk>L</bulk>
     <hands>1</hands>
-    <has_trait>Club</has_trait>
-    <has_trait>Agile</has_trait>
-    <has_trait>Finesse</has_trait>
-    <has_trait>Shove</has_trait>
+    <trait>Club</trait>
+    <trait>Agile</trait>
+    <trait>Finesse</trait>
+    <trait>Shove</trait>
     <comment>A light mace has a short wooden or metal shaft ending with a dense metal head. Used much like a club, it delivers heavy bludgeoning blows, but with extra power derived from the head’s metal ridges or spikes.</comment>
   </weapon>
-  <weapon name="Light pick" subclass="Martial_weapon">
+  <weapon name="Light pick" subclass="MartialWeapon">
     <price>4 sp</price>
     <damage>1d4</damage>
     <bulk>L</bulk>
     <hands>1</hands>
-    <has_trait>Agile</has_trait>
-    <has_trait>Pick</has_trait>
-    <has_trait value="d8">Fatal</has_trait>
+    <trait>Agile</trait>
+    <trait>Pick</trait>
+    <trait value="d8">Fatal</trait>
     <comment>A light pick is a modified mining implement with a wooden shaft ending in a pick head crafted more to pierce armor and flesh than chip rocks.</comment>
   </weapon>
-  <weapon name="Longbow" subclass="Martial_weapon">
+  <weapon name="Longbow" subclass="MartialWeapon">
     <price>6 gp</price>
     <damage>1d8</damage>
-    <range>100</range>
+    <distance>100</distance>
     <reload>0</reload>
     <bulk>2</bulk>
     <hands>1</hands>
-    <has_trait>Bow</has_trait>
-    <has_trait value="d10">Deadly</has_trait>
-    <has_trait>volley</has_trait>
+    <trait>Bow</trait>
+    <trait value="d10">Deadly</trait>
+    <trait>volley</trait>
     <ammunition>Arrow</ammunition>
     <comment>This 5-foot-tall bow, usually made of a single piece of elm, hickory, or yew, has a powerful draw and is excellent at propelling arrows with great force and at an extreme distance. You must use two hands to fire a longbow, and it can’t be used while mounted.</comment>
   </weapon>
-  <weapon name="Longspear" subclass="Simple_weapon">
+  <weapon name="Longspear" subclass="SimpleWeapon">
     <price>5 sp</price>
     <damage>1d8</damage>
     <bulk>2</bulk>
     <hands>2</hands>
-    <has_trait>Spear</has_trait>
-    <has_trait>Reach</has_trait>
+    <trait>Spear</trait>
+    <trait>Reach</trait>
     <comment>This very long spear, sometimes called a pike, is purely for thrusting rather than throwing. Used by many soldiers and city watch for crowd control and defense against charging enemies, it must be wielded with two hands.</comment>
   </weapon>
-  <weapon name="Longsword" subclass="Martial_weapon">
+  <weapon name="Longsword" subclass="MartialWeapon">
     <price>1 gp</price>
     <damage>1d8</damage>
     <bulk>1</bulk>
     <hands>1</hands>
-    <has_trait>piercing</has_trait>
-    <has_trait>versatile</has_trait>
-    <has_trait>slashing</has_trait>
-    <has_trait>Sword</has_trait>
+    <trait>piercing</trait>
+    <trait>versatile</trait>
+    <trait>slashing</trait>
+    <trait>Sword</trait>
     <comment>Longswords can be one-edged or two?edged swords. Their blades are heavy and they’re between 3 and 4 feet in length.</comment>
   </weapon>
-  <weapon name="Mace" subclass="Simple_weapon">
+  <weapon name="Mace" subclass="SimpleWeapon">
     <price>1 gp</price>
     <damage>1d6</damage>
     <bulk>1</bulk>
     <hands>1</hands>
-    <has_trait>Club</has_trait>
-    <has_trait>Shove</has_trait>
+    <trait>Club</trait>
+    <trait>Shove</trait>
     <comment>With a stout haft and a heavy metal head, a mace is sturdy and allows its wielder to deliver powerful blows and dent armor.</comment>
   </weapon>
-  <weapon name="Main-gauche" subclass="Martial_weapon">
+  <weapon name="Main-gauche" subclass="MartialWeapon">
     <price>5 sp</price>
     <damage>1d4</damage>
     <bulk>L</bulk>
     <hands>1</hands>
-    <has_trait>piercing</has_trait>
-    <has_trait>Knife</has_trait>
-    <has_trait>parry</has_trait>
-    <has_trait>slashing</has_trait>
-    <has_trait>Finesse</has_trait>
-    <has_trait>Disarm</has_trait>
-    <has_trait>Versatile</has_trait>
+    <trait>piercing</trait>
+    <trait>Knife</trait>
+    <trait>parry</trait>
+    <trait>slashing</trait>
+    <trait>Finesse</trait>
+    <trait>Disarm</trait>
+    <trait>Versatile</trait>
     <comment>This parrying dagger features a robust guard to protect the wielder’s hand.</comment>
   </weapon>
-  <weapon name="Maul" subclass="Martial_weapon">
+  <weapon name="Maul" subclass="MartialWeapon">
     <price>3 gp</price>
     <damage>1d12</damage>
     <bulk>2</bulk>
     <hands>2</hands>
-    <has_trait>Hammer</has_trait>
-    <has_trait>Shove</has_trait>
+    <trait>Hammer</trait>
+    <trait>Shove</trait>
     <comment>Mauls are massive warhammers that must be swung with two hands.</comment>
   </weapon>
-  <weapon name="Morningstar" subclass="Simple_weapon">
+  <weapon name="Morningstar" subclass="SimpleWeapon">
     <price>1 gp</price>
     <damage>1d6</damage>
     <bulk>1</bulk>
     <hands>1</hands>
-    <has_trait>piercing</has_trait>
-    <has_trait>versatile</has_trait>
-    <has_trait>Club</has_trait>
+    <trait>piercing</trait>
+    <trait>versatile</trait>
+    <trait>Club</trait>
     <comment>This weapon has a short shaft ending in a metal ball studded with spikes.</comment>
   </weapon>
-  <weapon name="Nunchaku" subclass="Martial_weapon">
+  <weapon name="Nunchaku" subclass="MartialWeapon">
     <price>2 sp</price>
     <damage>1d6</damage>
     <bulk>L</bulk>
     <hands>1</hands>
-    <has_trait>uncommon</has_trait>
-    <has_trait>Club</has_trait>
-    <has_trait>Finesse</has_trait>
-    <has_trait>Disarm</has_trait>
-    <has_trait>Backswing</has_trait>
-    <has_trait>Monk</has_trait>
+    <trait>uncommon</trait>
+    <trait>Club</trait>
+    <trait>Finesse</trait>
+    <trait>Disarm</trait>
+    <trait>Backswing</trait>
+    <trait>Monk</trait>
     <comment>The nunchaku is constructed of two wooden or metal bars connected by a short length of rope or chain.</comment>
   </weapon>
-  <weapon name="Orc knuckle dagger" subclass="Martial_weapon">
+  <weapon name="Orc knuckle dagger" subclass="MartialWeapon">
     <price>7 sp</price>
     <damage>1d6</damage>
     <bulk>L</bulk>
     <hands>1</hands>
-    <has_trait>piercing</has_trait>
-    <has_trait>Knife</has_trait>
-    <has_trait>uncommon</has_trait>
-    <has_trait>Disarm</has_trait>
-    <has_trait>Orc</has_trait>
+    <trait>piercing</trait>
+    <trait>Knife</trait>
+    <trait>uncommon</trait>
+    <trait>Disarm</trait>
+    <trait>Orc</trait>
     <comment>This stout, metal blade of orc design has a horizontal basket hilt with blades jutting from each end, or sometimes one blade like that of a katar.</comment>
   </weapon>
-  <weapon name="Orc necksplitter" subclass="Advanced_weapon">
+  <weapon name="Orc necksplitter" subclass="AdvancedWeapon">
     <price>2 gp</price>
     <damage>1d8</damage>
     <bulk>1</bulk>
     <hands>1</hands>
-    <has_trait>uncommon</has_trait>
-    <has_trait>Axe</has_trait>
-    <has_trait>Forceful</has_trait>
-    <has_trait>Orc</has_trait>
+    <trait>uncommon</trait>
+    <trait>Axe</trait>
+    <trait>Forceful</trait>
+    <trait>Orc</trait>
     <comment>This single-bladed bearded axe has a jagged blade that’s perfect for separating bone from tendon and cartilage.</comment>
   </weapon>
-  <weapon name="Pick" subclass="Martial_weapon">
+  <weapon name="Pick" subclass="MartialWeapon">
     <price>7 sp</price>
     <damage>1d6</damage>
     <bulk>1</bulk>
     <hands>1</hands>
-    <has_trait>Pick</has_trait>
-    <has_trait value="d10">Fatal</has_trait>
+    <trait>Pick</trait>
+    <trait value="d10">Fatal</trait>
     <comment>A pick designed solely for combat has a sturdy wooden shaft and a heavy, pointed head to deliver devastating blows.</comment>
   </weapon>
-  <weapon name="Ranseur" subclass="Martial_weapon">
+  <weapon name="Ranseur" subclass="MartialWeapon">
     <price>2 gp</price>
     <damage>1d10</damage>
     <bulk>2</bulk>
     <hands>2</hands>
-    <has_trait>piercing</has_trait>
-    <has_trait>Disarm</has_trait>
-    <has_trait>Polearm</has_trait>
-    <has_trait>Reach</has_trait>
+    <trait>piercing</trait>
+    <trait>Disarm</trait>
+    <trait>Polearm</trait>
+    <trait>Reach</trait>
     <comment>This polearm is a long trident with a central prong that’s longer than the other two.</comment>
   </weapon>
-  <weapon name="Rapier" subclass="Martial_weapon">
+  <weapon name="Rapier" subclass="MartialWeapon">
     <price>2 gp</price>
     <damage>1d6</damage>
     <bulk>1</bulk>
     <hands>1</hands>
-    <has_trait>piercing</has_trait>
-    <has_trait>Sword</has_trait>
-    <has_trait>Finesse</has_trait>
-    <has_trait value="d8">Deadly</has_trait>
-    <has_trait>Disarm</has_trait>
+    <trait>piercing</trait>
+    <trait>Sword</trait>
+    <trait>Finesse</trait>
+    <trait value="d8">Deadly</trait>
+    <trait>Disarm</trait>
     <comment>The rapier is a long and thin piercing blade with a basket hilt. It is prized among many as a dueling weapon.</comment>
   </weapon>
-  <weapon name="Sai" subclass="Martial_weapon">
+  <weapon name="Sai" subclass="MartialWeapon">
     <price>6 sp</price>
     <damage>1d4</damage>
     <bulk>L</bulk>
     <hands>1</hands>
-    <has_trait>piercing</has_trait>
-    <has_trait>Knife</has_trait>
-    <has_trait>bludgeoning</has_trait>
-    <has_trait>versatile</has_trait>
-    <has_trait>uncommon</has_trait>
-    <has_trait>Finesse</has_trait>
-    <has_trait>Disarm</has_trait>
-    <has_trait>Monk</has_trait>
+    <trait>piercing</trait>
+    <trait>Knife</trait>
+    <trait>bludgeoning</trait>
+    <trait>versatile</trait>
+    <trait>uncommon</trait>
+    <trait>Finesse</trait>
+    <trait>Disarm</trait>
+    <trait>Monk</trait>
     <comment>This piercing dagger is a metal spike flanked by a pair of prongs that can be used to trap an enemy’s weapon.</comment>
   </weapon>
-  <weapon name="Sap" subclass="Martial_weapon">
+  <weapon name="Sap" subclass="MartialWeapon">
     <price>1 sp</price>
     <damage>1d6</damage>
     <bulk>L</bulk>
     <hands>1</hands>
-    <has_trait>Club</has_trait>
-    <has_trait>Agile</has_trait>
-    <has_trait>Nonlethal</has_trait>
+    <trait>Club</trait>
+    <trait>Agile</trait>
+    <trait>Nonlethal</trait>
     <comment>A sap has a soft wrapping around a dense core, typically a leather sheath around a lead rod. Its head is wider than its grip to disperse the force of a blow, as the weapon’s purpose is to knock out its victim rather than to draw blood.</comment>
   </weapon>
-  <weapon name="Sawtooth saber" subclass="Advanced_weapon">
+  <weapon name="Sawtooth saber" subclass="AdvancedWeapon">
     <price>5 gp</price>
     <damage>1d6</damage>
     <bulk>L</bulk>
     <hands>1</hands>
-    <has_trait>uncommon</has_trait>
-    <has_trait>slashing</has_trait>
-    <has_trait>Sword</has_trait>
-    <has_trait>Agile</has_trait>
-    <has_trait>Finesse</has_trait>
-    <has_trait>Twin</has_trait>
+    <trait>uncommon</trait>
+    <trait>slashing</trait>
+    <trait>Sword</trait>
+    <trait>Agile</trait>
+    <trait>Finesse</trait>
+    <trait>Twin</trait>
     <comment>The signature weapon of the Red Mantis assassins, this curved blade is serrated like a saw, hence the name.</comment>
   </weapon>
-  <weapon name="Scimitar" subclass="Martial_weapon">
+  <weapon name="Scimitar" subclass="MartialWeapon">
     <price>1 gp</price>
     <damage>1d6</damage>
     <bulk>1</bulk>
     <hands>1</hands>
-    <has_trait>slashing</has_trait>
-    <has_trait>Sword</has_trait>
-    <has_trait>Forceful</has_trait>
-    <has_trait>Sweep</has_trait>
+    <trait>slashing</trait>
+    <trait>Sword</trait>
+    <trait>Forceful</trait>
+    <trait>Sweep</trait>
     <comment>This one-handed curved blade is sharp on one side.</comment>
   </weapon>
-  <weapon name="Scythe" subclass="Martial_weapon">
+  <weapon name="Scythe" subclass="MartialWeapon">
     <price>2 gp</price>
     <damage>1d10</damage>
     <bulk>2</bulk>
     <hands>2</hands>
-    <has_trait value="d10">Deadly</has_trait>
-    <has_trait>slashing</has_trait>
-    <has_trait>Polearm</has_trait>
-    <has_trait>Trip</has_trait>
+    <trait value="d10">Deadly</trait>
+    <trait>slashing</trait>
+    <trait>Polearm</trait>
+    <trait>Trip</trait>
     <comment>Derived from a farming tool used to mow down long grains and cereals, this weapon has a long wooden shaft with protruding handles, capped with a curved blade set at a right angle.</comment>
   </weapon>
-  <weapon name="Shield bash" subclass="Martial_weapon">
+  <weapon name="Shield bash" subclass="MartialWeapon">
     <damage>1d4</damage>
     <bulk>0</bulk>
     <hands>1</hands>
-    <has_trait>bludgeoning</has_trait>
-    <has_trait>Shield weapon</has_trait>
+    <trait>bludgeoning</trait>
+    <trait>ShieldWeapon</trait>
     <comment>A shield bash is not actually a weapon, but a maneuver in which you thrust or swing your shield to hit your foe with an impromptu attack.</comment>
   </weapon>
-  <weapon name="Shield boss" subclass="Martial_weapon">
+  <weapon name="Shield boss" subclass="MartialWeapon">
     <price>5 sp</price>
     <damage>1d6</damage>
     <bulk>0</bulk>
     <hands>1</hands>
-    <has_trait>bludgeoning</has_trait>
-    <has_trait>Shield weapon</has_trait>
-    <has_trait>Attached</has_trait>
+    <trait>bludgeoning</trait>
+    <trait>ShieldWeapon</trait>
+    <trait>Attached</trait>
     <comment>Typically a round, convex, or conical piece of thick metal attached to the center of a shield, a shield boss increases the bludgeoning damage of a shield bash.</comment>
   </weapon>
-  <weapon name="Shield spikes" subclass="Martial_weapon">
+  <weapon name="Shield spikes" subclass="MartialWeapon">
     <price>5 sp</price>
     <damage>1d6</damage>
     <bulk>0</bulk>
     <hands>1</hands>
-    <has_trait>piercing</has_trait>
-    <has_trait>Shield weapon</has_trait>
-    <has_trait>Attached</has_trait>
+    <trait>piercing</trait>
+    <trait>ShieldWeapon</trait>
+    <trait>Attached</trait>
     <comment>These metal spikes are strategically placed on the defensive side of the shield to deal piercing damage with a shield bash.</comment>
   </weapon>
-  <weapon name="Shortbow" subclass="Martial_weapon">
+  <weapon name="Shortbow" subclass="MartialWeapon">
     <price>3 gp</price>
     <damage>1d6</damage>
-    <range>60</range>
+    <distance>60</distance>
     <reload>0</reload>
     <bulk>1</bulk>
     <hands>1</hands>
-    <has_trait>Bow</has_trait>
+    <trait>Bow</trait>
     <ammunition>Arrow</ammunition>
-    <has_trait value="d10">Deadly</has_trait>
+    <trait value="d10">Deadly</trait>
     <comment>This smaller bow is made of a single piece of wood and favored by skirmishers and cavalry.</comment>
   </weapon>
-  <weapon name="Shortsword" subclass="Martial_weapon">
+  <weapon name="Shortsword" subclass="MartialWeapon">
     <price>9 sp</price>
     <damage>1d6</damage>
     <bulk>L</bulk>
     <hands>1</hands>
-    <has_trait>piercing</has_trait>
-    <has_trait>versatile</has_trait>
-    <has_trait>slashing</has_trait>
-    <has_trait>Sword</has_trait>
-    <has_trait>Agile</has_trait>
-    <has_trait>Finesse</has_trait>
+    <trait>piercing</trait>
+    <trait>versatile</trait>
+    <trait>slashing</trait>
+    <trait>Sword</trait>
+    <trait>Agile</trait>
+    <trait>Finesse</trait>
     <comment>These blades come in a variety of shapes and styles, but they are typically 2 feet long.</comment>
   </weapon>
-  <weapon name="Shuriken" subclass="Martial_weapon">
+  <weapon name="Shuriken" subclass="MartialWeapon">
     <price>1 cp</price>
     <damage>1d4</damage>
-    <range>20</range>
+    <distance>20</distance>
     <reload>0</reload>
     <bulk>0</bulk>
     <hands>1</hands>
-    <has_trait>uncommon</has_trait>
-    <has_trait>Thrown</has_trait>
-    <has_trait>Dart</has_trait>
-    <has_trait>Agile</has_trait>
-    <has_trait>Monk</has_trait>
+    <trait>uncommon</trait>
+    <trait>Thrown</trait>
+    <trait>Dart</trait>
+    <trait>Agile</trait>
+    <trait>Monk</trait>
     <comment>This 'throwing star'; is a small piece of flat metal with sharp edges, designed to be flung with a flick of the wrist.</comment>
   </weapon>
-  <weapon name="Sickle" subclass="Simple_weapon">
+  <weapon name="Sickle" subclass="SimpleWeapon">
     <price>2 sp</price>
     <damage>1d4</damage>
     <bulk>L</bulk>
     <hands>1</hands>
-    <has_trait>Knife</has_trait>
-    <has_trait>slashing</has_trait>
-    <has_trait>Finesse</has_trait>
-    <has_trait>Trip</has_trait>
+    <trait>Knife</trait>
+    <trait>slashing</trait>
+    <trait>Finesse</trait>
+    <trait>Trip</trait>
     <comment>Originally a farming tool used for reaping grain, this one-handed weapon has a short wooden handle ending in a curved blade, sometimes sharpened on both sides.</comment>
   </weapon>
-  <weapon name="Sling" subclass="Simple_weapon">
+  <weapon name="Sling" subclass="SimpleWeapon">
     <price>0</price>
     <damage>1d6</damage>
-    <range>50</range>
+    <distance>50</distance>
     <reload>1</reload>
     <bulk>L</bulk>
     <hands>1</hands>
-    <has_trait>Sling</has_trait>
+    <trait>Sling</trait>
     <ammunition>Sling bullet</ammunition>
     <comment>Little more than a leather cup attached to a pair of straps, a sling can be used to fling smooth stones or sling bullets at a range.</comment>
   </weapon>
-  <weapon name="Spear" subclass="Simple_weapon">
+  <weapon name="Spear" subclass="SimpleWeapon">
     <price>1 sp</price>
     <damage>1d6</damage>
-    <range>20</range>
+    <distance>20</distance>
     <bulk>1</bulk>
     <hands>1</hands>
-    <has_trait>Thrown</has_trait>
-    <has_trait>Spear</has_trait>
+    <trait>Thrown</trait>
+    <trait>Spear</trait>
     <comment>A long metal shaft ending with a metal spike, a spear can be used one-handed as a melee weapon and can be thrown.</comment>
   </weapon>
-  <weapon name="Spiked chain" subclass="Martial_weapon">
+  <weapon name="Spiked chain" subclass="MartialWeapon">
     <price>3 gp</price>
     <damage>1d8</damage>
     <bulk>1</bulk>
     <hands>2</hands>
-    <has_trait>uncommon</has_trait>
-    <has_trait>slashing</has_trait>
-    <has_trait>Finesse</has_trait>
-    <has_trait>Flail</has_trait>
-    <has_trait>Disarm</has_trait>
-    <has_trait>Trip</has_trait>
+    <trait>uncommon</trait>
+    <trait>slashing</trait>
+    <trait>Finesse</trait>
+    <trait>Flail</trait>
+    <trait>Disarm</trait>
+    <trait>Trip</trait>
     <comment>This 4?foot?long length of chain is covered with barbs and has spikes on one or both ends. Some feature metal hoops used as handgrips.</comment>
   </weapon>
-  <weapon name="Spiked gauntlet" subclass="Simple_weapon">
+  <weapon name="Spiked gauntlet" subclass="SimpleWeapon">
     <price>3 sp</price>
     <damage>1d4</damage>
     <bulk>L</bulk>
     <hands>1</hands>
-    <has_trait>Piercing</has_trait>
-    <has_trait>Brawling</has_trait>
-    <has_trait>Free-hand</has_trait>
+    <trait>Piercing</trait>
+    <trait>Brawling</trait>
+    <trait>Free-hand</trait>
     <comment>Providing the same defensive function as a standard gauntlet, this version has a group of spikes protruding from the knuckles to deliver piercing damage with a punch.</comment>
   </weapon>
-  <weapon name="Staff" subclass="Simple_weapon">
+  <weapon name="Staff" subclass="SimpleWeapon">
     <price>0</price>
     <damage>1d4</damage>
     <bulk>1</bulk>
     <hands>1</hands>
-    <has_trait>Club</has_trait>
-    <has_trait value="d8">Two-hand</has_trait>
+    <trait>Club</trait>
+    <trait value="d8">Two-hand</trait>
     <comment>This long piece of wood can aid in walking and deliver a mighty blow.</comment>
   </weapon>
-  <weapon name="Starknife" subclass="Martial_weapon">
+  <weapon name="Starknife" subclass="MartialWeapon">
     <price>2 gp</price>
     <damage>1d4</damage>
-    <range>20</range>
+    <distance>20</distance>
     <bulk>L</bulk>
     <hands>1</hands>
-    <has_trait>piercing</has_trait>
-    <has_trait>Knife</has_trait>
-    <has_trait>versatile</has_trait>
-    <has_trait>Thrown</has_trait>
-    <has_trait>slashing</has_trait>
-    <has_trait>Finesse</has_trait>
-    <has_trait value="d6">Deadly</has_trait>
+    <trait>piercing</trait>
+    <trait>Knife</trait>
+    <trait>versatile</trait>
+    <trait>Thrown</trait>
+    <trait>slashing</trait>
+    <trait>Finesse</trait>
+    <trait value="d6">Deadly</trait>
     <comment>From a central metal ring, four tapering metal blades extend like points on a compass rose. When gripping a starknife from the center, the wielder can use it as a melee weapon. It can also be thrown short distances.</comment>
   </weapon>
-  <weapon name="Temple sword" subclass="Martial_weapon">
+  <weapon name="Temple sword" subclass="MartialWeapon">
     <price>2 gp</price>
     <damage>1d8</damage>
     <bulk>1</bulk>
     <hands>1</hands>
-    <has_trait>uncommon</has_trait>
-    <has_trait>slashing</has_trait>
-    <has_trait>Sword</has_trait>
-    <has_trait>Monk</has_trait>
-    <has_trait>Trip</has_trait>
+    <trait>uncommon</trait>
+    <trait>slashing</trait>
+    <trait>Sword</trait>
+    <trait>Monk</trait>
+    <trait>Trip</trait>
     <comment>This heavy blade is favored by guardians of religious sites. It has a distinctive, crescent-shaped blade that seems to be a mix of a sickle and sword. It often has holes drilled into the blade or the pommel so that bells or other holy trinkets can be affixed to the weapon as an aid for prayer or mediation.</comment>
   </weapon>
-  <weapon name="Trident" subclass="Martial_weapon">
+  <weapon name="Trident" subclass="MartialWeapon">
     <price>1 gp</price>
     <damage>1d8</damage>
-    <range>20</range>
+    <distance>20</distance>
     <bulk>1</bulk>
     <hands>1</hands>
-    <has_trait>Thrown</has_trait>
-    <has_trait>Spear</has_trait>
+    <trait>Thrown</trait>
+    <trait>Spear</trait>
     <comment>This three-pronged, spear-like weapon typically has a 4-foot shaft. Like a spear, it can be wielded with one hand or thrown.</comment>
   </weapon>
-  <weapon name="War flail" subclass="Martial_weapon">
+  <weapon name="War flail" subclass="MartialWeapon">
     <price>2 gp</price>
     <damage>1d10</damage>
     <bulk>2</bulk>
     <hands>2</hands>
-    <has_trait>bludgeoning</has_trait>
-    <has_trait>Flail</has_trait>
-    <has_trait>Disarm</has_trait>
-    <has_trait>Sweep</has_trait>
-    <has_trait>Trip</has_trait>
+    <trait>bludgeoning</trait>
+    <trait>Flail</trait>
+    <trait>Disarm</trait>
+    <trait>Sweep</trait>
+    <trait>Trip</trait>
     <comment>This large flail has a long shaft connected to a shorter piece of stout wood or metal that’s sometimes inlaid with spikes.</comment>
   </weapon>
-  <weapon name="Warhammer" subclass="Martial_weapon">
+  <weapon name="Warhammer" subclass="MartialWeapon">
     <price>1 gp</price>
     <damage>1d8</damage>
     <bulk>1</bulk>
     <hands>1</hands>
-    <has_trait>Hammer</has_trait>
-    <has_trait>Shove</has_trait>
+    <trait>Hammer</trait>
+    <trait>Shove</trait>
     <comment>This weapon has a wooden shaft ending in a large, heavy metal head. The head of the hammer might be single-sided or double-sided, but it’s always capable of delivering powerful bludgeoning blows.</comment>
   </weapon>
-  <weapon name="Whip" subclass="Martial_weapon">
+  <weapon name="Whip" subclass="MartialWeapon">
     <price>1 sp</price>
     <damage>1d4</damage>
     <bulk>1</bulk>
     <hands>1</hands>
-    <has_trait>slashing</has_trait>
-    <has_trait>Finesse</has_trait>
-    <has_trait>Flail</has_trait>
-    <has_trait>Disarm</has_trait>
-    <has_trait>Nonlethal</has_trait>
-    <has_trait>Reach</has_trait>
-    <has_trait>Trip</has_trait>
+    <trait>slashing</trait>
+    <trait>Finesse</trait>
+    <trait>Flail</trait>
+    <trait>Disarm</trait>
+    <trait>Nonlethal</trait>
+    <trait>Reach</trait>
+    <trait>Trip</trait>
     <comment>This long strand of thick leather, often braided, delivers a painful but nonlethal slash at a distance, usually accompanied by a distinctive cracking sound.</comment>
   </weapon>
 </root>

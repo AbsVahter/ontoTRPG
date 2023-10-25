@@ -1,650 +1,667 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
-  <art name="alchemist_1">
+  <row name="alchemist_1">
     <image>https://scontent.ftgd2-1.fna.fbcdn.net/v/t1.6435-9/105621223_3102404586512926_8145470847938403464_n.jpg?_nc_cat=105&amp;ccb=1-7&amp;_nc_sid=730e14&amp;_nc_ohc=xc4gwvmRy-8AX-IFI21&amp;_nc_ht=scontent.ftgd2-1.fna&amp;oh=00_AfCEOiyWf0qVbUnuMgSvcMKtOkGfWrGaIhFxib1XWeEMxg&amp;oe=652A55CD</image>
     <depicts>alchemist</depicts>
-  </art>
-  <art name="alchemist_2">
+  </row>
+  <row name="alchemist_2">
     <image>https://2e.aonprd.com/Images/Classes/Iconic_Fumbus.png</image>
     <depicts>alchemist</depicts>
-  </art>
-  <art name="chirurgeon">
+  </row>
+  <row name="chirurgeon">
     <image>https://cdna.artstation.com/p/assets/images/images/039/803/930/large/will-o-brien-pzo2101-alchemist-yiga-chirurgeon-copy-c.jpg?1626975384</image>
     <depicts>alchemist</depicts>
     <depicts>chirurgeon</depicts>
-  </art>
-  <art name="alchemist_3">
+  </row>
+  <row name="alchemist_3">
     <image>https://rollforcombat.com/wp-content/uploads/2019/08/5.jpg</image>
     <depicts>alchemist</depicts>
-  </art>
-  <art name="bomber">
+  </row>
+  <row name="bomber">
     <image>https://cdna.artstation.com/p/assets/images/images/039/803/920/large/will-o-brien-pzo2101-alchemist-tanoa-bomber-copy-c.jpg?1626975363</image>
     <depicts>bomber</depicts>
-  </art>
-  <art name="mutagenist">
+  </row>
+  <row name="mutagenist">
     <image>https://cdnb.artstation.com/p/assets/images/images/039/803/913/large/will-o-brien-pzo2101-alchemist-gheera-mutagenist-copy-c.jpg?1626975344</image>
     <depicts>mutagenist</depicts>
-  </art>
-  <art name="barbarian_1">
+  </row>
+  <row name="barbarian_1">
     <image>https://cdn.paizo.com/a7d62ac8-7f03-00ef-f1f0-83fb8bf332e2/a55f5324-d382-4d34-af69-164d12b2a3ee/P2_Header_Amiri.png</image>
     <depicts>barbarian</depicts>
-  </art>
-  <art name="barbarian_2">
+  </row>
+  <row name="barbarian_2">
     <image>https://2e.aonprd.com/Images/Classes/Iconic_Amiri.png</image>
     <depicts>barbarian</depicts>
-  </art>
-  <art name="barbarian_3">
+  </row>
+  <row name="barbarian_3">
     <image>https://cdn.paizo.com/image/content/PathfinderRPG/20190307-Amiri.jpg</image>
     <depicts>barbarian</depicts>
-  </art>
-  <art name="animal_instinct">
+  </row>
+  <row name="animal_instinct">
     <image>https://i.ibb.co/WybJwL9/art-animal-rager.jpg</image>
     <depicts>animal_instinct</depicts>
     <depicts>barbarian</depicts>
-  </art>
-  <art name="fury_instinct">
+  </row>
+  <row name="fury_instinct">
     <image>https://i.ibb.co/yNk19D8/art-fury-instinct.jpg</image>
     <depicts>fury_instinct</depicts>
     <depicts>barbarian</depicts>
-  </art>
-  <art name="bard_1">
+  </row>
+  <row name="bard_1">
     <image>https://cdn.paizo.com/image/content/Secondary/PZO2213-1.jpg</image>
     <depicts>bard</depicts>
-  </art>
-  <art name="bard_2">
+  </row>
+  <row name="bard_2">
     <image>https://static.wikia.nocookie.net/pathfinderkingmaker/images/e/e9/%D0%91%D0%B0%D1%80%D0%B4.jpeg/revision/latest?cb=20210215032750&amp;path-prefix=ru</image>
     <depicts>bard</depicts>
-  </art>
-  <art name="bard_3">
+  </row>
+  <row name="bard_3">
     <image>https://cdn.paizo.com/image/content/PathfinderRPG/20190404-Harpies.jpg</image>
     <depicts>bard</depicts>
-  </art>
-  <art name="dancer">
+  </row>
+  <row name="dancer">
     <image>https://cdn.paizo.com/image/content/Blog/20190624-2.jpg</image>
     <depicts>maestro</depicts>
     <depicts>bard</depicts>
-  </art>
-  <art name="champion_1">
+  </row>
+  <row name="champion_1">
     <image>https://i.ibb.co/qJ9kvG3/art-champion.jpg</image>
     <depicts>champion</depicts>
-  </art>
-  <art name="champion_2">
+  </row>
+  <row name="champion_2">
     <image>https://2e.aonprd.com/Images/Classes/Iconic_Seelah.png</image>
     <depicts>champion</depicts>
-  </art>
-  <art name="champion_3">
+  </row>
+  <row name="champion_3">
     <image>https://cdn.paizo.com/image/content/PathfinderRPG/20190501-Encounter.jpg</image>
     <depicts>champion</depicts>
-  </art>
-  <art name="redeemer">
+  </row>
+  <row name="redeemer">
     <image>https://cdnb.artstation.com/p/assets/images/images/031/795/817/4k/michele-esposito-5.jpg?1604606397</image>
     <depicts>redeemer</depicts>
     <depicts>champion</depicts>
-  </art>
-  <art name="liberator">
+  </row>
+  <row name="liberator">
     <image>https://cdna.artstation.com/p/assets/images/images/031/795/796/4k/michele-esposito-4.jpg?1604606352</image>
     <depicts>liberator</depicts>
     <depicts>champion</depicts>
-  </art>
-  <art name="cleric_1">
+  </row>
+  <row name="cleric_1">
     <image>https://cdn.paizo.com/image/content/Secondary/PZO2212-1.jpg</image>
     <depicts>cleric</depicts>
-  </art>
-  <art name="cleric_2">
+  </row>
+  <row name="cleric_2">
     <image>https://cdn.paizo.com/image/content/PathfinderRPG/20190326-Kyra.jpg</image>
     <depicts>cleric</depicts>
-  </art>
-  <art name="warpriest">
+  </row>
+  <row name="warpriest">
     <image>https://cdna.artstation.com/p/assets/images/images/024/281/430/large/konstantin-porubov-cleric-odrek.jpg?1581919719</image>
     <depicts>warpriest</depicts>
     <depicts>cleric</depicts>
-  </art>
-  <art name="cloistered_cleric">
+  </row>
+  <row name="cloistered_cleric">
     <image>https://cdna.artstation.com/p/assets/images/images/024/281/426/large/konstantin-porubov-cleric-meqe1.jpg?1581919713</image>
     <depicts>cloistered_cleric</depicts>
     <depicts>cleric</depicts>
-  </art>
-  <art name="cleric_3">
+  </row>
+  <row name="cleric_3">
     <image>https://cdnb.artstation.com/p/assets/images/images/053/731/057/large/hai-hoang-hai-hoang-clericpx.jpg?1662911339</image>
     <depicts>cleric</depicts>
-  </art>
-  <art name="druid_1">
+  </row>
+  <row name="druid_1">
     <image>https://cdn.paizo.com/image/content/Secondary/PZO2215-1.jpg</image>
     <depicts>druid</depicts>
-  </art>
-  <art name="druid_2">
+  </row>
+  <row name="druid_2">
     <image>https://2e.aonprd.com/Images/Classes/Iconic_Lini.png</image>
     <depicts>druid</depicts>
-  </art>
-  <art name="wild_order">
+  </row>
+  <row name="wild_order">
     <image>https://dnd.su/bestiary/5005-shifter/</image>
     <depicts>wild_order</depicts>
     <depicts>druid</depicts>
-  </art>
-  <art name="storm_order">
+  </row>
+  <row name="storm_order">
     <image>https://i.ibb.co/Sfs56qF/art-storm-order.jpg</image>
     <depicts>storm_order</depicts>
     <depicts>druid</depicts>
-  </art>
-  <art name="druid_3">
+  </row>
+  <row name="druid_3">
     <image>https://cdn.paizo.com/image/content/PathfinderRPG/20190411-Lini.jpg</image>
     <depicts>druid</depicts>
-  </art>
-  <art name="leaf_order">
+  </row>
+  <row name="leaf_order">
     <image>https://i.ibb.co/T8pqqmg/art-leaf-order.jpg</image>
     <depicts>druid</depicts>
-  </art>
-  <art name="fighter_1">
+  </row>
+  <row name="fighter_1">
     <image>https://scontent.ftgd2-1.fna.fbcdn.net/v/t1.6435-9/104220663_3086063021480416_8853282941021455166_n.jpg?_nc_cat=111&amp;ccb=1-7&amp;_nc_sid=730e14&amp;_nc_ohc=1tUyG2WRs3UAX_1TkpP&amp;_nc_ht=scontent.ftgd2-1.fna&amp;oh=00_AfBFSLFwFar-TWx4A5gltzdsSrzWBhpfiTFKNxG8jO1WeA&amp;oe=652A5CC2</image>
     <depicts>fighter</depicts>
-  </art>
-  <art name="fighter_2">
+  </row>
+  <row name="fighter_2">
     <image>https://2e.aonprd.com/Images/Classes/Iconic_Valeros.png</image>
     <depicts>fighter</depicts>
-  </art>
-  <art name="fighter_3">
+  </row>
+  <row name="fighter_3">
     <image>https://cdn.paizo.com/image/content/PathfinderRPG/20190516-Encounter.jpg</image>
     <depicts>fighter</depicts>
-  </art>
-  <art name="fighter_4">
+  </row>
+  <row name="fighter_4">
     <image>https://cdnb.artstation.com/p/assets/images/images/031/795/745/large/michele-esposito-99.jpg?1604606236</image>
     <depicts>fighter</depicts>
-  </art>
-  <art name="fighter_5">
+  </row>
+  <row name="fighter_5">
     <image>https://cdna.artstation.com/p/assets/images/images/031/795/706/large/michele-esposito-8.jpg?1604606160</image>
     <depicts>fighter</depicts>
-  </art>
-  <art name="fighter_6">
+  </row>
+  <row name="fighter_6">
     <image>https://cdna.artstation.com/p/assets/images/images/031/795/830/large/michele-esposito-7.jpg?1604606437</image>
     <depicts>fighter</depicts>
-  </art>
-  <art name="monk_1">
+  </row>
+  <row name="monk_1">
     <image>https://scontent.ftgd2-1.fna.fbcdn.net/v/t1.6435-9/102662893_3056407654445953_2820138572378537984_n.jpg?stp=dst-jpg_p526x296&amp;_nc_cat=110&amp;ccb=1-7&amp;_nc_sid=730e14&amp;_nc_ohc=C5vdAyObdQkAX9JUkwR&amp;_nc_ht=scontent.ftgd2-1.fna&amp;oh=00_AfBfuUMNMocd5r4aPyz26NFYfThBrS2I5tY2jkSmaoAUrw&amp;oe=652A5F30</image>
     <depicts>monk</depicts>
-  </art>
-  <art name="monk_2">
+  </row>
+  <row name="monk_2">
     <image>https://static.wixstatic.com/media/0a2620_25f16d3b6bc54f4480f0d50d6eb6b53e~mv2.jpg/v1/fill/w_539,h_758,al_c,q_85,enc_auto/0a2620_25f16d3b6bc54f4480f0d50d6eb6b53e~mv2.jpg</image>
     <depicts>monk</depicts>
-  </art>
-  <art name="monk_3">
+  </row>
+  <row name="monk_3">
     <image>https://cdn.paizo.com/image/content/PathfinderRPG/20190425-Encounter.jpg</image>
     <depicts>monk</depicts>
-  </art>
-  <art name="monk_4">
+  </row>
+  <row name="monk_4">
     <image>https://i.ibb.co/s2BJzdx/art-monk-4.jpg</image>
     <depicts>monk</depicts>
-  </art>
-  <art name="monk_5">
+  </row>
+  <row name="monk_5">
     <image>https://cdn.paizo.com/image/content/Blog/20190624-5.jpg</image>
     <depicts>monk</depicts>
-  </art>
-  <art name="ranger_1">
+  </row>
+  <row name="ranger_1">
     <image>https://scontent.ftgd2-1.fna.fbcdn.net/v/t1.6435-9/103278923_3069070079846377_7004001286681888993_n.jpg?_nc_cat=103&amp;ccb=1-7&amp;_nc_sid=730e14&amp;_nc_ohc=l0bk9dFme54AX_S3lp0&amp;_nc_ht=scontent.ftgd2-1.fna&amp;oh=00_AfC2-55z45-sp3ETQqKjF1KqpmEP02Wrc1-Y0yO0kUGdpw&amp;oe=652A85DA</image>
     <depicts>ranger</depicts>
-  </art>
-  <art name="ranger_2">
+  </row>
+  <row name="ranger_2">
     <image>https://2e.aonprd.com/Images/Classes/Iconic_Harsk.png</image>
     <depicts>ranger</depicts>
-  </art>
-  <art name="ranger_3">
+  </row>
+  <row name="ranger_3">
     <image>https://cdn.paizo.com/image/content/PathfinderRPG/PZO2101-HarskHalfPage.jpg</image>
     <depicts>ranger</depicts>
-  </art>
-  <art name="outwit_edge">
+  </row>
+  <row name="outwit_edge">
     <image>https://i.ibb.co/NLV07Mn/art-outwit-edge.jpg</image>
     <depicts>outwit_edge</depicts>
     <depicts>ranger</depicts>
-  </art>
-  <art name="flurry_edge">
+  </row>
+  <row name="flurry_edge">
     <image>https://cdna.artstation.com/p/assets/images/images/022/609/780/large/valera-lutfullina-ranger-hildegaard-tiny.jpg?1576065793</image>
     <depicts>flurry_edge</depicts>
     <depicts>ranger</depicts>
-  </art>
-  <art name="rogue_1">
+  </row>
+  <row name="rogue_1">
     <image>https://scontent.ftgd2-1.fna.fbcdn.net/v/t1.6435-9/105034384_3090923697661015_8939600966791836701_n.jpg?_nc_cat=106&amp;ccb=1-7&amp;_nc_sid=730e14&amp;_nc_ohc=uSszEK4868kAX9UI51G&amp;_nc_oc=AQlyaGN2c9xgqtktqZ7sGhBz6sN-AFFjIw6uj6EPQJ2xw5d_94PQiqeksfzZA05imPY&amp;_nc_ht=scontent.ftgd2-1.fna&amp;oh=00_AfANJ15PXPvLKrnO-p9LHGzJX2RKiGseJcLVMuv2hAEZYw&amp;oe=652A792A</image>
     <depicts>rogue</depicts>
-  </art>
-  <art name="rogue_2">
+  </row>
+  <row name="rogue_2">
     <image>https://cdn.paizo.com/image/content/PathfinderRPG/20190416-Merisiel.jpg</image>
     <depicts>rogue</depicts>
-  </art>
-  <art name="scoundrel">
+  </row>
+  <row name="scoundrel">
     <image>https://cdnb.artstation.com/p/assets/images/images/031/795/647/large/michele-esposito-2.jpg?1604606023</image>
     <depicts>scoundrel</depicts>
     <depicts>rogue</depicts>
-  </art>
-  <art name="rogue_3">
+  </row>
+  <row name="rogue_3">
     <image>https://cdn.paizo.com/image/content/PathfinderRPG/20190418-Encounter.jpg</image>
     <depicts>rogue</depicts>
-  </art>
-  <art name="thief">
+  </row>
+  <row name="thief">
     <image>https://cdna.artstation.com/p/assets/images/images/031/795/632/large/michele-esposito-a1.jpg?1604605980</image>
     <depicts>thief</depicts>
-  </art>
-  <art name="sorcerer_1">
+  </row>
+  <row name="sorcerer_1">
     <image>https://scontent.ftgd2-1.fna.fbcdn.net/v/t1.6435-9/104429825_3093835030703215_2059687613051181022_n.jpg?stp=dst-jpg_p526x296&amp;_nc_cat=108&amp;ccb=1-7&amp;_nc_sid=730e14&amp;_nc_ohc=luyogdFSiXgAX-oBi_3&amp;_nc_ht=scontent.ftgd2-1.fna&amp;oh=00_AfCDzM8s8mZDQgkY0N7MDN4icudkDi5qlWlXDKrEJtzUyg&amp;oe=652A9D0D</image>
     <depicts>sorcerer</depicts>
-  </art>
-  <art name="sorcerer_2">
+  </row>
+  <row name="sorcerer_2">
     <image>https://cdn.paizo.com/image/content/PathfinderRPG/20190509-Seoni.jpg</image>
     <depicts>sorcerer</depicts>
-  </art>
-  <art name="fey_bloodline">
+  </row>
+  <row name="fey_bloodline">
     <image>https://cdna.artstation.com/p/assets/images/images/022/609/776/large/valera-lutfullina-sorcerer-tebelebrol.jpg?1576065790</image>
     <depicts>fey_bloodline</depicts>
     <depicts>sorcerer</depicts>
-  </art>
-  <art name="sorcerer_3">
+  </row>
+  <row name="sorcerer_3">
     <image>https://cdn.paizo.com/image/content/PathfinderRPG/20190510-Encounter.jpg</image>
     <depicts>sorcerer</depicts>
-  </art>
-  <art name="demonic_bloodline">
+  </row>
+  <row name="demonic_bloodline">
     <image>https://cdna.artstation.com/p/assets/images/images/022/609/774/large/valera-lutfullina-sorcerer-inez.jpg?1576065788</image>
     <depicts>demonic_bloodline</depicts>
     <depicts>sorcerer</depicts>
-  </art>
-  <art name="wizard_1">
+  </row>
+  <row name="wizard_1">
     <image>https://i0.wp.com/shopthesquirrel.com/wp-content/uploads/2020/10/Spell-Cards-Arcane.jpg?fit=744%2C1039&amp;ssl=1</image>
     <depicts>wizard</depicts>
-  </art>
-  <art name="wizard_2">
+  </row>
+  <row name="wizard_2">
     <image>https://static.wikia.nocookie.net/pathfinderkingmaker/images/4/43/%D0%9C%D0%B0%D0%B3.jpeg/revision/latest?cb=20210215031535&amp;path-prefix=ru</image>
     <depicts>wizard</depicts>
-  </art>
-  <art name="conjuration_arcane_school">
+  </row>
+  <row name="conjuration_arcane_school">
     <image>https://i.pinimg.com/originals/1c/74/a4/1c74a48391b592d7f35b84d5436c1ced.png</image>
     <depicts>conjuration_arcane_school</depicts>
     <depicts>wizard</depicts>
-  </art>
-  <art name="wizard_3">
+  </row>
+  <row name="wizard_3">
     <image>https://cdn.paizo.com/image/content/PathfinderRPG/20190314-Ezren.jpg</image>
     <depicts>wizard</depicts>
-  </art>
-  <art name="illusion_arcane_school">
+  </row>
+  <row name="illusion_arcane_school">
     <image>https://i.ibb.co/mRnrCdd/art-illusion-arcane-sschool.jpg</image>
     <depicts>illusion_arcane_school</depicts>
     <depicts>wizard</depicts>
-  </art>
-  <art name="animal_companions_and_familiars_1">
+  </row>
+  <row name="animal_companions_and_familiars_1">
     <image>https://i.ibb.co/WD3Kfhf/animal-companions-and-familiars-1.jpg</image>
-  </art>
-  <art name="animal_companions_and_familiars_2">
+  </row>
+  <row name="animal_companions_and_familiars_2">
     <image>https://i.ibb.co/1d5YrRB/animal-companions-and-familiars-2.jpg</image>
-  </art>
-  <art name="animal_companions_and_familiars_3">
+  </row>
+  <row name="animal_companions_and_familiars_3">
     <image>https://cdnb.artstation.com/p/assets/images/images/020/126/389/large/giorgio-falconi-talking-bat.jpg?1566475283</image>
-  </art>
-  <art name="alchemist_archetype">
+  </row>
+  <row name="alchemist_archetype">
     <image>https://i.ibb.co/thmrqPt/alchemist-archetype.jpg</image>
     <depicts>alchemist_archetype</depicts>
-  </art>
-  <art name="barbarian_archetype">
+  </row>
+  <row name="barbarian_archetype">
     <image>https://i.ibb.co/c27m3P3/barbarian-archetype.jpg</image>
     <depicts>barbarian_archetype</depicts>
-  </art>
-  <art name="bard_archetype">
+  </row>
+  <row name="bard_archetype">
     <image>https://roll20.net/v2/images/pathfinder2/launch-character.png</image>
     <depicts>bard_archetype</depicts>
-  </art>
-  <art name="champion_archetype">
+  </row>
+  <row name="champion_archetype">
     <image>https://i.ibb.co/Gx2zYJF/champion-archetype.jpg</image>
     <depicts>champion_archetype</depicts>
-  </art>
-  <art name="cleric_archetype">
+  </row>
+  <row name="cleric_archetype">
     <image>https://i.ibb.co/Fw78nsQ/cleric-archetype.jpg</image>
     <depicts>cleric_archetype</depicts>
-  </art>
-  <art name="druid_archetype">
+  </row>
+  <row name="druid_archetype">
     <image>https://i.ibb.co/p1hKPHw/druid-archetype.jpg</image>
     <depicts>druid_archetype</depicts>
-  </art>
-  <art name="fighter_archetype">
+  </row>
+  <row name="fighter_archetype">
     <image>https://i.pinimg.com/564x/2e/70/3e/2e703e690b7dc1a7925409516f159968.jpg</image>
     <depicts>fighter_archetype</depicts>
-  </art>
-  <art name="monk_archetype">
+  </row>
+  <row name="monk_archetype">
     <image>https://pbs.twimg.com/media/FMC7_r5aAAA4qWG?format=webp&amp;name=900x900</image>
     <depicts>monk_archetype</depicts>
-  </art>
-  <art name="ranger_archetype">
+  </row>
+  <row name="ranger_archetype">
     <image>https://i.ibb.co/2vs0NdS/ranger-archetype.jpg</image>
     <depicts>ranger_archetype</depicts>
-  </art>
-  <art name="rogue_archetype">
+  </row>
+  <row name="rogue_archetype">
     <image>https://i.ibb.co/7bYKc18/rogue-archetype.jpg</image>
     <depicts>rogue_archetype</depicts>
-  </art>
-  <art name="sorcerer_archetype">
+  </row>
+  <row name="sorcerer_archetype">
     <image>https://i.ibb.co/YQVRXnd/sorcerer-archetype.jpg</image>
     <depicts>sorcerer_archetype</depicts>
-  </art>
-  <art name="wizard_archetype">
+  </row>
+  <row name="wizard_archetype">
     <image>https://cdn.paizo.com/image/content/Blog/20190715-cast_500.jpeg</image>
     <depicts>wizard_archetype</depicts>
-  </art>
-  <art name="skills_1">
+  </row>
+  <row name="skills_1">
     <image>https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSw3Z408ZNRe_wZx7k0fFsdHeksY-eEcDPJbQiljd1JEQYlewEU</image>
-  </art>
-  <art name="skills_2">
+  </row>
+  <row name="skills_2">
     <image>https://legendary-digital-network-assets.s3.amazonaws.com/geekandsundry/wp-content/uploads/2019/11/Pathfinder-Skills-Image-2.png</image>
-  </art>
-  <art name="skills_3">
+  </row>
+  <row name="skills_3">
     <image>https://legendary-digital-network-assets.s3.amazonaws.com/geekandsundry/wp-content/uploads/2019/11/Pathfinder-Skills-Image-1.png</image>
-  </art>
-  <art name="feats_1">
+  </row>
+  <row name="feats_1">
     <image>https://cdn.paizo.com/image/content/Blog/20190702-walljump_500.jpeg</image>
-  </art>
-  <art name="feats_2">
+  </row>
+  <row name="feats_2">
     <image>https://i0.wp.com/www.teilzeithelden.de/wp-content/uploads/2019/08/C-2.png?ssl=1</image>
-  </art>
-  <art name="feats_3">
+  </row>
+  <row name="feats_3">
     <image>https://i.ibb.co/swLxJ04/feat-3.jpg</image>
-  </art>
-  <art name="feats_4">
+  </row>
+  <row name="feats_4">
     <image>https://black-book-editions.fr/contenu/image/Tony/PZO2101--underwater-marauder.jpg</image>
-  </art>
-  <art name="equipment_1">
+  </row>
+  <row name="equipment_1">
     <image>https://i.ibb.co/sgNY3Lj/art-equipment.jpg</image>
-  </art>
-  <art name="equipment_2">
+  </row>
+  <row name="equipment_2">
     <image>https://cdnb.artstation.com/p/assets/images/images/019/976/601/large/rogier-van-de-beek-valeros-1paint.jpg?1565817340</image>
-  </art>
-  <art name="equipment_3">
+  </row>
+  <row name="equipment_3">
     <image>https://cdnb.artstation.com/p/assets/images/images/019/976/599/large/rogier-van-de-beek-kyra-1paint.jpg?1565817339</image>
-  </art>
-  <art name="weapon_1">
+  </row>
+  <row name="weapon_1">
     <image>https://i.ibb.co/94PpZ5P/art-weapon-1.jpg</image>
-  </art>
-  <art name="weapon_2">
+  </row>
+  <row name="weapon_2">
     <image>https://i.ibb.co/yf1j40R/art-weapon-2.jpg</image>
-  </art>
-  <art name="gear">
+  </row>
+  <row name="gear">
     <image>https://i.ibb.co/m6C3nTD/art-gear.jpg</image>
-  </art>
-  <art name="spells_1">
+  </row>
+  <row name="spells_1">
     <image>https://i.ibb.co/7JtvTLQ/art-spells-1.jpg</image>
-  </art>
-  <art name="spellbook">
+  </row>
+  <row name="spellbook">
     <image>https://2e.aonprd.com/Images/Treasure/Spellbook.webp</image>
     <depicts>spellbook_blank</depicts>
-  </art>
-  <art name="material component pouch">
+  </row>
+  <row name="material component pouch">
     <image>https://2e.aonprd.com/Images/Treasure/Material_Component_Pouch.webp</image>
     <depicts>material_component_pouch</depicts>
-  </art>
-  <art name="handheld musical instrument">
+  </row>
+  <row name="handheld musical instrument">
     <image>https://2e.aonprd.com/Images/Treasure/Musical_Instrument.webp</image>
     <depicts>handheld_musical_instrument</depicts>
-  </art>
-  <art name="spells_2">
+  </row>
+  <row name="spells_2">
     <image>https://images2.minutemediacdn.com/image/fetch/c_fill,g_auto,f_auto,h_432,w_648/https%3A%2F%2Fapptrigger.com%2Ffiles%2F2019%2F08%2FPathfinder-2nd-Edition-spell-preparation.jpg</image>
-  </art>
-  <art name="spells_3">
+  </row>
+  <row name="spells_3">
     <image>https://legendary-digital-network-assets.s3.amazonaws.com/geekandsundry/wp-content/uploads/2019/11/Pathfinder-Magic-Image-2.png</image>
-  </art>
-  <art name="spells_4">
+  </row>
+  <row name="spells_4">
     <image>https://rollforcombat.com/wp-content/uploads/2019/08/7.jpg</image>
-  </art>
-  <art name="spells_5">
+  </row>
+  <row name="spells_5">
     <image>https://rollforcombat.com/wp-content/uploads/2019/08/8.jpg</image>
-  </art>
-  <art name="spells_6">
+  </row>
+  <row name="spells_6">
     <image>https://legendary-digital-network-assets.s3.amazonaws.com/geekandsundry/wp-content/uploads/2019/11/Pathfinder-Spells-Image.png</image>
-  </art>
-  <art name="spells_7">
+  </row>
+  <row name="spells_7">
     <image>https://i.ibb.co/Hn6wPjv/art-spells-7.jpg</image>
-  </art>
-  <art name="spells_8">
+  </row>
+  <row name="spells_8">
     <image>https://i.ibb.co/rFfg5kB/art-spells-8.jpg</image>
-  </art>
-  <art name="spells_9">
+  </row>
+  <row name="spells_9">
     <image>https://www.wargamer.com/wp-content/sites/wargamer/2023/01/pathfinder-wizard-2e-casting.jpg</image>
-  </art>
-  <art name="spells_10">
+  </row>
+  <row name="spells_10">
     <image>https://i.ibb.co/fX0SnL2/art-spells-10.jpg</image>
-  </art>
-  <art name="spells_11">
+  </row>
+  <row name="spells_11">
     <image>https://i.ibb.co/WPg8qgq/art-spells-11.jpg</image>
-  </art>
-  <art name="spells_12">
+  </row>
+  <row name="spells_12">
     <image>https://i.ibb.co/m52d3vp/art-spells-12.jpg</image>
-  </art>
-  <art name="spells_13">
+  </row>
+  <row name="spells_13">
     <image>https://i.ibb.co/JpfJMkg/art-spells-13.jpg</image>
-  </art>
-  <art name="spells_14">
+  </row>
+  <row name="spells_14">
     <image>https://cdn.paizo.com/image/content/PathfinderRPG/20190327-Kyra_500.jpeg</image>
-  </art>
-  <art name="spells_15">
+  </row>
+  <row name="spells_15">
     <image>https://i.ibb.co/C2HzRv5/art-spells-15.jpg</image>
-  </art>
-  <art name="age_of_lost_omens_1">
+  </row>
+  <row name="age_of_lost_omens_1">
     <image>https://guildberkeley.files.wordpress.com/2020/04/sheila-heidmarch.jpg</image>
-  </art>
-  <art name="absalom_and_starsone_isle">
+  </row>
+  <row name="absalom_and_starsone_isle">
     <image>https://cdn.paizo.com/image/content/PathfinderWorldGuides/20190529-Opener_500.jpeg</image>
     <depicts>absalom</depicts>
     <depicts>starstone_isle</depicts>
-  </art>
-  <art name="broken_lands">
+  </row>
+  <row name="broken_lands">
     <image>https://cdn.paizo.com/image/content/PathfinderLostOmens/20190604-BrokenLands_500.jpeg</image>
     <depicts>broken_lands</depicts>
-  </art>
-  <art name="eye_of_dread">
+  </row>
+  <row name="eye_of_dread">
     <image>https://pathfinderwiki.com/w/images/e/e5/Zombies.jpg</image>
     <depicts>eye_of_dread</depicts>
-  </art>
-  <art name="golden_road">
+  </row>
+  <row name="golden_road">
     <image>https://cdn.paizo.com/image/content/PathfinderLostOmens/20190618-GoldenRoad.jpg</image>
     <depicts>golden_road</depicts>
-  </art>
-  <art name="high_seas">
+  </row>
+  <row name="high_seas">
     <image>https://cdn.paizo.com/image/content/Blog/20190625-highseas.jpg</image>
     <depicts>high_seas</depicts>
-  </art>
-  <art name="impossible_lands">
+  </row>
+  <row name="impossible_lands">
     <image>http://bpfindley.com/Impossible%20Lands.jpg</image>
     <depicts>impossible_lands</depicts>
-  </art>
-  <art name="mwangi_expanse">
+  </row>
+  <row name="mwangi_expanse">
     <image>https://cdn.paizo.com/image/content/Blog/20190709-mwangiexpanse.jpg</image>
     <depicts>mwangi_expanse</depicts>
-  </art>
-  <art name="old_cheliax">
+  </row>
+  <row name="old_cheliax">
     <image>https://cdn.paizo.com/image/content/Blog/20190716-cheliax.jpg</image>
     <depicts>old_cheliax</depicts>
-  </art>
-  <art name="saga_lands">
+  </row>
+  <row name="saga_lands">
     <image>https://cdn.paizo.com/image/content/Blog/20190723-sagalands.jpg</image>
     <depicts>saga_lands</depicts>
-  </art>
-  <art name="shining_kingdoms">
+  </row>
+  <row name="shining_kingdoms">
     <image>https://cdn.paizo.com/image/content/Blog/20190730-shiningkingdoms.jpg</image>
     <depicts>shining_kingdoms</depicts>
-  </art>
-  <art name="garundi">
+  </row>
+  <row name="garundi">
     <image>https://i.ibb.co/9YsXxqf/garundi.jpg</image>
     <depicts>garundi</depicts>
-  </art>
-  <art name="keleshite">
+  </row>
+  <row name="keleshite">
     <image>https://i.ibb.co/0BxnJvG/keleshite.jpg</image>
     <depicts>keleshite</depicts>
-  </art>
-  <art name="kellid">
+  </row>
+  <row name="kellid">
     <image>https://i.ibb.co/Dt96MgF/Kellid.jpg</image>
     <depicts>kellid</depicts>
-  </art>
-  <art name="mwangi">
+  </row>
+  <row name="mwangi">
     <image>https://i.ibb.co/4gdwDjZ/mwangi.jpg</image>
     <depicts>mwangi</depicts>
-  </art>
-  <art name="nidalese">
+  </row>
+  <row name="nidalese">
     <image>https://i.ibb.co/64sFjxV/nidalese.jpg</image>
     <depicts>nidalese</depicts>
-  </art>
-  <art name="shoanti">
+  </row>
+  <row name="shoanti">
     <image>https://i.ibb.co/NrMws0K/shoanti.jpg</image>
     <depicts>shoanti</depicts>
-  </art>
-  <art name="taldan">
+  </row>
+  <row name="taldan">
     <image>https://i.ibb.co/m4GcWxf/taldan.jpg</image>
     <depicts>taldan</depicts>
-  </art>
-  <art name="tian">
+  </row>
+  <row name="tian">
     <image>https://i.ibb.co/BzR6DhZ/tian.jpg</image>
     <depicts>tian</depicts>
-  </art>
-  <art name="ulfen">
+  </row>
+  <row name="ulfen">
     <image>https://i.ibb.co/37T1nPF/ulfen.jpg</image>
     <depicts>ulfen</depicts>
-  </art>
-  <art name="varisian">
+  </row>
+  <row name="varisian">
     <image>https://i.ibb.co/k0QsfKn/varisian.jpg</image>
     <depicts>varisian</depicts>
-  </art>
-  <art name="vudrani">
+  </row>
+  <row name="vudrani">
     <image>https://i.ibb.co/848F6Jm/vudrani.jpg</image>
     <depicts>vudrani</depicts>
-  </art>
-  <art name="dwarf_3">
+  </row>
+  <row name="dwarf_3">
     <image>https://i.ibb.co/rcGzXqh/dwarf.jpg</image>
     <depicts>dwarf</depicts>
-  </art>
-  <art name="elf_3">
+  </row>
+  <row name="elf_3">
     <image>https://i.ibb.co/tYQHGvg/elf.jpg</image>
     <depicts>elf</depicts>
-  </art>
-  <art name="gnome_3">
+  </row>
+  <row name="gnome_3">
     <image>https://i.ibb.co/JHbDRrd/gnome.jpg</image>
     <depicts>gnome</depicts>
-  </art>
-  <art name="goblin_3">
+  </row>
+  <row name="goblin_3">
     <image>https://i.ibb.co/6rh4Ltc/goblin.jpg</image>
     <depicts>goblin</depicts>
-  </art>
-  <art name="halfling_3">
+  </row>
+  <row name="halfling_3">
     <image>https://i.ibb.co/r38k3HK/halfling.jpg</image>
     <depicts>halfling</depicts>
-  </art>
-  <art name="halfelf_2">
+  </row>
+  <row name="halfelf_2">
     <image>https://i.ibb.co/56x7Lkp/halfelf.jpg</image>
     <depicts>half_elf</depicts>
-  </art>
-  <art name="halforc_2">
+  </row>
+  <row name="halforc_2">
     <image>https://i.ibb.co/wLtsQsy/halforc.jpg</image>
     <depicts>half_orc</depicts>
-  </art>
-  <art name="dragon">
+  </row>
+  <row name="dragon">
     <image>https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/9a6ce74c-2fee-4ca4-b8da-e36fed6ccab2/depvfi6-4eb86242-43cd-4622-a01f-3bbb208cbf05.jpg/v1/fit/w_828,h_1022,q_70,strp/ancient_green_dragon__pathfinder_bestiary_2ed_by_miguelregodon_depvfi6-414w-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTE5MSIsInBhdGgiOiJcL2ZcLzlhNmNlNzRjLTJmZWUtNGNhNC1iOGRhLWUzNmZlZDZjY2FiMlwvZGVwdmZpNi00ZWI4NjI0Mi00M2NkLTQ2MjItYTAxZi0zYmJiMjA4Y2JmMDUuanBnIiwid2lkdGgiOiI8PTk2NCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.bxdEISdT035uzgzSQ1tU29T3vZUrypIadOiFEMr9BXo</image>
     <depicts>dragon</depicts>
-  </art>
-  <art name="kobold">
+  </row>
+  <row name="kobold">
     <image>https://staging.cohostcdn.org/attachment/ef1ae6d3-9cbd-425a-a12a-f7a3a4de1a7c/kob%20ref.png?width=337&amp;height=306&amp;fit=crop&amp;auto=webp&amp;dpr=1</image>
     <depicts>kobold</depicts>
-  </art>
-  <art name="age_of_lost_omens_1" subclass="Map">
+  </row>
+  <row name="age_of_lost_omens_1" subclass="Map">
     <image>https://cdna.artstation.com/p/assets/images/images/012/120/108/large/james-nalepa-asset.jpg?1533135415</image>
     <depicts>Golarion</depicts>
-  </art>
-  <art name="age_of_lost_omens_2" subclass="Map">
+  </row>
+  <row name="age_of_lost_omens_2" subclass="Map">
     <image>https://www.worldanvil.com/media/cache/cover/uploads/images/f2c44a6e758224572a4aa1eacb03f8ab.jpg</image>
     <depicts>Golarion</depicts>
-  </art>
-  <art name="backgrounds_1">
+  </row>
+  <row name="backgrounds_1">
     <image>https://i.ibb.co/nngtHvh/art-background-1.jpg</image>
-  </art>
-  <art name="backgrounds_2">
+  </row>
+  <row name="backgrounds_2">
     <image>https://i.ibb.co/QdtCW6s/art-background-2.jpg</image>
-  </art>
-  <art name="backgrounds_3">
+  </row>
+  <row name="backgrounds_3">
     <image>https://i.ibb.co/jWYXRS6/art-background-3.jpg</image>
-  </art>
-  <art name="classes">
+  </row>
+  <row name="classes">
     <image>https://i.ibb.co/XJSVLsn/art-classes.jpg</image>
-  </art>
-  <art name="ancestries_and_backgrounds">
+  </row>
+  <row name="ancestries_and_backgrounds">
     <image>https://i.ibb.co/nLLbFPt/art-ancestries-and-backgrounds.jpg</image>
-  </art>
-  <art name="Aspis Consortium" subclass="Icon">
+  </row>
+  <row name="Aspis Consortium" subclass="Icon">
     <image>https://beadleandgrimms.com/cdn/shop/products/AspisConsortiumtoken.png?v=1654797266&amp;width=823</image>
     <depicts>Aspis Consortium</depicts>
-  </art>
-  <art name="Bellflower Network" subclass="Icon">
+  </row>
+  <row name="Bellflower Network" subclass="Icon">
     <image>https://i.ibb.co/wgKR1bD/bellflower-network.jpg</image>
     <depicts>Bellflower Network</depicts>
-  </art>
-  <art name="Esoteric Order of the Palatine Eye" subclass="Icon">
+  </row>
+  <row name="Esoteric Order of the Palatine Eye" subclass="Icon">
     <image>https://i.ibb.co/mX33mVW/esoteric-order-of-the-palatine-eye.jpg</image>
     <depicts>Esoteric Order of the Palatine Eye</depicts>
-  </art>
-  <art name="Eagle Knights" subclass="Icon">
+  </row>
+  <row name="Eagle Knights" subclass="Icon">
     <image>https://i.ibb.co/QvD1j9q/eagle-knights.jpg</image>
     <depicts>Eagle Knights</depicts>
-  </art>
-  <art name="Firebrands" subclass="Icon">
+  </row>
+  <row name="Firebrands" subclass="Icon">
     <image>https://i.ibb.co/3NM43qn/firebrands.jpg</image>
     <depicts>Firebrands</depicts>
-  </art>
-  <art name="Free Captains" subclass="Icon">
+  </row>
+  <row name="Free Captains" subclass="Icon">
     <image>https://i.ibb.co/r3wTSBX/free-captains.jpg</image>
     <depicts>Free Captains</depicts>
-  </art>
-  <art name="Hellknights" subclass="Icon">
+  </row>
+  <row name="Hellknights" subclass="Icon">
     <image>https://i.ibb.co/vvpGQYD/hellknights.jpg</image>
     <depicts>Hellknights</depicts>
-  </art>
-  <art name="Knights of Lastwall" subclass="Icon">
+  </row>
+  <row name="Knights of Lastwall" subclass="Icon">
     <image>https://i.ibb.co/TmY4WLL/knights-of-lastwall.jpg</image>
     <depicts>Knights of Lastwall</depicts>
-  </art>
-  <art name="Lion Blades" subclass="Icon">
+  </row>
+  <row name="Lion Blades" subclass="Icon">
     <image>https://i.ibb.co/H7r2SJv/lion-blades.jpg</image>
     <depicts>Lion Blades</depicts>
-  </art>
-  <art name="Magaambya" subclass="Icon">
+  </row>
+  <row name="Magaambya" subclass="Icon">
     <image>https://i.ibb.co/NWT3tMb/Magaambya.jpg</image>
     <depicts>Magaambya</depicts>
-  </art>
-  <art name="Night Heralds" subclass="Icon">
+  </row>
+  <row name="Night Heralds" subclass="Icon">
     <image>https://i.ibb.co/mzV1Zz0/night-heralds.jpg</image>
     <depicts>Night Heralds</depicts>
-  </art>
-  <art name="Pathfinder Society" subclass="Icon">
+  </row>
+  <row name="Pathfinder Society" subclass="Icon">
     <image>https://i.ibb.co/k0zgtpN/pathfinder-society.jpg</image>
     <depicts>Pathfinder Society</depicts>
-  </art>
-  <art name="Red Mantis" subclass="Icon">
+  </row>
+  <row name="Red Mantis" subclass="Icon">
     <image>https://i.ibb.co/0yBrz1x/red-mantis.jpg</image>
     <depicts>Red Mantis</depicts>
-  </art>
-  <art name="Sczarni" subclass="Icon">
+  </row>
+  <row name="Sczarni" subclass="Icon">
     <image>https://i.ibb.co/v3zBqgP/sczarni.jpg</image>
     <depicts>Sczarni</depicts>
-  </art>
-  <art name="playing the game 1">
+  </row>
+  <row name="playing the game 1">
     <image>https://i.ibb.co/TW6tPNt/playing-the-game.jpg</image>
-  </art>
-  <art name="playing the game 2">
+  </row>
+  <row name="playing the game 2">
     <image>https://i.pinimg.com/564x/4b/25/dc/4b25dc0c649d4193e42b8cf71a7bc49f.jpg</image>
-  </art>
-  <art name="conditions">
+  </row>
+  <row name="conditions">
     <image>https://i.ibb.co/RcP1ZC2/art-conditions.jpg</image>
     <depicts>petrified</depicts>
-  </art>
-  <art name="playing the game 3">
+  </row>
+  <row name="playing the game 3">
     <image>https://rollforcombat.com/wp-content/uploads/2019/08/10.jpg</image>
-  </art>
-  <art name="areas">
+  </row>
+  <row name="areas">
     <image>https://2e.aonprd.com/Images/Rules/Rules354.png</image>
-    <depicts>Burst area rule</depicts>
-    <depicts>Cone area rule</depicts>
-    <depicts>Emanation area rule</depicts>
-    <depicts>Line area rule</depicts>
-  </art>
-  <art name="playing the game 4">
+  </row>
+  <row name="playing the game 4">
     <image>https://i.ibb.co/wsk1BRP/dead-goblin.jpg</image>
-  </art>
-  <art name="playing the game 5">
+  </row>
+  <row name="playing the game 5">
     <image>https://sun9-38.userapi.com/impg/siHOsKXY1yu4-ND-KAT2rfRWP-7IMj3Dzc38ww/9cKfON6CZls.jpg?size=1197x780&amp;quality=95&amp;sign=c0b3c7e6a6c9d750c75ae2af5fbe57ab&amp;type=album</image>
-  </art>
+  </row>
+  <row name="playing the game 6">
+    <image>https://cdna.artstation.com/p/assets/images/images/021/343/016/large/mirco-paganessi-pzo2101-strikecolor.jpg?1571304160</image>
+  </row>
+  <row name="playing the game 7">
+    <image>https://2e.aonprd.com/Images/Rules/Rules446.png</image>
+    <depicts object_class="Statement">Attack of opportunity for move actions</depicts>
+  </row>
+  <row name="playing the game 8">
+    <image>https://2e.aonprd.com/Images/Rules/Rules444.png</image>
+    <depicts>Grid movement rule</depicts>
+  </row>
+  <row name="playing the game 9">
+    <image>https://2e.aonprd.com/Images/Rules/Rules458.png</image>
+    <depicts>Flanking</depicts>
+  </row>
+  <row name="playing the game 10">
+    <image>https://2e.aonprd.com/Images/Rules/Rules459.png</image>
+    <depicts>Lesser cover</depicts>
+    <depicts>Cover</depicts>
+    <depicts>Greater cover</depicts>
+  </row>
 </root>

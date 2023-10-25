@@ -1,16 +1,17 @@
 <?xml version="1.0"?>
 <root>
-    <row name="Perception" subclass="Characteristic_with_proficiency">
+    <row name="Perception" subclass="CharacteristicWithProficiency">
         <comment>Perception measures your ability to be aware of your environment. Every creature has Perception, which works  with and is limited by a creature’s senses</comment>
     </row>
-    <row name="Fortitude" subclass="Characteristic_with_proficiency"/>
-    <row name="Reflex" subclass="Characteristic_with_proficiency"/>
-    <row name="Will" subclass="Characteristic_with_proficiency"/>
+    <row name="Fortitude" subclass="CharacteristicWithProficiency"/>
+    <row name="Reflex" subclass="CharacteristicWithProficiency"/>
+    <row name="Will" subclass="CharacteristicWithProficiency"/>
     <row name="Level of character"/>
-    <row name="Weapon proficiency" subclass="Characteristic_with_proficiency"/>
+    <row name="Weapon proficiency" subclass="CharacteristicWithProficiency"/>
     <row name="Equipment"/>
-    <row name="Armor proficiency" subclass="Characteristic_with_proficiency"/>
-    <row name="Spell proficiency" subclass="Characteristic_with_proficiency"/>
+    <row name="Equipment in hands"/>
+    <row name="Armor proficiency" subclass="CharacteristicWithProficiency"/>
+    <row name="Spell proficiency" subclass="CharacteristicWithProficiency"/>
     <row name="Hit points">
         <comment>Your maximum Hit Point value represents your health, wherewithal, and heroic drive when you are in good health and rested.</comment>
         <comment>Creatures cannot be reduced to fewer than 0 Hit Points.</comment>
@@ -26,10 +27,6 @@
     <row name="Active afflictions">
         <comment>Dictionary of {active affliction: [onset period, current stage, remained duration]}</comment>
     </row>
-    <row name="Active conditions">
-        <comment>Dictionary of {active condition: [condition value, remained duration]}</comment>
-        <comment>Deactivate condition if value &lt;= 0</comment>
-    </row>
     <row name="Ancestry of character"/>
     <row name="Initiative position">
         <comment>only for encounters</comment>
@@ -41,11 +38,21 @@
     <row name="Speed of character">
         <comment>Land speed, which indicates how quickly they can move across the ground.</comment>
     </row>
-    <row name="Special speed of character">
-        <comment>{speed type: value}</comment>
+    <row name="Burrow speed of character">
         <comment>Burrow speed: lets you tunnel through the ground. Burrowing doesn't normally leave behind a tunnel.</comment>
+    </row>
+    <row name="Climb speed of character">
         <comment>Climb speed: allows you to move up or down inclines and vertical surfaces.</comment>
+    </row>
+    <row name="Fly speed of character">
         <comment>Fly speed: you can use the Fly and Arrest a Fall actions.</comment>
+    </row>
+    <row name="Swim speed of character">
         <comment>Swim speed: you can propel yourself through the water with little impediment.</comment>
+    </row>
+    <row name="Prepared spell slots"/>
+    <row name="Focus points"/>
+    <row name="Feats of character">
+        <comment>{feat: remaining uses per day}</comment>
     </row>
 </root>
