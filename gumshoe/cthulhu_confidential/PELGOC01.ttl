@@ -7,7 +7,7 @@
 @prefix sche: <http://schema.org/> .
 @base <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#> .
 
-<https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#> rdf:type owl:Ontology .
+: rdf:type owl:Ontology .
 
 #################################################################
 #    Annotation properties
