@@ -1,0 +1,114 @@
+@prefix : <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sche: <http://schema.org/> .
+@base <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#> .
+
+<https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://schema.org/image
+sche:image rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#application
+:application rdf:type owl:DatatypeProperty ;
+             rdfs:domain :InvestigativeAbility ;
+             rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#AcademicAbility
+:AcademicAbility rdf:type owl:Class ;
+                 rdfs:subClassOf :InvestigativeAbility .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#Art
+:Art rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#Characteristic
+:Characteristic rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#InterpersonalAbility
+:InterpersonalAbility rdf:type owl:Class ;
+                      rdfs:subClassOf :InvestigativeAbility .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#InvestigativeAbility
+:InvestigativeAbility rdf:type owl:Class ;
+                      rdfs:subClassOf :Characteristic .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#TechnicalAbility
+:TechnicalAbility rdf:type owl:Class ;
+                  rdfs:subClassOf :InvestigativeAbility .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#accounting
+:accounting rdf:type owl:NamedIndividual ,
+                     :AcademicAbility ;
+            :application "reconstruct financial histories from old records (uncovering, say, slave-trading or smuggling)" ,
+                         "reel off the latest rumors from the world of business, finance and industry" ,
+                         "spot the telltale signs of embezzlement, bribes, blackmail, or dummy companies" ,
+                         "tell legitimate businesses from criminal enterprises" ,
+                         "track payments to their source" ;
+            rdfs:comment "You understand bookkeeping and accountancy procedures; you can read and keep financial records." .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#anthropology
+:anthropology rdf:type owl:NamedIndividual ,
+                       :AcademicAbility ;
+              :application "describe and predict the customs of a foreign group or local subculture" ,
+                           "extrapolate the practices of an unknown culture from similar examples" ,
+                           "identify artifacts and rituals of living cultures" ;
+              rdfs:comment "You are an expert in the study of human cultures, from the Stone Age to the Jazz Age" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#archaeology
+:archaeology rdf:type owl:NamedIndividual ,
+                      :AcademicAbility ;
+             :application "describe the customs of ancient or historical cultures" ,
+                          "distinguish real artifacts from fakes" ,
+                          "identify artifacts by culture and usage" ,
+                          "navigate inside ruins and catacombs, including finding secret doors and hidden construction" ,
+                          "spot well-disguised graves and underground hiding places" ,
+                          "tell how long something has been buried and date its construction" ;
+             rdfs:comment "You excavate and study the structures and artifacts of historical cultures and civilizations." .
+
+:architecture a owl:NamedIndividual ,
+                :AcademicAbility;
+              rdfs:comment "You know how buildings are designed and constructed.";
+              :application "guess what lies around the corner while exploring an unknown structure",
+                           "judge the relative strength of building materials",
+                           "identify a building’s age, architectural style, original use, and history of modifications",
+                           "deduce the existence of hidden rooms, priest-holes, hyper-geometric witch-garrets, and other anomalies",
+                           "construct stable makeshift structures",
+                           "identify elements vital to a building’s structural integrity",
+                           "name the architectural firm responsible for any well-known building in your area, recounting any peculiarities involved in its construction" .
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#cover_art
+:cover_art rdf:type owl:NamedIndividual ,
+                    :Art ;
+           sche:image "https://cf.geekdo-images.com/px_RKnwymHK5mlXm2HHLfQ__imagepage/img/r_KLEj1V01cBVnu7-HtcF7Laaj0=/fit-in/900x600/filters:no_upscale():strip_icc()/pic3375012.jpg" .
+
+
+###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi
