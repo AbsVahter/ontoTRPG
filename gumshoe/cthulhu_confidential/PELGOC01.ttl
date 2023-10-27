@@ -5,10 +5,12 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sche: <http://schema.org/> .
+@prefix bbo: <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicBookOnto.ttl#> .
 @prefix pzo2101: <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#> .
 @base <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#> .
 
-<https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#> rdf:type owl:Ontology .
+<https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#> rdf:type owl:Ontology ;
+                                                                                                             owl:imports bbo: .
 
 #################################################################
 #    Annotation properties
@@ -88,9 +90,6 @@ sche:image rdf:type owl:AnnotationProperty .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#Art
-:Art rdf:type owl:Class ;
-     rdfs:label "Art" ;
-     rdfs:seeAlso pzo2101:Art .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#Challenge
@@ -409,7 +408,7 @@ sche:image rdf:type owl:AnnotationProperty .
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#cover_art
 :cover_art rdf:type owl:NamedIndividual ,
-                    :Art ;
+                    bbo:Art ;
            sche:image "https://cf.geekdo-images.com/px_RKnwymHK5mlXm2HHLfQ__imagepage/img/r_KLEj1V01cBVnu7-HtcF7Laaj0=/fit-in/900x600/filters:no_upscale():strip_icc()/pic3375012.jpg" ;
            rdfs:label "Cover art" .
 

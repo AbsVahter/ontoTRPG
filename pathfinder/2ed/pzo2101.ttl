@@ -5,9 +5,11 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sche: <http://schema.org/> .
+@prefix bbo: <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicBookOnto.ttl#> .
 @base <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#> .
 
-<https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl> rdf:type owl:Ontology .
+<https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl> rdf:type owl:Ontology ;
+                                                                                              owl:imports bbo: .
 
 #################################################################
 #    Annotation properties
@@ -140,10 +142,7 @@ sche:image rdf:type owl:AnnotationProperty .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#depicts
-:depicts rdf:type owl:ObjectProperty ;
-         owl:inverseOf :isDepictedBy ;
-         rdfs:domain :Art ;
-         rdfs:range owl:Thing .
+
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#disrupts
@@ -214,7 +213,7 @@ sche:image rdf:type owl:AnnotationProperty .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#isDepictedBy
-:isDepictedBy rdf:type owl:ObjectProperty .
+
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#largerThan
@@ -716,7 +715,7 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 :AreaRule rdf:type owl:Class ;
           rdfs:subClassOf :Gamerule ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty :isDepictedBy ;
+                            owl:onProperty bbo:isDepictedBy ;
                             owl:hasValue :art_areas
                           ] .
 
@@ -726,10 +725,6 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
        rdfs:subClassOf :DefenseEquipment ;
        rdfs:comment "Armor increases your character’s defenses, but some medium or heavy armor can hamper movement. If you want to increase your character’s defense beyond the protection your armor provides, they can use a shield. Armor protects your character only while they’re wearing it." .
 
-
-###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#Art
-:Art rdf:type owl:Class ;
-     rdfs:subClassOf owl:Thing .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#AttackAction
@@ -1311,7 +1306,7 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#Icon
 :Icon rdf:type owl:Class ;
-      rdfs:subClassOf :Art .
+      rdfs:subClassOf bbo:Art .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#IllusionSchool
@@ -1452,7 +1447,7 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#Map
 :Map rdf:type owl:Class ;
-     rdfs:subClassOf :Art .
+     rdfs:subClassOf bbo:Art .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#MartialWeapon
@@ -3342,14 +3337,14 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_abadar_icon
 :art_abadar_icon rdf:type owl:NamedIndividual ,
                           :Icon ;
-                 :depicts :abadar ;
+                 bbo:depicts :abadar ;
                  sche:image "https://2e.aonprd.com/Images/Deities/abadar.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_absalom_and_starsone_isle
 :art_absalom_and_starsone_isle rdf:type owl:NamedIndividual ,
-                                        :Art ;
-                               :depicts :absalom ,
+                                        bbo:Art ;
+                               bbo:depicts :absalom ,
                                         :starstone_isle ;
                                sche:image "https://cdn.paizo.com/image/content/PathfinderWorldGuides/20190529-Opener_500.jpeg" ;
                                rdfs:label "absalom_and_starsone_isle" .
@@ -3357,7 +3352,7 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_age_of_lost_omens_1
 :art_age_of_lost_omens_1 rdf:type owl:NamedIndividual ,
-                                  :Art ;
+                                  bbo:Art ;
                          sche:image "https://guildberkeley.files.wordpress.com/2020/04/sheila-heidmarch.jpg" ;
                          rdfs:label "age_of_lost_omens_1" .
 
@@ -3365,7 +3360,7 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_age_of_lost_omens_1_map
 :art_age_of_lost_omens_1_map rdf:type owl:NamedIndividual ,
                                       :Map ;
-                             :depicts :golarion ;
+                             bbo:depicts :golarion ;
                              sche:image "https://cdna.artstation.com/p/assets/images/images/012/120/108/large/james-nalepa-asset.jpg?1533135415" ;
                              rdfs:label "age_of_lost_omens_1" .
 
@@ -3373,39 +3368,39 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_age_of_lost_omens_2_map
 :art_age_of_lost_omens_2_map rdf:type owl:NamedIndividual ,
                                       :Map ;
-                             :depicts :golarion ;
+                             bbo:depicts :golarion ;
                              sche:image "https://www.worldanvil.com/media/cache/cover/uploads/images/f2c44a6e758224572a4aa1eacb03f8ab.jpg" ;
                              rdfs:label "age_of_lost_omens_2" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_alchemist_1
 :art_alchemist_1 rdf:type owl:NamedIndividual ,
-                          :Art ;
-                 :depicts :alchemist ;
+                          bbo:Art ;
+                 bbo:depicts :alchemist ;
                  sche:image "https://scontent.ftgd2-1.fna.fbcdn.net/v/t1.6435-9/105621223_3102404586512926_8145470847938403464_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=730e14&_nc_ohc=xc4gwvmRy-8AX-IFI21&_nc_ht=scontent.ftgd2-1.fna&oh=00_AfCEOiyWf0qVbUnuMgSvcMKtOkGfWrGaIhFxib1XWeEMxg&oe=652A55CD" ;
                  rdfs:label "alchemist_1" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_alchemist_2
 :art_alchemist_2 rdf:type owl:NamedIndividual ,
-                          :Art ;
-                 :depicts :alchemist ;
+                          bbo:Art ;
+                 bbo:depicts :alchemist ;
                  sche:image "https://2e.aonprd.com/Images/Classes/Iconic_Fumbus.png" ;
                  rdfs:label "alchemist_2" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_alchemist_3
 :art_alchemist_3 rdf:type owl:NamedIndividual ,
-                          :Art ;
-                 :depicts :alchemist ;
+                          bbo:Art ;
+                 bbo:depicts :alchemist ;
                  sche:image "https://rollforcombat.com/wp-content/uploads/2019/08/5.jpg" ;
                  rdfs:label "alchemist_3" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_alchemist_archetype
 :art_alchemist_archetype rdf:type owl:NamedIndividual ,
-                                  :Art ;
-                         :depicts :alchemist_archetype ;
+                                  bbo:Art ;
+                         bbo:depicts :alchemist_archetype ;
                          sche:image "https://i.ibb.co/thmrqPt/alchemist-archetype.jpg" ;
                          rdfs:label "alchemist_archetype" .
 
@@ -3413,42 +3408,42 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_alchemist_icon
 :art_alchemist_icon rdf:type owl:NamedIndividual ,
                              :Icon ;
-                    :depicts :alchemist ;
+                    bbo:depicts :alchemist ;
                     sche:image "https://2e.aonprd.com/Images/Class/Alchemist_Icon.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_ancestries_and_backgrounds
 :art_ancestries_and_backgrounds rdf:type owl:NamedIndividual ,
-                                         :Art ;
+                                         bbo:Art ;
                                 sche:image "https://i.ibb.co/nLLbFPt/art-ancestries-and-backgrounds.jpg" ;
                                 rdfs:label "ancestries_and_backgrounds" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_animal_companions_and_familiars_1
 :art_animal_companions_and_familiars_1 rdf:type owl:NamedIndividual ,
-                                                :Art ;
+                                                bbo:Art ;
                                        sche:image "https://i.ibb.co/WD3Kfhf/animal-companions-and-familiars-1.jpg" ;
                                        rdfs:label "animal_companions_and_familiars_1" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_animal_companions_and_familiars_2
 :art_animal_companions_and_familiars_2 rdf:type owl:NamedIndividual ,
-                                                :Art ;
+                                                bbo:Art ;
                                        sche:image "https://i.ibb.co/1d5YrRB/animal-companions-and-familiars-2.jpg" ;
                                        rdfs:label "animal_companions_and_familiars_2" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_animal_companions_and_familiars_3
 :art_animal_companions_and_familiars_3 rdf:type owl:NamedIndividual ,
-                                                :Art ;
+                                                bbo:Art ;
                                        sche:image "https://cdnb.artstation.com/p/assets/images/images/020/126/389/large/giorgio-falconi-talking-bat.jpg?1566475283" ;
                                        rdfs:label "animal_companions_and_familiars_3" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_animal_instinct
 :art_animal_instinct rdf:type owl:NamedIndividual ,
-                              :Art ;
-                     :depicts :animal_instinct ,
+                              bbo:Art ;
+                     bbo:depicts :animal_instinct ,
                               :barbarian ;
                      sche:image "https://i.ibb.co/WybJwL9/art-animal-rager.jpg" ;
                      rdfs:label "animal_instinct" .
@@ -3456,9 +3451,9 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_areas
 :art_areas rdf:type owl:NamedIndividual ,
-                    :Art ,
+                    bbo:Art ,
                     [ rdf:type owl:Restriction ;
-                      owl:onProperty :depicts ;
+                      owl:onProperty bbo:depicts ;
                       owl:someValuesFrom :AreaRule
                     ] ;
            sche:image "https://2e.aonprd.com/Images/Rules/Rules354.png" ;
@@ -3468,67 +3463,67 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_asmodeus_icon
 :art_asmodeus_icon rdf:type owl:NamedIndividual ,
                             :Icon ;
-                   :depicts :asmodeus ;
+                   bbo:depicts :asmodeus ;
                    sche:image "https://2e.aonprd.com/Images/Deities/asmodeus.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_aspis_consortium_icon
 :art_aspis_consortium_icon rdf:type owl:NamedIndividual ,
                                     :Icon ;
-                           :depicts :aspis_consortium ;
+                           bbo:depicts :aspis_consortium ;
                            sche:image "https://beadleandgrimms.com/cdn/shop/products/AspisConsortiumtoken.png?v=1654797266&width=823" ;
                            rdfs:label "Aspis Consortium" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_backgrounds_1
 :art_backgrounds_1 rdf:type owl:NamedIndividual ,
-                            :Art ;
+                            bbo:Art ;
                    sche:image "https://i.ibb.co/nngtHvh/art-background-1.jpg" ;
                    rdfs:label "backgrounds_1" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_backgrounds_2
 :art_backgrounds_2 rdf:type owl:NamedIndividual ,
-                            :Art ;
+                            bbo:Art ;
                    sche:image "https://i.ibb.co/QdtCW6s/art-background-2.jpg" ;
                    rdfs:label "backgrounds_2" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_backgrounds_3
 :art_backgrounds_3 rdf:type owl:NamedIndividual ,
-                            :Art ;
+                            bbo:Art ;
                    sche:image "https://i.ibb.co/jWYXRS6/art-background-3.jpg" ;
                    rdfs:label "backgrounds_3" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_barbarian_1
 :art_barbarian_1 rdf:type owl:NamedIndividual ,
-                          :Art ;
-                 :depicts :barbarian ;
+                          bbo:Art ;
+                 bbo:depicts :barbarian ;
                  sche:image "https://cdn.paizo.com/a7d62ac8-7f03-00ef-f1f0-83fb8bf332e2/a55f5324-d382-4d34-af69-164d12b2a3ee/P2_Header_Amiri.png" ;
                  rdfs:label "barbarian_1" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_barbarian_2
 :art_barbarian_2 rdf:type owl:NamedIndividual ,
-                          :Art ;
-                 :depicts :barbarian ;
+                          bbo:Art ;
+                 bbo:depicts :barbarian ;
                  sche:image "https://2e.aonprd.com/Images/Classes/Iconic_Amiri.png" ;
                  rdfs:label "barbarian_2" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_barbarian_3
 :art_barbarian_3 rdf:type owl:NamedIndividual ,
-                          :Art ;
-                 :depicts :barbarian ;
+                          bbo:Art ;
+                 bbo:depicts :barbarian ;
                  sche:image "https://cdn.paizo.com/image/content/PathfinderRPG/20190307-Amiri.jpg" ;
                  rdfs:label "barbarian_3" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_barbarian_archetype
 :art_barbarian_archetype rdf:type owl:NamedIndividual ,
-                                  :Art ;
-                         :depicts :barbarian_archetype ;
+                                  bbo:Art ;
+                         bbo:depicts :barbarian_archetype ;
                          sche:image "https://i.ibb.co/c27m3P3/barbarian-archetype.jpg" ;
                          rdfs:label "barbarian_archetype" .
 
@@ -3536,38 +3531,38 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_barbarian_icon
 :art_barbarian_icon rdf:type owl:NamedIndividual ,
                              :Icon ;
-                    :depicts :barbarian ;
+                    bbo:depicts :barbarian ;
                     sche:image "https://2e.aonprd.com/Images/Class/Barbarian_Icon.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_bard_1
 :art_bard_1 rdf:type owl:NamedIndividual ,
-                     :Art ;
-            :depicts :bard ;
+                     bbo:Art ;
+            bbo:depicts :bard ;
             sche:image "https://cdn.paizo.com/image/content/Secondary/PZO2213-1.jpg" ;
             rdfs:label "bard_1" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_bard_2
 :art_bard_2 rdf:type owl:NamedIndividual ,
-                     :Art ;
-            :depicts :bard ;
+                     bbo:Art ;
+            bbo:depicts :bard ;
             sche:image "https://static.wikia.nocookie.net/pathfinderkingmaker/images/e/e9/%D0%91%D0%B0%D1%80%D0%B4.jpeg/revision/latest?cb=20210215032750&path-prefix=ru" ;
             rdfs:label "bard_2" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_bard_3
 :art_bard_3 rdf:type owl:NamedIndividual ,
-                     :Art ;
-            :depicts :bard ;
+                     bbo:Art ;
+            bbo:depicts :bard ;
             sche:image "https://cdn.paizo.com/image/content/PathfinderRPG/20190404-Harpies.jpg" ;
             rdfs:label "bard_3" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_bard_archetype
 :art_bard_archetype rdf:type owl:NamedIndividual ,
-                             :Art ;
-                    :depicts :bard_archetype ;
+                             bbo:Art ;
+                    bbo:depicts :bard_archetype ;
                     sche:image "https://roll20.net/v2/images/pathfinder2/launch-character.png" ;
                     rdfs:label "bard_archetype" .
 
@@ -3575,30 +3570,30 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_bard_icon
 :art_bard_icon rdf:type owl:NamedIndividual ,
                         :Icon ;
-               :depicts :bard ;
+               bbo:depicts :bard ;
                sche:image "https://2e.aonprd.com/Images/Class/Bard_Icon.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_bellflower_network_icon
 :art_bellflower_network_icon rdf:type owl:NamedIndividual ,
                                       :Icon ;
-                             :depicts :bellflower_network ;
+                             bbo:depicts :bellflower_network ;
                              sche:image "https://i.ibb.co/wgKR1bD/bellflower-network.jpg" ;
                              rdfs:label "Bellflower Network" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_bomber
 :art_bomber rdf:type owl:NamedIndividual ,
-                     :Art ;
-            :depicts :bomber ;
+                     bbo:Art ;
+            bbo:depicts :bomber ;
             sche:image "https://cdna.artstation.com/p/assets/images/images/039/803/920/large/will-o-brien-pzo2101-alchemist-tanoa-bomber-copy-c.jpg?1626975363" ;
             rdfs:label "bomber" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_broken_lands
 :art_broken_lands rdf:type owl:NamedIndividual ,
-                           :Art ;
-                  :depicts :broken_lands ;
+                           bbo:Art ;
+                  bbo:depicts :broken_lands ;
                   sche:image "https://cdn.paizo.com/image/content/PathfinderLostOmens/20190604-BrokenLands_500.jpeg" ;
                   rdfs:label "broken_lands" .
 
@@ -3606,45 +3601,45 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_calistria_icon
 :art_calistria_icon rdf:type owl:NamedIndividual ,
                              :Icon ;
-                    :depicts :calistria ;
+                    bbo:depicts :calistria ;
                     sche:image "https://2e.aonprd.com/Images/Deities/calistria.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_cayden_cailean_icon
 :art_cayden_cailean_icon rdf:type owl:NamedIndividual ,
                                   :Icon ;
-                         :depicts :cayden_cailean ;
+                         bbo:depicts :cayden_cailean ;
                          sche:image "https://2e.aonprd.com/Images/Deities/caydencailean.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_champion_1
 :art_champion_1 rdf:type owl:NamedIndividual ,
-                         :Art ;
-                :depicts :champion ;
+                         bbo:Art ;
+                bbo:depicts :champion ;
                 sche:image "https://i.ibb.co/qJ9kvG3/art-champion.jpg" ;
                 rdfs:label "champion_1" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_champion_2
 :art_champion_2 rdf:type owl:NamedIndividual ,
-                         :Art ;
-                :depicts :champion ;
+                         bbo:Art ;
+                bbo:depicts :champion ;
                 sche:image "https://2e.aonprd.com/Images/Classes/Iconic_Seelah.png" ;
                 rdfs:label "champion_2" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_champion_3
 :art_champion_3 rdf:type owl:NamedIndividual ,
-                         :Art ;
-                :depicts :champion ;
+                         bbo:Art ;
+                bbo:depicts :champion ;
                 sche:image "https://cdn.paizo.com/image/content/PathfinderRPG/20190501-Encounter.jpg" ;
                 rdfs:label "champion_3" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_champion_archetype
 :art_champion_archetype rdf:type owl:NamedIndividual ,
-                                 :Art ;
-                        :depicts :champion_archetype ;
+                                 bbo:Art ;
+                        bbo:depicts :champion_archetype ;
                         sche:image "https://i.ibb.co/Gx2zYJF/champion-archetype.jpg" ;
                         rdfs:label "champion_archetype" .
 
@@ -3652,14 +3647,14 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_champion_icon
 :art_champion_icon rdf:type owl:NamedIndividual ,
                             :Icon ;
-                   :depicts :champion ;
+                   bbo:depicts :champion ;
                    sche:image "https://2e.aonprd.com/Images/Class/Champion_Icon.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_chirurgeon
 :art_chirurgeon rdf:type owl:NamedIndividual ,
-                         :Art ;
-                :depicts :alchemist ,
+                         bbo:Art ;
+                bbo:depicts :alchemist ,
                          :chirurgeon ;
                 sche:image "https://cdna.artstation.com/p/assets/images/images/039/803/930/large/will-o-brien-pzo2101-alchemist-yiga-chirurgeon-copy-c.jpg?1626975384" ;
                 rdfs:label "chirurgeon" .
@@ -3667,39 +3662,39 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_classes
 :art_classes rdf:type owl:NamedIndividual ,
-                      :Art ;
+                      bbo:Art ;
              sche:image "https://i.ibb.co/XJSVLsn/art-classes.jpg" ;
              rdfs:label "classes" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_cleric_1
 :art_cleric_1 rdf:type owl:NamedIndividual ,
-                       :Art ;
-              :depicts :cleric ;
+                       bbo:Art ;
+              bbo:depicts :cleric ;
               sche:image "https://cdn.paizo.com/image/content/Secondary/PZO2212-1.jpg" ;
               rdfs:label "cleric_1" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_cleric_2
 :art_cleric_2 rdf:type owl:NamedIndividual ,
-                       :Art ;
-              :depicts :cleric ;
+                       bbo:Art ;
+              bbo:depicts :cleric ;
               sche:image "https://cdn.paizo.com/image/content/PathfinderRPG/20190326-Kyra.jpg" ;
               rdfs:label "cleric_2" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_cleric_3
 :art_cleric_3 rdf:type owl:NamedIndividual ,
-                       :Art ;
-              :depicts :cleric ;
+                       bbo:Art ;
+              bbo:depicts :cleric ;
               sche:image "https://cdnb.artstation.com/p/assets/images/images/053/731/057/large/hai-hoang-hai-hoang-clericpx.jpg?1662911339" ;
               rdfs:label "cleric_3" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_cleric_archetype
 :art_cleric_archetype rdf:type owl:NamedIndividual ,
-                               :Art ;
-                      :depicts :cleric_archetype ;
+                               bbo:Art ;
+                      bbo:depicts :cleric_archetype ;
                       sche:image "https://i.ibb.co/Fw78nsQ/cleric-archetype.jpg" ;
                       rdfs:label "cleric_archetype" .
 
@@ -3707,14 +3702,14 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_cleric_icon
 :art_cleric_icon rdf:type owl:NamedIndividual ,
                           :Icon ;
-                 :depicts :cleric ;
+                 bbo:depicts :cleric ;
                  sche:image "https://2e.aonprd.com/Images/Class/Cleric_Icon.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_cloistered_cleric
 :art_cloistered_cleric rdf:type owl:NamedIndividual ,
-                                :Art ;
-                       :depicts :cleric ,
+                                bbo:Art ;
+                       bbo:depicts :cleric ,
                                 :cloistered_cleric ;
                        sche:image "https://cdna.artstation.com/p/assets/images/images/024/281/426/large/konstantin-porubov-cleric-meqe1.jpg?1581919713" ;
                        rdfs:label "cloistered_cleric" .
@@ -3722,16 +3717,16 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_conditions
 :art_conditions rdf:type owl:NamedIndividual ,
-                         :Art ;
-                :depicts :petrified ;
+                         bbo:Art ;
+                bbo:depicts :petrified ;
                 sche:image "https://i.ibb.co/RcP1ZC2/art-conditions.jpg" ;
                 rdfs:label "conditions" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_conjuration_arcane_school
 :art_conjuration_arcane_school rdf:type owl:NamedIndividual ,
-                                        :Art ;
-                               :depicts :conjuration_arcane_school ,
+                                        bbo:Art ;
+                               bbo:depicts :conjuration_arcane_school ,
                                         :wizard ;
                                sche:image "https://i.pinimg.com/originals/1c/74/a4/1c74a48391b592d7f35b84d5436c1ced.png" ;
                                rdfs:label "conjuration_arcane_school" .
@@ -3739,8 +3734,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_dancer
 :art_dancer rdf:type owl:NamedIndividual ,
-                     :Art ;
-            :depicts :bard ,
+                     bbo:Art ;
+            bbo:depicts :bard ,
                      :maestro ;
             sche:image "https://cdn.paizo.com/image/content/Blog/20190624-2.jpg" ;
             rdfs:label "dancer" .
@@ -3748,8 +3743,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_demonic_bloodline
 :art_demonic_bloodline rdf:type owl:NamedIndividual ,
-                                :Art ;
-                       :depicts :demonic_bloodline ,
+                                bbo:Art ;
+                       bbo:depicts :demonic_bloodline ,
                                 :sorcerer ;
                        sche:image "https://cdna.artstation.com/p/assets/images/images/022/609/774/large/valera-lutfullina-sorcerer-inez.jpg?1576065788" ;
                        rdfs:label "demonic_bloodline" .
@@ -3758,46 +3753,46 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_desna_icon
 :art_desna_icon rdf:type owl:NamedIndividual ,
                          :Icon ;
-                :depicts :desna ;
+                bbo:depicts :desna ;
                 sche:image "https://2e.aonprd.com/Images/Deities/desna.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_dragon
 :art_dragon rdf:type owl:NamedIndividual ,
-                     :Art ;
-            :depicts :dragon ;
+                     bbo:Art ;
+            bbo:depicts :dragon ;
             sche:image "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/9a6ce74c-2fee-4ca4-b8da-e36fed6ccab2/depvfi6-4eb86242-43cd-4622-a01f-3bbb208cbf05.jpg/v1/fit/w_828,h_1022,q_70,strp/ancient_green_dragon__pathfinder_bestiary_2ed_by_miguelregodon_depvfi6-414w-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTE5MSIsInBhdGgiOiJcL2ZcLzlhNmNlNzRjLTJmZWUtNGNhNC1iOGRhLWUzNmZlZDZjY2FiMlwvZGVwdmZpNi00ZWI4NjI0Mi00M2NkLTQ2MjItYTAxZi0zYmJiMjA4Y2JmMDUuanBnIiwid2lkdGgiOiI8PTk2NCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.bxdEISdT035uzgzSQ1tU29T3vZUrypIadOiFEMr9BXo" ;
             rdfs:label "dragon" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_druid_1
 :art_druid_1 rdf:type owl:NamedIndividual ,
-                      :Art ;
-             :depicts :druid ;
+                      bbo:Art ;
+             bbo:depicts :druid ;
              sche:image "https://cdn.paizo.com/image/content/Secondary/PZO2215-1.jpg" ;
              rdfs:label "druid_1" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_druid_2
 :art_druid_2 rdf:type owl:NamedIndividual ,
-                      :Art ;
-             :depicts :druid ;
+                      bbo:Art ;
+             bbo:depicts :druid ;
              sche:image "https://2e.aonprd.com/Images/Classes/Iconic_Lini.png" ;
              rdfs:label "druid_2" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_druid_3
 :art_druid_3 rdf:type owl:NamedIndividual ,
-                      :Art ;
-             :depicts :druid ;
+                      bbo:Art ;
+             bbo:depicts :druid ;
              sche:image "https://cdn.paizo.com/image/content/PathfinderRPG/20190411-Lini.jpg" ;
              rdfs:label "druid_3" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_druid_archetype
 :art_druid_archetype rdf:type owl:NamedIndividual ,
-                              :Art ;
-                     :depicts :druid_archetype ;
+                              bbo:Art ;
+                     bbo:depicts :druid_archetype ;
                      sche:image "https://i.ibb.co/p1hKPHw/druid-archetype.jpg" ;
                      rdfs:label "druid_archetype" .
 
@@ -3805,28 +3800,28 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_druid_icon
 :art_druid_icon rdf:type owl:NamedIndividual ,
                          :Icon ;
-                :depicts :druid ;
+                bbo:depicts :druid ;
                 sche:image "https://2e.aonprd.com/Images/Class/Druid_Icon.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_dwarf_1
 :art_dwarf_1 rdf:type owl:NamedIndividual ,
-                      :Art ;
-             :depicts :dwarf ;
+                      bbo:Art ;
+             bbo:depicts :dwarf ;
              sche:image "https://2e.aonprd.com/Images/Ancestries/Dwarf01.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_dwarf_2
 :art_dwarf_2 rdf:type owl:NamedIndividual ,
-                      :Art ;
-             :depicts :dwarf ;
+                      bbo:Art ;
+             bbo:depicts :dwarf ;
              sche:image "https://2e.aonprd.com/Images/Ancestries/Dwarf02.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_dwarf_3
 :art_dwarf_3 rdf:type owl:NamedIndividual ,
-                      :Art ;
-             :depicts :dwarf ;
+                      bbo:Art ;
+             bbo:depicts :dwarf ;
              sche:image "https://i.ibb.co/rcGzXqh/dwarf.jpg" ;
              rdfs:label "dwarf_3" .
 
@@ -3834,50 +3829,50 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_eagle_knights_icon
 :art_eagle_knights_icon rdf:type owl:NamedIndividual ,
                                  :Icon ;
-                        :depicts :eagle_knights ;
+                        bbo:depicts :eagle_knights ;
                         sche:image "https://i.ibb.co/QvD1j9q/eagle-knights.jpg" ;
                         rdfs:label "Eagle Knights" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_elf_1
 :art_elf_1 rdf:type owl:NamedIndividual ,
-                    :Art ;
-           :depicts :elf ;
+                    bbo:Art ;
+           bbo:depicts :elf ;
            sche:image "https://2e.aonprd.com/Images/Ancestries/Elf01.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_elf_2
 :art_elf_2 rdf:type owl:NamedIndividual ,
-                    :Art ;
-           :depicts :elf ;
+                    bbo:Art ;
+           bbo:depicts :elf ;
            sche:image "https://2e.aonprd.com/Images/Ancestries/Elf02.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_elf_3
 :art_elf_3 rdf:type owl:NamedIndividual ,
-                    :Art ;
-           :depicts :elf ;
+                    bbo:Art ;
+           bbo:depicts :elf ;
            sche:image "https://i.ibb.co/tYQHGvg/elf.jpg" ;
            rdfs:label "elf_3" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_equipment_1
 :art_equipment_1 rdf:type owl:NamedIndividual ,
-                          :Art ;
+                          bbo:Art ;
                  sche:image "https://i.ibb.co/sgNY3Lj/art-equipment.jpg" ;
                  rdfs:label "equipment_1" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_equipment_2
 :art_equipment_2 rdf:type owl:NamedIndividual ,
-                          :Art ;
+                          bbo:Art ;
                  sche:image "https://cdnb.artstation.com/p/assets/images/images/019/976/601/large/rogier-van-de-beek-valeros-1paint.jpg?1565817340" ;
                  rdfs:label "equipment_2" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_equipment_3
 :art_equipment_3 rdf:type owl:NamedIndividual ,
-                          :Art ;
+                          bbo:Art ;
                  sche:image "https://cdnb.artstation.com/p/assets/images/images/019/976/599/large/rogier-van-de-beek-kyra-1paint.jpg?1565817339" ;
                  rdfs:label "equipment_3" .
 
@@ -3885,58 +3880,58 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_erastil_icon
 :art_erastil_icon rdf:type owl:NamedIndividual ,
                            :Icon ;
-                  :depicts :erastil ;
+                  bbo:depicts :erastil ;
                   sche:image "https://2e.aonprd.com/Images/Deities/erastil.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_esoteric_order_of_the_palatine_eye_icon
 :art_esoteric_order_of_the_palatine_eye_icon rdf:type owl:NamedIndividual ,
                                                       :Icon ;
-                                             :depicts :esoteric_order_of_the_palatine_eye ;
+                                             bbo:depicts :esoteric_order_of_the_palatine_eye ;
                                              sche:image "https://i.ibb.co/mX33mVW/esoteric-order-of-the-palatine-eye.jpg" ;
                                              rdfs:label "Esoteric Order of the Palatine Eye" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_eye_of_dread
 :art_eye_of_dread rdf:type owl:NamedIndividual ,
-                           :Art ;
-                  :depicts :eye_of_dread ;
+                           bbo:Art ;
+                  bbo:depicts :eye_of_dread ;
                   sche:image "https://pathfinderwiki.com/w/images/e/e5/Zombies.jpg" ;
                   rdfs:label "eye_of_dread" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_feats_1
 :art_feats_1 rdf:type owl:NamedIndividual ,
-                      :Art ;
+                      bbo:Art ;
              sche:image "https://cdn.paizo.com/image/content/Blog/20190702-walljump_500.jpeg" ;
              rdfs:label "feats_1" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_feats_2
 :art_feats_2 rdf:type owl:NamedIndividual ,
-                      :Art ;
+                      bbo:Art ;
              sche:image "https://i0.wp.com/www.teilzeithelden.de/wp-content/uploads/2019/08/C-2.png?ssl=1" ;
              rdfs:label "feats_2" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_feats_3
 :art_feats_3 rdf:type owl:NamedIndividual ,
-                      :Art ;
+                      bbo:Art ;
              sche:image "https://i.ibb.co/swLxJ04/feat-3.jpg" ;
              rdfs:label "feats_3" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_feats_4
 :art_feats_4 rdf:type owl:NamedIndividual ,
-                      :Art ;
+                      bbo:Art ;
              sche:image "https://black-book-editions.fr/contenu/image/Tony/PZO2101--underwater-marauder.jpg" ;
              rdfs:label "feats_4" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_fey_bloodline
 :art_fey_bloodline rdf:type owl:NamedIndividual ,
-                            :Art ;
-                   :depicts :fey_bloodline ,
+                            bbo:Art ;
+                   bbo:depicts :fey_bloodline ,
                             :sorcerer ;
                    sche:image "https://cdna.artstation.com/p/assets/images/images/022/609/776/large/valera-lutfullina-sorcerer-tebelebrol.jpg?1576065790" ;
                    rdfs:label "fey_bloodline" .
@@ -3944,56 +3939,56 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_fighter_1
 :art_fighter_1 rdf:type owl:NamedIndividual ,
-                        :Art ;
-               :depicts :fighter ;
+                        bbo:Art ;
+               bbo:depicts :fighter ;
                sche:image "https://scontent.ftgd2-1.fna.fbcdn.net/v/t1.6435-9/104220663_3086063021480416_8853282941021455166_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=730e14&_nc_ohc=1tUyG2WRs3UAX_1TkpP&_nc_ht=scontent.ftgd2-1.fna&oh=00_AfBFSLFwFar-TWx4A5gltzdsSrzWBhpfiTFKNxG8jO1WeA&oe=652A5CC2" ;
                rdfs:label "fighter_1" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_fighter_2
 :art_fighter_2 rdf:type owl:NamedIndividual ,
-                        :Art ;
-               :depicts :fighter ;
+                        bbo:Art ;
+               bbo:depicts :fighter ;
                sche:image "https://2e.aonprd.com/Images/Classes/Iconic_Valeros.png" ;
                rdfs:label "fighter_2" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_fighter_3
 :art_fighter_3 rdf:type owl:NamedIndividual ,
-                        :Art ;
-               :depicts :fighter ;
+                        bbo:Art ;
+               bbo:depicts :fighter ;
                sche:image "https://cdn.paizo.com/image/content/PathfinderRPG/20190516-Encounter.jpg" ;
                rdfs:label "fighter_3" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_fighter_4
 :art_fighter_4 rdf:type owl:NamedIndividual ,
-                        :Art ;
-               :depicts :fighter ;
+                        bbo:Art ;
+               bbo:depicts :fighter ;
                sche:image "https://cdnb.artstation.com/p/assets/images/images/031/795/745/large/michele-esposito-99.jpg?1604606236" ;
                rdfs:label "fighter_4" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_fighter_5
 :art_fighter_5 rdf:type owl:NamedIndividual ,
-                        :Art ;
-               :depicts :fighter ;
+                        bbo:Art ;
+               bbo:depicts :fighter ;
                sche:image "https://cdna.artstation.com/p/assets/images/images/031/795/706/large/michele-esposito-8.jpg?1604606160" ;
                rdfs:label "fighter_5" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_fighter_6
 :art_fighter_6 rdf:type owl:NamedIndividual ,
-                        :Art ;
-               :depicts :fighter ;
+                        bbo:Art ;
+               bbo:depicts :fighter ;
                sche:image "https://cdna.artstation.com/p/assets/images/images/031/795/830/large/michele-esposito-7.jpg?1604606437" ;
                rdfs:label "fighter_6" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_fighter_archetype
 :art_fighter_archetype rdf:type owl:NamedIndividual ,
-                                :Art ;
-                       :depicts :fighter_archetype ;
+                                bbo:Art ;
+                       bbo:depicts :fighter_archetype ;
                        sche:image "https://i.pinimg.com/564x/2e/70/3e/2e703e690b7dc1a7925409516f159968.jpg" ;
                        rdfs:label "fighter_archetype" .
 
@@ -4001,22 +3996,22 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_fighter_icon
 :art_fighter_icon rdf:type owl:NamedIndividual ,
                            :Icon ;
-                  :depicts :fighter ;
+                  bbo:depicts :fighter ;
                   sche:image "https://2e.aonprd.com/Images/Class/Fighter_Icon.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_firebrands_icon
 :art_firebrands_icon rdf:type owl:NamedIndividual ,
                               :Icon ;
-                     :depicts :firebrands ;
+                     bbo:depicts :firebrands ;
                      sche:image "https://i.ibb.co/3NM43qn/firebrands.jpg" ;
                      rdfs:label "Firebrands" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_flurry_edge
 :art_flurry_edge rdf:type owl:NamedIndividual ,
-                          :Art ;
-                 :depicts :flurry_edge ,
+                          bbo:Art ;
+                 bbo:depicts :flurry_edge ,
                           :ranger ;
                  sche:image "https://cdna.artstation.com/p/assets/images/images/022/609/780/large/valera-lutfullina-ranger-hildegaard-tiny.jpg?1576065793" ;
                  rdfs:label "flurry_edge" .
@@ -4025,83 +4020,97 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_free_captains_icon
 :art_free_captains_icon rdf:type owl:NamedIndividual ,
                                  :Icon ;
-                        :depicts :free_captains ;
+                        bbo:depicts :free_captains ;
                         sche:image "https://i.ibb.co/r3wTSBX/free-captains.jpg" ;
                         rdfs:label "Free Captains" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_fury_instinct
 :art_fury_instinct rdf:type owl:NamedIndividual ,
-                            :Art ;
-                   :depicts :barbarian ,
+                            bbo:Art ;
+                   bbo:depicts :barbarian ,
                             :fury_instinct ;
                    sche:image "https://i.ibb.co/yNk19D8/art-fury-instinct.jpg" ;
                    rdfs:label "fury_instinct" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_game_mastering_1
+:art_game_mastering_1 rdf:type owl:NamedIndividual ,
+                               bbo:Art ;
+                      sche:image "https://cdn.paizo.com/image/content/Blog/072219_desert_battle.jpg" ;
+                      rdfs:label "Game mastering 1" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_game_mastering_2
+:art_game_mastering_2 rdf:type owl:NamedIndividual ,
+                               bbo:Art ;
+                      sche:image "https://cdna.artstation.com/p/assets/images/images/039/804/410/large/will-o-brien-pzo2101-harrow-master-copy-c.jpg?1626976641" ;
+                      rdfs:label "Game mastering 2" .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_garundi
 :art_garundi rdf:type owl:NamedIndividual ,
-                      :Art ;
-             :depicts :garundi ;
+                      bbo:Art ;
+             bbo:depicts :garundi ;
              sche:image "https://i.ibb.co/9YsXxqf/garundi.jpg" ;
              rdfs:label "garundi" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_gear
 :art_gear rdf:type owl:NamedIndividual ,
-                   :Art ;
+                   bbo:Art ;
           sche:image "https://i.ibb.co/m6C3nTD/art-gear.jpg" ;
           rdfs:label "gear" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_gnome_1
 :art_gnome_1 rdf:type owl:NamedIndividual ,
-                      :Art ;
-             :depicts :gnome ;
+                      bbo:Art ;
+             bbo:depicts :gnome ;
              sche:image "https://2e.aonprd.com/Images/Ancestries/Gnome01.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_gnome_2
 :art_gnome_2 rdf:type owl:NamedIndividual ,
-                      :Art ;
-             :depicts :gnome ;
+                      bbo:Art ;
+             bbo:depicts :gnome ;
              sche:image "https://2e.aonprd.com/Images/Ancestries/Gnome02.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_gnome_3
 :art_gnome_3 rdf:type owl:NamedIndividual ,
-                      :Art ;
-             :depicts :gnome ;
+                      bbo:Art ;
+             bbo:depicts :gnome ;
              sche:image "https://i.ibb.co/JHbDRrd/gnome.jpg" ;
              rdfs:label "gnome_3" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_goblin_1
 :art_goblin_1 rdf:type owl:NamedIndividual ,
-                       :Art ;
-              :depicts :goblin ;
+                       bbo:Art ;
+              bbo:depicts :goblin ;
               sche:image "https://2e.aonprd.com/Images/Ancestries/Goblin01.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_goblin_2
 :art_goblin_2 rdf:type owl:NamedIndividual ,
-                       :Art ;
-              :depicts :goblin ;
+                       bbo:Art ;
+              bbo:depicts :goblin ;
               sche:image "https://2e.aonprd.com/Images/Ancestries/Goblin02.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_goblin_3
 :art_goblin_3 rdf:type owl:NamedIndividual ,
-                       :Art ;
-              :depicts :goblin ;
+                       bbo:Art ;
+              bbo:depicts :goblin ;
               sche:image "https://i.ibb.co/6rh4Ltc/goblin.jpg" ;
               rdfs:label "goblin_3" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_golden_road
 :art_golden_road rdf:type owl:NamedIndividual ,
-                          :Art ;
-                 :depicts :golden_road ;
+                          bbo:Art ;
+                 bbo:depicts :golden_road ;
                  sche:image "https://cdn.paizo.com/image/content/PathfinderLostOmens/20190618-GoldenRoad.jpg" ;
                  rdfs:label "golden_road" .
 
@@ -4109,80 +4118,80 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_gorum_icon
 :art_gorum_icon rdf:type owl:NamedIndividual ,
                          :Icon ;
-                :depicts :gorum ;
+                bbo:depicts :gorum ;
                 sche:image "https://2e.aonprd.com/Images/Deities/gorum.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_gozreh_icon
 :art_gozreh_icon rdf:type owl:NamedIndividual ,
                           :Icon ;
-                 :depicts :gozreh ;
+                 bbo:depicts :gozreh ;
                  sche:image "https://2e.aonprd.com/Images/Deities/gozreh.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_green_faith_icon
 :art_green_faith_icon rdf:type owl:NamedIndividual ,
                                :Icon ;
-                      :depicts :green_faith ;
+                      bbo:depicts :green_faith ;
                       sche:image "https://2e.aonprd.com/Images/Deities/greenfaith.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_halfelf
 :art_halfelf rdf:type owl:NamedIndividual ,
-                      :Art ;
-             :depicts :human ;
+                      bbo:Art ;
+             bbo:depicts :human ;
              sche:image "https://2e.aonprd.com/Images/Ancestries/HalfElf01.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_halfelf_2
 :art_halfelf_2 rdf:type owl:NamedIndividual ,
-                        :Art ;
-               :depicts :half_elf ;
+                        bbo:Art ;
+               bbo:depicts :half_elf ;
                sche:image "https://i.ibb.co/56x7Lkp/halfelf.jpg" ;
                rdfs:label "halfelf_2" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_halfling_1
 :art_halfling_1 rdf:type owl:NamedIndividual ,
-                         :Art ;
-                :depicts :halfling ;
+                         bbo:Art ;
+                bbo:depicts :halfling ;
                 sche:image "https://2e.aonprd.com/Images/Ancestries/Halfling01.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_halfling_2
 :art_halfling_2 rdf:type owl:NamedIndividual ,
-                         :Art ;
-                :depicts :halfling ;
+                         bbo:Art ;
+                bbo:depicts :halfling ;
                 sche:image "https://2e.aonprd.com/Images/Ancestries/Halfling02.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_halfling_3
 :art_halfling_3 rdf:type owl:NamedIndividual ,
-                         :Art ;
-                :depicts :halfling ;
+                         bbo:Art ;
+                bbo:depicts :halfling ;
                 sche:image "https://i.ibb.co/r38k3HK/halfling.jpg" ;
                 rdfs:label "halfling_3" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_halforc
 :art_halforc rdf:type owl:NamedIndividual ,
-                      :Art ;
-             :depicts :human ;
+                      bbo:Art ;
+             bbo:depicts :human ;
              sche:image "https://2e.aonprd.com/Images/Ancestries/HalfOrc01.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_halforc_2
 :art_halforc_2 rdf:type owl:NamedIndividual ,
-                        :Art ;
-               :depicts :half_orc ;
+                        bbo:Art ;
+               bbo:depicts :half_orc ;
                sche:image "https://i.ibb.co/wLtsQsy/halforc.jpg" ;
                rdfs:label "halforc_2" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_handheld_musical_instrument
 :art_handheld_musical_instrument rdf:type owl:NamedIndividual ,
-                                          :Art ;
-                                 :depicts :handheld_musical_instrument ;
+                                          bbo:Art ;
+                                 bbo:depicts :handheld_musical_instrument ;
                                  sche:image "https://2e.aonprd.com/Images/Treasure/Musical_Instrument.webp" ;
                                  rdfs:label "handheld musical instrument" .
 
@@ -4190,30 +4199,30 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_hellknights_icon
 :art_hellknights_icon rdf:type owl:NamedIndividual ,
                                :Icon ;
-                      :depicts :hellknights ;
+                      bbo:depicts :hellknights ;
                       sche:image "https://i.ibb.co/vvpGQYD/hellknights.jpg" ;
                       rdfs:label "Hellknights" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_high_seas
 :art_high_seas rdf:type owl:NamedIndividual ,
-                        :Art ;
-               :depicts :high_seas ;
+                        bbo:Art ;
+               bbo:depicts :high_seas ;
                sche:image "https://cdn.paizo.com/image/content/Blog/20190625-highseas.jpg" ;
                rdfs:label "high_seas" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_human
 :art_human rdf:type owl:NamedIndividual ,
-                    :Art ;
-           :depicts :human ;
+                    bbo:Art ;
+           bbo:depicts :human ;
            sche:image "https://2e.aonprd.com/Images/Ancestries/Human01.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_illusion_arcane_school
 :art_illusion_arcane_school rdf:type owl:NamedIndividual ,
-                                     :Art ;
-                            :depicts :illusion_arcane_school ,
+                                     bbo:Art ;
+                            bbo:depicts :illusion_arcane_school ,
                                      :wizard ;
                             sche:image "https://i.ibb.co/mRnrCdd/art-illusion-arcane-sschool.jpg" ;
                             rdfs:label "illusion_arcane_school" .
@@ -4221,8 +4230,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_impossible_lands
 :art_impossible_lands rdf:type owl:NamedIndividual ,
-                               :Art ;
-                      :depicts :impossible_lands ;
+                               bbo:Art ;
+                      bbo:depicts :impossible_lands ;
                       sche:image "http://bpfindley.com/Impossible%20Lands.jpg" ;
                       rdfs:label "impossible_lands" .
 
@@ -4230,29 +4239,29 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_iomedae_icon
 :art_iomedae_icon rdf:type owl:NamedIndividual ,
                            :Icon ;
-                  :depicts :iomedae ;
+                  bbo:depicts :iomedae ;
                   sche:image "https://2e.aonprd.com/Images/Deities/iomedae.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_irori_icon
 :art_irori_icon rdf:type owl:NamedIndividual ,
                          :Icon ;
-                :depicts :irori ;
+                bbo:depicts :irori ;
                 sche:image "https://2e.aonprd.com/Images/Deities/irori.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_keleshite
 :art_keleshite rdf:type owl:NamedIndividual ,
-                        :Art ;
-               :depicts :keleshite ;
+                        bbo:Art ;
+               bbo:depicts :keleshite ;
                sche:image "https://i.ibb.co/0BxnJvG/keleshite.jpg" ;
                rdfs:label "keleshite" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_kellid
 :art_kellid rdf:type owl:NamedIndividual ,
-                     :Art ;
-            :depicts :kellid ;
+                     bbo:Art ;
+            bbo:depicts :kellid ;
             sche:image "https://i.ibb.co/Dt96MgF/Kellid.jpg" ;
             rdfs:label "kellid" .
 
@@ -4260,15 +4269,15 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_knights_of_lastwall_icon
 :art_knights_of_lastwall_icon rdf:type owl:NamedIndividual ,
                                        :Icon ;
-                              :depicts :knights_of_lastwall ;
+                              bbo:depicts :knights_of_lastwall ;
                               sche:image "https://i.ibb.co/TmY4WLL/knights-of-lastwall.jpg" ;
                               rdfs:label "Knights of Lastwall" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_kobold
 :art_kobold rdf:type owl:NamedIndividual ,
-                     :Art ;
-            :depicts :kobold ;
+                     bbo:Art ;
+            bbo:depicts :kobold ;
             sche:image "https://staging.cohostcdn.org/attachment/ef1ae6d3-9cbd-425a-a12a-f7a3a4de1a7c/kob%20ref.png?width=337&height=306&fit=crop&auto=webp&dpr=1" ;
             rdfs:label "kobold" .
 
@@ -4276,22 +4285,22 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_lamashtu_icon
 :art_lamashtu_icon rdf:type owl:NamedIndividual ,
                             :Icon ;
-                   :depicts :lamashtu ;
+                   bbo:depicts :lamashtu ;
                    sche:image "https://2e.aonprd.com/Images/Deities/lamashtu.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_leaf_order
 :art_leaf_order rdf:type owl:NamedIndividual ,
-                         :Art ;
-                :depicts :druid ;
+                         bbo:Art ;
+                bbo:depicts :druid ;
                 sche:image "https://i.ibb.co/T8pqqmg/art-leaf-order.jpg" ;
                 rdfs:label "leaf_order" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_liberator
 :art_liberator rdf:type owl:NamedIndividual ,
-                        :Art ;
-               :depicts :champion ,
+                        bbo:Art ;
+               bbo:depicts :champion ,
                         :liberator ;
                sche:image "https://cdna.artstation.com/p/assets/images/images/031/795/796/4k/michele-esposito-4.jpg?1604606352" ;
                rdfs:label "liberator" .
@@ -4300,7 +4309,7 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_lion_blades_icon
 :art_lion_blades_icon rdf:type owl:NamedIndividual ,
                                :Icon ;
-                      :depicts :lion_blades ;
+                      bbo:depicts :lion_blades ;
                       sche:image "https://i.ibb.co/H7r2SJv/lion-blades.jpg" ;
                       rdfs:label "Lion Blades" .
 
@@ -4308,63 +4317,63 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_magaambya_icon
 :art_magaambya_icon rdf:type owl:NamedIndividual ,
                              :Icon ;
-                    :depicts :magaambya ;
+                    bbo:depicts :magaambya ;
                     sche:image "https://i.ibb.co/NWT3tMb/Magaambya.jpg" ;
                     rdfs:label "Magaambya" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_material_component_pouch
 :art_material_component_pouch rdf:type owl:NamedIndividual ,
-                                       :Art ;
-                              :depicts :material_component_pouch ;
+                                       bbo:Art ;
+                              bbo:depicts :material_component_pouch ;
                               sche:image "https://2e.aonprd.com/Images/Treasure/Material_Component_Pouch.webp" ;
                               rdfs:label "material component pouch" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_monk_1
 :art_monk_1 rdf:type owl:NamedIndividual ,
-                     :Art ;
-            :depicts :monk ;
+                     bbo:Art ;
+            bbo:depicts :monk ;
             sche:image "https://scontent.ftgd2-1.fna.fbcdn.net/v/t1.6435-9/102662893_3056407654445953_2820138572378537984_n.jpg?stp=dst-jpg_p526x296&_nc_cat=110&ccb=1-7&_nc_sid=730e14&_nc_ohc=C5vdAyObdQkAX9JUkwR&_nc_ht=scontent.ftgd2-1.fna&oh=00_AfBfuUMNMocd5r4aPyz26NFYfThBrS2I5tY2jkSmaoAUrw&oe=652A5F30" ;
             rdfs:label "monk_1" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_monk_2
 :art_monk_2 rdf:type owl:NamedIndividual ,
-                     :Art ;
-            :depicts :monk ;
+                     bbo:Art ;
+            bbo:depicts :monk ;
             sche:image "https://static.wixstatic.com/media/0a2620_25f16d3b6bc54f4480f0d50d6eb6b53e~mv2.jpg/v1/fill/w_539,h_758,al_c,q_85,enc_auto/0a2620_25f16d3b6bc54f4480f0d50d6eb6b53e~mv2.jpg" ;
             rdfs:label "monk_2" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_monk_3
 :art_monk_3 rdf:type owl:NamedIndividual ,
-                     :Art ;
-            :depicts :monk ;
+                     bbo:Art ;
+            bbo:depicts :monk ;
             sche:image "https://cdn.paizo.com/image/content/PathfinderRPG/20190425-Encounter.jpg" ;
             rdfs:label "monk_3" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_monk_4
 :art_monk_4 rdf:type owl:NamedIndividual ,
-                     :Art ;
-            :depicts :monk ;
+                     bbo:Art ;
+            bbo:depicts :monk ;
             sche:image "https://i.ibb.co/s2BJzdx/art-monk-4.jpg" ;
             rdfs:label "monk_4" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_monk_5
 :art_monk_5 rdf:type owl:NamedIndividual ,
-                     :Art ;
-            :depicts :monk ;
+                     bbo:Art ;
+            bbo:depicts :monk ;
             sche:image "https://cdn.paizo.com/image/content/Blog/20190624-5.jpg" ;
             rdfs:label "monk_5" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_monk_archetype
 :art_monk_archetype rdf:type owl:NamedIndividual ,
-                             :Art ;
-                    :depicts :monk_archetype ;
+                             bbo:Art ;
+                    bbo:depicts :monk_archetype ;
                     sche:image "https://pbs.twimg.com/media/FMC7_r5aAAA4qWG?format=webp&name=900x900" ;
                     rdfs:label "monk_archetype" .
 
@@ -4372,30 +4381,30 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_monk_icon
 :art_monk_icon rdf:type owl:NamedIndividual ,
                         :Icon ;
-               :depicts :monk ;
+               bbo:depicts :monk ;
                sche:image "https://2e.aonprd.com/Images/Class/Monk_Icon.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_mutagenist
 :art_mutagenist rdf:type owl:NamedIndividual ,
-                         :Art ;
-                :depicts :mutagenist ;
+                         bbo:Art ;
+                bbo:depicts :mutagenist ;
                 sche:image "https://cdnb.artstation.com/p/assets/images/images/039/803/913/large/will-o-brien-pzo2101-alchemist-gheera-mutagenist-copy-c.jpg?1626975344" ;
                 rdfs:label "mutagenist" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_mwangi
 :art_mwangi rdf:type owl:NamedIndividual ,
-                     :Art ;
-            :depicts :mwangi ;
+                     bbo:Art ;
+            bbo:depicts :mwangi ;
             sche:image "https://i.ibb.co/4gdwDjZ/mwangi.jpg" ;
             rdfs:label "mwangi" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_mwangi_expanse
 :art_mwangi_expanse rdf:type owl:NamedIndividual ,
-                             :Art ;
-                    :depicts :mwangi_expanse ;
+                             bbo:Art ;
+                    bbo:depicts :mwangi_expanse ;
                     sche:image "https://cdn.paizo.com/image/content/Blog/20190709-mwangiexpanse.jpg" ;
                     rdfs:label "mwangi_expanse" .
 
@@ -4403,14 +4412,14 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_nethys_icon
 :art_nethys_icon rdf:type owl:NamedIndividual ,
                           :Icon ;
-                 :depicts :nethys ;
+                 bbo:depicts :nethys ;
                  sche:image "https://2e.aonprd.com/Images/Deities/nethys.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_nidalese
 :art_nidalese rdf:type owl:NamedIndividual ,
-                       :Art ;
-              :depicts :nidalese ;
+                       bbo:Art ;
+              bbo:depicts :nidalese ;
               sche:image "https://i.ibb.co/64sFjxV/nidalese.jpg" ;
               rdfs:label "nidalese" .
 
@@ -4418,7 +4427,7 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_night_heralds_icon
 :art_night_heralds_icon rdf:type owl:NamedIndividual ,
                                  :Icon ;
-                        :depicts :night_heralds ;
+                        bbo:depicts :night_heralds ;
                         sche:image "https://i.ibb.co/mzV1Zz0/night-heralds.jpg" ;
                         rdfs:label "Night Heralds" .
 
@@ -4426,22 +4435,22 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_norgorber_icon
 :art_norgorber_icon rdf:type owl:NamedIndividual ,
                              :Icon ;
-                    :depicts :norgorber ;
+                    bbo:depicts :norgorber ;
                     sche:image "https://2e.aonprd.com/Images/Deities/norgorber.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_old_cheliax
 :art_old_cheliax rdf:type owl:NamedIndividual ,
-                          :Art ;
-                 :depicts :old_cheliax ;
+                          bbo:Art ;
+                 bbo:depicts :old_cheliax ;
                  sche:image "https://cdn.paizo.com/image/content/Blog/20190716-cheliax.jpg" ;
                  rdfs:label "old_cheliax" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_outwit_edge
 :art_outwit_edge rdf:type owl:NamedIndividual ,
-                          :Art ;
-                 :depicts :outwit_edge ,
+                          bbo:Art ;
+                 bbo:depicts :outwit_edge ,
                           :ranger ;
                  sche:image "https://i.ibb.co/NLV07Mn/art-outwit-edge.jpg" ;
                  rdfs:label "outwit_edge" .
@@ -4450,7 +4459,7 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_pathfinder_society_icon
 :art_pathfinder_society_icon rdf:type owl:NamedIndividual ,
                                       :Icon ;
-                             :depicts :pathfinder_society ;
+                             bbo:depicts :pathfinder_society ;
                              sche:image "https://i.ibb.co/k0zgtpN/pathfinder-society.jpg" ;
                              rdfs:label "Pathfinder Society" .
 
@@ -4458,21 +4467,21 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_pharasma_icon
 :art_pharasma_icon rdf:type owl:NamedIndividual ,
                             :Icon ;
-                   :depicts :pharasma ;
+                   bbo:depicts :pharasma ;
                    sche:image "https://2e.aonprd.com/Images/Deities/pharasma.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_playing_the_game_1
 :art_playing_the_game_1 rdf:type owl:NamedIndividual ,
-                                 :Art ;
+                                 bbo:Art ;
                         sche:image "https://i.ibb.co/TW6tPNt/playing-the-game.jpg" ;
                         rdfs:label "playing the game 1" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_playing_the_game_10
 :art_playing_the_game_10 rdf:type owl:NamedIndividual ,
-                                  :Art ;
-                         :depicts :cover ,
+                                  bbo:Art ;
+                         bbo:depicts :cover ,
                                   :greater_cover ,
                                   :lesser_cover ;
                          sche:image "https://2e.aonprd.com/Images/Rules/Rules459.png" ;
@@ -4481,59 +4490,59 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_playing_the_game_2
 :art_playing_the_game_2 rdf:type owl:NamedIndividual ,
-                                 :Art ;
+                                 bbo:Art ;
                         sche:image "https://i.pinimg.com/564x/4b/25/dc/4b25dc0c649d4193e42b8cf71a7bc49f.jpg" ;
                         rdfs:label "playing the game 2" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_playing_the_game_3
 :art_playing_the_game_3 rdf:type owl:NamedIndividual ,
-                                 :Art ;
+                                 bbo:Art ;
                         sche:image "https://rollforcombat.com/wp-content/uploads/2019/08/10.jpg" ;
                         rdfs:label "playing the game 3" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_playing_the_game_4
 :art_playing_the_game_4 rdf:type owl:NamedIndividual ,
-                                 :Art ;
+                                 bbo:Art ;
                         sche:image "https://i.ibb.co/wsk1BRP/dead-goblin.jpg" ;
                         rdfs:label "playing the game 4" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_playing_the_game_5
 :art_playing_the_game_5 rdf:type owl:NamedIndividual ,
-                                 :Art ;
+                                 bbo:Art ;
                         sche:image "https://sun9-38.userapi.com/impg/siHOsKXY1yu4-ND-KAT2rfRWP-7IMj3Dzc38ww/9cKfON6CZls.jpg?size=1197x780&quality=95&sign=c0b3c7e6a6c9d750c75ae2af5fbe57ab&type=album" ;
                         rdfs:label "playing the game 5" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_playing_the_game_6
 :art_playing_the_game_6 rdf:type owl:NamedIndividual ,
-                                 :Art ;
+                                 bbo:Art ;
                         sche:image "https://cdna.artstation.com/p/assets/images/images/021/343/016/large/mirco-paganessi-pzo2101-strikecolor.jpg?1571304160" ;
                         rdfs:label "playing the game 6" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_playing_the_game_7
 :art_playing_the_game_7 rdf:type owl:NamedIndividual ,
-                                 :Art ;
-                        :depicts :attack_of_opportunity_for_move_actions_statement ;
+                                 bbo:Art ;
+                        bbo:depicts :attack_of_opportunity_for_move_actions_statement ;
                         sche:image "https://2e.aonprd.com/Images/Rules/Rules446.png" ;
                         rdfs:label "playing the game 7" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_playing_the_game_8
 :art_playing_the_game_8 rdf:type owl:NamedIndividual ,
-                                 :Art ;
-                        :depicts :grid_movement_rule ;
+                                 bbo:Art ;
+                        bbo:depicts :grid_movement_rule ;
                         sche:image "https://2e.aonprd.com/Images/Rules/Rules444.png" ;
                         rdfs:label "playing the game 8" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_playing_the_game_9
 :art_playing_the_game_9 rdf:type owl:NamedIndividual ,
-                                 :Art ;
-                        :depicts :flanking ;
+                                 bbo:Art ;
+                        bbo:depicts :flanking ;
                         sche:image "https://2e.aonprd.com/Images/Rules/Rules458.png" ;
                         rdfs:label "playing the game 9" .
 
@@ -4541,38 +4550,38 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_prophecies_of_kalistrade_icon
 :art_prophecies_of_kalistrade_icon rdf:type owl:NamedIndividual ,
                                             :Icon ;
-                                   :depicts :prophecies_of_kalistrade ;
+                                   bbo:depicts :prophecies_of_kalistrade ;
                                    sche:image "https://2e.aonprd.com/Images/Deities/ProphetsOfKalistrade.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_ranger_1
 :art_ranger_1 rdf:type owl:NamedIndividual ,
-                       :Art ;
-              :depicts :ranger ;
+                       bbo:Art ;
+              bbo:depicts :ranger ;
               sche:image "https://scontent.ftgd2-1.fna.fbcdn.net/v/t1.6435-9/103278923_3069070079846377_7004001286681888993_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=730e14&_nc_ohc=l0bk9dFme54AX_S3lp0&_nc_ht=scontent.ftgd2-1.fna&oh=00_AfC2-55z45-sp3ETQqKjF1KqpmEP02Wrc1-Y0yO0kUGdpw&oe=652A85DA" ;
               rdfs:label "ranger_1" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_ranger_2
 :art_ranger_2 rdf:type owl:NamedIndividual ,
-                       :Art ;
-              :depicts :ranger ;
+                       bbo:Art ;
+              bbo:depicts :ranger ;
               sche:image "https://2e.aonprd.com/Images/Classes/Iconic_Harsk.png" ;
               rdfs:label "ranger_2" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_ranger_3
 :art_ranger_3 rdf:type owl:NamedIndividual ,
-                       :Art ;
-              :depicts :ranger ;
+                       bbo:Art ;
+              bbo:depicts :ranger ;
               sche:image "https://cdn.paizo.com/image/content/PathfinderRPG/PZO2101-HarskHalfPage.jpg" ;
               rdfs:label "ranger_3" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_ranger_archetype
 :art_ranger_archetype rdf:type owl:NamedIndividual ,
-                               :Art ;
-                      :depicts :ranger_archetype ;
+                               bbo:Art ;
+                      bbo:depicts :ranger_archetype ;
                       sche:image "https://i.ibb.co/2vs0NdS/ranger-archetype.jpg" ;
                       rdfs:label "ranger_archetype" .
 
@@ -4580,22 +4589,22 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_ranger_icon
 :art_ranger_icon rdf:type owl:NamedIndividual ,
                           :Icon ;
-                 :depicts :ranger ;
+                 bbo:depicts :ranger ;
                  sche:image "https://2e.aonprd.com/Images/Class/Ranger_Icon.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_red_mantis_icon
 :art_red_mantis_icon rdf:type owl:NamedIndividual ,
                               :Icon ;
-                     :depicts :red_mantis ;
+                     bbo:depicts :red_mantis ;
                      sche:image "https://i.ibb.co/0yBrz1x/red-mantis.jpg" ;
                      rdfs:label "Red Mantis" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_redeemer
 :art_redeemer rdf:type owl:NamedIndividual ,
-                       :Art ;
-              :depicts :champion ,
+                       bbo:Art ;
+              bbo:depicts :champion ,
                        :redeemer ;
               sche:image "https://cdnb.artstation.com/p/assets/images/images/031/795/817/4k/michele-esposito-5.jpg?1604606397" ;
               rdfs:label "redeemer" .
@@ -4603,32 +4612,32 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_rogue_1
 :art_rogue_1 rdf:type owl:NamedIndividual ,
-                      :Art ;
-             :depicts :rogue ;
+                      bbo:Art ;
+             bbo:depicts :rogue ;
              sche:image "https://scontent.ftgd2-1.fna.fbcdn.net/v/t1.6435-9/105034384_3090923697661015_8939600966791836701_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=730e14&_nc_ohc=uSszEK4868kAX9UI51G&_nc_oc=AQlyaGN2c9xgqtktqZ7sGhBz6sN-AFFjIw6uj6EPQJ2xw5d_94PQiqeksfzZA05imPY&_nc_ht=scontent.ftgd2-1.fna&oh=00_AfANJ15PXPvLKrnO-p9LHGzJX2RKiGseJcLVMuv2hAEZYw&oe=652A792A" ;
              rdfs:label "rogue_1" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_rogue_2
 :art_rogue_2 rdf:type owl:NamedIndividual ,
-                      :Art ;
-             :depicts :rogue ;
+                      bbo:Art ;
+             bbo:depicts :rogue ;
              sche:image "https://cdn.paizo.com/image/content/PathfinderRPG/20190416-Merisiel.jpg" ;
              rdfs:label "rogue_2" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_rogue_3
 :art_rogue_3 rdf:type owl:NamedIndividual ,
-                      :Art ;
-             :depicts :rogue ;
+                      bbo:Art ;
+             bbo:depicts :rogue ;
              sche:image "https://cdn.paizo.com/image/content/PathfinderRPG/20190418-Encounter.jpg" ;
              rdfs:label "rogue_3" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_rogue_archetype
 :art_rogue_archetype rdf:type owl:NamedIndividual ,
-                              :Art ;
-                     :depicts :rogue_archetype ;
+                              bbo:Art ;
+                     bbo:depicts :rogue_archetype ;
                      sche:image "https://i.ibb.co/7bYKc18/rogue-archetype.jpg" ;
                      rdfs:label "rogue_archetype" .
 
@@ -4636,21 +4645,21 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_rogue_icon
 :art_rogue_icon rdf:type owl:NamedIndividual ,
                          :Icon ;
-                :depicts :rogue ;
+                bbo:depicts :rogue ;
                 sche:image "https://2e.aonprd.com/Images/Class/Rogue_Icon.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_rovagug_icon
 :art_rovagug_icon rdf:type owl:NamedIndividual ,
                            :Icon ;
-                  :depicts :rovagug ;
+                  bbo:depicts :rovagug ;
                   sche:image "https://2e.aonprd.com/Images/Deities/rovagug.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_saga_lands
 :art_saga_lands rdf:type owl:NamedIndividual ,
-                         :Art ;
-                :depicts :saga_lands ;
+                         bbo:Art ;
+                bbo:depicts :saga_lands ;
                 sche:image "https://cdn.paizo.com/image/content/Blog/20190723-sagalands.jpg" ;
                 rdfs:label "saga_lands" .
 
@@ -4658,14 +4667,14 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_sarenrae_icon
 :art_sarenrae_icon rdf:type owl:NamedIndividual ,
                             :Icon ;
-                   :depicts :sarenrae ;
+                   bbo:depicts :sarenrae ;
                    sche:image "https://2e.aonprd.com/Images/Deities/sarenrae.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_scoundrel
 :art_scoundrel rdf:type owl:NamedIndividual ,
-                        :Art ;
-               :depicts :rogue ,
+                        bbo:Art ;
+               bbo:depicts :rogue ,
                         :scoundrel ;
                sche:image "https://cdnb.artstation.com/p/assets/images/images/031/795/647/large/michele-esposito-2.jpg?1604606023" ;
                rdfs:label "scoundrel" .
@@ -4674,7 +4683,7 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_sczarni_icon
 :art_sczarni_icon rdf:type owl:NamedIndividual ,
                            :Icon ;
-                  :depicts :sczarni ;
+                  bbo:depicts :sczarni ;
                   sche:image "https://i.ibb.co/v3zBqgP/sczarni.jpg" ;
                   rdfs:label "Sczarni" .
 
@@ -4682,75 +4691,75 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_shelyn_icon
 :art_shelyn_icon rdf:type owl:NamedIndividual ,
                           :Icon ;
-                 :depicts :shelyn ;
+                 bbo:depicts :shelyn ;
                  sche:image "https://2e.aonprd.com/Images/Deities/shelyn.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_shining_kingdoms
 :art_shining_kingdoms rdf:type owl:NamedIndividual ,
-                               :Art ;
-                      :depicts :shining_kingdoms ;
+                               bbo:Art ;
+                      bbo:depicts :shining_kingdoms ;
                       sche:image "https://cdn.paizo.com/image/content/Blog/20190730-shiningkingdoms.jpg" ;
                       rdfs:label "shining_kingdoms" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_shoanti
 :art_shoanti rdf:type owl:NamedIndividual ,
-                      :Art ;
-             :depicts :shoanti ;
+                      bbo:Art ;
+             bbo:depicts :shoanti ;
              sche:image "https://i.ibb.co/NrMws0K/shoanti.jpg" ;
              rdfs:label "shoanti" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_skills_1
 :art_skills_1 rdf:type owl:NamedIndividual ,
-                       :Art ;
+                       bbo:Art ;
               sche:image "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSw3Z408ZNRe_wZx7k0fFsdHeksY-eEcDPJbQiljd1JEQYlewEU" ;
               rdfs:label "skills_1" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_skills_2
 :art_skills_2 rdf:type owl:NamedIndividual ,
-                       :Art ;
+                       bbo:Art ;
               sche:image "https://legendary-digital-network-assets.s3.amazonaws.com/geekandsundry/wp-content/uploads/2019/11/Pathfinder-Skills-Image-2.png" ;
               rdfs:label "skills_2" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_skills_3
 :art_skills_3 rdf:type owl:NamedIndividual ,
-                       :Art ;
+                       bbo:Art ;
               sche:image "https://legendary-digital-network-assets.s3.amazonaws.com/geekandsundry/wp-content/uploads/2019/11/Pathfinder-Skills-Image-1.png" ;
               rdfs:label "skills_3" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_sorcerer_1
 :art_sorcerer_1 rdf:type owl:NamedIndividual ,
-                         :Art ;
-                :depicts :sorcerer ;
+                         bbo:Art ;
+                bbo:depicts :sorcerer ;
                 sche:image "https://scontent.ftgd2-1.fna.fbcdn.net/v/t1.6435-9/104429825_3093835030703215_2059687613051181022_n.jpg?stp=dst-jpg_p526x296&_nc_cat=108&ccb=1-7&_nc_sid=730e14&_nc_ohc=luyogdFSiXgAX-oBi_3&_nc_ht=scontent.ftgd2-1.fna&oh=00_AfCDzM8s8mZDQgkY0N7MDN4icudkDi5qlWlXDKrEJtzUyg&oe=652A9D0D" ;
                 rdfs:label "sorcerer_1" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_sorcerer_2
 :art_sorcerer_2 rdf:type owl:NamedIndividual ,
-                         :Art ;
-                :depicts :sorcerer ;
+                         bbo:Art ;
+                bbo:depicts :sorcerer ;
                 sche:image "https://cdn.paizo.com/image/content/PathfinderRPG/20190509-Seoni.jpg" ;
                 rdfs:label "sorcerer_2" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_sorcerer_3
 :art_sorcerer_3 rdf:type owl:NamedIndividual ,
-                         :Art ;
-                :depicts :sorcerer ;
+                         bbo:Art ;
+                bbo:depicts :sorcerer ;
                 sche:image "https://cdn.paizo.com/image/content/PathfinderRPG/20190510-Encounter.jpg" ;
                 rdfs:label "sorcerer_3" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_sorcerer_archetype
 :art_sorcerer_archetype rdf:type owl:NamedIndividual ,
-                                 :Art ;
-                        :depicts :sorcerer_archetype ;
+                                 bbo:Art ;
+                        bbo:depicts :sorcerer_archetype ;
                         sche:image "https://i.ibb.co/YQVRXnd/sorcerer-archetype.jpg" ;
                         rdfs:label "sorcerer_archetype" .
 
@@ -4758,127 +4767,127 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_sorcerer_icon
 :art_sorcerer_icon rdf:type owl:NamedIndividual ,
                             :Icon ;
-                   :depicts :sorcerer ;
+                   bbo:depicts :sorcerer ;
                    sche:image "https://2e.aonprd.com/Images/Class/Sorcerer_Icon.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_spellbook
 :art_spellbook rdf:type owl:NamedIndividual ,
-                        :Art ;
-               :depicts :spellbook_blank ;
+                        bbo:Art ;
+               bbo:depicts :spellbook_blank ;
                sche:image "https://2e.aonprd.com/Images/Treasure/Spellbook.webp" ;
                rdfs:label "spellbook" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_spells_1
 :art_spells_1 rdf:type owl:NamedIndividual ,
-                       :Art ;
+                       bbo:Art ;
               sche:image "https://i.ibb.co/7JtvTLQ/art-spells-1.jpg" ;
               rdfs:label "spells_1" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_spells_10
 :art_spells_10 rdf:type owl:NamedIndividual ,
-                        :Art ;
+                        bbo:Art ;
                sche:image "https://i.ibb.co/fX0SnL2/art-spells-10.jpg" ;
                rdfs:label "spells_10" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_spells_11
 :art_spells_11 rdf:type owl:NamedIndividual ,
-                        :Art ;
+                        bbo:Art ;
                sche:image "https://i.ibb.co/WPg8qgq/art-spells-11.jpg" ;
                rdfs:label "spells_11" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_spells_12
 :art_spells_12 rdf:type owl:NamedIndividual ,
-                        :Art ;
+                        bbo:Art ;
                sche:image "https://i.ibb.co/m52d3vp/art-spells-12.jpg" ;
                rdfs:label "spells_12" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_spells_13
 :art_spells_13 rdf:type owl:NamedIndividual ,
-                        :Art ;
+                        bbo:Art ;
                sche:image "https://i.ibb.co/JpfJMkg/art-spells-13.jpg" ;
                rdfs:label "spells_13" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_spells_14
 :art_spells_14 rdf:type owl:NamedIndividual ,
-                        :Art ;
+                        bbo:Art ;
                sche:image "https://cdn.paizo.com/image/content/PathfinderRPG/20190327-Kyra_500.jpeg" ;
                rdfs:label "spells_14" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_spells_15
 :art_spells_15 rdf:type owl:NamedIndividual ,
-                        :Art ;
+                        bbo:Art ;
                sche:image "https://i.ibb.co/C2HzRv5/art-spells-15.jpg" ;
                rdfs:label "spells_15" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_spells_2
 :art_spells_2 rdf:type owl:NamedIndividual ,
-                       :Art ;
+                       bbo:Art ;
               sche:image "https://images2.minutemediacdn.com/image/fetch/c_fill,g_auto,f_auto,h_432,w_648/https%3A%2F%2Fapptrigger.com%2Ffiles%2F2019%2F08%2FPathfinder-2nd-Edition-spell-preparation.jpg" ;
               rdfs:label "spells_2" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_spells_3
 :art_spells_3 rdf:type owl:NamedIndividual ,
-                       :Art ;
+                       bbo:Art ;
               sche:image "https://legendary-digital-network-assets.s3.amazonaws.com/geekandsundry/wp-content/uploads/2019/11/Pathfinder-Magic-Image-2.png" ;
               rdfs:label "spells_3" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_spells_4
 :art_spells_4 rdf:type owl:NamedIndividual ,
-                       :Art ;
+                       bbo:Art ;
               sche:image "https://rollforcombat.com/wp-content/uploads/2019/08/7.jpg" ;
               rdfs:label "spells_4" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_spells_5
 :art_spells_5 rdf:type owl:NamedIndividual ,
-                       :Art ;
+                       bbo:Art ;
               sche:image "https://rollforcombat.com/wp-content/uploads/2019/08/8.jpg" ;
               rdfs:label "spells_5" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_spells_6
 :art_spells_6 rdf:type owl:NamedIndividual ,
-                       :Art ;
+                       bbo:Art ;
               sche:image "https://legendary-digital-network-assets.s3.amazonaws.com/geekandsundry/wp-content/uploads/2019/11/Pathfinder-Spells-Image.png" ;
               rdfs:label "spells_6" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_spells_7
 :art_spells_7 rdf:type owl:NamedIndividual ,
-                       :Art ;
+                       bbo:Art ;
               sche:image "https://i.ibb.co/Hn6wPjv/art-spells-7.jpg" ;
               rdfs:label "spells_7" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_spells_8
 :art_spells_8 rdf:type owl:NamedIndividual ,
-                       :Art ;
+                       bbo:Art ;
               sche:image "https://i.ibb.co/rFfg5kB/art-spells-8.jpg" ;
               rdfs:label "spells_8" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_spells_9
 :art_spells_9 rdf:type owl:NamedIndividual ,
-                       :Art ;
+                       bbo:Art ;
               sche:image "https://www.wargamer.com/wp-content/sites/wargamer/2023/01/pathfinder-wizard-2e-casting.jpg" ;
               rdfs:label "spells_9" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_storm_order
 :art_storm_order rdf:type owl:NamedIndividual ,
-                          :Art ;
-                 :depicts :druid ,
+                          bbo:Art ;
+                 bbo:depicts :druid ,
                           :storm_order ;
                  sche:image "https://i.ibb.co/Sfs56qF/art-storm-order.jpg" ;
                  rdfs:label "storm_order" .
@@ -4886,24 +4895,24 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_taldan
 :art_taldan rdf:type owl:NamedIndividual ,
-                     :Art ;
-            :depicts :taldan ;
+                     bbo:Art ;
+            bbo:depicts :taldan ;
             sche:image "https://i.ibb.co/m4GcWxf/taldan.jpg" ;
             rdfs:label "taldan" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_thief
 :art_thief rdf:type owl:NamedIndividual ,
-                    :Art ;
-           :depicts :thief ;
+                    bbo:Art ;
+           bbo:depicts :thief ;
            sche:image "https://cdna.artstation.com/p/assets/images/images/031/795/632/large/michele-esposito-a1.jpg?1604605980" ;
            rdfs:label "thief" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_tian
 :art_tian rdf:type owl:NamedIndividual ,
-                   :Art ;
-          :depicts :tian ;
+                   bbo:Art ;
+          bbo:depicts :tian ;
           sche:image "https://i.ibb.co/BzR6DhZ/tian.jpg" ;
           rdfs:label "tian" .
 
@@ -4911,14 +4920,14 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_torag_icon
 :art_torag_icon rdf:type owl:NamedIndividual ,
                          :Icon ;
-                :depicts :torag ;
+                bbo:depicts :torag ;
                 sche:image "https://2e.aonprd.com/Images/Deities/torag.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_ulfen
 :art_ulfen rdf:type owl:NamedIndividual ,
-                    :Art ;
-           :depicts :ulfen ;
+                    bbo:Art ;
+           bbo:depicts :ulfen ;
            sche:image "https://i.ibb.co/37T1nPF/ulfen.jpg" ;
            rdfs:label "ulfen" .
 
@@ -4926,30 +4935,30 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_urgathoa_icon
 :art_urgathoa_icon rdf:type owl:NamedIndividual ,
                             :Icon ;
-                   :depicts :urgathoa ;
+                   bbo:depicts :urgathoa ;
                    sche:image "https://2e.aonprd.com/Images/Deities/urgathoa.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_varisian
 :art_varisian rdf:type owl:NamedIndividual ,
-                       :Art ;
-              :depicts :varisian ;
+                       bbo:Art ;
+              bbo:depicts :varisian ;
               sche:image "https://i.ibb.co/k0QsfKn/varisian.jpg" ;
               rdfs:label "varisian" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_vudrani
 :art_vudrani rdf:type owl:NamedIndividual ,
-                      :Art ;
-             :depicts :vudrani ;
+                      bbo:Art ;
+             bbo:depicts :vudrani ;
              sche:image "https://i.ibb.co/848F6Jm/vudrani.jpg" ;
              rdfs:label "vudrani" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_warpriest
 :art_warpriest rdf:type owl:NamedIndividual ,
-                        :Art ;
-               :depicts :cleric ,
+                        bbo:Art ;
+               bbo:depicts :cleric ,
                         :warpriest ;
                sche:image "https://cdna.artstation.com/p/assets/images/images/024/281/430/large/konstantin-porubov-cleric-odrek.jpg?1581919719" ;
                rdfs:label "warpriest" .
@@ -4957,14 +4966,14 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_weapon_1
 :art_weapon_1 rdf:type owl:NamedIndividual ,
-                       :Art ;
+                       bbo:Art ;
               sche:image "https://i.ibb.co/94PpZ5P/art-weapon-1.jpg" ;
               rdfs:label "weapon_1" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_weapon_2
 :art_weapon_2 rdf:type owl:NamedIndividual ,
-                       :Art ;
+                       bbo:Art ;
               sche:image "https://i.ibb.co/yf1j40R/art-weapon-2.jpg" ;
               rdfs:label "weapon_2" .
 
@@ -4972,14 +4981,14 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_whispering_way_icon
 :art_whispering_way_icon rdf:type owl:NamedIndividual ,
                                   :Icon ;
-                         :depicts :whispering_way ;
+                         bbo:depicts :whispering_way ;
                          sche:image "https://2e.aonprd.com/Images/Deities/whisperingway.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_wild_order
 :art_wild_order rdf:type owl:NamedIndividual ,
-                         :Art ;
-                :depicts :druid ,
+                         bbo:Art ;
+                bbo:depicts :druid ,
                          :wild_order ;
                 sche:image "https://dnd.su/bestiary/5005-shifter/" ;
                 rdfs:label "wild_order" .
@@ -4987,32 +4996,32 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_wizard_1
 :art_wizard_1 rdf:type owl:NamedIndividual ,
-                       :Art ;
-              :depicts :wizard ;
+                       bbo:Art ;
+              bbo:depicts :wizard ;
               sche:image "https://i0.wp.com/shopthesquirrel.com/wp-content/uploads/2020/10/Spell-Cards-Arcane.jpg?fit=744%2C1039&ssl=1" ;
               rdfs:label "wizard_1" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_wizard_2
 :art_wizard_2 rdf:type owl:NamedIndividual ,
-                       :Art ;
-              :depicts :wizard ;
+                       bbo:Art ;
+              bbo:depicts :wizard ;
               sche:image "https://static.wikia.nocookie.net/pathfinderkingmaker/images/4/43/%D0%9C%D0%B0%D0%B3.jpeg/revision/latest?cb=20210215031535&path-prefix=ru" ;
               rdfs:label "wizard_2" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_wizard_3
 :art_wizard_3 rdf:type owl:NamedIndividual ,
-                       :Art ;
-              :depicts :wizard ;
+                       bbo:Art ;
+              bbo:depicts :wizard ;
               sche:image "https://cdn.paizo.com/image/content/PathfinderRPG/20190314-Ezren.jpg" ;
               rdfs:label "wizard_3" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_wizard_archetype
 :art_wizard_archetype rdf:type owl:NamedIndividual ,
-                               :Art ;
-                      :depicts :wizard_archetype ;
+                               bbo:Art ;
+                      bbo:depicts :wizard_archetype ;
                       sche:image "https://cdn.paizo.com/image/content/Blog/20190715-cast_500.jpeg" ;
                       rdfs:label "wizard_archetype" .
 
@@ -5020,14 +5029,14 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_wizard_icon
 :art_wizard_icon rdf:type owl:NamedIndividual ,
                           :Icon ;
-                 :depicts :wizard ;
+                 bbo:depicts :wizard ;
                  sche:image "https://2e.aonprd.com/Images/Class/Wizard_Icon.png" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#art_zon_kuthon_icon
 :art_zon_kuthon_icon rdf:type owl:NamedIndividual ,
                               :Icon ;
-                     :depicts :zon_kuthon ;
+                     bbo:depicts :zon_kuthon ;
                      sche:image "https://2e.aonprd.com/Images/Deities/zonkuthon.png" .
 
 
@@ -8538,6 +8547,7 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
                              :focus_points ;
                     :leadsTo :invest_magic_items ;
                     :sets :prepared_spell_slots ;
+                    :trait :exploration_trait ;
                     :calculations "focus points = maximum value" ,
                                   "uses per day for feats = maximum value" ;
                     :duration "1 hour" ;
@@ -17033,6 +17043,17 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
            rdfs:label "Long jump" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#long_term_rest
+:long_term_rest rdf:type owl:NamedIndividual ,
+                         :Activity ;
+                :leadsTo :recover_hp_rule ;
+                :trait :downtime_trait ;
+                :uses :recover_health_after_rest ;
+                :calculations "hit points += 2 * recover health after rest" ;
+                :duration "entire day and night" ;
+                rdfs:label "Long-term rest" .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#long_tool
 :long_tool rdf:type owl:NamedIndividual ,
                     :GearAndServices ;
@@ -21391,6 +21412,15 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
                  rdfs:label "Recognize Spell" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#recover_health_after_rest
+:recover_health_after_rest rdf:type owl:NamedIndividual ,
+                                    :Gamerule ;
+                           :uses :constitution_modifier ,
+                                 :level_of_character ;
+                           :calculations "hit points += Max(constitution modifier, 1) * level" ;
+                           rdfs:label "Recover health after rest" .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#recover_hp_rule
 :recover_hp_rule rdf:type owl:NamedIndividual ,
                           :Gamerule ;
@@ -21803,9 +21833,9 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
       :deactivates :fatigued ;
       :leadsTo :recover_hp_rule ,
                :sleeping_in_armor ;
-      :uses :constitution_modifier ,
-            :level_of_character ;
-      :calculations "hit points += Max(constitution modifier, 1) * level" ;
+      :trait :exploration_trait ;
+      :uses :recover_health_after_rest ;
+      :calculations "hit points += recover health after rest" ;
       :duration "8 hours (by default)" ;
       rdfs:comment "You perform at your best when you take enough time to rest and prepare. Once every 24 hours, you can take a period of rest." ;
       rdfs:label "Rest" .
@@ -21850,6 +21880,33 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
                           :Feat ;
                  :level 16 ;
                  rdfs:label "Resurrectionist" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#retrain_feat
+:retrain_feat rdf:type owl:NamedIndividual ,
+                       :Action ;
+              :sets :feats_of_character ;
+              :trait :downtime_trait ;
+              :duration "week (or more by decision of GM)" ;
+              rdfs:comment "Remove the old feat and replace it with another of the same type." ;
+              rdfs:label "Retrain feat" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#retrain_skill
+:retrain_skill rdf:type owl:NamedIndividual ,
+                        :Action ;
+               :prereq :retrain_skill_statement ;
+               :trait :downtime_trait ;
+               :duration "week (or more by decision of GM)" ;
+               rdfs:comment "to swap out one of your skill increases" ;
+               rdfs:label "Retrain skill" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#retrain_skill_statement
+:retrain_skill_statement rdf:type owl:NamedIndividual ,
+                                  :Statement ;
+                         :statementValue "The new proficiency rank has to be equal to or lower than the proficiency rank you traded away." ;
+                         rdfs:label "Retrain skill" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#retributive_pain_spell
