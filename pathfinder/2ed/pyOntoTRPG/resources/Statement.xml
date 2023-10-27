@@ -190,4 +190,7 @@
         <statementPredicate>or</statementPredicate>
         <statementValue>sleeping in armor</statementValue>
     </row>
+    <row name="Retrain skill">
+        <statementValue>The new proficiency rank has to be equal to or lower than the proficiency rank you traded away.</statementValue>
+    </row>
 </root>

@@ -687,13 +687,13 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
   <rdfs:subClassOf>
     <owl:Restriction>
       <owl:onProperty rdf:resource="#uses"/>
-      <owl:hasValue rdf:resource="#level_of_character"/>
+      <owl:hasValue rdf:resource="#proficiency_rank_order"/>
     </owl:Restriction>
   </rdfs:subClassOf>
   <rdfs:subClassOf>
     <owl:Restriction>
       <owl:onProperty rdf:resource="#uses"/>
-      <owl:hasValue rdf:resource="#proficiency_rank_order"/>
+      <owl:hasValue rdf:resource="#level_of_character"/>
     </owl:Restriction>
   </rdfs:subClassOf>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">When attempting a check that involves something you have some training in, you will also add your proficiency bonus. This bonus depends on your proficiency rank.</rdfs:comment>
@@ -746,13 +746,13 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
   <rdfs:subClassOf>
     <owl:Restriction>
       <owl:onProperty rdf:resource="#calculations"/>
-      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">check delta = check roll - target dc</owl:hasValue>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">check result = {check delta &lt;= -10: critical failure; -10 &lt; check delta &lt; 0: failure; 0 &lt;= check delta &lt; 10: success; check delta &gt;= 10: critical success} + {natural 20: + 1 step; natural 1: -1 step}</owl:hasValue>
     </owl:Restriction>
   </rdfs:subClassOf>
   <rdfs:subClassOf>
     <owl:Restriction>
       <owl:onProperty rdf:resource="#calculations"/>
-      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">check result = {check delta &lt;= -10: critical failure; -10 &lt; check delta &lt; 0: failure; 0 &lt;= check delta &lt; 10: success; check delta &gt;= 10: critical success} + {natural 20: + 1 step; natural 1: -1 step}</owl:hasValue>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">check delta = check roll - target dc</owl:hasValue>
     </owl:Restriction>
   </rdfs:subClassOf>
   <rdfs:subClassOf>
@@ -780,13 +780,13 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
   <rdfs:subClassOf>
     <owl:Restriction>
       <owl:onProperty rdf:resource="#leadsTo"/>
-      <owl:hasValue rdf:resource="#attack_a_concealed_creature"/>
+      <owl:hasValue rdf:resource="#attack_a_hidden_creature"/>
     </owl:Restriction>
   </rdfs:subClassOf>
   <rdfs:subClassOf>
     <owl:Restriction>
       <owl:onProperty rdf:resource="#leadsTo"/>
-      <owl:hasValue rdf:resource="#attack_a_hidden_creature"/>
+      <owl:hasValue rdf:resource="#attack_a_concealed_creature"/>
     </owl:Restriction>
   </rdfs:subClassOf>
   <rdfs:subClassOf>
@@ -2766,8 +2766,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 
 <owl:NamedIndividual rdf:about="#thievery_roll">
   <rdf:type rdf:resource="#SkillRoll"/>
-  <uses rdf:resource="#dexterity_modifier"/>
   <uses rdf:resource="#thievery_proficiency_bonus"/>
+  <uses rdf:resource="#dexterity_modifier"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#get_free">
@@ -3355,8 +3355,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#detect_magic_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivinationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
@@ -3442,8 +3442,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
   <trait rdf:resource="#on_all_party_trait"/>
   <modifies rdf:resource="#initiative_roll"/>
   <rdf:type rdf:resource="#Background"/>
-  <abilityBoost rdf:resource="#dexterity"/>
   <abilityBoost rdf:resource="#wisdom"/>
+  <abilityBoost rdf:resource="#dexterity"/>
   <trained rdf:resource="#survival"/>
   <hasFeat rdf:resource="#forager"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Scout</rdfs:label>
@@ -3478,26 +3478,23 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 
 <owl:NamedIndividual rdf:about="#rest">
   <rdf:type rdf:resource="#Activity"/>
-  <uses rdf:resource="#constitution_modifier"/>
-  <uses rdf:resource="#level_of_character"/>
+  <trait rdf:resource="#exploration_trait"/>
+  <uses rdf:resource="#recover_health_after_rest"/>
   <leadsTo rdf:resource="#recover_hp_rule"/>
   <leadsTo rdf:resource="#sleeping_in_armor"/>
   <deactivates rdf:resource="#fatigued"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rest</rdfs:label>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You perform at your best when you take enough time to rest and prepare. Once every 24 hours, you can take a period of rest.</rdfs:comment>
   <duration rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8 hours (by default)</duration>
-  <calculations rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hit points += Max(constitution modifier, 1) * level</calculations>
+  <calculations rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hit points += recover health after rest</calculations>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#level_of_character">
-  <rdf:type rdf:resource="#Characteristic"/>
-  <rdf:type>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#modifies"/>
-      <owl:someValuesFrom rdf:resource="#ProficiencyBonus"/>
-    </owl:Restriction>
-  </rdf:type>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Level of character</rdfs:label>
+<owl:NamedIndividual rdf:about="#recover_health_after_rest">
+  <rdf:type rdf:resource="#Gamerule"/>
+  <uses rdf:resource="#constitution_modifier"/>
+  <uses rdf:resource="#level_of_character"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Recover health after rest</rdfs:label>
+  <calculations rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hit points += Max(constitution modifier, 1) * level</calculations>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#recover_hp_rule">
@@ -3523,8 +3520,19 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Your defenses are lower and you can’t use exploration activities while traveling.</rdfs:comment>
 </owl:NamedIndividual>
 
+<owl:NamedIndividual rdf:about="#long_term_rest">
+  <rdf:type rdf:resource="#Activity"/>
+  <trait rdf:resource="#downtime_trait"/>
+  <uses rdf:resource="#recover_health_after_rest"/>
+  <leadsTo rdf:resource="#recover_hp_rule"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Long-term rest</rdfs:label>
+  <duration rdf:datatype="http://www.w3.org/2001/XMLSchema#string">entire day and night</duration>
+  <calculations rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hit points += 2 * recover health after rest</calculations>
+</owl:NamedIndividual>
+
 <owl:NamedIndividual rdf:about="#daily_preparations">
   <rdf:type rdf:resource="#Activity"/>
+  <trait rdf:resource="#exploration_trait"/>
   <sets rdf:resource="#prepared_spell_slots"/>
   <changes rdf:resource="#focus_points"/>
   <changes rdf:resource="#feats_of_character"/>
@@ -3562,6 +3570,30 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
   <rdf:type rdf:resource="#Gamerule"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Invest magic items</rdfs:label>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You invest up to 10 worn magic items to gain their benefits for the day.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#retrain_feat">
+  <rdf:type rdf:resource="#Action"/>
+  <trait rdf:resource="#downtime_trait"/>
+  <sets rdf:resource="#feats_of_character"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Retrain feat</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Remove the old feat and replace it with another of the same type.</rdfs:comment>
+  <duration rdf:datatype="http://www.w3.org/2001/XMLSchema#string">week (or more by decision of GM)</duration>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#retrain_skill">
+  <rdf:type rdf:resource="#Action"/>
+  <trait rdf:resource="#downtime_trait"/>
+  <prereq rdf:resource="#retrain_skill_statement"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Retrain skill</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">to swap out one of your skill increases</rdfs:comment>
+  <duration rdf:datatype="http://www.w3.org/2001/XMLSchema#string">week (or more by decision of GM)</duration>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#retrain_skill_statement">
+  <rdf:type rdf:resource="#Statement"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Retrain skill</rdfs:label>
+  <statementValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The new proficiency rank has to be equal to or lower than the proficiency rank you traded away.</statementValue>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#lawful_good">
@@ -7489,6 +7521,12 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
   <calculations rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bonus = +4, circumstance</calculations>
 </owl:NamedIndividual>
 
+<owl:NamedIndividual rdf:about="#art_game_mastering_1">
+  <rdf:type rdf:resource="#Art"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Game mastering 1</rdfs:label>
+  <sche:image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://cdn.paizo.com/image/content/Blog/072219_desert_battle.jpg</sche:image>
+</owl:NamedIndividual>
+
 <owl:NamedIndividual rdf:about="#aroden">
   <rdf:type rdf:resource="#Character"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aroden</rdfs:label>
@@ -7554,6 +7592,17 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
     </owl:Restriction>
   </rdf:type>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Will</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#level_of_character">
+  <rdf:type rdf:resource="#Characteristic"/>
+  <rdf:type>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#modifies"/>
+      <owl:someValuesFrom rdf:resource="#ProficiencyBonus"/>
+    </owl:Restriction>
+  </rdf:type>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Level of character</rdfs:label>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#weapon_proficiency">
@@ -20810,8 +20859,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
   <abilityBoost rdf:resource="#wisdom"/>
   <trained rdf:resource="#arcana"/>
   <hasFeat rdf:resource="#assurance"/>
-  <trained rdf:resource="#occultism"/>
   <trained rdf:resource="#nature"/>
+  <trained rdf:resource="#occultism"/>
   <trained rdf:resource="#religion"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You have a knack for learning, and sequestered yourself from the outside world to learn all you could. You read about so many wondrous places and things in your books, and always dreamed about one day seeing the real things. Eventually, that curiosity led you to leave your studies and become an adventurer.</rdfs:comment>
   <loreSpeciality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the Academia Lore skill</loreSpeciality>
@@ -20849,16 +20898,16 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#acid_splash_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Damage creatures with acid</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#chill_touch_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#NecromancySchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Your touch hurts the living or disorients undead</rdfs:comment>
@@ -20866,8 +20915,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#dancing_lights_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Create four floating lights you can move</rdfs:comment>
@@ -20875,8 +20924,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#daze_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EnchantmentSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Damage a creature’s mind and possibly stun it</rdfs:comment>
@@ -20884,24 +20933,24 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#electric_arc_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zap one or two creatures with lightning</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#ghost_sound_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#IllusionSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Make false sounds</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#light_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
@@ -20910,16 +20959,16 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#mage_hand_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Command a floating hand to move an object</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#message_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#IllusionSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Speak a message to a distant creature, who can reply</rdfs:comment>
@@ -20927,8 +20976,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#prestidigitation_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
@@ -20937,24 +20986,24 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#produce_flame_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kindle small flames to attack close or at range</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#ray_of_frost_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Damage a creature with cold</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#read_aura_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivinationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
@@ -20963,8 +21012,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#shield_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#AbjurationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A shield of magical force blocks attacks and magic missiles</rdfs:comment>
@@ -20972,8 +21021,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#sigil_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
@@ -20990,8 +21039,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#telekinetic_projectile_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fling an object at a creature</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</level>
@@ -21007,8 +21056,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#alarm_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#AbjurationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
@@ -21017,24 +21066,24 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#ant_haul_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Target can carry more</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#burning_hands_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A small cone of flame rushes from your hands</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#charm_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EnchantmentSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A creature becomes more friendly to you</rdfs:comment>
@@ -21042,16 +21091,16 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#color_spray_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#IllusionSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Swirling colors dazzle or stun creatures</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#command_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EnchantmentSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bid a creature to approach, run, release something, lie prone, or stand up</rdfs:comment>
@@ -21068,8 +21117,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#fear_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EnchantmentSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
@@ -21078,16 +21127,16 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#feather_fall_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#AbjurationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">React to slow a creature’s fall</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#fleet_step_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Make your Speed much faster</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
@@ -21102,8 +21151,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#goblin_pox_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#NecromancySchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Infect a creature with goblin pox</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
@@ -21118,64 +21167,64 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#grim_tendrils_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#NecromancySchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Creatures in a line take negative damage and bleed</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#gust_of_wind_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wind blows out fires and knocks back objects and creatures</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#hydraulic_push_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Damage and push a creature with a blast of water</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#illusory_disguise_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#IllusionSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Make yourself look like a different creature</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#illusory_object_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#IllusionSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Form a convincing illusion of an object</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#item_facade_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#IllusionSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Disguise an item to look perfect or shoddy</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#jump_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Make an impressive leap</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#lock_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#AbjurationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Make a lock hard to open</rdfs:comment>
@@ -21183,40 +21232,40 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#longstrider_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Increase your Speed for an hour</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#mage_armor_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#AbjurationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ward yourself with magical armor</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#magic_aura_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#IllusionSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Change how an item’s magic appears to detecting spells</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#magic_missile_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pelt creatures with unerring bolts of magical force</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#magic_weapon_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Make a weapon temporarily magical</rdfs:comment>
@@ -21224,8 +21273,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#mending_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
@@ -21234,24 +21283,24 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#negate_aroma_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#AbjurationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Suppress a creature’s scent</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#pest_form_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Turn into a nonthreatening animal</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#ray_of_enfeeblement_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#NecromancySchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sap a creature’s strength</rdfs:comment>
@@ -21259,24 +21308,24 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#shocking_grasp_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zap a creature with electricity</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#sleep_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EnchantmentSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cause creatures in a small area to fall asleep</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#spider_sting_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#NecromancySchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Damage a creature and afflict it with spider venom</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
@@ -21298,8 +21347,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#true_strike_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivinationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Make your next attack especially accurate</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
@@ -21314,8 +21363,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#ventriloquism_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#IllusionSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
@@ -21324,24 +21373,24 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#acid_arrow_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Magical arrow deals acid damage persistently</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#blur_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#IllusionSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cause a target’s form to become blurry and hard to hit</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#comprehend_language_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivinationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A creature understands one language</rdfs:comment>
@@ -21349,8 +21398,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#continual_flame_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
@@ -21368,8 +21417,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#darkness_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
@@ -21378,8 +21427,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#darkvision_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivinationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
@@ -21388,8 +21437,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#deafness_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#NecromancySchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
@@ -21398,8 +21447,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#dispel_magic_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#AbjurationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
@@ -21408,8 +21457,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#endure_elements_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#AbjurationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Protect a creature from severe cold or heat</rdfs:comment>
@@ -21417,32 +21466,32 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#enlarge_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A creature grows in size</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#false_life_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#NecromancySchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gain temporary HP</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#flaming_sphere_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A ball of fire rolls about at your command</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#gentle_repose_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#NecromancySchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
@@ -21451,24 +21500,24 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#glitterdust_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sparkling dust breaks invisibility and impedes vision</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#hideous_laughter_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EnchantmentSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fits of laughter make a creature unable to take all its actions</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#humanoid_form_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Take the shape of a humanoid</rdfs:comment>
@@ -21476,48 +21525,48 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#illusory_creature_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#IllusionSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Form a convincing illusion of a creature</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#invisibility_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#IllusionSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A creature can’t be seen until it attacks</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#knock_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Make a door, lock, or container easier to open, and possibly open it immediately</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#magic_mouth_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#IllusionSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Make an illusory mouth appear to speak a message</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#mirror_image_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#IllusionSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Illusory duplicates of you cause attacks to miss</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#misdirection_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#IllusionSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cause one creature’s auras to appear to be another’s</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
@@ -21541,8 +21590,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#resist_energy_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#AbjurationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
@@ -21551,8 +21600,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#see_invisibility_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivinationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">See invisible creatures and objects</rdfs:comment>
@@ -21560,24 +21609,24 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#shrink_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reduce a willing creature to Tiny size</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#spectral_hand_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#NecromancySchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Create a semicorporeal hand that touches creatures to target them with your spells</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#spider_climb_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Give a creature a climb Speed</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
@@ -21592,24 +21641,24 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#telekinetic_maneuver_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Disarm, Shove, or Trip a creature telekinetically</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#touch_of_idiocy_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EnchantmentSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dull a target’s mind with a touch</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#water_breathing_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Allow creatures to breathe underwater</rdfs:comment>
@@ -21617,8 +21666,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#water_walk_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Buoy a creature so it can walk on water</rdfs:comment>
@@ -21634,8 +21683,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#bind_undead_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#NecromancySchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Take control of a mindless undead</rdfs:comment>
@@ -21643,8 +21692,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#blindness_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#NecromancySchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
@@ -21653,16 +21702,16 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#clairaudience_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivinationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hear through an invisible magical sensor</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#dream_message_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EnchantmentSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Send a message that arrives in a dream</rdfs:comment>
@@ -21670,48 +21719,48 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#earthbind_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bring a flying creature to the ground</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#enthrall_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EnchantmentSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Your speech makes creatures fascinated with you</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#feet_to_fins_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Turn a creature’s feet into fins, enabling it swim but slowing it on land</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#fireball_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An explosion of fire in an area burns creatures</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#ghostly_weapon_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Make a weapon affect incorporeal creatures</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#glyph_of_warding_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#AbjurationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
@@ -21720,8 +21769,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#haste_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Speed up a creature so it can attack or move more often</rdfs:comment>
@@ -21729,40 +21778,40 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#hypnotic_pattern_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#IllusionSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Shifting colors dazzle and fascinate creatures</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#invisibility_sphere_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#IllusionSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You and creatures near you become invisible as you explore</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#levitate_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Float an object or creature a few feet off the ground</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#lightning_bolt_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lightning strikes all creatures in a line</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#locate_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivinationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Learn the direction to an object</rdfs:comment>
@@ -21770,24 +21819,24 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#meld_into_stone_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Meld into a block of stone</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#mind_reading_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivinationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Read a creature’s surface thoughts</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#nondetection_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#AbjurationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Protect a creature or object from detection</rdfs:comment>
@@ -21795,31 +21844,31 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#paralyze_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EnchantmentSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Freeze a creature in place</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#secret_page_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#IllusionSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Alter the appearance of a page</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#shrink_item_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reduce an object to the size of a coin</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#slow_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Make a creature slower, reducing its actions</rdfs:comment>
@@ -21835,8 +21884,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#vampiric_touch_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#NecromancySchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Deal negative damage and gain temporary HP with a touch</rdfs:comment>
@@ -21844,16 +21893,16 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#wall_of_wind_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Create a wall of gusting winds that hinders movement and ranged attacks</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#aerial_form_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Turn into a flying combatant</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
@@ -21868,16 +21917,16 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#clairvoyance_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivinationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">See through an invisible magical sensor</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#confusion_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EnchantmentSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Befuddle a creature, making it act randomly</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
@@ -21892,8 +21941,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#detect_scrying_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivinationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Find out if scrying effects are in the area</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
@@ -21908,8 +21957,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#dimensional_anchor_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#AbjurationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Keep a creature from teleporting or traveling to other planes</rdfs:comment>
@@ -21917,8 +21966,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#discern_lies_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivinationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Expertly detect lies and falsehoods</rdfs:comment>
@@ -21926,16 +21975,16 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#fire_shield_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Flames protect you from cold and harm those that touch you</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#fly_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cause the target creature to gain a fly Speed</rdfs:comment>
@@ -21943,8 +21992,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#freedom_of_movement_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#AbjurationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A creature overcomes hindrances to its movement</rdfs:comment>
@@ -21952,8 +22001,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#gaseous_form_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Turn a willing creature into a flying cloud</rdfs:comment>
@@ -21961,8 +22010,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#globe_of_invulnerability_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#AbjurationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Magical sphere counteracts spells that would enter it</rdfs:comment>
@@ -21970,8 +22019,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#hallucinatory_terrain_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#IllusionSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A natural environment appears to be another kind of terrain</rdfs:comment>
@@ -21979,16 +22028,16 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#nightmare_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#IllusionSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Plague a creature’s dreams with disturbing nightmares</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#outcast_s_curse_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EnchantmentSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Curse a creature to be off-putting and grating</rdfs:comment>
@@ -21996,24 +22045,24 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#phantasmal_killer_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#IllusionSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Place a fearsome image in a creature’s mind to scare and possibly kill it</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#private_sanctum_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#AbjurationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Black fog prevents sensing, scrying, and mind‑reading on anyone within</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#resilient_sphere_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#AbjurationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Create a sphere of force that blocks anything that would come through</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
@@ -22028,8 +22077,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#shape_stone_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reshape a cube of stone</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
@@ -22044,8 +22093,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#spell_immunity_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#AbjurationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Name a spell to negate its effects on you</rdfs:comment>
@@ -22053,56 +22102,56 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#stoneskin_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#AbjurationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Harden a creature’s skin into durable stone</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#suggestion_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EnchantmentSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Suggest a course of action a creature must follow</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#telepathy_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivinationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Communicate telepathically with any creatures near you</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#veil_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#IllusionSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Disguise many creatures as other creatures</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#wall_of_fire_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Create a blazing wall that burns creatures that pass through</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#weapon_storm_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Multiply a weapon you hold and attack many creatures with it</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#banishment_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#AbjurationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
@@ -22119,96 +22168,96 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#chromatic_wall_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#AbjurationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A wall of light offers a unique protection based on its color</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#cloak_of_colors_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#IllusionSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bright colors dazzle creatures near the target, and attacks cause blinding flashes of light</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#cloudkill_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#NecromancySchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Poison creatures in a cloud that moves away from you</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#cone_of_cold_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bitter cold damages creatures in a cone</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#control_water_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Raise or lower water in a large area</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#crushing_despair_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EnchantmentSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Make a creature sob uncontrollably</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#drop_dead_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#IllusionSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The target appears to die but actually turns invisible</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#elemental_form_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Turn into an elemental</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#false_vision_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#IllusionSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trick a scrying spell</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#hallucination_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#IllusionSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A creature believes one thing is another, can’t detect something, or sees something that’s not really there</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#illusory_scene_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#IllusionSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Create an imaginary scene containing multiple creatures and objects</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#mariner_s_curse_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#NecromancySchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Infect a creature with the curse of the rolling sea</rdfs:comment>
@@ -22216,8 +22265,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#mind_probe_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivinationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Uncover knowledge and memories in a creature’s mind</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</level>
@@ -22232,8 +22281,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#prying_eye_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivinationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An invisible eye transmits what it sees to you</rdfs:comment>
@@ -22241,8 +22290,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#sending_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivinationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Send a mental message to a creature anywhere on the planet and get a reply</rdfs:comment>
@@ -22250,8 +22299,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#shadow_siphon_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#IllusionSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">React to lessen the damage from an enemy’s spell by making it partially illusion</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</level>
@@ -22266,8 +22315,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#subconscious_suggestion_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EnchantmentSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Plant a mental suggestion that must be followed when a trigger occurs</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</level>
@@ -22281,24 +22330,24 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#telekinetic_haul_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Move a large object</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#telepathic_bond_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivinationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Link minds with willing creatures to communicate telepathically at great distances</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#tongues_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivinationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Let a creature understand and speak all languages</rdfs:comment>
@@ -22306,8 +22355,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#wall_of_ice_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sculpt a foot-thick wall of ice that blocks sight and can chill creatures</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</level>
@@ -22322,16 +22371,16 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#baleful_polymorph_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Transform a creature into a harmless animal</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#chain_lightning_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lightning jumps from creature to creature</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</level>
@@ -22346,71 +22395,71 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#disintegrate_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reduce a creature or object to dust</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#dominate_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EnchantmentSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A creature must obey your orders</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#dragon_form_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Turn into a dragon</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#feeblemind_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EnchantmentSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stupefy a creature permanently</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#flesh_to_stone_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Turn a living creature to a stone statue</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#mislead_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#IllusionSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Turn invisible and create a duplicate of yourself who acts like you</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#phantasmal_calamity_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#IllusionSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Damage a creature mentally with visions of an apocalypse</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#purple_worm_sting_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#NecromancySchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Damage a creature and infect it with purple worm venom</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#repulsion_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#AbjurationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Prevent creatures from approaching you</rdfs:comment>
@@ -22418,16 +22467,16 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#scrying_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivinationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Spy on a creature</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#spellwrack_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#AbjurationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Curse a creature to be harmed when a spell is cast on it and lower the duration of its spells</rdfs:comment>
@@ -22443,8 +22492,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#true_seeing_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivinationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
@@ -22453,8 +22502,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#vampiric_exsanguination_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#NecromancySchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Draw blood and life force from creatures in a cone</rdfs:comment>
@@ -22462,31 +22511,31 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#vibrant_pattern_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#IllusionSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Make a pattern of lights that dazzles and blinds</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#wall_of_force_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Create an invisible and durable wall of magical force</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#contingency_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#AbjurationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Set up a spell to trigger later under your choice of circumstances</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#dimensional_lock_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#AbjurationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Prevent teleportation and planar travel</rdfs:comment>
@@ -22502,8 +22551,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#eclipse_burst_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#NecromancySchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A globe of darkness deals cold damage, hurts the living, and overcomes light</rdfs:comment>
@@ -22511,8 +22560,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#energy_aegis_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#AbjurationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
@@ -22521,8 +22570,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#fiery_body_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Turn your body into living flame</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</level>
@@ -22537,8 +22586,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#mask_of_terror_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#IllusionSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A creature’s fearsome illusory appearance frightens observers</rdfs:comment>
@@ -22556,62 +22605,62 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#power_word_blind_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EnchantmentSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Utter a word that blinds a creature</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#prismatic_spray_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Shoot rainbow beams that have various effects on creatures in a cone</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#project_image_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#IllusionSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Make an illusion of yourself you can cast spells through</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#reverse_gravity_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Flip the gravitational pull in an area</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#spell_turning_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#AbjurationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reflect spells back at their caster</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#true_target_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivinationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Make multiple attacks against a creature especially accurate</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#warp_mind_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EnchantmentSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Confuse a creature, possibly permanently</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#antimagic_field_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#AbjurationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Magic doesn’t function in an area around you</rdfs:comment>
@@ -22619,16 +22668,16 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#disappearance_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#IllusionSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Make a creature invisible, silent, and undetectable by any and all senses</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#discern_location_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivinationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Discover a target’s exact location within unlimited range</rdfs:comment>
@@ -22636,24 +22685,24 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#dream_council_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#IllusionSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Communicate through a shared dream</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#earthquake_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Shake the ground with a devastating earthquake</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#horrid_wilting_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#NecromancySchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pull moisture from creatures, damaging them</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</level>
@@ -22668,79 +22717,79 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#mind_blank_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#AbjurationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Protect a creature from mental magic and some divinations</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#monstrosity_form_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Turn into a powerful monster</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#polar_ray_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bitter cold damages and drains a creature</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#power_word_stun_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EnchantmentSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Utter a word that stuns a creature</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#prismatic_wall_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#AbjurationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Form a protective wall with seven chromatic layers</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#scintillating_pattern_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#IllusionSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cause an array of color that dazzles, confuses, and stuns</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#uncontrollable_dance_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EnchantmentSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Overcome a target with an all-consuming urge to dance</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#unrelenting_observation_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivinationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">You and other creatures use scrying to track a subject exactly</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#disjunction_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#AbjurationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Deactivate or destroy a magic item</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#foresight_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivinationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sense when a creature is in danger and react to protect it with good fortune</rdfs:comment>
@@ -22748,16 +22797,16 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#implosion_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Make a creature collapse in on itself</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#massacre_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#NecromancySchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Instantly kill multiple creatures</rdfs:comment>
@@ -22765,23 +22814,23 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#meteor_swarm_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Call down four blazing meteors that explode</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#power_word_kill_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EnchantmentSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Utter a word that slays a creature</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#prismatic_sphere_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#AbjurationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Form a protective sphere composed of seven chromatic layers</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</level>
@@ -22796,16 +22845,16 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#shapechange_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Transform into a form of your choice repeatedly</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#telepathic_demand_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EnchantmentSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Send a mental message that impels a creature toward a course of action</rdfs:comment>
@@ -22813,16 +22862,16 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#weird_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#IllusionSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Frighten, deal mental damage, and possibly kill large numbers of creatures</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#cataclysm_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Call an instant, damaging cataclysm</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</level>
@@ -22848,38 +22897,38 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#time_stop_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Briefly stop time for everything but you</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#wish_spell">
-  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdf:type rdf:resource="#DivinationSchool"/>
+  <rdf:type rdf:resource="#ArcaneTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Make a wish to duplicate arcane spells</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#disrupt_undead_spell">
-  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#DivineTradition"/>
+  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Damage undead with positive energy</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#divine_lance_spell">
-  <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#DivineTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Throw divine energy that damages based on your deity’s alignment</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#forbidding_ward_spell">
-  <rdf:type rdf:resource="#AbjurationSchool"/>
   <rdf:type rdf:resource="#DivineTradition"/>
+  <rdf:type rdf:resource="#AbjurationSchool"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Protect an ally against one specific enemy</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</level>
@@ -22904,8 +22953,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#stabilize_spell">
-  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#DivineTradition"/>
+  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stabilize a dying creature</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</level>
@@ -22944,54 +22993,54 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#disrupting_weapons_spell">
-  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#DivineTradition"/>
+  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Weapons deal positive damage to undead</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#harm_spell">
-  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#DivineTradition"/>
+  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Negative energy harms the living or heals the undead, either a single creature or all in a burst</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#heal_spell">
-  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#DivineTradition"/>
+  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Positive energy heals the living or harms the undead, either a single creature or all in a burst</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#protection_spell">
-  <rdf:type rdf:resource="#AbjurationSchool"/>
   <rdf:type rdf:resource="#DivineTradition"/>
+  <rdf:type rdf:resource="#AbjurationSchool"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Shield a creature against those of a chosen alignment</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#purify_food_and_drink_spell">
-  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#DivineTradition"/>
+  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Make beverages and meals safe</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#sanctuary_spell">
-  <rdf:type rdf:resource="#AbjurationSchool"/>
   <rdf:type rdf:resource="#DivineTradition"/>
+  <rdf:type rdf:resource="#AbjurationSchool"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Protect a creature from being attacked</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#spirit_link_spell">
-  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#DivineTradition"/>
+  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Continually transfer your health to someone else</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
@@ -23014,8 +23063,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#death_knell_spell">
-  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#DivineTradition"/>
+  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Finish off a creature who’s near death</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
@@ -23030,8 +23079,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#faerie_fire_spell">
-  <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Colorful light prevents creatures from being concealed or invisible</rdfs:comment>
@@ -23039,8 +23088,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#ghoulish_cravings_spell">
-  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#DivineTradition"/>
+  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Infect a creature with ghoul fever</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
@@ -23056,8 +23105,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#remove_paralysis_spell">
-  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#DivineTradition"/>
+  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Free a creature from paralysis</rdfs:comment>
@@ -23065,8 +23114,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#restoration_spell">
-  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#DivineTradition"/>
+  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reduce a condition or lessen a toxin</rdfs:comment>
@@ -23074,8 +23123,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#restore_senses_spell">
-  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#DivineTradition"/>
+  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Remove a blinding or deafening effect</rdfs:comment>
@@ -23083,31 +23132,31 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#shield_other_spell">
-  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#DivineTradition"/>
+  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Absorb half the damage an ally would take</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#silence_spell">
-  <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#IllusionSchool"/>
+  <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mute all sound from a creature</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#sound_burst_spell">
-  <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Damage and deafen creatures with a powerful din</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#spiritual_weapon_spell">
-  <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Materialize a deific weapon of force that appears and attacks repeatedly</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
@@ -23123,23 +23172,23 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#undetectable_alignment_spell">
-  <rdf:type rdf:resource="#AbjurationSchool"/>
   <rdf:type rdf:resource="#DivineTradition"/>
+  <rdf:type rdf:resource="#AbjurationSchool"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Make a creature or object appear neutral to alignment detection</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#chilling_darkness_spell">
-  <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#DivineTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ray of evil darkness deals cold damage, counteracts light, and harms celestials</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#circle_of_protection_spell">
-  <rdf:type rdf:resource="#AbjurationSchool"/>
   <rdf:type rdf:resource="#DivineTradition"/>
+  <rdf:type rdf:resource="#AbjurationSchool"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A creature emits an aura that protects those within against an alignment</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</level>
@@ -23161,31 +23210,31 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#neutralize_poison_spell">
-  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#DivineTradition"/>
+  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cure a poison afflicting a creature</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#remove_disease_spell">
-  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#DivineTradition"/>
+  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cure a disease afflicting a creature</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#sanctified_ground_spell">
-  <rdf:type rdf:resource="#AbjurationSchool"/>
   <rdf:type rdf:resource="#DivineTradition"/>
+  <rdf:type rdf:resource="#AbjurationSchool"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Create a 24-hour area of protection against aberrations, celestials, dragons, fiends, or undead</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#searing_light_spell">
-  <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A ray of burning light deals extra damage to undead and counteracts darkness</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</level>
@@ -23223,15 +23272,15 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#divine_wrath_spell">
-  <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#DivineTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Damage and hinder creatures of alignments opposed by your deity</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#holy_cascade_spell">
-  <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#DivineTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Turn a vial of holy water into an explosion of blessed water</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
 </owl:NamedIndividual>
@@ -23245,47 +23294,47 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#remove_curse_spell">
-  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#DivineTradition"/>
+  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Counteract a curse afflicting a creature</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#talking_corpse_spell">
-  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#DivineTradition"/>
+  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Have a corpse answer three questions</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#vital_beacon_spell">
-  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#DivineTradition"/>
+  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Radiate vitality that heals creatures that touch you</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#abyssal_plague_spell">
-  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#DivineTradition"/>
+  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Inflict a draining curse</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#breath_of_life_spell">
-  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#DivineTradition"/>
+  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">React to revive a creature at the moment of its death</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#death_ward_spell">
-  <rdf:type rdf:resource="#AbjurationSchool"/>
   <rdf:type rdf:resource="#DivineTradition"/>
+  <rdf:type rdf:resource="#AbjurationSchool"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Protect a creature against negative energy</rdfs:comment>
@@ -23293,23 +23342,23 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#flame_strike_spell">
-  <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#DivineTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Call divine fire from the sky</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#shadow_blast_spell">
-  <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Shape a cone of shadow to deal damage of a type you choose</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#spiritual_guardian_spell">
-  <rdf:type rdf:resource="#AbjurationSchool"/>
   <rdf:type rdf:resource="#DivineTradition"/>
+  <rdf:type rdf:resource="#AbjurationSchool"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Create a magical guardian to attack at your command and take damage for your allies</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</level>
 </owl:NamedIndividual>
@@ -23329,23 +23378,23 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#blade_barrier_spell">
-  <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#DivineTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Form a wall of swords made of force</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#field_of_life_spell">
-  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#DivineTradition"/>
+  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Create a positive energy field that heals those within</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#raise_dead_spell">
-  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#DivineTradition"/>
+  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Return a dead creature to life</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</level>
 </owl:NamedIndividual>
@@ -23358,8 +23407,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#spirit_blast_spell">
-  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#DivineTradition"/>
+  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Damage a creature’s spiritual essence</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</level>
@@ -23390,8 +23439,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#divine_decree_spell">
-  <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#DivineTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Creatures of alignments opposed by your deity are damaged, enfeebled, paralyzed, or banished</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</level>
 </owl:NamedIndividual>
@@ -23412,32 +23461,32 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#finger_of_death_spell">
-  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#DivineTradition"/>
+  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Point at a creature to deal negative damage and possibly kill it instantly</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#regenerate_spell">
-  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#DivineTradition"/>
+  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cause a creature to heal over time, regrow organs, and reattach body parts</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#sunburst_spell">
-  <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A globe of sunlight deals fire damage, hurts undead, and overcomes darkness</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#divine_aura_spell">
-  <rdf:type rdf:resource="#AbjurationSchool"/>
   <rdf:type rdf:resource="#DivineTradition"/>
+  <rdf:type rdf:resource="#AbjurationSchool"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Allies in an aura have better defenses and are protected against one alignment</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</level>
 </owl:NamedIndividual>
@@ -23450,24 +23499,24 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#moment_of_renewal_spell">
-  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#DivineTradition"/>
+  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Give a day’s recovery in an instant</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#spiritual_epidemic_spell">
-  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#DivineTradition"/>
+  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Weaken a target with a communicable curse</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#bind_soul_spell">
-  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#DivineTradition"/>
+  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Imprison a dead creature’s soul</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</level>
@@ -23489,16 +23538,16 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#wail_of_the_banshee_spell">
-  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#DivineTradition"/>
+  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Scream, dealing damage and draining creatures</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#weapon_of_judgment_spell">
-  <rdf:type rdf:resource="#DivineTradition"/>
   <rdf:type rdf:resource="#EvocationSchool"/>
+  <rdf:type rdf:resource="#DivineTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Form a weapon to enforce war or peace</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</level>
 </owl:NamedIndividual>
@@ -23518,8 +23567,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#revival_spell">
-  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#DivineTradition"/>
+  <rdf:type rdf:resource="#NecromancySchool"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Heal creatures in an area and return the dead to life temporarily</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</level>
@@ -23577,8 +23626,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#glibness_spell">
-  <rdf:type rdf:resource="#OccultTradition"/>
   <rdf:type rdf:resource="#EnchantmentSchool"/>
+  <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lie with impunity</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
 </owl:NamedIndividual>
@@ -23591,8 +23640,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#dreaming_potential_spell">
-  <rdf:type rdf:resource="#OccultTradition"/>
   <rdf:type rdf:resource="#EnchantmentSchool"/>
+  <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The target retrains in its dreams</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</level>
 </owl:NamedIndividual>
@@ -23605,8 +23654,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#synaptic_pulse_spell">
-  <rdf:type rdf:resource="#OccultTradition"/>
   <rdf:type rdf:resource="#EnchantmentSchool"/>
+  <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Slow creatures with a mental blast</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</level>
 </owl:NamedIndividual>
@@ -23647,8 +23696,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#unfathomable_song_spell">
-  <rdf:type rdf:resource="#OccultTradition"/>
   <rdf:type rdf:resource="#EnchantmentSchool"/>
+  <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Song debilitates creatures in weird ways</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</level>
 </owl:NamedIndividual>
@@ -23661,15 +23710,15 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#fabricated_truth_spell">
-  <rdf:type rdf:resource="#OccultTradition"/>
   <rdf:type rdf:resource="#EnchantmentSchool"/>
+  <rdf:type rdf:resource="#OccultTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Make creatures believe something is fact</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#magic_fang_spell">
-  <rdf:type rdf:resource="#PrimalTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Make a creature’s unarmed attacks magical temporarily</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
 </owl:NamedIndividual>
@@ -23682,22 +23731,22 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#shillelagh_spell">
-  <rdf:type rdf:resource="#PrimalTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Make a club or staff temporarily magical, and deal more damage to unnatural creatures</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#summon_plant_or_fungus_spell">
-  <rdf:type rdf:resource="#ConjurationSchool"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
+  <rdf:type rdf:resource="#ConjurationSchool"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Conjure a plant or fungus to fight on your behalf</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#animal_form_spell">
-  <rdf:type rdf:resource="#PrimalTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Turn into a dangerous animal</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
 </owl:NamedIndividual>
@@ -23717,15 +23766,15 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#entangle_spell">
-  <rdf:type rdf:resource="#PrimalTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Plants in an area grow to entangle and immobilize</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#shape_wood_spell">
-  <rdf:type rdf:resource="#PrimalTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reshape unworked wood as you choose</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
 </owl:NamedIndividual>
@@ -23738,8 +23787,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#tree_shape_spell">
-  <rdf:type rdf:resource="#PrimalTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Turn into a tree</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</level>
 </owl:NamedIndividual>
@@ -23752,22 +23801,22 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#insect_form_spell">
-  <rdf:type rdf:resource="#PrimalTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Turn into a dangerous giant insect</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#wall_of_thorns_spell">
-  <rdf:type rdf:resource="#ConjurationSchool"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
+  <rdf:type rdf:resource="#ConjurationSchool"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Grow a wall of brambles</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#dinosaur_form_spell">
-  <rdf:type rdf:resource="#PrimalTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Turn into a dinosaur</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</level>
 </owl:NamedIndividual>
@@ -23787,29 +23836,29 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#moon_frenzy_spell">
-  <rdf:type rdf:resource="#PrimalTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Give willing creatures fangs and claws, and send them into a frenzy</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#plant_form_spell">
-  <rdf:type rdf:resource="#PrimalTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Turn into a dangerous plant creature</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#summon_giant_spell">
-  <rdf:type rdf:resource="#ConjurationSchool"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
+  <rdf:type rdf:resource="#ConjurationSchool"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Conjure a giant to fight on your behalf</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#tree_stride_spell">
-  <rdf:type rdf:resource="#ConjurationSchool"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
+  <rdf:type rdf:resource="#ConjurationSchool"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Teleport from tree to tree</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</level>
 </owl:NamedIndividual>
@@ -23822,8 +23871,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#tangling_creepers_spell">
-  <rdf:type rdf:resource="#ConjurationSchool"/>
   <rdf:type rdf:resource="#PrimalTradition"/>
+  <rdf:type rdf:resource="#ConjurationSchool"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Entangle creatures in a burst and concentrate to lash out with immobilizing vines</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</level>
 </owl:NamedIndividual>
@@ -23850,8 +23899,8 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#wind_walk_spell">
-  <rdf:type rdf:resource="#PrimalTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Turn creatures into swift-moving clouds</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</level>
 </owl:NamedIndividual>
@@ -23871,15 +23920,15 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#nature_incarnate_spell">
-  <rdf:type rdf:resource="#PrimalTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Turn into a massive avatar of nature</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</level>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#primal_herd_spell">
-  <rdf:type rdf:resource="#PrimalTradition"/>
   <rdf:type rdf:resource="#TransmutationSchool"/>
+  <rdf:type rdf:resource="#PrimalTradition"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Transform willing creatures into mammoths</rdfs:comment>
   <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</level>
 </owl:NamedIndividual>
@@ -24419,20 +24468,20 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 
 <owl:NamedIndividual rdf:about="#crafting_roll">
   <rdf:type rdf:resource="#SkillRoll"/>
-  <uses rdf:resource="#crafting_proficiency_bonus"/>
   <uses rdf:resource="#intelligence_modifier"/>
+  <uses rdf:resource="#crafting_proficiency_bonus"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#occultism_roll">
   <rdf:type rdf:resource="#SkillRoll"/>
-  <uses rdf:resource="#intelligence_modifier"/>
   <uses rdf:resource="#occultism_proficiency_bonus"/>
+  <uses rdf:resource="#intelligence_modifier"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#performance_roll">
   <rdf:type rdf:resource="#SkillRoll"/>
-  <uses rdf:resource="#performance_proficiency_bonus"/>
   <uses rdf:resource="#charisma_modifier"/>
+  <uses rdf:resource="#performance_proficiency_bonus"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#religion_roll">
@@ -24455,20 +24504,20 @@ Spells per day: cantrips = 5,  count of n-level spells = {level &lt;= (n-1)*2: 0
 
 <owl:NamedIndividual rdf:about="#arcana_roll">
   <rdf:type rdf:resource="#SkillRoll"/>
-  <uses rdf:resource="#intelligence_modifier"/>
   <uses rdf:resource="#arcana_proficiency_bonus"/>
+  <uses rdf:resource="#intelligence_modifier"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#lore_roll">
   <rdf:type rdf:resource="#SkillRoll"/>
-  <uses rdf:resource="#intelligence_modifier"/>
   <uses rdf:resource="#lore_proficiency_bonus"/>
+  <uses rdf:resource="#intelligence_modifier"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#diplomacy_roll">
   <rdf:type rdf:resource="#SkillRoll"/>
-  <uses rdf:resource="#diplomacy_proficiency_bonus"/>
   <uses rdf:resource="#charisma_modifier"/>
+  <uses rdf:resource="#diplomacy_proficiency_bonus"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#medicine_roll">

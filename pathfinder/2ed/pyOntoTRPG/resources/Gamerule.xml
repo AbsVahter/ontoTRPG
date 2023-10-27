@@ -765,4 +765,9 @@ dc		<prereq>Dying</prereq>
 	<row name="Invest magic items">
 		<comment>You invest up to 10 worn magic items to gain their benefits for the day.</comment>
 	</row>
+	<row name="Recover health after rest">
+		<uses>Constitution modifier</uses>
+		<uses>Level of character</uses>
+		<calculations>hit points += Max(constitution modifier, 1) * level</calculations>
+	</row>
 </root>

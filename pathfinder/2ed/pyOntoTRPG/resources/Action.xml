@@ -503,16 +503,24 @@
     <leadsTo>Detect something with travel speed</leadsTo>
   </row>
   <row name="Rest" subclass="Activity">
+    <trait>EXPLORATION</trait>
     <comment>You perform at your best when you take enough time to rest and prepare. Once every 24 hours, you can take a period of rest.</comment>
     <duration>8 hours (by default)</duration>
-    <uses>Constitution modifier</uses>
-    <uses>Level of character</uses>
-    <calculations>hit points += Max(constitution modifier, 1) * level</calculations>
+    <uses>Recover health after rest</uses>
+    <calculations>hit points += recover health after rest</calculations>
     <leadsTo>Recover hp rule</leadsTo>
     <leadsTo>Sleeping in armor</leadsTo>
     <deactivates>Fatigued</deactivates>
   </row>
+  <row name="Long-term rest" subclass="Activity">
+    <trait>DOWNTIME</trait>
+    <duration>entire day and night</duration>
+    <uses>Recover health after rest</uses>
+    <calculations>hit points += 2 * recover health after rest</calculations>
+    <leadsTo>Recover hp rule</leadsTo>
+  </row>
   <row name="Daily preparations" subclass="Activity">
+    <trait>EXPLORATION</trait>
     <duration>1 hour</duration>
     <perDay>once</perDay>
     <sets>Prepared spell slots</sets>
@@ -522,5 +530,17 @@
     <changes>Feats of character</changes>
     <changes>equipment</changes>
     <leadsTo>Invest magic items</leadsTo>
+  </row>
+  <row name="Retrain feat">
+    <trait>DOWNTIME</trait>
+    <comment>Remove the old feat and replace it with another of the same type.</comment>
+    <duration>week (or more by decision of GM)</duration>
+    <sets>Feats of character</sets>
+  </row>
+  <row name="Retrain skill">
+    <trait>DOWNTIME</trait>
+    <prereq object_class="Statement">Retrain skill</prereq>
+    <comment>to swap out one of your skill increases</comment>
+    <duration>week (or more by decision of GM)</duration>
   </row>
 </root>
