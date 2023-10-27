@@ -6,7 +6,8 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sche: <http://schema.org/> .
 @prefix bbo: <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicBookOnto.ttl#> .
-@prefix pzo2101: <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#> .
+@prefix pzo2101: <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.ttl#> .
+@prefix bro: <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicRulesOnto.ttl#> .
 @base <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#> .
 
 <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#> rdf:type owl:Ontology ;
@@ -102,11 +103,6 @@ sche:image rdf:type owl:AnnotationProperty .
            rdfs:seeAlso pzo2101:SkillCheck .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#Characteristic
-:Characteristic rdf:type owl:Class ;
-                rdfs:label "Characteristic" ;
-                rdfs:seeAlso pzo2101:Characteristic .
-
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#DieRoll
 :DieRoll rdf:type owl:Class ;
@@ -126,7 +122,7 @@ sche:image rdf:type owl:AnnotationProperty .
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#GeneralAbility
 :GeneralAbility rdf:type owl:Class ;
-                rdfs:subClassOf :Characteristic ;
+                rdfs:subClassOf bro:Characteristic ;
                 rdfs:comment "When attempting actions that don’t directly gather information, and which can lead to engaging story possibilities whether you succeed or fail, use your General Abilities." ,
                              "{ability: number of dice}" ;
                 rdfs:label "General ability" ;
@@ -141,7 +137,7 @@ sche:image rdf:type owl:AnnotationProperty .
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#InvestigativeAbility
 :InvestigativeAbility rdf:type owl:Class ;
-                      rdfs:subClassOf :Characteristic ;
+                      rdfs:subClassOf bro:Characteristic ;
                       rdfs:comment "Ability for gathering information" ;
                       rdfs:label "Investigative ability" .
 

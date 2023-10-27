@@ -1,4 +1,4 @@
-@prefix : <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#> .
+@prefix : <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.ttl#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -6,10 +6,11 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sche: <http://schema.org/> .
 @prefix bbo: <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicBookOnto.ttl#> .
-@base <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#> .
+@prefix bro: <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicRulesOnto.ttl#> .
+@base <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.ttl#> .
 
 <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl> rdf:type owl:Ontology ;
-                                                                                              owl:imports bbo: .
+                                                                                              owl:imports bbo: , bro: .
 
 #################################################################
 #    Annotation properties
@@ -90,7 +91,7 @@ sche:image rdf:type owl:AnnotationProperty .
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#changes
 :changes rdf:type owl:ObjectProperty ;
          rdfs:domain owl:Thing ;
-         rdfs:range :Characteristic ;
+         rdfs:range bro:Characteristic;
          rdfs:comment "changes value of characteristic or -1 to duration of condition" .
 
 
@@ -296,7 +297,7 @@ sche:image rdf:type owl:AnnotationProperty .
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#sets
 :sets rdf:type owl:ObjectProperty ;
       rdfs:domain :Gamerule ;
-      rdfs:range :Characteristic .
+      rdfs:range bro:Characteristic.
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#size
@@ -621,7 +622,7 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#AbilityScore
 :AbilityScore rdf:type owl:Class ;
-              rdfs:subClassOf :Characteristic .
+              rdfs:subClassOf bro:Characteristic.
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#AbjurationSchool
@@ -902,13 +903,13 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#Characteristic
-:Characteristic rdf:type owl:Class ;
+bro:Characteristicrdf:type owl:Class ;
                 rdfs:subClassOf owl:Thing .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#CharacteristicWithProficiency
 :CharacteristicWithProficiency rdf:type owl:Class ;
-                               rdfs:subClassOf :Characteristic .
+                               rdfs:subClassOf bro:Characteristic.
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#Check
@@ -980,7 +981,7 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#Condition
 :Condition rdf:type owl:Class ;
-           rdfs:subClassOf :Characteristic ;
+           rdfs:subClassOf bro:Characteristic;
            rdfs:comment "[condition value, remained duration or permanent]. Activate|deactivate condition = +1|-1 to condition value. Change condition = -1 to duration if not permanent." .
 
 
@@ -2096,7 +2097,7 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#active_afflictions
 :active_afflictions rdf:type owl:NamedIndividual ,
-                             :Characteristic ;
+                             bro:Characteristic;
                     rdfs:comment "Dictionary of {active affliction: [onset period, current stage, remained duration]}" ;
                     rdfs:label "Active afflictions" .
 
@@ -2930,7 +2931,7 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#ancestry_of_character
 :ancestry_of_character rdf:type owl:NamedIndividual ,
-                                :Characteristic ;
+                                bro:Characteristic;
                        rdfs:label "Ancestry of character" .
 
 
@@ -6679,7 +6680,7 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#burrow_speed_of_character
 :burrow_speed_of_character rdf:type owl:NamedIndividual ,
-                                    :Characteristic ;
+                                    bro:Characteristic;
                            rdfs:comment "Burrow speed: lets you tunnel through the ground. Burrowing doesn't normally leave behind a tunnel." ;
                            rdfs:label "Burrow speed of character" .
 
@@ -7590,7 +7591,7 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#climb_speed_of_character
 :climb_speed_of_character rdf:type owl:NamedIndividual ,
-                                   :Characteristic ;
+                                   bro:Characteristic;
                           rdfs:comment "Climb speed: allows you to move up or down inclines and vertical surfaces." ;
                           rdfs:label "Climb speed of character" .
 
@@ -10995,13 +10996,13 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#equipment
 :equipment rdf:type owl:NamedIndividual ,
-                    :Characteristic ;
+                    bro:Characteristic;
            rdfs:label "Equipment" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#equipment_in_hands
 :equipment_in_hands rdf:type owl:NamedIndividual ,
-                             :Characteristic ;
+                             bro:Characteristic;
                     rdfs:label "Equipment in hands" .
 
 
@@ -11728,7 +11729,7 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#feats_of_character
 :feats_of_character rdf:type owl:NamedIndividual ,
-                             :Characteristic ;
+                             bro:Characteristic;
                     rdfs:comment "{feat: remaining uses per day}" ;
                     rdfs:label "Feats of character" .
 
@@ -12411,7 +12412,7 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#fly_speed_of_character
 :fly_speed_of_character rdf:type owl:NamedIndividual ,
-                                 :Characteristic ;
+                                 bro:Characteristic;
                         rdfs:comment "Fly speed: you can use the Fly and Arrest a Fall actions." ;
                         rdfs:label "Fly speed of character" .
 
@@ -12442,7 +12443,7 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#focus_points
 :focus_points rdf:type owl:NamedIndividual ,
-                       :Characteristic ;
+                       bro:Characteristic;
               rdfs:label "Focus points" .
 
 
@@ -14457,7 +14458,7 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#hero_points
 :hero_points rdf:type owl:NamedIndividual ,
-                      :Characteristic ;
+                      bro:Characteristic;
              rdfs:comment "Hero points = 1 at the start of a session. Maximum 3 hero points at a time." ,
                           "Your heroic deeds earn you Hero Points, which grant you good fortune or let you recover from the brink of death. Unlike most aspects of your character, which persist over the long term, Hero Points last for only a single session." ;
              rdfs:label "Hero points" .
@@ -14594,7 +14595,7 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#hit_points
 :hit_points rdf:type owl:NamedIndividual ,
-                     :Characteristic ;
+                     bro:Characteristic;
             rdfs:comment "(maximum value, current value)" ,
                          "Creatures cannot be reduced to fewer than 0 Hit Points." ,
                          "Your maximum Hit Point value represents your health, wherewithal, and heroic drive when you are in good health and rested." ;
@@ -14991,7 +14992,7 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#immunities
 :immunities rdf:type owl:NamedIndividual ,
-                     :Characteristic ;
+                     bro:Characteristic;
             rdfs:comment "List of immunities to damage types, specific conditions or effects." ;
             rdfs:label "Immunities" .
 
@@ -15374,7 +15375,7 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#initiative_position
 :initiative_position rdf:type owl:NamedIndividual ,
-                              :Characteristic ;
+                              bro:Characteristic;
                      rdfs:comment "only for encounters" ;
                      rdfs:label "Initiative position" .
 
@@ -16678,7 +16679,7 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#level_of_character
 :level_of_character rdf:type owl:NamedIndividual ,
-                             :Characteristic ,
+                             bro:Characteristic,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty :modifies ;
                                owl:someValuesFrom :ProficiencyBonus
@@ -20396,7 +20397,7 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#prepared_spell_slots
 :prepared_spell_slots rdf:type owl:NamedIndividual ,
-                               :Characteristic ;
+                               bro:Characteristic;
                       rdfs:label "Prepared spell slots" .
 
 
@@ -23981,7 +23982,7 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#speed_of_character
 :speed_of_character rdf:type owl:NamedIndividual ,
-                             :Characteristic ;
+                             bro:Characteristic;
                     rdfs:comment "Land speed, which indicates how quickly they can move across the ground." ;
                     rdfs:label "Speed of character" .
 
@@ -25162,7 +25163,7 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#swim_speed_of_character
 :swim_speed_of_character rdf:type owl:NamedIndividual ,
-                                  :Characteristic ;
+                                  bro:Characteristic;
                          rdfs:comment "Swim speed: you can propel yourself through the water with little impediment." ;
                          rdfs:label "Swim speed of character" .
 
@@ -27422,7 +27423,7 @@ Spells per day: cantrips = 5,  count of n-level spells = {level <= (n-1)*2: 0; l
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.owl#weaknesses_and_resistances
 :weaknesses_and_resistances rdf:type owl:NamedIndividual ,
-                                     :Characteristic ;
+                                     bro:Characteristic;
                             rdfs:comment "Dictionary of {damage type or damage source: damage modifier}, where (damage bonus) = weakness, (damage penalty) = resistance or hardness of item." ;
                             rdfs:label "Weaknesses and resistances" .
 
