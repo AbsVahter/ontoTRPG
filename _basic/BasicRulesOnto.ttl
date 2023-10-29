@@ -5,11 +5,126 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sche: <http://schema.org/> .
-@prefix bbo: <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicBookOnto.ttl#> .
 @base <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicRulesOnto.ttl#> .
 
-: a owl:Ontology .
+<https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicRulesOnto.ttl#> rdf:type owl:Ontology .
 
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicRulesOnto.ttl#changes
+:changes rdf:type owl:ObjectProperty ;
+         rdfs:domain owl:Thing ;
+         rdfs:range :Characteristic .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicRulesOnto.ttl#leadsTo
+:leadsTo rdf:type owl:ObjectProperty ;
+         rdfs:domain owl:Thing ;
+         rdfs:range :Gamerule ;
+         rdfs:comment "last in order" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicRulesOnto.ttl#modifies
+:modifies rdf:type owl:ObjectProperty ;
+          owl:inverseOf :uses ;
+          rdfs:label "modifies" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicRulesOnto.ttl#prereq
+:prereq rdf:type owl:ObjectProperty ;
+        rdfs:domain owl:Thing ;
+        rdfs:range owl:Thing ;
+        rdfs:label "prereq" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicRulesOnto.ttl#selects
+:selects rdf:type owl:ObjectProperty ;
+         rdfs:domain owl:Thing ;
+         rdfs:range owl:Thing ;
+         rdfs:label "selects" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicRulesOnto.ttl#statementEntity
+:statementEntity rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Statement ;
+                 rdfs:range owl:Thing ;
+                 rdfs:label "entity of statement" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicRulesOnto.ttl#uses
+:uses rdf:type owl:ObjectProperty ;
+      rdfs:domain :Gamerule ;
+      rdfs:range owl:Thing ;
+      rdfs:label "uses" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicRulesOnto.ttl#calculations
+:calculations rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Gamerule ;
+              rdfs:range xsd:string ;
+              rdfs:label "calculations" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicRulesOnto.ttl#statementPredicate
+:statementPredicate rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :Statement ;
+                    rdfs:range xsd:string ;
+                    rdfs:label "predicate of statement" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicRulesOnto.ttl#statementValue
+:statementValue rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Statement ;
+                rdfs:range xsd:string ;
+                rdfs:label "value of statement" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicRulesOnto.ttl#Characteristic
 :Characteristic rdf:type owl:Class ;
                 rdfs:subClassOf owl:Thing ;
-    rdfs:label "Characteristic" .
+                rdfs:label "Characteristic" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicRulesOnto.ttl#Check
+:Check rdf:type owl:Class ;
+       rdfs:subClassOf :Gamerule .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicRulesOnto.ttl#CheckRoll
+:CheckRoll rdf:type owl:Class ;
+           rdfs:subClassOf :Gamerule .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicRulesOnto.ttl#Gamerule
+:Gamerule rdf:type owl:Class ;
+          rdfs:subClassOf owl:Thing ;
+          rdfs:label "Rule of current system" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicRulesOnto.ttl#Skill
+:Skill rdf:type owl:Class ;
+       rdfs:subClassOf :Characteristic .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicRulesOnto.ttl#SkillCheck
+:SkillCheck rdf:type owl:Class ;
+            rdfs:subClassOf :Check .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicRulesOnto.ttl#Statement
+:Statement rdf:type owl:Class ;
+           rdfs:subClassOf owl:Thing ;
+           rdfs:label "Statement" .
+
+
+###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi

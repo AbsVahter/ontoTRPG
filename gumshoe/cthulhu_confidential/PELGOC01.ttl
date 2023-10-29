@@ -1,17 +1,17 @@
 @prefix : <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#> .
+@prefix bbo: <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicBookOnto.ttl#> .
+@prefix bro: <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicRulesOnto.ttl#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sche: <http://schema.org/> .
-@prefix bbo: <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicBookOnto.ttl#> .
-@prefix pzo2101: <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.ttl#> .
-@prefix bro: <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicRulesOnto.ttl#> .
 @base <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#> .
 
 <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#> rdf:type owl:Ontology ;
-                                                                                                             owl:imports bbo: .
+                                                                                                              owl:imports bbo: ,
+                                                                                                                          bro: .
 
 #################################################################
 #    Annotation properties
@@ -25,45 +25,61 @@ sche:image rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicRulesOnto.ttl#changes
+bro:changes rdfs:comment "+1 to characteristic" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicRulesOnto.ttl#leadsTo
+bro:leadsTo rdfs:label "outcome" .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#advance
 :advance rdf:type owl:ObjectProperty ;
-         rdfs:domain :Challenge ;
-         rdfs:range :Gamerule ;
+         rdfs:subPropertyOf bro:leadsTo ;
+         rdfs:domain bro:SkillCheck ;
+         rdfs:range bro:Gamerule ;
          rdfs:comment "Succeeding especially well. This might grant you an Edge card, or allow you extra leverage in the situation at hand." ;
-         rdfs:label "Advance outcome" ;
-         rdfs:seeAlso pzo2101:checkCriticalSuccess .
+         rdfs:label "Advance outcome" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#extraProblem
+:extraProblem rdf:type owl:ObjectProperty ;
+              rdfs:domain bro:SkillCheck ;
+              rdfs:range :Problem ;
+              rdfs:comment "Describes the most obvious Extra Problem the Investigator can take on to gain an additional die against this Challenge." ;
+              rdfs:label "possible extra problem" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#hold
 :hold rdf:type owl:ObjectProperty ;
-      rdfs:domain :Challenge ;
-      rdfs:range :Gamerule ;
+      rdfs:subPropertyOf bro:leadsTo ;
+      rdfs:domain bro:SkillCheck ;
+      rdfs:range bro:Gamerule ;
       rdfs:comment "generally leaves you no worse off than you were before, or allows you to move forward, though without additional benefit" ;
-      rdfs:label "Hold outcome" ;
-      rdfs:seeAlso pzo2101:checkFailure ,
-                   pzo2101:checkSuccess .
+      rdfs:label "Hold outcome" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#setback
 :setback rdf:type owl:ObjectProperty ;
-         rdfs:domain :Challenge ;
-         rdfs:range :Gamerule ;
+         rdfs:subPropertyOf bro:leadsTo ;
+         rdfs:domain bro:SkillCheck ;
+         rdfs:range bro:Gamerule ;
          rdfs:comment "Worsening your situation. It may saddle you with a Problem card. Or it might simply make your immediate dilemma worse in some way." ;
-         rdfs:label "Setback outcome" ;
-         rdfs:seeAlso pzo2101:checkCriticalFailure .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#uses
-:uses rdf:type owl:ObjectProperty ;
-      rdfs:domain :Gamerule ;
-      rdfs:range owl:Thing ;
-      rdfs:label "uses" ;
-      rdfs:seeAlso pzo2101:uses .
+         rdfs:label "Setback outcome" .
 
 
 #################################################################
 #    Data properties
 #################################################################
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#advanceTarget
+:advanceTarget rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty ;
+               rdfs:domain bro:SkillCheck ;
+               rdfs:range xsd:integer ;
+               rdfs:comment "Any result equal to or higher than that lets you Advance." ;
+               rdfs:label "test's target to Advance" .
+
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#application
 :application rdf:type owl:DatatypeProperty ;
@@ -72,17 +88,68 @@ sche:image rdf:type owl:AnnotationProperty .
              rdfs:label "example of using" .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#calculations
-:calculations rdf:type owl:DatatypeProperty ;
-              rdfs:domain :Gamerule ;
-              rdfs:range xsd:string ;
-              rdfs:label "calculations" ;
-              rdfs:seeAlso pzo2101:calculations .
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#holdTarget
+:holdTarget rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain bro:SkillCheck ;
+            rdfs:range xsd:integer ;
+            rdfs:comment "Any result equal to that and lesser than advance target lets you Hold." ;
+            rdfs:label "test's target to Hold" .
 
 
 #################################################################
 #    Classes
 #################################################################
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicRulesOnto.ttl#Check
+bro:Check rdfs:comment "A test determines what happens when your Investigator tries to do something that might not work." ;
+          rdfs:label "Test" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicRulesOnto.ttl#CheckRoll
+bro:CheckRoll rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                owl:onProperty bro:uses ;
+                                owl:hasValue :additional_roll_edge
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty bro:uses ;
+                                owl:hasValue :additional_roll_extra_problem
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty bro:calculations ;
+                                owl:hasValue "die roll = (count of ability dices)d6"
+                              ] ;
+              rdfs:comment "roll them one at a time, adding to your total as you go" ;
+              rdfs:label "Die roll" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicRulesOnto.ttl#Skill
+bro:Skill rdfs:label "Ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicRulesOnto.ttl#SkillCheck
+bro:SkillCheck rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                 owl:onProperty bro:leadsTo ;
+                                 owl:hasValue :gain_push
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty bro:calculations ;
+                                 owl:hasValue """outcome = if (die roll >= advance target) then (advance) 
+else if (die roll >= hold target) then (hold) 
+else (setback)"""
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty bro:calculations ;
+                                 owl:hasValue """{2: [83%, 100%, 100%, 100%]; 3: [67%, 97%, 100%, 100%]; 4: [50%, 92%, 99.5%, 100%]; 5: [33%, 83%, 98%, 99.9%]; 6: [17%, 72%, 95%, 99.6%];
+7: [-, 58%, 91%, 99%]; 8: [-, 42%, 84%, 97%]; 9: [-, 28%, 74%, 95%]; 10: [-, 17%, 62.5%, 90%]; 11: [-, 8%, 50%, 84%]; 12: [-, 3%, 37.5%, 76%];
+13: [-, -, 26%, 66%]; 14: [-, -, 16%, 56%]; 15: [-, -, 9%, 44%]; 16: [-, -, 5%, 34%];
+17: [-, -, 2%, 24%]; 18: [-, -, 0.5%, 16%]; 19: [-, -, -, 10%]; 20: [-, -, -, 5%]; 21: [-, -, -, 3%]}"""
+                               ] ;
+               rdfs:comment "Challenges occur in situations where degrees of success or failure can send the story into different possible branches, each of them interesting in its own way." ,
+                            "Sometimes you know that you’ll get what you want, but you are only determining the costs of success" ,
+                            "examples: fixing the car before the yokel with the rifle gets back, running away from a creature that surges out of the La Brea tar pits, sneaking backstage at the nightclub" ;
+               rdfs:label "Challenge" .
+
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#AcademicAbility
 :AcademicAbility rdf:type owl:Class ;
@@ -90,43 +157,53 @@ sche:image rdf:type owl:AnnotationProperty .
                  rdfs:label "Academic ability" .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#Art
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#Card
+:Card rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing ;
+      rdfs:label "Card" .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#Challenge
-:Challenge rdf:type owl:Class ;
-           rdfs:subClassOf :Test ;
-           rdfs:comment "Challenges occur in situations where degrees of success or failure can send the story into different possible branches, each of them interesting in its own way." ,
-                        "Sometimes you know that you’ll get what you want, but you are only determining the costs of success" ,
-                        "examples: fixing the car before the yokel with the rifle gets back, running away from a creature that surges out of the La Brea tar pits, sneaking backstage at the nightclub" ;
-           rdfs:label "Challenge" ;
-           rdfs:seeAlso pzo2101:SkillCheck .
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#ChallengeTemplate
+:ChallengeTemplate rdf:type owl:Class ;
+                   rdfs:subClassOf bro:SkillCheck ;
+                   rdfs:label "Template of challenge" .
 
 
-
-###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#DieRoll
-:DieRoll rdf:type owl:Class ;
-         rdfs:subClassOf :Gamerule ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty :calculations ;
-                           owl:hasValue "die roll = (count of ability dices)d6"
-                         ] ;
-         rdfs:seeAlso pzo2101:SkillRoll .
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#ContinuityCard
+:ContinuityCard rdf:type owl:Class ;
+                rdfs:subClassOf :Card ;
+                rdfs:comment "Unlike other Edges and Problems, the player does not discard Continuity cards at the end of a scenario." ;
+                rdfs:label "Continuity card" .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#Gamerule
-:Gamerule rdf:type owl:Class ;
-          rdfs:label "Gamerule" ;
-          rdfs:seeAlso pzo2101:Gamerule .
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#Edge
+:Edge rdf:type owl:Class ;
+      rdfs:subClassOf :Card ;
+      rdfs:comment "Edges give the player a jolt of positive accomplishment." ;
+      rdfs:label "Edge" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#GeneralAbility
 :GeneralAbility rdf:type owl:Class ;
-                rdfs:subClassOf bro:Characteristic ;
+                rdfs:subClassOf bro:Skill ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty [ owl:inverseOf bro:changes
+                                                 ] ;
+                                  owl:hasValue :improvement_general_ability
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty [ owl:inverseOf bro:selects
+                                                 ] ;
+                                  owl:hasValue :general_ability_improve_selector
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty [ owl:inverseOf bro:statementEntity
+                                                 ] ;
+                                  owl:hasValue :general_ability_max_rate
+                                ] ;
                 rdfs:comment "When attempting actions that don’t directly gather information, and which can lead to engaging story possibilities whether you succeed or fail, use your General Abilities." ,
                              "{ability: number of dice}" ;
-                rdfs:label "General ability" ;
-                rdfs:seeAlso pzo2101:Skill .
+                rdfs:label "General ability" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#InterpersonalAbility
@@ -137,7 +214,12 @@ sche:image rdf:type owl:AnnotationProperty .
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#InvestigativeAbility
 :InvestigativeAbility rdf:type owl:Class ;
-                      rdfs:subClassOf bro:Characteristic ;
+                      rdfs:subClassOf bro:Skill ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty [ owl:inverseOf bro:changes
+                                                       ] ;
+                                        owl:hasValue :improvement_investigate_ability
+                                      ] ;
                       rdfs:comment "Ability for gathering information" ;
                       rdfs:label "Investigative ability" .
 
@@ -156,6 +238,13 @@ sche:image rdf:type owl:AnnotationProperty .
                rdfs:label "Mental ability" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#MythosShock
+:MythosShock rdf:type owl:Class ;
+             rdfs:subClassOf :Problem ;
+             rdfs:comment "Mythos Shocks can never be Countered for free, or by Taking Time. To get rid of them, you must spend Edges. Only Edges marked as spendable on Mythos Shocks can be used for this purpose. It might take more than one Edge to get rid of an especially awful Mythos Shock." ;
+             rdfs:label "Mythos Shock" .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#PhysicalAbility
 :PhysicalAbility rdf:type owl:Class ;
                  rdfs:subClassOf :GeneralAbility ;
@@ -163,17 +252,24 @@ sche:image rdf:type owl:AnnotationProperty .
                  rdfs:label "Physical ability" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#Problem
+:Problem rdf:type owl:Class ;
+         rdfs:subClassOf :Card ;
+         rdfs:comment "Problems deliver emotional down-notes to our dogged detectives as they tread the mean streets in search of hidden horrors." ;
+         rdfs:label "Problem" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#QuickTest
+:QuickTest rdf:type owl:Class ;
+           rdfs:subClassOf bro:Check ;
+           rdfs:comment "On occasion, your detective may face a very straightforward obstacle where you can only succeed or fail, with no particular ongoing advantages or disadvantages arising from the result." ;
+           rdfs:label "Quick Test" .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#TechnicalAbility
 :TechnicalAbility rdf:type owl:Class ;
                   rdfs:subClassOf :InvestigativeAbility ;
                   rdfs:label "Technical ability" .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#Test
-:Test rdf:type owl:Class ;
-      rdfs:subClassOf :Gamerule ;
-      rdfs:comment "A test determines what happens when your Investigator tries to do something that might not work." ;
-      rdfs:label "Test" .
 
 
 #################################################################
@@ -190,6 +286,22 @@ sche:image rdf:type owl:AnnotationProperty .
                          "track payments to their source" ;
             rdfs:comment "You understand bookkeeping and accountancy procedures; you can read and keep financial records." ;
             rdfs:label "Accounting ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#additional_roll_edge
+:additional_roll_edge rdf:type owl:NamedIndividual ,
+                               bro:Gamerule ;
+                      bro:uses :edges ;
+                      bro:calculations "count of ability dices += 1" ;
+                      rdfs:label "Earning additional roll by spending Edge" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#additional_roll_extra_problem
+:additional_roll_extra_problem rdf:type owl:NamedIndividual ,
+                                        bro:Gamerule ;
+                               bro:uses :problems ;
+                               bro:calculations "count of ability dices += 1" ;
+                               rdfs:label "Earning additional roll by taking Extra Problem" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#anthropology
@@ -274,15 +386,15 @@ sche:image rdf:type owl:AnnotationProperty .
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#athletics_challenge
 :athletics_challenge rdf:type owl:NamedIndividual ,
-                              :Challenge ;
-                     :uses :athletics_die_roll ;
+                              bro:SkillCheck ;
+                     bro:uses :athletics_die_roll ;
                      rdfs:label "Athletics challenge" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#athletics_die_roll
 :athletics_die_roll rdf:type owl:NamedIndividual ,
-                             :DieRoll ;
-                    :uses :athletics ;
+                             bro:CheckRoll ;
+                    bro:uses :athletics ;
                     rdfs:label "Athletics die roll" .
 
 
@@ -338,6 +450,22 @@ sche:image rdf:type owl:AnnotationProperty .
            rdfs:label "Chemistry ability" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#climatic_event_1_die
+:climatic_event_1_die rdf:type owl:NamedIndividual ,
+                               :ChallengeTemplate ;
+                      :advanceTarget 6 ;
+                      :holdTarget 4 ;
+                      rdfs:label "Climactic or pivotal story event for 1 Die ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#climatic_event_2_die
+:climatic_event_2_die rdf:type owl:NamedIndividual ,
+                               :ChallengeTemplate ;
+                      :advanceTarget 10 ;
+                      :holdTarget 6 ;
+                      rdfs:label "Climactic or pivotal story event for 2 Die ability" .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#conceal
 :conceal rdf:type owl:NamedIndividual ,
                   :ManualAbility ;
@@ -352,15 +480,15 @@ sche:image rdf:type owl:AnnotationProperty .
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#conceal_challenge
 :conceal_challenge rdf:type owl:NamedIndividual ,
-                            :Challenge ;
-                   :uses :conceal_die_roll ;
+                            bro:SkillCheck ;
+                   bro:uses :conceal_die_roll ;
                    rdfs:label "Conceal challenge" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#conceal_die_roll
 :conceal_die_roll rdf:type owl:NamedIndividual ,
-                           :DieRoll ;
-                  :uses :conceal ;
+                           bro:CheckRoll ;
+                  bro:uses :conceal ;
                   rdfs:label "Conceal die roll" .
 
 
@@ -379,15 +507,15 @@ sche:image rdf:type owl:AnnotationProperty .
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#cool_challenge
 :cool_challenge rdf:type owl:NamedIndividual ,
-                         :Challenge ;
-                :uses :cool_die_roll ;
+                         bro:SkillCheck ;
+                bro:uses :cool_die_roll ;
                 rdfs:label "Cool challenge" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#cool_die_roll
 :cool_die_roll rdf:type owl:NamedIndividual ,
-                        :DieRoll ;
-               :uses :cool ;
+                        bro:CheckRoll ;
+               bro:uses :cool ;
                rdfs:label "Cool die roll" .
 
 
@@ -444,6 +572,22 @@ sche:image rdf:type owl:AnnotationProperty .
                 rdfs:label "Cthulhu mythos ability" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#determines_direction_of_main_plotline_1_die
+:determines_direction_of_main_plotline_1_die rdf:type owl:NamedIndividual ,
+                                                      :ChallengeTemplate ;
+                                             :advanceTarget 5 ;
+                                             :holdTarget 3 ;
+                                             rdfs:label "Determines direction of main plotline for 1 Die ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#determines_direction_of_main_plotline_2_die
+:determines_direction_of_main_plotline_2_die rdf:type owl:NamedIndividual ,
+                                                      :ChallengeTemplate ;
+                                             :advanceTarget 9 ;
+                                             :holdTarget 4 ;
+                                             rdfs:label "Determines direction of main plotline for 2 Die ability" .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#devices
 :devices rdf:type owl:NamedIndividual ,
                   :ManualAbility ;
@@ -462,16 +606,24 @@ sche:image rdf:type owl:AnnotationProperty .
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#devices_challenge
 :devices_challenge rdf:type owl:NamedIndividual ,
-                            :Challenge ;
-                   :uses :devices_die_roll ;
+                            bro:SkillCheck ;
+                   bro:uses :devices_die_roll ;
                    rdfs:label "Devices challenge" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#devices_die_roll
 :devices_die_roll rdf:type owl:NamedIndividual ,
-                           :DieRoll ;
-                  :uses :devices ;
+                           bro:CheckRoll ;
+                  bro:uses :devices ;
                   rdfs:label "Devices die roll" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#discard_edges_and_problems
+:discard_edges_and_problems rdf:type owl:NamedIndividual ,
+                                     bro:Gamerule ;
+                            bro:changes :edges ,
+                                        :problems ;
+                            rdfs:label "Discard non continuity edges and problems." .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#disguise
@@ -487,16 +639,32 @@ sche:image rdf:type owl:AnnotationProperty .
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#disguise_challenge
 :disguise_challenge rdf:type owl:NamedIndividual ,
-                             :Challenge ;
-                    :uses :disguise_die_roll ;
+                             bro:SkillCheck ;
+                    bro:uses :disguise_die_roll ;
                     rdfs:label "Disguise challenge" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#disguise_die_roll
 :disguise_die_roll rdf:type owl:NamedIndividual ,
-                            :DieRoll ;
-                   :uses :disguise ;
+                            bro:CheckRoll ;
+                   bro:uses :disguise ;
                    rdfs:label "Disguise die roll" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#distressing_turn_1_die
+:distressing_turn_1_die rdf:type owl:NamedIndividual ,
+                                 :ChallengeTemplate ;
+                        :advanceTarget 6 ;
+                        :holdTarget 4 ;
+                        rdfs:label "Distressing turn for 1 Die ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#distressing_turn_2_die
+:distressing_turn_2_die rdf:type owl:NamedIndividual ,
+                                 :ChallengeTemplate ;
+                        :advanceTarget 13 ;
+                        :holdTarget 6 ;
+                        rdfs:label "Distressing turn for 2 Die ability" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#driving
@@ -512,16 +680,73 @@ sche:image rdf:type owl:AnnotationProperty .
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#driving_challenge
 :driving_challenge rdf:type owl:NamedIndividual ,
-                            :Challenge ;
-                   :uses :driving_die_roll ;
+                            bro:SkillCheck ;
+                   bro:uses :driving_die_roll ;
                    rdfs:label "Driving challenge" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#driving_die_roll
 :driving_die_roll rdf:type owl:NamedIndividual ,
-                           :DieRoll ;
-                  :uses :driving ;
+                           bro:CheckRoll ;
+                  bro:uses :driving ;
                   rdfs:label "Driving die roll" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#easy_victory_1_die
+:easy_victory_1_die rdf:type owl:NamedIndividual ,
+                             :ChallengeTemplate ;
+                    :advanceTarget 3 ;
+                    :holdTarget 2 ;
+                    rdfs:label "Easy victory, made all the sweeter by the (slight) chance of failure for 1 Die ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#easy_victory_2_die
+:easy_victory_2_die rdf:type owl:NamedIndividual ,
+                             :ChallengeTemplate ;
+                    :advanceTarget 5 ;
+                    :holdTarget 2 ;
+                    rdfs:label "Easy victory, made all the sweeter by the (slight) chance of failure for 2 Die ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#easy_victory_bad_conseq_1_die
+:easy_victory_bad_conseq_1_die rdf:type owl:NamedIndividual ,
+                                        :ChallengeTemplate ;
+                               :advanceTarget 3 ;
+                               :holdTarget 3 ;
+                               rdfs:label "Easy victory with bad consequences if you miss for 1 Die ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#easy_victory_bad_conseq_2_die
+:easy_victory_bad_conseq_2_die rdf:type owl:NamedIndividual ,
+                                        :ChallengeTemplate ;
+                               :advanceTarget 5 ;
+                               :holdTarget 4 ;
+                               rdfs:label "Easy victory with bad consequences if you miss for 2 Die ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#edges
+:edges rdf:type owl:NamedIndividual ,
+                bro:Characteristic ;
+       rdfs:comment "{edge: status}" ;
+       rdfs:label "Edges on character's hands" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#emotional_code
+:emotional_code rdf:type owl:NamedIndividual ,
+                         bro:Gamerule ;
+                bro:leadsTo :discard_edges_and_problems ;
+                bro:uses :problems ;
+                rdfs:comment "When the case has been solved and the loose ends of its denouement are tied up, encourage the player to portray the detective’s emotional state in a coda scene ." ;
+                rdfs:label "Emotional coda" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#enough_picks
+:enough_picks rdf:type owl:NamedIndividual ,
+                       bro:Statement ;
+              bro:statementEntity :picks ;
+              bro:statementPredicate ">=" ;
+              bro:statementValue "3" ;
+              rdfs:label "Enough picks for improvement" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#evidence_collection
@@ -536,6 +761,22 @@ sche:image rdf:type owl:AnnotationProperty .
                                   "store objects for forensic analysis without contaminating your samples" ;
                      rdfs:comment "You’re adept at casing an investigation site and at finding important clues." ;
                      rdfs:label "Evidence collection ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#evokes_doom_1_die
+:evokes_doom_1_die rdf:type owl:NamedIndividual ,
+                            :ChallengeTemplate ;
+                   :advanceTarget 5 ;
+                   :holdTarget 4 ;
+                   rdfs:label "Evokes the doom of noir and (or) cosmic horror for 1 Die ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#evokes_doom_2_die
+:evokes_doom_2_die rdf:type owl:NamedIndividual ,
+                            :ChallengeTemplate ;
+                   :advanceTarget 9 ;
+                   :holdTarget 5 ;
+                   rdfs:label "Evokes the doom of noir and (or) cosmic horror for 2 Die ability" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#explosives
@@ -554,15 +795,15 @@ sche:image rdf:type owl:AnnotationProperty .
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#explosives_challenge
 :explosives_challenge rdf:type owl:NamedIndividual ,
-                               :Challenge ;
-                      :uses :explosives_die_roll ;
+                               bro:SkillCheck ;
+                      bro:uses :explosives_die_roll ;
                       rdfs:label "Explosives challenge" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#explosives_die_roll
 :explosives_die_roll rdf:type owl:NamedIndividual ,
-                              :DieRoll ;
-                     :uses :explosives ;
+                              bro:CheckRoll ;
+                     bro:uses :explosives ;
                      rdfs:label "Explosives die roll" .
 
 
@@ -578,15 +819,15 @@ sche:image rdf:type owl:AnnotationProperty .
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#fighting_challenge
 :fighting_challenge rdf:type owl:NamedIndividual ,
-                             :Challenge ;
-                    :uses :fighting_die_roll ;
+                             bro:SkillCheck ;
+                    bro:uses :fighting_die_roll ;
                     rdfs:label "Fighting challenge" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#fighting_die_roll
 :fighting_die_roll rdf:type owl:NamedIndividual ,
-                            :DieRoll ;
-                   :uses :fighting ;
+                            bro:CheckRoll ;
+                   bro:uses :fighting ;
                    rdfs:label "Fighting die roll" .
 
 
@@ -602,15 +843,15 @@ sche:image rdf:type owl:AnnotationProperty .
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#filch_challenge
 :filch_challenge rdf:type owl:NamedIndividual ,
-                          :Challenge ;
-                 :uses :filch_die_roll ;
+                          bro:SkillCheck ;
+                 bro:uses :filch_die_roll ;
                  rdfs:label "Filch challenge" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#filch_die_roll
 :filch_die_roll rdf:type owl:NamedIndividual ,
-                         :DieRoll ;
-                :uses :filch ;
+                         bro:CheckRoll ;
+                bro:uses :filch ;
                 rdfs:label "Filch die roll" .
 
 
@@ -624,15 +865,15 @@ sche:image rdf:type owl:AnnotationProperty .
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#first_aid_challenge
 :first_aid_challenge rdf:type owl:NamedIndividual ,
-                              :Challenge ;
-                     :uses :first_aid_die_roll ;
+                              bro:SkillCheck ;
+                     bro:uses :first_aid_die_roll ;
                      rdfs:label "First aid challenge" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#first_aid_die_roll
 :first_aid_die_roll rdf:type owl:NamedIndividual ,
-                             :DieRoll ;
-                    :uses :first_aid ;
+                             bro:CheckRoll ;
+                    bro:uses :first_aid ;
                     rdfs:label "First aid die roll" .
 
 
@@ -657,15 +898,15 @@ sche:image rdf:type owl:AnnotationProperty .
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#fleeing_challenge
 :fleeing_challenge rdf:type owl:NamedIndividual ,
-                            :Challenge ;
-                   :uses :fleeing_die_roll ;
+                            bro:SkillCheck ;
+                   bro:uses :fleeing_die_roll ;
                    rdfs:label "Fleeing challenge" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#fleeing_die_roll
 :fleeing_die_roll rdf:type owl:NamedIndividual ,
-                           :DieRoll ;
-                  :uses :fleeing ;
+                           bro:CheckRoll ;
+                  bro:uses :fleeing ;
                   rdfs:label "Fleeing die roll" .
 
 
@@ -679,6 +920,38 @@ sche:image rdf:type owl:AnnotationProperty .
                         "the presence of intoxicants or other foreign substances in the bloodstream or on the skin" ;
            rdfs:comment "You study crime scenes and perform autopsies on deceased subjects to determine their cause and circumstances of death. You can use skeletal evidence to reconstruct the physical details (age, sex, medical condition, sometimes occupation) of the deceased." ;
            rdfs:label "Forensics ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#gain_push
+:gain_push rdf:type owl:NamedIndividual ,
+                    bro:Gamerule ;
+           bro:changes :pushes ;
+           rdfs:comment "When you reach an Advance with dice still unrolled, you gain a Push" ;
+           rdfs:label "Gaining Push" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#gain_tick
+:gain_tick rdf:type owl:NamedIndividual ,
+                    bro:Gamerule ;
+           bro:changes :ticks ;
+           rdfs:comment "+1 tick" ;
+           rdfs:label "Gain tick for improvement" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#general_ability_improve_selector
+:general_ability_improve_selector rdf:type owl:NamedIndividual ,
+                                           bro:Gamerule ;
+                                  bro:prereq :general_ability_max_rate ,
+                                             :max_cool_and_stability ;
+                                  rdfs:label "Selector of general ability for improvement" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#general_ability_max_rate
+:general_ability_max_rate rdf:type owl:NamedIndividual ,
+                                   bro:Statement ;
+                          bro:statementPredicate "<" ;
+                          bro:statementValue "3" ;
+                          rdfs:label "Max rate of general ability" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#geology
@@ -721,16 +994,43 @@ sche:image rdf:type owl:AnnotationProperty .
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#hypnosis_challenge
 :hypnosis_challenge rdf:type owl:NamedIndividual ,
-                             :Challenge ;
-                    :uses :hypnosis_die_roll ;
+                             bro:SkillCheck ;
+                    bro:uses :hypnosis_die_roll ;
                     rdfs:label "Hypnosis challenge" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#hypnosis_die_roll
 :hypnosis_die_roll rdf:type owl:NamedIndividual ,
-                            :DieRoll ;
-                   :uses :hypnosis ;
+                            bro:CheckRoll ;
+                   bro:uses :hypnosis ;
                    rdfs:label "Hypnosis die roll" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#improvement_general_ability
+:improvement_general_ability rdf:type owl:NamedIndividual ,
+                                      bro:Gamerule ;
+                             bro:leadsTo :spend_picks ;
+                             bro:prereq :enough_picks ;
+                             bro:uses :general_ability_improve_selector ;
+                             bro:calculations "selected general ability += 1" ;
+                             rdfs:comment "Spend 3 ticks to improve general ability." ;
+                             rdfs:label "Improvement rule for general abilities" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#improvement_investigate_ability
+:improvement_investigate_ability rdf:type owl:NamedIndividual ,
+                                          bro:Gamerule ;
+                                 rdfs:comment "add an Investigative Ability you lack" ;
+                                 rdfs:label "Improvement rule for investigate abilities" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#improvement_rule
+:improvement_rule rdf:type owl:NamedIndividual ,
+                           bro:Gamerule ;
+                  bro:selects :gain_tick ,
+                              :improvement_investigate_ability ;
+                  rdfs:comment "Improve character at the end of each case." ;
+                  rdfs:label "Improvement rule" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#inspiration
@@ -786,6 +1086,15 @@ sche:image rdf:type owl:AnnotationProperty .
            rdfs:label "Locksmith ability" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#lucky_break
+:lucky_break rdf:type owl:NamedIndividual ,
+                      bro:Gamerule ;
+             bro:selects :spend_edge ,
+                         :spend_push ;
+             rdfs:comment "Lucky Breaks make minor coincidences feel earned, while also providing an emotional up-note." ;
+             rdfs:label "Lucky Break" .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#magic
 :magic rdf:type owl:NamedIndividual ,
                 :MentalAbility ;
@@ -797,16 +1106,26 @@ sche:image rdf:type owl:AnnotationProperty .
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#magic_challenge
 :magic_challenge rdf:type owl:NamedIndividual ,
-                          :Challenge ;
-                 :uses :magic_die_roll ;
+                          bro:SkillCheck ;
+                 bro:uses :magic_die_roll ;
                  rdfs:label "Magic challenge" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#magic_die_roll
 :magic_die_roll rdf:type owl:NamedIndividual ,
-                         :DieRoll ;
-                :uses :magic ;
+                         bro:CheckRoll ;
+                bro:uses :magic ;
                 rdfs:label "Magic die roll" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#max_cool_and_stability
+:max_cool_and_stability rdf:type owl:NamedIndividual ,
+                                 bro:Statement ;
+                        bro:statementEntity :cool ,
+                                            :stability ;
+                        bro:statementPredicate "sum <" ;
+                        bro:statementValue "4" ;
+                        rdfs:label "Maximum total rate of cool and stability" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#medicine
@@ -822,6 +1141,13 @@ sche:image rdf:type owl:AnnotationProperty .
                        "understand medical jargon" ;
           rdfs:comment "You can diagnose human disease, injuries, poisonings, and physical frailties, and may be broadly acquainted with veterinary medicine as well. If past medical training makes sense as part of your backstory, you may still hold a medical license." ;
           rdfs:label "Medicine ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#next_test
+:next_test rdf:type owl:NamedIndividual ,
+                    bro:Gamerule ;
+           rdfs:comment "Only tests called for by the GM or the scenario, or which: a) make narrative sense; and b) threaten to put you in a worse position on a Setback." ;
+           rdfs:label "Next test of a particular type" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#occult
@@ -896,6 +1222,10 @@ sche:image rdf:type owl:AnnotationProperty .
          rdfs:label "Physics ability" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#picks
+:picks rdf:type owl:NamedIndividual .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#preparedness
 :preparedness rdf:type owl:NamedIndividual ,
                        :ManualAbility ;
@@ -906,16 +1236,23 @@ sche:image rdf:type owl:AnnotationProperty .
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#preparedness_challenge
 :preparedness_challenge rdf:type owl:NamedIndividual ,
-                                 :Challenge ;
-                        :uses :preparedness_die_roll ;
+                                 bro:SkillCheck ;
+                        bro:uses :preparedness_die_roll ;
                         rdfs:label "Preparedness challenge" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#preparedness_die_roll
 :preparedness_die_roll rdf:type owl:NamedIndividual ,
-                                :DieRoll ;
-                       :uses :preparedness ;
+                                bro:CheckRoll ;
+                       bro:uses :preparedness ;
                        rdfs:label "Preparedness die roll" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#problems
+:problems rdf:type owl:NamedIndividual ,
+                   bro:Characteristic ;
+          rdfs:comment "{problem: status}" ;
+          rdfs:label "Problems on character's hands" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#psychoanalysis
@@ -928,15 +1265,15 @@ sche:image rdf:type owl:AnnotationProperty .
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#psychoanalysis_challenge
 :psychoanalysis_challenge rdf:type owl:NamedIndividual ,
-                                   :Challenge ;
-                          :uses :psychoanalysis_die_roll ;
+                                   bro:SkillCheck ;
+                          bro:uses :psychoanalysis_die_roll ;
                           rdfs:label "Psychoanalysis challenge" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#psychoanalysis_die_roll
 :psychoanalysis_die_roll rdf:type owl:NamedIndividual ,
-                                  :DieRoll ;
-                         :uses :psychoanalysis ;
+                                  bro:CheckRoll ;
+                         bro:uses :psychoanalysis ;
                          rdfs:label "Psychoanalysis die roll" .
 
 
@@ -949,6 +1286,13 @@ sche:image rdf:type owl:AnnotationProperty .
                          "tell whether a known individual’s criminal behavior is in response to deep psychological impulses, or is driven primarily by greed" ;
             rdfs:comment "Your familiarity with the latest in the burgeoning field of human psychology grants you insight into the criminal mind. Based solely on their known modus operandi, you can make accurate guesses as to the upbringing and pathology of unidentified criminals." ;
             rdfs:label "Psychology ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#pushes
+:pushes rdf:type owl:NamedIndividual ,
+                 bro:Characteristic ;
+        rdfs:comment "Count of available pushes (4 by default at start)" ;
+        rdfs:label "Pushes" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#reassurance
@@ -987,15 +1331,15 @@ sche:image rdf:type owl:AnnotationProperty .
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#sense_trouble_challenge
 :sense_trouble_challenge rdf:type owl:NamedIndividual ,
-                                  :Challenge ;
-                         :uses :sense_trouble_die_roll ;
+                                  bro:SkillCheck ;
+                         bro:uses :sense_trouble_die_roll ;
                          rdfs:label "Sense trouble challenge" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#sense_trouble_die_roll
 :sense_trouble_die_roll rdf:type owl:NamedIndividual ,
-                                 :DieRoll ;
-                        :uses :sense_trouble ;
+                                 bro:CheckRoll ;
+                        bro:uses :sense_trouble ;
                         rdfs:label "Sense trouble die roll" .
 
 
@@ -1012,16 +1356,40 @@ sche:image rdf:type owl:AnnotationProperty .
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#shadowing_challenge
 :shadowing_challenge rdf:type owl:NamedIndividual ,
-                              :Challenge ;
-                     :uses :shadowing_die_roll ;
+                              bro:SkillCheck ;
+                     bro:uses :shadowing_die_roll ;
                      rdfs:label "Shadowing challenge" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#shadowing_die_roll
 :shadowing_die_roll rdf:type owl:NamedIndividual ,
-                             :DieRoll ;
-                    :uses :shadowing ;
+                             bro:CheckRoll ;
+                    bro:uses :shadowing ;
                     rdfs:label "Shadowing die roll" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#spend_edge
+:spend_edge rdf:type owl:NamedIndividual ,
+                     bro:Gamerule ;
+            bro:changes :edges ;
+            bro:calculations "edges -= 1" ;
+            rdfs:label "Spend edge" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#spend_picks
+:spend_picks rdf:type owl:NamedIndividual ,
+                      bro:Gamerule ;
+             bro:changes :ticks ;
+             bro:calculations "ticks -= 3" ;
+             rdfs:label "Spending picks for improvement" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#spend_push
+:spend_push rdf:type owl:NamedIndividual ,
+                     bro:Gamerule ;
+            bro:changes :pushes ;
+            bro:calculations "pushes -= 1" ;
+            rdfs:label "Spend push" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#stability
@@ -1037,15 +1405,15 @@ sche:image rdf:type owl:AnnotationProperty .
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#stability_challenge
 :stability_challenge rdf:type owl:NamedIndividual ,
-                              :Challenge ;
-                     :uses :stability_die_roll ;
+                              bro:SkillCheck ;
+                     bro:uses :stability_die_roll ;
                      rdfs:label "Stchallenge challenge" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#stability_die_roll
 :stability_die_roll rdf:type owl:NamedIndividual ,
-                             :DieRoll ;
-                    :uses :stability ;
+                             bro:CheckRoll ;
+                    bro:uses :stability ;
                     rdfs:label "Stdie roll die roll" .
 
 
@@ -1062,15 +1430,15 @@ sche:image rdf:type owl:AnnotationProperty .
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#stealth_challenge
 :stealth_challenge rdf:type owl:NamedIndividual ,
-                            :Challenge ;
-                   :uses :stealth_die_roll ;
+                            bro:SkillCheck ;
+                   bro:uses :stealth_die_roll ;
                    rdfs:label "Stealth challenge" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#stealth_die_roll
 :stealth_die_roll rdf:type owl:NamedIndividual ,
-                           :DieRoll ;
-                  :uses :stealth ;
+                           bro:CheckRoll ;
+                  bro:uses :stealth ;
                   rdfs:label "Stealth die roll" .
 
 
@@ -1087,6 +1455,45 @@ sche:image rdf:type owl:AnnotationProperty .
             rdfs:label "Streetwise ability" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#subplot_1_die
+:subplot_1_die rdf:type owl:NamedIndividual ,
+                        :ChallengeTemplate ;
+               :advanceTarget 4 ;
+               :holdTarget 2 ;
+               rdfs:label "Determines if subplot comes into play for 1 Die ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#subplot_2_die
+:subplot_2_die rdf:type owl:NamedIndividual ,
+                        :ChallengeTemplate ;
+               :advanceTarget 7 ;
+               :holdTarget 3 ;
+               rdfs:label "Determines if subplot comes into play for 2 Die ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#success_certain_1_die
+:success_certain_1_die rdf:type owl:NamedIndividual ,
+                                :ChallengeTemplate ;
+                       :advanceTarget 7 ;
+                       :holdTarget 4 ;
+                       rdfs:label "Success certain, costs and gains uncertain for 1 Die ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#success_certain_2_die
+:success_certain_2_die rdf:type owl:NamedIndividual ,
+                                :ChallengeTemplate ;
+                       :advanceTarget 13 ;
+                       :holdTarget 5 ;
+                       rdfs:label "Success certain, costs and gains uncertain for 2 Die ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#taking_time
+:taking_time rdf:type owl:NamedIndividual ,
+                      bro:Gamerule ;
+             rdfs:comment "The most common way to Counter a problem is to Take Time. When Taking Time, the detective momentarily puts the investigation aside to deal with the issue raised by the problem." ;
+             rdfs:label "Taking Time" .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#theology
 :theology rdf:type owl:NamedIndividual ,
                    :AcademicAbility ;
@@ -1098,6 +1505,44 @@ sche:image rdf:type owl:AnnotationProperty .
                        "supply information about religious practices and beliefs" ;
           rdfs:comment "You study human religions in their various forms, both ancient and modern." ;
           rdfs:label "Theology ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#threatens_player_control_1_die
+:threatens_player_control_1_die rdf:type owl:NamedIndividual ,
+                                         :ChallengeTemplate ;
+                                :advanceTarget 4 ;
+                                :holdTarget 2 ;
+                                rdfs:label "Threatens player control of character actions for 1 Die ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#threatens_player_control_2_die
+:threatens_player_control_2_die rdf:type owl:NamedIndividual ,
+                                         :ChallengeTemplate ;
+                                :advanceTarget 8 ;
+                                :holdTarget 3 ;
+                                rdfs:label "Threatens player control of character actions for 2 Die ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#ticks
+:ticks rdf:type owl:NamedIndividual ,
+                bro:Characteristic ;
+       rdfs:label "Ticks" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#victory_as_miracle_1_die
+:victory_as_miracle_1_die rdf:type owl:NamedIndividual ,
+                                   :ChallengeTemplate ;
+                          :advanceTarget 6 ;
+                          :holdTarget 6 ;
+                          rdfs:label "Victory will feel like a miracle for 1 Die ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#victory_as_miracle_2_die
+:victory_as_miracle_2_die rdf:type owl:NamedIndividual ,
+                                   :ChallengeTemplate ;
+                          :advanceTarget 12 ;
+                          :holdTarget 12 ;
+                          rdfs:label "Victory will feel like a miracle for 2 Die ability" .
 
 
 ###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi
