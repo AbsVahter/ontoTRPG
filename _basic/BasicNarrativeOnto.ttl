@@ -8,3 +8,23 @@
 @base <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicNarrativeOnto.ttl#> .
 
 <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicNarrativeOnto.ttl#> rdf:type owl:Ontology .
+
+:Narrative rdf:type owl:Class ;
+         rdfs:subClassOf owl:Thing .
+
+:Agent rdf:type owl:Class ;
+       rdfs:subClassOf :Narrative ;
+       rdfs:label "Agent" .
+
+:Character rdf:type owl:Class ;
+           rdfs:subClassOf :Agent ;
+    rdfs:label "Character" .
+
+:Location rdf:type owl:Class ;
+          rdfs:subClassOf :Narrative ;
+          rdfs:label "Location" .
+
+:location rdf:type owl:ObjectProperty ;
+          rdfs:domain :Narrative ;
+          rdfs:range :Location ;
+    rdfs:label "location" .

@@ -1,5 +1,6 @@
 @prefix : <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#> .
 @prefix bbo: <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicBookOnto.ttl#> .
+@prefix bno: <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicNarrativeOnto.ttl#> .
 @prefix bro: <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicRulesOnto.ttl#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -7,10 +8,12 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sche: <http://schema.org/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
 @base <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#> .
 
 <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#> rdf:type owl:Ontology ;
                                                                                                               owl:imports bbo: ,
+                                                                                                                          bno: ,
                                                                                                                           bro: .
 
 #################################################################
@@ -26,7 +29,7 @@ sche:image rdf:type owl:AnnotationProperty .
 #################################################################
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicRulesOnto.ttl#changes
-bro:changes rdfs:comment "+1 to characteristic" .
+bro:changes sche:description "+1 to characteristic" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicRulesOnto.ttl#leadsTo
@@ -38,7 +41,7 @@ bro:leadsTo rdfs:label "outcome" .
          rdfs:subPropertyOf bro:leadsTo ;
          rdfs:domain bro:SkillCheck ;
          rdfs:range bro:Gamerule ;
-         rdfs:comment "Succeeding especially well. This might grant you an Edge card, or allow you extra leverage in the situation at hand." ;
+         sche:description "Succeeding especially well. This might grant you an Edge card, or allow you extra leverage in the situation at hand." ;
          rdfs:label "Advance outcome" .
 
 
@@ -46,7 +49,7 @@ bro:leadsTo rdfs:label "outcome" .
 :extraProblem rdf:type owl:ObjectProperty ;
               rdfs:domain bro:SkillCheck ;
               rdfs:range :Problem ;
-              rdfs:comment "Describes the most obvious Extra Problem the Investigator can take on to gain an additional die against this Challenge." ;
+              sche:description "Describes the most obvious Extra Problem the Investigator can take on to gain an additional die against this Challenge." ;
               rdfs:label "possible extra problem" .
 
 
@@ -55,7 +58,7 @@ bro:leadsTo rdfs:label "outcome" .
       rdfs:subPropertyOf bro:leadsTo ;
       rdfs:domain bro:SkillCheck ;
       rdfs:range bro:Gamerule ;
-      rdfs:comment "generally leaves you no worse off than you were before, or allows you to move forward, though without additional benefit" ;
+      sche:description "generally leaves you no worse off than you were before, or allows you to move forward, though without additional benefit" ;
       rdfs:label "Hold outcome" .
 
 
@@ -64,7 +67,7 @@ bro:leadsTo rdfs:label "outcome" .
          rdfs:subPropertyOf bro:leadsTo ;
          rdfs:domain bro:SkillCheck ;
          rdfs:range bro:Gamerule ;
-         rdfs:comment "Worsening your situation. It may saddle you with a Problem card. Or it might simply make your immediate dilemma worse in some way." ;
+         sche:description "Worsening your situation. It may saddle you with a Problem card. Or it might simply make your immediate dilemma worse in some way." ;
          rdfs:label "Setback outcome" .
 
 
@@ -77,7 +80,7 @@ bro:leadsTo rdfs:label "outcome" .
                         owl:FunctionalProperty ;
                rdfs:domain bro:SkillCheck ;
                rdfs:range xsd:integer ;
-               rdfs:comment "Any result equal to or higher than that lets you Advance." ;
+               sche:description "Any result equal to or higher than that lets you Advance." ;
                rdfs:label "test's target to Advance" .
 
 
@@ -93,7 +96,7 @@ bro:leadsTo rdfs:label "outcome" .
                      owl:FunctionalProperty ;
             rdfs:domain bro:SkillCheck ;
             rdfs:range xsd:integer ;
-            rdfs:comment "Any result equal to that and lesser than advance target lets you Hold." ;
+            sche:description "Any result equal to that and lesser than advance target lets you Hold." ;
             rdfs:label "test's target to Hold" .
 
 
@@ -102,7 +105,7 @@ bro:leadsTo rdfs:label "outcome" .
 #################################################################
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicRulesOnto.ttl#Check
-bro:Check rdfs:comment "A test determines what happens when your Investigator tries to do something that might not work." ;
+bro:Check sche:description "A test determines what happens when your Investigator tries to do something that might not work." ;
           rdfs:label "Test" .
 
 
@@ -119,12 +122,16 @@ bro:CheckRoll rdfs:subClassOf [ rdf:type owl:Restriction ;
                                 owl:onProperty bro:calculations ;
                                 owl:hasValue "die roll = (count of ability dices)d6"
                               ] ;
-              rdfs:comment "roll them one at a time, adding to your total as you go" ;
+              sche:description "roll them one at a time, adding to your total as you go" ;
               rdfs:label "Die roll" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicRulesOnto.ttl#Skill
-bro:Skill rdfs:label "Ability" .
+bro:Skill rdfs:label "Ability" ;
+          rdfs:subClassOf  [ a owl:Restriction ;
+                               owl:onProperty [owl:inverseOf bro:sets] ;
+                               owl:hasValue :set_abilities
+                             ] .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicRulesOnto.ttl#SkillCheck
@@ -145,7 +152,7 @@ else (setback)"""
 13: [-, -, 26%, 66%]; 14: [-, -, 16%, 56%]; 15: [-, -, 9%, 44%]; 16: [-, -, 5%, 34%];
 17: [-, -, 2%, 24%]; 18: [-, -, 0.5%, 16%]; 19: [-, -, -, 10%]; 20: [-, -, -, 5%]; 21: [-, -, -, 3%]}"""
                                ] ;
-               rdfs:comment "Challenges occur in situations where degrees of success or failure can send the story into different possible branches, each of them interesting in its own way." ,
+               sche:description "Challenges occur in situations where degrees of success or failure can send the story into different possible branches, each of them interesting in its own way." ,
                             "Sometimes you know that you’ll get what you want, but you are only determining the costs of success" ,
                             "examples: fixing the car before the yokel with the rifle gets back, running away from a creature that surges out of the La Brea tar pits, sneaking backstage at the nightclub" ;
                rdfs:label "Challenge" .
@@ -172,14 +179,14 @@ else (setback)"""
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#ContinuityCard
 :ContinuityCard rdf:type owl:Class ;
                 rdfs:subClassOf :Card ;
-                rdfs:comment "Unlike other Edges and Problems, the player does not discard Continuity cards at the end of a scenario." ;
+                sche:description "Unlike other Edges and Problems, the player does not discard Continuity cards at the end of a scenario." ;
                 rdfs:label "Continuity card" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#Edge
 :Edge rdf:type owl:Class ;
       rdfs:subClassOf :Card ;
-      rdfs:comment "Edges give the player a jolt of positive accomplishment." ;
+      sche:description "Edges give the player a jolt of positive accomplishment." ;
       rdfs:label "Edge" .
 
 
@@ -201,7 +208,7 @@ else (setback)"""
                                                  ] ;
                                   owl:hasValue :general_ability_max_rate
                                 ] ;
-                rdfs:comment "When attempting actions that don’t directly gather information, and which can lead to engaging story possibilities whether you succeed or fail, use your General Abilities." ,
+                sche:description "When attempting actions that don’t directly gather information, and which can lead to engaging story possibilities whether you succeed or fail, use your General Abilities." ,
                              "{ability: number of dice}" ;
                 rdfs:label "General ability" .
 
@@ -220,49 +227,49 @@ else (setback)"""
                                                        ] ;
                                         owl:hasValue :improvement_investigate_ability
                                       ] ;
-                      rdfs:comment "Ability for gathering information" ;
+                      sche:description "Ability for gathering information" ;
                       rdfs:label "Investigative ability" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#ManualAbility
 :ManualAbility rdf:type owl:Class ;
                rdfs:subClassOf :GeneralAbility ;
-               rdfs:comment "drawing on a combination of skill training and fine motor skills" ;
+               sche:description "drawing on a combination of skill training and fine motor skills" ;
                rdfs:label "Manual ability" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#MentalAbility
 :MentalAbility rdf:type owl:Class ;
                rdfs:subClassOf :GeneralAbility ;
-               rdfs:comment "drawing on mostly on intellectual study, perception, thought, and/or memory" ;
+               sche:description "drawing on mostly on intellectual study, perception, thought, and/or memory" ;
                rdfs:label "Mental ability" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#MythosShock
 :MythosShock rdf:type owl:Class ;
              rdfs:subClassOf :Problem ;
-             rdfs:comment "Mythos Shocks can never be Countered for free, or by Taking Time. To get rid of them, you must spend Edges. Only Edges marked as spendable on Mythos Shocks can be used for this purpose. It might take more than one Edge to get rid of an especially awful Mythos Shock." ;
+             sche:description "Mythos Shocks can never be Countered for free, or by Taking Time. To get rid of them, you must spend Edges. Only Edges marked as spendable on Mythos Shocks can be used for this purpose. It might take more than one Edge to get rid of an especially awful Mythos Shock." ;
              rdfs:label "Mythos Shock" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#PhysicalAbility
 :PhysicalAbility rdf:type owl:Class ;
                  rdfs:subClassOf :GeneralAbility ;
-                 rdfs:comment "using your gross motor skills" ;
+                 sche:description "using your gross motor skills" ;
                  rdfs:label "Physical ability" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#Problem
 :Problem rdf:type owl:Class ;
          rdfs:subClassOf :Card ;
-         rdfs:comment "Problems deliver emotional down-notes to our dogged detectives as they tread the mean streets in search of hidden horrors." ;
+         sche:description "Problems deliver emotional down-notes to our dogged detectives as they tread the mean streets in search of hidden horrors." ;
          rdfs:label "Problem" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#QuickTest
 :QuickTest rdf:type owl:Class ;
            rdfs:subClassOf bro:Check ;
-           rdfs:comment "On occasion, your detective may face a very straightforward obstacle where you can only succeed or fail, with no particular ongoing advantages or disadvantages arising from the result." ;
+           sche:description "On occasion, your detective may face a very straightforward obstacle where you can only succeed or fail, with no particular ongoing advantages or disadvantages arising from the result." ;
            rdfs:label "Quick Test" .
 
 
@@ -284,7 +291,7 @@ else (setback)"""
                          "spot the telltale signs of embezzlement, bribes, blackmail, or dummy companies" ,
                          "tell legitimate businesses from criminal enterprises" ,
                          "track payments to their source" ;
-            rdfs:comment "You understand bookkeeping and accountancy procedures; you can read and keep financial records." ;
+            sche:description "You understand bookkeeping and accountancy procedures; you can read and keep financial records." ;
             rdfs:label "Accounting ability" .
 
 
@@ -310,7 +317,7 @@ else (setback)"""
               :application "describe and predict the customs of a foreign group or local subculture" ,
                            "extrapolate the practices of an unknown culture from similar examples" ,
                            "identify artifacts and rituals of living cultures" ;
-              rdfs:comment "You are an expert in the study of human cultures, from the Stone Age to the Jazz Age" ;
+              sche:description "You are an expert in the study of human cultures, from the Stone Age to the Jazz Age" ;
               rdfs:label "Anthropology ability" .
 
 
@@ -323,7 +330,7 @@ else (setback)"""
                           "navigate inside ruins and catacombs, including finding secret doors and hidden construction" ,
                           "spot well-disguised graves and underground hiding places" ,
                           "tell how long something has been buried and date its construction" ;
-             rdfs:comment "You excavate and study the structures and artifacts of historical cultures and civilizations." ;
+             sche:description "You excavate and study the structures and artifacts of historical cultures and civilizations." ;
              rdfs:label "Archaeology ability" .
 
 
@@ -337,7 +344,7 @@ else (setback)"""
                            "identify elements vital to a building’s structural integrity" ,
                            "judge the relative strength of building materials" ,
                            "name the architectural firm responsible for any well-known building in your area, recounting any peculiarities involved in its construction" ;
-              rdfs:comment "You know how buildings are designed and constructed." ;
+              sche:description "You know how buildings are designed and constructed." ;
               rdfs:label "Architecture ability" .
 
 
@@ -350,7 +357,7 @@ else (setback)"""
                           "identify the age of an object by style and materials" ,
                           "list the most recent films set in a given stylistic period and comment on their relative accuracy" ,
                           "tell when something has been retouched or altered" ;
-             rdfs:comment "You’re an expert on works of art (including the practical arts such as furniture and pottery) from an aesthetic and technical point of view." ;
+             sche:description "You’re an expert on works of art (including the practical arts such as furniture and pottery) from an aesthetic and technical point of view." ;
              rdfs:label "Art history ability" .
 
 
@@ -359,7 +366,7 @@ else (setback)"""
                          :InterpersonalAbility ;
                 :application "tell when someone’s trying to play you for a sap" ,
                              "to cold-read a mark for fortune-telling scams, phony séances or mentalist acts, and the like" ;
-                rdfs:comment "You can tell when someone’s trying to play you for a sap. Not only does your gut tell you when a witness is lying, life’s hard knocks have taught you to instinctively judge and sense motives and character." ;
+                sche:description "You can tell when someone’s trying to play you for a sap. Not only does your gut tell you when a witness is lying, life’s hard knocks have taught you to instinctively judge and sense motives and character." ;
                 rdfs:label "Assess honesty ability" .
 
 
@@ -370,7 +377,7 @@ else (setback)"""
                         "plot the movement of stars and planets, and know which ones are overhead at any given time" ,
                         "predict eclipses, comets, meteor showers, and other regular astronomical phenomena" ,
                         "use a telescope, including large reflectors" ;
-           rdfs:comment "You study celestial objects, including the stars and planets." ;
+           sche:description "You study celestial objects, including the stars and planets." ;
            rdfs:label "Astronomy ability" .
 
 
@@ -406,7 +413,7 @@ else (setback)"""
                       "haggle for goods and services" ,
                       "mediate hostage situations or diplomatic crises" ,
                       "swap favors or information with others" ;
-         rdfs:comment "Spends allow you to gain an advantage other than information in exchange for money or other considerations." ,
+         sche:description "Spends allow you to gain an advantage other than information in exchange for money or other considerations." ,
                       "You are an expert in making deals with others, convincing them that the best arrangement for you is also the best for them." ;
          rdfs:label "Bargain ability" .
 
@@ -419,7 +426,7 @@ else (setback)"""
                       "isolate or detect natural poisons or venoms" ,
                       "tell when an animal is behaving strangely" ,
                       "tell whether an animal or plant is natural to a given area" ;
-         rdfs:comment "You study the evolution, behavior, and physical makeup of living organisms." ;
+         sche:description "You study the evolution, behavior, and physical makeup of living organisms." ;
          rdfs:label "Biology ability" .
 
 
@@ -433,7 +440,7 @@ else (setback)"""
                           "gain credentials on false pretenses" ,
                           "know which government officials are honest and which are corrupt" ,
                           "locate offices and files" ;
-             rdfs:comment "You expertly navigate bureaucratic organization, from government offices to large private firms." ;
+             sche:description "You expertly navigate bureaucratic organization, from government offices to large private firms." ;
              rdfs:label "Bureaucracy ability" .
 
 
@@ -446,7 +453,7 @@ else (setback)"""
                         "match samples of dirt or vegetation from a piece of evidence to a scene" ,
                         "perform ballistics and gunpowder analysis of bullets or other evidence" ,
                         "perform chemical document analysis on ink or paper" ;
-           rdfs:comment "You’re trained in the analysis of chemical substances." ;
+           sche:description "You’re trained in the analysis of chemical substances." ;
            rdfs:label "Chemistry ability" .
 
 
@@ -474,7 +481,7 @@ else (setback)"""
                       "camouflage" ,
                       "holding items out on your person" ,
                       "sneaking things into drawers unobserved" ;
-         rdfs:comment "You can hide things from view and conceal them from searchers" ;
+         sche:description "You can hide things from view and conceal them from searchers" ;
          rdfs:label "Conceal ability" .
 
 
@@ -501,7 +508,7 @@ else (setback)"""
                    "avoid showing a tell that warns the killer that you know he did it" ,
                    "avoid smart-mouthing the cop who’s itching to club you" ,
                    "resist supernatural forces attempting to influence your behavior" ;
-      rdfs:comment "Measures your ability to make the smart play, instead of the impulsive one, in response to emotional temptation." ;
+      sche:description "Measures your ability to make the smart play, instead of the impulsive one, in response to emotional temptation." ;
       rdfs:label "Cool ability" .
 
 
@@ -526,7 +533,7 @@ else (setback)"""
                        "get excused for minor infractions" ,
                        "prompt them to spill confidential information" ,
                        "read between the lines when a cop can’t come out and tell you the whole truth" ;
-          rdfs:comment "Despite the low regard in which cops hold private detectives, you know their lingo and needs well enough to extract information from them." ;
+          sche:description "Despite the low regard in which cops hold private detectives, you know their lingo and needs well enough to extract information from them." ;
           rdfs:label "Cop talk ability" .
 
 
@@ -547,7 +554,7 @@ else (setback)"""
                     "say whether an item was skillfully or crudely fashioned" ,
                     "sort fakes from authentic items" ,
                     "tell roughly how old a craft object is" ;
-       rdfs:comment "You can create useful physical objects, working with materials like wood, metal, precious stones, leather, and so forth. This allows you a general background knowledge in handmade items of all kinds." ;
+       sche:description "You can create useful physical objects, working with materials like wood, metal, precious stones, leather, and so forth. This allows you a general background knowledge in handmade items of all kinds." ;
        rdfs:label "Craft ability" .
 
 
@@ -556,7 +563,7 @@ else (setback)"""
                        :AcademicAbility ;
               :application "given some time and a dictionary, you may be able to puzzle out foreign alphabets, translating languages by brute force" ,
                            "make or break codes and ciphers in any language you can read" ;
-              rdfs:comment "You can make or break codes and ciphers in any language you can read." ;
+              sche:description "You can make or break codes and ciphers in any language you can read." ;
               rdfs:label "Cryptography ability" .
 
 
@@ -568,7 +575,7 @@ else (setback)"""
                              "identify which alien god has incarnated itself inside the formless monster that is currently crushing the life out of you" ,
                              "read inscriptions of the far-distant past predict what comes next when watching cultists perform an obscene rite" ,
                              "translate pre-human tongues" ;
-                rdfs:comment "You have begun to piece together the secret rules of the real world, rather than the ignorant scrim of physics and religion. You recognize the great names, and the truths they conceal." ;
+                sche:description "You have begun to piece together the secret rules of the real world, rather than the ignorant scrim of physics and religion. You recognize the great names, and the truths they conceal." ;
                 rdfs:label "Cthulhu mythos ability" .
 
 
@@ -600,7 +607,7 @@ else (setback)"""
                       "read Morse Code" ,
                       "tap telephone or telegraph lines" ,
                       "use a device in good repair as intended" ;
-         rdfs:comment "You build, repair, and operate electrical or mechanical devices. And what you can put together, you can take apart, disabling equipment either unnoticeably or completely." ;
+         sche:description "You build, repair, and operate electrical or mechanical devices. And what you can put together, you can take apart, disabling equipment either unnoticeably or completely." ;
          rdfs:label "Devices ability" .
 
 
@@ -633,7 +640,7 @@ else (setback)"""
                        "hold an entire conversation with an unwitting friend or suspect" ,
                        "impersonate someone on the phone" ,
                        "mingle at a party with those outside your social station" ;
-          rdfs:comment "You can become someone else: clothes, voice, mannerisms, and posture." ;
+          sche:description "You can become someone else: clothes, voice, mannerisms, and posture." ;
           rdfs:label "Disguise ability" .
 
 
@@ -674,7 +681,7 @@ else (setback)"""
                       "drive another type of vehicle requiring specialized training, once per case" ,
                       "evade or conduct pursuit" ,
                       "navigate, read maps, and maintain a sense of direction" ;
-         rdfs:comment "Anyone who’s been taught can drive a car down the road without this ability. You, on the other hand, are a skilled defensive driver, capable of wringing high performance from even the most recalcitrant automobile, pickup truck, or bus." ;
+         sche:description "Anyone who’s been taught can drive a car down the road without this ability. You, on the other hand, are a skilled defensive driver, capable of wringing high performance from even the most recalcitrant automobile, pickup truck, or bus." ;
          rdfs:label "Driving ability" .
 
 
@@ -727,7 +734,7 @@ else (setback)"""
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#edges
 :edges rdf:type owl:NamedIndividual ,
                 bro:Characteristic ;
-       rdfs:comment "{edge: status}" ;
+       sche:description "{edge: status}" ;
        rdfs:label "Edges on character's hands" .
 
 
@@ -736,7 +743,7 @@ else (setback)"""
                          bro:Gamerule ;
                 bro:leadsTo :discard_edges_and_problems ;
                 bro:uses :problems ;
-                rdfs:comment "When the case has been solved and the loose ends of its denouement are tied up, encourage the player to portray the detective’s emotional state in a coda scene ." ;
+                sche:description "When the case has been solved and the loose ends of its denouement are tied up, encourage the player to portray the detective’s emotional state in a coda scene ." ;
                 rdfs:label "Emotional coda" .
 
 
@@ -759,7 +766,7 @@ else (setback)"""
                                   "note relationships between objects at a crime scene, reconstructing sequences of events" ,
                                   "spot hidden objects or objects of interest (such as bullet casings under a couch, or drops of blue ooze behind a desk) at a crime scene or other investigation site" ,
                                   "store objects for forensic analysis without contaminating your samples" ;
-                     rdfs:comment "You’re adept at casing an investigation site and at finding important clues." ;
+                     sche:description "You’re adept at casing an investigation site and at finding important clues." ;
                      rdfs:label "Evidence collection ability" .
 
 
@@ -789,7 +796,7 @@ else (setback)"""
                          "handle nitroglycerin or other dangerously unstable materials with relative safety" ,
                          "mix explosive compounds from common chemicals" ,
                          "safely construct and detonate explosive devices or booby-traps of your own" ;
-            rdfs:comment "expert in bombs and booby-traps" ;
+            sche:description "expert in bombs and booby-traps" ;
             rdfs:label "Explosives ability" .
 
 
@@ -813,7 +820,7 @@ else (setback)"""
           :application "hand-to-hand weapons" ,
                        "scuffling" ,
                        "shooting" ;
-          rdfs:comment "covers all forms of combat, from scuffling to shooting to hand-to-hand weapons" ;
+          sche:description "covers all forms of combat, from scuffling to shooting to hand-to-hand weapons" ;
           rdfs:label "Fighting ability" .
 
 
@@ -837,7 +844,7 @@ else (setback)"""
        :application "pick pockets" ,
                     "pilfer clues from (or plant clues at) a crime scene under the very noses of unsuspecting authorities" ,
                     "plant objects on unsuspecting subjects" ;
-       rdfs:comment "Your nimble fingers allow you to unobtrusively manipulate small objects." ;
+       sche:description "Your nimble fingers allow you to unobtrusively manipulate small objects." ;
        rdfs:label "Filch ability" .
 
 
@@ -859,7 +866,7 @@ else (setback)"""
 :first_aid rdf:type owl:NamedIndividual ,
                     :ManualAbility ;
            :application "first aid on sick or injured individuals" ;
-           rdfs:comment "You can perform first aid on sick or injured individuals, including yourself." ;
+           sche:description "You can perform first aid on sick or injured individuals, including yourself." ;
            rdfs:label "First aid ability" .
 
 
@@ -884,7 +891,7 @@ else (setback)"""
                        "perform minor favors" ,
                        "regard you as trustworthy" ,
                        "reveal information" ;
-          rdfs:comment "You get people to help you by complimenting or playing up to them, as subtly or blatantly as they prefer." ;
+          sche:description "You get people to help you by complimenting or playing up to them, as subtly or blatantly as they prefer." ;
           rdfs:label "Flattery ability" .
 
 
@@ -892,7 +899,7 @@ else (setback)"""
 :fleeing rdf:type owl:NamedIndividual ,
                   :PhysicalAbility ;
          :application "run away from impending danger" ;
-         rdfs:comment "This ability governs how speedily you run away from impending danger." ;
+         sche:description "This ability governs how speedily you run away from impending danger." ;
          rdfs:label "Fleeing ability" .
 
 
@@ -918,7 +925,7 @@ else (setback)"""
                         "the contents of the victim’s last meal" ,
                         "the nature of the weapon or weapons used" ,
                         "the presence of intoxicants or other foreign substances in the bloodstream or on the skin" ;
-           rdfs:comment "You study crime scenes and perform autopsies on deceased subjects to determine their cause and circumstances of death. You can use skeletal evidence to reconstruct the physical details (age, sex, medical condition, sometimes occupation) of the deceased." ;
+           sche:description "You study crime scenes and perform autopsies on deceased subjects to determine their cause and circumstances of death. You can use skeletal evidence to reconstruct the physical details (age, sex, medical condition, sometimes occupation) of the deceased." ;
            rdfs:label "Forensics ability" .
 
 
@@ -926,7 +933,7 @@ else (setback)"""
 :gain_push rdf:type owl:NamedIndividual ,
                     bro:Gamerule ;
            bro:changes :pushes ;
-           rdfs:comment "When you reach an Advance with dice still unrolled, you gain a Push" ;
+           sche:description "When you reach an Advance with dice still unrolled, you gain a Push" ;
            rdfs:label "Gaining Push" .
 
 
@@ -934,7 +941,7 @@ else (setback)"""
 :gain_tick rdf:type owl:NamedIndividual ,
                     bro:Gamerule ;
            bro:changes :ticks ;
-           rdfs:comment "+1 tick" ;
+           sche:description "+1 tick" ;
            rdfs:label "Gain tick for improvement" .
 
 
@@ -963,7 +970,7 @@ else (setback)"""
                       "determine the age of a rock stratum" ,
                       "evaluate soil for agriculture or industry" ,
                       "identify promising sites for oil or water wells, mines, etc." ;
-         rdfs:comment "You are expert on rocks, soils, minerals, and the primordial history of the Earth." ;
+         sche:description "You are expert on rocks, soils, minerals, and the primordial history of the Earth." ;
          rdfs:label "Geology ability" .
 
 
@@ -978,7 +985,7 @@ else (setback)"""
                       "recall important or relevant events in a given country, city, or region" ,
                       "recognize obscure historical allusions" ,
                       "tell where and when an object made during historical times was fashioned" ;
-         rdfs:comment "A broad study of recorded human history, with an emphasis on political, military, economic, and technological developments." ;
+         sche:description "A broad study of recorded human history, with an emphasis on political, military, economic, and technological developments." ;
          rdfs:label "History ability" .
 
 
@@ -988,7 +995,7 @@ else (setback)"""
           :application "recover lost memories" ,
                        "remove destructive compulsions" ,
                        "suppress unwanted memories" ;
-          rdfs:comment "You can hypnotize a willing subject, recovering lost memories, suppressing unwanted ones, or removing destructive compulsions." ;
+          sche:description "You can hypnotize a willing subject, recovering lost memories, suppressing unwanted ones, or removing destructive compulsions." ;
           rdfs:label "Hypnosis ability" .
 
 
@@ -1013,14 +1020,14 @@ else (setback)"""
                              bro:prereq :enough_picks ;
                              bro:uses :general_ability_improve_selector ;
                              bro:calculations "selected general ability += 1" ;
-                             rdfs:comment "Spend 3 ticks to improve general ability." ;
+                             sche:description "Spend 3 ticks to improve general ability." ;
                              rdfs:label "Improvement rule for general abilities" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#improvement_investigate_ability
 :improvement_investigate_ability rdf:type owl:NamedIndividual ,
                                           bro:Gamerule ;
-                                 rdfs:comment "add an Investigative Ability you lack" ;
+                                 sche:description "add an Investigative Ability you lack" ;
                                  rdfs:label "Improvement rule for investigate abilities" .
 
 
@@ -1029,7 +1036,7 @@ else (setback)"""
                            bro:Gamerule ;
                   bro:selects :gain_tick ,
                               :improvement_investigate_ability ;
-                  rdfs:comment "Improve character at the end of each case." ;
+                  sche:description "Improve character at the end of each case." ;
                   rdfs:label "Improvement rule" .
 
 
@@ -1042,7 +1049,7 @@ else (setback)"""
                           "call to pride in personal achievement" ,
                           "call to religious beliefs" ,
                           "call to sense of fairness" ;
-             rdfs:comment "You can convince reluctant witnesses to supply information by appealing to their better selves. After a few moments of interaction, you intuitively sense the positive values they hold dearest, then invoke them in a brief but stirring speech." ;
+             sche:description "You can convince reluctant witnesses to supply information by appealing to their better selves. After a few moments of interaction, you intuitively sense the positive values they hold dearest, then invoke them in a brief but stirring speech." ;
              rdfs:label "Inspiration ability" .
 
 
@@ -1053,7 +1060,7 @@ else (setback)"""
                            "gain information" ,
                            "inspire the subject to leave the area" ,
                            "quell a subject’s desire to attempt violence against you or others" ;
-              rdfs:comment "You get what you want from people by scaring them — physically, or with vividly detailed threats." ;
+              sche:description "You get what you want from people by scaring them — physically, or with vividly detailed threats." ;
               rdfs:label "Intimidation ability" .
 
 
@@ -1061,7 +1068,7 @@ else (setback)"""
 :languages rdf:type owl:NamedIndividual ,
                     :AcademicAbility ;
            :application "extract information from documents written in languages other than English" ;
-           rdfs:comment "Allows you to extract information from documents written in languages other than English. You may not be able to elegantly translate or win points for accuracy among true academics, but you find the clue you need." ;
+           sche:description "Allows you to extract information from documents written in languages other than English. You may not be able to elegantly translate or win points for accuracy among true academics, but you find the clue you need." ;
            rdfs:label "Languages ability" .
 
 
@@ -1072,7 +1079,7 @@ else (setback)"""
                   "call on legal colleagues or contacts for favors and advice" ,
                   "convincingly dispute the legality of actions undertaken by police and prosecutors" ,
                   "understand lawyerly jargon" ;
-     rdfs:comment "You are familiar with the criminal and civil laws that pertain in your noir city, as well as on the state and federal levels. You can bluff your way through dealings with foreign legal systems." ;
+     sche:description "You are familiar with the criminal and civil laws that pertain in your noir city, as well as on the state and federal levels. You can bluff your way through dealings with foreign legal systems." ;
      rdfs:label "Law ability" .
 
 
@@ -1082,7 +1089,7 @@ else (setback)"""
            :application "disarm alarms" ,
                         "find convenient windows to jimmy or coal-cellar doors to force" ,
                         "open doors and locks" ;
-           rdfs:comment "You can open doors and locks, and disarm alarms, without benefit of a key. Or maybe you have some universal passkeys with you." ;
+           sche:description "You can open doors and locks, and disarm alarms, without benefit of a key. Or maybe you have some universal passkeys with you." ;
            rdfs:label "Locksmith ability" .
 
 
@@ -1091,7 +1098,7 @@ else (setback)"""
                       bro:Gamerule ;
              bro:selects :spend_edge ,
                          :spend_push ;
-             rdfs:comment "Lucky Breaks make minor coincidences feel earned, while also providing an emotional up-note." ;
+             sche:description "Lucky Breaks make minor coincidences feel earned, while also providing an emotional up-note." ;
              rdfs:label "Lucky Break" .
 
 
@@ -1100,7 +1107,7 @@ else (setback)"""
                 :MentalAbility ;
        :application "harm opponent with magic" ,
                     "subject opponent to mental influence with magic" ;
-       rdfs:comment "learn and practice efficacious magic" ;
+       sche:description "learn and practice efficacious magic" ;
        rdfs:label "Magic ability" .
 
 
@@ -1139,14 +1146,14 @@ else (setback)"""
                        "identify the extent and cause of an unconscious person’s trauma" ,
                        "prescribe remedies for a treatable condition" ,
                        "understand medical jargon" ;
-          rdfs:comment "You can diagnose human disease, injuries, poisonings, and physical frailties, and may be broadly acquainted with veterinary medicine as well. If past medical training makes sense as part of your backstory, you may still hold a medical license." ;
+          sche:description "You can diagnose human disease, injuries, poisonings, and physical frailties, and may be broadly acquainted with veterinary medicine as well. If past medical training makes sense as part of your backstory, you may still hold a medical license." ;
           rdfs:label "Medicine ability" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#next_test
 :next_test rdf:type owl:NamedIndividual ,
                     bro:Gamerule ;
-           rdfs:comment "Only tests called for by the GM or the scenario, or which: a) make narrative sense; and b) threaten to put you in a worse position on a Setback." ;
+           sche:description "Only tests called for by the GM or the scenario, or which: a) make narrative sense; and b) threaten to put you in a worse position on a Setback." ;
            rdfs:label "Next test of a particular type" .
 
 
@@ -1159,7 +1166,7 @@ else (setback)"""
                      "identify the cultural traditions informing a ritual by examining its physical remnants" ,
                      "read and cast a horoscope" ,
                      "supply historical facts and anecdotes concerning various occult traditions, demons, and legends" ;
-        rdfs:comment "You’re an expert in the historical study of magic, superstition, and sorcery from the Stone Age to the present" ;
+        sche:description "You’re an expert in the historical study of magic, superstition, and sorcery from the Stone Age to the present" ;
         rdfs:label "Occult ability" .
 
 
@@ -1168,7 +1175,7 @@ else (setback)"""
                        :InterpersonalAbility ;
               :application "do research in illiterate or semi-literate societies, and in rural or small-town communities in general" ,
                            "take shorthand notes or making recordings without spooking your sources" ;
-              rdfs:comment "You can find sources willing to talk, win their confidence, and gather (usually lengthy) oral testimony about historical events, local traditions, folklore, family legend, or gossip." ;
+              sche:description "You can find sources willing to talk, win their confidence, and gather (usually lengthy) oral testimony about historical events, local traditions, folklore, family legend, or gossip." ;
               rdfs:label "Oral history ability" .
 
 
@@ -1182,7 +1189,7 @@ else (setback)"""
                           "tell when an animal is behaving strangely" ,
                           "tell whether an animal or plant is natural to a given area" ,
                           "track people, animals, or vehicles across grass or through forests" ;
-             rdfs:comment "Long hours of camping and exploration in the wild have made it as comfortable to you as life in the concrete jungle." ;
+             sche:description "Long hours of camping and exploration in the wild have made it as comfortable to you as life in the concrete jungle." ;
              rdfs:label "Outdoorsman ability" .
 
 
@@ -1192,7 +1199,7 @@ else (setback)"""
           :application "identify drugs and potions, and recognize their side-effects and contraindications" ,
                        "identify poisons and determine antidotes" ,
                        "secure or manufacture morphine, cocaine, and other controlled substances" ;
-          rdfs:comment "You are able to identify and compound drugs and medicines." ;
+          sche:description "You are able to identify and compound drugs and medicines." ;
           rdfs:label "Pharmacy ability" .
 
 
@@ -1207,7 +1214,7 @@ else (setback)"""
                           "take trick photographs using double exposures and other methods" ,
                           "take useful visual records of crime scenes or expeditions" ,
                           "use filters and lights to capture images only visible in infrared or ultraviolet" ;
-             rdfs:comment "You’re proficient in the use of cameras, including still and motion-picture photography." ;
+             sche:description "You’re proficient in the use of cameras, including still and motion-picture photography." ;
              rdfs:label "Photography ability" .
 
 
@@ -1218,7 +1225,7 @@ else (setback)"""
                       "design or refit experimental machinery to test, detect, or manipulate physical forces and energies" ,
                       "obtain and operate expensive or obscure pieces of laboratory equipment such as Crookes tubes, Geiger counters, or magnetometers" ,
                       "understand and apply advanced mathematics, including non-Euclidean geometries" ;
-         rdfs:comment "You study the fundamental forces of the universe: pressure, electromagnetism, motion, gravity, optics, and radioactivity." ;
+         sche:description "You study the fundamental forces of the universe: pressure, electromagnetism, motion, gravity, optics, and radioactivity." ;
          rdfs:label "Physics ability" .
 
 
@@ -1230,7 +1237,7 @@ else (setback)"""
 :preparedness rdf:type owl:NamedIndividual ,
                        :ManualAbility ;
               :application "prepare tools for investigation" ;
-              rdfs:comment "You expertly anticipate the needs of any investigation by packing a kit efficiently arranged with necessary gear." ;
+              sche:description "You expertly anticipate the needs of any investigation by packing a kit efficiently arranged with necessary gear." ;
               rdfs:label "Preparedness ability" .
 
 
@@ -1251,7 +1258,7 @@ else (setback)"""
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#problems
 :problems rdf:type owl:NamedIndividual ,
                    bro:Characteristic ;
-          rdfs:comment "{problem: status}" ;
+          sche:description "{problem: status}" ;
           rdfs:label "Problems on character's hands" .
 
 
@@ -1259,7 +1266,7 @@ else (setback)"""
 :psychoanalysis rdf:type owl:NamedIndividual ,
                          :MentalAbility ;
                 :application "provide comfort, perspective, and solace to the mentally troubled" ;
-                rdfs:comment "You can provide comfort, perspective, and solace to the mentally troubled." ;
+                sche:description "You can provide comfort, perspective, and solace to the mentally troubled." ;
                 rdfs:label "Psychoanalysis ability" .
 
 
@@ -1284,14 +1291,14 @@ else (setback)"""
                          "distinguish subjects who can be successfully rehabilitated from the incorrigibly violent or deviant" ,
                          "predict their upcoming actions based on their past behavior" ,
                          "tell whether a known individual’s criminal behavior is in response to deep psychological impulses, or is driven primarily by greed" ;
-            rdfs:comment "Your familiarity with the latest in the burgeoning field of human psychology grants you insight into the criminal mind. Based solely on their known modus operandi, you can make accurate guesses as to the upbringing and pathology of unidentified criminals." ;
+            sche:description "Your familiarity with the latest in the burgeoning field of human psychology grants you insight into the criminal mind. Based solely on their known modus operandi, you can make accurate guesses as to the upbringing and pathology of unidentified criminals." ;
             rdfs:label "Psychology ability" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#pushes
 :pushes rdf:type owl:NamedIndividual ,
                  bro:Characteristic ;
-        rdfs:comment "Count of available pushes (4 by default at start)" ;
+        sche:description "Count of available pushes (4 by default at start)" ;
         rdfs:label "Pushes" .
 
 
@@ -1304,7 +1311,7 @@ else (setback)"""
                           "gain trust" ,
                           "instill a sense of calm during a crisis" ,
                           "present yourself as someone who successfully" ;
-             rdfs:comment "You can get people to do what you want by putting them at ease. This may involve fast talk, genuine sympathy, a rational accounting of risks, or just a calming presence." ;
+             sche:description "You can get people to do what you want by putting them at ease. This may involve fast talk, genuine sympathy, a rational accounting of risks, or just a calming presence." ;
              rdfs:label "Reassurance ability" .
 
 
@@ -1313,7 +1320,7 @@ else (setback)"""
                    :AcademicAbility ;
           :application "determine patterns: who wrote about what and to whom, what kinds of books an eccentric collector values, what might be missing from the official files, which records seem doctored and by whom, and so forth" ,
                        "ferret out information from collections of data" ;
-          rdfs:comment "You can ferret out information from collections of books, records, files, archives, newspaper morgues, or big piles of unsorted telegrams and correspondence." ;
+          sche:description "You can ferret out information from collections of books, records, files, archives, newspaper morgues, or big piles of unsorted telegrams and correspondence." ;
           rdfs:label "Research ability" .
 
 
@@ -1325,7 +1332,7 @@ else (setback)"""
                             "notice that those two palookas in the dark corner of the bar have been intently watching you all night long" ,
                             "realize that anyone up in that lighthouse will have seen you coming a mile away" ,
                             "see a flittering shape cross the moon" ;
-               rdfs:comment "This ability allows you to perceive (either with sight or other senses) potential hazards to yourself or others." ;
+               sche:description "This ability allows you to perceive (either with sight or other senses) potential hazards to yourself or others." ;
                rdfs:label "Sense trouble ability" .
 
 
@@ -1350,7 +1357,7 @@ else (setback)"""
                         "find undetectable vantage points" ,
                         "hide in plain sight" ,
                         "use binoculars or telescopes to keep watch on a target from a distance" ;
-           rdfs:comment "You follow suspects without revealing your presence." ;
+           sche:description "You follow suspects without revealing your presence." ;
            rdfs:label "Shadowing ability" .
 
 
@@ -1399,7 +1406,7 @@ else (setback)"""
                         "avoid or suppress physical symptoms of terror and disgust, from nausea to adrenaline rush" ,
                         "file a weird sight deep in your memory, keeping your mind intact by refusing to entertain its true significance" ,
                         "move toward danger a self-protective person would avoid" ;
-           rdfs:comment "Remain in control of your thoughts and actions when confronted with frightening or traumatic sights, sounds, or other sensory input." ;
+           sche:description "Remain in control of your thoughts and actions when confronted with frightening or traumatic sights, sounds, or other sensory input." ;
            rdfs:label "Stability ability" .
 
 
@@ -1424,7 +1431,7 @@ else (setback)"""
                       "hide in shadows or cover" ,
                       "listen at doors or windows without being overheard yourself" ,
                       "move silently" ;
-         rdfs:comment "You’re good at moving (and standing still) without being noticed." ;
+         sche:description "You’re good at moving (and standing still) without being noticed." ;
          rdfs:label "Stealth ability" .
 
 
@@ -1451,7 +1458,7 @@ else (setback)"""
                          "make and utilize criminal contacts — fences, black marketeers, drug dealers, gun runners, and so forth" ,
                          "successfully price illegal goods such as drugs, stolen items, or weapons" ,
                          "use criminal etiquette to avoid fights and conflicts" ;
-            rdfs:comment "You know how to behave among crooks, gangsters, dopers, hookers, grifters, and other habitués of the criminal underworld." ;
+            sche:description "You know how to behave among crooks, gangsters, dopers, hookers, grifters, and other habitués of the criminal underworld." ;
             rdfs:label "Streetwise ability" .
 
 
@@ -1490,7 +1497,7 @@ else (setback)"""
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#taking_time
 :taking_time rdf:type owl:NamedIndividual ,
                       bro:Gamerule ;
-             rdfs:comment "The most common way to Counter a problem is to Take Time. When Taking Time, the detective momentarily puts the investigation aside to deal with the issue raised by the problem." ;
+             sche:description "The most common way to Counter a problem is to Take Time. When Taking Time, the detective momentarily puts the investigation aside to deal with the issue raised by the problem." ;
              rdfs:label "Taking Time" .
 
 
@@ -1503,7 +1510,7 @@ else (setback)"""
                        "quote relevant passages from the major scriptures" ,
                        "recognize the names and attributes of various saints, gods, and other figures of religious worship and veneration" ,
                        "supply information about religious practices and beliefs" ;
-          rdfs:comment "You study human religions in their various forms, both ancient and modern." ;
+          sche:description "You study human religions in their various forms, both ancient and modern." ;
           rdfs:label "Theology ability" .
 
 
@@ -1546,3 +1553,268 @@ else (setback)"""
 
 
 ###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi
+:Case a owl:Class ;
+    rdfs:subClassOf bno:Narrative ,
+                    [ a owl:Restriction ;
+                      owl:onProperty [owl:inverseOf bro:selects] ;
+                      owl:hasValue :start_case
+                    ] ;
+    rdfs:label "Case" .
+
+:investigator a owl:ObjectProperty ;
+              rdfs:label "investigator" ;
+              rdfs:domain :Case ;
+              rdfs:range :Investigator .
+
+:fathomless_sleep a owl:NamedIndividual , :Case ;
+    rdfs:label "The fathomless sleep" ;
+                  :investigator :dex_raymond ;
+                  :year 1937 ;
+                  bno:location :los_angeles .
+
+:year a owl:DatatypeProperty ;
+      rdfs:label "year" ;
+      rdfs:domain :Case ;
+      rdfs:range xsd:integer .
+
+:Investigator a owl:Class ;
+              rdfs:subClassOf bno:Character ;
+    rdfs:label "Investigator" .
+
+:start_case a owl:NamedIndividual , bro:Gamerule ;
+            rdfs:label "Start case" ;
+            bro:leadsTo :set_starting_pushes ,
+                        :set_abilities .
+
+:set_starting_pushes a owl:NamedIndividual , bro:Gamerule ;
+                      rdfs:label "Rule for starting pushes" ;
+                      bro:calculations "pushes = starting pushes of case's investigator" ;
+                      bro:sets :pushes .
+
+:set_abilities a owl:NamedIndividual , bro:Gamerule ;
+               rdfs:label "Set abilities of investigator" ;
+               bro:calculations "abilities of investigator" .
+
+:dex_raymond a owl:NamedIndividual , :Investigator ;
+    rdfs:label "Dexter (Dex) Raymond" ;
+    sche:description "Hard-boiled Shamus",
+             "Archetypal hardboiled private investigator Dex Raymond prowls Los Angeles’ haunted streets as an outsider by choice. With his smarts and grit, he could have wormed his way into its corrupt power structure. Instead, he operates on its fringes, writing wrongs for a modest fee, plus expenses. In addition to his contacts, he counts one more key friend — LAPD Detective Sergeant Ted Gargan, a rare honest man in a town where cops can be bought by the barrel." ;
+             :startingPushes 3 ;
+             :ability :accounting ,
+                      :assess_honesty ,
+                      :bargain ,
+                      :cop_talk ,
+                      :cryptography ,
+                      :evidence_collection ,
+                      :intimidation ,
+                      :inspiration ,
+                      :law ,
+                      :locksmith ,
+                      :photography ,
+                      :reassurance ,
+                      :research ,
+                      :streetwise ;
+             :1dice :cool ,
+                    :conceal ,
+                    :devices ,
+                    :driving ,
+                    :preparedness ,
+                    :filch ;
+             :2dice :athletics ,
+                    :sense_trouble ,
+                    :shadowing ,
+                    :stability ,
+                    :stealth ,
+                    :fighting ;
+             :acquaintance :len_pollard ;
+             :friend :ted_gargan ;
+             :source :virginia_ashbury , :madame_eva , :mack , :alfred_kelham , :max_weyl ;
+             :occupation "private detective" .
+
+
+:startingPushes a owl:DatatypeProperty ;
+    rdfs:label "starting pushes" ;
+    rdfs:domain :Investigator ;
+    rdfs:range xsd:integer .
+
+:ability a owl:ObjectProperty ;
+    rdfs:label "investigative ability" ;
+    rdfs:domain bno:Character ;
+    rdfs:range :InvestigativeAbility .
+
+:1dice a owl:ObjectProperty ;
+    rdfs:label "general ability with 1 dice value" ;
+    rdfs:domain :Investigator ;
+    rdfs:range :GeneralAbility .
+
+:2dice a owl:ObjectProperty ;
+    rdfs:label "general ability with 2 dice value" ;
+    rdfs:domain :Investigator ;
+    rdfs:range :GeneralAbility .
+
+:ted_gargan a owl:NamedIndividual , bno:Character ;
+    rdfs:label "Ted Gargan" ;
+    sche:description "Detective Sergeant Ted Gargan, world-weary commander of the homicide night shift. Unlike most in the Department, Gargan has kept his hands clean. When he bends the rules, it’s to achieve a just result, not to serve the System." ;
+            :occupation "detective" ;
+            :motive :against_corrupt_system .
+
+:acquaintance a owl:ObjectProperty , owl:SymmetricProperty  ;
+    rdfs:label "has acquaintance" ;
+    rdfs:domain bno:Character ;
+    rdfs:range bno:Character .
+
+:friend a owl:ObjectProperty ;
+        rdfs:subPropertyOf :acquaintance ;
+        rdfs:label "has friend" .
+
+:source a owl:ObjectProperty ;
+        rdfs:subPropertyOf :acquaintance ;
+        rdfs:label "has source" ;
+        rdfs:range :Source .
+
+:len_pollard a owl:NamedIndividual , bno:Character ;
+    rdfs:label "Len Pollard" ;
+    sche:description "For grubby or menial stuff, Dex goes to Sergeant Len Pollard, an uninspired desk jockey whose chief hobby is complaining about the weight his doctor has ordered him to lose." ;
+             :occupation "sergeant, desk jockey" ;
+             :motive :dex_found_out_cheating .
+
+:dex_found_out_cheating a owl:NamedIndividual ;
+                        rdfs:label "Dex found out the cheating of Len's wife" ;
+                        sche:description "While investigating a shady divorce attorney for another case, Dex found out that Len was one of his clients, and that the attorney was sleeping with his wife. For that tip-off, Pollard performs shady favors for Dex like pulling confidential files or fixing traffic tickets." ;
+                        :motiveTarget :dex_raymond .
+
+:Source a owl:Class ;
+    rdfs:subClassOf bno:Character ;
+    rdfs:label "Source" .
+
+:dexter_raymond_portrait a owl:NamedIndividual , bbo:Portrait ;
+    sche:image "https://pelgranepress.com//nas/content/live/pelgranepress/wp-content/uploads/2015/09/Dex-Raymond_300-204x300.png" .
+
+:Source a owl:Class ;
+    rdfs:subClassOf bno:Character ;
+    rdfs:label "Source" .
+
+:occupation a owl:DatatypeProperty ;
+            rdfs:label "occupation" ;
+            rdfs:domain bno:Character ;
+            rdfs:range xsd:string .
+
+:virginia_ashbury a owl:NamedIndividual ;
+    rdfs:label "Virginia Ashbury" ;
+    :occupation "scientist" ;
+                  sche:description "A slim, somewhat birdlike woman typically seen in her white lab coat, Dr. Virginia Ashbury dotes on Dex as she would on a younger brother." ;
+                           :motive :enigma_of_underworld ;
+                  :ability :astronomy, :biology, :chemistry, :forensics , :geology, :physics .
+
+:virginia_ashbury_portrait a owl:NamedIndividual , bbo:Portrait ;
+    rdfs:label "Portrait of Virginia Ashbury" ;
+                           sche:image "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQJqhuGRzktW5ETO71j_sVNnbs_3xpvcXxeykwk2TF39yevd1vp" ;
+    bbo:depicts :virginia_ashbury .
+
+:enigma_of_underworld a owl:NamedIndividual ;
+                      rdfs:label "Enigma of underworld" ;
+                      sche:description "enjoys a vicarious glimpse at a seamy, dangerous underworld" ;
+                      :motiveTarget :dex_raymond .
+
+:Motive a owl:Class ;
+    rdfs:subClassOf bno:Narrative ;
+    rdfs:label "Motive" .
+
+:motive a owl:ObjectProperty ;
+    rdfs:label "has motive" ;
+    rdfs:domain bno:Character ;
+    rdfs:range :Motive .
+
+:against_corrupt_system a owl:NamedIndividual ;
+    rdfs:label "Against corrupt System" ;
+                        :motiveTarget :dex_raymond .
+
+:madame_eva a owl:NamedIndividual ;
+    rdfs:label "Madame Eva" , "Peggy Malone" ;
+    :occupation "fortune teller" ;
+    sche:description "this harmless grifter can assist Dex with information on the world of cults, spiritualism, and hermetic magic" ;
+    :motive :protect_from_mythos ;
+            :ability :cthulhu_mythos, :occult .
+
+:madame_eva_portrait a owl:NamedIndividual , bbo:Portrait ;
+                     sche:image "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRGpt98Xb1B7ejTrr9XIqPqERLeb8XwVa4jTZgC4pNGn2_qycm-" ;
+                     rdfs:label "Portrait of Madame Eva" ;
+                     bbo:depicts :madame_eva .
+
+:protect_from_mythos a owl:NamedIndividual ;
+    rdfs:label "Protect from Mythos" ;
+    sche:description "Eva has seen other minds ruined by contact with the Old Ones, and she doesn’t want that to happen to him." ;
+                     :motiveTarget :dex_raymond .
+
+:mack a owl:NamedIndividual  ;
+    rdfs:label "Dr. Jeff (Mack) Mackintosh" ;
+    :occupation "shrink" ;
+    sche:description "raffish, pipe-smoking psychiatrist" ;
+      :motive :help_for_rich_patients ;
+      :ability :medicine, :outdoorsman, :pharmacy, :psychology .
+
+:help_for_rich_patients a owl:NamedIndividual ;
+                        rdfs:label "Help for rich patients" ;
+                        sche:description "Sometimes Mack sends business Dex’s way, when one of his troubled rich patients needs a spot of sleuthing done." ;
+                        :motiveTarget :dex_raymond .
+
+:mack_portrait a owl:NamedIndividual , bbo:Portrait ;
+    rdfs:label "Portrait of Mack" ;
+    sche:image "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS3QnpVjHVGqGhcbla_00nRSmip3II9uz3Ju8EnWs4Ko2YNNmN5" ;
+    bbo:depicts :mack .
+
+:alfred_kelham a owl:NamedIndividual  ;
+    rdfs:label "Alfred Kelham" ;
+    :occupation "professor" ;
+    sche:description "With his thick-framed spectacles and mound of snowy white hair, Professor Alfred Kelham would look the part of a fusty lion of pedagogy even without his telltale tweed jacket." ;
+    :motive :echo_of_son ;
+               :ability :anthropology, :archaeology , :history , :languages , :oral_history , :theology .
+
+:echo_of_son a owl:NamedIndividual ;
+    rdfs:label "Echo of dead son" ;
+    sche:description "Proudly pedantic and a touch paternalistic, Kelham sees in Dex an echo of his own son, a soldier killed in WWI." ;
+             :motiveTarget :dex_raymond .
+
+:max_weyl a owl:NamedIndividual ;
+    rdfs:label "Max Weyl" ;
+    :occupation "production designer" ;
+    sche:description "Diminutive and impeccably dressed, his hair brilliantined and topped by a jaunty beret, Max Weyl oversees the visual look of around half-adozen films per year for his home studio, Capitol Pictures." ;
+          :motive :gratitude_for_out_of_blackmail ;
+          :ability :architecture , :art , :art_history , :bureaucracy , :craft , :flattery .
+
+:gratitude_for_out_of_blackmail a owl:NamedIndividual ;
+                                rdfs:label "Gratitude for out of blackmail" ;
+                                sche:description "Dex helped one of Max’s friends out of a blackmail scrape last year, earning his lasting gratitude." ;
+                                :motiveTarget :dex_raymond .
+
+:max_weyl_portrait a owl:NamedIndividual , bbo:Portrait ;
+    rdfs:label "Portrait of Max Weyl" ;
+    sche:image "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZZfB5C0T1d4AJhe03edHN9LXWMTbyZMmXizx_eQQYZTgRYuTt" ;
+    bbo:depicts :max_weyl .
+
+:motiveTarget a owl:ObjectProperty ;
+    rdfs:label "has target of motive" ;
+    rdfs:domain :Motive ;
+    rdfs:range owl:Thing .
+
+:los_angeles a owl:NamedIndividual , bno:Location ;
+    rdfs:label "Los Angeles" ;
+    sche:description "Beneath beguiling surfaces, corruption rules. Dig down past that seething layer of human indifference, and the one obsessed enough to keep looking finds a deeper, occulted indifference of cosmic proportions." .
+
+:guy_mcafee a owl:NamedIndividual , bno:Character ;
+    rdfs:label "Guy McAfee" ;
+    :occupation "vice cop" ;
+    bno:location :los_angeles ;
+            :represents wd:Q23017206 ;
+            sche:description "Atop the 1937 gangland pyramid perches former vice cop Guy McAfee, 49, (1888–1960), unaware that his hold on L.A. is about to crumble. Tousled white hair and jug ears play to his aw-shucks manner, which he cops from his predecessor." .
+
+:represents a owl:ObjectProperty ;
+    rdfs:label "represents" ;
+    rdfs:domain bno:Character ;
+    rdfs:range owl:Thing .
+
+:jack_dragna a owl:NamedIndividual , bno:Character ;
+    rdfs:label "Jack Dragna" ;
+    :represents wd:Q1677023 ;
+    rdfs:label "Mafia don" ;
+    bno:location :los_angeles .
