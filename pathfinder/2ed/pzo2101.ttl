@@ -74,12 +74,6 @@ bro:prereq rdfs:comment "activated condition or true statement" .
            rdfs:comment "+1 to value of condition" .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.ttl#after
-:after rdf:type owl:ObjectProperty ;
-       rdfs:domain :Event ;
-       rdfs:range :Event .
-
-
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.ttl#alignment
 :alignment rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf :followerAlignment ;
@@ -173,8 +167,8 @@ bro:prereq rdfs:comment "activated condition or true statement" .
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.ttl#during
 :during rdf:type owl:ObjectProperty ;
-        rdfs:domain :Event ;
-        rdfs:range :Event .
+        rdfs:domain bno:Event ;
+        rdfs:range bno:Event .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.ttl#ethnicityOf
@@ -222,13 +216,6 @@ bro:prereq rdfs:comment "activated condition or true statement" .
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.ttl#leadsToElse
 :leadsToElse rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf bro:leadsTo .
-
-
-
-###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.ttl#participant
-:participant rdf:type owl:ObjectProperty ;
-             rdfs:domain :Event ;
-             rdfs:range bno:Agent .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.ttl#performs
@@ -1061,11 +1048,6 @@ bro:SkillCheck rdfs:subClassOf [ rdf:type owl:Restriction ;
                rdfs:subClassOf :Equipment .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.ttl#Event
-:Event rdf:type owl:Class ;
-       rdfs:subClassOf bno:Narrative .
-
-
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.ttl#EvocationSchool
 :EvocationSchool rdf:type owl:Class ;
                  rdfs:subClassOf :SpellBySchool ;
@@ -1364,11 +1346,6 @@ bro:SkillCheck rdfs:subClassOf [ rdf:type owl:Restriction ;
                                                                                ] ;
                                                                 owl:hasValue :disrupt_manipulate_action
                                                               ] .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.ttl#Map
-:Map rdf:type owl:Class ;
-     rdfs:subClassOf bbo:Art .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.ttl#MartialWeapon
@@ -1863,12 +1840,12 @@ bro:SkillCheck rdfs:subClassOf [ rdf:type owl:Restriction ;
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.ttl#absalom_reckoning
 :absalom_reckoning rdf:type owl:NamedIndividual ,
-                            :Event ;
-                   :after :discovery_of_the_starstone ;
+                            bno:Event ;
+                   bno:cause :discovery_of_the_starstone ;
                    :during :the_age_of_destiny ;
                    bno:location :absalom ,
                              :isle_of_kortos ;
-                   :participant :aroden ;
+                   bno:participant :aroden ;
                    rdfs:comment "Aroden emerged from this test a living god, and his first divine act was to raise the Starstone and the mass of land on which it had lain from the bottom of the sea to form the Isle of Kortos where he then established the city of Absalom." ;
                    rdfs:label "Absalom Reckoning" .
 
@@ -2334,8 +2311,8 @@ bro:SkillCheck rdfs:subClassOf [ rdf:type owl:Restriction ;
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.ttl#age_of_lost_omens
 :age_of_lost_omens rdf:type owl:NamedIndividual ,
-                            :Event ;
-                   :after :the_age_of_destiny ;
+                            bno:Event ;
+                   bno:cause :the_age_of_destiny ;
                    bno:location :golarion ;
                    rdfs:comment "Golarion was wracked by storms, war, and supernatural devastation as the god’s death marked the beginning of a new age—a time of uncertainty, but also a time of opportunity." ;
                    rdfs:label "Age of Lost Omens" .
@@ -3196,11 +3173,11 @@ bro:SkillCheck rdfs:subClassOf [ rdf:type owl:Restriction ;
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.ttl#arriving_of_gnomes_on_golarion
 :arriving_of_gnomes_on_golarion rdf:type owl:NamedIndividual ,
-                                         :Event ;
-                                :after :earthfall ;
+                                         bno:Event ;
+                                bno:cause :earthfall ;
                                 bno:location :first_world ,
                                           :golarion ;
-                                :participant :gnome ;
+                                bno:participant :gnome ;
                                 rdfs:comment "The first gnomes arrived on Golarion at some point after Earthfall from the otherworldly dimension known as the First World, fleeing a terror whose nature few can recall." ;
                                 rdfs:label "Arriving of gnomes on Golarion" .
 
@@ -3246,7 +3223,7 @@ bro:SkillCheck rdfs:subClassOf [ rdf:type owl:Restriction ;
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.ttl#art_age_of_lost_omens_1_map
 :art_age_of_lost_omens_1_map rdf:type owl:NamedIndividual ,
-                                      :Map ;
+                                      bbo:Map ;
                              bbo:depicts :golarion ;
                              sche:image "https://cdna.artstation.com/p/assets/images/images/012/120/108/large/james-nalepa-asset.jpg?1533135415" ;
                              rdfs:label "age_of_lost_omens_1" .
@@ -3254,7 +3231,7 @@ bro:SkillCheck rdfs:subClassOf [ rdf:type owl:Restriction ;
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.ttl#art_age_of_lost_omens_2_map
 :art_age_of_lost_omens_2_map rdf:type owl:NamedIndividual ,
-                                      :Map ;
+                                      bbo:Map ;
                              bbo:depicts :golarion ;
                              sche:image "https://www.worldanvil.com/media/cache/cover/uploads/images/f2c44a6e758224572a4aa1eacb03f8ab.jpg" ;
                              rdfs:label "age_of_lost_omens_2" .
@@ -8750,11 +8727,11 @@ bro:SkillCheck rdfs:subClassOf [ rdf:type owl:Restriction ;
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.ttl#death_of_aroden
 :death_of_aroden rdf:type owl:NamedIndividual ,
-                          :Event ;
-                 :after :absalom_reckoning ;
+                          bno:Event ;
+                 bno:cause :absalom_reckoning ;
                  :during :the_age_of_destiny ;
                  bno:location :golarion ;
-                 :participant :aroden ;
+                 bno:participant :aroden ;
                  rdfs:comment "(4606 AR)" ;
                  rdfs:label "Death of Aroden" .
 
@@ -9385,10 +9362,10 @@ bro:SkillCheck rdfs:subClassOf [ rdf:type owl:Restriction ;
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.ttl#discovery_of_the_starstone
 :discovery_of_the_starstone rdf:type owl:NamedIndividual ,
-                                     :Event ;
+                                     bno:Event ;
                             :during :the_age_of_destiny ;
                             bno:location :inner_sea ;
-                            :participant :aroden ;
+                            bno:participant :aroden ;
                             rdfs:comment "Aroden had long since cultivated a following of loyal subjects who regarded him with awe, for immortality was but one of the wonders he’d achieved. Greatest among these was his discovery of a shard of potent magic known today as the Starstone, a fragment from the stars that fell during Earthfall, which had lodged at the bottom of the Inner Sea." ;
                             rdfs:label "Discovery of the Starstone" .
 
@@ -10387,7 +10364,7 @@ bro:SkillCheck rdfs:subClassOf [ rdf:type owl:Restriction ;
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.ttl#earthfall
 :earthfall rdf:type owl:NamedIndividual ,
-                    :Event ;
+                    bno:Event ;
            bno:location :golarion ;
            rdfs:comment "(–5293 AR) Earthfall, as this extinction-level event came to be known, saw the world pummeled by a shower of falling stars that sank continents, hollowed out new seas, and destroyed civilizations." ;
            rdfs:label "Earthfall" .
@@ -20604,11 +20581,11 @@ bro:SkillCheck rdfs:subClassOf [ rdf:type owl:Restriction ;
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.ttl#quest_for_sky
 :quest_for_sky rdf:type owl:NamedIndividual ,
-                        :Event ;
-               :after :earthfall ;
+                        bno:Event ;
+               bno:cause :earthfall ;
                bno:location :darklands ,
                          :golarion ;
-               :participant :dwarf ;
+               bno:participant :dwarf ;
                rdfs:comment "It wasn’t until after Earthfall that the dwarves undertook the legendary Quest for Sky, during which the majority of dwarves made a pilgrimage to relocate to the surface of Golarion. In doing so, they not only drove the orcs to the surface before them, but also established several immense Sky Citadels at each location where they emerged from the realm below." ;
                rdfs:label "Quest for Sky" .
 
@@ -25410,8 +25387,8 @@ bro:SkillCheck rdfs:subClassOf [ rdf:type owl:Restriction ;
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.ttl#the_age_of_darkness
 :the_age_of_darkness rdf:type owl:NamedIndividual ,
-                              :Event ;
-                     :after :earthfall ;
+                              bno:Event ;
+                     bno:cause :earthfall ;
                      bno:location :golarion ;
                      rdfs:comment "The Age of Darkness" ;
                      rdfs:label "The Age of Darkness" .
@@ -25419,8 +25396,8 @@ bro:SkillCheck rdfs:subClassOf [ rdf:type owl:Restriction ;
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.ttl#the_age_of_destiny
 :the_age_of_destiny rdf:type owl:NamedIndividual ,
-                             :Event ;
-                    :after :the_age_of_darkness ;
+                             bno:Event ;
+                    bno:cause :the_age_of_darkness ;
                     bno:location :golarion ;
                     rdfs:comment "The Age of Destiny saw the rise of many new human empires throughout the world. Humanity built wondrous structures, and its schools relearned magic that had been thought lost." ;
                     rdfs:label "The Age of Destiny" .

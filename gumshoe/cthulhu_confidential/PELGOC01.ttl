@@ -1,4 +1,5 @@
 @prefix : <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
 @prefix bbo: <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicBookOnto.ttl#> .
 @prefix bno: <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicNarrativeOnto.ttl#> .
 @prefix bro: <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicRulesOnto.ttl#> .
@@ -8,7 +9,6 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sche: <http://schema.org/> .
-@prefix wd: <http://www.wikidata.org/entity/> .
 @base <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#> .
 
 <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#> rdf:type owl:Ontology ;
@@ -20,8 +20,19 @@
 #    Annotation properties
 #################################################################
 
+###  http://schema.org/description
+sche:description rdf:type owl:AnnotationProperty .
+
+
 ###  http://schema.org/image
 sche:image rdf:type owl:AnnotationProperty .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#represents
+:represents rdf:type owl:AnnotationProperty ;
+            rdfs:label "represents" ;
+            rdfs:range owl:Thing ;
+            rdfs:domain bno:Narrative .
 
 
 #################################################################
@@ -36,6 +47,21 @@ bro:changes sche:description "+1 to characteristic" .
 bro:leadsTo rdfs:label "outcome" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#ability
+:ability rdf:type owl:ObjectProperty ;
+         rdfs:domain bno:Character ;
+         rdfs:range :InvestigativeAbility ;
+         rdfs:label "investigative ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#acquaintance
+:acquaintance rdf:type owl:ObjectProperty ,
+                       owl:SymmetricProperty ;
+              rdfs:domain bno:Character ;
+              rdfs:range bno:Character ;
+              rdfs:label "has acquaintance" .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#advance
 :advance rdf:type owl:ObjectProperty ;
          rdfs:subPropertyOf bro:leadsTo ;
@@ -45,12 +71,39 @@ bro:leadsTo rdfs:label "outcome" .
          rdfs:label "Advance outcome" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#cast
+:cast rdf:type owl:ObjectProperty ;
+      rdfs:domain :Case ;
+      rdfs:range bno:Character ;
+      rdfs:label "cast of case" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#child
+:child rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf :family ;
+       rdfs:label "has child" .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#extraProblem
 :extraProblem rdf:type owl:ObjectProperty ;
               rdfs:domain bro:SkillCheck ;
               rdfs:range :Problem ;
               sche:description "Describes the most obvious Extra Problem the Investigator can take on to gain an additional die against this Challenge." ;
               rdfs:label "possible extra problem" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#family
+:family rdf:type owl:ObjectProperty ,
+                 owl:SymmetricProperty ;
+        rdfs:domain bno:Character ;
+        rdfs:range bno:Character ;
+        rdfs:label "family" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#friend
+:friend rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf :acquaintance ;
+        rdfs:label "has friend" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#hold
@@ -62,6 +115,53 @@ bro:leadsTo rdfs:label "outcome" .
       rdfs:label "Hold outcome" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#investigator
+:investigator rdf:type owl:ObjectProperty ;
+              rdfs:domain :Case ;
+              rdfs:range :Investigator ;
+              rdfs:label "investigator" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#lover
+:lover rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf :acquaintance ;
+       rdf:type owl:SymmetricProperty ;
+       rdfs:label "lover of" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#mistress
+:mistress rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :acquaintance ;
+          rdfs:label "has mistress" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#motive
+:motive rdf:type owl:ObjectProperty ;
+        rdfs:domain bno:Character ;
+        rdfs:range :Motive ;
+        rdfs:label "has motive" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#motiveTarget
+:motiveTarget rdf:type owl:ObjectProperty ;
+              rdfs:domain :Motive ;
+              rdfs:range owl:Thing ;
+              rdfs:label "has target of motive" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#pastEvent
+:pastEvent rdf:type owl:ObjectProperty ;
+           rdfs:domain :Case ;
+           rdfs:range bno:Event ;
+           rdfs:label "past event in case" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#rival
+:rival rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf :acquaintance ;
+       rdfs:label "rival of" .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#setback
 :setback rdf:type owl:ObjectProperty ;
          rdfs:subPropertyOf bro:leadsTo ;
@@ -69,6 +169,43 @@ bro:leadsTo rdfs:label "outcome" .
          rdfs:range bro:Gamerule ;
          sche:description "Worsening your situation. It may saddle you with a Problem card. Or it might simply make your immediate dilemma worse in some way." ;
          rdfs:label "Setback outcome" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#sibling
+:sibling rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :family ;
+         owl:propertyChainAxiom ( [ owl:inverseOf :child
+                                  ]
+                                  :child
+                                ) ;
+         rdfs:label "has sibling" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#source
+:source rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf :acquaintance ;
+        rdfs:range :Source ;
+        rdfs:label "has source" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#worksFor
+:worksFor rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :acquaintance ;
+          rdfs:label "works for" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#1dice
+<https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#1dice> rdf:type owl:ObjectProperty ;
+                                                                                                                  rdfs:domain :Investigator ;
+                                                                                                                  rdfs:range :GeneralAbility ;
+                                                                                                                  rdfs:label "general ability with 1 dice value" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#2dice
+<https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#2dice> rdf:type owl:ObjectProperty ;
+                                                                                                                  rdfs:domain :Investigator ;
+                                                                                                                  rdfs:range :GeneralAbility ;
+                                                                                                                  rdfs:label "general ability with 2 dice value" .
 
 
 #################################################################
@@ -100,6 +237,34 @@ bro:leadsTo rdfs:label "outcome" .
             rdfs:label "test's target to Hold" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#occupation
+:occupation rdf:type owl:DatatypeProperty ;
+            rdfs:domain bno:Character ;
+            rdfs:range xsd:string ;
+            rdfs:label "occupation" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#pastEventTimeline
+:pastEventTimeline rdf:type owl:DatatypeProperty ;
+                   rdfs:domain bno:Event ;
+                   rdfs:range xsd:string ;
+                   rdfs:label "timeline of past event in case" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#startingPushes
+:startingPushes rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Investigator ;
+                rdfs:range xsd:integer ;
+                rdfs:label "starting pushes" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#year
+:year rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Case ;
+      rdfs:range xsd:integer ;
+      rdfs:label "year" .
+
+
 #################################################################
 #    Classes
 #################################################################
@@ -127,11 +292,12 @@ bro:CheckRoll rdfs:subClassOf [ rdf:type owl:Restriction ;
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicRulesOnto.ttl#Skill
-bro:Skill rdfs:label "Ability" ;
-          rdfs:subClassOf  [ a owl:Restriction ;
-                               owl:onProperty [owl:inverseOf bro:sets] ;
-                               owl:hasValue :set_abilities
-                             ] .
+bro:Skill rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty [ owl:inverseOf bro:sets
+                                           ] ;
+                            owl:hasValue :set_abilities
+                          ] ;
+          rdfs:label "Ability" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicRulesOnto.ttl#SkillCheck
@@ -153,8 +319,8 @@ else (setback)"""
 17: [-, -, 2%, 24%]; 18: [-, -, 0.5%, 16%]; 19: [-, -, -, 10%]; 20: [-, -, -, 5%]; 21: [-, -, -, 3%]}"""
                                ] ;
                sche:description "Challenges occur in situations where degrees of success or failure can send the story into different possible branches, each of them interesting in its own way." ,
-                            "Sometimes you know that you’ll get what you want, but you are only determining the costs of success" ,
-                            "examples: fixing the car before the yokel with the rifle gets back, running away from a creature that surges out of the La Brea tar pits, sneaking backstage at the nightclub" ;
+                                "Sometimes you know that you’ll get what you want, but you are only determining the costs of success" ,
+                                "examples: fixing the car before the yokel with the rifle gets back, running away from a creature that surges out of the La Brea tar pits, sneaking backstage at the nightclub" ;
                rdfs:label "Challenge" .
 
 
@@ -168,6 +334,17 @@ else (setback)"""
 :Card rdf:type owl:Class ;
       rdfs:subClassOf owl:Thing ;
       rdfs:label "Card" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#Case
+:Case rdf:type owl:Class ;
+      rdfs:subClassOf bno:Narrative ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty [ owl:inverseOf bro:selects
+                                       ] ;
+                        owl:hasValue :start_case
+                      ] ;
+      rdfs:label "Case" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#ChallengeTemplate
@@ -209,7 +386,7 @@ else (setback)"""
                                   owl:hasValue :general_ability_max_rate
                                 ] ;
                 sche:description "When attempting actions that don’t directly gather information, and which can lead to engaging story possibilities whether you succeed or fail, use your General Abilities." ,
-                             "{ability: number of dice}" ;
+                                 "{ability: number of dice}" ;
                 rdfs:label "General ability" .
 
 
@@ -231,6 +408,12 @@ else (setback)"""
                       rdfs:label "Investigative ability" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#Investigator
+:Investigator rdf:type owl:Class ;
+              rdfs:subClassOf bno:Character ;
+              rdfs:label "Investigator" .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#ManualAbility
 :ManualAbility rdf:type owl:Class ;
                rdfs:subClassOf :GeneralAbility ;
@@ -243,6 +426,12 @@ else (setback)"""
                rdfs:subClassOf :GeneralAbility ;
                sche:description "drawing on mostly on intellectual study, perception, thought, and/or memory" ;
                rdfs:label "Mental ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#Motive
+:Motive rdf:type owl:Class ;
+        rdfs:subClassOf bno:CausalFactor ;
+        rdfs:label "Motive" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#MythosShock
@@ -271,6 +460,19 @@ else (setback)"""
            rdfs:subClassOf bro:Check ;
            sche:description "On occasion, your detective may face a very straightforward obstacle where you can only succeed or fail, with no particular ongoing advantages or disadvantages arising from the result." ;
            rdfs:label "Quick Test" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#Source
+:Source rdf:type owl:Class ;
+        rdfs:subClassOf bno:Character ;
+        rdfs:label "Source" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#StoryHook
+:StoryHook rdf:type owl:Class ;
+           rdfs:subClassOf bno:Event ;
+           sche:description "These suggest ways to interweave historical facts with Lovecraft-tinged private investigation cases. The events suggested by the story hooks aren’t necessarily all happening at once." ;
+           rdfs:label "Story hook" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#TechnicalAbility
@@ -311,6 +513,86 @@ else (setback)"""
                                rdfs:label "Earning additional roll by taking Extra Problem" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#adolph_zukor
+:adolph_zukor rdf:type owl:NamedIndividual ,
+                       bno:Character ;
+              bno:location :hollywood ;
+              :occupation "studio head" ;
+              sche:description "Paramount went bust a couple of years ago; its chairman Adolph Zukor, (1873–1976), now steers it out of receivership. More polished and quieter than his counterparts, he belies the image of the blustering studio head. The studio’s best recent successes have been in comedy, whether the sophisticated efforts of director Ernst Lubitsch or the lunacy of the Marx Brothers." ;
+              rdfs:label "Adolph Zukor" ;
+              :represents wd:Q361208 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#against_corrupt_system
+:against_corrupt_system rdf:type owl:NamedIndividual ;
+                        :motiveTarget :dex_raymond ;
+                        rdfs:label "Against corrupt System" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#agape_lodge
+:agape_lodge rdf:type owl:NamedIndividual ,
+                      bno:Location ;
+             bno:location :hollywood ;
+             sche:description "When seeking L.A.’s current temple of Crowleyian sex magick, head to the Agape Lodge, home of local chapter leader Wilfred Talbot Smith at 1746 Winona Boulevard. A large sapota tree shades the backyard of this rambling two story structure." ;
+             rdfs:label "Agape Lodge" ;
+             :represents wd:Q40890380 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#aimee_semple_mcpherson
+:aimee_semple_mcpherson rdf:type owl:NamedIndividual ,
+                                 bno:Character ;
+                        bno:location :angelus_temple ;
+                        :occupation "evangelist" ;
+                        sche:description "pioneering broadcast evangelist Aimee Semple McPherson, (1890–1944) far past the peak of her fame, her Angelus Temple sinking in debt. Though diminished, she still attracts a die-hard following. At her height in the 20s her theatrical, some say sex-tinged, sermons made her an ecclesiastical superstar." ;
+                        rdfs:label "Aimee Semple McPherson" ;
+                        :represents wd:Q2563141 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#alegria_casino
+:alegria_casino rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#alfred_kelham
+:alfred_kelham rdf:type owl:NamedIndividual ;
+               :ability :anthropology ,
+                        :archaeology ,
+                        :history ,
+                        :languages ,
+                        :oral_history ,
+                        :theology ;
+               :motive :echo_of_son ;
+               :occupation "professor" ;
+               sche:description "With his thick-framed spectacles and mound of snowy white hair, Professor Alfred Kelham would look the part of a fusty lion of pedagogy even without his telltale tweed jacket." ;
+               rdfs:label "Alfred Kelham" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#ambassador_hotel
+:ambassador_hotel rdf:type owl:NamedIndividual ,
+                           bno:Location ;
+                  bno:location :hollywood ;
+                  sche:description "The Ambassador Hotel, at 3400 Wilshire Boulevard, houses Hollywood’s swankest night club, the Cocoanut Grove." ;
+                  rdfs:label "Ambassador Hotel" ;
+                  :represents wd:Q456685 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#angel_flight_incline_railway
+:angel_flight_incline_railway rdf:type owl:NamedIndividual ,
+                                       bno:Location ;
+                              bno:location :bunker_hill ;
+                              sche:description "The Angel’s Flight Incline Railway (Hill Street and Third) shuttles workers from the upper to lower levels of the neighborhood, but mainly serves tourists in search of the picturesque. Its two funicular cable cars counter-balance each other, allowing riders to traverse a distance of 325 feet. A second incline railway three blocks to the north, Court Flight, connects northern Bunker Hill to a past site of the County Courthouse." ;
+                              rdfs:label "Angel’s Flight Incline Railway" ;
+                              :represents wd:Q1069719 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#angelus_temple
+:angelus_temple rdf:type owl:NamedIndividual ,
+                         bno:Location ;
+                bno:location :echo_park ;
+                sche:description "When your detective goes to talk to radio evangelist Aimee Semple McPherson, he’ll find her at her Angelus Temple, (1100 Glendale Boulevard). Her domed, stadium-like church seats 5,300. In the late thirties not all of the seats will be filled." ;
+                rdfs:label "Angelus Temple" ;
+                :represents wd:Q3676132 .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#anthropology
 :anthropology rdf:type owl:NamedIndividual ,
                        :AcademicAbility ;
@@ -319,6 +601,26 @@ else (setback)"""
                            "identify artifacts and rituals of living cultures" ;
               sche:description "You are an expert in the study of human cultures, from the Stone Age to the Jazz Age" ;
               rdfs:label "Anthropology ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#antique_document
+:antique_document rdf:type owl:NamedIndividual ,
+                           :StoryHook ;
+                  bno:cause :antique_document_cultists_motive ,
+                            :antique_document_sell_motive ;
+                  bno:location :los_angeles ;
+                  bno:participant :dex_raymond ;
+                  sche:description "A client fronting for the mob hires Dex to authenticate an antique document, supposedly written by André de Montbard, a 12th century knight and fifth Grand Master of the Knights Templar." .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#antique_document_cultists_motive
+:antique_document_cultists_motive rdf:type owl:NamedIndividual ;
+                                  sche:description "French cultists have arrived in L.A. and are more than ready to kill to get it back. Once they have the document, they intend to use its secrets of telluric energy, in combination with the Griffith Observatory pendulum, to effect a world-shaking great working." .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#antique_document_sell_motive
+:antique_document_sell_motive rdf:type owl:NamedIndividual ;
+                              sche:description "Its owner insisted it was valuable and would pay off his gambling debts to them. This fellow got, uh, a little roughed up along the way and is no longer able to explain just how it is worth what he owed." .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#archaeology
@@ -348,6 +650,10 @@ else (setback)"""
               rdfs:label "Architecture ability" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#art
+:art rdf:type owl:NamedIndividual .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#art_history
 :art_history rdf:type owl:NamedIndividual ,
                       :AcademicAbility ;
@@ -359,6 +665,15 @@ else (setback)"""
                           "tell when something has been retouched or altered" ;
              sche:description "You’re an expert on works of art (including the practical arts such as furniture and pottery) from an aesthetic and technical point of view." ;
              rdfs:label "Art history ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#arthur_bell
+:arthur_bell rdf:type owl:NamedIndividual ,
+                      bno:Character ;
+             bno:location :los_angeles ;
+             :occupation "member of Mankind United cult" ;
+             sche:description "Arthur Bell, 37, (1900-?) of the anti-war Mankind United cult lives on the Sunset Strip, in the splendor due an omnipotent being. His cosmology pits the oppressive Hidden Rulers against the benevolent Sponsors, who will rescue mankind from drudgery. When enough people sign up in the cult registry, the Sponsors will make themselves known and institute a four-hour work day. A captivating speaker as well as a deep-dyed paranoid, Bell claims to run a network of seven doubles to divert attacks from the Hidden Masters. His pacifist bent will result in sedition charges after Pearl Harbor, but for the moment he’s ably separating a modest following from its cash. In 1951, lawsuits closing in on him, Bell will vanish forever. Will he run out of doubles?" ;
+             rdfs:label "Arthur Bell" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#assess_honesty
@@ -379,6 +694,15 @@ else (setback)"""
                         "use a telescope, including large reflectors" ;
            sche:description "You study celestial objects, including the stars and planets." ;
            rdfs:label "Astronomy ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#athletic_club
+:athletic_club rdf:type owl:NamedIndividual ,
+                        bno:Location ;
+               bno:location :downtown ;
+               sche:description "To sit in the sauna with the Anglo elite, visit the L.A. Athletic Club (431 West 7th St.). Reassure them by letting them win at racquetball, or inspire them by convincing them the information you need will help them keep local power in the hands of the WASP establishment where it belongs." ;
+               rdfs:label "L.A. Athletic Club" ;
+               :represents wd:Q6681978 .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#athletics
@@ -414,8 +738,28 @@ else (setback)"""
                       "mediate hostage situations or diplomatic crises" ,
                       "swap favors or information with others" ;
          sche:description "Spends allow you to gain an advantage other than information in exchange for money or other considerations." ,
-                      "You are an expert in making deals with others, convincing them that the best arrangement for you is also the best for them." ;
+                          "You are an expert in making deals with others, convincing them that the best arrangement for you is also the best for them." ;
          rdfs:label "Bargain ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#bel_air
+:bel_air rdf:type owl:NamedIndividual ,
+                  bno:Location ;
+         bno:location :los_angeles ;
+         sche:description """Contiguous to Beverly Hills and just as exclusive, Bel Air gives you another neighborhood to name when you’re tired of saying Beverley Hills. An early gated community, its zoning forbids multifamily dwellings.
+The UCLA Campus borders it.""" ;
+         rdfs:label "Bel Air" ;
+         :represents wd:Q86768 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#beverly_hills
+:beverly_hills rdf:type owl:NamedIndividual ,
+                        bno:Location ;
+               bno:location :los_angeles ;
+               sche:description """Movie stars, film executives and magnates of industry call the mansions of this most exclusive of neighborhoods home. Dex may come here to interview clients or poke into the dangerous lives of the rich and idle.
+Beverly Hills maintains its own police department, but they’re more glorified security guards than dedicated crime-busters. When a tough or nasty case comes along, they stick their hands in their pockets and whistle absently until someone in the D.A.’s office shows up to take over.""" ;
+               rdfs:label "Beverly Hills" ;
+               :represents wd:Q127856 .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#biology
@@ -428,6 +772,95 @@ else (setback)"""
                       "tell whether an animal or plant is natural to a given area" ;
          sche:description "You study the evolution, behavior, and physical makeup of living organisms." ;
          rdfs:label "Biology ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#black_lotus
+:black_lotus rdf:type owl:NamedIndividual ,
+                      :StoryHook ;
+             bno:cause :black_lotus_motive ;
+             bno:location :los_angeles ;
+             bno:participant :frank_shaw ;
+             sche:description "Everybody knew Shaw won that election underhandedly: that’s like saying it was a municipal election in a big American city in the thirties. He really ordered that bomb planted on Raymond when the cop-turneddick uncovered details of the Shaws’ trafficking in black lotus extract, a drug imported from a plateau in Thibet." ;
+             rdfs:label "Trafficking in black lotus extract" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#black_lotus_motive
+:black_lotus_motive rdf:type owl:NamedIndividual ;
+                    sche:description "They say black lotus makes cocaine look like baby powder." .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#blackmailed_protection
+:blackmailed_protection rdf:type owl:NamedIndividual ,
+                                 :Motive ;
+                        :motiveTarget :whitey_alexander .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#boris_karloff
+:boris_karloff rdf:type owl:NamedIndividual ,
+                        bno:Character ;
+               bno:location :hollywood ;
+               :motive :snake_woman_motive ;
+               :occupation "actor" ;
+               sche:description "Kindly and erudite actor Boris Karloff, (1887–1969)" ;
+               rdfs:label "Boris Karloff" ;
+               :represents wd:Q203219 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#bradbury_building
+:bradbury_building rdf:type owl:NamedIndividual ,
+                            bno:Location ;
+                   bno:location :downtown ;
+                   sche:description "Apparently an ordinary — if strikingly beautiful — office structure (304 South Broadway at West 3rd Street), the Bradbury Building was built at the partial behest of a ghost. In 1892, gold magnate Lewis L. Bradbury engaged the firm of architect Sumner Hunt to construct a building inspired by the 1887 science-fiction novel Looking Backward. It described the perfect utopia of the year 2000. At the last minute, Bradbury took an inexplicable shine to Hunt’s inexperienced draftsman George Wyman and asked him to take the lead on the project. An uncertain Wyman affixed a pencil to an Ouija planchette and consulted his dead brother, who wrote a note urging him to accept the assignment. The building was then constructed in gorgeous Renaissance revival style, though its beauty cost Bradbury his very life force — he dropped dead before its completion. A monument to Euclidean order, it helps to counter and drain the insane energies of the Mythos gods who have taken up increasing residence in the minds of city inhabitants. By the late 30s, frayed around the edges, the building is mostly occupied by fabric wholesalers." ;
+                   rdfs:label "Bradbury Building" ;
+                   :represents wd:Q495106 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#brown_derby
+:brown_derby rdf:type owl:NamedIndividual ,
+                      bno:Location ;
+             bno:location :hollywood ;
+             sche:description "The hat-shaped Brown Derby restaurant has just been moved from its original location to 3377 Wilshire Boulevard. Its sister restaurant, with a less iconic mission-style facade, sits at Hollywood and Vine and is actually the one where all the movie stars congregate. When Dex wants to trade gossip he has for gossip he needs, he’ll come here." ;
+             rdfs:label "Brown Derby" ;
+             :represents wd:Q3520148 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#budd_barron
+:budd_barron rdf:type owl:NamedIndividual ,
+                      bno:Character ;
+             :worksFor :bugsy ;
+             :occupation "mid-level gangster" ;
+             sche:description "b.1895, pencil-mustached, fast-talking. Older brother of a more successful Chicago gambling kingpin who’s come out west to reverse his fortunes as a captain for Bugsy Siegel. Among his assignments he’s been ordered to lean on Whitey for a cut of his action, east coast style — or better yet, force him out and take over." ;
+             rdfs:label "Budd Barron" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#budd_starts_putting_squeeze_on_whitey
+:budd_starts_putting_squeeze_on_whitey rdf:type owl:NamedIndividual ;
+                                       bno:cause :blackmailed_protection ;
+                                       bno:participant :budd_barron ,
+                                                       :whitey_alexander ;
+                                       :pastEventTimeline "100 days ago" ;
+                                       sche:description "Budd Barron starts putting the squeeze on Whitey." .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#bugsy
+:bugsy rdf:type owl:NamedIndividual ,
+                bno:Character ;
+       bno:location :los_angeles ;
+       :motive :blackmailed_protection ;
+       :occupation "mobster" ;
+       sche:description "Benjamin (Bugsy) Siegel, (1906–1947) has landed in the city, exuding matinee-idol charisma. He serves as the L.A. vanguard for the east coast Genovese crime family, led by expansion-minded racketeers Frank Costello and Meyer Lansky." ,
+                        "b. 1906), dapper, charming. Founding member of Murder Incorporated, protégé of Meyer Lansky and Lucky Luciano. A fresh arrival in Los Angeles, he’s looking to displace Guy McAfee and the old-line Syndicate." ;
+       rdfs:label "Benjamin (Bugsy) Siegel" ;
+       :represents wd:Q315487 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#bunker_hill
+:bunker_hill rdf:type owl:NamedIndividual ,
+                      bno:Location ;
+             bno:location :los_angeles ;
+             sche:description "The original home of the city’s elite, this multilevel district is now regarded as a shambles — not least by the real-estate moguls intent on razing and replacing it. Its decaying Victorian manors conjure the spirit of Edgar Allan Poe. Need a place for a crumbling Gothic household inhabited by a mad old family? That’s Bunker Hill. Many of its old houses have been cut up into flophouses and tenement apartments. When Dex tracks a down-and-outer, he’ll likely find him here, though perhaps not registered under his real name. You’ll need a vintage map to find Bunker Hill — the developers got their way in the 50s and 60s." ;
+             rdfs:label "Bunker Hill" ;
+             :represents wd:Q2928231 .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#bureaucracy
@@ -444,6 +877,45 @@ else (setback)"""
              rdfs:label "Bureaucracy ability" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#buron_fitts
+:buron_fitts rdf:type owl:NamedIndividual ,
+                      bno:Character ;
+             bno:location :los_angeles ;
+             :occupation "L.A. County District Attorney" ;
+             sche:description "(1895–1973) first elected in 1928, once stood as a bulwark against the System’s crooked dealings. His deeply-set eyes and commanding nose lend him an expressive repertoire of expressions ranging from intense to doleful." ;
+             rdfs:label "Buron Fitts" ;
+             :represents wd:Q5000272 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#central_avenue_corridor
+:central_avenue_corridor rdf:type owl:NamedIndividual ,
+                                  bno:Location ;
+                         bno:location :los_angeles ;
+                         sche:description """The city’s black population lives in a segregated belt west of downtown, around north-south Central Avenue. It suffers the expected social ills of any zone of concentrated poverty and stunted prospects. A development squeeze leaves residents in a bind. Property magnates want to force them out, converting urban blight into cash. When they try to go elsewhere, they bump up against the protests of White Homeowners Associations and the gleeful violence of KKK vigilantes.
+Decades from now, the term for this area will mutate slightly, to South Central.""" ;
+                         rdfs:label "Central Avenue corridor" ;
+                         :represents wd:Q5060395 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#charlie_chaplin
+:charlie_chaplin rdf:type owl:NamedIndividual ,
+                          bno:Character ;
+                 bno:location :hollywood ;
+                 :occupation "actor" ;
+                 sche:description "Your detective’s best chance of meeting Charlie Chaplin, (1889–1977) still the most famous man in the world, may be in the courtroom. Charlie loves a spectacular trial, and can always expect the bailiffs to set aside a seat for him." ;
+                 rdfs:label "Charlie Chaplin" ;
+                 :represents wd:Q882 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#chavez_ravine
+:chavez_ravine rdf:type owl:NamedIndividual ,
+                        bno:Location ;
+               bno:location :los_angeles ;
+               sche:description "East of Silver Lake lies the city’s Mexican-American ghetto, comprising the communities of La Loma, Palo Verde, and Bishop. The city’s Jim Crow regime applies as much to its Latino residents as it does African-Americans. Housing discrimination keeps the Latinos squeezed out of the Old Plaza barrio on Olvera Street by Harry Chandler’s boys from relocating anywhere else but here." ;
+               rdfs:label "Chavez Ravine" ;
+               :represents wd:Q3676132 .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#chemistry
 :chemistry rdf:type owl:NamedIndividual ,
                     :TechnicalAbility ;
@@ -455,6 +927,41 @@ else (setback)"""
                         "perform chemical document analysis on ink or paper" ;
            sche:description "You’re trained in the analysis of chemical substances." ;
            rdfs:label "Chemistry ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#chinatown
+:chinatown rdf:type owl:NamedIndividual ,
+                    bno:Location ;
+           bno:location :downtown ;
+           sche:description "The city’s original Chinatown used to be further south, until Harry Chandler decided it impeded his access to Olvera Street ley energy. When some residents dug in their heels and refused to leave, he trumped up a phony smallpox epidemic. His preservationist ally Christine Sterling now puts the finishing touches on a beautifying project called China City, which will open next year. It surrounds the Chinese community with a picturesque, tourist-friendly wall. What goes better together than China and walls? In a spirit of clever parsimony, parts of the wall incorporate leftover set pieces from the movie The Good Earth, featuring such celebrated Chinese actors as Paul Muni and Louise Rainier. The fact that this dampens the powers of the community’s virtuous red magicians must be a coincidence. Right, Mister Chandler?" ;
+           rdfs:label "Chinatown" ;
+           :represents wd:Q2555601 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#city_hall
+:city_hall rdf:type owl:NamedIndividual ,
+                    bno:Location ;
+           bno:location :downtown ;
+           sche:description "Los Angeles City Hall (200 North Spring Street) looms above the city like a bone-white colossus. On the advice of ley-obsessed Harry Chandler, zoning rules prohibit any other building from exceeding its height. Architects modeled its neoclassical lines on the Mausoleum at Halicarnassus, built in honor of the 4th Century BCE Hellenistic Persian satrap Mausolus by his sister and widow Artemesia. The two rulers built their city from nearly nothing and absorbed vast quantities of wealth in doing so. Such was the splendor of Artemesia’s structure that her husband-brother became the namesake for monuments to the dead. By sympathetically evoking their spirits, City Hall grants its occupants subliminal occult power to arrogate resources from the citizenry and win approval for their development projects. It shares this influence with the chief Masonic temple in the nation’s capital." ;
+           rdfs:label "Los Angeles City Hall" ;
+           :represents wd:Q214126 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#city_hall_hook
+:city_hall_hook rdf:type owl:NamedIndividual ,
+                         :StoryHook ;
+                bno:location :city_hall ;
+                sche:description "An archaeological consultant to the building project with curiously clear insights into the ancient Middle East left behind a gift for its occupants. When anyone gets too close to understanding the structure’s occult import, invisible spirit projections of the consultant’s two attendant panthers stalk them. Ghost cat attack victims appear to die from brain aneurysms. As a side effect of City Hall’s resonance, sensitive, withdrawn women across the city sometimes dream of panthers, or even come to believe that they are transforming into big cats. City Hall’s magical emanations may also be responsible for the city’s statistically anomalous incidence of brother-sister incest cases." .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#clara_nebel
+:clara_nebel rdf:type owl:NamedIndividual ,
+                      bno:Character ;
+             :acquaintance :helen_deakin ,
+                           :william_dudley_pelley ;
+             :occupation "spiritual guru" ;
+             sche:description "b.1898 , turbaned, grandiose. Pyramidologist, seer and fortune-teller to the Hollywood rich and famous. Helen turned to her as a spiritual guru. Clara tapped the Deakin fortune to line the pockets of her political mentor, William Dudley Pelley." ;
+             rdfs:label "Clara Nebel" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#climatic_event_1_die
@@ -471,6 +978,24 @@ else (setback)"""
                       :advanceTarget 10 ;
                       :holdTarget 6 ;
                       rdfs:label "Climactic or pivotal story event for 2 Die ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#cocoanut_grove
+:cocoanut_grove rdf:type owl:NamedIndividual ,
+                         bno:Location ;
+                bno:location :ambassador_hotel ;
+                sche:description "It draws moviedom’s biggest stars and well-heeled glamor-seekers hoping to gawp at them. Fake palm trees decorate its cavernous interior. Show you’re in the know by calling it simply The Grove." ;
+                rdfs:label "Cocoanut Grove" ,
+                           "the Grove" ;
+                :represents wd:Q60445564 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#colorado_street_bridge
+:colorado_street_bridge rdf:type owl:NamedIndividual ,
+                                 bno:Location ;
+                        bno:location :pasadena ;
+                        sche:description "alias the Suicide Bridge. More people have plunged to their chosen deaths here than off any other concrete arch bridge in the world." ;
+                        rdfs:label "Colorado Street Bridge" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#conceal
@@ -579,6 +1104,60 @@ else (setback)"""
                 rdfs:label "Cthulhu mythos ability" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#curse_of_shuler
+:curse_of_shuler rdf:type owl:NamedIndividual ,
+                          :StoryHook ;
+                 bno:cause :curse_of_shuler_motive ;
+                 bno:location :los_angeles ;
+                 bno:participant :dex_raymond ,
+                                 :robert_pierce_shuler ;
+                 sche:description "Rumor has it that Shuler’s curse caused the 1933 Long Beach earthquake, which reverberated through southern California, scoring a 6.4 on the Richter scale and taking 115 lives. For once, rumor has it right. Growing up in the Blue Ridge mountains, Shuler made mental contact with dholes, enormous subterranean worms usually unable to manifest in this dimension. Intentionally or not, he reestablished that link during his post-election funk, causing the quake. Frightened by the result, Shuler has yet to attempt it again. But if his righteous wrath gets out of control again, he might shake the city to its foundations. The one man in Shuler’s organization who heard him confess to this has just washed up dead on Venice Beach, and Dex has been hired to find out why." .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#curse_of_shuler_motive
+:curse_of_shuler_motive rdf:type owl:NamedIndividual ;
+                        sche:description "Shuler is down but not out after losing a 1932 Senate campaign, after which he pronounced a curse on the state of California." .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#daly_is_looking_helen
+:daly_is_looking_helen rdf:type owl:NamedIndividual ;
+                       bno:cause :impatient_helen ,
+                                 :last_talk_with_daly ,
+                                 :love_helen_and_daly ;
+                       bno:participant :margaret_deakin ,
+                                       :marshall_daly ;
+                       :pastEventTimeline "33 days ago" ;
+                       sche:description "Marshall Daly goes to the Deakin house looking for Helen. Margaret tells him that she’s missing but doesn’t encourage him to stick around." .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#darryl_zanuck
+:darryl_zanuck rdf:type owl:NamedIndividual ,
+                        bno:Character ;
+               bno:location :hollywood ;
+               :occupation "studio head" ;
+               sche:description "When you think of studio heads waving cigars around, it’s probably because of Darryl F. Zanuck, (1902–1979) who started 20th Century Fox four years ago in wake of a salary tiff with Jack Warner. Since then he’s knocked out a string of hits, thanks in large part to child superstar Shirley Temple." ;
+               rdfs:label "Darryl F. Zanuck" ;
+               :represents wd:Q364342 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#death_of_kurtz_hansen
+:death_of_kurtz_hansen rdf:type owl:NamedIndividual ,
+                                :StoryHook ;
+                       bno:cause :eugenicist_motive ;
+                       bno:location :los_angeles ;
+                       bno:participant :dex_raymond ,
+                                       :harry_chandler ;
+                       sche:description "Dex investigates the death of ex-cop Kurtz Hansen, an old-time legbreaker for whom he had an inexplicable soft spot. It seems that the killing ties into the cover-up of a migrant massacre out in the sticks. Was someone making sure that persons with the wrong blood in their veins couldn’t mess up the Chandler hoodoo?" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#death_of_mother
+:death_of_mother rdf:type owl:NamedIndividual ;
+                 bno:participant :helen_deakin ,
+                                 :margaret_deakin ;
+                 :pastEventTimeline "2 years ago" ;
+                 sche:description "Margaret and Helen’s mother dies." .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#determines_direction_of_main_plotline_1_die
 :determines_direction_of_main_plotline_1_die rdf:type owl:NamedIndividual ,
                                                       :ChallengeTemplate ;
@@ -625,6 +1204,63 @@ else (setback)"""
                   rdfs:label "Devices die roll" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#dex_found_out_cheating
+:dex_found_out_cheating rdf:type owl:NamedIndividual ;
+                        :motiveTarget :dex_raymond ;
+                        sche:description "While investigating a shady divorce attorney for another case, Dex found out that Len was one of his clients, and that the attorney was sleeping with his wife. For that tip-off, Pollard performs shady favors for Dex like pulling confidential files or fixing traffic tickets." ;
+                        rdfs:label "Dex found out the cheating of Len's wife" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#dex_raymond
+:dex_raymond rdf:type owl:NamedIndividual ,
+                      :Investigator ;
+             :ability :accounting ,
+                      :assess_honesty ,
+                      :bargain ,
+                      :cop_talk ,
+                      :cryptography ,
+                      :evidence_collection ,
+                      :inspiration ,
+                      :intimidation ,
+                      :law ,
+                      :locksmith ,
+                      :photography ,
+                      :reassurance ,
+                      :research ,
+                      :streetwise ;
+             :acquaintance :len_pollard ;
+             :friend :ted_gargan ;
+             :motive :wiretap_network_of_davis_motive ;
+             :source :alfred_kelham ,
+                     :mack ,
+                     :madame_eva ,
+                     :max_weyl ,
+                     :virginia_ashbury ;
+             <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#1dice> :conceal ,
+                                                                                                                               :cool ,
+                                                                                                                               :devices ,
+                                                                                                                               :driving ,
+                                                                                                                               :filch ,
+                                                                                                                               :preparedness ;
+             <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#2dice> :athletics ,
+                                                                                                                               :fighting ,
+                                                                                                                               :sense_trouble ,
+                                                                                                                               :shadowing ,
+                                                                                                                               :stability ,
+                                                                                                                               :stealth ;
+             :occupation "private detective" ;
+             :startingPushes 3 ;
+             sche:description "Archetypal hardboiled private investigator Dex Raymond prowls Los Angeles’ haunted streets as an outsider by choice. With his smarts and grit, he could have wormed his way into its corrupt power structure. Instead, he operates on its fringes, writing wrongs for a modest fee, plus expenses. In addition to his contacts, he counts one more key friend — LAPD Detective Sergeant Ted Gargan, a rare honest man in a town where cops can be bought by the barrel." ,
+                              "Hard-boiled Shamus" ;
+             rdfs:label "Dexter (Dex) Raymond" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#dexter_raymond_portrait
+:dexter_raymond_portrait rdf:type owl:NamedIndividual ,
+                                  bbo:Portrait ;
+                         sche:image "https://pelgranepress.com//nas/content/live/pelgranepress/wp-content/uploads/2015/09/Dex-Raymond_300-204x300.png" .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#discard_edges_and_problems
 :discard_edges_and_problems rdf:type owl:NamedIndividual ,
                                      bro:Gamerule ;
@@ -658,6 +1294,17 @@ else (setback)"""
                    rdfs:label "Disguise die roll" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#disposal_of_palais
+:disposal_of_palais rdf:type owl:NamedIndividual ;
+                    bno:cause :palais_trails_mickey_to_roy ;
+                    bno:location :garage_of_roy ;
+                    bno:participant :ed_palais ,
+                                    :mickey_cohen ,
+                                    :roy_bedacht ;
+                    :pastEventTimeline "92 days ago" ;
+                    sche:description "Palais leaves the negatives with his photo lab guy and heads out to pick up Cohen’s trail again. Mickey gets the drop on him, beats him, and takes him to Roy’s garage for disposal. Roy decides to have a little fun with him before finishing him off, and lowers him into the ghoul cave alive. Palais emerges with his mind shattered." .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#distressing_turn_1_die
 :distressing_turn_1_die rdf:type owl:NamedIndividual ,
                                  :ChallengeTemplate ;
@@ -672,6 +1319,40 @@ else (setback)"""
                         :advanceTarget 13 ;
                         :holdTarget 6 ;
                         rdfs:label "Distressing turn for 2 Die ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#downey
+:downey rdf:type owl:NamedIndividual ,
+                 bno:Location ;
+        bno:location :los_angeles ;
+        sche:description """Small burg to the south of Los Angeles.
+Rich patients go to exclusive private clinics near Bel Air or over in Palm Springs, none of them old enough to be haunted.""" ;
+        rdfs:label "Downey" ;
+        :represents wd:Q488946 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#downtown
+:downtown rdf:type owl:NamedIndividual ,
+                   bno:Location ;
+          bno:location :los_angeles ;
+          rdfs:label "Downtown" ;
+          :represents wd:Q995043 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#dragna_and_dead_priest
+:dragna_and_dead_priest rdf:type owl:NamedIndividual ;
+                        sche:description "Dragna sees it as a warning issued by gangland rivals." ;
+                        rdfs:label "Jack Dragna wants to investigate death of priest" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#dragna_hook
+:dragna_hook rdf:type owl:NamedIndividual ,
+                      :StoryHook ;
+             bno:cause :dragna_and_dead_priest ;
+             bno:participant :dex_raymond ,
+                             :jack_dragna ;
+             sche:description "Like many mobsters, Dragna seeks credibility in his community through regular church attendance. When a new young priest of his local parish is found dead, his kneeling corpse rigid, his eyes burst in their sockets, Dragna sees it as a warning issued by gangland rivals. He arranges for a square-seeming parishioner to hire Dex to investigate. Instead, the trail leads to the priest’s previous posting in Providence, Rhode Island. There he led prayers to ward off the so-called “Haunter of the Dark,” released when a would-be occultist tampered with an artifact called the Shining Trapezohedron. What followed the priest from sleepy Providence to hopped-up Los Angeles? And can Dex put it down?" ;
+             rdfs:label "Story hook for Jack Dragna" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#driving
@@ -731,6 +1412,29 @@ else (setback)"""
                                rdfs:label "Easy victory with bad consequences if you miss for 2 Die ability" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#echo_of_son
+:echo_of_son rdf:type owl:NamedIndividual ;
+             :motiveTarget :dex_raymond ;
+             sche:description "Proudly pedantic and a touch paternalistic, Kelham sees in Dex an echo of his own son, a soldier killed in WWI." ;
+             rdfs:label "Echo of dead son" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#echo_park
+:echo_park rdf:type owl:NamedIndividual ,
+                    bno:Location ;
+           bno:location :los_angeles ;
+           rdfs:label "Echo Park" ;
+           :represents wd:Q3047014 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#ed_palais
+:ed_palais rdf:type owl:NamedIndividual ,
+                    bno:Character ;
+           :worksFor :guy_mcafee ;
+           :occupation "ex-cop" ;
+           rdfs:label "Ed Palais" .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#edges
 :edges rdf:type owl:NamedIndividual ,
                 bro:Characteristic ;
@@ -747,6 +1451,13 @@ else (setback)"""
                 rdfs:label "Emotional coda" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#enigma_of_underworld
+:enigma_of_underworld rdf:type owl:NamedIndividual ;
+                      :motiveTarget :dex_raymond ;
+                      sche:description "enjoys a vicarious glimpse at a seamy, dangerous underworld" ;
+                      rdfs:label "Enigma of underworld" .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#enough_picks
 :enough_picks rdf:type owl:NamedIndividual ,
                        bro:Statement ;
@@ -754,6 +1465,21 @@ else (setback)"""
               bro:statementPredicate ">=" ;
               bro:statementValue "3" ;
               rdfs:label "Enough picks for improvement" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#eugene_biscailuz
+:eugene_biscailuz rdf:type owl:NamedIndividual ,
+                           bno:Character ;
+                  bno:location :los_angeles ;
+                  :occupation "L.A. County Sheriff" ;
+                  sche:description "(1883–1969) is the quieter, smarter version of Two Gun Davis: the one who either is as blameless as his admirers say, or the one who never gets caught. Round-faced, on the short side, and peering out from behind horn-rimmed spectacles, his mild look puts a pleasant face on his authority." ;
+                  rdfs:label "Eugene Biscailuz" ;
+                  :represents wd:Q16006522 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#eugenicist_motive
+:eugenicist_motive rdf:type owl:NamedIndividual ;
+                   sche:description "A committed eugenicist, Chandler fears a resurgence by partial humans whose veins pulse with primordial blood. He must remain forever alert, lest their presence pollute his ley energy and plunge him back into infirmity." .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#evidence_collection
@@ -814,6 +1540,73 @@ else (setback)"""
                      rdfs:label "Explosives die roll" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#family_heirloom
+:family_heirloom rdf:type owl:NamedIndividual ,
+                          :StoryHook ;
+                 bno:cause :family_heirloom_motive ;
+                 bno:location :los_angeles ;
+                 bno:participant :dex_raymond ,
+                                 :frank_shaw ;
+                 sche:description "A client hires Dex to find a precious family heirloom, an amulet of ancient but uncertain provenance. It was last seen at the funeral home, but the client wants it back, no questions asked. The client knows this sounds crazy, so won’t say anything about it to Dex unless pressed." ;
+                 rdfs:label "Family heirloom" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#family_heirloom_motive
+:family_heirloom_motive rdf:type owl:NamedIndividual ;
+                        sche:description "A doom will fall upon all who falsely try to claim it, and the world won’t be safe until it is back in the coffin, around the neck of its rightful owner." ;
+                        rdfs:label "Doom amulet" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#fathomless_sleep
+:fathomless_sleep rdf:type owl:NamedIndividual ,
+                           :Case ;
+                  bno:location :los_angeles ;
+                  :cast :budd_barron ,
+                        :bugsy ,
+                        :clara_nebel ,
+                        :franz_speelmans ,
+                        :guy_mcafee ,
+                        :helen_deakin ,
+                        :margaret_deakin ,
+                        :marshall_daly ,
+                        :mickey_cohen ,
+                        :phil_block ,
+                        :roscoe_deakin ,
+                        :roy_bedacht ,
+                        :whitey_alexander ,
+                        :william_dudley_pelley ;
+                  :investigator :dex_raymond ;
+                  :pastEvent :budd_starts_putting_squeeze_on_whitey ,
+                             :daly_is_looking_helen ,
+                             :death_of_mother ,
+                             :disposal_of_palais ,
+                             :helen_becomes_girl_of_whitey ,
+                             :helen_gives_books_to_mickey ,
+                             :helen_realizes_skimming_cash_by_whitey ,
+                             :helen_starts_making_eyes_at_phil ,
+                             :impatient_helen ,
+                             :last_talk_with_clara ,
+                             :last_talk_with_daly ,
+                             :margaret_decides_to_contact_private_eye ,
+                             :margaret_notices_absense_of_helen ,
+                             :margaret_pays_off_debts_of_father ,
+                             :mcafee_hires_palais ,
+                             :mickey_discovers_alive_palais ,
+                             :mickey_gives_books_to_bugsy ,
+                             :mickey_gives_the_go_ahead ,
+                             :missing_person_report ,
+                             :palais_trails_mickey_to_roy ,
+                             :phil_gives_books_to_helen ,
+                             :phil_starts_copying_books ,
+                             :plan_of_helen ,
+                             :police_find_helen ,
+                             :roscoe_gambling ,
+                             :trapped_with_whitey ,
+                             :whitey_lashes_out_at_helen ;
+                  :year 1937 ;
+                  rdfs:label "The fathomless sleep" .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#fighting
 :fighting rdf:type owl:NamedIndividual ,
                    :PhysicalAbility ;
@@ -860,6 +1653,12 @@ else (setback)"""
                          bro:CheckRoll ;
                 bro:uses :filch ;
                 rdfs:label "Filch die roll" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#find_reason_of_ill_of_helen
+:find_reason_of_ill_of_helen rdf:type owl:NamedIndividual ,
+                                      :Motive ;
+                             :motiveTarget :helen_deakin .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#first_aid
@@ -929,6 +1728,35 @@ else (setback)"""
            rdfs:label "Forensics ability" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#forest_lawn_cemetery
+:forest_lawn_cemetery rdf:type owl:NamedIndividual ,
+                               bno:Location ;
+                      bno:location :glendale ;
+                      sche:description "Forest Lawn Cemetery, where Hollywood’s fallen finest lay buried. Forest Lawn’s guiding light, Hubert Eaton, (1881–1966) believes that graveyards must eschew the dolorous, instead presenting themselves as joyous celebrations of life. His famous funerary achievement has done away with upright stones, but it does have a replica of Michelangelo’s David. Infant burials occur in a special area called Babyland; older children, in Slumberland. No blacks, Jews, or Chinese, please." ;
+                      rdfs:label "Forest Lawn Cemetery" ;
+                      :represents wd:Q1437214 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#frank_shaw
+:frank_shaw rdf:type owl:NamedIndividual ,
+                     bno:Character ;
+            bno:location :los_angeles ;
+            :motive :black_lotus_motive ;
+            :occupation "mayor" ;
+            sche:description "Mayor — and crime boss Guy McAfee ally — Frank L. Shaw, (1877–1958) surveys these newcomers with a disapproving eye. Frank slaps backs and smokes cigars while his detail-oriented brother Joe collects the graft. Mayoral corruption runs the gamut from the usual kickbacks for no-bid contracts and the sale of government jobs to an organized effort to strip the dead of their valuables at funeral homes." ;
+            rdfs:label "Frank L. Shaw" ;
+            :represents wd:Q5487817 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#franz_speelmans
+:franz_speelmans rdf:type owl:NamedIndividual ,
+                          bno:Character ;
+                 :rival :marshall_daly ;
+                 :occupation "journalist" ;
+                 sche:description "b.1878, obese, wheezy, squints as if holding in an imaginary monocle. A Nazi spy posing as a journalist, he seeks dirt on Hollywood writers and directors whose movies feature anti-Nazi themes. A dedicated voyeur, Speelmans pursues sexual information with sweaty fervor." ;
+                 rdfs:label "Franz Speelmans" .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#gain_push
 :gain_push rdf:type owl:NamedIndividual ,
                     bro:Gamerule ;
@@ -943,6 +1771,20 @@ else (setback)"""
            bro:changes :ticks ;
            sche:description "+1 tick" ;
            rdfs:label "Gain tick for improvement" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#gala_dali
+:gala_dali rdf:type owl:NamedIndividual ,
+                    bno:Character ;
+           bno:location :los_angeles ;
+           :occupation "business manager" ;
+           sche:description "Russian-born wife and business manager of Salvador Dali, (1894–1982) keeps as tight a rein on him as she can while also pursuing her propensity for affairs and gambling. She wields formidable occult power in the Dreamlands, a nightmare reflection of the waking world accessible only in one’s sleep." ;
+           rdfs:label "Gala Dali" ;
+           :represents wd:Q464056 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#garage_of_roy
+:garage_of_roy rdf:type owl:NamedIndividual .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#general_ability_improve_selector
@@ -974,6 +1816,236 @@ else (setback)"""
          rdfs:label "Geology ability" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#george_ellery_hale
+:george_ellery_hale rdf:type owl:NamedIndividual ,
+                             bno:Character ;
+                    bno:location :pasadena ;
+                    :occupation "astronomer" ;
+                    sche:description "Caltech owes its status as a breeding ground for advanced research largely to the efforts of pioneering solar astronomer George Ellery Hale. Hale suffers from a range of neurasthenic disorders. Ever since his childhood, people around him described him as spurred by a weird internal energy they called “the Demon.” Now the demon has spent its force; Hale has less than a year to live. Hale fashioned Caltech as an indivisible alliance between science and business." ;
+                    rdfs:label "George Ellery Hale" ;
+                    :represents wd:Q312288 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#glendale
+:glendale rdf:type owl:NamedIndividual ,
+                   bno:Location ;
+          bno:location :los_angeles ;
+          sche:description "The San Fernando and San Gabriel valleys converge in Glendale to give birth to a crisscrossing of earthquake faults. Its unstable telluric energies will in the decades to come beckon American Nazis and Hillside Stranglers." ;
+          rdfs:label "Glendale" ;
+          :represents wd:Q485716 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#gratitude_for_out_of_blackmail
+:gratitude_for_out_of_blackmail rdf:type owl:NamedIndividual ;
+                                :motiveTarget :dex_raymond ;
+                                sche:description "Dex helped one of Max’s friends out of a blackmail scrape last year, earning his lasting gratitude." ;
+                                rdfs:label "Gratitude for out of blackmail" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#grauman_chinese_theater
+:grauman_chinese_theater rdf:type owl:NamedIndividual ,
+                                  bno:Location ;
+                         bno:location :hollywood ;
+                         sche:description "Grauman’s Chinese Theater (6925 Hollywood Boulevard) opened in 1927. Mary Pickford and Douglas Fairbanks invested in the project. It eclipsed its immediate predecessor (below) with a closer proximity to the studios and the deathless gimmick of commemorating movie star hand- and footprints in cement. The theater’s guardian lions act as passive Elder Signs, thus making Grauman’s Chinese the truest sanctuary from Mythos horrors in all of Los Angeles." ;
+                         rdfs:label "Grauman’s Chinese Theater" ;
+                         :represents wd:Q1122565 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#grauman_egyptian_theatre
+:grauman_egyptian_theatre rdf:type owl:NamedIndividual ,
+                                   bno:Location ;
+                          bno:location :hollywood ;
+                          sche:description "The diggings of archaeologist Howard Carter inspired the 1922 construction of Grauman’s Egyptian Theater (6706 Hollywood Boulevard). A movie palace in every sense of the word, its overblown décor includes an outdoor courtyard used to host premiere parties." ;
+                          rdfs:label "Grauman's Egyptian Theatre" ;
+                          :represents wd:Q750733 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#grauman_egyptian_theatre_hook
+:grauman_egyptian_theatre_hook rdf:type owl:NamedIndividual ,
+                                        :StoryHook ;
+                               bno:location :grauman_egyptian_theatre ;
+                               bno:participant :dex_raymond ;
+                               sche:description "No halfway educated occultist would look to the faux designs of the Egyptian theater for esoteric truths. But bumpkins from the rural heartland, who learned all about Nyarlathotep at knees of their inbred sister-mothers, might make its gilded walls the first stop in a yokel kill spree. This in turn will excite the attention of the System, which has no more tolerance for rampaging Whateleys than it did for swaggering Capones. When somebody Dex cares about gets caught in the crossfire, the case gets personal." .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#griffith_park
+:griffith_park rdf:type owl:NamedIndividual ,
+                        bno:Location ;
+               bno:location :los_angeles ;
+               sche:description """In 1896, mining journalist turned millionaire consultant Griffith J. Griffith and his wife Christina made a Christmas present to the city, in the form of a 3,000 acres of parkland. The city responded by naming it after them.
+Six years later, in a paranoid, drunken rage, Griffith shot Christina in the head, costing her the use of her right eye. After a divorce and brief stint in San Quentin, Griffith made a second Christmas present to the city: funds to build a Greek theater in the park.
+Griffith died in 1919, leaving behind a will calling for the construction of an observatory to bring astronomical knowledge to the urban masses. The Griffith Observatory opened four years ago, in 1933. Visitors most remark upon its prominently displayed, deco-styled Foucault’s pendulum, a device demonstrating the Earth’s rotation.
+Legend attributes a rash of misfortunes and untimely deaths in the park to Doña Petrenilla, a ghostly young woman in a white 19th-century dress who patrols it on misty nights. She’s been sore ever since, in true Los Angeles fashion, someone cheated her out of this land in an inheritance grift. Some say that when Griffith J. Griffith shot his wife, he thought he was aiming at Petrenilla.
+A beacon shines from a tower in the park. At night, should he find himself groggily returning to consciousness in the northern part of the city sprawl, your Investigator can use its light to orient himself.
+Sightings of green, man-like beings in the park suggest it also contains an outlet for a subterranean ghoul corridor.""" ;
+               rdfs:label "Griffith Park" ;
+               :represents wd:Q1340614 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#guy_ballard
+:guy_ballard rdf:type owl:NamedIndividual ,
+                      bno:Character ;
+             bno:location :los_angeles ;
+             :occupation "founder of the I AM movement" ;
+             sche:description "With his wife Edna, Guy Ballard, 59, (1878- 1939), a.k.a Godfré Ray King, promulgates the I AM Activity from their highly perfumed, terracottaroofed tabernacle at 1320 Hope Street, downtown. His bestselling book Unveiled Mysteries tells of his meeting on California’s Mount Shasta with the freshly materialized immortal mystic Saint-Germain. The way he tells it, Saint-Germain fed him a wafer of pure electronic essence, taking him on an astral tour of the world. The count taught him that truth of the universal godhead within us all can be learned from god-like Ascended Masters who transcend life and death. The Ballards instruct followers in the manipulation of the universe’s twin forces, energy and wealth. They augment their own share of the latter by accepting love offerings and selling such merchandise as mystical cold creams and electrical devices. The Ballards buy regular radio time and claim nearly a million followers across the nation. An Investigator meeting Ballard notes his unfocused stare and cultivated resemblance to the actor Bela Lugosi." ;
+             rdfs:label "Guy Ballard" ;
+             :represents wd:Q3507190 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#guy_mcafee
+:guy_mcafee rdf:type owl:NamedIndividual ,
+                     bno:Character ;
+            bno:location :los_angeles ;
+            :occupation "vice cop" ;
+            sche:description "Atop the 1937 gangland pyramid perches former vice cop Guy McAfee, (1888–1960), unaware that his hold on L.A. is about to crumble. Tousled white hair and jug ears play to his aw-shucks manner, which he cops from his predecessor." ,
+                             "b. 1888, jug-eared, folksy businessman, ex-cop and current head of the System, the city’s well-connected dominant criminal gang." ;
+            rdfs:label "Guy McAfee" ;
+            :represents wd:Q23017206 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#gyonshi_hook
+:gyonshi_hook rdf:type owl:NamedIndividual ,
+                       :StoryHook ;
+              bno:location :chinatown ;
+              bno:participant :dex_raymond ;
+              sche:description "Ted Soo, a respected figure in his community, hires Dex to find some boxes shipped in from Shanghai that have gone missing. He neglects to mention that they’re coffins, ordered by an embittered businessman whose fortunes went to hell after the displacement. The man’s contacts in China have ties to the Five Watchers who dwell beneath the Bayan Kara Shan mountains. The coffins contain gyonshi, hopping vampires controllable by incantation. Someone with connections in the System intercepted the shipment. The errant businessman will be dealt with internally: Soo needs Dex to find and destroy the gyonshi before their presence can be used to trigger reprisals against his people." .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#hal_wallis
+:hal_wallis rdf:type owl:NamedIndividual ,
+                     bno:Character ;
+            bno:location :hollywood ;
+            :occupation "executive producer" ;
+            sche:description "Executive producer, Hal B. Wallis, (1898–1986) exerts more creative influence than he does. Levelheaded and hardworking, he gives the scandal sheets nothing to chew on." ;
+            rdfs:label "Hal B. Wallis" ;
+            :represents wd:Q472520 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#hall_of_justice
+:hall_of_justice rdf:type owl:NamedIndividual ,
+                          bno:Location ;
+                 bno:location :downtown ;
+                 sche:description "Your detective will find himself making extensive use of Cop Talk, plus a little Bureaucracy, at the Hall of Justice (210 West Temple at Spring). Taking up an entire city block, the Hall needs no address, just a zip code. Built in 1925, this Beaux-Art tower reverses Dante’s circles of hell, with gold-coffered lobbies below and the dismal City Jail on its top three floors. In addition to the jail, it houses the County Courts (eighth floor, with jury and press rooms on the ninth), the County Sheriff’s HQ, the District Attorney’s Office (sixth and seventh floors), and the Coroner’s office." ;
+                 rdfs:label "Hall of Justice" ;
+                 :represents wd:Q104640890 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#harpo_marx
+:harpo_marx rdf:type owl:NamedIndividual ,
+                     bno:Character ;
+            bno:location :hollywood ;
+            :occupation "actor" ;
+            sche:description "(1888–1964), bonded by their shared anarchic spirit" ;
+            rdfs:label "Harpo Marx" ;
+            :represents wd:Q317237 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#harry_chandler
+:harry_chandler rdf:type owl:NamedIndividual ,
+                         bno:Character ;
+                bno:location :los_angeles ;
+                :motive :eugenicist_motive ;
+                :occupation "bussinessman and publisher of the Los Angeles Times" ;
+                sche:description "Mayors and police chiefs come and go, while above it all power-broker Harry Chandler, (1864– 1944) pulls the strings. As a real estate mogul he took a crucial role in transforming the city from cow town to metropolis. As publisher of the Los Angeles Times he burnishes the reputation of his allies and harries his foes. White-haired, slim, and bespectacled, he embodies respectability and decides who else can be considered respectable." ;
+                rdfs:label "Harry Chandler" ;
+                :represents wd:Q5667868 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#harry_cohn
+:harry_cohn rdf:type owl:NamedIndividual ,
+                     bno:Character ;
+            bno:location :hollywood ;
+            :occupation "studio head" ;
+            sche:description "Columbia Pictures’ Harry Cohn (1891-1958) keeps a picture of Mussolini on his desk and reigns through intimidation and browbeating. He orders his actresses to service him sexually, punishing them if they refuse. Columbia keeps fewer stars under contract than other studios, borrowing their services when necessary. Other studio heads threaten their stars with the prospect of a Columbia loan-out. Its chief 30s hits are the sentimental populist comedies of star director Frank Capra and the eye-gouging antics of the Three Stooges." ;
+            rdfs:label "Harry Cohn" ;
+            :represents wd:Q1586470 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#hedda_hopper
+:hedda_hopper rdf:type owl:NamedIndividual ,
+                       bno:Character ;
+              bno:location :hollywood ;
+              :occupation "rival columnist" ;
+              sche:description "(1885–1966), creature of the studio system, won’t print the truly crazy truths, but can use them for leverage anyhow." ;
+              rdfs:label "Hedda Hopper" ;
+              :represents wd:Q271324 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#heindel_hook
+:heindel_hook rdf:type owl:NamedIndividual ,
+                       :StoryHook ;
+              bno:location :heindel_house ;
+              bno:participant :dex_raymond ;
+              sche:description "Heindel warned in his writings against the dangers of straying into black magic. This inspires would-be mob torpedo and allaround punk Darryl Fesler to conclude that Heindel must have fought evil sorcerers and hidden their accouterments in his home. The cops don’t care much when Fesler knocks off the nice old lady who lives in one of the Heindel House apartments, but Dex’s client does. Dex tracks Fesler as he attempts magical initiation by treating hits ordered by the mob as ritual sacrifices." .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#heindel_house
+:heindel_house rdf:type owl:NamedIndividual ,
+                        bno:Location ;
+               bno:location :bunker_hill ;
+               sche:description "Occult resonances may linger at Heindel House (315 South Bunker Hill Avenue), one of many former large family residences since converted to apartments. Its namesake former resident, the Danish-American mystic Max Heindel" ;
+               rdfs:label "Heindel House" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#helen_becomes_girl_of_whitey
+:helen_becomes_girl_of_whitey rdf:type owl:NamedIndividual ;
+                              bno:cause :margaret_pays_off_debts_of_father ,
+                                        :protect_father ;
+                              bno:participant :helen_deakin ,
+                                              :roscoe_deakin ,
+                                              :whitey_alexander ;
+                              :pastEventTimeline "200 days ago" ;
+                              sche:description "Roscoe is back in debt again. To protect him, Helen becomes Whitey’s girl. She pretends to break it off with screenwriter Marshall Daly, but carries on their affair in secret." .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#helen_deakin
+:helen_deakin rdf:type owl:NamedIndividual ,
+                       bno:Character ;
+              :motive :love_helen_and_daly ,
+                      :protect_father ,
+                      :spiritual_journey ,
+                      :whitey_is_danger ;
+              sche:description "b.1912, a ruined beauty. Heiress to a real estate fortune, her mind shattered by an unknown event." ;
+              rdfs:label "Helen Deakin" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#helen_gives_books_to_mickey
+:helen_gives_books_to_mickey rdf:type owl:NamedIndividual ;
+                             bno:cause :phil_gives_books_to_helen ;
+                             bno:participant :helen_deakin ,
+                                             :mickey_cohen ;
+                             :pastEventTimeline "69 days ago" ;
+                             sche:description "Helen calls Mickey, who meets her at Roy’s. He takes the books." .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#helen_realizes_skimming_cash_by_whitey
+:helen_realizes_skimming_cash_by_whitey rdf:type owl:NamedIndividual ;
+                                        bno:cause :helen_becomes_girl_of_whitey ;
+                                        bno:participant :guy_mcafee ,
+                                                        :helen_deakin ,
+                                                        :phil_block ,
+                                                        :whitey_alexander ;
+                                        :pastEventTimeline "110 days ago" ;
+                                        sche:description "In casual conversation with Phil Block, Helen realizes that Whitey has been skimming cash from the casino that is supposed to go to his boss, Guy McAfee. She mentally files this information for future reference." .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#helen_starts_making_eyes_at_phil
+:helen_starts_making_eyes_at_phil rdf:type owl:NamedIndividual ;
+                                  bno:cause :mickey_gives_the_go_ahead ,
+                                            :whitey_is_danger ;
+                                  bno:participant :helen_deakin ,
+                                                  :phil_block ;
+                                  :pastEventTimeline "80 days ago" ;
+                                  sche:description "Helen starts making eyes at Phil Block." .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#help_for_rich_patients
+:help_for_rich_patients rdf:type owl:NamedIndividual ;
+                        :motiveTarget :dex_raymond ;
+                        sche:description "Sometimes Mack sends business Dex’s way, when one of his troubled rich patients needs a spot of sleuthing done." ;
+                        rdfs:label "Help for rich patients" .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#history
 :history rdf:type owl:NamedIndividual ,
                   :AcademicAbility ;
@@ -987,6 +2059,50 @@ else (setback)"""
                       "tell where and when an object made during historical times was fashioned" ;
          sche:description "A broad study of recorded human history, with an emphasis on political, military, economic, and technological developments." ;
          rdfs:label "History ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#hollywood
+:hollywood rdf:type owl:NamedIndividual ,
+                    bno:Location ;
+           bno:location :los_angeles ;
+           sche:description "Opposed aristocracies rule Los Angeles. The establishment of wealthy ranchers and wealthier developers who sprang up at the beginning of the century see themselves as the social élite. As far as they’re concerned, movie idols are nothing more than circus people with sudden money: decadent, flashy, and trashy." ;
+           rdfs:label "Hollywood" ,
+                      "Tinseltown" ;
+           :represents wd:Q34006 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#hollywood_memorial_cemetery
+:hollywood_memorial_cemetery rdf:type owl:NamedIndividual ,
+                                      bno:Location ;
+                             bno:location :hollywood ;
+                             sche:description "The Hollywood Memorial Cemetery at 6000 Santa Monica Boulevard contains the highest star wattage of any city graveyard. Bugsy Siegel has been looking into maybe buying some space here." ;
+                             rdfs:label "Hollywood Memorial Cemetery" ;
+                             :represents wd:Q1624932 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#howard_hughes
+:howard_hughes rdf:type owl:NamedIndividual ,
+                        bno:Character ;
+               bno:location :hollywood ;
+               :occupation "aviator" ;
+               sche:description "(1905–1976), an aviation tycoon who later dabbled in Hollywood. In fact he got his entertainment career off the ground early, producing pivotal 30s hits Hell’s Angels, The Front Page and Scarface. Last July he struck and killed a pedestrian. Hughes and his passenger said he was sober and driving slowly, and that the man walked in front of him. A witness said otherwise, but completely reversed the story in time for the coroner’s inquest. Early in 1937 Hughes broke the transcontinental airspeed record in his Hughes H1 Racer, a plane he helped to build. He makes passes at every actress he works with, some of them successful. At present he registers as merely driven and ambitious, like nearly everyone at the top of the L.A. heap. Sure, maybe he’s got this weird thing about sorting his peas by size before eating them. And he uses a specially designed pea-sorting fork to do it." ;
+               rdfs:label "Howard Hughes" ;
+               :represents wd:Q189081 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#howard_hughes_hook
+:howard_hughes_hook rdf:type owl:NamedIndividual ,
+                             :StoryHook ;
+                    bno:cause :howard_hughes_motive ;
+                    bno:location :los_angeles ;
+                    bno:participant :dex_raymond ,
+                                    :howard_hughes ;
+                    sche:description "What did Hughes see in the sky while breaking a previous airspeed record in 1935? Did it spark the symptoms that will later erupt into full-blown conspiratorial paranoia? Dex may have reason to find out when Gabriel S. Meyer, of the Meyer & Holler architectural firm, hires him for a strange investigation. He meets Dex outside Grauman’s Egyptian Theater, a Meyer design. Over the past two years, three men named Gabriel Meyer have met sudden, violent ends. One of these was the man Howard Hughes hit with his car." .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#howard_hughes_motive
+:howard_hughes_motive rdf:type owl:NamedIndividual ;
+                      sche:description "The acclaimed architect knows it sound crazy, but wants Dex to find out if he’s the next Gabriel Meyer on the list." .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#hypnosis
@@ -1011,6 +2127,20 @@ else (setback)"""
                             bro:CheckRoll ;
                    bro:uses :hypnosis ;
                    rdfs:label "Hypnosis die roll" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#impatient_helen
+:impatient_helen rdf:type owl:NamedIndividual ;
+                 bno:cause :helen_gives_books_to_mickey ,
+                           :mickey_discovers_alive_palais ,
+                           :mickey_gives_books_to_bugsy ;
+                 bno:location :cocoanut_grove ,
+                              :garage_of_roy ;
+                 bno:participant :helen_deakin ,
+                                 :mickey_cohen ,
+                                 :roy_bedacht ;
+                 :pastEventTimeline "42 days ago" ;
+                 sche:description "An impatient Helen tries to reach Bugsy’s table at the Cocoanut Grove to demand to know why he hasn't acted against Whitey. Mickey spots and grabs her before she can make a scene, driving her to Roy’s. Mickey tells him to use his special moonshine on her." .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#improvement_general_ability
@@ -1064,12 +2194,151 @@ else (setback)"""
               rdfs:label "Intimidation ability" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#jack_dragna
+:jack_dragna rdf:type owl:NamedIndividual ,
+                      bno:Character ;
+             bno:location :los_angeles ;
+             :motive :dragna_and_dead_priest ;
+             :occupation "mobster" ;
+             sche:description "The closest L.A. comes to a classic Mafia don would be Jack Dragna: (1891–1956). With his horn-rimmed glasses and weary features, this first-generation immigrant from Corleone, Sicily looks more like a beleaguered mid-level executive than a fearsome criminal." ;
+             rdfs:label "Jack Dragna" ;
+             :represents wd:Q1677023 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#jack_parsons
+:jack_parsons rdf:type owl:NamedIndividual ,
+                       bno:Character ;
+              bno:location :pasadena ;
+              :occupation "rocket engineer" ;
+              sche:description "Dashing, science-fiction-crazed protégé Jack Parsons, 23, (1914–1952), has just formed its Rocket Research Group. He performs experiments at the Devil’s Gate Test Range, named for a nearby rock formation that looks like a demonic face and was avoided by the Chumash Indians as haunted. The strange vibrations it gives off are slowly eating away at Parsons’ Marxist materialism. In a few years he’ll be joining and then taking over Wilfred Talbot Smith’s OTO lodge and relocating it to his palatial Pasadena home at 1003 S. Grove Avenue." ;
+              rdfs:label "Jack Parsons" ;
+              :represents wd:Q331497 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#jack_warner
+:jack_warner rdf:type owl:NamedIndividual ,
+                      bno:Character ;
+             bno:location :hollywood ;
+             :occupation "studio head" ;
+             sche:description "Colleagues find studio head Jack Warner, (1892–1978) a loyal Republican whose company makes liberal movies, tough to pin down." ;
+             rdfs:label "Jack Warner" ;
+             :represents wd:Q72614 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#james_edgar_davis
+:james_edgar_davis rdf:type owl:NamedIndividual ,
+                            bno:Character ;
+                   bno:location :los_angeles ;
+                   :occupation "LAPD police chief" ;
+                   sche:description "(1889–1949) better known as “Two Gun” Davis. Burly, grim-faced and imposing, Davis dishes out the strong-arm stuff with sadistic enthusiasm. Viciously anti-labor, he particularly delights in busting up unionization efforts." ;
+                   rdfs:label "James Edgar Davis" ,
+                              "Two Gun Davis" ;
+                   :represents wd:Q6133065 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#jane_wolfe
+:jane_wolfe rdf:type owl:NamedIndividual ,
+                     bno:Character ;
+            bno:location :los_angeles ;
+            :occupation "silent screen actress" ;
+            sche:description "Smith runs the lodge in conjunction with silent screen actress Jane Wolfe, 62, (1875–1958), best known for appearing next to Mary Pickford in Rebecca of Sunnybrook Farm." ;
+            rdfs:label "Jane Wolfe" ;
+            :represents wd:Q6152961 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#joe_rieth_calls
+:joe_rieth_calls rdf:type owl:NamedIndividual ,
+                          :StoryHook ;
+                 bno:cause :joe_rieth_calls_motive ;
+                 bno:location :los_angeles ;
+                 bno:participant :dex_raymond ,
+                                 :eugene_biscailuz ;
+                 sche:description "Auto dealership mogul Joe Rieth calls Dex after he shoots a prowler on one of his lots out in the county. Rieth could swear that the mug he shot was prancing around naked, and had goatish legs and glowing yellow eyes. Whatever he looked like, Biscailuz’s men whisked the body away right quick. Rieth’s gun links to the Honorary Deputy badge the Sheriff gave him, which probably accounts for Eugene’s desire to hush this up fast." .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#joe_rieth_calls_motive
+:joe_rieth_calls_motive rdf:type owl:NamedIndividual ;
+                        sche:description "But Joe needs to know whether he’s losing his mind. Because last night he heard the same strange shuffling in the weeds surrounding his dealership." .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#john_joseph_cantwell
+:john_joseph_cantwell rdf:type owl:NamedIndividual ,
+                               bno:Character ;
+                      bno:location :los_angeles ;
+                      :occupation "catholic prelate" ;
+                      sche:description "Archbishop John Joseph Cantwell, (1874–1947) raises his voice for that most traditionalist of denominations. This Limerick-born church father makes strides in embracing the diocese’s primarily Mexican-American flock, albeit through a thick gauze of condescension about simple folk and their simple ways." ;
+                      rdfs:label "John Joseph Cantwell" ;
+                      :represents wd:Q6242126 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#kidnapping_of_mcpherson
+:kidnapping_of_mcpherson rdf:type owl:NamedIndividual ,
+                                  :StoryHook ;
+                         bno:location :los_angeles ;
+                         bno:participant :aimee_semple_mcpherson ,
+                                         :dex_raymond ;
+                         sche:description "Keyes took a bribe all right. The Ormiston story was just another layer of the real cover-up. Blond-haired aliens swept McPherson from the earth to warn her of an impending invasion by the greys, fungal crustacean entities from the planet Yuggoth. Four years after Semple’s return to earth, astronomer Clyde Tombaugh discovered Yuggoth — or Pluto, as he called it — at the Lowell Observatory in Flagstaff, Arizona. Yes, Arizona, right where the aliens dropped her off. Since then the evangelist has been covertly preparing for the invasion, damage to her reputation be damned. When Dex encounters alien evidence, McPherson stands ready to assist — the great knight the space blonds predicted has surely arrived on her doorstep!" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#knickerbocker_hotel
+:knickerbocker_hotel rdf:type owl:NamedIndividual ,
+                              bno:Location ;
+                     bno:location :hollywood ;
+                     sche:description "Much star misbehavior occurs at the swank Knickerbocker Hotel (1714 Ivar Avenue). For the last nine years, Harry Houdini’s widow Bess has conducted a Halloween séance on its rooftop,  attempting to contact him. If the noted skeptic doesn’t show himself this year, she’s going to consider his point made and give up." ;
+                     rdfs:label "Knickerbocker Hotel" ;
+                     :represents wd:Q4642538 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#la_brea_tar_pits
+:la_brea_tar_pits rdf:type owl:NamedIndividual ,
+                           bno:Location ;
+                  bno:location :hollywood ;
+                  sche:description "The La Brea Tar Pits (5801 Wilshire Boulevard) have been known since pre-Contact times, when Chumash Indians used its pools of naturally occurring bitumen to seal their canoes. Prehistoric bones were first found there at the turn of the century. A viewing bridge allows the curious to gaze down into the largest of the pools, called the Lake Pit." ;
+                  rdfs:label "La Brea Tar Pits" ;
+                  :represents wd:Q1147168 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#la_brea_tar_pits_hook
+:la_brea_tar_pits_hook rdf:type owl:NamedIndividual ,
+                                :StoryHook ;
+                       bno:location :la_brea_tar_pits ;
+                       bno:participant :dex_raymond ;
+                       sche:description "A boxer’s manager hires Dex to watch over his fighter, who won’t yield to pressure from gamblers to throw a fight. All the dumb palooka can talk about is the damn tar pits, which fascinate him. He says he once saw something moving around in there. Somebody clocks Dex from behind. When he wakes up, the kid is gone. Later that night, cops find his body in the Lake Pit." .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#languages
 :languages rdf:type owl:NamedIndividual ,
                     :AcademicAbility ;
            :application "extract information from documents written in languages other than English" ;
            sche:description "Allows you to extract information from documents written in languages other than English. You may not be able to elegantly translate or win points for accuracy among true academics, but you find the clue you need." ;
            rdfs:label "Languages ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#lapd
+:lapd rdf:type owl:NamedIndividual ,
+               bno:Location ;
+      bno:location :city_hall ;
+      sche:description "In 1937 LAPD headquarters occupies part of City Hall, using an entrance through an oft-filmed side laneway with small sign pointing to the Detective Bureau." ;
+      rdfs:label "LAPD headquarters" ;
+      :represents wd:Q214126 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#last_talk_with_clara
+:last_talk_with_clara rdf:type owl:NamedIndividual ;
+                      bno:cause :spiritual_journey ;
+                      bno:participant :clara_nebel ,
+                                      :helen_deakin ;
+                      :pastEventTimeline "46 days ago" ;
+                      sche:description "Helen attends a spiritual talk at Clara Nebel’s Order of Argent Light. This is the last time Clara sees her." .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#last_talk_with_daly
+:last_talk_with_daly rdf:type owl:NamedIndividual ;
+                     bno:cause :love_helen_and_daly ;
+                     bno:participant :helen_deakin ,
+                                     :marshall_daly ;
+                     :pastEventTimeline "43 days ago" ;
+                     sche:description "Helen and Marshall Daly canoodle in his office on the studio backlot — the last time he sees her." .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#law
@@ -1083,6 +2352,15 @@ else (setback)"""
      rdfs:label "Law ability" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#len_pollard
+:len_pollard rdf:type owl:NamedIndividual ,
+                      bno:Character ;
+             :motive :dex_found_out_cheating ;
+             :occupation "sergeant, desk jockey" ;
+             sche:description "For grubby or menial stuff, Dex goes to Sergeant Len Pollard, an uninspired desk jockey whose chief hobby is complaining about the weight his doctor has ordered him to lose." ;
+             rdfs:label "Len Pollard" .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#locksmith
 :locksmith rdf:type owl:NamedIndividual ,
                     :TechnicalAbility ;
@@ -1093,6 +2371,49 @@ else (setback)"""
            rdfs:label "Locksmith ability" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#los_angeles
+:los_angeles rdf:type owl:NamedIndividual ,
+                      bno:Location ;
+             sche:description "Beneath beguiling surfaces, corruption rules. Dig down past that seething layer of human indifference, and the one obsessed enough to keep looking finds a deeper, occulted indifference of cosmic proportions." ;
+             rdfs:label "Los Angeles" ;
+             :represents wd:Q65 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#los_angeles_map
+:los_angeles_map rdf:type owl:NamedIndividual ,
+                          bbo:Map ;
+                 bbo:depicts :los_angeles ;
+                 sche:image "http://pelgranepress.com/files/One2One/Fathomless_Sleep_Los%20Angeles_1930s.png?_ga=2.68201233.122302963.1698874558-1246961052.1698237306" ;
+                 rdfs:label "Map of Los Angeles" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#louella_parsons
+:louella_parsons rdf:type owl:NamedIndividual ,
+                          bno:Character ;
+                 bno:location :hollywood ;
+                 :occupation "rival columnist" ;
+                 sche:description "(1881–1972), creature of the studio system, won’t print the truly crazy truths, but can use them for leverage anyhow." ;
+                 rdfs:label "Louella Parsons" ;
+                 :represents wd:Q249143 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#louis_mayer
+:louis_mayer rdf:type owl:NamedIndividual ,
+                      bno:Character ;
+             bno:location :hollywood ;
+             :occupation "studio head" ;
+             sche:description "MGM specializes in glamor and star power. Its roster, including Norma Shearer, Spencer Tracy, Joan Crawford, and Clark Gable, justifies its famous slogan: “More Stars Than There Are In Heaven.” The early death of wunderkind head of production Irving Thalberg last year has the place reeling still. Studio head Louis B. Mayer, 53, (1884–1957) exercises a paternal control over the lives of his stars, which some of them appreciate and others resist. He insists on a wholesome product and public face for the company." ;
+             rdfs:label "Louis B. Mayer" ;
+             :represents wd:Q319682 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#love_helen_and_daly
+:love_helen_and_daly rdf:type owl:NamedIndividual ,
+                              :Motive ;
+                     :motiveTarget :helen_deakin ,
+                                   :marshall_daly .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#lucky_break
 :lucky_break rdf:type owl:NamedIndividual ,
                       bro:Gamerule ;
@@ -1100,6 +2421,45 @@ else (setback)"""
                          :spend_push ;
              sche:description "Lucky Breaks make minor coincidences feel earned, while also providing an emotional up-note." ;
              rdfs:label "Lucky Break" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#mack
+:mack rdf:type owl:NamedIndividual ;
+      :ability :medicine ,
+               :outdoorsman ,
+               :pharmacy ,
+               :psychology ;
+      :motive :help_for_rich_patients ;
+      :occupation "shrink" ;
+      sche:description "raffish, pipe-smoking psychiatrist" ;
+      rdfs:label "Dr. Jeff (Mack) Mackintosh" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#mack_portrait
+:mack_portrait rdf:type owl:NamedIndividual ,
+                        bbo:Portrait ;
+               bbo:depicts :mack ;
+               sche:image "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS3QnpVjHVGqGhcbla_00nRSmip3II9uz3Ju8EnWs4Ko2YNNmN5" ;
+               rdfs:label "Portrait of Mack" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#madame_eva
+:madame_eva rdf:type owl:NamedIndividual ;
+            :ability :cthulhu_mythos ,
+                     :occult ;
+            :motive :protect_from_mythos ;
+            :occupation "fortune teller" ;
+            sche:description "this harmless grifter can assist Dex with information on the world of cults, spiritualism, and hermetic magic" ;
+            rdfs:label "Madame Eva" ,
+                       "Peggy Malone" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#madame_eva_portrait
+:madame_eva_portrait rdf:type owl:NamedIndividual ,
+                              bbo:Portrait ;
+                     bbo:depicts :madame_eva ;
+                     sche:image "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRGpt98Xb1B7ejTrr9XIqPqERLeb8XwVa4jTZgC4pNGn2_qycm-" ;
+                     rdfs:label "Portrait of Madame Eva" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#magic
@@ -1125,6 +2485,72 @@ else (setback)"""
                 rdfs:label "Magic die roll" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#malibu
+:malibu rdf:type owl:NamedIndividual ,
+                 bno:Location ;
+        bno:location :los_angeles ;
+        sche:description "A beachfront community guarded by a gate framed by the Santa Monica Mountains. Rich entertainment figures of a liberal bent cluster here, making it a target of pseudo-populist mockery in wealthy conservative circles." ;
+        rdfs:label "Malibu" ;
+        :represents wd:Q387047 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#manly_palmer_hall
+:manly_palmer_hall rdf:type owl:NamedIndividual ,
+                            bno:Character ;
+                   bno:location :los_angeles ;
+                   :occupation "creator of Philosophical Research Society" ;
+                   sche:description "Imposing Canadian Manly Palmer Hall, (1901–1990), opened the headquarters of the Philosophical Research Society at 3910 Los Feliz Boulevard three years ago. Hall himself, charismatic beyond his years, still briskly sells copies of his lavishly produced 1928 tome The Secret Teachings of All Ages." ;
+                   rdfs:label "Manly Palmer Hall" ;
+                   :represents wd:Q930085 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#margaret_deakin
+:margaret_deakin rdf:type owl:NamedIndividual ,
+                          bno:Character ;
+                 :motive :find_reason_of_ill_of_helen ,
+                         :protect_father ;
+                 sche:description "b.1908, sharp-tongued, alluring. She’s inherited her father’s nose for business along with the responsibilities he’s shucked aside. She hires our protagonist, private investigator Dex Raymond, to work the case." ;
+                 rdfs:label "Margaret Deakin" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#margaret_decides_to_contact_private_eye
+:margaret_decides_to_contact_private_eye rdf:type owl:NamedIndividual ;
+                                         bno:cause :find_reason_of_ill_of_helen ,
+                                                   :police_find_helen ;
+                                         bno:participant :margaret_deakin ;
+                                         :pastEventTimeline "yesterday" ;
+                                         sche:description "Giving up hope of Helen improving on her own, Margaret decides to go ahead and contact a private eye." .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#margaret_notices_absense_of_helen
+:margaret_notices_absense_of_helen rdf:type owl:NamedIndividual ;
+                                   bno:cause :impatient_helen ;
+                                   bno:participant :margaret_deakin ;
+                                   :pastEventTimeline "41 days ago" ;
+                                   sche:description "Margaret notices that Helen has not been home since sometime the previous day. Helen sometimes disappears for a few days without telling anyone, so Margaret does not panic immediately." .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#margaret_pays_off_debts_of_father
+:margaret_pays_off_debts_of_father rdf:type owl:NamedIndividual ;
+                                   bno:cause :protect_father ,
+                                             :roscoe_gambling ;
+                                   bno:participant :margaret_deakin ,
+                                                   :whitey_alexander ;
+                                   :pastEventTimeline "270 days ago" ;
+                                   sche:description "Margaret pays off his debts — chiefly to Whitey Alexander — and cuts him off." .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#marshall_daly
+:marshall_daly rdf:type owl:NamedIndividual ,
+                        bno:Character ;
+               :lover :helen_deakin ;
+               :motive :love_helen_and_daly ;
+               :occupation "screenwriter" ;
+               sche:description "b.1910, short, dark and handsome. B-movie screenwriter and paramour to Helen. Real name: Max Poffenberger. He fears revelation of his Communist Party affiliations, leaving him open to blackmail from Franz Speelmans." ;
+               rdfs:label "Marshall Daly" ,
+                          "Max Poffenberger" .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#max_cool_and_stability
 :max_cool_and_stability rdf:type owl:NamedIndividual ,
                                  bro:Statement ;
@@ -1133,6 +2559,47 @@ else (setback)"""
                         bro:statementPredicate "sum <" ;
                         bro:statementValue "4" ;
                         rdfs:label "Maximum total rate of cool and stability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#max_heindel
+:max_heindel rdf:type owl:NamedIndividual ,
+                      bno:Character ;
+             bno:location :heindel_house ;
+             :occupation "occultist" ;
+             sche:description "Danish-American mystic Max Heindel (1865–1919) adapted Theosophy to plain-spoken American tastes in his magnum opus The Rosicrucian Cosmo-Conception. It combined Christianity, esoteric wisdom, then-current science, and the usual hefty portion of racial essentialism." ;
+             rdfs:label "Max Heindel" ;
+             :represents wd:Q183192 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#max_weyl
+:max_weyl rdf:type owl:NamedIndividual ;
+          :ability :architecture ,
+                   :art ,
+                   :art_history ,
+                   :bureaucracy ,
+                   :craft ,
+                   :flattery ;
+          :motive :gratitude_for_out_of_blackmail ;
+          :occupation "production designer" ;
+          sche:description "Diminutive and impeccably dressed, his hair brilliantined and topped by a jaunty beret, Max Weyl oversees the visual look of around half-adozen films per year for his home studio, Capitol Pictures." ;
+          rdfs:label "Max Weyl" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#max_weyl_portrait
+:max_weyl_portrait rdf:type owl:NamedIndividual ,
+                            bbo:Portrait ;
+                   bbo:depicts :max_weyl ;
+                   sche:image "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZZfB5C0T1d4AJhe03edHN9LXWMTbyZMmXizx_eQQYZTgRYuTt" ;
+                   rdfs:label "Portrait of Max Weyl" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#mcafee_hires_palais
+:mcafee_hires_palais rdf:type owl:NamedIndividual ;
+                     bno:participant :ed_palais ,
+                                     :guy_mcafee ,
+                                     :mickey_cohen ;
+                     :pastEventTimeline "95 days ago" ;
+                     sche:description "Seeking dope on the invading east coast mob, Guy McAfee hires ex-cop Ed Palais to shadow Mickey Cohen." .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#medicine
@@ -1148,6 +2615,81 @@ else (setback)"""
                        "understand medical jargon" ;
           sche:description "You can diagnose human disease, injuries, poisonings, and physical frailties, and may be broadly acquainted with veterinary medicine as well. If past medical training makes sense as part of your backstory, you may still hold a medical license." ;
           rdfs:label "Medicine ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#mermaid_hook
+:mermaid_hook rdf:type owl:NamedIndividual ,
+                       :StoryHook ;
+              bno:location :santa_monica_pier ;
+              sche:description "Does the enigmatic young woman who performs as a sideshow mermaid have Deep One blood? If not, why do her naive young lovers keep dying?" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#mickey_cohen
+:mickey_cohen rdf:type owl:NamedIndividual ,
+                       bno:Character ;
+              bno:location :los_angeles ;
+              :worksFor :bugsy ;
+              :occupation "mobster" ;
+              sche:description "b. 1913, energetic, overtly thuggish, has the flattened nose of an expugilist. Bodyguard to Siegel. An eager delinquent as a child, he has yet to learn to read or do math." ;
+              rdfs:label "Mickey Cohen" ;
+              :represents wd:Q1371363 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#mickey_discovers_alive_palais
+:mickey_discovers_alive_palais rdf:type owl:NamedIndividual ;
+                               bno:cause :disposal_of_palais ;
+                               bno:participant :ed_palais ,
+                                               :mickey_cohen ,
+                                               :roy_bedacht ;
+                               :pastEventTimeline "77 days ago" ;
+                               sche:description "Mickey discovers that Ed Palais is still alive, but with his memory gone. Roy attributes this effect to a special formulation of the moonshine he cooks up in the garage." .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#mickey_gives_books_to_bugsy
+:mickey_gives_books_to_bugsy rdf:type owl:NamedIndividual ;
+                             bno:cause :helen_gives_books_to_mickey ;
+                             bno:participant :bugsy ,
+                                             :mickey_cohen ;
+                             :pastEventTimeline "68 days ago" ;
+                             sche:description "Mickey gives the books to Bugsy, who says he’ll move on Whitey when he’s good and ready." .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#mickey_gives_the_go_ahead
+:mickey_gives_the_go_ahead rdf:type owl:NamedIndividual ;
+                           bno:cause :blackmailed_protection ,
+                                     :plan_of_helen ;
+                           bno:participant :bugsy ,
+                                           :helen_deakin ,
+                                           :mickey_cohen ;
+                           :pastEventTimeline "83 days ago" ;
+                           sche:description "Mickey takes the plan to Bugsy, who gives the go-ahead. He relays this news by phone to Helen." .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#minnie_epp
+:minnie_epp rdf:type owl:NamedIndividual ,
+                     bno:Character ;
+            bno:location :bradbury_building ;
+            :occupation "elevator operator" ;
+            sche:description """Dex may note that its elevator operator, an older lady named Minnie Epp, watches for trouble with striking alertness. She may know more than she’s telling about the building’s true role in maintaining the city’s arcane balance.
+Wyman’s note from beyond eventually passed into the possession of his grandson, the foundational purveyor of monster culture Forrest J. Ackerman. The Bradbury Building regularly appears in movies, including film noir titles Shockproof (1949), D.O.A. (1950), and Blade Runner (1982).""" ;
+            rdfs:label "Minnie Epp" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#missing_person_report
+:missing_person_report rdf:type owl:NamedIndividual ;
+                       bno:cause :margaret_notices_absense_of_helen ;
+                       bno:participant :margaret_deakin ;
+                       :pastEventTimeline "37 days ago" ;
+                       sche:description "Now truly worried, Margaret calls the police and files a missing person report." .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#musso_frank_grill
+:musso_frank_grill rdf:type owl:NamedIndividual ,
+                            bno:Location ;
+                   bno:location :hollywood ;
+                   sche:description "Classic New York style restaurant Musso & Frank Grill (6667-9 Hollywood Boulevard) has just expanded to take over the building next door, a large space that will forever after be known as the New Room. Let the red-coated waiters serve you a quality steak, or splurge on the lobster thermidor. The restaurant owes its lasting fame to its status as a literary hangout. After a case, Dex can head here for shrimp cocktail and attempt to convince James M. Cain, Dashiell Hammett, or Raymond Chandler to fictionalize it — minus the occult stuff — for a wider readership. Alternately, he can try to outdrink William Faulkner, out-quip Dorothy Parker,  or out-gloom Nathaniel West." ;
+                   rdfs:label "Musso & Frank Grill" ;
+                   :represents wd:Q6943139 .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#next_test
@@ -1168,6 +2710,15 @@ else (setback)"""
                      "supply historical facts and anecdotes concerning various occult traditions, demons, and legends" ;
         sche:description "You’re an expert in the historical study of magic, superstition, and sorcery from the Stone Age to the present" ;
         rdfs:label "Occult ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#olvera_street
+:olvera_street rdf:type owl:NamedIndividual ,
+                        bno:Location ;
+               bno:location :downtown ;
+               sche:description "Olvera Street, historic town center of the city’s original Spanish settlers, served as point of first contact for poor immigrants from Mexico, Sicily, and China. In the late 20s, a heritage preservationist named Christine Sterling approached Harry Chandler with a redevelopment plan. In a turn that will not surprise anyone who has read this far, the restoration of Hispanic history entailed the wholesale displacement of its current immigrant residents. Chandler, eager to get his geomantic fingerprints all over this numinous region of the city, supported the plan at a crucial moment by picking up the phone to Police Chief Two Gun Davis. He rounded up the prison labor necessary to fix up a key structure, the 1818 Avila Adobe, saving it from condemnation and getting his foot in the redevelopment door. That was in 1930. The preservationists got their tourist trap Mexican-themed marketplace, Chandler hooked it into his ley-line grid, and residents had to find new homes in the Chavez Ravine. Noticing a Chinese neighborhood across the street, Chandler fretted that its geomancers would use feng shui techniques to divert his hard-won ley force, so he, Sterling, and Chandler decided to put a train station there. In 1937, Union Station is still a construction site; it will open in ’39." ;
+               rdfs:label "Olvera Street" ;
+               :represents wd:Q784575 .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#oral_history
@@ -1193,6 +2744,54 @@ else (setback)"""
              rdfs:label "Outdoorsman ability" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#palais_trails_mickey_to_roy
+:palais_trails_mickey_to_roy rdf:type owl:NamedIndividual ;
+                             bno:cause :mcafee_hires_palais ;
+                             bno:location :garage_of_roy ;
+                             bno:participant :ed_palais ,
+                                             :mickey_cohen ,
+                                             :roy_bedacht ;
+                             :pastEventTimeline "93 days ago" ;
+                             sche:description "Ed Palais trails Mickey to Roy’s garage. He photographs Cohen meeting with Roy." .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#pandro_berman
+:pandro_berman rdf:type owl:NamedIndividual ,
+                        bno:Character ;
+               bno:location :hollywood ;
+               :occupation "production chief" ;
+               sche:description "Astaire and Rogers musicals topline the output of RKO Pictures. Production chief Pandro S. Berman, (1905–1996) — Pan for short — saw their potential and kept them together over Astaire’s objections. He projects a charming, no-nonsense gruffness stars like Katherine Hepburn admire." ;
+               rdfs:label "Pandro S. Berman" ;
+               :represents wd:Q347473 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#pantages_theater
+:pantages_theater rdf:type owl:NamedIndividual ,
+                           bno:Location ;
+                  bno:location :hollywood ;
+                  sche:description "The Pantages Theater at Hollywood and Vine opened seven years ago as one of the last great vaudeville houses, and converted to a movie theater not long after. When Dex ambles by it deep in the night, he may hear the mournful tones of its famous singing ghost." ;
+                  rdfs:label "Pantages Theater" ;
+                  :represents wd:Q1584748 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#pasadena
+:pasadena rdf:type owl:NamedIndividual ,
+                   bno:Location ;
+          bno:location :los_angeles ;
+          sche:description "The sleepy exurb of Pasadena interests us mostly due to the presence of the California Institute of Technology. Here, dimension-piercing inquiries into impossible physics allow the Mythos’ sciencefiction elements to escape and run rampant across Los Angeles." ;
+          rdfs:label "Pasadena" ;
+          :represents wd:Q485176 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#petroleum_securities_building
+:petroleum_securities_building rdf:type owl:NamedIndividual ,
+                                        bno:Location ;
+                               bno:location :downtown ;
+                               sche:description "The stunning art deco office block called the Petroleum Securities Building (714 West Olympic Boulevard, between Figueroa and Flower) provides a plush locale to buttonhole business magnates. A plaque celebrates its builder, recently deceased oil tycoon E. L. Doheny, a key figure in the Teapot Dome bribery scandal and the inspiration for The Big Sleep’s General Sternwood and There Will Be Blood’s Daniel Plainview." ;
+                               rdfs:label "Petroleum Securities Building" ;
+                               :represents wd:Q5532093 .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#pharmacy
 :pharmacy rdf:type owl:NamedIndividual ,
                    :TechnicalAbility ;
@@ -1201,6 +2800,32 @@ else (setback)"""
                        "secure or manufacture morphine, cocaine, and other controlled substances" ;
           sche:description "You are able to identify and compound drugs and medicines." ;
           rdfs:label "Pharmacy ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#phil_block
+:phil_block rdf:type owl:NamedIndividual ,
+                     bno:Character ;
+            :worksFor :whitey_alexander ;
+            :occupation "accountant" ;
+            sche:description "b.1903, a squirrelly shrimp in an oversized suit. Mob accountant who does the books for Whitey’s casino." ;
+            rdfs:label "Phil Block" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#phil_gives_books_to_helen
+:phil_gives_books_to_helen rdf:type owl:NamedIndividual ;
+                           bno:cause :phil_starts_copying_books ;
+                           bno:participant :helen_deakin ,
+                                           :phil_block ;
+                           :pastEventTimeline "70 days ago" ;
+                           sche:description "Helen and Phil meet up in a hotel; he gives her the books." .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#phil_starts_copying_books
+:phil_starts_copying_books rdf:type owl:NamedIndividual ;
+                           bno:cause :helen_starts_making_eyes_at_phil ;
+                           bno:participant :phil_block ;
+                           :pastEventTimeline "75 days ago" ;
+                           sche:description "Succumbing to Helen’s charm campaign, Phil starts copying a new set of books so he can steal the originals and give them to her." .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#photography
@@ -1233,6 +2858,30 @@ else (setback)"""
 :picks rdf:type owl:NamedIndividual .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#plan_of_helen
+:plan_of_helen rdf:type owl:NamedIndividual ;
+               bno:cause :blackmailed_protection ,
+                         :protect_father ,
+                         :trapped_with_whitey ,
+                         :whitey_is_danger ;
+               bno:location :alegria_casino ,
+                            :garage_of_roy ;
+               bno:participant :budd_barron ,
+                               :helen_deakin ,
+                               :mickey_cohen ;
+               :pastEventTimeline "84 days ago" ;
+               sche:description "Budd visits the Alegria casino to lean on Whitey some more. Helen approaches him. Unwilling to talk with her at the Alegria, he tells her to wait for him outside the Brown Derby later that night. Mickey picks her up there and drives her to Roy Bedacht’s garage, where she pitches per plan to him." .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#police_find_helen
+:police_find_helen rdf:type owl:NamedIndividual ;
+                   bno:cause :missing_person_report ;
+                   bno:location :downtown ;
+                   bno:participant :helen_deakin ;
+                   :pastEventTimeline "30 days ago" ;
+                   sche:description "Police find Helen downtown, identify her from Margaret’s report, and take her home." .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#preparedness
 :preparedness rdf:type owl:NamedIndividual ,
                        :ManualAbility ;
@@ -1260,6 +2909,19 @@ else (setback)"""
                    bro:Characteristic ;
           sche:description "{problem: status}" ;
           rdfs:label "Problems on character's hands" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#protect_father
+:protect_father rdf:type owl:NamedIndividual ,
+                         :Motive ;
+                :motiveTarget :roscoe_deakin .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#protect_from_mythos
+:protect_from_mythos rdf:type owl:NamedIndividual ;
+                     :motiveTarget :dex_raymond ;
+                     sche:description "Eva has seen other minds ruined by contact with the Old Ones, and she doesn’t want that to happen to him." ;
+                     rdfs:label "Protect from Mythos" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#psychoanalysis
@@ -1302,6 +2964,15 @@ else (setback)"""
         rdfs:label "Pushes" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#rancho_los_amigos_hospital
+:rancho_los_amigos_hospital rdf:type owl:NamedIndividual ,
+                                     bno:Location ;
+                            bno:location :downey ;
+                            sche:description "It started its career as a poor-house, then branched out into occupational therapy in the 20s. The secure wing for the most damaged patients takes on a Gothic quality even in daylight, an artifact of its meager funding. At night, not all the screams emanate from the living." ;
+                            rdfs:label "Rancho Los Amigos Hospital" ;
+                            :represents wd:Q7291084 .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#reassurance
 :reassurance rdf:type owl:NamedIndividual ,
                       :InterpersonalAbility ;
@@ -1315,6 +2986,19 @@ else (setback)"""
              rdfs:label "Reassurance ability" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#reincarnation_of_nitocris
+:reincarnation_of_nitocris rdf:type owl:NamedIndividual ,
+                                    :StoryHook ;
+                           bno:cause :reincarnation_of_nitocris_motive ;
+                           bno:participant :dex_raymond ;
+                           sche:description "A wealthy client asks Dex to check on the background of a woman to whom his son intends to propose. A habitué of the PRS library, the beautiful half-Russian, half-Egyptian Aida Poltavtseva claims to be both a descendant and the reincarnation of an ancient queen named Nitocris. The most routine assignment imaginable, he says…." .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#reincarnation_of_nitocris_motive
+:reincarnation_of_nitocris_motive rdf:type owl:NamedIndividual ;
+                                  sche:description "The client’s son loves talk of ancient mysteries, and his father finds that detail eccentric but acceptable. Really he just wants to be sure she isn’t a grifter." .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#research
 :research rdf:type owl:NamedIndividual ,
                    :AcademicAbility ;
@@ -1322,6 +3006,82 @@ else (setback)"""
                        "ferret out information from collections of data" ;
           sche:description "You can ferret out information from collections of books, records, files, archives, newspaper morgues, or big piles of unsorted telegrams and correspondence." ;
           rdfs:label "Research ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#robert_millikan
+:robert_millikan rdf:type owl:NamedIndividual ,
+                          bno:Character ;
+                 bno:location :pasadena ;
+                 :occupation "physicist" ;
+                 sche:description "(1868–1953), the discoverer of cosmic rays. The very model of the silver-haired patrician scientist, Millikan sees the campus as pivotal to southern California, and the world’s foremost outpost of Nordic superiority." ;
+                 rdfs:label "Robert A. Millikan" ;
+                 :represents wd:Q130975 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#robert_pierce_shuler
+:robert_pierce_shuler rdf:type owl:NamedIndividual ,
+                               bno:Character ;
+                      bno:location :los_angeles ;
+                      :motive :curse_of_shuler_motive ;
+                      :occupation "evangelist" ;
+                      sche:description "57, (1880–1965). His sermons, earning him the sobriquet Fighting Bob, inveigh against city corruption, naming names and putting the System in the holy hotseat." ;
+                      rdfs:label "Robert Pierce Shuler" ;
+                      :represents wd:Q7348240 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#roscoe_deakin
+:roscoe_deakin rdf:type owl:NamedIndividual ,
+                        bno:Character ;
+               :child :helen_deakin ,
+                      :margaret_deakin ;
+               sche:description "b.1872, short and balding. A modern King Lear, he gave away management of his real estate empire in order to enjoy life to the fullest, leaving it to his daughters Margaret and Helen." ;
+               rdfs:label "Roscoe Deakin" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#roscoe_gambling
+:roscoe_gambling rdf:type owl:NamedIndividual ;
+                 bno:cause :death_of_mother ;
+                 bno:participant :roscoe_deakin ;
+                 :pastEventTimeline "a year and a half ago" ;
+                 sche:description "Margaret and Helen’s grief-stricken father Roscoe spirals into a dissolute life of gambling and drinking." .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#roy_bedacht
+:roy_bedacht rdf:type owl:NamedIndividual ,
+                      bno:Character ;
+             :worksFor :mickey_cohen ;
+             :occupation "operator of a garage" ;
+             sche:description "b.1896, sadistic operator of a crooked garage in the boonies outside L.A. He refits stolen automobiles and, as a sideline, disposes of corpses for Mickey Cohen." ;
+             rdfs:label "Roy Bedacht" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#salvador_dalí
+:salvador_dalí rdf:type owl:NamedIndividual ,
+                        bno:Character ;
+               bno:location :los_angeles ;
+               :occupation "artist" ;
+               sche:description "Surrealist painter Salvador Dalí, 33, (1904–1989) has just started coming to Los Angeles from his Paris home. This commences a lifelong love affair with the place, whose flair for reinvention suits him to the bone. Fluent in lightningspeed broken English, he spends time with new Hollywood friend Harpo Marx. He wields formidable occult power in the Dreamlands, a nightmare reflection of the waking world accessible only in one’s sleep." ;
+               rdfs:label "Salvador Dalí" ;
+               :represents wd:Q5577 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#santa_monica
+:santa_monica rdf:type owl:NamedIndividual ,
+                       bno:Location ;
+              bno:location :los_angeles ;
+              sche:description "Santa Monica’s beaches made it an ideal resort town. The Depression slapped Santa Monica hard, transforming into a seedy labyrinth of stilled rides and shuttered restaurants." ;
+              rdfs:label "Bay City" ,
+                         "Santa Monica" ;
+              :represents wd:Q47164 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#santa_monica_pier
+:santa_monica_pier rdf:type owl:NamedIndividual ,
+                            bno:Location ;
+                   bno:location :santa_monica ;
+                   sche:description "the carnivalesque Santa Monica Pier, with amusements, games, and a famous carousel housed in its hippodrome" ;
+                   rdfs:label "Santa Monica Pier" ;
+                   :represents wd:Q595439 .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#sense_trouble
@@ -1350,6 +3110,21 @@ else (setback)"""
                         rdfs:label "Sense trouble die roll" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#set_abilities
+:set_abilities rdf:type owl:NamedIndividual ,
+                        bro:Gamerule ;
+               bro:calculations "abilities of investigator" ;
+               rdfs:label "Set abilities of investigator" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#set_starting_pushes
+:set_starting_pushes rdf:type owl:NamedIndividual ,
+                              bro:Gamerule ;
+                     bro:sets :pushes ;
+                     bro:calculations "pushes = starting pushes of case's investigator" ;
+                     rdfs:label "Rule for starting pushes" .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#shadowing
 :shadowing rdf:type owl:NamedIndividual ,
                     :PhysicalAbility ;
@@ -1373,6 +3148,38 @@ else (setback)"""
                              bro:CheckRoll ;
                     bro:uses :shadowing ;
                     rdfs:label "Shadowing die roll" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#shots_for_car_of_fitts
+:shots_for_car_of_fitts rdf:type owl:NamedIndividual ,
+                                 :StoryHook ;
+                        bno:location :los_angeles ;
+                        bno:participant :buron_fitts ;
+                        sche:description "In March of ’37 bullets shatter his car windshield, wounding Buron Fitts. No one has been (or will be) charged with that crime. Who had those shots fired into Fitts’ vehicle, and why?" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#silver_lake
+:silver_lake rdf:type owl:NamedIndividual ,
+                      bno:Location ;
+             bno:location :los_angeles ;
+             sche:description "Home to the studios of Walt Disney and past-hisprime cowboy Tom Mix, this neighborhood mixes commercial and residential areas. It takes its name not from a lake but a reservoir: the reservoir is not silver, but it was built by a man named Silver." ;
+             rdfs:label "Silveer Lake" ;
+             :represents wd:Q1143552 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#snake_woman
+:snake_woman rdf:type owl:NamedIndividual ,
+                      :StoryHook ;
+             bno:cause :snake_woman_motive ;
+             bno:location :los_angeles ;
+             bno:participant :boris_karloff ,
+                             :dex_raymond ;
+             sche:description "Boris Karloff can’t help but be amazed by the number of people who confuse role with reality. A surprising percentage of his fan mail seeks his advice on occult matters. He has always ignored this foolishness, until now. He shows Dex a missive from a young woman convinced that her parents are trying to turn her into a snake woman. In chilling detail it describes the writer’s growing appetite for mutilation and murder." .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#snake_woman_motive
+:snake_woman_motive rdf:type owl:NamedIndividual ;
+                    sche:description "Though Karloff supposes the matter does not truly concern him, he wishes to hire Dex to seek out the girl and get her the help she so evidently needs." .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#spend_edge
@@ -1399,6 +3206,10 @@ else (setback)"""
             rdfs:label "Spend push" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#spiritual_journey
+:spiritual_journey rdf:type owl:NamedIndividual .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#stability
 :stability rdf:type owl:NamedIndividual ,
                     :MentalAbility ;
@@ -1422,6 +3233,14 @@ else (setback)"""
                              bro:CheckRoll ;
                     bro:uses :stability ;
                     rdfs:label "Stdie roll die roll" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#start_case
+:start_case rdf:type owl:NamedIndividual ,
+                     bro:Gamerule ;
+            bro:leadsTo :set_abilities ,
+                        :set_starting_pushes ;
+            rdfs:label "Start case" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#stealth
@@ -1501,6 +3320,25 @@ else (setback)"""
              rdfs:label "Taking Time" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#ted_gargan
+:ted_gargan rdf:type owl:NamedIndividual ,
+                     bno:Character ;
+            :motive :against_corrupt_system ;
+            :occupation "detective" ;
+            sche:description "Detective Sergeant Ted Gargan, world-weary commander of the homicide night shift. Unlike most in the Department, Gargan has kept his hands clean. When he bends the rules, it’s to achieve a just result, not to serve the System." ;
+            rdfs:label "Ted Gargan" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#theodore_von_karman
+:theodore_von_karman rdf:type owl:NamedIndividual ,
+                              bno:Character ;
+                     bno:location :pasadena ;
+                     :occupation "physicist" ;
+                     sche:description "Budapest-born, Jewish aerodynamics physicist Theodore von Kármán, 56, (1881–1963). Kármán directs Caltech’s Guggenheim Aeronautical Laboratory, which he will later help to transform into the Jet Propulsion Laboratory. He performs experiments at the Devil’s Gate Test Range, named for a nearby rock formation that looks like a demonic face and was avoided by the Chumash Indians as haunted." ;
+                     rdfs:label "Theodore von Kármán" ;
+                     :represents wd:Q164384 .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#theology
 :theology rdf:type owl:NamedIndividual ,
                    :AcademicAbility ;
@@ -1536,6 +3374,24 @@ else (setback)"""
        rdfs:label "Ticks" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#times_building
+:times_building rdf:type owl:NamedIndividual ,
+                         bno:Location ;
+                bno:location :downtown ;
+                sche:description "Consult with newshawks, or confront big man Harry Chandler himself, at the Los Angeles Times Building (202 West 1st Street, at Spring). Art deco at its most imposing, this edifice went up only two years ago. In keeping with Chandler’s greed for geomantic motherlodes, it occupies the site of two previous city halls." ;
+                rdfs:label "Los Angeles Times Building" ;
+                :represents wd:Q188515 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#trapped_with_whitey
+:trapped_with_whitey rdf:type owl:NamedIndividual ;
+                     bno:cause :whitey_is_danger ,
+                               :whitey_lashes_out_at_helen ;
+                     bno:participant :helen_deakin ;
+                     :pastEventTimeline "85 days ago" ;
+                     sche:description "Feeling increasingly trapped with Whitey, Helen conceives a plan to get rid of him." .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#victory_as_miracle_1_die
 :victory_as_miracle_1_die rdf:type owl:NamedIndividual ,
                                    :ChallengeTemplate ;
@@ -1552,269 +3408,122 @@ else (setback)"""
                           rdfs:label "Victory will feel like a miracle for 2 Die ability" .
 
 
-###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi
-:Case a owl:Class ;
-    rdfs:subClassOf bno:Narrative ,
-                    [ a owl:Restriction ;
-                      owl:onProperty [owl:inverseOf bro:selects] ;
-                      owl:hasValue :start_case
-                    ] ;
-    rdfs:label "Case" .
-
-:investigator a owl:ObjectProperty ;
-              rdfs:label "investigator" ;
-              rdfs:domain :Case ;
-              rdfs:range :Investigator .
-
-:fathomless_sleep a owl:NamedIndividual , :Case ;
-    rdfs:label "The fathomless sleep" ;
-                  :investigator :dex_raymond ;
-                  :year 1937 ;
-                  bno:location :los_angeles .
-
-:year a owl:DatatypeProperty ;
-      rdfs:label "year" ;
-      rdfs:domain :Case ;
-      rdfs:range xsd:integer .
-
-:Investigator a owl:Class ;
-              rdfs:subClassOf bno:Character ;
-    rdfs:label "Investigator" .
-
-:start_case a owl:NamedIndividual , bro:Gamerule ;
-            rdfs:label "Start case" ;
-            bro:leadsTo :set_starting_pushes ,
-                        :set_abilities .
-
-:set_starting_pushes a owl:NamedIndividual , bro:Gamerule ;
-                      rdfs:label "Rule for starting pushes" ;
-                      bro:calculations "pushes = starting pushes of case's investigator" ;
-                      bro:sets :pushes .
-
-:set_abilities a owl:NamedIndividual , bro:Gamerule ;
-               rdfs:label "Set abilities of investigator" ;
-               bro:calculations "abilities of investigator" .
-
-:dex_raymond a owl:NamedIndividual , :Investigator ;
-    rdfs:label "Dexter (Dex) Raymond" ;
-    sche:description "Hard-boiled Shamus",
-             "Archetypal hardboiled private investigator Dex Raymond prowls Los Angeles’ haunted streets as an outsider by choice. With his smarts and grit, he could have wormed his way into its corrupt power structure. Instead, he operates on its fringes, writing wrongs for a modest fee, plus expenses. In addition to his contacts, he counts one more key friend — LAPD Detective Sergeant Ted Gargan, a rare honest man in a town where cops can be bought by the barrel." ;
-             :startingPushes 3 ;
-             :ability :accounting ,
-                      :assess_honesty ,
-                      :bargain ,
-                      :cop_talk ,
-                      :cryptography ,
-                      :evidence_collection ,
-                      :intimidation ,
-                      :inspiration ,
-                      :law ,
-                      :locksmith ,
-                      :photography ,
-                      :reassurance ,
-                      :research ,
-                      :streetwise ;
-             :1dice :cool ,
-                    :conceal ,
-                    :devices ,
-                    :driving ,
-                    :preparedness ,
-                    :filch ;
-             :2dice :athletics ,
-                    :sense_trouble ,
-                    :shadowing ,
-                    :stability ,
-                    :stealth ,
-                    :fighting ;
-             :acquaintance :len_pollard ;
-             :friend :ted_gargan ;
-             :source :virginia_ashbury , :madame_eva , :mack , :alfred_kelham , :max_weyl ;
-             :occupation "private detective" .
-
-
-:startingPushes a owl:DatatypeProperty ;
-    rdfs:label "starting pushes" ;
-    rdfs:domain :Investigator ;
-    rdfs:range xsd:integer .
-
-:ability a owl:ObjectProperty ;
-    rdfs:label "investigative ability" ;
-    rdfs:domain bno:Character ;
-    rdfs:range :InvestigativeAbility .
-
-:1dice a owl:ObjectProperty ;
-    rdfs:label "general ability with 1 dice value" ;
-    rdfs:domain :Investigator ;
-    rdfs:range :GeneralAbility .
-
-:2dice a owl:ObjectProperty ;
-    rdfs:label "general ability with 2 dice value" ;
-    rdfs:domain :Investigator ;
-    rdfs:range :GeneralAbility .
-
-:ted_gargan a owl:NamedIndividual , bno:Character ;
-    rdfs:label "Ted Gargan" ;
-    sche:description "Detective Sergeant Ted Gargan, world-weary commander of the homicide night shift. Unlike most in the Department, Gargan has kept his hands clean. When he bends the rules, it’s to achieve a just result, not to serve the System." ;
-            :occupation "detective" ;
-            :motive :against_corrupt_system .
-
-:acquaintance a owl:ObjectProperty , owl:SymmetricProperty  ;
-    rdfs:label "has acquaintance" ;
-    rdfs:domain bno:Character ;
-    rdfs:range bno:Character .
-
-:friend a owl:ObjectProperty ;
-        rdfs:subPropertyOf :acquaintance ;
-        rdfs:label "has friend" .
-
-:source a owl:ObjectProperty ;
-        rdfs:subPropertyOf :acquaintance ;
-        rdfs:label "has source" ;
-        rdfs:range :Source .
-
-:len_pollard a owl:NamedIndividual , bno:Character ;
-    rdfs:label "Len Pollard" ;
-    sche:description "For grubby or menial stuff, Dex goes to Sergeant Len Pollard, an uninspired desk jockey whose chief hobby is complaining about the weight his doctor has ordered him to lose." ;
-             :occupation "sergeant, desk jockey" ;
-             :motive :dex_found_out_cheating .
-
-:dex_found_out_cheating a owl:NamedIndividual ;
-                        rdfs:label "Dex found out the cheating of Len's wife" ;
-                        sche:description "While investigating a shady divorce attorney for another case, Dex found out that Len was one of his clients, and that the attorney was sleeping with his wife. For that tip-off, Pollard performs shady favors for Dex like pulling confidential files or fixing traffic tickets." ;
-                        :motiveTarget :dex_raymond .
-
-:Source a owl:Class ;
-    rdfs:subClassOf bno:Character ;
-    rdfs:label "Source" .
-
-:dexter_raymond_portrait a owl:NamedIndividual , bbo:Portrait ;
-    sche:image "https://pelgranepress.com//nas/content/live/pelgranepress/wp-content/uploads/2015/09/Dex-Raymond_300-204x300.png" .
-
-:Source a owl:Class ;
-    rdfs:subClassOf bno:Character ;
-    rdfs:label "Source" .
-
-:occupation a owl:DatatypeProperty ;
-            rdfs:label "occupation" ;
-            rdfs:domain bno:Character ;
-            rdfs:range xsd:string .
-
-:virginia_ashbury a owl:NamedIndividual ;
-    rdfs:label "Virginia Ashbury" ;
-    :occupation "scientist" ;
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#virginia_ashbury
+:virginia_ashbury rdf:type owl:NamedIndividual ;
+                  :ability :astronomy ,
+                           :biology ,
+                           :chemistry ,
+                           :forensics ,
+                           :geology ,
+                           :physics ;
+                  :motive :enigma_of_underworld ;
+                  :occupation "scientist" ;
                   sche:description "A slim, somewhat birdlike woman typically seen in her white lab coat, Dr. Virginia Ashbury dotes on Dex as she would on a younger brother." ;
-                           :motive :enigma_of_underworld ;
-                  :ability :astronomy, :biology, :chemistry, :forensics , :geology, :physics .
+                  rdfs:label "Virginia Ashbury" .
 
-:virginia_ashbury_portrait a owl:NamedIndividual , bbo:Portrait ;
-    rdfs:label "Portrait of Virginia Ashbury" ;
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#virginia_ashbury_portrait
+:virginia_ashbury_portrait rdf:type owl:NamedIndividual ,
+                                    bbo:Portrait ;
+                           bbo:depicts :virginia_ashbury ;
                            sche:image "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQJqhuGRzktW5ETO71j_sVNnbs_3xpvcXxeykwk2TF39yevd1vp" ;
-    bbo:depicts :virginia_ashbury .
+                           rdfs:label "Portrait of Virginia Ashbury" .
 
-:enigma_of_underworld a owl:NamedIndividual ;
-                      rdfs:label "Enigma of underworld" ;
-                      sche:description "enjoys a vicarious glimpse at a seamy, dangerous underworld" ;
-                      :motiveTarget :dex_raymond .
 
-:Motive a owl:Class ;
-    rdfs:subClassOf bno:Narrative ;
-    rdfs:label "Motive" .
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#vogue_theater
+:vogue_theater rdf:type owl:NamedIndividual ,
+                        bno:Location ;
+               bno:location :hollywood ;
+               sche:description "Plenty of ghosts roam the Vogue Theater (6675 Hollywood Boulevard) after the projectionist shuts down for the night. The problem is, none of the legends that explain them, like a supposed burned-down school on the site." ;
+               rdfs:label "Vogue Theater" .
 
-:motive a owl:ObjectProperty ;
-    rdfs:label "has motive" ;
-    rdfs:domain bno:Character ;
-    rdfs:range :Motive .
 
-:against_corrupt_system a owl:NamedIndividual ;
-    rdfs:label "Against corrupt System" ;
-                        :motiveTarget :dex_raymond .
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#vogue_theater_hook
+:vogue_theater_hook rdf:type owl:NamedIndividual ,
+                             :StoryHook ;
+                    bno:location :vogue_theater ;
+                    bno:participant :dex_raymond ;
+                    sche:description "While pursuing an unrelated case, Dex meets a witness who claims to have seen through a window that appeared in space in the Vogue’s lobby. She claims to have seen through time, to have seen a gang of crazed, long-haired, futuristically-dressed, young people commit a ritual slaughter in a Benedict Canyon home. The witness went so far as to drive out there, but no house stands on the lot she is sure she saw through the time portal." .
 
-:madame_eva a owl:NamedIndividual ;
-    rdfs:label "Madame Eva" , "Peggy Malone" ;
-    :occupation "fortune teller" ;
-    sche:description "this harmless grifter can assist Dex with information on the world of cults, spiritualism, and hermetic magic" ;
-    :motive :protect_from_mythos ;
-            :ability :cthulhu_mythos, :occult .
 
-:madame_eva_portrait a owl:NamedIndividual , bbo:Portrait ;
-                     sche:image "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRGpt98Xb1B7ejTrr9XIqPqERLeb8XwVa4jTZgC4pNGn2_qycm-" ;
-                     rdfs:label "Portrait of Madame Eva" ;
-                     bbo:depicts :madame_eva .
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#walt_disney
+:walt_disney rdf:type owl:NamedIndividual ,
+                      bno:Character ;
+             bno:location :hollywood ;
+             :occupation "american animator and producer" ;
+             sche:description "In 1937 Walt Disney, 36, (1901–1966), later known for his kindly public persona and unionbusting arch-conservatism, produces cartoon shorts distributed by RKO. He has bet his shirt on a nutty idea, a full-length animated feature called Snow White and the Seven Dwarfs. If it doesn’t do business, he’s ruined." ;
+             rdfs:label "Walt Disney" ;
+             :represents wd:Q8704 .
 
-:protect_from_mythos a owl:NamedIndividual ;
-    rdfs:label "Protect from Mythos" ;
-    sche:description "Eva has seen other minds ruined by contact with the Old Ones, and she doesn’t want that to happen to him." ;
-                     :motiveTarget :dex_raymond .
 
-:mack a owl:NamedIndividual  ;
-    rdfs:label "Dr. Jeff (Mack) Mackintosh" ;
-    :occupation "shrink" ;
-    sche:description "raffish, pipe-smoking psychiatrist" ;
-      :motive :help_for_rich_patients ;
-      :ability :medicine, :outdoorsman, :pharmacy, :psychology .
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#whitey_alexander
+:whitey_alexander rdf:type owl:NamedIndividual ,
+                           bno:Character ;
+                  :mistress :helen_deakin ;
+                  :worksFor :guy_mcafee ;
+                  :occupation "casino owner" ;
+                  sche:description "b.1884, florid-faced, ham-fisted. Casino owner and mid-level rackets figure who pays his tribute money to Guy McAfee. Kept Helen Deakin as a mistress, using her father’s the gambling debts as a point of leverage over her." ;
+                  rdfs:label "Whitey Alexander" .
 
-:help_for_rich_patients a owl:NamedIndividual ;
-                        rdfs:label "Help for rich patients" ;
-                        sche:description "Sometimes Mack sends business Dex’s way, when one of his troubled rich patients needs a spot of sleuthing done." ;
-                        :motiveTarget :dex_raymond .
 
-:mack_portrait a owl:NamedIndividual , bbo:Portrait ;
-    rdfs:label "Portrait of Mack" ;
-    sche:image "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS3QnpVjHVGqGhcbla_00nRSmip3II9uz3Ju8EnWs4Ko2YNNmN5" ;
-    bbo:depicts :mack .
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#whitey_is_danger
+:whitey_is_danger rdf:type owl:NamedIndividual ,
+                           :Motive ;
+                  bno:cause :whitey_lashes_out_at_helen ;
+                  :motiveTarget :whitey_alexander .
 
-:alfred_kelham a owl:NamedIndividual  ;
-    rdfs:label "Alfred Kelham" ;
-    :occupation "professor" ;
-    sche:description "With his thick-framed spectacles and mound of snowy white hair, Professor Alfred Kelham would look the part of a fusty lion of pedagogy even without his telltale tweed jacket." ;
-    :motive :echo_of_son ;
-               :ability :anthropology, :archaeology , :history , :languages , :oral_history , :theology .
 
-:echo_of_son a owl:NamedIndividual ;
-    rdfs:label "Echo of dead son" ;
-    sche:description "Proudly pedantic and a touch paternalistic, Kelham sees in Dex an echo of his own son, a soldier killed in WWI." ;
-             :motiveTarget :dex_raymond .
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#whitey_lashes_out_at_helen
+:whitey_lashes_out_at_helen rdf:type owl:NamedIndividual ;
+                            bno:cause :budd_starts_putting_squeeze_on_whitey ,
+                                      :helen_realizes_skimming_cash_by_whitey ;
+                            bno:participant :budd_barron ,
+                                            :helen_deakin ,
+                                            :whitey_alexander ;
+                            :pastEventTimeline "90 days ago" ;
+                            sche:description "After another threatening message from Barron, Whitey lashes out at Helen, leaving her in fear for her life." .
 
-:max_weyl a owl:NamedIndividual ;
-    rdfs:label "Max Weyl" ;
-    :occupation "production designer" ;
-    sche:description "Diminutive and impeccably dressed, his hair brilliantined and topped by a jaunty beret, Max Weyl oversees the visual look of around half-adozen films per year for his home studio, Capitol Pictures." ;
-          :motive :gratitude_for_out_of_blackmail ;
-          :ability :architecture , :art , :art_history , :bureaucracy , :craft , :flattery .
 
-:gratitude_for_out_of_blackmail a owl:NamedIndividual ;
-                                rdfs:label "Gratitude for out of blackmail" ;
-                                sche:description "Dex helped one of Max’s friends out of a blackmail scrape last year, earning his lasting gratitude." ;
-                                :motiveTarget :dex_raymond .
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#wilbur_pharmacy
+:wilbur_pharmacy rdf:type owl:NamedIndividual ,
+                          bno:Location ;
+                 bno:location :downtown ;
+                 sche:description "L.A.’s all-night drugstores not only serve as pharmacies, but also sell a wide range of products including liquor. Their lunch counters sling diner food and coffee twenty-four hours a day. Dex meets with his LAPD contact Ted Gargan at Wilbur’s Pharmacy near the corner of Main and Temple." ;
+                 rdfs:label "Wilbur’s Pharmacy" .
 
-:max_weyl_portrait a owl:NamedIndividual , bbo:Portrait ;
-    rdfs:label "Portrait of Max Weyl" ;
-    sche:image "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZZfB5C0T1d4AJhe03edHN9LXWMTbyZMmXizx_eQQYZTgRYuTt" ;
-    bbo:depicts :max_weyl .
 
-:motiveTarget a owl:ObjectProperty ;
-    rdfs:label "has target of motive" ;
-    rdfs:domain :Motive ;
-    rdfs:range owl:Thing .
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#wilfred_talbot_smith
+:wilfred_talbot_smith rdf:type owl:NamedIndividual ,
+                               bno:Character ;
+                      bno:location :agape_lodge ;
+                      :occupation "Thelemite" ;
+                      sche:description "Sex magick rules at the Agape Lodge, an Ordo Templi Orientis outfit presided over by turbaned Thelemite Wilfred Talbot Smith, (1885–1957)." ;
+                      rdfs:label "Wilfred Talbot Smith" ;
+                      :represents wd:Q15999036 .
 
-:los_angeles a owl:NamedIndividual , bno:Location ;
-    rdfs:label "Los Angeles" ;
-    sche:description "Beneath beguiling surfaces, corruption rules. Dig down past that seething layer of human indifference, and the one obsessed enough to keep looking finds a deeper, occulted indifference of cosmic proportions." .
 
-:guy_mcafee a owl:NamedIndividual , bno:Character ;
-    rdfs:label "Guy McAfee" ;
-    :occupation "vice cop" ;
-    bno:location :los_angeles ;
-            :represents wd:Q23017206 ;
-            sche:description "Atop the 1937 gangland pyramid perches former vice cop Guy McAfee, 49, (1888–1960), unaware that his hold on L.A. is about to crumble. Tousled white hair and jug ears play to his aw-shucks manner, which he cops from his predecessor." .
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#william_dudley_pelley
+:william_dudley_pelley rdf:type owl:NamedIndividual ,
+                                bno:Character ;
+                       :occupation "political activist" ;
+                       sche:description "b. 1890, goateed, forbidding. Mystic, screenwriter, Protestant militant, Hitler admirer, and founder of the fascist Silver Legion. Ran for President last year as a fringe candidate under the banner of his Christian Party. Recipient of donations brokered by Clara from her elite client list." ;
+                       rdfs:label "William Dudley Pelley" ;
+                       :represents wd:Q1501730 .
 
-:represents a owl:ObjectProperty ;
-    rdfs:label "represents" ;
-    rdfs:domain bno:Character ;
-    rdfs:range owl:Thing .
 
-:jack_dragna a owl:NamedIndividual , bno:Character ;
-    rdfs:label "Jack Dragna" ;
-    :represents wd:Q1677023 ;
-    rdfs:label "Mafia don" ;
-    bno:location :los_angeles .
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#wiretap_network_of_davis
+:wiretap_network_of_davis rdf:type owl:NamedIndividual ,
+                                   :StoryHook ;
+                          bno:cause :wiretap_network_of_davis_motive ;
+                          bno:location :los_angeles ;
+                          bno:participant :dex_raymond ,
+                                          :james_edgar_davis ;
+                          sche:description "While in office, Davis covertly runs a vast wiretap network, listening in on political threats to the Shaw regime. Those under surveillance include politicians, judges, and other law enforcement officials." .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#wiretap_network_of_davis_motive
+:wiretap_network_of_davis_motive rdf:type owl:NamedIndividual ;
+                                 sche:description "Any deep secret of the city’s power structure might be found on those recordings — and might come Dex’s way, if he’s willing to owe a favor to Two Gun Davis." .
+
+
+###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi

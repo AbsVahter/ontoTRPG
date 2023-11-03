@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="http://lnkd.tech/editor#CustomGlobalGraphs">
+    <option name="globalGraphs">
+      <map>
+        <entry key="_basic">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/../../../Created%20ontologies/trpgontologies/_basic/BasicBookOnto.ttl" />
+              <option value="file://$PROJECT_DIR$/../../../Created%20ontologies/trpgontologies/_basic/BasicNarrativeOnto.ttl" />
+              <option value="file://$PROJECT_DIR$/../../../Created%20ontologies/trpgontologies/_basic/BasicRulesOnto.ttl" />
+            </set>
+          </value>
+        </entry>
+        <entry key="trpg">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/../../../Created%20ontologies/trpgontologies/gumshoe/cthulhu_confidential/PELGOC01.ttl" />
+              <option value="file://$PROJECT_DIR$/../../../Created%20ontologies/trpgontologies/pathfinder/2ed/pzo2101.ttl" />
+            </set>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="http://lnkd.tech/editor#GraphVisibilityConfig">
+    <option name="visibility">
+      <map>
+        <entry key="DOCUMENTATION">
+          <value>
+            <Visibility />
+          </value>
+        </entry>
+        <entry key="GENERAL">
+          <value>
+            <Visibility />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
