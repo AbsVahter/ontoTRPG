@@ -87,12 +87,6 @@ bro:prereq rdfs:comment "activated condition or true statement" .
             rdfs:range :Ammunition .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.ttl#blocks
-:blocks rdf:type owl:ObjectProperty ;
-        rdfs:domain bro:Gamerule ;
-        rdfs:range owl:Thing .
-
-
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.ttl#checkCriticalFailure
 :checkCriticalFailure rdf:type owl:ObjectProperty ;
                       rdfs:subPropertyOf bro:leadsTo ;
@@ -163,12 +157,6 @@ bro:prereq rdfs:comment "activated condition or true statement" .
 :domain rdf:type owl:ObjectProperty ;
         rdfs:domain :Deity ;
         rdfs:range :ClericDomain .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.ttl#during
-:during rdf:type owl:ObjectProperty ;
-        rdfs:domain bno:Event ;
-        rdfs:range bno:Event .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.ttl#ethnicityOf
@@ -1842,7 +1830,7 @@ bro:SkillCheck rdfs:subClassOf [ rdf:type owl:Restriction ;
 :absalom_reckoning rdf:type owl:NamedIndividual ,
                             bno:Event ;
                    bno:cause :discovery_of_the_starstone ;
-                   :during :the_age_of_destiny ;
+                   bno:during :the_age_of_destiny ;
                    bno:location :absalom ,
                              :isle_of_kortos ;
                    bno:participant :aroden ;
@@ -5072,7 +5060,7 @@ bro:SkillCheck rdfs:subClassOf [ rdf:type owl:Restriction ;
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.ttl#attack_of_opportunity
 :attack_of_opportunity rdf:type owl:NamedIndividual ,
                                 :Feat ;
-                       :blocks :multiple_attack_penalty ;
+                       bno:blocks :multiple_attack_penalty ;
                        :featOf :fighter ;
                        :performs :melee_strike ;
                        :trigger :attack_of_opportunity_statement ;
@@ -6109,7 +6097,7 @@ bro:SkillCheck rdfs:subClassOf [ rdf:type owl:Restriction ;
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.ttl#blocked_until_next_turn
 :blocked_until_next_turn rdf:type owl:NamedIndividual ,
                                   bro:Gamerule ;
-                         :blocks :escape ;
+                         bno:blocks :escape ;
                          :duration "1 turn" ;
                          rdfs:label "Blocked until next turn" .
 
@@ -8566,7 +8554,7 @@ bro:SkillCheck rdfs:subClassOf [ rdf:type owl:Restriction ;
 :darkvision rdf:type owl:NamedIndividual ,
                      :FamiliarAbility ;
             bro:leadsTo :precise_senses ;
-            :blocks :darkness ,
+            bno:blocks :darkness ,
                     :dim_light ;
             rdfs:comment "A creature with darkvision can see perfectly well in areas of darkness and dim light, though such vision is in black and white only. Magical darkness blocks darkvision" ;
             rdfs:label "Darkvision" .
@@ -8729,7 +8717,7 @@ bro:SkillCheck rdfs:subClassOf [ rdf:type owl:Restriction ;
 :death_of_aroden rdf:type owl:NamedIndividual ,
                           bno:Event ;
                  bno:cause :absalom_reckoning ;
-                 :during :the_age_of_destiny ;
+                 bno:during :the_age_of_destiny ;
                  bno:location :golarion ;
                  bno:participant :aroden ;
                  rdfs:comment "(4606 AR)" ;
@@ -8905,7 +8893,7 @@ bro:SkillCheck rdfs:subClassOf [ rdf:type owl:Restriction ;
 :delay rdf:type owl:NamedIndividual ,
                 :FreeAction ;
        bro:changes :initiative_position ;
-       :blocks :acting_phase_of_turn ;
+       bno:blocks :acting_phase_of_turn ;
        :trigger :start_of_turn ;
        rdfs:comment "You wait for the right moment to act. The rest of your turn doesn’t happen yet. Instead, you’re removed from the initiative order. You can return to the initiative order as a free action triggered by the end of any other creature’s turn. This permanently changes your initiative to the new position. You can’t use reactions until you return to the initiative order." ;
        rdfs:label "Delay" .
@@ -9196,7 +9184,7 @@ bro:SkillCheck rdfs:subClassOf [ rdf:type owl:Restriction ;
 :difficult_terrain rdf:type owl:NamedIndividual ,
                             bro:Gamerule ;
                    bro:leadsTo :halved_travel_speed ;
-                   :blocks :step ;
+                   bno:blocks :step ;
                    rdfs:comment "Difficult terrain is any terrain that impedes your movement, ranging from particularly rough or unstable surfaces to thick ground cover and countless other impediments." ;
                    rdfs:label "Difficult terrain" .
 
@@ -9363,7 +9351,7 @@ bro:SkillCheck rdfs:subClassOf [ rdf:type owl:Restriction ;
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.ttl#discovery_of_the_starstone
 :discovery_of_the_starstone rdf:type owl:NamedIndividual ,
                                      bno:Event ;
-                            :during :the_age_of_destiny ;
+                            bno:during :the_age_of_destiny ;
                             bno:location :inner_sea ;
                             bno:participant :aroden ;
                             rdfs:comment "Aroden had long since cultivated a following of loyal subjects who regarded him with awe, for immortality was but one of the wonders he’d achieved. Greatest among these was his discovery of a shard of potent magic known today as the Starstone, a fragment from the stars that fell during Earthfall, which had lodged at the bottom of the Inner Sea." ;
@@ -11530,7 +11518,7 @@ bro:SkillCheck rdfs:subClassOf [ rdf:type owl:Restriction ;
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.ttl#fatigued
 :fatigued rdf:type owl:NamedIndividual ,
                    :Condition ;
-          :blocks :daily_preparations ;
+          bno:blocks :daily_preparations ;
           rdfs:comment "Your defenses are lower and you can’t use exploration activities while traveling." ;
           rdfs:label "Fatigued" .
 
@@ -12790,7 +12778,7 @@ bro:SkillCheck rdfs:subClassOf [ rdf:type owl:Restriction ;
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.ttl#gently_fall
 :gently_fall rdf:type owl:NamedIndividual ,
                       bro:Gamerule ;
-             :blocks :falling ;
+             bno:blocks :falling ;
              rdfs:comment "You fall gently, taking no damage from the fall." ;
              rdfs:label "Gently fall" .
 
@@ -13364,7 +13352,7 @@ bro:SkillCheck rdfs:subClassOf [ rdf:type owl:Restriction ;
 :grab_the_edge_with_critical_success rdf:type owl:NamedIndividual ,
                                               bro:Gamerule ;
                                      bro:leadsTo :falling_damage_roll ;
-                                     :blocks :falling ;
+                                     bno:blocks :falling ;
                                      bro:calculations "height = fallen height - 30" ;
                                      rdfs:comment "You grab the edge or handhold, whether you have a hand free, typically by using a suitable held item to catch yourself (catching a battleaxe on a ledge, for example)." ;
                                      rdfs:label "Grab the edge with critical success" .
@@ -13375,7 +13363,7 @@ bro:SkillCheck rdfs:subClassOf [ rdf:type owl:Restriction ;
                                      bro:Gamerule ;
                             bro:leadsTo :falling_damage_roll ;
                             bro:prereq :free_hand ;
-                            :blocks :falling ;
+                            bno:blocks :falling ;
                             bro:calculations "height = fallen height - 20" ;
                             rdfs:comment "If you have at least one hand free, you grab the edge or handhold, stopping your fall." ;
                             rdfs:label "Grab the edge with success" .
@@ -13526,7 +13514,7 @@ bro:SkillCheck rdfs:subClassOf [ rdf:type owl:Restriction ;
 :greater_darkvision rdf:type owl:NamedIndividual ,
                              :Feat ;
                     bro:leadsTo :precise_senses ;
-                    :blocks :darkness ,
+                    bno:blocks :darkness ,
                             :dim_light ,
                             :magical_darkness ;
                     rdfs:comment "A creature with greater darkvision can see perfectly well in areas of darkness or magical darkness and dim light, though such vision is in black and white only." ;
@@ -13545,7 +13533,7 @@ bro:SkillCheck rdfs:subClassOf [ rdf:type owl:Restriction ;
                                     bro:Gamerule ;
                            bro:modifies :travel_speed ;
                            bro:uses :rounding ;
-                           :blocks :step ;
+                           bno:blocks :step ;
                            bro:calculations "travel speed *= 1/3" ;
                            rdfs:comment "Difficult terrain is any terrain that impedes your movement, ranging from particularly rough or unstable surfaces to thick ground cover and countless other impediments." ;
                            rdfs:label "Greater difficult terrain" .
@@ -16392,7 +16380,7 @@ bro:SkillCheck rdfs:subClassOf [ rdf:type owl:Restriction ;
                           :SkillFeat ;
                  bro:prereq :stealth ,
                             :swift_sneak ;
-                 :blocks :halved_travel_speed ;
+                 bno:blocks :halved_travel_speed ;
                  :level 15 ;
                  :prereqDetails "Legendary in Stealth, Swift Sneak" ;
                  rdfs:label "Legendary Sneak" .
@@ -17044,7 +17032,7 @@ bro:SkillCheck rdfs:subClassOf [ rdf:type owl:Restriction ;
 :low_light_vision rdf:type owl:NamedIndividual ,
                            :Feat ;
                   bro:leadsTo :precise_senses ;
-                  :blocks :dim_light ;
+                  bno:blocks :dim_light ;
                   rdfs:comment "A creature with low-light vision can see in dim light as though it were bright light, so it ignores the concealed condition due to dim light." ;
                   rdfs:label "Low-light vision" .
 
@@ -22767,7 +22755,7 @@ bro:SkillCheck rdfs:subClassOf [ rdf:type owl:Restriction ;
 :share_space_with_other_creature rdf:type owl:NamedIndividual ,
                                           bro:Gamerule ;
                                  bro:prereq :share_space_with_other_creature_statement ;
-                                 :blocks :stand ;
+                                 bno:blocks :stand ;
                                  rdfs:comment "You can share a space with a prone creature if that creature is willing, unconscious, or dead and if it is your size or smaller. The GM might allow you to climb atop the corpse or unconscious body of a larger creature in some situations. A prone creature can’t stand up while someone else occupies its space." ;
                                  rdfs:label "Share space with other creature" .
 
@@ -24693,7 +24681,7 @@ bro:SkillCheck rdfs:subClassOf [ rdf:type owl:Restriction ;
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.ttl#suffocating
 :suffocating rdf:type owl:NamedIndividual ,
                       :Condition ;
-             :blocks :deactivate_unconscious ;
+             bno:blocks :deactivate_unconscious ;
              rdfs:label "Suffocating" .
 
 
@@ -25001,7 +24989,7 @@ bro:SkillCheck rdfs:subClassOf [ rdf:type owl:Restriction ;
 :swift_sneak rdf:type owl:NamedIndividual ,
                       :SkillFeat ;
              bro:prereq :stealth ;
-             :blocks :halved_travel_speed ,
+             bno:blocks :halved_travel_speed ,
                      :second_exploration_activity ;
              :level 7 ;
              :prereqDetails "Master in Stealth" ;
@@ -25142,7 +25130,7 @@ bro:SkillCheck rdfs:subClassOf [ rdf:type owl:Restriction ;
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/pathfinder/2ed/pzo2101.ttl#take_no_damage
 :take_no_damage rdf:type owl:NamedIndividual ,
                          bro:Gamerule ;
-                :blocks :damage_roll ;
+                bno:blocks :damage_roll ;
                 rdfs:comment "You take no damage from the spell, hazard, or  effect." ;
                 rdfs:label "Take no damage" .
 
@@ -26346,7 +26334,7 @@ bro:SkillCheck rdfs:subClassOf [ rdf:type owl:Restriction ;
                         :underwater_piercing_ranged_attacks ,
                         :underwater_ranged_attacks ,
                         :underwater_resistances ;
-            :blocks :fire_trait ;
+            bno:blocks :fire_trait ;
             rdfs:label "Underwater" .
 
 
@@ -26384,7 +26372,7 @@ bro:SkillCheck rdfs:subClassOf [ rdf:type owl:Restriction ;
 :underwater_ranged_attacks rdf:type owl:NamedIndividual ,
                                     bro:Gamerule ;
                            bro:prereq :slashing_or_bludgeoning_statement ;
-                           :blocks :ranged_attack_check ;
+                           bno:blocks :ranged_attack_check ;
                            :trait :on_self_trait ;
                            rdfs:label "Underwater ranged attacks" .
 

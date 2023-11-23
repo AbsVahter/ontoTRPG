@@ -16,6 +16,8 @@
           <value>
             <set>
               <option value="file://$PROJECT_DIR$/../../../Created%20ontologies/trpgontologies/gumshoe/cthulhu_confidential/PELGOC01.ttl" />
+              <option value="file://$PROJECT_DIR$/../../../Created%20ontologies/trpgontologies/gumshoe/cthulhu_confidential/PELGOC01_homebrew.ttl" />
+              <option value="file://$PROJECT_DIR$/../../../Created%20ontologies/trpgontologies/gumshoe/cthulhu_confidential/PELGOC01_shacl.ttl" />
               <option value="file://$PROJECT_DIR$/../../../Created%20ontologies/trpgontologies/pathfinder/2ed/pzo2101.ttl" />
             </set>
           </value>
@@ -32,6 +34,16 @@
           </value>
         </entry>
         <entry key="GENERAL">
+          <value>
+            <Visibility />
+          </value>
+        </entry>
+        <entry key="SHACL_DATA">
+          <value>
+            <Visibility />
+          </value>
+        </entry>
+        <entry key="SHACL_SHAPES">
           <value>
             <Visibility />
           </value>

@@ -1,0 +1,22 @@
+@prefix : <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01_homebrew.ttl#> .
+@prefix bno: <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicNarrativeOnto.ttl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix pelgoc01: <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#> .
+@base <https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01_homebrew.ttl#> .
+
+<https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01_homebrew.ttl#> rdf:type owl:Ontology ;
+                                                                                                                       owl:imports pelgoc01: .
+
+#################################################################
+#    Annotations
+#################################################################
+
+:talking_to_police rdfs:label "Talking to police" ;
+                   bno:location pelgoc01:wilbur_pharmacy ;
+                   bno:participant pelgoc01:ted_gargan .
+
+pelgoc01:fathomless_sleep pelgoc01:scene :talking_to_police .

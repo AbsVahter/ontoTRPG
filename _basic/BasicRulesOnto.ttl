@@ -43,7 +43,8 @@
 :selects rdf:type owl:ObjectProperty ;
          rdfs:domain owl:Thing ;
          rdfs:range owl:Thing ;
-         rdfs:label "selects" .
+         rdfs:label "selects" ;
+         rdfs:comment "1 choice by default" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/_basic/BasicRulesOnto.ttl#statementEntity
@@ -132,3 +133,8 @@
       rdfs:domain :Gamerule ;
       rdfs:range :Characteristic ;
     rdfs:label "sets" .
+
+:blocks rdf:type owl:ObjectProperty ;
+        rdfs:domain :Gamerule ;
+        rdfs:range owl:Thing ;
+    rdfs:label "blocks" .
