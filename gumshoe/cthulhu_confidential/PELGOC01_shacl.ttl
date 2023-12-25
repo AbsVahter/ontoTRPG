@@ -41,10 +41,6 @@ pelgoc01:CardShape a sh:NodeShape ;
                    sh:targetClass pelgoc01:Card ;
                    sh:property [ sh:path bro:modifies ;
                                  sh:class bro:Gamerule ;
-                               ] ,
-                               [ sh:path sche:description ;
-                                 sh:minCount 1 ;
-                                 sh:maxCount 1 ;
                                ] .
 
 pelgoc01:ProblemShape a sh:NodeShape ;
@@ -56,18 +52,10 @@ pelgoc01:ProblemShape a sh:NodeShape ;
 
 pelgoc01:SceneShape a sh:NodeShape ;
     sh:targetClass pelgoc01:Scene ;
-    sh:property [ sh:path sche:description ;
-                  sh:minCount 1 ;
-                  sh:maxCount 1 ;
-                ] ,
-                [ sh:path bno:participant ;
-                  sh:minCount 1 ;
-                  sh:class bno:Character ;
-                ] ,
-                [ sh:path bno:cause ;
+    sh:property [ sh:path [ sh:alternativePath ( bno:cause [ sh:inversePath pelgoc01:antagonistReaction ] ) ] ;
                   sh:minCount 1 ;
                 ] ,
-                [ sh:path [ sh:alternativePath ( bno:consequence pelgoc01:clue )]  ;
+                [ sh:path [ sh:alternativePath ( bno:consequence pelgoc01:clue [ sh:inversePath pelgoc01:antagonistReaction ] ) ]  ;
                   sh:minCount 1 ;
                 ] .
 
@@ -81,7 +69,6 @@ pelgoc01:BulletShape a sh:NodeShape ;
                 ] ,
                 [ sh:path pelgoc01:shooter ;
                   sh:minCount 1 ;
-                  sh:maxCount 1 ;
                 ] ,
                 [ sh:path bno:consequence ;
                   sh:or (
@@ -92,21 +79,14 @@ pelgoc01:BulletShape a sh:NodeShape ;
 
 pelgoc01:CharacterShape a sh:NodeShape ;
     sh:targetClass bno:Character ;
-    sh:property [ sh:path sche:description ;
-                  sh:minCount 1 ;
-                ] ,
-                [ sh:path pelgoc01:occupation ;
+    sh:property [ sh:path pelgoc01:occupation ;
                   sh:minCount 1 ;
                   sh:maxCount 1 ;
                 ].
 
 pelgoc01:MotiveShape a sh:NodeShape ;
     sh:targetClass pelgoc01:Motive ;
-    sh:property [ sh:path sche:description ;
-                  sh:minCount 1;
-                  sh:maxCount 1;
-                ] ,
-                [ sh:path pelgoc01:target ;
+    sh:property [ sh:path pelgoc01:target ;
                   sh:class bno:Character ;
                   sh:maxCount 1 ;
                 ] .
@@ -114,9 +94,6 @@ pelgoc01:MotiveShape a sh:NodeShape ;
 pelgoc01:CaseShape a sh:NodeShape ;
     sh:targetClass pelgoc01:Case ;
     sh:property [ sh:path bno:location ;
-                  sh:minCount 1 ;
-                ] ,
-                [ sh:path pelgoc01:cast ;
                   sh:minCount 1 ;
                 ] ,
                 [ sh:path pelgoc01:investigator ;
@@ -138,9 +115,48 @@ pelgoc01:CaseShape a sh:NodeShape ;
                   sh:maxCount 1;
                 ] .
 
-pelgoc01:LocationShape a sh:NodeShape ;
-    sh:targetClass bno:Location ;
-    sh:property [ sh:path sche:description ;
+pelgoc01:InvestigatorShape a sh:NodeShape ;
+    sh:targetClass pelgoc01:Investigator ;
+    sh:property [ sh:path pelgoc01:ability ;
+                  sh:minCount 1 ;
+                ] ,
+                [ sh:path pelgoc01:abilityWith1Dice ;
+                  sh:minCount 1 ;
+                ] ,
+                [ sh:path pelgoc01:abilityWith2Dices ;
+                  sh:minCount 1 ;
+                ] ,
+                [ sh:path pelgoc01:source ;
+                  sh:minCount 1 ;
+                ] ,
+                [ sh:path pelgoc01:startingProblem ;
+                  sh:minCount 1 ;
+                ] .
+
+pelgoc01:SourceShape a sh:NodeShape ;
+    sh:targetClass pelgoc01:Source ;
+    sh:property [ sh:path pelgoc01:ability ;
+                  sh:minCount 1 ;
+                ] ,
+                [ sh:path [ sh:alternativePath ( pelgoc01:motive pelgoc01:plainMotive ) ] ;
+                  sh:minCount 1 ;
+                ] .
+
+pelgoc01:StoryHookShape a sh:NodeShape ;
+    sh:targetClass pelgoc01:StoryHook ;
+    sh:property [ sh:path bno:location ;
+                  sh:minCount 1 ;
+                ] ,
+                [ sh:path sche:description ;
                   sh:minCount 1 ;
                   sh:maxCount 1 ;
-                ].
+                ] .
+
+pelgoc01:LocationShape a sh:NodeShape ;
+    sh:targetClass bno:Location ;
+    sh:property [ sh:path bno:location ;
+                  sh:maxCount 1 ;
+                ] ,
+                [ sh:path pelgoc01:represents ;
+                  sh:maxCount 1 ;
+                ] .
