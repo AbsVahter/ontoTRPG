@@ -1355,7 +1355,7 @@ After the interview Dex might try to look for the nervous guy. Burl or another c
                     :pushedBulletPoint "Dex can arrange a meet with McAfee" ,
                                        "Dex has a pre-established, respectful relationship with Whitey. Dex and Whitey can’t be called pals by any means, but Whitey trusts him enough to talk to him, and respond in a relatively forthcoming manner. Sum up his attitude as: “For a dick you’re all right, Raymond.”" ,
                                        "Dex spots Burl Treehorn, a casino functionary he knows. When Dex requests a meeting with Whitey, Burl heads back to Whitey’s back office to ask if the boss wants to chat." ;
-                    rdfs:label "Information from stretwise about the Alegria and Whitey Alexander" .
+                    rdfs:label "Information from streetwise about the Alegria and Whitey Alexander" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#alegria_to_money_man
@@ -3794,7 +3794,6 @@ Another group seeks Preston as well, or at least his plans. Madame Isis Neferi (
                              :margaret_decides_to_contact_private_eye ,
                              :plan_of_helen ,
                              :struggle_in_criminal_world ;
-                  :scene :bumping_into_roscoe ;
                   :year 1937 ;
                   rdfs:label "The fathomless sleep" .
 
@@ -6854,10 +6853,18 @@ In the new Commission, the heads of the Five Families may be equal, but Luciano 
 :madame_isis_neferi rdf:type owl:NamedIndividual ,
                              bno:Character ;
                     :occupation "priestess of the Temple of Nephtys" ;
-                    sche:description "52, priestess of the Temple of Nephthys. A quick hand with a cold read, medium Bertha Cook formed her own church to add a veneer of respectability to her old sideshow act. Now, as Madame Isis Neferi, she holds public séances three nights a week and by private appointment along with a syncretic Sunday service combining pseudo-Egyptian mythology with American spiritualism." ;
+                    rdfs:seeAlso wd:Q182372 ;
+                    :motive :machine_for_madame_isis ;
+                    sche:description "52, priestess of the Temple of Nephthys. A quick hand with a cold read, medium Bertha Cook formed her own church to add a veneer of respectability to her old sideshow act. Now, as Madame Isis Neferi, she holds public séances three nights a week and by private appointment along with a syncretic Sunday service combining pseudo-Egyptian mythology with American spiritualism." ,
+                                     "In a film, Madame Isis Neferi (née Bertha Cook) might be played by an aging Louise Fletcher. Rather than spend her hard-grifted money on the exotic robes and turbans favored by some mediums, she cultivates a simple aesthetic of black dresses accented by a heavy silver ankh necklace. When imparting wisdom, she speaks in what she’d call a “resonant” voice, steeples her fingers, and stares at the supplicant from under her heavy brows." ;
                     rdfs:label "Bertha Cook" ,
                                "Madame Isis Neferi" .
 
+
+:machine_for_madame_isis a owl:NamedIndividual ;
+                         :target :sympathetic_resonator ;
+                         sche:description "Though essentially a con artist, Madame has bought enough into her own shtick that she remains open to the existence of spirits: and if a machine really could do what George claims? That would set her up for life, especially if she could convince George to allow her exclusive use of it." ;
+                         rdfs:label "Motive of Madame Isis related to George's machine" .
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#magazine_warehouse
 :magazine_warehouse rdf:type owl:NamedIndividual ,
@@ -9759,8 +9766,106 @@ If the conversation goes hideously wrong, Budd decides words won’t suffice and
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#temple_of_nephthys
 :temple_of_nephthys_scene rdf:type owl:NamedIndividual ,
                              :Scene ;
-                          #:clue :from_stella_about_madame_isis ;
+                          :clue :from_stella_about_madame_isis ,
+                                :from_sources_about_nephthys ,
+                                :from_madame_isis_about_preston ,
+                                :from_madame_isis_about_leg_breaker ,
+                                :from_madame_isis_about_herself ,
+                                :from_madame_isis_about_addie ,
+                                :from_madame_isis_about_machine ,
+                                :from_madame_isis_about_carrington ,
+                                :temple_of_nephthys_scene_locksmith ;
+                          bno:location :temple_of_nephthys ;
+                          bro:leadsTo :loss_of_a_loved_one ;
+                          sche:description "If Viv arrives during the day, the temple is locked, although Madame Isis can still be found inside. When she knocks, Madame Isis herself opens it.\nIf Viv arrives at night, she discovers a “communion” already under way and may slip into the back.\nIf Viv has lost someone in her own life, Madame Isis senses “a spirit floats about you, my dear, wishing to speak” (a guess on her part, but she’s a great cold-reader) and invites her to participate in a “Communion with the Dead,” held nightly. Communions start at 8 p.m. and last around two hours — longer if the spirits feel especially communicative. Otherwise, she indicates that if Viv has any further questions, perhaps she’d like to attend a “communion” tonight." ;
                     rdfs:label "Temple of Nephthys" .
+
+:loss_of_a_loved_one a owl:NamedIndividual ;
+                     sche:description "Ask the player whether or not investigator has lost someone in her own life." ;
+                     rdfs:label "Loss of a loved one" .
+
+:from_madame_isis_about_carrington a owl:NamedIndividual ;
+                                bro:prereq :oral_history ;
+                                :target  :hereward_carrington ;
+                                :shooter :madame_isis_neferi ;
+                                :bulletPoint "Madame Isis sniffs derisively and makes remarks about people with nothing better to do with their time." ;
+                                rdfs:label "Information from Madame Isis about Hereward Carrington" .
+
+:from_madame_isis_about_machine a owl:NamedIndividual ;
+                              bno:consequence :miracle_machine ;
+                                bro:prereq :oral_history ;
+                                :target  :sympathetic_resonator ;
+                                :shooter :madame_isis_neferi ;
+                                :bulletPoint "Madame Isis hopes Viv can find George. His machine would change her line of work forever. She hasn’t seen it in action, but George told her he will have it working this week. If it works, she might help him out with those money problems of his — as long as nobody else gets that machine for a few years." ,
+                                             "Interactions with Pearl may change how this answer plays out, but the gist remains the same. She may call Pearl in at this point to return the schematics and offer to buy them from Viv if she can find the rest." ;
+                                rdfs:label "Information from Madame Isis about Preston's machine" .
+
+:from_madame_isis_about_addie a owl:NamedIndividual ;
+                              bno:consequence :addie_needs_answers ;
+                                bro:prereq :oral_history ;
+                                :target  :addie_sims ;
+                                :shooter :madame_isis_neferi ;
+                                :bulletPoint "Now that she thinks of it, there seems to have been a rash of disappearing electricians lately. Just last night, she had a woman in here — one of the type who doesn’t know if the person’s dead or alive — who said her husband hadn’t come home in two days. Electrician too, if she remembers right. If Viv stays for a communion, the woman might come back." ;
+                                rdfs:label "Information from Madame Isis about Addie Sims" .
+
+:addie_needs_answers a owl:NamedIndividual , :Scene ;
+                     rdfs:label "Addie Needs Answers" .
+
+:from_madame_isis_about_herself a owl:NamedIndividual ;
+                                bro:prereq :oral_history ;
+                                :target  :madame_isis_neferi ;
+                                :shooter :madame_isis_neferi ;
+                                :bulletPoint "Madame Isis attributes her ability to speak with the dead to a spiritual connection with the goddess Nephthys." ,
+                                             "If asked why she calls herself “Isis,” not “Nephthys,” she sense’s Viv’s Streetwise and gives her an honest answer, “Nobody remembers Nephthys, dear. Besides, it would look funny if I had a temple to myself, now wouldn’t it?”" ;
+                                rdfs:label "Information from Madame Isis about herself" .
+
+:from_madame_isis_about_leg_breaker a owl:NamedIndividual ;
+                                bro:prereq :oral_history ;
+                                :target  :george_preston ;
+                                :shooter :madame_isis_neferi ;
+                                    bno:consequence :the_leg_breaker ;
+                                :bulletPoint "In her assessment, “and believe me, honey, I’ve met quite a few killers in my day,” George Preston wouldn’t kill anyone. She only saw George raise his voice once — to a tough-looking man who stopped George outside the temple one night last week. While she didn’t overhear the conversation, Madame Isis got a sense it had to do with money. She knows the type." ;
+                                rdfs:label "Information from Madame Isis about George Preston and leg-breaker" .
+
+:about_madame_isis_with_assess_honesty a owl:NamedIndividual ;
+                                bro:prereq :assess_honesty ;
+                                :target  :madame_isis_neferi ;
+                                :shooter :vivian_sinclair ;
+                                :bulletPoint "Viv gets the sense that Madame Isis has natural talent — at telling people exactly what they want to hear." ;
+                                rdfs:label "Information about Madame Isis with assess honesty" .
+
+:from_madame_isis_about_preston a owl:NamedIndividual ;
+                                bro:prereq :oral_history ;
+                                :shooter :madame_isis_neferi ;
+                                :target :george_preston ;
+                                bno:consequence :about_madame_isis_with_assess_honesty ;
+                                :bulletPoint "Madame Isis describes George Preston as a “seeker after truth.” He had questions for her about the afterlife and about how her talent worked. George showed remarkable insight into the nature of gifted individuals such as herself: that it came as naturally as sight or taste." ;
+                                rdfs:label "Information from Madame Isis about George Preston" .
+
+:temple_of_nephthys a owl:NamedIndividual ;
+                    bno:location :new_york_city ;
+                    sche:description "The Temple of Nephthys sits among small businesses and neat apartment buildings in a much better area of Brooklyn than George’s apartment building. From the street, it looks like one of the storefront churches popping up in black communities throughout the city. Stenciled letters spell out its name over the door, and decorative ankhs and cartouches on its whitewashed façade ensure even casual passers-by don’t mistake it for an ordinary church. Heavy curtains block any view of the interior, although one can see the word Café in light relief despite someone’s best attempts to scrape it off the windows." ;
+                    rdfs:label "Temple of Nephthys" .
+
+:temple_of_nephthys_scene_locksmith a owl:NamedIndividual ;
+                                    bro:prereq :stealth_test ;
+                                    bro:calculations "difficulty = 5" ;
+                               :target :temple_of_nephthys ;
+                               :shooter :vivian_sinclair ;
+                               :bulletPoint "If the player instead chooses to use Locksmith to open it, it requires a Difficulty 5 Stealth test to do so in broad daylight. On failure, Madame Isis hears her fumbling in the lock and jerks the door open, starting the interaction on a hostile footing." ;
+                               rdfs:label "Open door with stealth in scene: Temple of Nephthys" .
+
+:from_sources_about_nephthys a owl:NamedIndividual ;
+                               :target :temple_of_nephthys ;
+                               :shooter :astelle_abrams , :esteban_manuel_aragon_gonzalez ;
+                               :bulletPoint "Viv recalls the famous story of Isis, Osiris, and Set. The goddess Nephthys, while Set’s sister-consort, assisted her sister Isis in retrieving the fourteen missing pieces of her brother Osiris. Some paintings depict her as a hawk, flying above the Nile on the hunt for parts of Osiris’ body." ;
+                               rdfs:label "Information from sources about Nephthys" .
+
+:from_stella_about_madame_isis a owl:NamedIndividual ;
+                               :target :madame_isis_neferi ;
+                               :shooter :astelle_abrams ;
+                               :bulletPoint "Stella has attended several of Madame Isis’ “communions” with the dead. While Madame Isis always starts by reading from the Book of the Dead, the communion soon devolves into a fairly ordinary séance with Egyptian trappings. Stella gives Viv directions to “what used to be a café” in an artistic neighborhood of Brooklyn Heights." ;
+                               rdfs:label "Information from Stella about Madame Isis" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/trpgontologies/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#tempted
