@@ -837,7 +837,7 @@ Bonuses and penalties from card dublicates “stack” to use gaming parlance.""
 :play_denouement rdf:type owl:NamedIndividual ;
                  bc:next :play_emotional_coda ;
                  sche:description "Usually it features the Investigator reporting back to the client, and then a description of the case’s grim coda, if any." ;
-                 rdfs:label "Play denouement of the case" .
+                 rdfs:label "Play denouement scene of the case" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#play_emotional_coda
