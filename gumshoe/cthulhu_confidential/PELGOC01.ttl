@@ -1,0 +1,1015 @@
+@prefix : <https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#> .
+@prefix bc: <https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoBookContent.ttl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sche: <http://schema.org/> .
+@base <https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#> .
+
+<https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#> rdf:type owl:Ontology ;
+                                                                                                        owl:imports bc: .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://schema.org/image
+sche:image rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#abilityForTest
+:abilityForTest rdf:type owl:ObjectProperty ;
+                rdfs:domain :Test ;
+                rdfs:range :GeneralAbility ;
+                rdfs:label "general ability required for the test" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#antagonistReaction
+:antagonistReaction rdf:type owl:ObjectProperty ;
+                    rdfs:domain :Case ;
+                    rdfs:range :AntagonistReaction ;
+                    rdfs:label "antagonist reaction of the case" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#extraProblem
+:extraProblem rdf:type owl:ObjectProperty ;
+              rdfs:domain :Challenge ;
+              rdfs:range :Problem ;
+              rdfs:label "extra problem for the challenge" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#generalAbility
+:generalAbility rdf:type owl:ObjectProperty ;
+                rdfs:domain :Investigator ;
+                rdfs:range :GeneralAbility ;
+                rdfs:label "general ability of investigator" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#generalAbility1Dice
+:generalAbility1Dice rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf :generalAbility ;
+                     rdfs:label "1-dice general ability of investigator" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#generalAbility2Dice
+:generalAbility2Dice rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf :generalAbility ;
+                     rdfs:label "2-dice general ability of investigator" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#investigativeAbility
+:investigativeAbility rdf:type owl:ObjectProperty ;
+                      rdfs:domain :Character ;
+                      rdfs:range :InvestigativeAbility ;
+                      rdfs:label "investigative ability of character" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#investigator
+:investigator rdf:type owl:ObjectProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:domain :Case ;
+              rdfs:range :Investigator ;
+              rdfs:label "investigator of the case" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#scene
+:scene rdf:type owl:ObjectProperty ;
+       rdfs:domain :Case ;
+       rdfs:range :Scene ;
+       rdfs:label "scene of case" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#source
+:source rdf:type owl:ObjectProperty ;
+        rdfs:domain :Investigator ;
+        rdfs:range :Source ;
+        rdfs:label "source of investigator" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#startingProblem
+:startingProblem rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Investigator ;
+                 rdfs:range :Problem ;
+                 rdfs:label "starting problem of investigator" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#test
+:test rdf:type owl:ObjectProperty ;
+      rdfs:domain :Scene ;
+      rdfs:range :Test ;
+      rdfs:label "test of the case (challenge or quick test)" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#reaction
+:reaction rdf:type owl:DatatypeProperty ;
+          rdfs:domain :AntagonistReaction ;
+          rdfs:range xsd:string ;
+          rdfs:label "reaction of antagonist reaction" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#thresholdAdvance
+:thresholdAdvance rdf:type owl:DatatypeProperty ,
+                           owl:FunctionalProperty ;
+                  rdfs:domain :Test ;
+                  rdfs:range xsd:integer ;
+                  rdfs:label "Advance threshold of test (challenge or quick test)" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#thresholdHold
+:thresholdHold rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty ;
+               rdfs:domain :Challenge ;
+               rdfs:range xsd:integer ;
+               rdfs:label "Hold threshold of challenge" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#trigger
+:trigger rdf:type owl:DatatypeProperty ;
+         rdfs:domain :AntagonistReaction ;
+         rdfs:range xsd:string ;
+         rdfs:label "trigger of antagonist reaction" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#AntagonistReaction
+:AntagonistReaction rdf:type owl:Class ;
+                    rdfs:subClassOf :Scene ;
+                    rdfs:label "Antagonist reaction" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#Card
+:Card rdf:type owl:Class ;
+      rdfs:subClassOf bc:Gamerule ;
+      rdfs:label "Card" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#Case
+:Case rdf:type owl:Class ;
+      rdfs:subClassOf bc:Narrative ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty [ owl:inverseOf bc:option
+                                       ] ;
+                        owl:hasValue :select_case
+                      ] ;
+      rdfs:label "Case" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#Challenge
+:Challenge rdf:type owl:Class ;
+           rdfs:subClassOf :Test ;
+           sche:description "Challenges occur in situations where degrees of success or failure can send the story into different possible branches, each of them interesting in its own way." ;
+           rdfs:label "Challenge" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#Character
+:Character rdf:type owl:Class ;
+           rdfs:subClassOf bc:Gamerule ;
+           rdfs:label "Character" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#ContinuityCard
+:ContinuityCard rdf:type owl:Class ;
+                rdfs:subClassOf :Card ;
+                rdfs:label "Continuity card" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#Edge
+:Edge rdf:type owl:Class ;
+      rdfs:subClassOf :Card ;
+      rdfs:label "Edge card" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#GeneralAbility
+:GeneralAbility rdf:type owl:Class ;
+                rdfs:subClassOf bc:GameParameterCharacter ;
+                rdfs:label "General ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#GeneralAbilityManual
+:GeneralAbilityManual rdf:type owl:Class ;
+                      rdfs:subClassOf :GeneralAbility ;
+                      rdfs:label "Manual general ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#GeneralAbilityMental
+:GeneralAbilityMental rdf:type owl:Class ;
+                      rdfs:subClassOf :GeneralAbility ;
+                      rdfs:label "Mental general ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#GeneralAbilityPhysical
+:GeneralAbilityPhysical rdf:type owl:Class ;
+                        rdfs:subClassOf :GeneralAbility ;
+                        rdfs:label "Physical general ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#InvestigativeAbility
+:InvestigativeAbility rdf:type owl:Class ;
+                      rdfs:subClassOf bc:GameParameterCharacter ;
+                      rdfs:label "Investigative ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#InvestigativeAbilityAcademic
+:InvestigativeAbilityAcademic rdf:type owl:Class ;
+                              rdfs:subClassOf :InvestigativeAbility ;
+                              rdfs:label "Academic investigative ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#InvestigativeAbilityInterpersonal
+:InvestigativeAbilityInterpersonal rdf:type owl:Class ;
+                                   rdfs:subClassOf :InvestigativeAbility ;
+                                   rdfs:label "Interpersonal investigative ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#InvestigativeAbilityTechnical
+:InvestigativeAbilityTechnical rdf:type owl:Class ;
+                               rdfs:subClassOf :InvestigativeAbility ;
+                               rdfs:label "Technical investigative ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#Investigator
+:Investigator rdf:type owl:Class ;
+              rdfs:subClassOf :Character ;
+              rdfs:label "Investigator" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#Problem
+:Problem rdf:type owl:Class ;
+         rdfs:subClassOf :Card ;
+         rdfs:label "Problem card" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#QuickTest
+:QuickTest rdf:type owl:Class ;
+           rdfs:subClassOf :Test ;
+           sche:description "A very straightforward obstacle where you can only succeed or fail, with no particular ongoing advantages or disadvantages arising from the result." ;
+           rdfs:label "Quick test" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#Scene
+:Scene rdf:type owl:Class ;
+       rdfs:subClassOf bc:Narrative ;
+       rdfs:label "Scene" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#Source
+:Source rdf:type owl:Class ;
+        rdfs:subClassOf :Character ;
+        rdfs:label "Source of investigator" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#Test
+:Test rdf:type owl:Class ;
+      rdfs:subClassOf bc:Gamerule ;
+      sche:description """{threshold: [probability by dice number - 1 dice, 2 dices, 3 dices]} = {
+    2: [83%, 100%, 100%] ;
+    3: [67%, 97%, 100%] ;
+    4: [50%, 92%, 99.5%] ;
+    5: [33%, 83%, 98%] ;
+    6: [17%, 72%, 95%] ;
+    7: [-, 58%, 91%] ;
+    8: [-, 42%, 84%] ;
+    9: [-, 28%, 74%] ;
+    10: [-, 17%, 62.5%] ;
+    11: [-, 8%, 50%] ;
+    12: [-, 3%, 37.5%] ;
+    13: [-, -, 26%] ;
+    14: [-, -, 16%] ;
+    15: [-, -, 9%] ;
+    16: [-, -, 5%] ;
+    17: [-, -, 2%] ;
+    18: [-, -, 0.5%] ;
+}""" ;
+      rdfs:label "Test" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#accounting
+:accounting rdf:type owl:NamedIndividual ,
+                     :InvestigativeAbilityAcademic ;
+            sche:description "You understand bookkeeping and accountancy procedures; you can read and keep financial records." ;
+            rdfs:label "Accounting investigative ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#anthropology
+:anthropology rdf:type owl:NamedIndividual ,
+                       :InvestigativeAbilityAcademic ;
+              sche:description "You are an expert in the study of human cultures, from the Stone Age to the Jazz Age." ;
+              rdfs:label "Anthropology investigative ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#archaeology
+:archaeology rdf:type owl:NamedIndividual ,
+                      :InvestigativeAbilityAcademic ;
+             sche:description "You excavate and study the structures and artifacts of historical cultures and civilizations." ;
+             rdfs:label "Archaeology investigative ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#architecture
+:architecture rdf:type owl:NamedIndividual ,
+                       :InvestigativeAbilityAcademic ;
+              sche:description "You know how buildings are designed and constructed." ;
+              rdfs:label "Architecture investigative ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#art_history
+:art_history rdf:type owl:NamedIndividual ,
+                      :InvestigativeAbilityAcademic ;
+             sche:description "You’re an expert on works of art (including the practical arts such as furniture and pottery) from an aesthetic and technical point of view." ;
+             rdfs:label "Art History investigative ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#assess_honesty
+:assess_honesty rdf:type owl:NamedIndividual ,
+                         :InvestigativeAbilityInterpersonal ;
+                sche:description "You can tell when someone’s trying to play you for a sap. Not only does your gut tell you when a witness is lying, life’s hard knocks have taught you to instinctively judge and sense motives and character." ;
+                rdfs:label "Assess Honesty investigative ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#astronomy
+:astronomy rdf:type owl:NamedIndividual ,
+                    :InvestigativeAbilityTechnical ;
+           sche:description "You study celestial objects, including the stars and planets." ;
+           rdfs:label "Astronomy investigative ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#athletics
+:athletics rdf:type owl:NamedIndividual ,
+                    :GeneralAbilityPhysical ;
+           sche:description "Perform general acts of physical derring-do; resist the effects of disease, poisoning, and intoxicants; resist the effects of exposure." ;
+           rdfs:label "Athletics general ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#bargain
+:bargain rdf:type owl:NamedIndividual ,
+                  :InvestigativeAbilityInterpersonal ;
+         sche:description "You are an expert in making deals with others, convincing them that the best arrangement for you is also the best for them." ;
+         rdfs:label "Bargain investigative ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#beginning_of_the_game
+:beginning_of_the_game rdf:type owl:NamedIndividual ;
+                       bc:include :select_case ;
+                       bc:next :during_the_game ;
+                       rdfs:label "Beginning of the game" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#biology
+:biology rdf:type owl:NamedIndividual ,
+                  :InvestigativeAbilityAcademic ;
+         sche:description "You study the evolution, behavior, and physical makeup of living organisms." ;
+         rdfs:label "Biology investigative ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#bureaucracy
+:bureaucracy rdf:type owl:NamedIndividual ,
+                      :InvestigativeAbilityInterpersonal ;
+             sche:description "You expertly navigate bureaucratic organization, from government offices to large private firms. From the hidden reasons behind a bureaucracy’s opaque decisions to the arcane details of its paperwork, you can extract the information you seek smoothly and with a minimum of ruffled feathers." ;
+             rdfs:label "Bureaucracy investigative ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#check_outcome_advance
+:check_outcome_advance rdf:type owl:NamedIndividual ;
+                       bc:else :check_outcome_hold ;
+                       bc:next :gain_push ;
+                       bc:set :edges ;
+                       bc:requirement "dice roll >= playing_case.scene.test.thresholdAdvance" ;
+                       bc:value "outcome = narrative, possible edge" ;
+                       sche:description "succeeding especially well" ;
+                       rdfs:label "Check the dice roll against the advance threshold" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#check_outcome_hold
+:check_outcome_hold rdf:type owl:NamedIndividual ;
+                    bc:else :get_outcome_setback ;
+                    bc:requirement "(playing_case.scene.test.thresholdHold exists) and (dice roll >= playing_case.scene.test.thresholdHold)" ;
+                    bc:value "outcome = narrative" ;
+                    sche:description "generally leaves you no worse off than you were before, or allows you to move forward, though without additional benefit" ;
+                    rdfs:label "Check the dice roll against the hold threshold" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#chemistry
+:chemistry rdf:type owl:NamedIndividual ,
+                    :InvestigativeAbilityTechnical ;
+           sche:description "You’re trained in the analysis of chemical substances." ;
+           rdfs:label "Chemistry investigative ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#clues
+:clues rdf:type owl:NamedIndividual ,
+                bc:GameParameterCharacter ,
+                bc:GameParameterList ;
+       rdfs:label "Clues of investigator about current case" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#conceal
+:conceal rdf:type owl:NamedIndividual ,
+                  :GeneralAbilityManual ;
+         sche:description "You can hide things from view and conceal them from searchers. Methods might include camouflage, holding items out on your person, sneaking things into drawers unobserved, building secret compartments, or even altering an object’s visual signature with paint or plaster." ;
+         rdfs:label "Conceal general ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#cool
+:cool rdf:type owl:NamedIndividual ,
+               :GeneralAbilityMental ;
+      sche:description "Measures your ability to make the smart play, instead of the impulsive one, in response to emotional temptation." ;
+      rdfs:label "Cool general ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#cop_talk
+:cop_talk rdf:type owl:NamedIndividual ,
+                   :InvestigativeAbilityInterpersonal ;
+          sche:description "Despite the low regard in which cops hold private detectives, you know their lingo and needs well enough to extract information from them." ;
+          rdfs:label "Cop Talk investigative ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#cover_art
+:cover_art rdf:type owl:NamedIndividual ,
+                    bc:Art ;
+           sche:image "https://cf.geekdo-images.com/px_RKnwymHK5mlXm2HHLfQ__imagepage/img/r_KLEj1V01cBVnu7-HtcF7Laaj0=/fit-in/900x600/filters:no_upscale():strip_icc()/pic3375012.jpg" ;
+           rdfs:label "Cover art" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#craft
+:craft rdf:type owl:NamedIndividual ,
+                :InvestigativeAbilityTechnical ;
+       sche:description "You can create useful physical objects, working with materials like wood, metal, precious stones, leather, and so forth. This allows you a general background knowledge in handmade items of all kinds." ;
+       rdfs:label "Craft investigative ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#create_new_investigator
+:create_new_investigator rdf:type owl:NamedIndividual ;
+                         bc:requirement "(max(generalAbility) = 2) and (cool + stability <= 3) and (around 14 investigativeAbility) and (around 18 dices in generalAbility)" ;
+                         rdfs:label "Create new investigator" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#cryptography
+:cryptography rdf:type owl:NamedIndividual ,
+                       :InvestigativeAbilityAcademic ;
+              sche:description "You can make or break codes and ciphers in any language you can read. Given some time and a dictionary, you may be able to puzzle out foreign alphabets, translating languages by brute force." ;
+              rdfs:label "Cryptography investigative ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#cthulhu_mythos
+:cthulhu_mythos rdf:type owl:NamedIndividual ,
+                         :InvestigativeAbilityAcademic ;
+                sche:description "You have begun to piece together the secret rules of the real world, rather than the ignorant scrim of physics and religion. You recognize the great names, and the truths they conceal. Have you read a Mythos tome, a rare, ancient book laying out in obscure detail the maddening secrets of Cthulhu and the Old Ones? This ability lets you recall any specific hints or facts from it relevant to your current situation." ;
+                rdfs:label "Cthulhu Mythos investigative ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#devices
+:devices rdf:type owl:NamedIndividual ,
+                  :GeneralAbilityManual ;
+         sche:description "You build, repair, and operate electrical or mechanical devices. And what you can put together, you can take apart, disabling equipment either unnoticeably or completely." ;
+         rdfs:label "Devices general ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#dice_roll
+:dice_roll rdf:type owl:NamedIndividual ;
+           bc:input :edges ,
+                    :player_investigator ,
+                    :problems ;
+           bc:next :earning_additional_roll_spending_edge ,
+                   :earning_additional_roll_taking_extra_problem ;
+           bc:requirement "player_investigator.generalAbility = playing_case.scene.test.abilityForTest" ;
+           bc:value "dice roll = (from 0 to dice amount of ability)d6 + (bonuses of appropriate in-game edges) + (penalties of appropriate in-game problems)" ;
+           sche:description """When you have multiple dice to roll, roll them one at a time, adding to your total as you go.
+Bonuses and penalties from card dublicates “stack” to use gaming parlance.""" ;
+           rdfs:label "Dice roll for test" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#disguise
+:disguise rdf:type owl:NamedIndividual ,
+                   :GeneralAbilityManual ;
+          sche:description "You can become someone else: clothes, voice, mannerisms, and posture." ;
+          rdfs:label "Disguise general ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#driving
+:driving rdf:type owl:NamedIndividual ,
+                  :GeneralAbilityManual ;
+         sche:description "Anyone who’s been taught can drive a car down the road without this ability. You, on the other hand, are a skilled defensive driver, capable of wringing high performance from even the most recalcitrant automobile, pickup truck, or bus." ;
+         rdfs:label "Driving general ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#during_the_game
+:during_the_game rdf:type owl:NamedIndividual ;
+                 bc:include :play_antagonist_reaction ,
+                            :play_scenes ,
+                            :taking_time ;
+                 bc:next :end_of_the_case ;
+                 rdfs:label "During the game" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#earn_lucky_break
+:earn_lucky_break rdf:type owl:NamedIndividual ;
+                  bc:option :earn_lucky_break_by_edge ,
+                            :earn_lucky_break_by_push ;
+                  bc:value "lucky narrative" ;
+                  rdfs:label "Earn a lucky break" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#earn_lucky_break_by_edge
+:earn_lucky_break_by_edge rdf:type owl:NamedIndividual ;
+                          bc:input :edges ;
+                          bc:set :edges ;
+                          bc:requirement "edges is not empty" ;
+                          bc:value "remove any selected edge" ;
+                          rdfs:label "Earn a lucky break by spending any edge" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#earn_lucky_break_by_push
+:earn_lucky_break_by_push rdf:type owl:NamedIndividual ;
+                          bc:input :pushes ;
+                          bc:set :pushes ;
+                          bc:requirement "pushes > 0" ;
+                          bc:value "pushes -= 1" ;
+                          rdfs:label "Earn a lucky break by spending push" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#earning_additional_roll_spending_edge
+:earning_additional_roll_spending_edge rdf:type owl:NamedIndividual ;
+                                       bc:input :edges ;
+                                       bc:next :check_outcome_advance ;
+                                       bc:set :edges ;
+                                       bc:requirement "appropriate edge for challenge" ;
+                                       bc:value "dice roll += 1d6" ,
+                                                "remove used edge" ;
+                                       sche:description "You may never spend two Edges on a single Challenge." ;
+                                       rdfs:label "Earning additional dice roll spending appropriate edge" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#earning_additional_roll_taking_extra_problem
+:earning_additional_roll_taking_extra_problem rdf:type owl:NamedIndividual ;
+                                              bc:next :check_outcome_advance ;
+                                              bc:set :problems ;
+                                              bc:requirement "playing_case.scene.test.extraProblem exists (test is challenge)" ;
+                                              bc:value "dice roll += 1d6" ,
+                                                       "problems += playing_case.scene.test.extraProblem" ;
+                                              rdfs:label "Earning additional dice roll taking extra problem" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#edges
+:edges rdf:type owl:NamedIndividual ,
+                bc:GameParameterCharacter ,
+                bc:GameParameterList ;
+       rdfs:label "In-game investigator edges" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#end_of_the_case
+:end_of_the_case rdf:type owl:NamedIndividual ;
+                 bc:include :improve_investigator ,
+                            :play_denouement ;
+                 rdfs:label "End of the case" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#evidence_collection
+:evidence_collection rdf:type owl:NamedIndividual ,
+                              :InvestigativeAbilityTechnical ;
+                     sche:description "You’re adept at casing an investigation site and at finding important clues." ;
+                     rdfs:label "Evidence Collection investigative ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#explosives
+:explosives rdf:type owl:NamedIndividual ,
+                     :GeneralAbilityManual ;
+            sche:description "As an expert in bombs and booby-traps." ;
+            rdfs:label "Explosives general ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#fighting
+:fighting rdf:type owl:NamedIndividual ,
+                   :GeneralAbilityPhysical ;
+          sche:description "Covers all forms of combat, from scuffling to shooting to hand-to-hand weapons." ;
+          rdfs:label "Fighting general ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#filch
+:filch rdf:type owl:NamedIndividual ,
+                :GeneralAbilityManual ;
+       sche:description "Your nimble fingers allow you to unobtrusively manipulate small objects." ;
+       rdfs:label "Filch general ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#first_aid
+:first_aid rdf:type owl:NamedIndividual ,
+                    :GeneralAbilityManual ;
+           sche:description "You can perform first aid on sick or injured individuals, including yourself." ;
+           rdfs:label "First Aid general ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#flattery
+:flattery rdf:type owl:NamedIndividual ,
+                   :InvestigativeAbilityInterpersonal ;
+          sche:description "You get people to help you by complimenting or playing up to them, as subtly or blatantly as they prefer." ;
+          rdfs:label "Flattery investigative ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#fleeing
+:fleeing rdf:type owl:NamedIndividual ,
+                  :GeneralAbilityPhysical ;
+         sche:description "This ability governs how speedily you run away from impending danger. Used for characters who aren’t otherwise Athletic, to give them some chance of avoiding physical harm." ;
+         rdfs:comment "duplicates Athletics" ;
+         rdfs:label "Fleeing general ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#forensics
+:forensics rdf:type owl:NamedIndividual ,
+                    :InvestigativeAbilityTechnical ;
+           sche:description "You study crime scenes and perform autopsies on deceased subjects to determine their cause and circumstances of death. You can use skeletal evidence to reconstruct the physical details (age, sex, medical condition, sometimes occupation) of the deceased." ;
+           rdfs:label "Forensics investigative ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#gain_push
+:gain_push rdf:type owl:NamedIndividual ;
+           bc:set :pushes ;
+           bc:requirement "unrolled dice" ;
+           bc:value "pushes += 1" ;
+           rdfs:label "Gain push" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#geology
+:geology rdf:type owl:NamedIndividual ,
+                  :InvestigativeAbilityAcademic ;
+         sche:description "You are an expert on rocks, soils, minerals, and the primordial history of the Earth" ;
+         rdfs:label "Geology investigative ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#get_clues
+:get_clues rdf:type owl:NamedIndividual ;
+           bc:set :clues ;
+           rdfs:label "Get clues from scene" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#get_default_investigator_of_case
+:get_default_investigator_of_case rdf:type owl:NamedIndividual ;
+                                  bc:input :playing_case ;
+                                  bc:value "case.investigator" ;
+                                  rdfs:label "Get default investigator of the case" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#get_outcome_setback
+:get_outcome_setback rdf:type owl:NamedIndividual ;
+                     bc:set :problems ;
+                     bc:value "outcome = narrative, possible problem" ;
+                     sche:description "worsening your situation" ;
+                     rdfs:label "Get a setback outcome" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#history
+:history rdf:type owl:NamedIndividual ,
+                  :InvestigativeAbilityAcademic ;
+         sche:description "A broad study of recorded human history, with an emphasis on political, military, economic, and technological developments" ;
+         rdfs:label "History investigative ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#hypnosis
+:hypnosis rdf:type owl:NamedIndividual ,
+                   :GeneralAbilityMental ;
+          sche:description "You can hypnotize a willing subject, recovering lost memories, suppressing unwanted ones, or removing destructive compulsions." ;
+          rdfs:label "Hypnosis general ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#improve_ability_general
+:improve_ability_general rdf:type owl:NamedIndividual ;
+                         bc:input :player_investigator ;
+                         bc:requirement "after improvement: (selected player_investigator.generalAbility <= 3) and (player_investigator.cool + player_investigator.stability <= 4)" ;
+                         bc:value "dice number of selected player_investigator.generalAbility += 1/3" ;
+                         sche:description "A tick moves you incrementally toward a rating improvement in a General Ability. You gain no more than 1 tick per ability per case. Once you have 3 ticks in a General Ability, you cash them in to improve a rating from 1 to 2, or from 2 to 3." ;
+                         rdfs:label "Improve general ability of player investigator" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#improve_ability_investigative
+:improve_ability_investigative rdf:type owl:NamedIndividual ;
+                               bc:input :player_investigator ;
+                               bc:set :player_investigator ;
+                               bc:value "player_investigator.investigativeAbility += new ability" ;
+                               rdfs:label "Add new investigative ability to player investigator" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#improve_investigator
+:improve_investigator rdf:type owl:NamedIndividual ;
+                      bc:option :improve_ability_general ,
+                                :improve_ability_investigative ;
+                      rdfs:label "Improve player investigator between cases" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#inspiration
+:inspiration rdf:type owl:NamedIndividual ,
+                      :InvestigativeAbilityInterpersonal ;
+             sche:description "You can convince reluctant witnesses to supply information by appealing to their better selves. After a few moments of interaction, you intuitively sense the positive values they hold dearest, then invoke them in a brief but stirring speech." ;
+             rdfs:label "Inspiration investigative ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#intimidation
+:intimidation rdf:type owl:NamedIndividual ,
+                       :InvestigativeAbilityInterpersonal ;
+              sche:description "You get what you want from people by scaring them — physically, or with vividly detailed threats." ;
+              rdfs:label "Intimidation investigative ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#investigate_scene_with_push
+:investigate_scene_with_push rdf:type owl:NamedIndividual ;
+                             bc:input :player_investigator ;
+                             bc:next :push_ability ;
+                             bc:requirement "correct use of player_investigator.investigativeAbility in scene" ;
+                             rdfs:label "Investigate scene with pushing" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#investigate_scene_without_push
+:investigate_scene_without_push rdf:type owl:NamedIndividual ;
+                                bc:input :player_investigator ;
+                                bc:next :get_clues ;
+                                bc:requirement "correct use of (player_investigator.investigativeAbility or player_investigator.source.investigativeAbility or player_investigator.generalAbility) in scene" ;
+                                rdfs:label "Investigate scene without pushing" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#languages
+:languages rdf:type owl:NamedIndividual ,
+                    :InvestigativeAbilityAcademic ;
+           sche:description "Allows you to extract information from documents written in languages other than English. You may not be able to elegantly translate or win points for accuracy among true academics, but you find the clue you need." ;
+           rdfs:label "Languages investigative ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#law
+:law rdf:type owl:NamedIndividual ,
+              :InvestigativeAbilityAcademic ;
+     sche:description "You are familiar with the criminal and civil laws that pertain in your noir city, as well as on the state and federal levels. You can bluff your way through dealings with foreign legal systems." ;
+     rdfs:label "Law investigative ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#locksmith
+:locksmith rdf:type owl:NamedIndividual ,
+                    :InvestigativeAbilityTechnical ;
+           sche:description "You can open doors and locks, and disarm alarms, without benefit of a key. Or maybe you have some universal passkeys with you. You can also find convenient windows to jimmy or coal-cellar doors to force, if need be." ;
+           rdfs:label "Locksmith investigative ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#magic
+:magic rdf:type owl:NamedIndividual ,
+                :GeneralAbilityMental ;
+       sche:description "This might be used to summon Mythos entities, or bind them once summoned." ;
+       rdfs:label "Magic general ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#medicine
+:medicine rdf:type owl:NamedIndividual ,
+                   :InvestigativeAbilityAcademic ;
+          sche:description "You can diagnose human disease, injuries, poisonings, and physical frailties, and may be broadly acquainted with veterinary medicine as well. If past medical training makes sense as part of your backstory, you may still hold a medical license." ;
+          rdfs:label "Medicine investigative ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#occult
+:occult rdf:type owl:NamedIndividual ,
+                 :InvestigativeAbilityAcademic ;
+        sche:description "You’re an expert in the historical study of magic, superstition, and sorcery from the Stone Age to the present. From Theosophists to Voodoo to the Golden Dawn, you know the dates, the places, the controversies, and the legends." ;
+        rdfs:label "Occult investigative ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#oral_history
+:oral_history rdf:type owl:NamedIndividual ,
+                       :InvestigativeAbilityInterpersonal ;
+              sche:description "You can find sources willing to talk, win their confidence, and gather (usually lengthy) oral testimony about historical events, local traditions, folklore, family legend, or gossip." ;
+              rdfs:label "Oral History investigative ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#outdoorsman
+:outdoorsman rdf:type owl:NamedIndividual ,
+                      :InvestigativeAbilityTechnical ;
+             sche:description "Long hours of camping and exploration in the wild have made it as comfortable to you as life in the concrete jungle." ;
+             rdfs:label "Outdoorsman investigative ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#pass_test
+:pass_test rdf:type owl:NamedIndividual ;
+           bc:input :playing_case ;
+           bc:next :dice_roll ;
+           bc:value "playing_case.scene.test" ;
+           rdfs:label "Pass the test" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#pharmacy
+:pharmacy rdf:type owl:NamedIndividual ,
+                   :InvestigativeAbilityTechnical ;
+          sche:description "You are able to identify and compound drugs and medicines." ;
+          rdfs:label "Pharmacy investigative ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#photography
+:photography rdf:type owl:NamedIndividual ,
+                      :InvestigativeAbilityTechnical ;
+             sche:description "You’re proficient in the use of cameras, including still and motion-picture photography." ;
+             rdfs:label "Photography investigative ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#physics
+:physics rdf:type owl:NamedIndividual ,
+                  :InvestigativeAbilityAcademic ;
+         sche:description "You study the fundamental forces of the universe: pressure, electromagnetism, motion, gravity, optics, and radioactivity." ;
+         rdfs:label "Physics investigative ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#play_antagonist_reaction
+:play_antagonist_reaction rdf:type owl:NamedIndividual ;
+                          bc:input :playing_case ;
+                          bc:requirement "taking time or trigger" ;
+                          bc:value "playing_case.antagonistReaction" ;
+                          rdfs:label "Play antagonist reaction" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#play_denouement
+:play_denouement rdf:type owl:NamedIndividual ;
+                 bc:next :play_emotional_coda ;
+                 sche:description "Usually it features the Investigator reporting back to the client, and then a description of the case’s grim coda, if any." ;
+                 rdfs:label "Play denouement of the case" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#play_emotional_coda
+:play_emotional_coda rdf:type owl:NamedIndividual ;
+                     bc:input :problems ;
+                     bc:value "narrative (consequences of all in-game problems), continuity cards go to the next case with investigator" ;
+                     rdfs:label "Play the emotional coda scene" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#play_scenes
+:play_scenes rdf:type owl:NamedIndividual ;
+             bc:include :earn_lucky_break ,
+                        :investigate_scene_with_push ,
+                        :investigate_scene_without_push ,
+                        :pass_test ;
+             bc:input :playing_case ;
+             bc:value "playing_case.scene" ;
+             rdfs:label "Play scenes" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#player_investigator
+:player_investigator rdf:type owl:NamedIndividual ;
+                     rdfs:label "Player investigator" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#playing_case
+:playing_case rdf:type owl:NamedIndividual ;
+              rdfs:label "role-playing case" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#preparedness
+:preparedness rdf:type owl:NamedIndividual ,
+                       :GeneralAbilityMental ;
+              sche:description "You expertly anticipate the needs of any investigation by packing a kit efficiently arranged with necessary gear. Assuming you have immediate access to it, you may be able to produce an object needed to overcome an impediment to your progress." ;
+              rdfs:label "Preparedness general ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#problems
+:problems rdf:type owl:NamedIndividual ,
+                   bc:GameParameterCharacter ,
+                   bc:GameParameterList ;
+          sche:description "List of problem cards of character in current game" ;
+          rdfs:label "In-game investigator problems" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#psychoanalysis
+:psychoanalysis rdf:type owl:NamedIndividual ,
+                         :GeneralAbilityMental ;
+                sche:description "You can provide comfort, perspective, and solace to the mentally troubled." ;
+                rdfs:label "Psychoanalysis general ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#psychology
+:psychology rdf:type owl:NamedIndividual ,
+                     :InvestigativeAbilityInterpersonal ;
+            sche:description "Your familiarity with the latest in the burgeoning field of human psychology grants you insight into the criminal mind. Based solely on their known modus operandi, you can make accurate guesses as to the upbringing and pathology of unidentified criminals." ;
+            rdfs:label "Psychology investigative ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#push_ability
+:push_ability rdf:type owl:NamedIndividual ;
+              bc:input :pushes ;
+              bc:next :get_clues ;
+              bc:set :pushes ;
+              bc:requirement "pushes > 0" ;
+              bc:value "pushes -= 1" ;
+              rdfs:label "Push investigative ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#pushes
+:pushes rdf:type owl:NamedIndividual ,
+                 bc:GameParameterCharacter ;
+        rdfs:label "Number of pushes of investigator in the case" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#reassurance
+:reassurance rdf:type owl:NamedIndividual ,
+                      :InvestigativeAbilityInterpersonal ;
+             sche:description "You can get people to do what you want by putting them at ease. This may involve fast talk, genuine sympathy, a rational accounting of risks, or just a calming presence." ;
+             rdfs:label "Reassurance investigative ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#research
+:research rdf:type owl:NamedIndividual ,
+                   :InvestigativeAbilityAcademic ;
+          sche:description "You can ferret out information from collections of books, records, files, archives, newspaper morgues, or big piles of unsorted telegrams and correspondence." ;
+          rdfs:label "Research investigative ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#select_case
+:select_case rdf:type owl:NamedIndividual ;
+             bc:next :set_investigator ;
+             bc:set :playing_case ;
+             bc:value "one selected case" ;
+             rdfs:label "Select a case" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#select_starting_problem
+:select_starting_problem rdf:type owl:NamedIndividual ;
+                         bc:input :player_investigator ;
+                         bc:set :problems ;
+                         bc:value "one selected player_investigator.startingProblem" ;
+                         rdfs:label "Select a starting problem" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#sense_trouble
+:sense_trouble rdf:type owl:NamedIndividual ,
+                        :GeneralAbilityMental ;
+               sche:description "This ability allows you to perceive (either with sight or other senses) potential hazards to yourself or others." ;
+               rdfs:label "Sense Trouble general ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#set_investigator
+:set_investigator rdf:type owl:NamedIndividual ;
+                  bc:next :select_starting_problem ,
+                          :set_pushes ;
+                  bc:option :create_new_investigator ,
+                            :get_default_investigator_of_case ;
+                  bc:set :player_investigator ;
+                  rdfs:label "Set a investigator" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#set_pushes
+:set_pushes rdf:type owl:NamedIndividual ;
+            bc:set :pushes ;
+            bc:value "pushes = 4" ;
+            rdfs:label "Set initial number of pushes" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#shadowing
+:shadowing rdf:type owl:NamedIndividual ,
+                    :GeneralAbilityPhysical ;
+           sche:description "You follow suspects without revealing your presence." ;
+           rdfs:comment "partly duplicates Stealth" ;
+           rdfs:label "Shadowing general ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#stability
+:stability rdf:type owl:NamedIndividual ,
+                    :GeneralAbilityMental ;
+           sche:description "Remain in control of your thoughts and actions when confronted with frightening or traumatic sights, sounds, or other sensory input." ;
+           rdfs:label "Stability general ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#stealth
+:stealth rdf:type owl:NamedIndividual ,
+                  :GeneralAbilityPhysical ;
+         sche:description "You’re good at moving (and standing still) without being noticed." ;
+         rdfs:label "Stealth general ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#streetwise
+:streetwise rdf:type owl:NamedIndividual ,
+                     :InvestigativeAbilityInterpersonal ;
+            sche:description "You know how to behave among crooks, gangsters, dopers, hookers, grifters, and other habitués of the criminal underworld." ;
+            rdfs:label "Streetwise investigative ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#taking_time
+:taking_time rdf:type owl:NamedIndividual ;
+             bc:next :play_antagonist_reaction ;
+             bc:set :problems ;
+             bc:requirement "appropriate narrative" ;
+             bc:value "counter appropriate non-Mythos problem (remove from in-game list)" ;
+             rdfs:label "Taking time" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#theology
+:theology rdf:type owl:NamedIndividual ,
+                   :InvestigativeAbilityAcademic ;
+          sche:description "You study human religions in their various forms, both ancient and modern." ;
+          rdfs:label "Theology investigative ability" .
+
+
+###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi

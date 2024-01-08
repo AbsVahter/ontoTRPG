@@ -3,22 +3,12 @@
   <component name="http://lnkd.tech/editor#CustomGlobalGraphs">
     <option name="globalGraphs">
       <map>
-        <entry key="_basic">
+        <entry key="ontoTRPG">
           <value>
             <set>
-              <option value="file://$PROJECT_DIR$/../../../Created%20ontologies/trpgontologies/_basic/BasicBookOnto.ttl" />
-              <option value="file://$PROJECT_DIR$/../../../Created%20ontologies/trpgontologies/_basic/BasicNarrativeOnto.ttl" />
-              <option value="file://$PROJECT_DIR$/../../../Created%20ontologies/trpgontologies/_basic/BasicRulesOnto.ttl" />
-            </set>
-          </value>
-        </entry>
-        <entry key="trpg">
-          <value>
-            <set>
-              <option value="file://$PROJECT_DIR$/../../../Created%20ontologies/trpgontologies/gumshoe/cthulhu_confidential/PELGOC01.ttl" />
-              <option value="file://$PROJECT_DIR$/../../../Created%20ontologies/trpgontologies/gumshoe/cthulhu_confidential/PELGOC01_homebrew.ttl" />
-              <option value="file://$PROJECT_DIR$/../../../Created%20ontologies/trpgontologies/gumshoe/cthulhu_confidential/PELGOC01_shacl.ttl" />
-              <option value="file://$PROJECT_DIR$/../../../Created%20ontologies/trpgontologies/pathfinder/2ed/pzo2101.ttl" />
+              <option value="file://$PROJECT_DIR$/../../../Created%20ontologies/ontoTRPG/gumshoe/cthulhu_confidential/PELGOC01.ttl" />
+              <option value="file://$PROJECT_DIR$/../../../Created%20ontologies/ontoTRPG/ontoBookContent.ttl" />
+              <option value="file://$PROJECT_DIR$/../../../Created%20ontologies/ontoTRPG/ontoTRPG.ttl" />
             </set>
           </value>
         </entry>
