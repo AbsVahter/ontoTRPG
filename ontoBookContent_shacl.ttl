@@ -1,0 +1,16 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoBookContent.ttl#> .
+
+:CharacterShape a sh:NodeShape ;
+    sh:targetClass :Character ;
+    sh:property [ sh:path :occupation ;
+                  sh:minCount 1 ;
+                ] ,
+                [ sh:path :occupation ;
+                  sh:maxCount 1 ;
+                ].

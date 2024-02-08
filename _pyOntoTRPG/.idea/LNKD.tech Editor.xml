@@ -12,6 +12,14 @@
             </set>
           </value>
         </entry>
+        <entry key="shacl">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/../../../Created%20ontologies/ontoTRPG/gumshoe/cthulhu_confidential/PELGOC01_shacl.ttl" />
+              <option value="file://$PROJECT_DIR$/../../../Created%20ontologies/ontoTRPG/ontoBookContent_shacl.ttl" />
+            </set>
+          </value>
+        </entry>
       </map>
     </option>
   </component>

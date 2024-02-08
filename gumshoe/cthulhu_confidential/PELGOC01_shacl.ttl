@@ -1,0 +1,17 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bc: <https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoBookContent.ttl#> .
+@prefix : <https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#> .
+
+:InvestigatorShape a sh:NodeShape ;
+    sh:targetClass :Investigator ;
+    sh:property [ sh:path :investigativeAbility ;
+                  sh:minCount 1 ;
+                ] ,
+                [ sh:path :generalAbility ;
+                  sh:minCount 1 ;
+                ] .

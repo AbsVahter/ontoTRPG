@@ -17,9 +17,62 @@
 sche:description rdf:type owl:AnnotationProperty .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoBookContent.ttl#represents
+:represents rdf:type owl:AnnotationProperty ;
+            rdfs:label "represents" ;
+            rdfs:domain :Narrative .
+
+
 #################################################################
 #    Object Properties
 #################################################################
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoBookContent.ttl#acquaintance
+:acquaintance rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :socialLink ;
+              rdf:type owl:SymmetricProperty ;
+              rdfs:label "has acquaintance" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoBookContent.ttl#block
+:block rdf:type owl:ObjectProperty ;
+       rdfs:domain :Gamerule ;
+       rdfs:range :Gamerule ;
+       rdfs:label "block" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoBookContent.ttl#child
+:child rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf :family ;
+       owl:inverseOf :parent .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoBookContent.ttl#clue
+:clue rdf:type owl:ObjectProperty ;
+      rdfs:domain :Narrative ;
+      rdfs:range :Narrative ;
+      rdfs:label "clue about" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoBookContent.ttl#companion
+:companion rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :acquaintance ;
+           rdf:type owl:SymmetricProperty ;
+           rdfs:label "companion" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoBookContent.ttl#consequence
+:consequence rdf:type owl:ObjectProperty ;
+             rdfs:domain :CausalNarrative ;
+             rdfs:range :CausalNarrative ;
+             rdfs:label "consequence" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoBookContent.ttl#contact
+:contact rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :acquaintance ;
+         rdfs:label "has contact" .
+
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoBookContent.ttl#else
 :else rdf:type owl:ObjectProperty ;
@@ -28,11 +81,30 @@ sche:description rdf:type owl:AnnotationProperty .
       rdfs:label "consequence of false condition" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoBookContent.ttl#family
+:family rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf :socialLink ;
+        rdf:type owl:SymmetricProperty ;
+        rdfs:label "family" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoBookContent.ttl#foe
+:foe rdf:type owl:ObjectProperty ;
+     rdfs:subPropertyOf :acquaintance ;
+     rdf:type owl:SymmetricProperty ;
+     rdfs:label "foe" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoBookContent.ttl#friend
+:friend rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf :socialLink ;
+        rdf:type owl:SymmetricProperty ;
+        rdfs:label "has friend" .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoBookContent.ttl#include
 :include rdf:type owl:ObjectProperty ;
-         rdfs:domain :Gamerule ;
-         rdfs:range :Gamerule ;
-         rdfs:label "includes other rule" .
+         rdfs:label "includes" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoBookContent.ttl#input
@@ -40,6 +112,27 @@ sche:description rdf:type owl:AnnotationProperty .
        rdfs:domain :Gamerule ;
        rdfs:range :Gamerule ;
        rdfs:label "input for current rule" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoBookContent.ttl#location
+:location rdf:type owl:ObjectProperty ;
+          rdfs:domain :Narrative ;
+          rdfs:range :Location ;
+          rdfs:label "has location" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoBookContent.ttl#lover
+:lover rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf :socialLink ;
+       rdf:type owl:SymmetricProperty ;
+       rdfs:label "lover" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoBookContent.ttl#motive
+:motive rdf:type owl:ObjectProperty ;
+        rdfs:domain :Character ;
+        rdfs:range :Motive ;
+        rdfs:label "motive of the character" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoBookContent.ttl#next
@@ -51,8 +144,28 @@ sche:description rdf:type owl:AnnotationProperty .
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoBookContent.ttl#option
 :option rdf:type owl:ObjectProperty ;
-        rdfs:domain :Gamerule ;
-        rdfs:label "Option for selection" .
+        rdfs:subPropertyOf :input ;
+        rdfs:label "option for selection" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoBookContent.ttl#parent
+:parent rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf :family ;
+        rdfs:label "parent" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoBookContent.ttl#participant
+:participant rdf:type owl:ObjectProperty ;
+             rdfs:domain :Event ;
+             rdfs:range :Character ;
+             rdfs:label "participant" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoBookContent.ttl#resource
+:resource rdf:type owl:ObjectProperty ;
+          rdfs:domain :Event ;
+          rdfs:range :Resource ;
+          rdfs:label "resource" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoBookContent.ttl#set
@@ -63,9 +176,37 @@ sche:description rdf:type owl:AnnotationProperty .
      rdfs:label "set parameter value" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoBookContent.ttl#sibling
+:sibling rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :family ;
+         rdf:type owl:SymmetricProperty ;
+         rdfs:label "sibling" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoBookContent.ttl#socialLink
+:socialLink rdf:type owl:ObjectProperty ;
+            rdfs:domain :Character ;
+            rdfs:range :Character ;
+            rdfs:label "is linked with" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoBookContent.ttl#target
+:target rdf:type owl:ObjectProperty ;
+        rdfs:domain :CausalNarrative ;
+        rdfs:range :Agent ;
+        rdfs:label "target of narrative" .
+
+
 #################################################################
 #    Data properties
 #################################################################
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoBookContent.ttl#occupation
+:occupation rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Character ;
+            rdfs:range xsd:string ;
+            rdfs:label "occupation of character" .
+
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoBookContent.ttl#requirement
 :requirement rdf:type owl:DatatypeProperty ;
@@ -78,16 +219,46 @@ sche:description rdf:type owl:AnnotationProperty .
 :value rdf:type owl:DatatypeProperty ;
        rdfs:domain :Gamerule ;
        rdfs:range xsd:string ;
-       rdfs:label "value from input or constant or some calculations" .
+       rdfs:label "value for future operations" .
 
 
 #################################################################
 #    Classes
 #################################################################
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoBookContent.ttl#Agent
+:Agent rdf:type owl:Class ;
+       rdfs:subClassOf :Narrative ;
+       rdfs:label "Agent" .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoBookContent.ttl#Art
 :Art rdf:type owl:Class ;
      rdfs:label "Art" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoBookContent.ttl#CausalNarrative
+:CausalNarrative rdf:type owl:Class ;
+                 rdfs:subClassOf :Narrative ;
+                 rdfs:label "Causal narrative" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoBookContent.ttl#Character
+:Character rdf:type owl:Class ;
+           rdfs:subClassOf :Agent ;
+           rdfs:label "Character" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoBookContent.ttl#Community
+:Community rdf:type owl:Class ;
+           rdfs:subClassOf :Agent ;
+           rdfs:label "Community" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoBookContent.ttl#Event
+:Event rdf:type owl:Class ;
+       rdfs:subClassOf :CausalNarrative ;
+       rdfs:label "Event" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoBookContent.ttl#GameParameter
@@ -113,9 +284,48 @@ sche:description rdf:type owl:AnnotationProperty .
           rdfs:label "Rule of the game" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoBookContent.ttl#Location
+:Location rdf:type owl:Class ;
+          rdfs:subClassOf :Narrative ;
+          rdfs:label "Location" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoBookContent.ttl#Motive
+:Motive rdf:type owl:Class ;
+        rdfs:subClassOf :CausalNarrative ;
+        rdfs:label "Motive" .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoBookContent.ttl#Narrative
 :Narrative rdf:type owl:Class ;
            rdfs:label "Narrative part of the book" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoBookContent.ttl#Resource
+:Resource rdf:type owl:Class ;
+          rdfs:subClassOf :Narrative ;
+          rdfs:label "Resource" .
+
+
 ###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi
+:rival a owl:ObjectProperty ;
+    rdfs:label "rival" ;
+    rdfs:subPropertyOf :socialLink .
+
+:master a owl:ObjectProperty ;
+    rdfs:label "master" ;
+    rdfs:subPropertyOf :acquaintance .
+
+:follower a owl:ObjectProperty ;
+    rdfs:subPropertyOf :acquaintance ;
+    rdfs:label "follower" ;
+    owl:inverseOf :master .
+
+:leader a owl:ObjectProperty ;
+        rdfs:subPropertyOf :companion ;
+    rdfs:label "leader" .
+
+:worker a owl:ObjectProperty ;
+        rdfs:subPropertyOf :companion ;
+        owl:inverseOf :leader ;
+    rdfs:label "worker" .
