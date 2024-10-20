@@ -12,6 +12,12 @@
 #    Object Properties
 #################################################################
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#Actor
+:Actor rdf:type owl:ObjectProperty ;
+       rdfs:domain :Act ;
+       rdfs:range :Actor .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#Location
 :Location rdf:type owl:ObjectProperty ;
           rdfs:range :Location .
@@ -22,14 +28,6 @@
             rdfs:domain :Act ;
             rdfs:label "action with"@en ,
                        "действие с"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#actor
-:Actor rdf:type owl:ObjectProperty ;
-       rdfs:domain :Act ;
-       rdfs:range :Actor ;
-       rdfs:label "Actor"@en ,
-                  "Актор"@ru .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#after
@@ -101,6 +99,14 @@
                      "Проверка вничью"@ru .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#communicatedWith
+:communicatedWith rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :actionWith ;
+                  rdfs:range :Actor ;
+                  rdfs:label "communicated with"@en ,
+                             "контактировал с"@ru .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#effect
 :effect rdf:type owl:ObjectProperty ;
         rdfs:range :Act ;
@@ -129,6 +135,14 @@
 :inputOption rdf:type owl:ObjectProperty ;
              rdfs:comment "xor condition by default" ;
              rdfs:label "selected input from list"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#later
+:later rdf:type owl:ObjectProperty ;
+       rdfs:domain :Event ;
+       rdfs:range :Event ;
+       rdfs:label "later"@en ,
+                  "после"@ru .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#modified
@@ -282,7 +296,7 @@
                 "Акт"@ru .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#Agent
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#Actor
 :Actor rdf:type owl:Class .
 
 
@@ -291,6 +305,26 @@
        rdfs:subClassOf :Act ;
        rdfs:label "Check"@en ,
                   "Проверка"@ru .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#Community
+:Community rdf:type owl:Class ;
+           rdfs:subClassOf :Actor ;
+           rdfs:label "Community"@en ,
+                      "Общество"@ru .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#Creature
+:Creature rdf:type owl:Class ;
+          rdfs:subClassOf :Actor .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#Event
+:Event rdf:type owl:Class ;
+       rdfs:subClassOf :Act ,
+                       :Narrative ;
+       rdfs:label "Event"@en ,
+                  "Событие"@ru .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#Location
@@ -303,8 +337,24 @@
            rdfs:label "Narrative"@en ,
                       "Нарратив"@ru .
 
-:Parameter a owl:Class ;
-           rdfs:label "Parameter"@en , "Параметр"@ru .
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#Parameter
+:Parameter rdf:type owl:Class ;
+           rdfs:label "Parameter"@en ,
+                      "Параметр"@ru .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#ParameterCreature
+:ParameterCreature rdf:type owl:Class ;
+                   rdfs:subClassOf :ParameterPC ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty [ owl:inverseOf :included
+                                                    ] ;
+                                     owl:hasValue :Creature
+                                   ] ;
+                   rdfs:label "Parameter of creature"@en ,
+                              "Параметр существа"@ru .
+
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#ParameterDynamic
 :ParameterDynamic rdf:type owl:Class ;
@@ -314,24 +364,18 @@
                   rdfs:label "Dynamic parameter"@en ,
                              "Динамический параметр"@ru .
 
-:ParameterPC a owl:Class ;
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#ParameterPC
+:ParameterPC rdf:type owl:Class ;
              rdfs:subClassOf :Parameter ,
-                                    [ a owl:Restriction ;
-                                      owl:onProperty [ owl:inverseOf :included ] ;
-                                      owl:hasValue :pc
-                                    ] ;
-             rdfs:label "Parameter of player character"@en , "Параметр игрового персонажа"@ru .
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty [ owl:inverseOf :included
+                                              ] ;
+                               owl:hasValue :pc
+                             ] ;
+             rdfs:label "Parameter of player character"@en ,
+                        "Параметр игрового персонажа"@ru .
 
-:ParameterCreature a owl:Class ;
-                    rdfs:subClassOf :ParameterPC ,
-                                    [ a owl:Restriction ;
-                                      owl:onProperty [ owl:inverseOf :included ] ;
-                                      owl:hasValue :Creature
-                                    ] ;
-                    rdfs:label "Parameter of creature"@en , "Параметр существа"@ru .
-
-:pc a owl:NamedIndividual , :Creature ;
-    rdfs:label "Player character"@en , "Персонаж игрока"@ru .
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#Status
 :Status rdf:type owl:Class ;
@@ -343,6 +387,10 @@
 #################################################################
 #    Individuals
 #################################################################
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#Creature
+:Creature rdf:type owl:NamedIndividual .
+
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#game
 :game rdf:type owl:NamedIndividual ;
@@ -377,6 +425,13 @@
        rdfs:label "Party" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#pc
+:pc rdf:type owl:NamedIndividual ,
+             :Creature ;
+    rdfs:label "Player character"@en ,
+               "Персонаж игрока"@ru .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#player
 :player rdf:type owl:NamedIndividual ;
         rdfs:label "Player"@en ,
@@ -386,6 +441,14 @@
 #################################################################
 #    Annotations
 #################################################################
+
+:Actor rdfs:label "Actor"@en ,
+                  "Актор"@ru .
+
+
+:Creature rdfs:label "Creature"@en ,
+                     "Существо"@ru .
+
 
 :Location rdfs:label "Location"@en ,
                      "Локация"@ru .
@@ -397,43 +460,17 @@
 
 <urn:swrl:var#act> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
 
-<urn:swrl:var#act_before> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
-
-<urn:swrl:var#result_before> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
-
 <urn:swrl:var#subact> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
 
 <urn:swrl:var#actor> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
 
+<urn:swrl:var#act_before> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<urn:swrl:var#result_before> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
 <urn:swrl:var#part> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
 
 <urn:swrl:var#subactor> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
-
-[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
-   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :after ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#act> ;
-                                                       <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#act_before>
-                                                     ] ;
-                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :actionWith ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#act_before> ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#result_before>
-                                                                ] ;
-                                                      rdf:rest rdf:nil
-                                                    ]
-                                         ] ;
-   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :input ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#act> ;
-                                                       <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#result_before>
-                                                     ] ;
-                                           rdf:rest rdf:nil
-                                         ]
- ] .
 
 [ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
    <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
@@ -456,6 +493,32 @@
                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> :Actor ;
                                                        <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#subact> ;
                                                        <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#actor>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :after ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#act> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#act_before>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :actionWith ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#act_before> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#result_before>
+                                                                ] ;
+                                                      rdf:rest rdf:nil
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :input ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#act> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#result_before>
                                                      ] ;
                                            rdf:rest rdf:nil
                                          ]
@@ -540,10 +603,3 @@
  ] .
 
 ###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi
-:Creature a owl:Class ;
-    rdfs:subClassOf :Actor ;
-    rdfs:label "Creature"@en , "Существо"@ru .
-
-:Community a owl:Class;
-  rdfs:subClassOf :Actor;
-  rdfs:label "Community"@en , "Общество"@ru .

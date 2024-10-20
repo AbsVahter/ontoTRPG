@@ -259,6 +259,7 @@ gen:Check rdfs:subClassOf [ rdf:type owl:Restriction ;
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#advance_doomsday_clock
 :advance_doomsday_clock rdf:type owl:NamedIndividual ;
                         gen:Actor gen:master ;
+                        gen:effect :doom_happens ;
                         gen:inputOption :consumed_moments_softer_risks ,
                                         :consumed_moments_standard ;
                         gen:setAdditive :doomsday_clock ;
@@ -296,12 +297,17 @@ gen:Check rdfs:subClassOf [ rdf:type owl:Restriction ;
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#assistance
 :assistance rdf:type owl:NamedIndividual ;
-            gen:input :Skill ,
+            gen:effectOption :assistance_increase_threshold_number , :assistance_reroll_check_skill ;
+            rdfs:label "Assistance"@en .
+
+
+:assistance_increase_threshold_number a owl:NamedIndividual ;
+                                      gen:input :Skill ,
                       :bonds ;
             gen:setAdditive :threshold_number ;
             gen:prerequisiteDescription "(only one ally can assist) and (skill level > 0)" ;
             gen:valueFormula "int (bond of hero's assistant / 4)" ;
-            rdfs:label "Assistance"@en .
+                                      rdfs:label "Assistance: increase threshold number for skill check"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#backpack_and_blank_book
@@ -425,7 +431,8 @@ gen:Check rdfs:subClassOf [ rdf:type owl:Restriction ;
                                gen:Check ;
                       gen:checkSuccess :increase_learning_pool_spell ;
                       gen:checkThreshold :check_learning_threshold_spell ;
-                      rdfs:label "Learning spells"@en .
+                      gen:effect :set_block_on_learning_spell_technique ;
+                      rdfs:label "Check for increase learning pool for spells"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#check_learning_technique
@@ -434,7 +441,7 @@ gen:Check rdfs:subClassOf [ rdf:type owl:Restriction ;
                           gen:checkSuccess :increase_learning_pool_technique ;
                           gen:checkThreshold :check_learning_threshold_technique ;
                           gen:effect :set_block_on_learning_spell_technique ;
-                          rdfs:label "Learning techniques"@en .
+                          rdfs:label "Check for increase learning pool for techniques"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#check_learning_threshold_spell
@@ -487,13 +494,13 @@ gen:Check rdfs:subClassOf [ rdf:type owl:Restriction ;
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#check_skill_reroll
-:check_skill_reroll rdf:type owl:NamedIndividual ;
+:assistance_reroll_check_skill rdf:type owl:NamedIndividual ;
                     gen:after :check_skill ;
                     gen:effect :check_skill ;
                     gen:resource :bonds ;
                     gen:cost "1 level" ;
                     gen:target "you assist at skill check of other hero" ;
-                    rdfs:label "Reroll skill check"@en .
+                    rdfs:label "Assistance: reroll skill check"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#check_skill_result_upgrade
@@ -769,7 +776,6 @@ fail -> (fail with opportunity) xor (success with consequence) ;
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#doom_happens
 :doom_happens rdf:type owl:NamedIndividual ;
               gen:Actor :doom ;
-              gen:after :advance_doomsday_clock ;
               gen:effectOption :epilogue ,
                                :new_beginnings ,
                                :rewind ;
@@ -1169,7 +1175,6 @@ fail -> (fail with opportunity) xor (success with consequence) ;
                            :check_learning_technique ,
                            :check_skill ,
                            :check_skill_group ,
-                           :check_skill_reroll ,
                            :check_skill_result_upgrade ,
                            :increase_bonds ,
                            :learning_spell_and_technique ,
@@ -1177,7 +1182,7 @@ fail -> (fail with opportunity) xor (success with consequence) ;
                            :rest_short ,
                            :spending_xp ;
               gen:operated :hero ;
-              rdfs:label "Operate hero"@en .
+              rdfs:label "Player operated hero"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#operate_npc_and_monsters
@@ -2247,7 +2252,6 @@ gen:game gen:Actor gen:party .
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#game_play
 gen:game_play gen:included :advance_doomsday_clock ,
                            :conflict ,
-                           :doom_happens ,
                            :get_xp ,
                            :operate_hero ,
                            :operate_npc_and_monsters .
