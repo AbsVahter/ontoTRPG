@@ -20,6 +20,10 @@
 sche:image rdf:type owl:AnnotationProperty .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoBookContent.ttl#leader
+bc:leader rdf:type owl:AnnotationProperty .
+
+
 #################################################################
 #    Object Properties
 #################################################################
@@ -198,13 +202,6 @@ bc:participant owl:propertyChainAxiom ( [ owl:inverseOf bc:include
                rdfs:label "Hold threshold of challenge" .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#year
-:year rdf:type owl:DatatypeProperty ;
-      rdfs:domain :Case ;
-      rdfs:range xsd:integer ;
-      rdfs:label "year of the case" .
-
-
 #################################################################
 #    Classes
 #################################################################
@@ -332,7 +329,7 @@ bc:participant owl:propertyChainAxiom ( [ owl:inverseOf bc:include
 :InvestigationWithPush rdf:type owl:Class ;
                        rdfs:subClassOf :Investigation ,
                                        [ rdf:type owl:Restriction ;
-                                         owl:onProperty [ owl:inverseOf bc:include
+                                         owl:onProperty [ owl:inverseOf bc:option
                                                         ] ;
                                          owl:hasValue :investigate_scene_with_push
                                        ] ;
@@ -343,7 +340,7 @@ bc:participant owl:propertyChainAxiom ( [ owl:inverseOf bc:include
 :InvestigationWithoutPush rdf:type owl:Class ;
                           rdfs:subClassOf :Investigation ,
                                           [ rdf:type owl:Restriction ;
-                                            owl:onProperty [ owl:inverseOf bc:include
+                                            owl:onProperty [ owl:inverseOf bc:option
                                                            ] ;
                                             owl:hasValue :investigate_scene_without_push
                                           ] ;
@@ -386,7 +383,12 @@ bc:participant owl:propertyChainAxiom ( [ owl:inverseOf bc:include
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#Investigator
 :Investigator rdf:type owl:Class ;
-              rdfs:subClassOf :Role ;
+              rdfs:subClassOf :Role ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty [ owl:inverseOf bc:option
+                                               ] ;
+                                owl:hasValue :get_default_investigator_of_case
+                              ] ;
               rdfs:label "Investigator" .
 
 
@@ -530,7 +532,12 @@ bc:participant owl:propertyChainAxiom ( [ owl:inverseOf bc:include
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#Scene
 :Scene rdf:type owl:Class ;
-       rdfs:subClassOf bc:Event ;
+       rdfs:subClassOf bc:Event ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty [ owl:inverseOf bc:option
+                                        ] ;
+                         owl:hasValue :play_scenes
+                       ] ;
        rdfs:label "Scene" .
 
 
@@ -550,7 +557,12 @@ bc:participant owl:propertyChainAxiom ( [ owl:inverseOf bc:include
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#Test
 :Test rdf:type owl:Class ;
-      rdfs:subClassOf bc:Gamerule ;
+      rdfs:subClassOf bc:Gamerule ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty [ owl:inverseOf bc:option
+                                       ] ;
+                        owl:hasValue :pass_test
+                      ] ;
       sche:description """{threshold: [probability by dice number - 1 dice, 2 dices, 3 dices]} = {
     2: [83%, 100%, 100%] ;
     3: [67%, 97%, 100%] ;
@@ -738,6 +750,18 @@ bc:participant owl:propertyChainAxiom ( [ owl:inverseOf bc:include
                               rdfs:label "Information about Whitey Alexander with streetwise" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#abrams_astelle
+:abrams_astelle rdf:type owl:NamedIndividual ,
+                         :Source ;
+                :investigativeAbility :architecture ,
+                                      :craft ,
+                                      :cthulhu_mythos ,
+                                      :occult ,
+                                      :theology ;
+                bc:occupation "amateur occultist, a low-level draftswoman in her father's architectural firm" ;
+                rdfs:label "Astelle (Stella) Abrams" .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#accounting
 :accounting rdf:type owl:NamedIndividual ,
                      :InvestigativeAbilityAcademic ;
@@ -756,7 +780,7 @@ bc:participant owl:propertyChainAxiom ( [ owl:inverseOf bc:include
 :address_of_palais rdf:type owl:NamedIndividual ,
                             :InvestigationWithoutPush ;
                    :abilityForInvestigation :cop_talk ;
-                   bc:clue :apartment_of_palais ;
+                   bc:clue :apartments_of_palais ;
                    rdfs:label "Information about address of Ed Palais" .
 
 
@@ -797,6 +821,14 @@ bc:participant owl:propertyChainAxiom ( [ owl:inverseOf bc:include
                bc:occupation "professor" ;
                sche:description "With his thick-framed spectacles and mound of snowy white hair, Professor Alfred Kelham would look the part of a fusty lion of pedagogy even without his telltale tweed jacket. He takes a keen and unprejudiced interest in indigenous peoples. He presently divides his time between a study of antiquarianism in the works of Edgar Allan Poe and a treatise on the myths of the Chumash Indians." ;
                rdfs:label "Alfred Kelham" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#ames_lawrence
+:ames_lawrence rdf:type owl:NamedIndividual ,
+                        bc:Character ;
+               bc:motive :lost_love ;
+               bc:occupation "journalist at the Times" ;
+               rdfs:label "Lawrence Ames" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#analyze_photo_of_meeting
@@ -850,19 +882,34 @@ bc:participant owl:propertyChainAxiom ( [ owl:inverseOf bc:include
                       rdfs:label "Any physical ability" .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#apartment_of_palais
-:apartment_of_palais rdf:type owl:NamedIndividual ,
-                              bc:Location ;
-                     bc:location :los_angeles ;
-                     sche:description "a decaying Bunker Hill rooming house" ;
-                     rdfs:label "Apartment of Ed Palais" .
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#anything_for_story
+:anything_for_story rdf:type owl:NamedIndividual ,
+                             :ContinuityCard ,
+                             :NonMythosProblem ;
+                    sche:description "Every good reporter remember the time their nose for a story put them in danger. You, on the other hand? You remember the time or two it didn’t." ;
+                    rdfs:label "Anything for the story" .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#apartment_of_phil_block
-:apartment_of_phil_block rdf:type owl:NamedIndividual ,
-                                  bc:Location ;
-                         bc:location :los_angeles ;
-                         rdfs:label "Phil Block's apartment" .
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#apartments_of_palais
+:apartments_of_palais rdf:type owl:NamedIndividual ,
+                               bc:Location ;
+                      bc:location :los_angeles ;
+                      sche:description "a decaying Bunker Hill rooming house" ;
+                      rdfs:label "Apartment of Ed Palais" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#apartments_of_phil_block
+:apartments_of_phil_block rdf:type owl:NamedIndividual ,
+                                   bc:Location ;
+                          bc:location :los_angeles ;
+                          rdfs:label "Phil Block's apartment" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#apartments_of_preston
+:apartments_of_preston rdf:type owl:NamedIndividual ,
+                                bc:Location ;
+                       bc:location :new_york ;
+                       rdfs:label "Preston's apartments" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#archaeology
@@ -973,8 +1020,8 @@ bc:participant owl:propertyChainAxiom ( [ owl:inverseOf bc:include
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#barron_budd
 :barron_budd rdf:type owl:NamedIndividual ,
                       bc:Character ;
+             bc:boss :bugsy_siegel ;
              bc:foe :whitey_alexander ;
-             bc:leader :bugsy_siegel ;
              bc:motive :pay_protection ,
                        :suspicious_investigator ;
              bc:occupation "gangster" ;
@@ -1042,7 +1089,7 @@ bc:participant owl:propertyChainAxiom ( [ owl:inverseOf bc:include
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#bedacht_roy
 :bedacht_roy rdf:type owl:NamedIndividual ,
                       bc:Character ;
-             bc:leader :cohen_mickey ;
+             bc:boss :cohen_mickey ;
              bc:motive :hide_great_sleeping_god ,
                        :kill_customers ,
                        :voice_of_great_sleeping_god ;
@@ -1086,7 +1133,7 @@ bc:participant owl:propertyChainAxiom ( [ owl:inverseOf bc:include
 :block_phil rdf:type owl:NamedIndividual ,
                      bc:Character ;
             bc:acquaintance :deakin_helen ;
-            bc:leader :whitey_alexander ;
+            bc:boss :whitey_alexander ;
             bc:motive :romantic_feelings_to_helen ;
             bc:occupation "accountant" ;
             sche:description "34, a squirrelly shrimp in an oversized suit. Mob accountant who does the books for Whitey’s casino." ;
@@ -1178,10 +1225,9 @@ bc:participant owl:propertyChainAxiom ( [ owl:inverseOf bc:include
                        bc:input :edges ;
                        bc:option :extra_dice_any_ability ,
                                  :extra_dice_athletics_fighting_fleeing ,
-                                 :extra_dice_cool_stability ,
                                  :minor_bonus_cool_stability ,
                                  :quick_reactions ,
-                                 :standard_mental_bonus ,
+                                 :self_possessed ,
                                  :state_of_alarm ;
                        bc:set :edges ;
                        bc:requirement "condition of using of appropriate edge" ;
@@ -1337,6 +1383,16 @@ bc:participant owl:propertyChainAxiom ( [ owl:inverseOf bc:include
                              rdfs:label "Business for Dexter Raymond" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#cain_sadie
+:cain_sadie rdf:type owl:NamedIndividual ,
+                     bc:Character ;
+            bc:lover :preston_george ;
+            bc:motive :prove_innocence_of_preston , :excellent_skills_of_vivian ;
+            bc:occupation "garment worker" ;
+            sche:description "21, client, fiancee of George Preston" ;
+            rdfs:label "Sadie Cain" .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#calm_clara_after_suicidal_thoughts
 :calm_clara_after_suicidal_thoughts rdf:type owl:NamedIndividual ,
                                              :InvestigationWithPush ;
@@ -1362,6 +1418,15 @@ bc:participant owl:propertyChainAxiom ( [ owl:inverseOf bc:include
              sche:description """Just as Dex leaves the Alegria and enters the parking lot, a bomb blows up under one of the cars
 Dex spots two men sitting in the front seat of a dinged-up Ford coupe. Unlike everyone else spilling from the casino into the parking lot, they remain cool as cucumbers. Moments after noticing them, the driver turns the ignition key and starts to drive off.""" ;
              rdfs:label "The car bombing" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#carrington_hereward
+:carrington_hereward rdf:type owl:NamedIndividual ,
+                              bc:Character ;
+                     bc:occupation "investigator of psychic phenomena" ;
+                     sche:description "55 (1880-1958)" ;
+                     rdfs:label "Hereward Carrington" ;
+                     bc:represents wd:Q386059 .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#catch_speelmans
@@ -1484,8 +1549,8 @@ Dex spots two men sitting in the front seat of a dinged-up Ford coupe. Unlike ev
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#cohen_mickey
 :cohen_mickey rdf:type owl:NamedIndividual ,
                        bc:Character ;
+              bc:boss :bugsy_siegel ;
               bc:foe :mcafee_guy ;
-              bc:leader :bugsy_siegel ;
               bc:motive :hatred_towards_nazis ,
                         :remove_trouble ,
                         :revenge_of_mobs ;
@@ -1939,6 +2004,17 @@ Should Dex make an effort to befriend Marshal and give him the impression that H
                 rdfs:label "Death of Clara Nebel" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#death_of_myron_fink
+:death_of_myron_fink rdf:type owl:NamedIndividual ,
+                              bc:Event ;
+                     bc:consequence :guilty_for_death_of_innocent ,
+                                    :prove_innocence_of_preston ,
+                                    :searching_of_preston ;
+                     bc:location :apartments_of_preston ;
+                     bc:participant :fink_myron ;
+                     rdfs:label "Death of Myron Fink" .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#death_of_wife_and_mother
 :death_of_wife_and_mother rdf:type owl:NamedIndividual ,
                                    bc:Event ;
@@ -2004,9 +2080,10 @@ Gargan might — in a pinch, if the higher-ups haven’t tied his hands — come
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#dice_roll
 :dice_roll rdf:type owl:NamedIndividual ;
            bc:input :bonuses_for_dice_roll ,
+                    :earning_additional_roll_taking_extra_problem ,
                     :penalties_for_dice_roll ,
                     :player_investigator ;
-           bc:next :earning_additional_roll_taking_extra_problem ;
+           bc:next :check_outcome_advance ;
            bc:requirement "player_investigator.generalAbility = playing_case.scene.test.abilityForTest" ;
            bc:value "dice roll = (from 0 to dice amount of ability)d6 + (bonuses of appropriate in-game edges) + (penalties of appropriate in-game problems)" ;
            sche:description """When you have multiple dice to roll, roll them one at a time, adding to your total as you go.
@@ -2077,10 +2154,17 @@ Bonuses and penalties from card dublicates “stack” to use gaming parlance.""
          rdfs:label "Driving general ability" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#drug_smuggling_ring_of_yogs
+:drug_smuggling_ring_of_yogs rdf:type owl:NamedIndividual ,
+                                      bc:Event ;
+                             bc:participant :abrams_astelle ,
+                                            :sinclair_vivian ;
+                             rdfs:label "Undercover investigation of a drug-smuggling ring passing itself off as a yogic sect" .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#during_the_game
 :during_the_game rdf:type owl:NamedIndividual ;
-                 bc:include :play_antagonist_reaction ,
-                            :play_scenes ,
+                 bc:include :play_scenes ,
                             :taking_time ;
                  bc:next :end_of_the_game ;
                  rdfs:label "During the game" .
@@ -2112,7 +2196,6 @@ Bonuses and penalties from card dublicates “stack” to use gaming parlance.""
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#earning_additional_roll_taking_extra_problem
 :earning_additional_roll_taking_extra_problem rdf:type owl:NamedIndividual ;
-                                              bc:next :check_outcome_advance ;
                                               bc:set :problems ;
                                               bc:requirement "playing_case.scene.test.extraProblem exists (test is challenge)" ;
                                               bc:value "dice roll += 1d6" ,
@@ -2157,13 +2240,30 @@ Bonuses and penalties from card dublicates “stack” to use gaming parlance.""
             rdfs:label "to enjoy life to the fullest" .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#enter_into_apartment_of_ed_palais
-:enter_into_apartment_of_ed_palais rdf:type owl:NamedIndividual ,
-                                            :InvestigationWithoutPush ;
-                                   :abilityForInvestigation :locksmith ;
-                                   bc:clue :analyze_photo_of_meeting ,
-                                           :photo_of_meeting ;
-                                   rdfs:label "Information at apartment of Ed Palais with locksmith" .
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#enter_into_apartments_of_ed_palais
+:enter_into_apartments_of_ed_palais rdf:type owl:NamedIndividual ,
+                                             :InvestigationWithoutPush ;
+                                    :abilityForInvestigation :locksmith ;
+                                    bc:clue :analyze_photo_of_meeting ,
+                                            :photo_of_meeting ;
+                                    rdfs:label "Information at apartment of Ed Palais with locksmith" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#escape_from_bootleggers
+:escape_from_bootleggers rdf:type owl:NamedIndividual ,
+                                  bc:Event ;
+                         bc:consequence :lost_love ;
+                         bc:participant :ames_lawrence ,
+                                        :sinclair_vivian ;
+                         rdfs:label "Escape from bootleggers" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#evans_catherine
+:evans_catherine rdf:type owl:NamedIndividual ,
+                          bc:Character ;
+                 bc:occupation "shopgirl at Gimbels department store in Herald Square" ;
+                 sche:description "roommate of Vivian Sinclair" ;
+                 rdfs:label "Catherine Evans" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#evidence_collection
@@ -2171,6 +2271,14 @@ Bonuses and penalties from card dublicates “stack” to use gaming parlance.""
                               :InvestigativeAbilityTechnical ;
                      sche:description "You’re adept at casing an investigation site and at finding important clues." ;
                      rdfs:label "Evidence Collection investigative ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#expedition_for_national_geographic_society
+:expedition_for_national_geographic_society rdf:type owl:NamedIndividual ,
+                                                     bc:Event ;
+                                            bc:participant :gonzalez_esteban ,
+                                                           :sinclair_vivian ;
+                                            rdfs:label "Expedition for the National Geographic Society" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#exploded_office
@@ -2200,6 +2308,13 @@ Bonuses and penalties from card dublicates “stack” to use gaming parlance.""
             rdfs:label "Explosives general ability" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#extra_dice
+:extra_dice rdf:type owl:NamedIndividual ,
+                     bc:Gamerule ;
+            bc:value "dice roll += 1d6" ;
+            rdfs:label "extra dice" .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#extra_dice_any_ability
 :extra_dice_any_ability rdf:type owl:NamedIndividual ;
                         bc:input :any_ability ;
@@ -2219,6 +2334,7 @@ Bonuses and penalties from card dublicates “stack” to use gaming parlance.""
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#extra_dice_cool_stability
 :extra_dice_cool_stability rdf:type owl:NamedIndividual ,
                                     bc:Gamerule ;
+                           bc:input :extra_dice ;
                            bc:option :cool ,
                                      :stability ;
                            rdfs:label "Extra dice on cool and stability" .
@@ -2268,6 +2384,19 @@ Bonuses and penalties from card dublicates “stack” to use gaming parlance.""
                  rdfs:label "Family problems" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#fatal_frequencies
+:fatal_frequencies rdf:type owl:NamedIndividual ,
+                            :Case ;
+                   :investigator :sinclair_vivian ;
+                   :opener :sadies_sob_story ;
+                   :previousEvent :resonator_and_temple_of_Nephthys ,
+                                  :searching_of_preston ,
+                                  :unfortunate_experiment ;
+                   bc:location :new_york ;
+                   bc:date 1937 ;
+                   rdfs:label "Fatal Frequencies" .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#fathomless_sleep
 :fathomless_sleep rdf:type owl:NamedIndividual ,
                            :Case ;
@@ -2308,7 +2437,7 @@ Bonuses and penalties from card dublicates “stack” to use gaming parlance.""
                          :typewriter_alley_scene ,
                          :weird_stone_of_bugsy ;
                   bc:location :los_angeles ;
-                  :year 1937 ;
+                  bc:date 1937 ;
                   rdfs:label "The fathomless sleep" .
 
 
@@ -2397,7 +2526,7 @@ Bonuses and penalties from card dublicates “stack” to use gaming parlance.""
 :find_home_of_phil_block rdf:type owl:NamedIndividual ,
                                   :InvestigationWithoutPush ;
                          :abilityForInvestigation :research ;
-                         bc:clue :apartment_of_phil_block ;
+                         bc:clue :apartments_of_phil_block ;
                          rdfs:label "Information about Phil Block's home" .
 
 
@@ -2416,6 +2545,14 @@ Bonuses and penalties from card dublicates “stack” to use gaming parlance.""
                            rdfs:label "Find supplier of dynamite" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#fink_myron
+:fink_myron rdf:type owl:NamedIndividual ,
+                     bc:Character ;
+            bc:occupation "indefinitely" ;
+            sche:description "neighbor of George Preston" ;
+            rdfs:label "Myron Fink" .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#first_aid
 :first_aid rdf:type owl:NamedIndividual ,
                     :GeneralAbilityManual ;
@@ -2428,6 +2565,16 @@ Bonuses and penalties from card dublicates “stack” to use gaming parlance.""
                           :Edge ;
                  sche:description "In L.A., justice is doled out in tiny increments. But today, at least one bad guy has been taken care of. By you." ;
                  rdfs:label "Fist of Justice" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#fitzpatrick_charlie
+:fitzpatrick_charlie rdf:type owl:NamedIndividual ,
+                              bc:Character ;
+                     bc:boss :fuller_howard ;
+                     bc:friend :preston_george ;
+                     bc:occupation "electrician" ;
+                     sche:description "23, victim's best friend" ;
+                     rdfs:label "Charlie (Charlene) Fitzpatrick" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#flattery
@@ -2537,6 +2684,22 @@ To talk to him later requires Intimidation.""" ;
                                   rdfs:label "Information from Franz Speelmans with intimidation" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#fuller_howard
+:fuller_howard rdf:type owl:NamedIndividual ,
+                        bc:Character ;
+               bc:motive :profit_and_saving_america ;
+               bc:occupation "owner of Fuller’s Electrical Repair" ;
+               sche:description "47, employer of Preston" ;
+               rdfs:label "Howard Fuller" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#fullers_electrical_repair
+:fullers_electrical_repair rdf:type owl:NamedIndividual ,
+                                    bc:Location ;
+                           bc:location :new_york ;
+                           rdfs:label "Fuller's Electrical Repair" .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#further_interviews_with_helen
 :further_interviews_with_helen rdf:type owl:NamedIndividual ,
                                         :InvestigationWithPush ;
@@ -2612,7 +2775,7 @@ A family man with two young sons to worry about.""" ;
                                      bc:consequence :girl_with_death_in_her_eyes ;
                                      bc:target :deakin_helen ;
                                      sche:description "If Dex asks to interview Helen directly, Margaret expresses reluctance. “You won’t get anything out of her. At best, you'll throw her into one of her fits.” A Reassurance Push impels Margaret to relent. Otherwise, Dex will have to do more digging first, and then convince Margaret that he’s hit a dead end, before she’ll allow him to talk to her sister." ;
-                                     rdfs:label "Information from Margaret Deakin about Helen Deakin's interview with pushed reassurance" .
+                                     rdfs:label "Get allowance from Margaret Deakin to Helen Deakin's interview" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#get_clues
@@ -2660,6 +2823,18 @@ A family man with two young sons to worry about.""" ;
                              bc:participant :deakin_helen ,
                                             :deakin_margaret ;
                              rdfs:label "The Girl with Death in Her Eyes" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#gonzalez_esteban
+:gonzalez_esteban rdf:type owl:NamedIndividual ,
+                           bc:Character ;
+                  :investigativeAbility :anthropology ,
+                                        :archaeology ,
+                                        :art_history ,
+                                        :geology ,
+                                        :outdoorsman ;
+                  bc:occupation "explorer" ;
+                  rdfs:label "Esteban Manuel Aragon Gonzalez" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#greta_odemar
@@ -2722,6 +2897,14 @@ It consists of one living area with a small separate washroom. Its main features
                              rdfs:label "House of Greta Odemar" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#guilty_for_death_of_innocent
+:guilty_for_death_of_innocent rdf:type owl:NamedIndividual ,
+                                       bc:Motive ;
+                              bc:consequence :suicide_of_preston ;
+                              bc:target :fink_myron ;
+                              rdfs:label "Guilty for the death of an innocent person" .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#hand_severing_reaction
 :hand_severing_reaction rdf:type owl:NamedIndividual ,
                                  :Challenge ;
@@ -2735,6 +2918,14 @@ It consists of one living area with a small separate washroom. Its main features
                         :outcomeAdvance "This is a sight you wouldn’t have chosen to witness. You realize, however, that survival depends on your putting its horror out of your mind." ;
                         :outcomeHold "This is a sight you wouldn’t have chosen to witness. You realize, however, that survival depends on your putting its horror out of your mind." ;
                         :outcomeSetback "This sight will haunt you for a long time to come." .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#hand_to_mouth
+:hand_to_mouth rdf:type owl:NamedIndividual ,
+                        :ContinuityCard ,
+                        :NonMythosProblem ;
+               sche:description "You got into this line of work to make a difference, not make dough. But even with the odd work you pick up around the office, you never know if you’ll have next month’s rent." ;
+               rdfs:label "Hand-to-Mouth" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#hard_boiled
@@ -2876,6 +3067,13 @@ It consists of one living area with a small separate washroom. Its main features
                        rdfs:label "Helen Deakin shares her plan" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#herald_tribune
+:herald_tribune rdf:type owl:NamedIndividual ,
+                         bc:Location ;
+                bc:location :new_york ;
+                rdfs:label "The Herald Tribune" .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#hidden_key_accounting
 :hidden_key_accounting rdf:type owl:NamedIndividual ,
                                 :InvestigationWithoutPush ;
@@ -2925,6 +3123,14 @@ It consists of one living area with a small separate washroom. Its main features
                                   :MythosShockProblem ;
                          sche:description "You saw something in Helen’s eyes that threatens your entire worldview. Whatever drove her mad is real, far outside your ordinary understanding. If you keep going, it will claim you, too." ;
                          rdfs:label "The Horror in Helen’s Eyes" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#hot_tempered
+:hot_tempered rdf:type owl:NamedIndividual ,
+                       :ContinuityCard ,
+                       :NonMythosProblem ;
+              sche:description "You go from zero to boiling over in the blink of an eye. Whether it’s for justice or personal dignity, it puts a strain on relationships and even employment." ;
+              rdfs:label "Hot-Tempered" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#hung_crime_on_someone_else
@@ -3182,6 +3388,15 @@ If still in your hand at end of case, you suffer a heart attack.""" ;
                    rdfs:label "Did Whitey lay a hand on Helen?" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#leblanc_pearl
+:leblanc_pearl rdf:type owl:NamedIndividual ,
+                        bc:Character ;
+               bc:occupation "a stenographer and devout acolyte of the Temple of Nephthys" ;
+               sche:description "18" ;
+               rdfs:label "Pearl LeBlanc" ;
+               bc:leader :madame_isis .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#len_pollard
 :len_pollard rdf:type owl:NamedIndividual ,
                       bc:Character ;
@@ -3242,6 +3457,14 @@ If still in your hand at end of case, you suffer a heart attack.""" ;
              bc:represents wd:Q65 .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#lost_love
+:lost_love rdf:type owl:NamedIndividual ,
+                    bc:Motive ;
+           bc:target :ames_lawrence ,
+                     :sinclair_vivian ;
+           rdfs:label "Lost love" .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#mackintosh_jeff
 :mackintosh_jeff rdf:type owl:NamedIndividual ,
                           bc:Character ;
@@ -3264,6 +3487,16 @@ If still in your hand at end of case, you suffer a heart attack.""" ;
             bc:occupation "fortune teller" ;
             sche:description "Born Peggy Malone, this harmless grifter can assist with information on the world of cults, spiritualism, and hermetic magic. Ample of figure and enrobed in silks and a colorful turban, she plays her role as mystic with the flamboyance that L.A. customers demand." ;
             rdfs:label "Madame Eva" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#madame_isis
+:madame_isis rdf:type owl:NamedIndividual ,
+                      bc:Character ;
+             bc:acquaintance :preston_george ;
+             bc:motive :use_machine_for_connection_with_spirits ;
+             bc:occupation "priestess of the Temple of Nephthys" ;
+             sche:description "52" ;
+             rdfs:label "Bertha Cook (Madame Isis Neferi)" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#magazine_warehouse_hillyers
@@ -3336,6 +3569,14 @@ If still in your hand at end of case, you suffer a heart attack.""" ;
                              bc:input :intimidation ;
                              bc:target :daly_marshall ;
                              rdfs:label "Setback outcome for test: Marshall takes a poke" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#marty_the_mouth
+:marty_the_mouth rdf:type owl:NamedIndividual ,
+                          bc:Character ;
+                 bc:occupation "gangster" ;
+                 sche:description "43" ;
+                 rdfs:label "Marty the Mouth" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#max_weyl
@@ -3454,8 +3695,8 @@ His need to source any object or location at the drop of a hat has equipped him 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#missing_ex_cop
 :missing_ex_cop rdf:type owl:NamedIndividual ,
                          :Scene ;
-                bc:clue :enter_into_apartment_of_ed_palais ;
-                bc:location :apartment_of_palais ;
+                bc:clue :enter_into_apartments_of_ed_palais ;
+                bc:location :apartments_of_palais ;
                 rdfs:label "The missing ex-cop" .
 
 
@@ -3471,7 +3712,7 @@ His need to source any object or location at the drop of a hat has equipped him 
                     :Scene ;
            bc:clue :cooperation_of_phil_block ,
                    :find_home_of_phil_block ;
-           bc:location :apartment_of_phil_block ;
+           bc:location :apartments_of_phil_block ;
            bc:participant :block_phil ;
            rdfs:label "The Money Man" .
 
@@ -3597,6 +3838,12 @@ His need to source any object or location at the drop of a hat has equipped him 
           rdfs:label "New love" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#new_york
+:new_york rdf:type owl:NamedIndividual ,
+                   bc:Location ;
+          rdfs:label "New York" .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#no_trouble_with_gangsters
 :no_trouble_with_gangsters rdf:type owl:NamedIndividual ,
                                     bc:Motive ;
@@ -3650,6 +3897,18 @@ His need to source any object or location at the drop of a hat has equipped him 
                  :InvestigativeAbilityAcademic ;
         sche:description "You’re an expert in the historical study of magic, superstition, and sorcery from the Stone Age to the present. From Theosophists to Voodoo to the Golden Dawn, you know the dates, the places, the controversies, and the legends." ;
         rdfs:label "Occult investigative ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#oconnor_joseph
+:oconnor_joseph rdf:type owl:NamedIndividual ,
+                         :Source ;
+                :investigativeAbility :cop_talk ,
+                                      :forensics ,
+                                      :intimidation ,
+                                      :law ,
+                                      :streetwise ;
+                bc:occupation "detective" ;
+                rdfs:label "Joseph O'Connor" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#offer_to_kill_speelmans
@@ -3748,8 +4007,7 @@ His need to source any object or location at the drop of a hat has equipped him 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#pass_test
 :pass_test rdf:type owl:NamedIndividual ;
-           bc:input :playing_case ;
-           bc:next :dice_roll ;
+           bc:include :dice_roll ;
            bc:value "playing_case.scene.test" ;
            rdfs:label "Pass the test" .
 
@@ -3881,7 +4139,6 @@ His need to source any object or location at the drop of a hat has equipped him 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#play_antagonist_reaction
 :play_antagonist_reaction rdf:type owl:NamedIndividual ;
-                          bc:input :playing_case ;
                           bc:requirement "taking time or trigger" ;
                           bc:value "playing_case.antagonistReaction" ;
                           rdfs:label "Play antagonist reaction" .
@@ -3903,10 +4160,12 @@ His need to source any object or location at the drop of a hat has equipped him 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#play_scenes
 :play_scenes rdf:type owl:NamedIndividual ;
-             bc:include :get_lucky_outcome_by_lucky_break ,
+             bc:include :get_clues ,
+                        :get_lucky_outcome_by_lucky_break ,
                         :investigate_scene_with_push ,
                         :investigate_scene_without_push ,
-                        :pass_test ;
+                        :pass_test ,
+                        :play_antagonist_reaction ;
              bc:input :playing_case ;
              bc:value "playing_case.scene" ;
              rdfs:label "Play scenes" .
@@ -3953,7 +4212,8 @@ His need to source any object or location at the drop of a hat has equipped him 
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#poking_around_warehouse_stealth_night_setback
-:poking_around_warehouse_stealth_night_setback rdf:type owl:NamedIndividual ;
+:poking_around_warehouse_stealth_night_setback rdf:type owl:NamedIndividual ,
+                                                        bc:Event ;
                                                sche:description "Investigator realizes that he is about to be caught out and can withdraw without being confronted." ;
                                                rdfs:label "Setback outcome: Get in magazine warehouse using stealth at night" .
 
@@ -3963,6 +4223,26 @@ His need to source any object or location at the drop of a hat has equipped him 
                        :GeneralAbilityMental ;
               sche:description "You expertly anticipate the needs of any investigation by packing a kit efficiently arranged with necessary gear. Assuming you have immediate access to it, you may be able to produce an object needed to overcome an impediment to your progress." ;
               rdfs:label "Preparedness general ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#preston_george
+:preston_george rdf:type owl:NamedIndividual ,
+                         bc:Character ;
+                bc:acquaintance :fink_myron ;
+                bc:boss :fuller_howard ;
+                bc:motive :guilty_for_death_of_innocent ;
+                bc:occupation "inventor" ;
+                sche:description "23, victim" ;
+                rdfs:label "George Preston" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#preston_tests_his_device
+:preston_tests_his_device rdf:type owl:NamedIndividual ,
+                                   bc:Event ;
+                          bc:consequence :death_of_myron_fink ;
+                          bc:location :apartments_of_preston ;
+                          bc:resource :sympathetic_resonator ;
+                          rdfs:label "George Preston tests his device" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#problem_blocks_push
@@ -3978,6 +4258,13 @@ His need to source any object or location at the drop of a hat has equipped him 
                    bc:GameParameterList ;
           sche:description "List of problem cards of character in current game" ;
           rdfs:label "In-game investigator problems" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#profit_and_saving_america
+:profit_and_saving_america rdf:type owl:NamedIndividual ,
+                                    bc:Motive ;
+                           bc:target :sympathetic_resonator ;
+                           rdfs:label "Profit and saving America" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#protect_father
@@ -4003,6 +4290,14 @@ His need to source any object or location at the drop of a hat has equipped him 
                         bc:target :raymond_dexter ;
                         sche:description "Eva has seen other minds ruined by contact with the Old Ones, and she doesn’t want that to happen to him." ;
                         rdfs:label "Protection from Mythos" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#prove_innocence_of_preston
+:prove_innocence_of_preston rdf:type owl:NamedIndividual ,
+                                     bc:Motive ;
+                            bc:target :preston_george ;
+                            bc:consequence :sadies_sob_story ;
+                            rdfs:label "Prove innocence of George Preston" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#psychoanalysis
@@ -4031,6 +4326,7 @@ His need to source any object or location at the drop of a hat has equipped him 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#pushes
 :pushes rdf:type owl:NamedIndividual ,
                  bc:GameParameterCharacter ;
+        bc:requirement "max = 4" ;
         rdfs:label "Number of pushes of investigator in the case" .
 
 
@@ -4062,7 +4358,7 @@ His need to source any object or location at the drop of a hat has equipped him 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#raymond_dexter
 :raymond_dexter rdf:type owl:NamedIndividual ,
-                         bc:Character ;
+                         :Investigator ;
                 :generalAbility1Dice :conceal ,
                                      :cool ,
                                      :devices ,
@@ -4130,7 +4426,7 @@ The letters betray a particular hunger for lewd pics of Charlie Chaplin, a criti
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#recognize_bombers
 :recognize_bombers rdf:type owl:NamedIndividual ,
                             :InvestigationWithPush ;
-                   :abilityForTest :streetwise ;
+                   :abilityForInvestigation :streetwise ;
                    bc:clue :barron_keeps_office_in_magazine_warehouse ;
                    bc:consequence :cooperation_of_barron_intimidation ;
                    rdfs:label "Recognize bombers" .
@@ -4208,6 +4504,16 @@ The letters betray a particular hunger for lewd pics of Charlie Chaplin, a criti
                      rdfs:label "Residence of Pelley" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#resonator_and_temple_of_Nephthys
+:resonator_and_temple_of_Nephthys rdf:type owl:NamedIndividual ,
+                                           bc:Event ;
+                                  bc:consequence :use_machine_for_connection_with_spirits ;
+                                  bc:participant :madame_isis ,
+                                                 :preston_george ;
+                                  bc:resource :sympathetic_resonator ;
+                                  rdfs:label "Preston presents resonator to Madame Isis Neferi" .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#respectful_relationship_with_whitey
 :respectful_relationship_with_whitey rdf:type owl:NamedIndividual ,
                                               :InvestigationWithPush ;
@@ -4253,6 +4559,29 @@ The letters betray a particular hunger for lewd pics of Charlie Chaplin, a criti
                      bc:location :deakin_family_manor ;
                      bc:participant :deakin_margaret ;
                      rdfs:label "Revisiting Margaret" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#reynolds_louisa
+:reynolds_louisa rdf:type owl:NamedIndividual ,
+                          :Source ;
+                 :investigativeAbility :medicine ,
+                                       :pharmacy ,
+                                       :psychology ;
+                 bc:occupation "nurse" ;
+                 sche:description "third cousin to Vivian" ;
+                 rdfs:label "Louisa Reynolds" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#rice_annette
+:rice_annette rdf:type owl:NamedIndividual ,
+                       :Source ;
+              :investigativeAbility :astronomy ,
+                                    :biology ,
+                                    :chemistry ,
+                                    :languages ,
+                                    :physics ;
+              bc:occupation "professor of Natural Sciences at Hunter College" ;
+              rdfs:label "Annette (Nettie) Rice" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#romantic_feelings_to_helen
@@ -4311,6 +4640,56 @@ The letters betray a particular hunger for lewd pics of Charlie Chaplin, a criti
             rdfs:label "Roy's story" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#sadies_sob_story
+:sadies_sob_story rdf:type owl:NamedIndividual ,
+                           :Scene ;
+                  bc:location :herald_tribune ;
+                  bc:participant :cain_sadie ;
+                  bc:clue :searching_of_preston ,
+                          :death_of_myron_fink ,
+                          :about_motive_of_sadie ,
+                          :preston_works_as_electrical_repairman ,
+                          :preston_uses_workbench_of_fuller_for_his_invention ,
+                          :preston_asked_fuller_to_hire_fitzpatrick ,
+                          :about_police_and_preston ;
+                  rdfs:label "Sadie's sob story" .
+
+:fullers_electrical_repair_scene a :Scene ;
+                                 bc:clue :lawsuit_against_fuller ;
+                                 rdfs:label "Fuller's Electrical Repair scene" .
+
+:lawsuit_against_fuller a :InvestigationWithoutPush ;
+                        bc:target :fuller_howard ;
+                        :abilityForInvestigation :research ;
+                        rdfs:label "Lawsuit against Fuller (monopolistic practices)" .
+
+:preston_asked_fuller_to_hire_fitzpatrick a bc:Event ;
+                                          bc:location :fullers_electrical_repair ;
+                                          bc:participant :preston_george , :fuller_howard , :fitzpatrick_charlie ;
+                                          rdfs:label "Preston asked Fuller to hire his bestfriend, Charlie Fitzpatrick" .
+
+:preston_uses_workbench_of_fuller_for_his_invention a bc:Event ;
+                                                     bc:participant :preston_george ;
+                                                     bc:location :fullers_electrical_repair ;
+                                                    bc:consequence :preston_tests_his_device ;
+                                                     rdfs:label "George Preston uses Fuller's workbench for his investions" .
+
+:preston_works_as_electrical_repairman a bc:Event ;
+                                       bc:location :fullers_electrical_repair ;
+                                       bc:consequence :preston_uses_workbench_of_fuller_for_his_invention ;
+                                       bc:participant :preston_george , :fuller_howard ;
+                                       rdfs:label "George Preston works as an electrical repairman" .
+
+:about_police_and_preston a :InvestigationWithoutPush ;
+                          bc:clue :police_wants_to_arrest_preston ;
+                          :abilityForInvestigation :streetwise ;
+                          rdfs:label "Information about police's motive in Preston's case" .
+
+:about_motive_of_sadie a :InvestigationWithoutPush ;
+                       :abilityForInvestigation :assess_honesty ;
+                       bc:clue :prove_innocence_of_preston ;
+                       rdfs:label "Information about Sadie's motive" .
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#scientist_destroys_stone
 :scientist_destroys_stone rdf:type owl:NamedIndividual ,
                                    bc:Event ;
@@ -4318,6 +4697,20 @@ The letters betray a particular hunger for lewd pics of Charlie Chaplin, a criti
                           sche:description "Scientist can’t resist the urge to take the sample and pulverize stone into dust with a hammer." ;
                           rdfs:label "Scientist destroys stone" .
 
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#seabury_hearings
+:seabury_hearings rdf:type owl:NamedIndividual ,
+                           bc:Event ;
+                  bc:participant :oconnor_joseph ,
+                                 :sinclair_vivian ;
+                  bc:consequence :excellent_skills_of_vivian ;
+                  bc:date 1931 ;
+                  rdfs:label "Seabury Hearings" .
+
+:excellent_skills_of_vivian a bc:Motive ;
+                            bc:target :sinclair_vivian ;
+                            bc:consequence :sadies_sob_story ;
+                           rdfs:label "Vivian's excellent skills" .
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#searching_of_helen
 :searching_of_helen rdf:type owl:NamedIndividual ,
@@ -4331,6 +4724,18 @@ The letters betray a particular hunger for lewd pics of Charlie Chaplin, a criti
 30 days ago: Police find Helen downtown, identify her from Margaret’s report, and take her home. She has been all but mute and nearly catatonic ever since, despite receiving the best care money can buy.""" ;
                     rdfs:label "Helen's searching" .
 
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#searching_of_preston
+:searching_of_preston rdf:type owl:NamedIndividual ,
+                               bc:Event ;
+                      bc:consequence :police_wants_to_arrest_preston ;
+                      bc:target :preston_george ;
+                      bc:date "1937-05-12" ;
+                      rdfs:label "Searching of Preston by police and fiancee" .
+
+:police_wants_to_arrest_preston a bc:Motive ;
+                                bc:target :preston_george ;
+                                rdfs:label "Police wants to arrest George Preston without any care" .
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#seeing_subordinate_of_whitey
 :seeing_subordinate_of_whitey rdf:type owl:NamedIndividual ,
@@ -4398,7 +4803,7 @@ The letters betray a particular hunger for lewd pics of Charlie Chaplin, a criti
                   bc:option :create_new_investigator ,
                             :get_default_investigator_of_case ;
                   bc:set :player_investigator ;
-                  rdfs:label "Set a investigator" .
+                  rdfs:label "Set an investigator" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#set_pushes
@@ -4607,6 +5012,82 @@ Meetings take place at the modest homes of various other middle-ranking screenwr
                                     :outcomeHold "Dex gets away" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#simpson_clarence
+:simpson_clarence rdf:type owl:NamedIndividual ,
+                           bc:Character ;
+                  bc:acquaintance :preston_george ;
+                  bc:occupation "landlord" ;
+                  sche:description "68, Preston's landlord" ;
+                  rdfs:label "Clarence Simpson" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#sims_addie
+:sims_addie rdf:type owl:NamedIndividual ,
+                     bc:Character ;
+            bc:acquaintance :madame_isis ;
+            bc:occupation "housewife" ;
+            sche:description "36, client of Madame Isis" ;
+            rdfs:label "Addie Sims" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#sinclair_emma
+:sinclair_emma rdf:type owl:NamedIndividual ,
+                        bc:Character ;
+               bc:friend :gonzalez_esteban ;
+               bc:occupation "wealthy widow, participant of fossil-hunting expeditions from the American West to the Gobi Desert" ;
+               sche:description "Aunt of Vivian Sinclair" ;
+               rdfs:label "Emma Sinclair Lowell" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#sinclair_vivian
+:sinclair_vivian rdf:type owl:NamedIndividual ,
+                          :Investigator ;
+                 :generalAbility1Dice :athletics ,
+                                      :cool ,
+                                      :disguise ,
+                                      :driving ,
+                                      :filch ,
+                                      :first_aid ,
+                                      :preparedness ,
+                                      :shadowing ,
+                                      :stealth ;
+                 :generalAbility2Dice :fighting ,
+                                      :fleeing ,
+                                      :sense_trouble ,
+                                      :stability ;
+                 :investigativeAbility :accounting ,
+                                       :assess_honesty ,
+                                       :bargain ,
+                                       :bureaucracy ,
+                                       :cryptography ,
+                                       :evidence_collection ,
+                                       :flattery ,
+                                       :history ,
+                                       :inspiration ,
+                                       :locksmith ,
+                                       :oral_history ,
+                                       :photography ,
+                                       :reassurance ,
+                                       :research ,
+                                       :streetwise ;
+                 :source :abrams_astelle ,
+                         :gonzalez_esteban ,
+                         :oconnor_joseph ,
+                         :reynolds_louisa ,
+                         :rice_annette ;
+                 :startingProblem :anything_for_story ,
+                                  :hand_to_mouth ,
+                                  :hot_tempered ,
+                                  :sucker_for_pretty_face ;
+                 bc:acquaintance :evans_catherine ;
+                 bc:exLover :ames_lawrence ;
+                 bc:family :reynolds_louisa ,
+                           :sinclair_emma ;
+                 bc:motive :lost_love ;
+                 bc:occupation "Investigative Journalist" ;
+                 rdfs:label "Vivian Sinclair" .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#smashed_headlight
 :smashed_headlight rdf:type owl:NamedIndividual ,
                             :NonMythosProblem ;
@@ -4711,7 +5192,8 @@ Speelmans’ English is lightly accented with German.""" ;
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#spend_edge_for_push
-:spend_edge_for_push rdf:type owl:NamedIndividual ;
+:spend_edge_for_push rdf:type owl:NamedIndividual ,
+                              bc:Gamerule ;
                      rdfs:label "Spend edge for a push ability" .
 
 
@@ -4816,6 +5298,14 @@ If you’re still holding this at the end of the story, you die of internal blee
          rdfs:label "Stealth general ability" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#story_about_modern_methods_at_asylums
+:story_about_modern_methods_at_asylums rdf:type owl:NamedIndividual ,
+                                                bc:Event ;
+                                       bc:participant :reynolds_louisa ,
+                                                      :sinclair_vivian ;
+                                       rdfs:label "Story about modern methods at asylums" .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#strain_your_ticker
 :strain_your_ticker rdf:type owl:NamedIndividual ,
                              :NonMythosProblem ;
@@ -4872,6 +5362,24 @@ If still in your hand at end of case, you suffer a heart attack.""" ;
                   :outcomeSetback "Suddenly, as if contacted by a mind from vanished aeons, you find yourself able to read the symbols. The records of an ancient civilization capable of casting itself forwards and backwards in time, they detail a history that contravenes science’s pathetic attempts to comprehend the past. Earth is older than anyone admits, and over the course of immeasurable time it was inhabited by various races of intelligent beings who rose, struggled, and were then expunged. The ones who wrote these hieroglyphs were conical, clawed invertebrates who lived once and will live again. But before that happens, monstrous gods will ravage the Earth. Against this vast backdrop of cosmic meaninglessness, the problems of little humanity don’t amount to a hill of beans." .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#sucker_for_pretty_face
+:sucker_for_pretty_face rdf:type owl:NamedIndividual ,
+                                 :ContinuityCard ,
+                                 :NonMythosProblem ;
+                        sche:description "You change lovers as frequently as clothes. Of course you try not to sleep with your story’s subjects, but sometimes it’s the best way to get new information, right?" ;
+                        rdfs:label "Sucker for a Pretty Face" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#suicide_of_preston
+:suicide_of_preston rdf:type owl:NamedIndividual ,
+                             bc:Event ;
+                    bc:consequence :profit_and_saving_america ;
+                    bc:location :fullers_electrical_repair ;
+                    bc:participant :fuller_howard ;
+                    bc:resource :sympathetic_resonator ;
+                    rdfs:label "Suicide of George Preston" .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#suspicious_investigator
 :suspicious_investigator rdf:type owl:NamedIndividual ,
                                   bc:Motive ;
@@ -4889,6 +5397,12 @@ If still in your hand at end of case, you suffer a heart attack.""" ;
 He’ll have to catch up with this guy later.
 Any casino functionary identifies him as Phil Block, Whitey’s bookkeeper.""" ;
                               rdfs:label "Suspicious visitor of Whitey" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#sympathetic_resonator
+:sympathetic_resonator rdf:type owl:NamedIndividual ,
+                                bc:Resource ;
+                       rdfs:label "Sympathetic resonator" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#taking_time
@@ -5028,6 +5542,14 @@ Any casino functionary identifies him as Phil Block, Whitey’s bookkeeper.""" ;
            rdfs:label "Tidied Up" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#time_at_hunter_college
+:time_at_hunter_college rdf:type owl:NamedIndividual ,
+                                 bc:Event ;
+                        bc:participant :rice_annette ,
+                                       :sinclair_vivian ;
+                        rdfs:label "Time at Hunter College" .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#top_of_the_system
 :top_of_the_system rdf:type owl:NamedIndividual ,
                             :Scene ;
@@ -5091,6 +5613,18 @@ Dex’s initial encounter with Marshall gets off on the wrong foot. Marshall acc
                         rdfs:label "Typewriter alley scene" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#unfortunate_experiment
+:unfortunate_experiment rdf:type owl:NamedIndividual ,
+                                 bc:Event ;
+                        bc:include :death_of_myron_fink ,
+                                   :preston_tests_his_device ,
+                                   :suicide_of_preston ;
+                        bc:location :new_york ;
+                        bc:participant :preston_george ;
+                        bc:date "1937-05-11" ;
+                        rdfs:label "Unfortunate experiment" .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#upper_hand_at_hillyers
 :upper_hand_at_hillyers rdf:type owl:NamedIndividual ,
                                  :Edge ;
@@ -5099,6 +5633,13 @@ Dex’s initial encounter with Marshall gets off on the wrong foot. Marshall acc
                         bc:option :extra_dice_any_ability ,
                                   :spend_edge_for_push ;
                         rdfs:label "Upper Hand at A. M. Hillyer’s" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#use_machine_for_connection_with_spirits
+:use_machine_for_connection_with_spirits rdf:type owl:NamedIndividual ,
+                                                  bc:Motive ;
+                                         bc:target :sympathetic_resonator ;
+                                         rdfs:label "Use machine for connection with spirits" .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/gumshoe/cthulhu_confidential/PELGOC01.ttl#vice_hound
@@ -5265,8 +5806,8 @@ Bar owner Shep Barwyn hired him to investigate the background of a would-be inve
                            bc:Character ;
                   bc:acquaintance :deakin_margaret ,
                                   :deakin_roscoe ;
+                  bc:boss :mcafee_guy ;
                   bc:foe :deakin_margaret ;
-                  bc:leader :mcafee_guy ;
                   bc:lover :deakin_helen ;
                   bc:occupation "casino owner" ;
                   sche:description "53, florid-faced, ham-fisted. Casino owner and mid-level rackets figure who pays his tribute money to Guy McAfee. Kept Helen Deakin as a mistress, using her father’s the gambling debts as a point of leverage over her." ;

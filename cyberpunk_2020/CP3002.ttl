@@ -1,0 +1,2702 @@
+@prefix : <https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sche: <http://schema.org/> .
+@base <https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#> .
+
+<https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://schema.org/description
+sche:description rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#action
+:action rdf:type owl:ObjectProperty ;
+        rdfs:domain :Act ;
+        rdfs:range :Action .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#actor
+:actor rdf:type owl:ObjectProperty ;
+       rdfs:domain :Act ;
+       rdfs:range :Actor .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#after
+:after rdf:type owl:ObjectProperty ;
+       rdfs:domain :Act ;
+       rdfs:range :Act .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#career_skill
+:career_skill rdf:type owl:ObjectProperty ;
+              rdfs:domain :Role ;
+              rdfs:range :Skill .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#includes
+:includes rdf:type owl:ObjectProperty .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#input
+:input rdf:type owl:ObjectProperty ;
+       rdfs:domain :Act ;
+       owl:propertyChainAxiom ( :after
+                                :result
+                              ) .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#model
+:model rdf:type owl:ObjectProperty .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#option
+:option rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf :after ;
+        sche:description "xor condition by default" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#resource
+:resource rdf:type owl:ObjectProperty ;
+          rdfs:domain :Act ;
+          sche:description "increase or decrease volume of resource" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#result
+:result rdf:type owl:ObjectProperty ;
+        rdfs:domain :Act .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#specialAbility
+:specialAbility rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :career_skill ;
+                rdfs:domain :Role ;
+                rdfs:range :SpecialAbility .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#statistic
+:statistic rdf:type owl:ObjectProperty ;
+           rdfs:domain :Skill ;
+           rdfs:range :Statistic .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#subAct
+:subAct rdf:type owl:ObjectProperty ;
+        rdfs:domain :Act ;
+        rdfs:range :Act .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#accuracy
+:accuracy rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Weapon ;
+          rdfs:range xsd:integer .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#armorCover
+:armorCover rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Armor ;
+            rdfs:range xsd:string .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#availability
+:availability rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Weapon ;
+              rdfs:range xsd:integer ;
+              sche:description """
+{
+    1: excellent ;
+    2: common ;
+    3: poor ;
+    4: rare ;
+}
+              """ .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#concealability
+:concealability rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Weapon ;
+                rdfs:range xsd:integer ;
+                sche:description """
+{
+    1: pocket, pants leg, sleeve ;
+    2: jacket, coat, shoulder rig ;
+    3: long coat ;
+    4: can't be hidden ;
+}""" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#condition
+:condition rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Act .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#cost
+:cost rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Equipment ;
+      rdfs:range xsd:integer .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#damage
+:damage rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Weapon ;
+        rdfs:range xsd:string .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#difficulty_modifier_of_skill
+:difficulty_modifier_of_skill rdf:type owl:DatatypeProperty ;
+                              rdfs:domain :Skill ;
+                              rdfs:range xsd:integer ;
+                              sche:description "1 by default" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#encumberanceValue
+:encumberanceValue rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Armor ;
+                   rdfs:range xsd:integer .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#method
+:method rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Act ;
+        rdfs:range xsd:string .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#range
+:range rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Weapon ;
+       rdfs:range xsd:integer ;
+       sche:description "in meters" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#rate_of_fire
+:rate_of_fire rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Weapon ;
+              rdfs:range xsd:integer .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#reliability
+:reliability rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Weapon ;
+             rdfs:range xsd:integer ;
+             sche:description """
+{
+    1: very reliable ;
+    2: standard ;
+    3: unreliable ;
+}
+             """ .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#shots
+:shots rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Weapon ;
+       rdfs:range xsd:integer .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#stoppingPower
+:stoppingPower rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Armor ;
+               rdfs:range xsd:integer .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#Act
+:Act rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#Action
+:Action rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#Actor
+:Actor rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#Armor
+:Armor rdf:type owl:Class ;
+       rdfs:subClassOf :Equipment .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#Equipment
+:Equipment rdf:type owl:Class ;
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty :model ;
+                             owl:hasValue :equipment
+                           ] .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#ExoticWeapon
+:ExoticWeapon rdf:type owl:Class ;
+              rdfs:subClassOf :Weapon .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#HeavyWeapon
+:HeavyWeapon rdf:type owl:Class ;
+             rdfs:subClassOf :Weapon ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :rate_of_fire ;
+                               owl:hasValue 1
+                             ] .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#MartialArts
+:MartialArts rdf:type owl:Class ;
+             rdfs:subClassOf :Skill ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :statistic ;
+                               owl:hasValue :reflex
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty [ owl:inverseOf :career_skill
+                                              ] ;
+                               owl:hasValue :solo
+                             ] .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#MeleeWeapon
+:MeleeWeapon rdf:type owl:Class ;
+             rdfs:subClassOf :Weapon ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :reliability ;
+                               owl:hasValue 1
+                             ] .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#Pistol
+:Pistol rdf:type owl:Class ;
+        rdfs:subClassOf :Weapon ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :range ;
+                          owl:hasValue 50
+                        ] .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#Rifle
+:Rifle rdf:type owl:Class ;
+       rdfs:subClassOf :Weapon ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :concealability ;
+                         owl:hasValue 4
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :range ;
+                         owl:hasValue 400
+                       ] .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#Role
+:Role rdf:type owl:Class ;
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty :model ;
+                        owl:hasValue :role
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :specialAbility ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :SpecialAbility
+                      ] .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#Shotgun
+:Shotgun rdf:type owl:Class ;
+         rdfs:subClassOf :Weapon ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :concealability ;
+                           owl:hasValue 4
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :damage ;
+                           owl:hasValue "4d6 (00)"
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :range ;
+                           owl:hasValue 50
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :reliability ;
+                           owl:hasValue 2
+                         ] .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#Skill
+:Skill rdf:type owl:Class ;
+       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                         owl:onProperty :model ;
+                         owl:hasValue :skills
+                       ] .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#SpecialAbility
+:SpecialAbility rdf:type owl:Class ;
+                rdfs:subClassOf :Skill .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#Statistic
+:Statistic rdf:type owl:Class ;
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty :model ;
+                             owl:hasValue :stats
+                           ] .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#Submachinegun
+:Submachinegun rdf:type owl:Class ;
+               rdfs:subClassOf :Weapon .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#Weapon
+:Weapon rdf:type owl:Class ;
+        rdfs:subClassOf :Equipment ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :model ;
+                          owl:hasValue :weapon
+                        ] .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#accounting
+:accounting rdf:type owl:NamedIndividual ;
+            :statistic :intelligence .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#adventure
+:adventure rdf:type owl:NamedIndividual ;
+           sche:description "Concepts: style over substance, attitude is everything, live on the edge." .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#aero_tech
+:aero_tech rdf:type owl:NamedIndividual ;
+           :statistic :technical_ability ;
+           :difficulty_modifier_of_skill 2 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#aikido
+:aikido rdf:type owl:NamedIndividual ,
+                 :MartialArts ;
+        :difficulty_modifier_of_skill 3 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#akr_20_medium_assault
+:akr_20_medium_assault rdf:type owl:NamedIndividual ,
+                                :Rifle ;
+                       :accuracy 0 ;
+                       :availability 2 ;
+                       :cost 500 ;
+                       :damage "5d6 (5.56 mm)" ;
+                       :rate_of_fire 30 ;
+                       :reliability 2 ;
+                       :shots 30 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#anthropology
+:anthropology rdf:type owl:NamedIndividual ;
+              :statistic :intelligence .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#arasaka_minami_10
+:arasaka_minami_10 rdf:type owl:NamedIndividual ,
+                            :Submachinegun ;
+                   :accuracy 0 ;
+                   :availability 1 ;
+                   :concealability 2 ;
+                   :cost 500 ;
+                   :damage "2d6+3 (10 mm)" ;
+                   :range 200 ;
+                   :rate_of_fire 20 ;
+                   :reliability 1 ;
+                   :shots 40 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#arasaka_rapid_assault_12
+:arasaka_rapid_assault_12 rdf:type owl:NamedIndividual ,
+                                   :Shotgun ;
+                          :accuracy -1 ;
+                          :availability 2 ;
+                          :cost 900 ;
+                          :rate_of_fire 10 ;
+                          :shots 20 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#archery
+:archery rdf:type owl:NamedIndividual ;
+         :statistic :reflex .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#armalite_44
+:armalite_44 rdf:type owl:NamedIndividual ,
+                      :Pistol ;
+             :accuracy 0 ;
+             :availability 1 ;
+             :concealability 2 ;
+             :cost 450 ;
+             :damage "4d6+1 (12 mm)" ;
+             :rate_of_fire 1 ;
+             :reliability 2 ;
+             :shots 8 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#athletics
+:athletics rdf:type owl:NamedIndividual ;
+           :statistic :reflex .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#attack
+:attack rdf:type owl:NamedIndividual ;
+        :action :rolled ;
+        :actor :master ,
+               :player ;
+        :input :facedown_result ;
+        :result :attack_result ;
+        :method "(-3 if failed facedown)" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#attack_result
+:attack_result rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#attractiveness
+:attractiveness rdf:type owl:NamedIndividual ,
+                         :Statistic ;
+                sche:description "how good-looking you are" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#authority
+:authority rdf:type owl:NamedIndividual ;
+           :statistic :cool ;
+           sche:description "your position as a lawman" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#av_tech
+:av_tech rdf:type owl:NamedIndividual ;
+         :statistic :technical_ability ;
+         :difficulty_modifier_of_skill 3 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#avante_p1135_needlegun
+:avante_p1135_needlegun rdf:type owl:NamedIndividual ,
+                                 :ExoticWeapon ,
+                                 :Pistol ;
+                        :accuracy 0 ;
+                        :availability 3 ;
+                        :concealability 1 ;
+                        :cost 200 ;
+                        :damage "drugs" ;
+                        :range 40 ;
+                        :rate_of_fire 2 ;
+                        :reliability 2 ;
+                        :shots 15 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#awareness
+:awareness rdf:type owl:NamedIndividual ;
+           :statistic :intelligence .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#axe
+:axe rdf:type owl:NamedIndividual ,
+              :MeleeWeapon ;
+     :accuracy -1 ;
+     :availability 2 ;
+     :concealability 4 ;
+     :cost 20 ;
+     :damage "2d6+3" ;
+     :range 1 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#barrett_arasaka_light_20mm
+:barrett_arasaka_light_20mm rdf:type owl:NamedIndividual ,
+                                     :HeavyWeapon ;
+                            :accuracy 0 ;
+                            :availability 4 ;
+                            :concealability 4 ;
+                            :cost 2000 ;
+                            :damage "4d10AP (20/9mm)" ;
+                            :range 450 ;
+                            :reliability 1 ;
+                            :shots 10 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#basic_tech
+:basic_tech rdf:type owl:NamedIndividual ;
+            :statistic :technical_ability ;
+            :difficulty_modifier_of_skill 2 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#biology
+:biology rdf:type owl:NamedIndividual ;
+         :statistic :intelligence .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#body_type
+:body_type rdf:type owl:NamedIndividual ,
+                    :Statistic ;
+           sche:description "strength + endurance + constitution" ,
+                            "{very weak: 2; weak: 3-4; average: 5-7; strong: 8-9; very strong: 10}" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#botany
+:botany rdf:type owl:NamedIndividual ;
+        :statistic :intelligence .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#boxing
+:boxing rdf:type owl:NamedIndividual ,
+                 :MartialArts .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#brass_knuckles
+:brass_knuckles rdf:type owl:NamedIndividual ,
+                         :MeleeWeapon ;
+                :accuracy 0 ;
+                :availability 2 ;
+                :concealability 1 ;
+                :cost 10 ;
+                :damage "1d6+2" ;
+                :range 1 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#brawling
+:brawling rdf:type owl:NamedIndividual ;
+          :statistic :reflex .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#budget_arms_auto_3
+:budget_arms_auto_3 rdf:type owl:NamedIndividual ,
+                             :Pistol ;
+                    :accuracy -1 ;
+                    :availability 1 ;
+                    :concealability 2 ;
+                    :cost 350 ;
+                    :damage "3d6 (11 mm)" ;
+                    :rate_of_fire 2 ;
+                    :reliability 3 ;
+                    :shots 8 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#budget_arms_c_13
+:budget_arms_c_13 rdf:type owl:NamedIndividual ,
+                           :Pistol ;
+                  :accuracy -1 ;
+                  :availability 1 ;
+                  :concealability 1 ;
+                  :cost 75 ;
+                  :damage "1d6 (5 mm)" ;
+                  :rate_of_fire 2 ;
+                  :reliability 2 ;
+                  :shots 8 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#c6_plastic_explosive
+:c6_plastic_explosive rdf:type owl:NamedIndividual ,
+                               :HeavyWeapon ;
+                      :accuracy 0 ;
+                      :availability 3 ;
+                      :concealability 1 ;
+                      :cost 100 ;
+                      :damage "8d10 per kg" ;
+                      :reliability 1 ;
+                      :shots 1 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#capoeria
+:capoeria rdf:type owl:NamedIndividual ,
+                   :MartialArts ;
+          :difficulty_modifier_of_skill 3 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#chainsaw
+:chainsaw rdf:type owl:NamedIndividual ,
+                   :MeleeWeapon ;
+          :accuracy -3 ;
+          :availability 2 ;
+          :concealability 4 ;
+          :cost 80 ;
+          :damage "4d6" ;
+          :range 2 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#characters
+:characters rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#charismatic_leadership
+:charismatic_leadership rdf:type owl:NamedIndividual ;
+                        :statistic :cool ;
+                        sche:description "crowd volume = 200 * (level ^ 2)" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#chemistry
+:chemistry rdf:type owl:NamedIndividual ;
+           :statistic :intelligence .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#choi_li_fut
+:choi_li_fut rdf:type owl:NamedIndividual ,
+                      :MartialArts ;
+             :difficulty_modifier_of_skill 3 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#cloth
+:cloth rdf:type owl:NamedIndividual ,
+                :Armor ;
+       :armorCover "arms, torso, possibly legs" ;
+       :encumberanceValue 0 ;
+       :stoppingPower 0 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#club
+:club rdf:type owl:NamedIndividual ,
+               :MeleeWeapon ;
+      :accuracy 0 ;
+      :availability 2 ;
+      :concealability 3 ;
+      :damage "1d6" ;
+      :range 1 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#colt_amt_model_2000
+:colt_amt_model_2000 rdf:type owl:NamedIndividual ,
+                              :Pistol ;
+                     :accuracy 0 ;
+                     :availability 2 ;
+                     :concealability 2 ;
+                     :cost 450 ;
+                     :damage "4d6+1 (12 mm)" ;
+                     :rate_of_fire 1 ;
+                     :reliability 1 ;
+                     :shots 8 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#combat_sense
+:combat_sense rdf:type owl:NamedIndividual ;
+              sche:description "to perceive danger, notice traps" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#composition
+:composition rdf:type owl:NamedIndividual ;
+             :statistic :intelligence .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#cool
+:cool rdf:type owl:NamedIndividual ,
+               :Statistic ;
+      sche:description "stands up to stress, fear and pain" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#cop
+:cop rdf:type owl:NamedIndividual ,
+              :Role ;
+     :career_skill :athletics ,
+                   :awareness ,
+                   :brawling ,
+                   :education ,
+                   :handgun ,
+                   :human_perception ,
+                   :interrogation ,
+                   :melee ,
+                   :streetwise ;
+     :specialAbility :authority .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#corporate
+:corporate rdf:type owl:NamedIndividual ,
+                    :Role ;
+           :career_skill :awareness ,
+                         :education ,
+                         :human_perception ,
+                         :library_search ,
+                         :personal_grooming ,
+                         :persuasion ,
+                         :social ,
+                         :stock_market ,
+                         :wardrobe_and_style ;
+           :specialAbility :corporate_resources .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#corporate_resources
+:corporate_resources rdf:type owl:NamedIndividual ;
+                     :statistic :intelligence ;
+                     sche:description "corporate resources" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#created
+:created rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#credibility
+:credibility rdf:type owl:NamedIndividual ;
+             :statistic :intelligence ;
+             sche:description "people believe what you are saying while in your on-air persona" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#cryotank_operation
+:cryotank_operation rdf:type owl:NamedIndividual ;
+                    :statistic :technical_ability .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#cyber_tech
+:cyber_tech rdf:type owl:NamedIndividual ;
+            :statistic :technical_ability ;
+            :difficulty_modifier_of_skill 2 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#cyberdeck_design
+:cyberdeck_design rdf:type owl:NamedIndividual ;
+                  :statistic :technical_ability ;
+                  :difficulty_modifier_of_skill 2 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#cyberware
+:cyberware rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#dai_lung_cybermag_15
+:dai_lung_cybermag_15 rdf:type owl:NamedIndividual ,
+                               :Pistol ;
+                      :accuracy -1 ;
+                      :availability 2 ;
+                      :concealability 1 ;
+                      :cost 50 ;
+                      :damage "1d6+1 (6 mm)" ;
+                      :rate_of_fire 2 ;
+                      :reliability 3 ;
+                      :shots 10 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#dai_lung_streetmaster
+:dai_lung_streetmaster rdf:type owl:NamedIndividual ,
+                                :Pistol ;
+                       :accuracy 0 ;
+                       :availability 1 ;
+                       :concealability 2 ;
+                       :cost 250 ;
+                       :damage "2d6+3 (10 mm)" ;
+                       :rate_of_fire 2 ;
+                       :reliability 3 ;
+                       :shots 12 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#dance
+:dance rdf:type owl:NamedIndividual ;
+       :statistic :reflex .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#defending_character
+:defending_character rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#demolitions
+:demolitions rdf:type owl:NamedIndividual ;
+             :statistic :technical_ability ;
+             :difficulty_modifier_of_skill 2 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#diagnose
+:diagnose rdf:type owl:NamedIndividual ;
+          :statistic :intelligence .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#difficulty_of_task
+:difficulty_of_task rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#disguise
+:disguise rdf:type owl:NamedIndividual ;
+          :statistic :technical_ability .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#dodge
+:dodge rdf:type owl:NamedIndividual ;
+       :statistic :reflex .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#door_gunners_vest
+:door_gunners_vest rdf:type owl:NamedIndividual ,
+                            :Armor ;
+                   :armorCover "torso" ;
+                   :cost 250 ;
+                   :encumberanceValue 3 ;
+                   :stoppingPower 25 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#drive
+:drive rdf:type owl:NamedIndividual ;
+       :statistic :reflex .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#eagletech_stryker_x_bow
+:eagletech_stryker_x_bow rdf:type owl:NamedIndividual ,
+                                  :ExoticWeapon ;
+                         :accuracy -1 ;
+                         :availability 2 ;
+                         :concealability 4 ;
+                         :cost 220 ;
+                         :damage "3d6+3" ;
+                         :range 50 ;
+                         :rate_of_fire 1 ;
+                         :reliability 1 ;
+                         :shots 12 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#eagletech_tomcat_c_bow
+:eagletech_tomcat_c_bow rdf:type owl:NamedIndividual ,
+                                 :ExoticWeapon ;
+                        :accuracy 0 ;
+                        :availability 2 ;
+                        :concealability 4 ;
+                        :cost 150 ;
+                        :damage "4d6" ;
+                        :range 150 ;
+                        :rate_of_fire 1 ;
+                        :reliability 1 ;
+                        :shots 12 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#education
+:education rdf:type owl:NamedIndividual ;
+           :statistic :intelligence .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#electrical_security
+:electrical_security rdf:type owl:NamedIndividual ;
+                     :statistic :technical_ability ;
+                     :difficulty_modifier_of_skill 2 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#electronics
+:electronics rdf:type owl:NamedIndividual ;
+             :statistic :technical_ability .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#empathy
+:empathy rdf:type owl:NamedIndividual ,
+                  :Statistic ;
+         sche:description "measure of state between human and cyber-machine" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#endurance
+:endurance rdf:type owl:NamedIndividual ;
+           :statistic :body_type ;
+           sche:description "long period without food, sleep and water" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#enertex_akm_power_squirt
+:enertex_akm_power_squirt rdf:type owl:NamedIndividual ,
+                                   :ExoticWeapon ,
+                                   :Pistol ;
+                          :accuracy -2 ;
+                          :availability 2 ;
+                          :concealability 2 ;
+                          :cost 15 ;
+                          :damage "drugs" ;
+                          :range 10 ;
+                          :rate_of_fire 1 ;
+                          :reliability 1 ;
+                          :shots 50 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#equipment
+:equipment rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#expert
+:expert rdf:type owl:NamedIndividual ;
+        :statistic :intelligence ;
+        sche:description "expert on one specific subject" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#facedown
+:facedown rdf:type owl:NamedIndividual ;
+          :action :rolled ;
+          :actor :master ,
+                 :player ;
+          :input :reputation ;
+          :result :facedown_result ;
+          :method "opposed roll of (1d10 + cool + reputation)" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#facedown_result
+:facedown_result rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#family
+:family rdf:type owl:NamedIndividual ;
+        :statistic :intelligence ;
+        sche:description "family volume = level * 2" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#fast_character_system
+:fast_character_system rdf:type owl:NamedIndividual ;
+                       :action :created ;
+                       :actor :master ;
+                       :result :npc ;
+                       :subAct :master_rolled_cyberware ,
+                               :master_rolled_equipment ,
+                               :master_rolled_stats ,
+                               :master_selected_career_skills ,
+                               :master_selected_pickup_skills ,
+                               :master_selected_role ;
+                       rdfs:label "Fast character system" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#fed_arms_tech_assault_2
+:fed_arms_tech_assault_2 rdf:type owl:NamedIndividual ,
+                                  :Submachinegun ;
+                         :accuracy 1 ;
+                         :availability 2 ;
+                         :concealability 2 ;
+                         :cost 400 ;
+                         :damage "1d6+1 (6 mm)" ;
+                         :range 150 ;
+                         :rate_of_fire 25 ;
+                         :reliability 2 ;
+                         :shots 50 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#federated_arms_x_22
+:federated_arms_x_22 rdf:type owl:NamedIndividual ,
+                              :Pistol ;
+                     :accuracy 0 ;
+                     :availability 1 ;
+                     :concealability 1 ;
+                     :cost 150 ;
+                     :damage "1d6+1 (6 mm)" ;
+                     :rate_of_fire 2 ;
+                     :reliability 2 ;
+                     :shots 10 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#federated_arms_x_9mm
+:federated_arms_x_9mm rdf:type owl:NamedIndividual ,
+                               :Pistol ;
+                      :accuracy 0 ;
+                      :availability 1 ;
+                      :concealability 2 ;
+                      :cost 300 ;
+                      :damage "2d6+1 (9 mm)" ;
+                      :rate_of_fire 2 ;
+                      :reliability 2 ;
+                      :shots 12 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#fencing
+:fencing rdf:type owl:NamedIndividual ;
+         :statistic :reflex .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#first_aid
+:first_aid rdf:type owl:NamedIndividual ;
+           :statistic :technical_ability .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#fixer
+:fixer rdf:type owl:NamedIndividual ,
+                :Role ;
+       :career_skill :awareness ,
+                     :brawling ,
+                     :forgery ,
+                     :handgun ,
+                     :intimidate ,
+                     :melee ,
+                     :persuasion ,
+                     :pick_lock ,
+                     :pick_pocket ;
+       :specialAbility :streetdeal .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#flack_pants
+:flack_pants rdf:type owl:NamedIndividual ,
+                      :Armor ;
+             :armorCover "legs" ;
+             :cost 200 ;
+             :encumberanceValue 1 ;
+             :stoppingPower 20 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#flack_vest
+:flack_vest rdf:type owl:NamedIndividual ,
+                     :Armor ;
+            :armorCover "torso" ;
+            :cost 200 ;
+            :encumberanceValue 1 ;
+            :stoppingPower 20 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#fn_ral_heavy_assault_rifle
+:fn_ral_heavy_assault_rifle rdf:type owl:NamedIndividual ,
+                                     :Rifle ;
+                            :accuracy -1 ;
+                            :availability 2 ;
+                            :cost 600 ;
+                            :damage "6d6+2 (7.62 mm)" ;
+                            :rate_of_fire 30 ;
+                            :reliability 1 ;
+                            :shots 30 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#forgery
+:forgery rdf:type owl:NamedIndividual ;
+         :statistic :technical_ability .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#fumble
+:fumble rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#gained_improvement_points
+:gained_improvement_points rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#gamble
+:gamble rdf:type owl:NamedIndividual ;
+        :statistic :intelligence .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#geology
+:geology rdf:type owl:NamedIndividual ;
+         :statistic :intelligence .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#grenade
+:grenade rdf:type owl:NamedIndividual ,
+                  :HeavyWeapon ;
+         :accuracy 0 ;
+         :availability 3 ;
+         :concealability 1 ;
+         :cost 30 ;
+         :damage "varies by type" ;
+         :reliability 1 ;
+         :shots 1 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#gyro_tech
+:gyro_tech rdf:type owl:NamedIndividual ;
+           :statistic :technical_ability ;
+           :difficulty_modifier_of_skill 3 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#handgun
+:handgun rdf:type owl:NamedIndividual ;
+         :statistic :reflex .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#heavy_armor_jacket
+:heavy_armor_jacket rdf:type owl:NamedIndividual ,
+                             :Armor ;
+                    :armorCover "torso, arms" ;
+                    :cost 250 ;
+                    :encumberanceValue 2 ;
+                    :stoppingPower 20 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#heavy_leather
+:heavy_leather rdf:type owl:NamedIndividual ,
+                        :Armor ;
+               :armorCover "arms, torso, possibly legs" ;
+               :cost 50 ;
+               :encumberanceValue 0 ;
+               :stoppingPower 4 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#heavy_weapons
+:heavy_weapons rdf:type owl:NamedIndividual ;
+               :statistic :reflex .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#hide
+:hide rdf:type owl:NamedIndividual ;
+      :statistic :intelligence .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#history
+:history rdf:type owl:NamedIndividual ;
+         :statistic :intelligence .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#hk_mp_2013
+:hk_mp_2013 rdf:type owl:NamedIndividual ,
+                     :Submachinegun ;
+            :accuracy 1 ;
+            :availability 2 ;
+            :concealability 2 ;
+            :cost 450 ;
+            :damage "2d6+3 (10 mm)" ;
+            :range 150 ;
+            :rate_of_fire 32 ;
+            :reliability 2 ;
+            :shots 35 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#hk_mpk_11
+:hk_mpk_11 rdf:type owl:NamedIndividual ,
+                    :Submachinegun ;
+           :accuracy 0 ;
+           :availability 2 ;
+           :concealability 3 ;
+           :cost 700 ;
+           :damage "4d6+1 (12 mm)" ;
+           :range 200 ;
+           :rate_of_fire 20 ;
+           :reliability 2 ;
+           :shots 30 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#hk_mpk_9
+:hk_mpk_9 rdf:type owl:NamedIndividual ,
+                   :Submachinegun ;
+          :accuracy 1 ;
+          :availability 2 ;
+          :concealability 2 ;
+          :cost 520 ;
+          :damage "2d6+1 (9 mm)" ;
+          :range 200 ;
+          :rate_of_fire 25 ;
+          :reliability 2 ;
+          :shots 35 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#human_perception
+:human_perception rdf:type owl:NamedIndividual ;
+                  :statistic :empathy .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#humanity
+:humanity rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#improvement_points
+:improvement_points rdf:type owl:NamedIndividual ;
+                    sche:description "{skill: number of points}" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#ingram_mac_14
+:ingram_mac_14 rdf:type owl:NamedIndividual ,
+                        :Submachinegun ;
+               :accuracy -2 ;
+               :availability 1 ;
+               :concealability 3 ;
+               :cost 650 ;
+               :damage "4d6+1 (12 mm)" ;
+               :range 200 ;
+               :rate_of_fire 10 ;
+               :reliability 2 ;
+               :shots 20 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#intelligence
+:intelligence rdf:type owl:NamedIndividual ,
+                       :Statistic ;
+              sche:description "problem solving ability" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#interface
+:interface rdf:type owl:NamedIndividual ;
+           :statistic :intelligence ;
+           sche:description "operating Menu in the Net" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#interrogation
+:interrogation rdf:type owl:NamedIndividual ;
+               :statistic :cool ;
+               sche:description "drawing information from a subject" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#interview
+:interview rdf:type owl:NamedIndividual ;
+           :statistic :empathy .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#intimidate
+:intimidate rdf:type owl:NamedIndividual ;
+            :statistic :cool ;
+            sche:description "personality or physical coercion" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#judo
+:judo rdf:type owl:NamedIndividual ,
+               :MartialArts .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#jury_rig
+:jury_rig rdf:type owl:NamedIndividual ;
+          sche:description "temporal repair = (1d6 turns) * level" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#ka_f253_flamethrower
+:ka_f253_flamethrower rdf:type owl:NamedIndividual ,
+                               :HeavyWeapon ;
+                      :accuracy -2 ;
+                      :availability 4 ;
+                      :concealability 4 ;
+                      :cost 1500 ;
+                      :damage "2d10" ;
+                      :range 50 ;
+                      :reliability 2 ;
+                      :shots 10 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#kalishnikov_a_80_hvy_rifle
+:kalishnikov_a_80_hvy_rifle rdf:type owl:NamedIndividual ,
+                                     :Rifle ;
+                            :accuracy -1 ;
+                            :availability 1 ;
+                            :cost 550 ;
+                            :damage "6d6+2 (7.62 mm)" ;
+                            :rate_of_fire 25 ;
+                            :reliability 2 ;
+                            :shots 35 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#karate
+:karate rdf:type owl:NamedIndividual ,
+                 :MartialArts ;
+        :difficulty_modifier_of_skill 2 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#kendachi_monokatana
+:kendachi_monokatana rdf:type owl:NamedIndividual ,
+                              :MeleeWeapon ;
+                     :accuracy 1 ;
+                     :availability 4 ;
+                     :concealability 4 ;
+                     :cost 600 ;
+                     :damage "4d6" ;
+                     :range 1 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#kendachi_monoknife
+:kendachi_monoknife rdf:type owl:NamedIndividual ,
+                             :MeleeWeapon ;
+                    :accuracy 1 ;
+                    :availability 3 ;
+                    :concealability 1 ;
+                    :cost 200 ;
+                    :damage "2d6" ;
+                    :range 1 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#kevlar_tshirt
+:kevlar_tshirt rdf:type owl:NamedIndividual ,
+                        :Armor ;
+               :armorCover "torso" ;
+               :cost 90 ;
+               :encumberanceValue 0 ;
+               :stoppingPower 10 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#knife
+:knife rdf:type owl:NamedIndividual ,
+                :MeleeWeapon ;
+       :accuracy 0 ;
+       :availability 2 ;
+       :concealability 1 ;
+       :cost 1 ,
+             20 ;
+       :damage "1d6" ;
+       :range 1 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#know_language
+:know_language rdf:type owl:NamedIndividual ;
+               :statistic :intelligence .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#kung_fu
+:kung_fu rdf:type owl:NamedIndividual ,
+                  :MartialArts ;
+         :difficulty_modifier_of_skill 3 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#leadership
+:leadership rdf:type owl:NamedIndividual ;
+            :statistic :empathy .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#library_search
+:library_search rdf:type owl:NamedIndividual ;
+                :statistic :intelligence .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#lifepath
+:lifepath rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#light_armor_jacket
+:light_armor_jacket rdf:type owl:NamedIndividual ,
+                             :Armor ;
+                    :armorCover "arms, torso" ;
+                    :cost 150 ;
+                    :encumberanceValue 0 ;
+                    :stoppingPower 14 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#luck
+:luck rdf:type owl:NamedIndividual ,
+               :Statistic ;
+      sche:description "for improving die rolls" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#luck_pool
+:luck_pool rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#master
+:master rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#master_created_opposed_skill_check_compare
+:master_created_opposed_skill_check_compare rdf:type owl:NamedIndividual ;
+                                            :action :created ;
+                                            :actor :master ;
+                                            :after :master_selected_defending_character ,
+                                                   :player_rolled_fumble ,
+                                                   :player_rolled_skill ;
+                                            :result :opposed_skill_check_result ;
+                                            :method "(defender) if (((defender's skill roll >= opponent's skill roll) or (opponent's fumble)) and (opponent's fumble or not defender's fumble)) else (opponent)" ;
+                                            rdfs:label "Master compared skill rolls within opposed skill check" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#master_created_opposed_task
+:master_created_opposed_task rdf:type owl:NamedIndividual ;
+                             :action :created ;
+                             :actor :master ;
+                             :result :opposed_task ;
+                             :subAct :master_selected_defending_character ,
+                                     :master_selected_stat_for_task ;
+                             rdfs:label "Master created opposed task" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#master_created_skill_check_compare
+:master_created_skill_check_compare rdf:type owl:NamedIndividual ;
+                                    :action :created ;
+                                    :actor :master ;
+                                    :after :master_created_task ,
+                                           :player_rolled_fumble ,
+                                           :player_rolled_skill ;
+                                    :input :difficulty_of_task ;
+                                    :result :skill_check_result ;
+                                    :method "(skill roll >= difficulty of task) and (not fumble)" ;
+                                    rdfs:label "Master compared skill roll against difficulty of task" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#master_created_task
+:master_created_task rdf:type owl:NamedIndividual ;
+                     :action :created ;
+                     :actor :master ;
+                     :result :task ;
+                     :subAct :master_selected_difficulty_for_task ,
+                             :master_selected_stat_for_task ;
+                     rdfs:label "Master created task" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#master_rolled_cyberware
+:master_rolled_cyberware rdf:type owl:NamedIndividual ;
+                         :action :rolled ;
+                         :actor :master ;
+                         :after :master_selected_role ;
+                         :result :cyberware ;
+                         :method "(3 + 3 if solo) rolls of random table " ;
+                         rdfs:label "Master rolled cyberware for NPC" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#master_rolled_equipment
+:master_rolled_equipment rdf:type owl:NamedIndividual ;
+                         :action :rolled ;
+                         :actor :master ;
+                         :after :master_selected_role ;
+                         :result :equipment ;
+                         :method "(1d10 + (2 if nomad or cop) + (3 if solo)) for random table" ;
+                         rdfs:label "Master rolled equipment for NPC" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#master_rolled_pickup_skills_pool
+:master_rolled_pickup_skills_pool rdf:type owl:NamedIndividual ;
+                                  :action :rolled ;
+                                  :actor :master ;
+                                  :result :pickup_skills_pool ;
+                                  :method "2d10" ;
+                                  rdfs:label "Master rolled point pool of pickup skills" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#master_rolled_stats
+:master_rolled_stats rdf:type owl:NamedIndividual ;
+                     :action :rolled ;
+                     :actor :master ;
+                     :result :stats ;
+                     :method "2d6<11 for each stat" ;
+                     rdfs:label "Master rolled stats for NPC" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#master_selected_career_skills
+:master_selected_career_skills rdf:type owl:NamedIndividual ;
+                               :action :selected ;
+                               :actor :master ;
+                               :after :master_selected_role ;
+                               :result :skills ;
+                               :method "distribute 40 points by choice between career skills of role" ;
+                               rdfs:label "Master selected career skills for NPC" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#master_selected_defending_character
+:master_selected_defending_character rdf:type owl:NamedIndividual ;
+                                     :action :selected ;
+                                     :actor :master ;
+                                     :result :defending_character ;
+                                     rdfs:label "Master selected defending character" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#master_selected_difficulty_for_task
+:master_selected_difficulty_for_task rdf:type owl:NamedIndividual ;
+                                     :action :selected ;
+                                     :actor :master ;
+                                     :result :difficulty_of_task ;
+                                     :method "{easy: 10; average: 15; difficult: 20; very difficult: 25; nearly impossible: 30} + difficulty modifiers" ;
+                                     rdfs:label "Master selected difficulty of task" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#master_selected_pickup_skills
+:master_selected_pickup_skills rdf:type owl:NamedIndividual ;
+                               :action :selected ;
+                               :actor :master ;
+                               :after :master_rolled_pickup_skills_pool ;
+                               :result :skills ;
+                               :condition "(advanced NPC) and (total of distributed points < pool of pickup skills) and (number of pickup skills < 5)" ;
+                               rdfs:label "Master selected pickup skills for NPC" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#master_selected_point_bank_cinematic
+:master_selected_point_bank_cinematic rdf:type owl:NamedIndividual ;
+                                      :action :selected ;
+                                      :actor :master ;
+                                      :result :point_bank_for_stats ;
+                                      :method "{major hero: 80; major suporting char: 70; minor hero: 75; minor supporting char: 60; average: 50}" ;
+                                      rdfs:label "Master selected point bank for stats with cinematic method" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#master_selected_role
+:master_selected_role rdf:type owl:NamedIndividual ;
+                      :action :selected ;
+                      :actor :master ;
+                      :result :role ;
+                      rdfs:label "Master selected role for NPC" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#master_selected_stat_for_task
+:master_selected_stat_for_task rdf:type owl:NamedIndividual ;
+                               :action :selected ;
+                               :actor :master ;
+                               :result :stats ;
+                               rdfs:label "Master selected statistic for task" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#mathematics
+:mathematics rdf:type owl:NamedIndividual ;
+             :statistic :intelligence .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#med_tech
+:med_tech rdf:type owl:NamedIndividual ,
+                   :Role ;
+          :career_skill :awareness ,
+                        :basic_tech ,
+                        :cryotank_operation ,
+                        :diagnose ,
+                        :education ,
+                        :human_perception ,
+                        :library_search ,
+                        :pharmaceuticals ,
+                        :zoology ;
+          :specialAbility :medical_tech .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#media
+:media rdf:type owl:NamedIndividual ,
+                :Role ;
+       :career_skill :awareness ,
+                     :composition ,
+                     :education ,
+                     :human_perception ,
+                     :interview ,
+                     :persuasion ,
+                     :photo_film ,
+                     :social ,
+                     :streetwise ;
+       :specialAbility :credibility .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#median_armor_jacket
+:median_armor_jacket rdf:type owl:NamedIndividual ,
+                              :Armor ;
+                     :armorCover "arms, torso" ;
+                     :cost 200 ;
+                     :encumberanceValue 1 ;
+                     :stoppingPower 18 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#medical_tech
+:medical_tech rdf:type owl:NamedIndividual ;
+              sche:description "surgery and medical repair" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#melee
+:melee rdf:type owl:NamedIndividual ;
+       :statistic :reflex .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#metalgear
+:metalgear rdf:type owl:NamedIndividual ,
+                    :Armor ;
+           :armorCover "whole body" ;
+           :cost 600 ;
+           :encumberanceValue 2 ;
+           :stoppingPower 25 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#militech_arms_avenger
+:militech_arms_avenger rdf:type owl:NamedIndividual ,
+                                :Pistol ;
+                       :accuracy 0 ;
+                       :availability 1 ;
+                       :concealability 2 ;
+                       :cost 250 ;
+                       :damage "2d6+1 (9 mm)" ;
+                       :rate_of_fire 2 ;
+                       :reliability 1 ;
+                       :shots 10 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#militech_arms_rpg_a
+:militech_arms_rpg_a rdf:type owl:NamedIndividual ,
+                              :HeavyWeapon ;
+                     :accuracy -2 ;
+                     :availability 4 ;
+                     :concealability 4 ;
+                     :cost 1500 ;
+                     :damage "6d10" ;
+                     :range 750 ;
+                     :reliability 1 ;
+                     :shots 1 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#militech_elect_laser_cannon
+:militech_elect_laser_cannon rdf:type owl:NamedIndividual ,
+                                      :ExoticWeapon ,
+                                      :Rifle ;
+                             :accuracy 0 ;
+                             :availability 4 ;
+                             :concealability 4 ;
+                             :cost 8000 ;
+                             :damage "1-5d6" ;
+                             :range 200 ;
+                             :rate_of_fire 2 ;
+                             :reliability 3 ;
+                             :shots 10 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#militech_electronics_taser
+:militech_electronics_taser rdf:type owl:NamedIndividual ,
+                                     :ExoticWeapon ,
+                                     :Pistol ;
+                            :accuracy -1 ;
+                            :availability 2 ;
+                            :concealability 2 ;
+                            :cost 60 ;
+                            :damage "stun" ;
+                            :range 10 ;
+                            :rate_of_fire 1 ;
+                            :reliability 2 ;
+                            :shots 10 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#militech_ronin_light_assault
+:militech_ronin_light_assault rdf:type owl:NamedIndividual ,
+                                       :Rifle ;
+                              :accuracy 1 ;
+                              :availability 2 ;
+                              :cost 450 ;
+                              :damage "5d6 (5.56 mm)" ;
+                              :rate_of_fire 30 ;
+                              :reliability 1 ;
+                              :shots 35 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#mine
+:mine rdf:type owl:NamedIndividual ,
+               :HeavyWeapon ;
+      :accuracy 0 ;
+      :availability 3 ;
+      :concealability 2 ;
+      :cost 350 ;
+      :damage "4d10" ;
+      :reliability 1 ;
+      :shots 1 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#money
+:money rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#motorcycle
+:motorcycle rdf:type owl:NamedIndividual ;
+            :statistic :reflex .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#movement_allowance
+:movement_allowance rdf:type owl:NamedIndividual ,
+                             :Statistic ;
+                    sche:description "run and leap" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#naginata
+:naginata rdf:type owl:NamedIndividual ,
+                   :MeleeWeapon ;
+          :accuracy 0 ;
+          :availability 3 ;
+          :concealability 4 ;
+          :cost 100 ;
+          :damage "3d6" ;
+          :range 2 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#natural_die_roll
+:natural_die_roll rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#nelspot_wombat
+:nelspot_wombat rdf:type owl:NamedIndividual ,
+                         :ExoticWeapon ,
+                         :Pistol ;
+                :accuracy -1 ;
+                :availability 2 ;
+                :concealability 2 ;
+                :cost 200 ;
+                :damage "drugs" ;
+                :range 40 ;
+                :rate_of_fire 2 ;
+                :reliability 3 ;
+                :shots 20 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#netrunner
+:netrunner rdf:type owl:NamedIndividual ,
+                    :Role ;
+           :career_skill :awareness ,
+                         :basic_tech ,
+                         :composition ,
+                         :cyber_tech ,
+                         :cyberdeck_design ,
+                         :education ,
+                         :electronics ,
+                         :programming ,
+                         :system_knowledge ;
+           :specialAbility :interface .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#nomad
+:nomad rdf:type owl:NamedIndividual ,
+                :Role ;
+       :career_skill :athletics ,
+                     :awareness ,
+                     :basic_tech ,
+                     :brawling ,
+                     :drive ,
+                     :endurance ,
+                     :melee ,
+                     :rifle_skill ,
+                     :wilderness_survival ;
+       :specialAbility :family .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#npc
+:npc rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#nunchaku
+:nunchaku rdf:type owl:NamedIndividual ,
+                   :MeleeWeapon ;
+          :accuracy 0 ;
+          :availability 2 ;
+          :concealability 3 ;
+          :cost 15 ;
+          :damage "3d6" ;
+          :range 1 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#nylon_helmet
+:nylon_helmet rdf:type owl:NamedIndividual ,
+                       :Armor ;
+              :armorCover "head" ;
+              :cost 100 ;
+              :encumberanceValue 0 ;
+              :stoppingPower 20 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#operate_heavy_machinery
+:operate_heavy_machinery rdf:type owl:NamedIndividual ;
+                         :statistic :reflex .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#opposed_skill_check
+:opposed_skill_check rdf:type owl:NamedIndividual ;
+                     :action :created ;
+                     :actor :party ;
+                     :result :opposed_skill_check_result ;
+                     :subAct :master_created_opposed_skill_check_compare ,
+                             :master_created_opposed_task ,
+                             :player_rolled_skill ;
+                     rdfs:label "Opposed skill check" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#opposed_skill_check_result
+:opposed_skill_check_result rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#opposed_task
+:opposed_task rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#oratory
+:oratory rdf:type owl:NamedIndividual ;
+         :statistic :cool ;
+         sche:description "public speaking" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#paint
+:paint rdf:type owl:NamedIndividual ;
+       :statistic :technical_ability .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#party
+:party rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#party_created_characters
+:party_created_characters rdf:type owl:NamedIndividual ;
+                          :action :created ;
+                          :actor :party ;
+                          :result :characters ;
+                          :subAct :fast_character_system ,
+                                  :player_created_pc ;
+                          :method "PCs + NPCs" ;
+                          rdfs:label "Party created characters" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#party_played_adventure
+:party_played_adventure rdf:type owl:NamedIndividual ;
+                        :action :created ;
+                        :actor :party ;
+                        :after :party_created_characters ;
+                        :result :adventure ;
+                        :subAct :attack ,
+                                :facedown ,
+                                :opposed_skill_check ,
+                                :player_bought_equipment ,
+                                :player_created_luck_pool ,
+                                :player_got_improvement_points ,
+                                :player_got_reputation ,
+                                :player_improved_skills ,
+                                :skill_check ;
+                        rdfs:label "Party played adventure" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#pc
+:pc rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#perform
+:perform rdf:type owl:NamedIndividual ;
+         :statistic :empathy .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#personal_grooming
+:personal_grooming rdf:type owl:NamedIndividual ;
+                   :statistic :attractiveness ;
+                   sche:description "knowing proper hair styling" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#persuasion
+:persuasion rdf:type owl:NamedIndividual ;
+            :statistic :empathy .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#pharmaceuticals
+:pharmaceuticals rdf:type owl:NamedIndividual ;
+                 :statistic :technical_ability ;
+                 :difficulty_modifier_of_skill 2 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#photo_film
+:photo_film rdf:type owl:NamedIndividual ;
+            :statistic :technical_ability .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#physics
+:physics rdf:type owl:NamedIndividual ;
+         :statistic :intelligence ;
+         sche:description "requires mathematics > 3" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#pick_lock
+:pick_lock rdf:type owl:NamedIndividual ;
+           :statistic :technical_ability .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#pick_pocket
+:pick_pocket rdf:type owl:NamedIndividual ;
+             :statistic :technical_ability .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#pickup_skills_pool
+:pickup_skills_pool rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#pilot_dirigible
+:pilot_dirigible rdf:type owl:NamedIndividual ;
+                 :statistic :reflex ;
+                 :difficulty_modifier_of_skill 2 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#pilot_fixed_wing
+:pilot_fixed_wing rdf:type owl:NamedIndividual ;
+                  :statistic :reflex ;
+                  :difficulty_modifier_of_skill 2 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#pilot_gyro
+:pilot_gyro rdf:type owl:NamedIndividual ;
+            :statistic :reflex ;
+            :difficulty_modifier_of_skill 3 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#pilot_vectored_thrust_vehicle
+:pilot_vectored_thrust_vehicle rdf:type owl:NamedIndividual ;
+                               :statistic :reflex ;
+                               :difficulty_modifier_of_skill 3 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#play_instrument
+:play_instrument rdf:type owl:NamedIndividual ;
+                 :statistic :technical_ability .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#player
+:player rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#player_bought_equipment
+:player_bought_equipment rdf:type owl:NamedIndividual ;
+                         :action :selected ;
+                         :actor :player ;
+                         :input :body_type ;
+                         :resource :money ;
+                         :result :equipment ;
+                         :condition "(encumbrance (kg) <= 10 * body type) or (deadlift <= 40 * body type)" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#player_created_initial_humanity_value
+:player_created_initial_humanity_value rdf:type owl:NamedIndividual ;
+                                       :action :created ;
+                                       :actor :player ;
+                                       :after :player_created_stats ;
+                                       :input :empathy ;
+                                       :result :humanity ;
+                                       :method "10 * empathy" ;
+                                       rdfs:label "Player calced initial value of humanity" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#player_created_luck_pool
+:player_created_luck_pool rdf:type owl:NamedIndividual ;
+                          :action :created ;
+                          :actor :player ;
+                          :input :luck ;
+                          :result :luck_pool ;
+                          :condition "at start of every session" ;
+                          :method "luck level" ;
+                          rdfs:label "Player created luck pool" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#player_created_pc
+:player_created_pc rdf:type owl:NamedIndividual ;
+                   :action :created ;
+                   :actor :player ;
+                   :result :pc ;
+                   :subAct :player_created_skill_sinergy ,
+                           :player_created_stats ,
+                           :player_rolled_lifepath ,
+                           :player_selected_career_skills ,
+                           :player_selected_pickup_skills ,
+                           :player_selected_role ,
+                           :player_selected_starting_equipment ,
+                           :starting_funds ;
+                   rdfs:label "Player created playable character" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#player_created_skill_sinergy
+:player_created_skill_sinergy rdf:type owl:NamedIndividual ;
+                              :action :created ;
+                              :actor :player ;
+                              :after :player_selected_career_skills ,
+                                     :player_selected_pickup_skills ;
+                              :result :skills ;
+                              :subAct :player_created_skill_sinergy_oratory_to_charismatic_leadership ,
+                                      :player_created_skill_sinergy_zoology_to_wilderness_survival .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#player_created_skill_sinergy_oratory_to_charismatic_leadership
+:player_created_skill_sinergy_oratory_to_charismatic_leadership rdf:type owl:NamedIndividual ;
+                                                                :action :created ;
+                                                                :actor :player ;
+                                                                :input :charismatic_leadership ,
+                                                                       :oratory ;
+                                                                :result :skills ;
+                                                                :condition "oratory > 5" ;
+                                                                :method "charismatic leadership += 1" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#player_created_skill_sinergy_zoology_to_wilderness_survival
+:player_created_skill_sinergy_zoology_to_wilderness_survival rdf:type owl:NamedIndividual ;
+                                                             :action :created ;
+                                                             :actor :player ;
+                                                             :input :wilderness_survival ,
+                                                                    :zoology ;
+                                                             :result :skills ;
+                                                             :condition "zoology > 7" ;
+                                                             :method "wilderness survival += 1" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#player_created_stats
+:player_created_stats rdf:type owl:NamedIndividual ;
+                      :action :created ;
+                      :actor :player ;
+                      :option :master_selected_point_bank_cinematic ,
+                              :player_rolled_point_bank_fast ,
+                              :player_rolled_point_bank_random ;
+                      :result :stats ;
+                      :condition "total points of stats <= point bank" ;
+                      rdfs:label "Player generated statistics points" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#player_got_improvement_points
+:player_got_improvement_points rdf:type owl:NamedIndividual ;
+                               :action :created ;
+                               :actor :player ;
+                               :input :skills ;
+                               :option :player_got_improvement_points_being_taught ,
+                                       :player_got_improvement_points_by_experience ,
+                                       :player_got_improvement_points_by_study ;
+                               :result :improvement_points ;
+                               :method "points to skill += (gained improvement points)" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#player_got_improvement_points_being_taught
+:player_got_improvement_points_being_taught rdf:type owl:NamedIndividual ;
+                                            :action :created ;
+                                            :actor :player ;
+                                            :input :characters ,
+                                                   :skills ,
+                                                   :teaching ;
+                                            :result :gained_improvement_points ;
+                                            :condition "skill level < avg(skill level of teacher; teaching skill level of teacher)" ;
+                                            :method "from +1 to +5 points per lesson" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#player_got_improvement_points_by_experience
+:player_got_improvement_points_by_experience rdf:type owl:NamedIndividual ;
+                                             :action :created ;
+                                             :actor :player ;
+                                             :after :skill_check ;
+                                             :input :skills ;
+                                             :result :gained_improvement_points ;
+                                             :method "from +1 to +9 points per session" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#player_got_improvement_points_by_study
+:player_got_improvement_points_by_study rdf:type owl:NamedIndividual ;
+                                        :action :created ;
+                                        :actor :player ;
+                                        :input :skills ;
+                                        :result :gained_improvement_points ;
+                                        :condition "skill level < 2" ;
+                                        :method "+1 point per day" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#player_got_reputation
+:player_got_reputation rdf:type owl:NamedIndividual ;
+                       :action :created ;
+                       :actor :player ;
+                       :result :reputation ;
+                       :method "from -10 (cowardice) to 10 (strong) by roleplay" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#player_improved_skills
+:player_improved_skills rdf:type owl:NamedIndividual ;
+                        :action :created ;
+                        :actor :player ;
+                        :input :skills ;
+                        :resource :improvement_points ;
+                        :result :skills ;
+                        :method "(+1 skill level) = 10 * max(skill level; 1) * (difficulty modifier of skill)" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#player_rolled_fumble
+:player_rolled_fumble rdf:type owl:NamedIndividual ;
+                      :action :rolled ;
+                      :actor :player ;
+                      :after :master_selected_stat_for_task ,
+                             :player_rolled_natural_die ;
+                      :result :fumble ;
+                      :method "(natural die roll = 1) and (roll random fumble table)" ;
+                      rdfs:label "Critical fail" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#player_rolled_lifepath
+:player_rolled_lifepath rdf:type owl:NamedIndividual ;
+                        :action :rolled ;
+                        :actor :player ;
+                        :result :lifepath ;
+                        :method "random tables: dress, personal style, ethnic origins, family background, motivations, life events, big problems - big wins, friends and enemies, romantic life." ;
+                        rdfs:label "Player rolled lifepath of PC" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#player_rolled_natural_die
+:player_rolled_natural_die rdf:type owl:NamedIndividual ;
+                           :action :rolled ;
+                           :actor :player ;
+                           :result :natural_die_roll ;
+                           :method "1d10" ;
+                           rdfs:label "Natural die roll" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#player_rolled_point_bank_fast
+:player_rolled_point_bank_fast rdf:type owl:NamedIndividual ;
+                               :action :rolled ;
+                               :actor :player ;
+                               :result :point_bank_for_stats ;
+                               :method "d10>2 for each stat by choice" ;
+                               rdfs:label "Player rolled point bank for stats with fast method" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#player_rolled_point_bank_random
+:player_rolled_point_bank_random rdf:type owl:NamedIndividual ;
+                                 :action :rolled ;
+                                 :actor :player ;
+                                 :result :point_bank_for_stats ;
+                                 :method "9d10 for distribution by choice" ;
+                                 rdfs:label "Player rolled point bank for stats with random method" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#player_rolled_skill
+:player_rolled_skill rdf:type owl:NamedIndividual ;
+                     :action :rolled ;
+                     :actor :player ;
+                     :after :master_selected_stat_for_task ,
+                            :player_rolled_natural_die ;
+                     :input :pc ,
+                            :skills ;
+                     :resource :luck_pool ;
+                     :result :skill_roll ;
+                     :condition "(task's stat = pc's stat) and (skill's stat = task's stat) and (number of used skills = 1) and (natural die roll > 1)" ;
+                     :method "(natural die roll) + (1d10 if (natural die roll = 10)) + stat + skill + (points from luck pool)" ;
+                     rdfs:label "Player made skill roll" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#player_selected_career_skills
+:player_selected_career_skills rdf:type owl:NamedIndividual ;
+                               :action :selected ;
+                               :actor :player ;
+                               :after :player_selected_role ;
+                               :result :skills ;
+                               :method "(40 points between 10 career skills of role) and (distributed points in special ability > 0)" ;
+                               rdfs:label "Player " .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#player_selected_pickup_skills
+:player_selected_pickup_skills rdf:type owl:NamedIndividual ;
+                               :action :selected ;
+                               :actor :player ;
+                               :after :player_created_stats ,
+                                      :player_selected_role ;
+                               :input :chemistry ,
+                                      :intelligence ,
+                                      :mathematics ,
+                                      :reflex ;
+                               :result :skills ;
+                               :condition """((physics > 0 and mathematics > 3) or physics = 0) and
+((pharmaceuticals > 0 and chemistry > 3) or pharmaceuticals = 0)""" ;
+                               :method "(distribute (reflex + intelligence) points between skills) and (pickup skills != career skills of role)" ;
+                               rdfs:label "Player selected pickup skills" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#player_selected_role
+:player_selected_role rdf:type owl:NamedIndividual ;
+                      :action :selected ;
+                      :actor :player ;
+                      :result :role ;
+                      rdfs:label "Player selected role" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#player_selected_starting_equipment
+:player_selected_starting_equipment rdf:type owl:NamedIndividual ;
+                                    :action :selected ;
+                                    :actor :player ;
+                                    :after :player_created_stats ,
+                                           :starting_funds ;
+                                    :input :body_type ;
+                                    :result :equipment ;
+                                    :condition "encumbrance (kg) <= 10 * body type" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#point_bank_for_stats
+:point_bank_for_stats rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#programming
+:programming rdf:type owl:NamedIndividual ;
+             :statistic :intelligence .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#reflex
+:reflex rdf:type owl:NamedIndividual ,
+                 :Statistic ;
+        sche:description "physical coordination and combat skills" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#reputation
+:reputation rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#resist_torture
+:resist_torture rdf:type owl:NamedIndividual ;
+                :statistic :cool ;
+                sche:description "+ level to difficulty of interrogation if successful check" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#rifle_skill
+:rifle_skill rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#rifle_skill_skill
+:rifle_skill_skill rdf:type owl:NamedIndividual ;
+                   :statistic :reflex .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#rockerboy
+:rockerboy rdf:type owl:NamedIndividual ,
+                    :Role ;
+           :career_skill :awareness ,
+                         :brawling ,
+                         :composition ,
+                         :perform ,
+                         :persuasion ,
+                         :play_instrument ,
+                         :seduction ,
+                         :streetwise ,
+                         :wardrobe_and_style ;
+           :specialAbility :charismatic_leadership .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#role
+:role rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#rolled
+:rolled rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#scorpion_16_missile_launcher
+:scorpion_16_missile_launcher rdf:type owl:NamedIndividual ,
+                                       :HeavyWeapon ;
+                              :accuracy -1 ;
+                              :availability 4 ;
+                              :concealability 4 ;
+                              :cost 3000 ;
+                              :damage "7d10" ;
+                              :range 1000 ;
+                              :reliability 1 ;
+                              :shots 1 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#seduction
+:seduction rdf:type owl:NamedIndividual ;
+           :statistic :empathy .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#selected
+:selected rdf:type owl:NamedIndividual ;
+          sche:description "number of options = one by default or determined by value" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#shadow
+:shadow rdf:type owl:NamedIndividual ;
+        :statistic :intelligence .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#shiriken
+:shiriken rdf:type owl:NamedIndividual ,
+                   :MeleeWeapon ;
+          :accuracy 0 ;
+          :availability 2 ;
+          :concealability 1 ;
+          :cost 2 ,
+                3 ;
+          :damage "1d6/3" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#skill_check
+:skill_check rdf:type owl:NamedIndividual ;
+             :action :created ;
+             :actor :party ;
+             :result :skill_check_result ;
+             :subAct :master_created_skill_check_compare ,
+                     :master_created_task ,
+                     :player_rolled_skill ;
+             rdfs:label "Skill check" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#skill_check_result
+:skill_check_result rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#skill_roll
+:skill_roll rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#skills
+:skills rdf:type owl:NamedIndividual ;
+        sche:description "{skill: level}" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#sledgehammer
+:sledgehammer rdf:type owl:NamedIndividual ,
+                       :MeleeWeapon ;
+              :accuracy -1 ;
+              :availability 2 ;
+              :concealability 4 ;
+              :cost 20 ;
+              :damage "4d6" ;
+              :range 1 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#social
+:social rdf:type owl:NamedIndividual ;
+        :statistic :empathy .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#solo
+:solo rdf:type owl:NamedIndividual ,
+               :Role ;
+      :career_skill :athletics ,
+                    :awareness ,
+                    :brawling ,
+                    :handgun ,
+                    :melee ,
+                    :rifle_skill ,
+                    :stealth ,
+                    :submachinegun_skill ,
+                    :weaponsmith ;
+      :specialAbility :combat_sense .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#spm1_battleglove
+:spm1_battleglove rdf:type owl:NamedIndividual ,
+                           :MeleeWeapon ;
+                  :accuracy -2 ;
+                  :availability 3 ;
+                  :concealability 1 ;
+                  :cost 900 ;
+                  :damage "3d6/2d6" ;
+                  :range 1 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#starting_funds
+:starting_funds rdf:type owl:NamedIndividual ;
+                :action :rolled ;
+                :actor :player ;
+                :after :player_selected_career_skills ,
+                       :player_selected_role ;
+                :result :money ;
+                :condition "1d6 < 5" ;
+                :method "(month salary from table by role and special ability level) * 1d6/3" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#stats
+:stats rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#stealth
+:stealth rdf:type owl:NamedIndividual ;
+         :statistic :reflex ;
+         :difficulty_modifier_of_skill 2 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#steel_helmet
+:steel_helmet rdf:type owl:NamedIndividual ,
+                       :Armor ;
+              :armorCover "head" ;
+              :cost 20 ;
+              :encumberanceValue 0 ;
+              :stoppingPower 14 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#sternmeyer_smg_21
+:sternmeyer_smg_21 rdf:type owl:NamedIndividual ,
+                            :Submachinegun ;
+                   :accuracy -1 ;
+                   :availability 1 ;
+                   :concealability 3 ;
+                   :cost 500 ;
+                   :damage "3d6 (11 mm)" ;
+                   :range 200 ;
+                   :rate_of_fire 15 ;
+                   :reliability 1 ;
+                   :shots 30 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#sternmeyer_stakeout_10
+:sternmeyer_stakeout_10 rdf:type owl:NamedIndividual ,
+                                 :Shotgun ;
+                        :accuracy -2 ;
+                        :availability 4 ;
+                        :cost 450 ;
+                        :rate_of_fire 2 ;
+                        :shots 10 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#sternmeyer_type_35
+:sternmeyer_type_35 rdf:type owl:NamedIndividual ,
+                             :Pistol ;
+                    :accuracy 0 ;
+                    :availability 2 ;
+                    :concealability 2 ;
+                    :cost 400 ;
+                    :damage "3d6 (11 mm)" ;
+                    :rate_of_fire 2 ;
+                    :reliability 1 ;
+                    :shots 8 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#stock_market
+:stock_market rdf:type owl:NamedIndividual ;
+              :statistic :intelligence .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#streetdeal
+:streetdeal rdf:type owl:NamedIndividual ;
+            :statistic :cool ;
+            sche:description "street connections" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#streetwise
+:streetwise rdf:type owl:NamedIndividual ;
+            :statistic :cool .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#strength_feat
+:strength_feat rdf:type owl:NamedIndividual ;
+               :statistic :body_type ;
+               sche:description "pure physical strength" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#submachinegun_skill
+:submachinegun_skill rdf:type owl:NamedIndividual ;
+                     :statistic :reflex .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#swimming
+:swimming rdf:type owl:NamedIndividual ;
+          :statistic :body_type .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#switchblade
+:switchblade rdf:type owl:NamedIndividual ,
+                      :MeleeWeapon ;
+             :accuracy 0 ;
+             :availability 2 ;
+             :concealability 1 ;
+             :cost 15 ;
+             :damage "1d6/2" ;
+             :range 1 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#sword
+:sword rdf:type owl:NamedIndividual ,
+                :MeleeWeapon ;
+       :accuracy 0 ;
+       :availability 2 ;
+       :concealability 4 ;
+       :cost 20 ,
+             200 ;
+       :damage "2d6+2" ;
+       :range 1 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#system_knowledge
+:system_knowledge rdf:type owl:NamedIndividual ;
+                  :statistic :intelligence ;
+                  sche:description "knowledge of the Net" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#tae_kwon_do
+:tae_kwon_do rdf:type owl:NamedIndividual ,
+                      :MartialArts ;
+             :difficulty_modifier_of_skill 3 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#task
+:task rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#teaching
+:teaching rdf:type owl:NamedIndividual ;
+          :statistic :intelligence .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#techie
+:techie rdf:type owl:NamedIndividual ,
+                 :Role ;
+        :career_skill :aero_tech ,
+                      :awareness ,
+                      :basic_tech ,
+                      :cyber_tech ,
+                      :education ,
+                      :electrical_security ,
+                      :electronics ,
+                      :gyro_tech ,
+                      :teaching ,
+                      :weaponsmith ;
+        :specialAbility :jury_rig .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#technical_ability
+:technical_ability rdf:type owl:NamedIndividual ,
+                            :Statistic ;
+                   sche:description "using and repairing technology" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#techtronica_15_microwaver
+:techtronica_15_microwaver rdf:type owl:NamedIndividual ,
+                                    :ExoticWeapon ,
+                                    :Pistol ;
+                           :accuracy 0 ;
+                           :availability 3 ;
+                           :concealability 2 ;
+                           :cost 400 ;
+                           :damage "1d6" ;
+                           :range 20 ;
+                           :rate_of_fire 2 ;
+                           :reliability 1 ;
+                           :shots 10 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#thai_kick_boxing
+:thai_kick_boxing rdf:type owl:NamedIndividual ,
+                           :MartialArts ;
+                  :difficulty_modifier_of_skill 4 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#tonfa
+:tonfa rdf:type owl:NamedIndividual ,
+                :MeleeWeapon ;
+       :accuracy 0 ;
+       :availability 2 ;
+       :concealability 3 ;
+       :cost 15 ;
+       :damage "3d6" ;
+       :range 1 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#uzi_miniauto_9
+:uzi_miniauto_9 rdf:type owl:NamedIndividual ,
+                         :Submachinegun ;
+                :accuracy 1 ;
+                :availability 1 ;
+                :concealability 2 ;
+                :cost 475 ;
+                :damage "2d6+1 (9 mm)" ;
+                :range 150 ;
+                :rate_of_fire 35 ;
+                :reliability 1 ;
+                :shots 30 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#wardrobe_and_style
+:wardrobe_and_style rdf:type owl:NamedIndividual ;
+                    :statistic :attractiveness ;
+                    sche:description "knowing the right clothes to wear" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#weapon
+:weapon rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#weaponsmith
+:weaponsmith rdf:type owl:NamedIndividual ;
+             :statistic :technical_ability ;
+             :difficulty_modifier_of_skill 2 .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#wilderness_survival
+:wilderness_survival rdf:type owl:NamedIndividual ;
+                     :statistic :intelligence ;
+                     sche:description "+1 if zoology > 7" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#wrestling
+:wrestling rdf:type owl:NamedIndividual ,
+                    :MartialArts .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/cyberpunk_2020/CP3002.ttl#zoology
+:zoology rdf:type owl:NamedIndividual ;
+         :statistic :intelligence .
+
+
+#################################################################
+#    Rules
+#################################################################
+
+<urn:swrl:var#act> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<urn:swrl:var#actor> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<urn:swrl:var#sact> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<urn:swrl:var#sactor> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<urn:swrl:var#res> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<urn:swrl:var#sres> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Act ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#act>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :actor ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#act> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#actor>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :subAct ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#act> ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#sact>
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> :actor ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#sact> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#sactor>
+                                                                                      ] ;
+                                                                            rdf:rest rdf:nil
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :includes ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#actor> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#sactor>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Act ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#act>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :input ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#act> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#res>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :subAct ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#act> ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#sact>
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :input ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#sact> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#res>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Act ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#act>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :result ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#act> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#res>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :subAct ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#act> ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#sact>
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> :result ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#sact> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#sres>
+                                                                                      ] ;
+                                                                            rdf:rest rdf:nil
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :includes ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#res> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#sres>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi

@@ -1,0 +1,2329 @@
+@prefix : <https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#> .
+@prefix gen: <https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#> .
+
+<https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#> rdf:type owl:Ontology ;
+                                                                                    owl:imports gen: .
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#durationRealTime
+:durationRealTime rdf:type owl:DatatypeProperty ;
+                  rdfs:domain gen:Act ;
+                  rdfs:range xsd:string ;
+                  rdfs:label "duration in real time"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#Approach
+:Approach rdf:type owl:Class ;
+          rdfs:subClassOf gen:ParameterDynamic , gen:ParameterCreature .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#CheckAttack
+:CheckAttack rdf:type owl:Class ;
+             rdfs:subClassOf gen:Check .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#ConflictAction
+:ConflictAction rdf:type owl:Class ;
+                rdfs:subClassOf gen:Act ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty gen:set ;
+                                  owl:hasValue :turn
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty gen:prerequisiteDescription ;
+                                  owl:hasValue "character can make feely move and 1 other action"
+                                ] .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#Item
+:Item rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#ItemDamage
+:ItemDamage rdf:type owl:Class ;
+            rdfs:subClassOf :ItemDamageDefense .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#ItemDamageBlood
+:ItemDamageBlood rdf:type owl:Class ;
+                 rdfs:subClassOf :ItemDamage .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#ItemDamageDefense
+:ItemDamageDefense rdf:type owl:Class ;
+                   rdfs:subClassOf :Item ;
+                   rdfs:comment "Damage items provide bonuses to damage whenever you attack a creature. Defense items reduce damage and also make it harder for you to be hit."@en ;
+                   rdfs:label "Damage & Defence item" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#ItemDamageGuts
+:ItemDamageGuts rdf:type owl:Class ;
+                rdfs:subClassOf :ItemDamage .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#ItemDefense
+:ItemDefense rdf:type owl:Class ;
+             rdfs:subClassOf :ItemDamageDefense .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#ItemDefenseBlood
+:ItemDefenseBlood rdf:type owl:Class ;
+                  rdfs:subClassOf :ItemDefense .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#ItemDefenseGuts
+:ItemDefenseGuts rdf:type owl:Class ;
+                 rdfs:subClassOf :ItemDefense .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#ItemOdditiesValuables
+:ItemOdditiesValuables rdf:type owl:Class ;
+                       rdfs:subClassOf :Item ;
+                       rdfs:comment "Oddities and valuables are exactly what it says on the tin: strange, fantastical yet oftentimes high-value items. Some may be magical in nature."@en ;
+                       rdfs:label "Oddities & Valuables item" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#ItemSpell
+:ItemSpell rdf:type owl:Class ;
+           rdfs:subClassOf :ItemSpellTechnique .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#ItemSpellTechnique
+:ItemSpellTechnique rdf:type owl:Class ;
+                    rdfs:subClassOf :Item .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#ItemSuppliesSundries
+:ItemSuppliesSundries rdf:type owl:Class ;
+                      rdfs:subClassOf :Item ;
+                      rdfs:comment "Supplies and sundries help you explore and last longer in the adventure."@en ;
+                      rdfs:label "Supplies & Sundries item" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#ItemTechnique
+:ItemTechnique rdf:type owl:Class ;
+               rdfs:subClassOf :ItemSpellTechnique .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#RequiredDetails
+:RequiredDetails rdf:type owl:Class ;
+                 rdfs:label "Required details"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#Skill
+:Skill rdf:type owl:Class ;
+       rdfs:subClassOf gen:ParameterCreature .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#SkillDamageBlood
+:SkillDamageBlood rdf:type owl:Class ;
+                  rdfs:subClassOf :SkillPhysical .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#SkillDamageGuts
+:SkillDamageGuts rdf:type owl:Class ;
+                 rdfs:subClassOf :SkillSocial .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#SkillKnowledge
+:SkillKnowledge rdf:type owl:Class ;
+                rdfs:subClassOf :Skill ;
+                rdfs:label "Knowledge skill" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#SkillPhysical
+:SkillPhysical rdf:type owl:Class ;
+               rdfs:subClassOf :Skill ;
+               rdfs:label "Physical skill"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#SkillPragmatic
+:SkillPragmatic rdf:type owl:Class ;
+                rdfs:subClassOf :Skill ;
+                rdfs:label "Pragmatic skill"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#SkillProwess
+:SkillProwess rdf:type owl:Class ;
+              rdfs:subClassOf :Skill ;
+              rdfs:label "Prowess" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#SkillSocial
+:SkillSocial rdf:type owl:Class ;
+             rdfs:subClassOf :Skill ;
+             rdfs:label "Social skill"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#Check
+gen:Check rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty gen:input ;
+                            owl:hasValue :Skill
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty gen:valueFormula ;
+                            owl:hasValue """
+{
+    1d6 < threshold: success ;
+    1d6 > threshold: fail ;
+    1d6 = threshold: tie with ((success with consequence) xor (fail with opportunity)) ;
+    (skill rank > 0) and (first 1d6-roll = 1) and (second 1d6-roll = 1): critical success ;
+}
+"""
+                          ] .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#Approach
+:Approach rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#CheckAttack
+:CheckAttack rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#ConflictAction
+:ConflictAction rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#Item
+:Item rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#ItemDamage
+:ItemDamage rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#ItemDamageBlood
+:ItemDamageBlood rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#ItemDamageGuts
+:ItemDamageGuts rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#ItemDefense
+:ItemDefense rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#ItemDefenseBlood
+:ItemDefenseBlood rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#ItemDefenseGuts
+:ItemDefenseGuts rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#ItemSpell
+:ItemSpell rdf:type owl:NamedIndividual ,
+                    :RequiredDetails .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#ItemSpellTechnique
+:ItemSpellTechnique rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#ItemTechnique
+:ItemTechnique rdf:type owl:NamedIndividual ,
+                        :RequiredDetails .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#Skill
+:Skill rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#SkillDamageBlood
+:SkillDamageBlood rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#SkillDamageGuts
+:SkillDamageGuts rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#advance_doomsday_clock
+:advance_doomsday_clock rdf:type owl:NamedIndividual ;
+                        gen:Actor gen:master ;
+                        gen:inputOption :consumed_moments_softer_risks ,
+                                        :consumed_moments_standard ;
+                        gen:setAdditive :doomsday_clock ;
+                        gen:valueFormula "{number of sessions: frequency} = {1: (consumed moments) per 30 minutes; 2-3: (consumed moments) per hour; 4+: (consumed moments) per session}" ;
+                        rdfs:label "Doomsday clock advances"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#animal_traps
+:animal_traps rdf:type owl:NamedIndividual ,
+                       :ItemSuppliesSundries ;
+              gen:cost "9 points" ;
+              rdfs:label "Traps and animal bait"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#approach_careful
+:approach_careful rdf:type owl:NamedIndividual ,
+                           :Approach ;
+                  rdfs:comment "Skills using a careful approach utilize close attention to detail, analyzing variables and ensuring the action does not trigger any unwanted consequences."@en ;
+                  rdfs:label "Careful approach"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#approach_concerted
+:approach_concerted rdf:type owl:NamedIndividual ,
+                             :Approach ;
+                    rdfs:comment "Skills using a concerted approach exemplify effort, grit and willpower. Any obstacle is surmountable when you have the drive to succeed."@en ;
+                    rdfs:label "Concerted approach"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#approach_creative
+:approach_creative rdf:type owl:NamedIndividual ,
+                            :Approach ;
+                   rdfs:comment "Skills using a creative approach are performed in interesting, unusual and surprising ways. Cleverness also applies to Creative skills."@en ;
+                   rdfs:label "Creative approach"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#assistance
+:assistance rdf:type owl:NamedIndividual ;
+            gen:input :Skill ,
+                      :bonds ;
+            gen:setAdditive :threshold_number ;
+            gen:prerequisiteDescription "(only one ally can assist) and (skill level > 0)" ;
+            gen:valueFormula "int (bond of hero's assistant / 4)" ;
+            rdfs:label "Assistance"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#backpack_and_blank_book
+:backpack_and_blank_book rdf:type owl:NamedIndividual ,
+                                  :ItemSuppliesSundries ;
+                         gen:cost "6 points" ;
+                         rdfs:label "Large backpack and a blank book"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#bad_consequences
+:bad_consequences rdf:type owl:NamedIndividual ;
+                  gen:setAdditive :consequence ;
+                  gen:valueFormula "1d6 from list or guide's selection" ;
+                  rdfs:label "Bad consequences"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#bedroll_and_map
+:bedroll_and_map rdf:type owl:NamedIndividual ,
+                          :ItemSuppliesSundries ;
+                 gen:cost "5 points" ;
+                 rdfs:label "Bedroll and local map"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#block_advantage
+:block_advantage rdf:type owl:NamedIndividual ;
+                 gen:blocked :status_advantage ;
+                 gen:target "foes" ;
+                 rdfs:label "Remove advantage"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#block_perform_spell_technique
+:block_perform_spell_technique rdf:type owl:NamedIndividual ;
+                               gen:set :status_block_perfrom_spell_technique ;
+                               rdfs:label "Cannot perform certain spell or technique"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#blood
+:blood rdf:type owl:NamedIndividual ,
+                gen:ParameterDynamic , gen:ParameterCreature ;
+       rdfs:comment "The hero's ability to withstand physical harm."@en ;
+       rdfs:label "Blood"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#blood_modifier
+:blood_modifier rdf:type owl:NamedIndividual , gen:ParameterPC ;
+                rdfs:label "Blood modifier"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#bonds
+:bonds rdf:type owl:NamedIndividual , gen:ParameterPC ;
+       rdfs:comment "Bonds represent two heroes' relationship, vizualized through quadrants and boxes. Maximum 12 levels."@en ;
+       rdfs:label "Bonds"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#booming_voice
+:booming_voice rdf:type owl:NamedIndividual ,
+                        :ItemDamageBlood ;
+               gen:cost "5 points" ;
+               gen:valueNumeric 1 ;
+               rdfs:label "Booming voice"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#check_attack_blood
+:check_attack_blood rdf:type owl:NamedIndividual ,
+                             :CheckAttack ;
+                    gen:checkThreshold :check_attack_threshold_number_blood ;
+                    gen:effect :set_damage_blood ,
+                               :set_damage_blood_approach ;
+                    gen:input :SkillDamageBlood ;
+                    rdfs:label "Blood attack check"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#check_attack_guts
+:check_attack_guts rdf:type owl:NamedIndividual ,
+                            :CheckAttack ;
+                   gen:checkThreshold :check_attack_threshold_number_guts ;
+                   gen:effect :set_damage_guts ,
+                              :set_damage_guts_approach ;
+                   gen:input :SkillDamageGuts ;
+                   rdfs:label "Guts attack check"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#check_attack_threshold_number_blood
+:check_attack_threshold_number_blood rdf:type owl:NamedIndividual ;
+                                     gen:input :item_defence_bonus_blood ,
+                                               :threshold_number ;
+                                     gen:valueFormula "threshold number - item bonus for blood defence + difficulty modifier" ;
+                                     rdfs:label "Threshold number for blood attack check" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#check_attack_threshold_number_guts
+:check_attack_threshold_number_guts rdf:type owl:NamedIndividual ;
+                                    gen:input :item_defence_bonus_guts ,
+                                              :threshold_number ;
+                                    gen:valueFormula "threshold number - item bonus for guts defence + difficulty modifier" ;
+                                    rdfs:label "Threshold number for guts attack check" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#check_concentration
+:check_concentration rdf:type owl:NamedIndividual ,
+                              gen:Check ;
+                     gen:checkThreshold :check_concentration_threshold ;
+                     rdfs:label "Concentration check"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#check_concentration_penalty
+:check_concentration_penalty rdf:type owl:NamedIndividual ;
+                             rdfs:comment "0 by default" ;
+                             rdfs:label "Concentration penalty"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#check_concentration_threshold
+:check_concentration_threshold rdf:type owl:NamedIndividual ;
+                               gen:input :check_concentration_penalty ;
+                               gen:valueFormula "7 - concentration penalty" ;
+                               rdfs:label "Concentration threshold"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#check_learning_spell
+:check_learning_spell rdf:type owl:NamedIndividual ,
+                               gen:Check ;
+                      gen:checkSuccess :increase_learning_pool_spell ;
+                      gen:checkThreshold :check_learning_threshold_spell ;
+                      rdfs:label "Learning spells"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#check_learning_technique
+:check_learning_technique rdf:type owl:NamedIndividual ,
+                                   gen:Check ;
+                          gen:checkSuccess :increase_learning_pool_technique ;
+                          gen:checkThreshold :check_learning_threshold_technique ;
+                          gen:effect :set_block_on_learning_spell_technique ;
+                          rdfs:label "Learning techniques"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#check_learning_threshold_spell
+:check_learning_threshold_spell rdf:type owl:NamedIndividual ;
+                                gen:valueObject :skill_arcana ;
+                                rdfs:label "Threshold number for learning spells"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#check_learning_threshold_technique
+:check_learning_threshold_technique rdf:type owl:NamedIndividual ;
+                                    gen:valueObject :skill_focus ;
+                                    rdfs:label "Threshold number for learning techniques"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#check_skill
+:check_skill rdf:type owl:NamedIndividual ,
+                      gen:Check ;
+             gen:checkFailure :check_skill_fail ;
+             gen:checkSuccess :check_skill_success ;
+             gen:checkSuccessCrit :check_skill_success_with_opportunity ;
+             gen:checkThreshold :threshold_number ;
+             gen:checkTie :check_skill_fail_with_opportunity ,
+                          :check_skill_success_with_consequence ;
+             rdfs:label "Skill check"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#check_skill_fail
+:check_skill_fail rdf:type owl:NamedIndividual ;
+                  rdfs:comment "Action fails."@en ;
+                  rdfs:label "Failed skill check"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#check_skill_fail_with_opportunity
+:check_skill_fail_with_opportunity rdf:type owl:NamedIndividual ;
+                                   rdfs:comment "You fail but are presented with an opportunity improving the hero and their allies' situation."@en ;
+                                   rdfs:label "Fail with opportunity"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#check_skill_group
+:check_skill_group rdf:type owl:NamedIndividual ;
+                   gen:basedOn :check_skill ;
+                   gen:effect :check_skill_group_success ;
+                   gen:prerequisiteDescription "task required group actions" ;
+                   gen:valueFormula "if (number of success > half of heroes) then success else fail" ;
+                   rdfs:label "Skill check as group"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#check_skill_group_success
+:check_skill_group_success rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#check_skill_reroll
+:check_skill_reroll rdf:type owl:NamedIndividual ;
+                    gen:after :check_skill ;
+                    gen:effect :check_skill ;
+                    gen:resource :bonds ;
+                    gen:cost "1 level" ;
+                    gen:target "you assist at skill check of other hero" ;
+                    rdfs:label "Reroll skill check"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#check_skill_result_upgrade
+:check_skill_result_upgrade rdf:type owl:NamedIndividual ;
+                            gen:after :check_skill ;
+                            gen:modified :check_skill_fail ,
+                                         :check_skill_fail_with_opportunity ,
+                                         :check_skill_success_with_consequence ;
+                            gen:resource :blood ,
+                                         :guts ;
+                            gen:valueObject :check_skill_fail_with_opportunity ,
+                                            :check_skill_success ,
+                                            :check_skill_success_with_consequence ;
+                            gen:cost "3" ;
+                            gen:valueFormula """
+(blood -= cost) or (guts -= cost) ;
+fail with opportunity -> success ;
+success with consequence -> success ;
+fail -> (fail with opportunity) xor (success with consequence) ;
+""" ;
+                            rdfs:label "Upgrade skill check result"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#check_skill_success
+:check_skill_success rdf:type owl:NamedIndividual ;
+                     rdfs:comment "You succeed with no consequence"@en ;
+                     rdfs:label "Success skill check"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#check_skill_success_with_consequence
+:check_skill_success_with_consequence rdf:type owl:NamedIndividual ;
+                                      rdfs:comment "You succeed with a consequence complicating the hero and their allies' situation."@en ;
+                                      rdfs:label "Success with consequence"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#check_skill_success_with_opportunity
+:check_skill_success_with_opportunity rdf:type owl:NamedIndividual ;
+                                      rdfs:label "Success with opportunity"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#coded_letters_signet_ring_noble_clothes
+:coded_letters_signet_ring_noble_clothes rdf:type owl:NamedIndividual ,
+                                                  :ItemSuppliesSundries ;
+                                         gen:cost "17 points" ;
+                                         rdfs:label "Stack of coded letters, a signet ring and a wardrobe of noble clothes"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#confidence
+:confidence rdf:type owl:NamedIndividual ,
+                     :ItemDamageGuts ;
+            gen:valueNumeric 1 ;
+            rdfs:label "Confidence"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#confidence_and_personal_growth
+:confidence_and_personal_growth rdf:type owl:NamedIndividual ,
+                                         :ItemDamageDefense ;
+                                gen:included :confidence ,
+                                             :personal_growth ;
+                                gen:cost "9 points" ;
+                                rdfs:label "Confidence and personal growth"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#conflict
+:conflict rdf:type owl:NamedIndividual ;
+          gen:included :conflict_attack ,
+                       :conflict_moving ,
+                       :conflict_moving_far ,
+                       :conflict_non_harmful_actions ,
+                       :conflict_spells_techniques ,
+                       :conflict_standing_ground ;
+          gen:input :round ,
+                    :turn ;
+          gen:prerequisiteDescription "Hero actions always resolve before non-hero actions unless the party was taken by surprise, in which case all non-hero actions resolve first in the first round." ;
+          rdfs:comment "Conflicts are fights or altercations where action sequence matters and is determined by what each characters plan to do."@en ;
+          rdfs:label "Conflict"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#conflict_attack
+:conflict_attack rdf:type owl:NamedIndividual ,
+                          :ConflictAction ;
+                 gen:after :conflict_non_harmful_actions ;
+                 gen:included :CheckAttack ,
+                              :set_concentration_penalty ;
+                 rdfs:label "Harm actions at conflict"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#conflict_moving
+:conflict_moving rdf:type owl:NamedIndividual ,
+                          :ConflictAction ;
+                 gen:modified :position ;
+                 gen:distance "2 heights" ;
+                 gen:prerequisiteDescription "freely during turn" ;
+                 rdfs:label "Free moving at conflict"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#conflict_moving_far
+:conflict_moving_far rdf:type owl:NamedIndividual ,
+                              :ConflictAction ,
+                              gen:Check ;
+                     gen:after :conflict_spells_techniques ;
+                     gen:checkFailure :escape_attack ,
+                                      :moving_far ;
+                     gen:checkSuccess :moving_far ;
+                     gen:checkThreshold :threshold_number ;
+                     gen:inputOption :skill_acrobatics ,
+                                     :skill_coordination ;
+                     rdfs:label "Moving far at conflict"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#conflict_non_harmful_actions
+:conflict_non_harmful_actions rdf:type owl:NamedIndividual ,
+                                       :ConflictAction ;
+                              gen:after :conflict_standing_ground ;
+                              gen:effectOption :assistance ,
+                                               :block_advantage ,
+                                               :other_non_harmful_actions ,
+                                               :set_advantage_check ,
+                                               :set_advantage_wo_check ;
+                              rdfs:label "Non-harmful actions at conflict"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#conflict_spells_techniques
+:conflict_spells_techniques rdf:type owl:NamedIndividual ,
+                                     :ConflictAction ;
+                            gen:after :conflict_attack ;
+                            gen:effectOption :set_spell_technique_base ,
+                                             :set_spell_technique_enhanced ;
+                            gen:prerequisite :check_concentration ;
+                            rdfs:label "Spells and techniques at conflict"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#conflict_standing_ground
+:conflict_standing_ground rdf:type owl:NamedIndividual ,
+                                   :ConflictAction ;
+                          gen:set :status_stand_ground ;
+                          gen:distance "2-height radius" ;
+                          gen:target "you and allies" ;
+                          rdfs:label "Standing ground at conflict"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#consequence
+:consequence rdf:type owl:NamedIndividual ;
+             rdfs:label "Bad consequences in life of hero"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#consumed_moments_softer_risks
+:consumed_moments_softer_risks rdf:type owl:NamedIndividual ;
+                               gen:input :omen ;
+                               gen:valueFormula "1 + min(number of 5 and 6; 1) in (omens in play)d6" ;
+                               rdfs:label "Consumed moments by method of softer risks"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#consumed_moments_standard
+:consumed_moments_standard rdf:type owl:NamedIndividual ;
+                           gen:input :omen ;
+                           gen:valueFormula "1 + (number of 5 and 6) in (omens in play)d6" ;
+                           rdfs:label "Consumed moments by standard method"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#critical_thinking
+:critical_thinking rdf:type owl:NamedIndividual ,
+                            :ItemDefenseGuts ;
+                   gen:cost "12 points" ;
+                   gen:valueNumeric 2 ;
+                   rdfs:label "Critical thinking"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#crossbow
+:crossbow rdf:type owl:NamedIndividual ,
+                   :ItemDamageBlood ;
+          gen:cost "14 points" ;
+          gen:valueNumeric 2 ;
+          rdfs:label "Crossbow"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#crowbar_and_lantern
+:crowbar_and_lantern rdf:type owl:NamedIndividual ,
+                              :ItemSuppliesSundries ;
+                     gen:cost "3 points" ;
+                     rdfs:label "Crowbar and lantern"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#crown
+:crown rdf:type owl:NamedIndividual ,
+                :ItemOdditiesValuables ;
+       gen:cost "8 points" ;
+       rdfs:label "A heavy crown with oppressive aura"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#dagger
+:dagger rdf:type owl:NamedIndividual ,
+                 :ItemDamageBlood ;
+        gen:valueNumeric 1 ;
+        rdfs:label "Dagger"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#dagger_and_toga
+:dagger_and_toga rdf:type owl:NamedIndividual ,
+                          :ItemDamageDefense ;
+                 gen:included :dagger ,
+                              :toga ;
+                 gen:cost "8 points" ;
+                 rdfs:label "Dagger and toga"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#damage_value_blood
+:damage_value_blood rdf:type owl:NamedIndividual ;
+                    gen:input :check_attack_threshold_number_blood ,
+                              :item_damage_bonus_blood ;
+                    gen:valueFormula "- threshold number - item bonus for blood damage" ;
+                    rdfs:label "Blood damage value" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#damage_value_guts
+:damage_value_guts rdf:type owl:NamedIndividual ;
+                   gen:input :check_attack_threshold_number_guts ,
+                             :item_damage_bonus_guts ;
+                   gen:valueFormula "- threshold number - item bonus for guts damage" ;
+                   rdfs:label "Guts damage value" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#darkvision_glasses
+:darkvision_glasses rdf:type owl:NamedIndividual ,
+                             :ItemOdditiesValuables ;
+                    gen:cost "13 points" ;
+                    rdfs:label "A pair of glasses granting darkvision"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#darts
+:darts rdf:type owl:NamedIndividual ,
+                :ItemDamageBlood ;
+       gen:cost "7 points" ;
+       gen:valueNumeric 1 ;
+       rdfs:comment "8 darts, +1 blood damage each"@en ;
+       rdfs:label "Darts"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#dead_monkey_bottom
+:dead_monkey_bottom rdf:type owl:NamedIndividual ,
+                             :ItemOdditiesValuables ;
+                    gen:cost "2 points" ;
+                    rdfs:label "The bottom half of a dead donkey"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#devastating_vocabulary
+:devastating_vocabulary rdf:type owl:NamedIndividual ,
+                                 :ItemDamageGuts ;
+                        gen:cost "11 points" ;
+                        gen:valueNumeric 2 ;
+                        rdfs:label "Devastating vocabulary"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#difficulty_modifier
+:difficulty_modifier rdf:type owl:NamedIndividual ;
+                     gen:valueFormula "{easy: +1; difficult: +0; very difficult: -1; staggeringly difficult: -2; impossibly difficult: -3}" ;
+                     rdfs:label "Difficulty modifier"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#divine_blood
+:divine_blood rdf:type owl:NamedIndividual ,
+                       :ItemOdditiesValuables ;
+              gen:cost "14 points" ;
+              rdfs:label "A vial of a divine being’s blood"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#doom
+:doom rdf:type owl:NamedIndividual ;
+      rdfs:comment "Cataclysmic event threatening to devastate the world of the heroes or their people." ;
+      rdfs:label "Doom"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#doom_happens
+:doom_happens rdf:type owl:NamedIndividual ;
+              gen:Actor :doom ;
+              gen:after :advance_doomsday_clock ;
+              gen:effectOption :epilogue ,
+                               :new_beginnings ,
+                               :rewind ;
+              gen:input :doomsday_clock ;
+              gen:prerequisiteDescription "current Doomsday clock = maximium Doomsday clock" ;
+              rdfs:label "Doom happens"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#doomsday_clock
+:doomsday_clock rdf:type owl:NamedIndividual ,
+                         gen:ParameterDynamic ;
+                rdfs:comment "The Doomsday clock charts the apocalypse's inevitable approach, advancing at set time interavals, moments. Initial current value = 0"@en ;
+                rdfs:label "Doomsday clock"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#dry_hat
+:dry_hat rdf:type owl:NamedIndividual ,
+                  :ItemOdditiesValuables ;
+         gen:cost "6 points" ;
+         rdfs:label "A hat that always keeps your head dry"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#encyclopedia
+:encyclopedia rdf:type owl:NamedIndividual ,
+                       :ItemSuppliesSundries ;
+              gen:cost "15 points" ;
+              rdfs:label "Complete encyclopedia set"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#epilogue
+:epilogue rdf:type owl:NamedIndividual ;
+          rdfs:comment "You choose to accept the world's end."@en ;
+          rdfs:label "Epilogue"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#escape_attack
+:escape_attack rdf:type owl:NamedIndividual ;
+               gen:effect :CheckAttack ;
+               gen:distance "2-height radius" ;
+               gen:target "foes can attack character" ;
+               rdfs:label "Escape attack" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#fall_of_hero
+:fall_of_hero rdf:type owl:NamedIndividual ;
+              gen:after :set_damage_blood_approach ,
+                        :set_damage_guts_approach ;
+              gen:effectOption :hero_death ,
+                               :life_after_fall ;
+              gen:prerequisiteDescription "sum(approach) <= 0" ;
+              rdfs:comment "Hero becomes incapacitated and unconscious."@en ;
+              rdfs:label "Fall of hero"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#fishing_pole_kindling_beeswax
+:fishing_pole_kindling_beeswax rdf:type owl:NamedIndividual ,
+                                        :ItemSuppliesSundries ;
+                               gen:cost "11 points" ;
+                               rdfs:label "Fishing pole, kindling and beeswax"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#flaming_sword
+:flaming_sword rdf:type owl:NamedIndividual ,
+                        :ItemDamageBlood ;
+               gen:cost "18 points" ;
+               gen:valueNumeric 3 ;
+               rdfs:label "Flaming sword"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#games_and_beer
+:games_and_beer rdf:type owl:NamedIndividual ,
+                         :ItemSuppliesSundries ;
+                gen:cost "10 points" ;
+                rdfs:label "Board games and a gallon of beer"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#get_xp
+:get_xp rdf:type owl:NamedIndividual ;
+        gen:setAdditive :xp ;
+        gen:target "heroes" ;
+        gen:valueFormula "{short campaign: 3 XP per real-time hour; long campaign: 12 XP per session}" ;
+        rdfs:label "Get experience points"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#glowing_dress
+:glowing_dress rdf:type owl:NamedIndividual ,
+                        :ItemOdditiesValuables ;
+               gen:cost "10 points" ;
+               rdfs:label "A constantly-glowing silk dress"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#guts
+:guts rdf:type owl:NamedIndividual ,
+               gen:ParameterDynamic , gen:ParameterCreature ;
+      rdfs:comment "The hero's ability to withstand mental or social harm."@en ;
+      rdfs:label "Guts"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#guts_modifier
+:guts_modifier rdf:type owl:NamedIndividual , gen:ParameterPC ;
+               rdfs:label "Guts modifier"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#heartwarming_letter
+:heartwarming_letter rdf:type owl:NamedIndividual ,
+                              :ItemDefenseGuts ;
+                     gen:cost "16 points" ;
+                     gen:valueNumeric 3 ;
+                     rdfs:label "Heartwarming letter from dearly beloved friend"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#height
+:height rdf:type owl:NamedIndividual ;
+        rdfs:comment "Lengths and short distances, approximates the average height of a person, around 5-6 feet or 1.5-1.8 meters." ;
+        rdfs:label "Height"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#hen
+:hen rdf:type owl:NamedIndividual ,
+              :ItemSuppliesSundries ;
+     gen:cost "13 points" ;
+     rdfs:comment "Lays one egg every day." ;
+     rdfs:label "Live hen"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#hero
+:hero rdf:type owl:NamedIndividual ;
+      owl:sameAs gen:pc ;
+      rdfs:label "Hero"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#hero_creation
+:hero_creation rdf:type owl:NamedIndividual ;
+               gen:Actor gen:player ;
+               gen:included :set_approach_scores ,
+                            :set_blood_and_guts ,
+                            :set_bonds ,
+                            :set_inventory ,
+                            :set_skills ;
+               gen:set :hero ;
+               rdfs:label "Hero creation"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#hero_death
+:hero_death rdf:type owl:NamedIndividual ;
+            gen:effect :hero_creation ;
+            gen:included :hero_death_doomsday_clock ,
+                         :hero_death_xp ;
+            rdfs:label "Death of hero"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#hero_death_doomsday_clock
+:hero_death_doomsday_clock rdf:type owl:NamedIndividual ;
+                           gen:setAdditive :doomsday_clock ;
+                           rdfs:label "Improve doomsday clock after death of hero"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#hero_death_xp
+:hero_death_xp rdf:type owl:NamedIndividual ;
+               gen:input :bonds ;
+               gen:setAdditive :xp ;
+               gen:target "ally" ;
+               gen:valueFormula "3 * bonds of target with dead hero" ;
+               rdfs:label "Set experience points after death of hero"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#human_teeth
+:human_teeth rdf:type owl:NamedIndividual ,
+                      :ItemOdditiesValuables ;
+             gen:cost "5 points" ;
+             rdfs:label "A pouch of human teeth"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#increase_approach
+:increase_approach rdf:type owl:NamedIndividual ;
+                   gen:resource :xp ;
+                   gen:setAdditiveMax :Approach ;
+                   gen:cost "3 * (approach score + 1)" ;
+                   gen:valueNumeric 1 ;
+                   rdfs:label "Increase Approach scores"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#increase_blood_modifier
+:increase_blood_modifier rdf:type owl:NamedIndividual ;
+                         gen:resource :xp ;
+                         gen:setAdditiveMax :blood_modifier ;
+                         gen:cost "modifier + 1" ;
+                         gen:valueNumeric 1 ;
+                         rdfs:label "Increase Blood modifier"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#increase_bonds
+:increase_bonds rdf:type owl:NamedIndividual ;
+                gen:set :bonds ;
+                gen:valueFormula "{inconvenience for an ally: min (bonds + 1, 4); harm or serious risk: min (bonds + 2, 8); permanently life-changing, greatly difficult personal choice or fatal sacrifice: min (bonds + 4, 12)}" ;
+                rdfs:label "Increase bonds"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#increase_guts_modifier
+:increase_guts_modifier rdf:type owl:NamedIndividual ;
+                        gen:resource :xp ;
+                        gen:setAdditiveMax :guts_modifier ;
+                        gen:cost "modifier + 1" ;
+                        gen:valueNumeric 1 ;
+                        rdfs:label "Increase Guts modifier"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#increase_learning_pool_spell
+:increase_learning_pool_spell rdf:type owl:NamedIndividual ;
+                              gen:setAdditive :learning_pool_spell ;
+                              gen:valueNumeric 1 ;
+                              rdfs:label "Increase spell learning pool"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#increase_learning_pool_technique
+:increase_learning_pool_technique rdf:type owl:NamedIndividual ;
+                                  gen:setAdditive :learning_pool_technique ;
+                                  gen:valueNumeric 1 ;
+                                  rdfs:label "Increase technique learning pool"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#increase_skill
+:increase_skill rdf:type owl:NamedIndividual ;
+                gen:resource :xp ;
+                gen:setAdditiveMax :Skill ;
+                gen:cost "2 * (skill rank + 1)" ;
+                gen:valueNumeric 1 ;
+                rdfs:label "Increase Skill rank"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#instances_spell_technique
+:instances_spell_technique rdf:type owl:NamedIndividual ,
+                                    gen:ParameterDynamic , gen:ParameterCreature ;
+                           rdfs:label "Instances of spells and techniques"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#inventory_points
+:inventory_points rdf:type owl:NamedIndividual , gen:ParameterPC ;
+                  rdfs:label "Ponts for initial inventory"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#iron_briefs
+:iron_briefs rdf:type owl:NamedIndividual ,
+                      :ItemDefenseBlood ;
+             gen:cost "4 points" ;
+             gen:valueNumeric 1 ;
+             rdfs:label "Iron briefs"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#item_damage_bonus_blood
+:item_damage_bonus_blood rdf:type owl:NamedIndividual ;
+                         gen:prerequisite :ItemDamageBlood ,
+                                          :status_in_inventory ;
+                         gen:valueFormula "item bonus" ;
+                         rdfs:label "Item bonus for blood damage"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#item_damage_bonus_guts
+:item_damage_bonus_guts rdf:type owl:NamedIndividual ;
+                        gen:prerequisite :ItemDamageGuts ,
+                                         :status_in_inventory ;
+                        gen:valueFormula "item bonus" ;
+                        rdfs:label "Item bonus for guts damage"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#item_defence_bonus_blood
+:item_defence_bonus_blood rdf:type owl:NamedIndividual ;
+                          gen:prerequisite :ItemDefenseBlood ,
+                                           :status_in_inventory ;
+                          gen:valueFormula "item bonus" ;
+                          rdfs:label "Item bonus for blood defence"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#item_defence_bonus_guts
+:item_defence_bonus_guts rdf:type owl:NamedIndividual ;
+                         gen:prerequisite :ItemDefenseGuts ,
+                                          :status_in_inventory ;
+                         gen:valueFormula "item bonus" ;
+                         rdfs:label "Item bonus for guts defence"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#learning_pool_spell
+:learning_pool_spell rdf:type owl:NamedIndividual ;
+                     rdfs:comment "initial value = 0"@en ;
+                     rdfs:label "Spell learning pool"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#learning_pool_technique
+:learning_pool_technique rdf:type owl:NamedIndividual ;
+                         rdfs:comment "initial value = 0"@en ;
+                         rdfs:label "Technique learning pool"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#learning_spell_and_technique
+:learning_spell_and_technique rdf:type owl:NamedIndividual ;
+                              gen:inputOption :ItemSpellTechnique ;
+                              gen:resource :learning_pool_spell ,
+                                           :learning_pool_technique ;
+                              gen:setAdditiveMax :instances_spell_technique ;
+                              gen:cost "{spell: complexity of spell; technique: complexity of technique}" ;
+                              rdfs:label "Learning new spell or technique"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#life_after_fall
+:life_after_fall rdf:type owl:NamedIndividual ;
+                 gen:included :bad_consequences ,
+                              :life_after_fall_restore_approach ;
+                 rdfs:label "Life after fall"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#life_after_fall_restore_approach
+:life_after_fall_restore_approach rdf:type owl:NamedIndividual ;
+                                  gen:setCurrent :Approach ;
+                                  :durationRealTime "5 minutes" ;
+                                  gen:duration "1 hour" ;
+                                  gen:valueFormula "current approach = maximum approach" ;
+                                  rdfs:label "Restore Approach scores after fall"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#luck_charm
+:luck_charm rdf:type owl:NamedIndividual ,
+                     :ItemOdditiesValuables ;
+            gen:cost "1 point" ;
+            rdfs:label "A seashell horn good luck charm"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#memories_of_hardship
+:memories_of_hardship rdf:type owl:NamedIndividual ,
+                               :ItemDefenseGuts ;
+                      gen:cost "3 points" ;
+                      gen:valueNumeric 1 ;
+                      rdfs:label "Memories of hardship"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#mirror_and_fine_clothes
+:mirror_and_fine_clothes rdf:type owl:NamedIndividual ,
+                                  :ItemSuppliesSundries ;
+                         gen:cost "8 points" ;
+                         rdfs:label "Mirror and fine clothes"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#mirror_with_shadowy_beings
+:mirror_with_shadowy_beings rdf:type owl:NamedIndividual ,
+                                     :ItemOdditiesValuables ;
+                            gen:cost "12 points" ;
+                            rdfs:label "A mirror with shadowy beings in every reflection's background"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#monkey_heads
+:monkey_heads rdf:type owl:NamedIndividual ,
+                       :ItemOdditiesValuables ;
+              gen:cost "3 points" ;
+              rdfs:label "Shrunken monkey heads"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#monster
+:monster rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#moving_far
+:moving_far rdf:type owl:NamedIndividual ;
+            gen:modified :position ;
+            gen:distance "up to 5 heights" ;
+            rdfs:label "Moving far at conflict"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#never_tiring_horse
+:never_tiring_horse rdf:type owl:NamedIndividual ,
+                             :ItemSuppliesSundries ;
+                    gen:cost "18 points" ;
+                    rdfs:label "Never-tiring horse and riding gear"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#new_beginnings
+:new_beginnings rdf:type owl:NamedIndividual ;
+                gen:effect gen:game_preparation ;
+                rdfs:comment "The apocalypse may have happened, but new beginnings can still flourish."@en ;
+                rdfs:label "New beginnings"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#npc
+:npc rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#omen
+:omen rdf:type owl:NamedIndividual ;
+      rdfs:comment "Omens are story fronts contributing to the advancing Doom."@en ;
+      rdfs:label "List of omens"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#operate_hero
+:operate_hero rdf:type owl:NamedIndividual ;
+              gen:Actor gen:player ;
+              gen:included :ConflictAction ,
+                           :assistance ,
+                           :check_learning_spell ,
+                           :check_learning_technique ,
+                           :check_skill ,
+                           :check_skill_group ,
+                           :check_skill_reroll ,
+                           :check_skill_result_upgrade ,
+                           :increase_bonds ,
+                           :learning_spell_and_technique ,
+                           :rest_long ,
+                           :rest_short ,
+                           :spending_xp ;
+              gen:operated :hero ;
+              rdfs:label "Operate hero"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#operate_npc_and_monsters
+:operate_npc_and_monsters rdf:type owl:NamedIndividual ;
+                          gen:Actor gen:master ;
+                          gen:included :ConflictAction ,
+                                       :check_skill ;
+                          gen:operated :monster ,
+                                       :npc ;
+                          rdfs:label "Guide portrays nonplayer characters (NPCs) and monsters"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#other_non_harmful_actions
+:other_non_harmful_actions rdf:type owl:NamedIndividual ;
+                           rdfs:comment "This may include attempting to convince an enemy to stand down, performing a ritual, or taking time to carefully study the enemy."@en ;
+                           rdfs:label "Other non-harmful actions"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#personal_growth
+:personal_growth rdf:type owl:NamedIndividual ,
+                          :ItemDefenseGuts ;
+                 gen:valueNumeric 1 ;
+                 rdfs:label "Personal growth"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#pitchfork
+:pitchfork rdf:type owl:NamedIndividual ,
+                    :ItemDamageBlood ;
+           gen:cost "2 points" ;
+           gen:valueNumeric 0 ;
+           rdfs:label "Pitchfork"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#plate_armor
+:plate_armor rdf:type owl:NamedIndividual ,
+                      :ItemDefenseBlood ;
+             gen:cost "15 points" ;
+             gen:valueNumeric 2 ;
+             rdfs:label "Plate armor"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#position
+:position rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#potion_of_brawn
+:potion_of_brawn rdf:type owl:NamedIndividual ,
+                          :ItemOdditiesValuables ;
+                 gen:set :status_potion_of_brawn ;
+                 gen:cost "16 points" ;
+                 rdfs:label "A Potion of Brawn"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#ration
+:ration rdf:type owl:NamedIndividual ,
+                 :ItemSuppliesSundries ;
+        gen:cost "1 point" ;
+        rdfs:label "3 days' rations"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#rest_long
+:rest_long rdf:type owl:NamedIndividual ;
+           gen:effectOption :rest_long_fix ,
+                            :rest_long_roll ,
+                            :restore_spell_technique ;
+           gen:input :blood_modifier ,
+                     :guts_modifier ;
+           :durationRealTime "5 minutes" ;
+           gen:duration "10 hours - min (blood modifier, guts modifier)" ;
+           rdfs:label "Long rest"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#rest_long_fix
+:rest_long_fix rdf:type owl:NamedIndividual ;
+               gen:setAdditive :blood ,
+                               :guts ;
+               gen:valueFormula "7 points for distribution" ;
+               rdfs:label "Fix restore blood and guts after long rest"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#rest_long_roll
+:rest_long_roll rdf:type owl:NamedIndividual ;
+                gen:input :blood_modifier ,
+                          :guts_modifier ;
+                gen:set :blood ,
+                        :guts ;
+                gen:valueFormula "2d6 + modifier" ;
+                rdfs:label "Roll blood and guts after long rest"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#rest_short
+:rest_short rdf:type owl:NamedIndividual ;
+            gen:setAdditive :blood ,
+                            :guts ;
+            :durationRealTime "2 minutes" ;
+            gen:duration "1 hour" ;
+            gen:valueFormula "1d6 blood and 1d6 guts" ;
+            rdfs:label "Short rest"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#restore_spell_technique
+:restore_spell_technique rdf:type owl:NamedIndividual ;
+                         gen:effectOption :restore_spell_technique_alt ,
+                                          :restore_spell_technique_ritual ;
+                         rdfs:label "Restore spells and techniques"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#restore_spell_technique_alt
+:restore_spell_technique_alt rdf:type owl:NamedIndividual ;
+                             gen:setAdditive :instances_spell_technique ;
+                             gen:valueFormula "1 per 5 hours of rest" ;
+                             rdfs:label "Simple restore spells and techniques"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#restore_spell_technique_ritual
+:restore_spell_technique_ritual rdf:type owl:NamedIndividual ;
+                                gen:prerequisite :ritual ;
+                                gen:setCurrent :instances_spell_technique ;
+                                gen:valueFormula "maximum instances for each known spell and technique" ;
+                                rdfs:label "Restore spells and techniques by ritual"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#rewind
+:rewind rdf:type owl:NamedIndividual ;
+        gen:Actor gen:party ;
+        gen:included :rewind_bad_consequences ,
+                     :rewind_doomsday_clock ;
+        rdfs:comment "You choose to rebel against destiny - perhaps there's a second chance."@en ;
+        rdfs:label "Rewind"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#rewind_bad_consequences
+:rewind_bad_consequences rdf:type owl:NamedIndividual ;
+                         gen:set :bad_consequences ;
+                         rdfs:label "Rewind: bad consequences"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#rewind_doomsday_clock
+:rewind_doomsday_clock rdf:type owl:NamedIndividual ;
+                       gen:setAdditive :doomsday_clock ;
+                       gen:valueFormula "{number of sessions: number of moments} = {1: -2 per hour of play left; 2-3: -1 per hour of play left; 4+: -1 per session left}" ;
+                       rdfs:label "Rewind: change doomsday clock"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#ritual
+:ritual rdf:type owl:NamedIndividual ;
+        rdfs:label "Ritual for current spell or technique"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#rope_carpet_bucket
+:rope_carpet_bucket rdf:type owl:NamedIndividual ,
+                             :ItemSuppliesSundries ;
+                    gen:cost "4 points" ;
+                    rdfs:label "10-height rope, a rolled-up carpet and a bucket"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#round
+:round rdf:type owl:NamedIndividual ;
+       rdfs:comment "Time for actions of all participants of conflict."@en ;
+       rdfs:label "Round"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#scowling_face
+:scowling_face rdf:type owl:NamedIndividual ,
+                        :ItemDamageGuts ;
+               gen:cost "1 point" ;
+               gen:valueNumeric 0 ;
+               rdfs:label "A scowling face"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#seeds
+:seeds rdf:type owl:NamedIndividual ,
+                :ItemOdditiesValuables ;
+       gen:cost "15 points" ;
+       rdfs:label "A fistful of seeds that when planted instantly become 6-height tall stalks"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#selected_spell_technique_effect
+:selected_spell_technique_effect rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#selected_spell_technique_effect_enhanced
+:selected_spell_technique_effect_enhanced rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#serpent_skin
+:serpent_skin rdf:type owl:NamedIndividual ,
+                       :ItemOdditiesValuables ;
+              gen:cost "9 points" ;
+              rdfs:label "Worn skin and scales of a giant serpent"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#set_advantage_check
+:set_advantage_check rdf:type owl:NamedIndividual ;
+                     gen:input :Skill ;
+                     gen:prerequisite :check_skill_success ;
+                     gen:set :status_advantage ;
+                     gen:target "allies" ;
+                     gen:valueFormula "rank of used skill" ;
+                     rdfs:label "Create an advantage with skill check"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#set_advantage_wo_check
+:set_advantage_wo_check rdf:type owl:NamedIndividual ;
+                        gen:set :status_advantage ;
+                        gen:target "allies" ;
+                        gen:valueFormula "{impairing opponents' skills or defences: +1; preventing or nullifying opponents' skills or defences: +2}" ;
+                        rdfs:label "Create an advantage without skill check"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#set_approach_scores
+:set_approach_scores rdf:type owl:NamedIndividual ;
+                     gen:set :Approach ;
+                     gen:valueFormula "(assign +0, +1, +2) or (1d6-randomize number of points for free or random distribution)" ;
+                     rdfs:label "Set approach scores"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#set_block_on_learning_spell_technique
+:set_block_on_learning_spell_technique rdf:type owl:NamedIndividual ;
+                                       gen:set :status_block_on_learning_spell_technique ;
+                                       rdfs:label "Blocking the learning of spells and techniques"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#set_block_on_learning_spell_technique_after_adding_new_instance
+:set_block_on_learning_spell_technique_after_adding_new_instance rdf:type owl:NamedIndividual ;
+                                                                 gen:after :learning_spell_and_technique ;
+                                                                 gen:set :status_block_on_learning_spell_technique ,
+                                                                         :status_block_on_learning_spell_technique_after_adding_new_instance ;
+                                                                 rdfs:label "Blocking the learning of spells and techniques after adding new instance"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#set_blood_and_guts
+:set_blood_and_guts rdf:type owl:NamedIndividual ;
+                    gen:set :blood_modifier ,
+                            :guts_modifier ;
+                    gen:valueFormula "(allocate 6 points) or (1d6-randomize for each modifier)" ;
+                    rdfs:label "Set blood and guts modifiers"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#set_bonds
+:set_bonds rdf:type owl:NamedIndividual ;
+           gen:set :bonds ;
+           gen:valueFormula "(6 level with one hero and 3 level with other hero) xor (3d6 pool of levels for free distribution)" ;
+           rdfs:label "Determine bonds"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#set_concentration_penalty
+:set_concentration_penalty rdf:type owl:NamedIndividual ;
+                           gen:set :check_concentration_penalty ;
+                           gen:target "target of attack" ;
+                           gen:valueNumeric 1 ;
+                           rdfs:label "Increase target's concentration penalty" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#set_damage_blood
+:set_damage_blood rdf:type owl:NamedIndividual ;
+                  gen:setAdditive :blood ;
+                  gen:valueObject :damage_value_blood ;
+                  gen:prerequisiteDescription "blood > 0" ;
+                  gen:target "target of attack" ;
+                  rdfs:label "Damage to blood" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#set_damage_blood_approach
+:set_damage_blood_approach rdf:type owl:NamedIndividual ;
+                           gen:input :blood ;
+                           gen:setAdditive :Approach ;
+                           gen:valueObject :damage_value_blood ;
+                           gen:prerequisiteDescription "blood <= 0" ;
+                           rdfs:label "Blood damage to approach"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#set_damage_guts
+:set_damage_guts rdf:type owl:NamedIndividual ;
+                 gen:setAdditive :guts ;
+                 gen:valueObject :damage_value_guts ;
+                 gen:prerequisiteDescription "guts > 0" ;
+                 gen:target "target of attack" ;
+                 rdfs:label "Damage to guts" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#set_damage_guts_approach
+:set_damage_guts_approach rdf:type owl:NamedIndividual ;
+                          gen:input :guts ;
+                          gen:setAdditive :Approach ;
+                          gen:valueObject :damage_value_guts ;
+                          gen:prerequisiteDescription "guts <= 0" ;
+                          rdfs:label "Guts damage to approach"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#set_doom
+:set_doom rdf:type owl:NamedIndividual ;
+          gen:Actor gen:party ;
+          gen:set :doom ;
+          rdfs:label "Set doom"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#set_doomsday_clock
+:set_doomsday_clock rdf:type owl:NamedIndividual ;
+                    gen:Actor gen:master ;
+                    gen:set :doomsday_clock ;
+                    gen:valueFormula "{number of sessions: number of moments} = {1: 3 per hour; 2-3: 1.5 per hour; 4+: 1.5 per session}" ;
+                    rdfs:label "Set doomsday clock"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#set_inventory
+:set_inventory rdf:type owl:NamedIndividual ;
+               gen:after :set_approach_scores ,
+                         :set_blood_and_guts ,
+                         :set_skills ;
+               gen:included :set_inventory_items ,
+                            :set_inventory_points ;
+               rdfs:label "Determine inventory"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#set_inventory_items
+:set_inventory_items rdf:type owl:NamedIndividual ;
+                     gen:after :set_inventory_points ;
+                     gen:input :ItemDamageGuts ,
+                               :ItemDefenseGuts ;
+                     gen:inputOption :Item ;
+                     gen:resource :inventory_points ;
+                     gen:set :instances_spell_technique ,
+                             :status_in_inventory ;
+                     gen:prerequisiteDescription "only one instance of particular guts damage or guts defense item" ;
+                     rdfs:label "Determine initial items in inventory"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#set_inventory_points
+:set_inventory_points rdf:type owl:NamedIndividual ;
+                      gen:set :inventory_points ;
+                      gen:valueFormula """
+extra = (if (sum of approach scores = 1) then 1 else 0) + (if (blood modifier + guts modifier < 4) then 1 else 0) + (if (sum of skill ranks < 5) then 1 else 0) ;
+inventory points = ((30 + 9 * extra) points for choosing items) or (total (12 + 3 * extra)d6 for 1d6,2d6,3d6-randomize on any category of items) ;
+""" ;
+                      rdfs:label "Determine points for initial inventory"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#set_omen
+:set_omen rdf:type owl:NamedIndividual ;
+          gen:Actor gen:master ;
+          gen:after :set_doom ;
+          gen:set :omen ;
+          gen:valueNumeric 3 ;
+          rdfs:label "Set omens"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#set_skills
+:set_skills rdf:type owl:NamedIndividual ;
+            gen:set :Skill ;
+            gen:valueFormula "(+2 to 2 skills and +1 to 3 skills) or (2d6-randomize skill ranks)" ;
+            rdfs:label "Set skills"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#set_spell_technique_base
+:set_spell_technique_base rdf:type owl:NamedIndividual ;
+                          gen:effect :selected_spell_technique_effect ;
+                          gen:prerequisite :ItemSpellTechnique ;
+                          gen:resource :instances_spell_technique ;
+                          gen:cost "1 instance of selected spell or technique" ;
+                          rdfs:label "Perfoming base version of spell or technique"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#set_spell_technique_enhanced
+:set_spell_technique_enhanced rdf:type owl:NamedIndividual ,
+                                       gen:Check ;
+                              gen:checkSuccess :selected_spell_technique_effect_enhanced ;
+                              gen:effect :block_perform_spell_technique ;
+                              gen:input :Skill ;
+                              gen:prerequisite :ItemSpellTechnique ;
+                              gen:resource :guts ,
+                                           :instances_spell_technique ;
+                              gen:cost "1 instance of selected spell or technique" ;
+                              gen:valueFormula "skill check and guts cost of selected spell or technique" ;
+                              rdfs:label "Performing enhanced version of spell or technique"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#set_xp_level
+:set_xp_level rdf:type owl:NamedIndividual ;
+              gen:Actor gen:master ;
+              gen:set :xp ;
+              gen:target "hero" ;
+              gen:valueFormula "{low-level: 0; experienced: 15; veteran: 30}" ;
+              rdfs:label "Set XP level of heroes"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#skill_academic
+:skill_academic rdf:type owl:NamedIndividual ,
+                         :SkillKnowledge ;
+                rdfs:comment "The pursuit of formal knowledge, primarily scientific or historical in nature."@en ;
+                rdfs:label "Academic"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#skill_acrobatics
+:skill_acrobatics rdf:type owl:NamedIndividual ,
+                           :SkillPhysical ;
+                  rdfs:comment "Dynamic balance, gymnastics, or other incredible and immediate feats of agility."@en ;
+                  rdfs:label "Acrobatics"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#skill_arcana
+:skill_arcana rdf:type owl:NamedIndividual ,
+                       :SkillProwess ;
+              rdfs:comment "Recall lore, sense spirits, channel magic; required to perform enhanced spells."@en ;
+              rdfs:label "Arcana"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#skill_artistry
+:skill_artistry rdf:type owl:NamedIndividual ,
+                         :SkillPragmatic ;
+                rdfs:comment "Crafting, design, painting or other creative expressions."@en ;
+                rdfs:label "Artistry"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#skill_charisma
+:skill_charisma rdf:type owl:NamedIndividual ,
+                         :SkillSocial ;
+                rdfs:comment "Appealing or approachable charm, with a penchant for smooth talk, humor and wit."@en ;
+                rdfs:label "Charisma"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#skill_coordination
+:skill_coordination rdf:type owl:NamedIndividual ,
+                             :SkillPhysical ;
+                    rdfs:comment "Delicate positioning and control of body, hand and instincts for smooth or peurposeful movements."@en ;
+                    rdfs:label "Coordination"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#skill_culture
+:skill_culture rdf:type owl:NamedIndividual ,
+                        :SkillKnowledge ;
+               rdfs:comment "Ability to attune with a community's belief, customs and stories."@en ;
+               rdfs:label "Culture"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#skill_focus
+:skill_focus rdf:type owl:NamedIndividual ,
+                      :SkillProwess ;
+             rdfs:comment "Hone attention, concentrate mental spirit; required to perform enhanced techniques."@en ;
+             rdfs:label "Focus"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#skill_guile
+:skill_guile rdf:type owl:NamedIndividual ,
+                      :SkillSocial ;
+             rdfs:comment "Deception and manipulation through lies, bluffs or other chicanery and trickery."@en ;
+             rdfs:label "Guile"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#skill_impose
+:skill_impose rdf:type owl:NamedIndividual ,
+                       :SkillDamageGuts ;
+              rdfs:comment "Radiating a sense of authority and confidence that can enforce opinion, cut down others, or tower over everyone."@en ;
+              rdfs:label "Impose"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#skill_insight
+:skill_insight rdf:type owl:NamedIndividual ,
+                        :SkillDamageGuts ;
+               rdfs:comment "Attunement to others' emotional statesl inner grace and maturity in interactions."@en ;
+               rdfs:label "Insight"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#skill_observe
+:skill_observe rdf:type owl:NamedIndividual ,
+                        :SkillKnowledge ;
+               rdfs:comment "Aptitude in observing the world and detecting the smallest details across all sense."@en ;
+               rdfs:label "Observe"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#skill_physique
+:skill_physique rdf:type owl:NamedIndividual ,
+                         :SkillDamageBlood ;
+                rdfs:comment "Exertion of physical strength, stamina and constitution."@en ;
+                rdfs:label "Physique"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#skill_survival
+:skill_survival rdf:type owl:NamedIndividual ,
+                         :SkillPragmatic ;
+                rdfs:comment "Aptitude for rugged living off the land; self-reliant outdoorsmanship and survival across the harshest seasons."@en ;
+                rdfs:label "Survival"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#skill_tactics
+:skill_tactics rdf:type owl:NamedIndividual ,
+                        :SkillKnowledge ;
+               rdfs:comment "Knowledge of battle and conflict"@en ;
+               rdfs:label "Tactics"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#skill_tinker
+:skill_tinker rdf:type owl:NamedIndividual ,
+                       :SkillPragmatic ;
+              rdfs:comment "Engineering expertise over mechanical or clockwork devices, schema and structures."@en ;
+              rdfs:label "Tinker"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#skill_trade
+:skill_trade rdf:type owl:NamedIndividual ,
+                      :SkillPragmatic ;
+             rdfs:comment "Experience in commerce, animal handling and other industrial or market pursuits."@en ;
+             rdfs:label "Trade"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#skill_weaponry
+:skill_weaponry rdf:type owl:NamedIndividual ,
+                         :SkillDamageBlood ;
+                rdfs:comment "Proficiency in the use and maintenance of weaponry."@en ;
+                rdfs:label "Weaponry"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#songbird
+:songbird rdf:type owl:NamedIndividual ,
+                   :ItemOdditiesValuables ;
+          gen:cost "4 points" ;
+          rdfs:label "A songbird in a cage"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#spell_bind_weapon
+:spell_bind_weapon rdf:type owl:NamedIndividual ,
+                            :ItemSpell ;
+                   gen:cost "6 points" ;
+                   rdfs:comment "Suddenly you feel it on your palm: the heft of a magical weapon."@en ;
+                   rdfs:label "Bind weapon"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#spell_blackout
+:spell_blackout rdf:type owl:NamedIndividual ,
+                         :ItemSpell ;
+                gen:cost "17 points" ;
+                rdfs:comment "Make others fall asleep."@en ;
+                rdfs:label "Blackout"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#spell_burn_past
+:spell_burn_past rdf:type owl:NamedIndividual ,
+                          :ItemSpell ;
+                 gen:cost "9 points" ;
+                 rdfs:comment "Remove the past hour's events from someone's memory."@en ;
+                 rdfs:label "Burn the past"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#spell_compel
+:spell_compel rdf:type owl:NamedIndividual ,
+                       :ItemSpell ;
+              gen:cost "15 points" ;
+              rdfs:comment "Compel someone to act in strange or chaotic manner."@en ;
+              rdfs:label "Compel"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#spell_from_dust_to_dust
+:spell_from_dust_to_dust rdf:type owl:NamedIndividual ,
+                                  :ItemSpell ;
+                         gen:cost "21 points" ;
+                         rdfs:comment "Craft anything you’ve seen from a handful of dust."@en ;
+                         rdfs:label "From dust to dust"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#spell_lifebringer
+:spell_lifebringer rdf:type owl:NamedIndividual ,
+                            :ItemSpell ;
+                   gen:cost "4 points" ;
+                   rdfs:comment "Wounds can be healed through your hands' warm touch."@en ;
+                   rdfs:label "Lifebringer"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#spell_little_escapologist
+:spell_little_escapologist rdf:type owl:NamedIndividual ,
+                                    :ItemSpell ;
+                           gen:cost "11 points" ;
+                           rdfs:comment "Disappear from sight."@en ;
+                           rdfs:label "Little escapologist"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#spell_manic_hands
+:spell_manic_hands rdf:type owl:NamedIndividual ,
+                            :ItemSpell ;
+                   gen:cost "13 points" ;
+                   rdfs:comment "Arms and hands burst forth from your face, allowing more actions."@en ;
+                   rdfs:label "Manic hands"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#spell_master_of_elements
+:spell_master_of_elements rdf:type owl:NamedIndividual ,
+                                   :ItemSpell ;
+                          gen:cost "10 points" ;
+                          rdfs:comment "Air, earth, water and fire manipulated by your will."@en ;
+                          rdfs:label "Master of elements"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#spell_pierce_veil
+:spell_pierce_veil rdf:type owl:NamedIndividual ,
+                            :ItemSpell ;
+                   gen:cost "12 points" ;
+                   rdfs:comment "See any place, any time."@en ;
+                   rdfs:label "Pierce the veil"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#spell_secret_door
+:spell_secret_door rdf:type owl:NamedIndividual ,
+                            :ItemSpell ;
+                   gen:cost "8 points" ;
+                   rdfs:comment "A portal appears behind the next door. Where does it lead?"@en ;
+                   rdfs:label "Secret door"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#spell_shadowbind
+:spell_shadowbind rdf:type owl:NamedIndividual ,
+                           :ItemSpell ;
+                  gen:cost "14 points" ;
+                  rdfs:comment "Restrain a target with their own shadow."@en ;
+                  rdfs:label "Shadowbind"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#spell_soundshift
+:spell_soundshift rdf:type owl:NamedIndividual ,
+                           :ItemSpell ;
+                  gen:cost "3 points" ;
+                  rdfs:comment "Sound is your plaything. You decide its shape."@en ;
+                  rdfs:label "Soundshift"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#spell_spirit_pact
+:spell_spirit_pact rdf:type owl:NamedIndividual ,
+                            :ItemSpell ;
+                   gen:cost "18 points" ;
+                   rdfs:comment "You summon a spirit as your ethereal servant."@en ;
+                   rdfs:label "Spirit pact"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#spell_trick_of_light
+:spell_trick_of_light rdf:type owl:NamedIndividual ,
+                               :ItemSpell ;
+                      gen:cost "2 points" ;
+                      rdfs:comment "You mold light like water, creating auras and illusions."@en ;
+                      rdfs:label "Trick of the light"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#spell_trinket
+:spell_trinket rdf:type owl:NamedIndividual ,
+                        :ItemSpell ;
+               gen:cost "1 point" ;
+               rdfs:comment "Minor magical effects certain to delight anyone."@en ;
+               rdfs:label "Trinket"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#spell_true_miracle
+:spell_true_miracle rdf:type owl:NamedIndividual ,
+                             :ItemSpell ;
+                    gen:cost "24 points" ;
+                    rdfs:comment "Bring your wish to reality."@en ;
+                    rdfs:label "True miracle"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#spell_unmask_self
+:spell_unmask_self rdf:type owl:NamedIndividual ,
+                            :ItemSpell ;
+                   gen:cost "7 points" ;
+                   rdfs:comment "Know the name and hidden desire of any one being you see."@en ;
+                   rdfs:label "Unmask the self"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#spell_whisper
+:spell_whisper rdf:type owl:NamedIndividual ,
+                        :ItemSpell ;
+               gen:cost "5 points" ;
+               rdfs:comment "A message, spoken to the ear, like a siren’s song."@en ;
+               rdfs:label "Whisper"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#spell_windstep
+:spell_windstep rdf:type owl:NamedIndividual ,
+                         :ItemSpell ;
+                gen:cost "16 points" ;
+                rdfs:comment "Step out and appear elsewhere at will to chase or flee danger."@en ;
+                rdfs:label "Windstep"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#spending_xp
+:spending_xp rdf:type owl:NamedIndividual ;
+             gen:effectOption :increase_approach ,
+                              :increase_blood_modifier ,
+                              :increase_guts_modifier ,
+                              :increase_skill ;
+             rdfs:label "Spending XP"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#spyglass
+:spyglass rdf:type owl:NamedIndividual ,
+                   :ItemSuppliesSundries ;
+          gen:cost "16 points" ;
+          rdfs:label "Spyglass and magic reagents"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#status_advantage
+:status_advantage rdf:type owl:NamedIndividual ,
+                           gen:Status ;
+                  gen:duration "in guide duscretion (1 round by default)" ;
+                  rdfs:label "Advantage"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#status_block_on_learning_spell_technique
+:status_block_on_learning_spell_technique rdf:type owl:NamedIndividual ;
+                                          gen:blocked :check_learning_spell ,
+                                                      :check_learning_technique ;
+                                          :durationRealTime "15 minutes" ;
+                                          rdfs:label "Blocking the learning of spells and techniques"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#status_block_on_learning_spell_technique_after_adding_new_instance
+:status_block_on_learning_spell_technique_after_adding_new_instance rdf:type owl:NamedIndividual ;
+                                                                    gen:blocked :check_learning_spell ,
+                                                                                :check_learning_technique ;
+                                                                    gen:input :ItemSpellTechnique ;
+                                                                    :durationRealTime "15 minutes * complexity of spell or technique" ;
+                                                                    rdfs:label "Blocking the learning of spells and techniques after adding new instance"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#status_block_perfrom_spell_technique
+:status_block_perfrom_spell_technique rdf:type owl:NamedIndividual ,
+                                               gen:Status ;
+                                      gen:blocked :conflict_spells_techniques ;
+                                      :durationRealTime "15 minutes" ;
+                                      rdfs:label "Cannot perform certain spell or technique"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#status_in_inventory
+:status_in_inventory rdf:type owl:NamedIndividual ,
+                              gen:Status ;
+                     rdfs:label "In inventory"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#status_potion_of_brawn
+:status_potion_of_brawn rdf:type owl:NamedIndividual ,
+                                 gen:Status ;
+                        gen:included :status_potion_of_brawn_damage ,
+                                     :status_potion_of_brawn_defence ;
+                        gen:setAdditive :damage_value_blood ,
+                                        :item_defence_bonus_blood ;
+                        :durationRealTime "1 hour" ;
+                        gen:valueNumeric 2 ;
+                        rdfs:label "Under influence of a Potion of Brawn"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#status_potion_of_brawn_damage
+:status_potion_of_brawn_damage rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#status_potion_of_brawn_defence
+:status_potion_of_brawn_defence rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#status_stand_ground
+:status_stand_ground rdf:type owl:NamedIndividual ,
+                              gen:Status ;
+                     gen:setAdditive :check_attack_threshold_number_blood ,
+                                     :check_attack_threshold_number_guts ;
+                     gen:duration "one round" ;
+                     gen:prerequisiteDescription "attack against you" ;
+                     gen:valueNumeric -1 ;
+                     rdfs:label "Stand ground status"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#stoicism
+:stoicism rdf:type owl:NamedIndividual ,
+                   :ItemDefenseGuts ;
+          gen:valueNumeric 1 ;
+          rdfs:label "Stoicism"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#studded_leather_armor
+:studded_leather_armor rdf:type owl:NamedIndividual ,
+                                :ItemDefenseBlood ;
+                       gen:valueNumeric 1 ;
+                       rdfs:label "Studded leather armor"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#studded_leather_armor_and_stoicism
+:studded_leather_armor_and_stoicism rdf:type owl:NamedIndividual ,
+                                             :ItemDamageDefense ;
+                                    gen:included :stoicism ,
+                                                 :studded_leather_armor ;
+                                    gen:cost "10 points" ;
+                                    rdfs:label "Studded leather armor and stoicism"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#sturdy_sword
+:sturdy_sword rdf:type owl:NamedIndividual ,
+                       :ItemDamageBlood ;
+              gen:cost "13 points" ;
+              gen:valueNumeric 2 ;
+              rdfs:label "Sturdy sword"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#superior_standards
+:superior_standards rdf:type owl:NamedIndividual ,
+                             :ItemDamageGuts ;
+                    gen:cost "17 points" ;
+                    gen:valueNumeric 3 ;
+                    rdfs:label "Superior standards"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#technique_become_one
+:technique_become_one rdf:type owl:NamedIndividual ,
+                               :ItemTechnique ;
+                      gen:cost "18 points" ;
+                      rdfs:comment "Uncover and obtain the Spells & Techniques of another being."@en ;
+                      rdfs:label "Become one"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#technique_bind_magic
+:technique_bind_magic rdf:type owl:NamedIndividual ,
+                               :ItemTechnique ;
+                      gen:cost "8 points" ;
+                      rdfs:comment "Prevent someone from using Spells & Techniques."@en ;
+                      rdfs:label "Bind magic"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#technique_deadly_focus
+:technique_deadly_focus rdf:type owl:NamedIndividual ,
+                                 :ItemTechnique ;
+                        gen:cost "11 points" ;
+                        rdfs:comment "Double your damage."@en ;
+                        rdfs:label "Deadly focus"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#technique_defy_fates
+:technique_defy_fates rdf:type owl:NamedIndividual ,
+                               :ItemTechnique ;
+                      gen:cost "21 points" ;
+                      rdfs:comment "Rewind time."@en ;
+                      rdfs:label "Defy the fates"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#technique_dispel
+:technique_dispel rdf:type owl:NamedIndividual ,
+                           :ItemTechnique ;
+                  gen:cost "14 points" ;
+                  rdfs:comment "Nullify the effects of a Spell or Technique."@en ;
+                  rdfs:label "Dispel"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#technique_doompause
+:technique_doompause rdf:type owl:NamedIndividual ,
+                              :ItemTechnique ;
+                     gen:cost "24 points" ;
+                     rdfs:comment "Hold off the Doom."@en ;
+                     rdfs:label "Doompause"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#technique_flowmotion
+:technique_flowmotion rdf:type owl:NamedIndividual ,
+                               :ItemTechnique ;
+                      gen:cost "5 points" ;
+                      rdfs:comment "Move fast—very fast."@en ;
+                      rdfs:label "Flowmotion"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#technique_fluorescent_transcendence
+:technique_fluorescent_transcendence rdf:type owl:NamedIndividual ,
+                                              :ItemTechnique ;
+                                     gen:cost "16 points" ;
+                                     rdfs:comment "Enhance all Spells & Techniques for a brief moment."@en ;
+                                     rdfs:label "Fluorescent transcendence"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#technique_heartpiercer
+:technique_heartpiercer rdf:type owl:NamedIndividual ,
+                                 :ItemTechnique ;
+                        gen:cost "10 points" ;
+                        rdfs:comment "Your damage ignores armor and defense."@en ;
+                        rdfs:label "Heartpiercer"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#technique_inspiration
+:technique_inspiration rdf:type owl:NamedIndividual ,
+                                :ItemTechnique ;
+                       gen:cost "7 points" ;
+                       rdfs:comment "Improve someone's next action by buoying them with inspiration."@en ;
+                       rdfs:label "Inspiration"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#technique_interdiction
+:technique_interdiction rdf:type owl:NamedIndividual ,
+                                 :ItemTechnique ;
+                        gen:cost "15 points" ;
+                        rdfs:comment "Bar an opponent from using one or multiple Approaches."@en ;
+                        rdfs:label "Interdiction"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#technique_memory_seed
+:technique_memory_seed rdf:type owl:NamedIndividual ,
+                                :ItemTechnique ;
+                       gen:cost "4 points" ;
+                       rdfs:comment "Implant a false memory in someone."@en ;
+                       rdfs:label "Memory seed"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#technique_netherwave
+:technique_netherwave rdf:type owl:NamedIndividual ,
+                               :ItemTechnique ;
+                      gen:cost "17 points" ;
+                      rdfs:comment "A pulse of energy so strong it knocks everyone off their feet."@en ;
+                      rdfs:label "Netherwave"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#technique_only_ones_who_know
+:technique_only_ones_who_know rdf:type owl:NamedIndividual ,
+                                       :ItemTechnique ;
+                              gen:cost "1 point" ;
+                              rdfs:comment "Either everybody knows about your action or nobody does."@en ;
+                              rdfs:label "Only ones who know"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#technique_redo
+:technique_redo rdf:type owl:NamedIndividual ,
+                         :ItemTechnique ;
+                gen:cost "12 points" ;
+                rdfs:comment "Reroll the last Skill Check — whether yours or someone else's."@en ;
+                rdfs:label "Redo"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#technique_saving_grace
+:technique_saving_grace rdf:type owl:NamedIndividual ,
+                                 :ItemTechnique ;
+                        gen:cost "6 points" ;
+                        rdfs:comment "Protect your allies by redirecting all damage to you."@en ;
+                        rdfs:label "Saving grace"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#technique_stonewall
+:technique_stonewall rdf:type owl:NamedIndividual ,
+                              :ItemTechnique ;
+                     gen:cost "9 points" ;
+                     rdfs:comment "Reduce all damage. Grow a thick skin—figuratively or literally."@en ;
+                     rdfs:label "Stonewall"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#technique_turn_tide
+:technique_turn_tide rdf:type owl:NamedIndividual ,
+                              :ItemTechnique ;
+                     gen:cost "13 points" ;
+                     rdfs:comment "Every action you take brings opportunity."@en ;
+                     rdfs:label "Turn the tide"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#technique_uncanny_alarm
+:technique_uncanny_alarm rdf:type owl:NamedIndividual ,
+                                  :ItemTechnique ;
+                         gen:cost "2 points" ;
+                         rdfs:comment "Ask the fates about an action's consequences."@en ;
+                         rdfs:label "Uncanny alarm"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#technique_weave_through_water
+:technique_weave_through_water rdf:type owl:NamedIndividual ,
+                                        :ItemTechnique ;
+                               gen:cost "3 points" ;
+                               rdfs:comment "Walk or breathe through water."@en ;
+                               rdfs:label "Weave through water"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#telepathic_yak
+:telepathic_yak rdf:type owl:NamedIndividual ,
+                         :ItemOdditiesValuables ;
+                gen:cost "18 points" ;
+                rdfs:label "A telepathic yak"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#tent_and_shovel
+:tent_and_shovel rdf:type owl:NamedIndividual ,
+                          :ItemSuppliesSundries ;
+                 gen:cost "12 points" ;
+                 rdfs:label "Two-person tent and a shovel"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#threshold_number
+:threshold_number rdf:type owl:NamedIndividual ;
+                  gen:input :Approach ,
+                            :Skill ,
+                            :difficulty_modifier ,
+                            :status_advantage ;
+                  gen:valueFormula "skill + approach + difficulty modifier + advantage" ;
+                  rdfs:label "Threshold number"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#toga
+:toga rdf:type owl:NamedIndividual ,
+               :ItemDefenseBlood ;
+      gen:valueNumeric 1 ;
+      rdfs:label "Toga"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#too_many_consequences
+:too_many_consequences rdf:type owl:NamedIndividual ;
+                       gen:effect :hero_death ;
+                       gen:prerequisiteDescription "number of consequences = 6" ;
+                       rdfs:label "Too many consequences"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#tools_alchemist
+:tools_alchemist rdf:type owl:NamedIndividual ,
+                          :ItemSuppliesSundries ;
+                 gen:cost "14 points" ;
+                 rdfs:label "Alchemist’s tools and one dose of a rare drug"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#tools_artisan
+:tools_artisan rdf:type owl:NamedIndividual ,
+                        :ItemSuppliesSundries ;
+               gen:cost "2 points" ;
+               rdfs:label "Artisan’s tools and playing cards"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#tools_thieves
+:tools_thieves rdf:type owl:NamedIndividual ,
+                        :ItemSuppliesSundries ;
+               gen:cost "7 points" ;
+               rdfs:label "Thieves’ tools, disguise kit and manacles"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#troll_flesh
+:troll_flesh rdf:type owl:NamedIndividual ,
+                      :ItemOdditiesValuables ;
+             gen:cost "17 points" ;
+             rdfs:label "A handful of constantly-regenerating troll flesh. It’s edible but the flavor is atrocious."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#turn
+:turn rdf:type owl:NamedIndividual ;
+      rdfs:comment "Time for character's action."@en ;
+      rdfs:label "Turn"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#turtle
+:turtle rdf:type owl:NamedIndividual ,
+                 :ItemOdditiesValuables ;
+        gen:cost "11 points" ;
+        rdfs:label "The pet turtle of a local tyrant"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#unbreakable_ring
+:unbreakable_ring rdf:type owl:NamedIndividual ,
+                           :ItemOdditiesValuables ;
+                  gen:cost "7 points" ;
+                  rdfs:label "An unidentifiable and unbreakable ring"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#well_rounded_education
+:well_rounded_education rdf:type owl:NamedIndividual ,
+                                 :ItemDamageGuts ;
+                        gen:cost "6 points" ;
+                        gen:valueNumeric 1 ;
+                        rdfs:label "Well-rounded education"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#xp
+:xp rdf:type owl:NamedIndividual , gen:ParameterPC ;
+    rdfs:label "Experience points (XP)"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#game
+gen:game gen:Actor gen:party .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#game_play
+gen:game_play gen:included :advance_doomsday_clock ,
+                           :conflict ,
+                           :doom_happens ,
+                           :get_xp ,
+                           :operate_hero ,
+                           :operate_npc_and_monsters .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#game_preparation
+gen:game_preparation gen:included :hero_creation ,
+                                  :set_doom ,
+                                  :set_doomsday_clock ,
+                                  :set_omen ,
+                                  :set_xp_level .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#master
+gen:master rdfs:label "Guide"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#player
+gen:player rdfs:comment "Player moves the story and explores the collective world through heroes."@en .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+:Approach rdfs:comment "Approach represents the hero's aptitude for solving problems and using skills in particular ways."@en ,
+                       "Approach score = {+0: no aptitude; +1: average; +2: gifted; +3: expert}"@en ;
+          rdfs:label "Approach"@en .
+
+
+:CheckAttack rdfs:label "Attack check"@en .
+
+
+:ConflictAction rdfs:label "Action at conflict"@en .
+
+
+:Item rdfs:label "Item"@en .
+
+
+:ItemDamage rdfs:label "Damage item"@en .
+
+
+:ItemDamageBlood rdfs:label "Blood damage item"@en .
+
+
+:ItemDamageGuts rdfs:label "Guts damage item"@en .
+
+
+:ItemDefense rdfs:label "Defence item"@en .
+
+
+:ItemDefenseBlood rdfs:label "Blood defence item"@en .
+
+
+:ItemDefenseGuts rdfs:label "Guts defence item"@en .
+
+
+:ItemSpell rdfs:comment "Spells are directly linked to the Arcana and represent the manipulation of unreality beyond mortals' comprehension."@en ;
+           rdfs:label "Spell" .
+
+
+:ItemSpellTechnique rdfs:label "Spell or Technique"@en .
+
+
+:ItemTechnique rdfs:comment "Techniques are directly linked to Focus representing the hero's personal willpower and spirit."@en ;
+               rdfs:label "Technique" .
+
+
+:Skill rdfs:comment "{+0: no skill; +1: average; +2: gifted; +3: expert}"@en ;
+       rdfs:label "Skill"@en .
+
+
+:SkillDamageBlood rdfs:label "Skill for blood damage"@en .
+
+
+:SkillDamageGuts rdfs:label "Skill for guts damage"@en .
+
+
+###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi
