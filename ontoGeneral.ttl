@@ -99,14 +99,6 @@
                      "Проверка вничью"@ru .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#communicatedWith
-:communicatedWith rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf :actionWith ;
-                  rdfs:range :Actor ;
-                  rdfs:label "communicated with"@en ,
-                             "контактировал с"@ru .
-
-
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#effect
 :effect rdf:type owl:ObjectProperty ;
         rdfs:range :Act ;
@@ -135,14 +127,6 @@
 :inputOption rdf:type owl:ObjectProperty ;
              rdfs:comment "xor condition by default" ;
              rdfs:label "selected input from list"@en .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#later
-:later rdf:type owl:ObjectProperty ;
-       rdfs:domain :Event ;
-       rdfs:range :Event ;
-       rdfs:label "later"@en ,
-                  "после"@ru .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#modified
@@ -300,6 +284,13 @@
 :Actor rdf:type owl:Class .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#BasicMotive
+:BasicMotive rdf:type owl:Class ;
+             rdfs:subClassOf :Narrative ;
+             rdfs:label "Basic motive"@en ,
+                        "Базовый мотив"@ru .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#Check
 :Check rdf:type owl:Class ;
        rdfs:subClassOf :Act ;
@@ -392,17 +383,32 @@
 :Creature rdf:type owl:NamedIndividual .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#destruction
+:destruction rdf:type owl:NamedIndividual ,
+                      :BasicMotive ;
+             rdfs:label "Destruction"@en ,
+                        "Разрушение" .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#game
 :game rdf:type owl:NamedIndividual ;
-      :included :game_play ,
+      :Actor :party ;
+      :included :game_epilogue ,
+                :game_play ,
                 :game_preparation ;
       rdfs:label "Game"@en ,
                  "Игра"@ru .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#game_epilogue
+:game_epilogue rdf:type owl:NamedIndividual ;
+               :after :game_play ;
+               rdfs:label "Epilogue"@en ,
+                          "Эпилог"@ru .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#game_play
 :game_play rdf:type owl:NamedIndividual ;
-           :Actor :party ;
            :after :game_preparation ;
            rdfs:label "Playing the Game"@en ,
                       "Непосредственно игра"@ru .
@@ -414,8 +420,22 @@
                              "Подготовка к игре"@ru .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#loyalty
+:loyalty rdf:type owl:NamedIndividual ,
+                  :BasicMotive ;
+         rdfs:label "Loyalty"@en ,
+                    "Преданность"@ru .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#master
 :master rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#new_blood
+:new_blood rdf:type owl:NamedIndividual ,
+                    :BasicMotive ;
+           rdfs:label "New blood"@en ,
+                      "Новая кровь"@ru .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#party
@@ -436,6 +456,41 @@
 :player rdf:type owl:NamedIndividual ;
         rdfs:label "Player"@en ,
                    "Игрок"@ru .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#preserving_traditions
+:preserving_traditions rdf:type owl:NamedIndividual ,
+                                :BasicMotive ;
+                       rdfs:label "Preserving traditions"@en ,
+                                  "Сохранение традиций"@ru .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#profit
+:profit rdf:type owl:NamedIndividual ,
+                 :BasicMotive ;
+        rdfs:label "Profit"@en ,
+                   "Нажива"@ru .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#protection
+:protection rdf:type owl:NamedIndividual ,
+                     :BasicMotive ;
+            rdfs:label "Protection"@en ,
+                       "Защита"@ru .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#purification
+:purification rdf:type owl:NamedIndividual ,
+                       :BasicMotive ;
+              rdfs:label "Purification"@en ,
+                         "Очищение"@ru .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#rebellion
+:rebellion rdf:type owl:NamedIndividual ,
+                    :BasicMotive ;
+           rdfs:label "Rebellion"@en ,
+                      "Мятежность"@ru .
 
 
 #################################################################

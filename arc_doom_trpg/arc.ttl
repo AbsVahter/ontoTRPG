@@ -27,7 +27,8 @@
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#Approach
 :Approach rdf:type owl:Class ;
-          rdfs:subClassOf gen:ParameterDynamic , gen:ParameterCreature .
+          rdfs:subClassOf gen:ParameterCreature ,
+                          gen:ParameterDynamic .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#CheckAttack
@@ -297,17 +298,29 @@ gen:Check rdfs:subClassOf [ rdf:type owl:Restriction ;
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#assistance
 :assistance rdf:type owl:NamedIndividual ;
-            gen:effectOption :assistance_increase_threshold_number , :assistance_reroll_check_skill ;
+            gen:effectOption :assistance_increase_threshold_number ,
+                             :assistance_reroll_check_skill ;
             rdfs:label "Assistance"@en .
 
 
-:assistance_increase_threshold_number a owl:NamedIndividual ;
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#assistance_increase_threshold_number
+:assistance_increase_threshold_number rdf:type owl:NamedIndividual ;
                                       gen:input :Skill ,
-                      :bonds ;
-            gen:setAdditive :threshold_number ;
-            gen:prerequisiteDescription "(only one ally can assist) and (skill level > 0)" ;
-            gen:valueFormula "int (bond of hero's assistant / 4)" ;
+                                                :bonds ;
+                                      gen:setAdditive :threshold_number ;
+                                      gen:prerequisiteDescription "(only one ally can assist) and (skill level > 0)" ;
+                                      gen:valueFormula "int (bond of hero's assistant / 4)" ;
                                       rdfs:label "Assistance: increase threshold number for skill check"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#assistance_reroll_check_skill
+:assistance_reroll_check_skill rdf:type owl:NamedIndividual ;
+                               gen:after :check_skill ;
+                               gen:effect :check_skill ;
+                               gen:resource :bonds ;
+                               gen:cost "1 level" ;
+                               gen:target "you assist at skill check of other hero" ;
+                               rdfs:label "Assistance: reroll skill check"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#backpack_and_blank_book
@@ -346,18 +359,21 @@ gen:Check rdfs:subClassOf [ rdf:type owl:Restriction ;
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#blood
 :blood rdf:type owl:NamedIndividual ,
-                gen:ParameterDynamic , gen:ParameterCreature ;
+                gen:ParameterCreature ,
+                gen:ParameterDynamic ;
        rdfs:comment "The hero's ability to withstand physical harm."@en ;
        rdfs:label "Blood"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#blood_modifier
-:blood_modifier rdf:type owl:NamedIndividual , gen:ParameterPC ;
+:blood_modifier rdf:type owl:NamedIndividual ,
+                         gen:ParameterPC ;
                 rdfs:label "Blood modifier"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#bonds
-:bonds rdf:type owl:NamedIndividual , gen:ParameterPC ;
+:bonds rdf:type owl:NamedIndividual ,
+                gen:ParameterPC ;
        rdfs:comment "Bonds represent two heroes' relationship, vizualized through quadrants and boxes. Maximum 12 levels."@en ;
        rdfs:label "Bonds"@en .
 
@@ -491,16 +507,6 @@ gen:Check rdfs:subClassOf [ rdf:type owl:Restriction ;
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#check_skill_group_success
 :check_skill_group_success rdf:type owl:NamedIndividual .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#check_skill_reroll
-:assistance_reroll_check_skill rdf:type owl:NamedIndividual ;
-                    gen:after :check_skill ;
-                    gen:effect :check_skill ;
-                    gen:resource :bonds ;
-                    gen:cost "1 level" ;
-                    gen:target "you assist at skill check of other hero" ;
-                    rdfs:label "Assistance: reroll skill check"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#check_skill_result_upgrade
@@ -775,11 +781,12 @@ fail -> (fail with opportunity) xor (success with consequence) ;
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#doom_happens
 :doom_happens rdf:type owl:NamedIndividual ;
-              gen:Actor :doom ;
-              gen:effectOption :epilogue ,
-                               :new_beginnings ,
-                               :rewind ;
+              gen:Actor gen:master ;
+              gen:effectOption :new_beginnings ,
+                               :rewind ,
+                               gen:game_epilogue ;
               gen:input :doomsday_clock ;
+              gen:set :doom ;
               gen:prerequisiteDescription "current Doomsday clock = maximium Doomsday clock" ;
               rdfs:label "Doom happens"@en .
 
@@ -803,12 +810,6 @@ fail -> (fail with opportunity) xor (success with consequence) ;
                        :ItemSuppliesSundries ;
               gen:cost "15 points" ;
               rdfs:label "Complete encyclopedia set"@en .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#epilogue
-:epilogue rdf:type owl:NamedIndividual ;
-          rdfs:comment "You choose to accept the world's end."@en ;
-          rdfs:label "Epilogue"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#escape_attack
@@ -869,13 +870,15 @@ fail -> (fail with opportunity) xor (success with consequence) ;
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#guts
 :guts rdf:type owl:NamedIndividual ,
-               gen:ParameterDynamic , gen:ParameterCreature ;
+               gen:ParameterCreature ,
+               gen:ParameterDynamic ;
       rdfs:comment "The hero's ability to withstand mental or social harm."@en ;
       rdfs:label "Guts"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#guts_modifier
-:guts_modifier rdf:type owl:NamedIndividual , gen:ParameterPC ;
+:guts_modifier rdf:type owl:NamedIndividual ,
+                        gen:ParameterPC ;
                rdfs:label "Guts modifier"@en .
 
 
@@ -906,6 +909,8 @@ fail -> (fail with opportunity) xor (success with consequence) ;
       owl:sameAs gen:pc ;
       rdfs:label "Hero"@en .
 
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#pc
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#hero_creation
 :hero_creation rdf:type owl:NamedIndividual ;
@@ -1008,12 +1013,14 @@ fail -> (fail with opportunity) xor (success with consequence) ;
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#instances_spell_technique
 :instances_spell_technique rdf:type owl:NamedIndividual ,
-                                    gen:ParameterDynamic , gen:ParameterCreature ;
+                                    gen:ParameterCreature ,
+                                    gen:ParameterDynamic ;
                            rdfs:label "Instances of spells and techniques"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#inventory_points
-:inventory_points rdf:type owl:NamedIndividual , gen:ParameterPC ;
+:inventory_points rdf:type owl:NamedIndividual ,
+                           gen:ParameterPC ;
                   rdfs:label "Ponts for initial inventory"@en .
 
 
@@ -2241,12 +2248,18 @@ inventory points = ((30 + 9 * extra) points for choosing items) or (total (12 + 
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#xp
-:xp rdf:type owl:NamedIndividual , gen:ParameterPC ;
+:xp rdf:type owl:NamedIndividual ,
+             gen:ParameterPC ;
     rdfs:label "Experience points (XP)"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#game
 gen:game gen:Actor gen:party .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#game_epilogue
+gen:game_epilogue rdf:type owl:NamedIndividual ;
+                  rdfs:comment "You choose to accept the world's end or resolved it."@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#game_play
