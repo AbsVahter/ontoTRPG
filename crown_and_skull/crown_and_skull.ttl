@@ -1,0 +1,635 @@
+@prefix : <https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#> .
+@prefix gen: <https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#> .
+
+<https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#> rdf:type owl:Ontology ;
+                                                                                                  owl:imports gen: .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#Attrition
+:Attrition rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#Check
+gen:Check rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty gen:Actor ;
+                            owl:hasValue gen:player
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty gen:valueFormula ;
+                            owl:hasValue """
+{
+    d20 = 1: critical success ;
+    d20 <= threshold: success ;
+    d20 > threshold: failure ;
+    d20 = 20: critical failure ;
+}
+"""
+                          ] .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#Attrition
+:Attrition rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#alderman_wallaby
+:alderman_wallaby rdf:type owl:NamedIndividual ,
+                           gen:Creature ;
+                  rdfs:comment "He is a proudfoot scholar, almost two centuries old, and a lover of festivals. He relies on good counsel from many townsfolk. Local envoys and lords are widely known to adore the old fellow, coming from far and wide to offer gifts on his birthday."@en ;
+                  rdfs:label "Alderman Wallabytarnwhatwallaby"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#attrition_basic
+:attrition_basic rdf:type owl:NamedIndividual ,
+                          :Attrition ;
+                 gen:setAdditive :equipment ,
+                                 :skill ;
+                 gen:valueFormula "cross off any 1 equipment or skill" ;
+                 rdfs:label "Basic attrition"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#attrition_brutal
+:attrition_brutal rdf:type owl:NamedIndividual ,
+                           :Attrition ;
+                  gen:setAdditive :equipment ,
+                                  :skill ;
+                  gen:valueFormula "cross off random 1d6 equipment and skill" ;
+                  rdfs:label "Basic attrition"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#attrition_destroy
+:attrition_destroy rdf:type owl:NamedIndividual ,
+                            :Attrition ;
+                   gen:setAdditive :equipment ,
+                                   :skill ;
+                   gen:valueFormula "cross off random 1 equipment permanently and random 1 skill" ;
+                   rdfs:label "Basic attrition"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#attrition_equipment
+:attrition_equipment rdf:type owl:NamedIndividual ,
+                              :Attrition ;
+                     gen:setAdditive :equipment ;
+                     gen:valueFormula "cross off random 1 equipment" ;
+                     rdfs:label "Basic attrition"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#attrition_flesh
+:attrition_flesh rdf:type owl:NamedIndividual ,
+                          :Attrition ;
+                 gen:setAdditive :skill ;
+                 gen:valueFormula "cross off random 1 skill" ;
+                 rdfs:label "Basic attrition"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#bee_spoke
+:bee_spoke rdf:type owl:NamedIndividual ;
+           rdfs:comment "The oldest tavern in town was recently damaged by a collapse and fire during an orc incursion. Its owner, Bespo Kerat, was killed in the blaze. Now his daughter Revelle has disappeared. The calamity of the Bee Spoke has rallied folk to fight back against the orcs, no matter what the cost. So, reconstruction has begun."@en ;
+           rdfs:label "The Bee Spoke"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#bloodwing
+:bloodwing rdf:type owl:NamedIndividual ,
+                    gen:Creature ;
+           rdfs:comment "Bloodwing was a colossal green dragon, driven mad by a slime-entity called The Corruption."@en ;
+           rdfs:label "Bloodwing"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#bloodwing_war
+:bloodwing_war rdf:type owl:NamedIndividual ,
+                        gen:Event ;
+               gen:Actor :bloodwing ;
+               gen:Location :north_holds ;
+               gen:motive gen:madness ;
+               rdfs:comment "Some 30 years before present day, The Bloodwing War ravaged the realm. The once-unifi ed lands no longer have a king, borders have decayed, wilds are more dangerous than ever. An age of order and ideas has come to an end. With no unifying rule, The North Holds struggle to fi nd new purpose and new direction. An era of adventure."@en ;
+               rdfs:label "The Bloodwing War"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#character_creation
+:character_creation rdf:type owl:NamedIndividual ;
+                    gen:Actor gen:player ;
+                    gen:effectOption :character_creation_custom ,
+                                     :character_creation_templates_and_prompts ;
+                    rdfs:label "Character creation"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#character_creation_custom
+:character_creation_custom rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#character_creation_prompt
+:character_creation_prompt rdf:type owl:NamedIndividual ;
+                           gen:after :character_creation_template ;
+                           gen:set gen:pc ;
+                           gen:valueFormula "prompt" ;
+                           rdfs:label "Character creation: select prompt"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#character_creation_set_hometown
+:character_creation_set_hometown rdf:type owl:NamedIndividual ;
+                                 gen:inputOption :gardenburrow ,
+                                                 :rivergate ,
+                                                 :slimshire ;
+                                 gen:set :hometown ;
+                                 rdfs:label "Character creation: choose a hometown"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#character_creation_template
+:character_creation_template rdf:type owl:NamedIndividual ;
+                             gen:after :character_creation_set_hometown ;
+                             gen:set gen:pc ;
+                             gen:valueFormula "template" ;
+                             rdfs:label "Character creation: select template"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#character_creation_templates_and_prompts
+:character_creation_templates_and_prompts rdf:type owl:NamedIndividual ;
+                                          gen:included :character_creation_prompt ,
+                                                       :character_creation_set_hometown ,
+                                                       :character_creation_template ;
+                                          rdfs:label "Character creation by templates and prompts"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#check_defense_roll
+:check_defense_roll rdf:type owl:NamedIndividual ,
+                             gen:Check ;
+                    gen:checkFailure :Attrition ;
+                    gen:checkThreshold :threshold_defense ;
+                    rdfs:label "Called-for defense roll"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#check_flat_roll
+:check_flat_roll rdf:type owl:NamedIndividual ,
+                          gen:Check ;
+                 gen:checkThreshold :threshold_flat ;
+                 rdfs:label "Flat roll"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#check_skill_roll
+:check_skill_roll rdf:type owl:NamedIndividual ,
+                           gen:Check ;
+                  gen:checkThreshold :threshold_skill ;
+                  rdfs:label "Player-declared skill roll"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#choosing_phase
+:choosing_phase rdf:type owl:NamedIndividual ;
+                gen:Actor gen:player ;
+                gen:set :phase_pc ;
+                gen:valueFormula "1..5" ;
+                rdfs:comment "Generally, players will agree on which phase is best, especially after a few battles inform their decision. What phase a character chooses can be changed, but not mid-combat. Players can also choose the same phase."@en ;
+                rdfs:label "Choosing a Phase"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#damage_roll
+:damage_roll rdf:type owl:NamedIndividual ;
+             gen:input :stat_def ;
+             gen:valueFormula "XdY - def of foe" ;
+             rdfs:label "Damage or effect roll"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#death_of_pc
+:death_of_pc rdf:type owl:NamedIndividual ;
+             gen:after :Attrition ;
+             gen:input :equipment ,
+                       :phases_and_rounds ;
+             gen:set gen:pc ;
+             gen:valueObject gen:death ;
+             gen:prerequisiteDescription "(equipment = 0) and (phase 5)" ;
+             rdfs:label "Death"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#dunsel_and_kid
+:dunsel_and_kid rdf:type owl:NamedIndividual ;
+                rdfs:comment "Operating from a blacksmith-and-mercantile in town called ‘Haldur’s Goods,’ Dunsel is a stout folk merchant, beer expert, and journeyman smith. His ever-present sidekick is a fearless boy known simply as The Kid. These two have their ear to most of the goings-on in town, and the growing military challenges at hand."@en ;
+                rdfs:label "Dunsel & the Kid"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#equipment
+:equipment rdf:type owl:NamedIndividual ;
+           gen:valueFormula "maximum = 10" ;
+           rdfs:label "Equipment"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#eye_in_well
+:eye_in_well rdf:type owl:NamedIndividual ;
+             gen:Location :slimshire ;
+             rdfs:comment "As Slimshire faces the challenges of a full-fledged city, darkness has entered the dreams of its people. The dream is always the same: descending into a pit of wet stone, beyond the lightless water, deeper, darker, until a single yellowish eye opens in the murk. The dread of this dream-intrusion is slowly growing in Slimshire, but its nature, origin, and solution are completely unknown. Some doomsayers claim the goblinorc alliance and the eye are somehow connected..."@en ;
+             rdfs:label "The Eye in the Well"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#formless_evil
+:formless_evil rdf:type owl:NamedIndividual ,
+                        gen:Event ;
+               gen:Actor :lord_loyce ;
+               gen:Location :north_holds ;
+               gen:after :bloodwing_war ;
+               rdfs:comment "It is not fully understood, but the dreams of mortal folk are darkening. Rumor holds that the lord of Blood Manor is somehow behind this growing shadow."@en ;
+               rdfs:label "A formless evil"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#frothy_mare
+:frothy_mare rdf:type owl:NamedIndividual ,
+                      gen:Location ;
+             rdfs:comment "One of the most famous (or infamous) taverns in the realm calls Rivergate home: The Frothy Mare. This chaotic, multi-level inn, eatery and house of revelry serves as a meeting point for all kinds of river folk, known for its cheese-sausages and dwarven ale by the gallon. The lead barkeep is a red-mustached stout fellow called Barmm."@en ;
+             rdfs:label "The Frothy Mare"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#gardenburrow
+:gardenburrow rdf:type owl:NamedIndividual ,
+                       gen:Location ;
+              gen:included :suede_and_saddle ;
+              rdfs:comment "In the far west, the elven forest town of Gardenburrow serves as a waypost for the borders of Thryn. The town itself is on a small rise, with wooden fortifi cations, and a great central oak tree that serves as the town square."@en ;
+              rdfs:label "Gardenburrow, Forest Refuge"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#gardenburrow_residents
+:gardenburrow_residents rdf:type owl:NamedIndividual ;
+                        gen:Actor :alderman_wallaby ,
+                                  :selene ;
+                        gen:Location :gardenburrow ;
+                        rdfs:label "Residents of Gardenburrow"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#gardenburrow_threat
+:gardenburrow_threat rdf:type owl:NamedIndividual ;
+                     gen:Location :gardenburrow ;
+                     rdfs:comment "In recent years, a shadow has been spreading through the Oakenwood. Crops are failing, elder trees are withering away. Frogman defectors, venturing here from the marshes, believe the problem demands a new alliance. Can the heroes make friends of the cruel frog-kin and heal the forest? A council is called in the town longhouse. Something must be done."@en ;
+                     rdfs:label "Threat at Gardenburrow"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#giving_hero_coin
+:giving_hero_coin rdf:type owl:NamedIndividual ;
+                  gen:Actor gen:player ;
+                  gen:resource :hero_coin ;
+                  gen:set :hero_coin ;
+                  gen:cost "1" ;
+                  gen:target "other player" ;
+                  gen:valueNumeric 1 ;
+                  rdfs:label "Giving hero coin to other player"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#healing
+:healing rdf:type owl:NamedIndividual ;
+         gen:setAdditive :skill ;
+         gen:valueNumeric 1 ;
+         rdfs:label "Healing"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#hero_coin
+:hero_coin rdf:type owl:NamedIndividual ,
+                    gen:ParameterPC ;
+           rdfs:label "Hero coin"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#hero_points
+:hero_points rdf:type owl:NamedIndividual ,
+                      gen:ParameterPC ;
+             rdfs:label "Hero points"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#hometown
+:hometown rdf:type owl:NamedIndividual ,
+                   gen:ParameterPC ;
+          rdfs:label "Hometown"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#hometown_bonus
+:hometown_bonus rdf:type owl:NamedIndividual ;
+                rdfs:label "Hometown bonus for hero points"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#hurry
+:hurry rdf:type owl:NamedIndividual ;
+       gen:after :choosing_phase ;
+       gen:effect :move ,
+                  :perform_action ;
+       gen:set :status_vs_haste ;
+       gen:prerequisiteDescription "move+action combo" ;
+       gen:target "foes in the scene" ;
+       rdfs:comment "If you need to move AND do something in one turn, your haste opens up your Defenses with clumsy haste."@en ;
+       rdfs:label "Hurry"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#lady_walcrest
+:lady_walcrest rdf:type owl:NamedIndividual ,
+                        gen:Creature ;
+               rdfs:comment "The most widely respected fi gure in Rivergate is a venerable Baroness: heir to the Walcrest empire, Lady Ezmerelda Walcrest. Well into her 70s, she has seen and survived it all, but held true to the old alliances and standards of the town. All city policy is approved and executed by her and her council of advisors."@en ;
+               rdfs:label "Lady Walcrest"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#lord_loyce
+:lord_loyce rdf:type owl:NamedIndividual ,
+                     gen:Creature ;
+            rdfs:comment "This is a mysterious fi gure known as Lord Royce, said by doomsayers to be ‘he who would drink the world.’"@en ;
+            rdfs:label "Lord Loyce"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#maximize_roll
+:maximize_roll rdf:type owl:NamedIndividual ;
+               gen:Actor gen:player ;
+               gen:modified :damage_roll ,
+                            :yes_no_roll ,
+                            gen:Check ;
+               gen:valueFormula "reroll roll enterily" ;
+               rdfs:label "Maximize roll"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#move
+:move rdf:type owl:NamedIndividual ;
+      gen:after :choosing_phase ;
+      gen:modified gen:position ;
+      gen:valueFormula "Move elsewhere in the scene, about 6” table space. A small ‘sidestep’ move is allowed without using one’s phase." ;
+      rdfs:label "Move"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#north_holds
+:north_holds rdf:type owl:NamedIndividual ,
+                      gen:Location ;
+             gen:included :gardenburrow ,
+                          :rivergate ,
+                          :slimshire ;
+             rdfs:comment "This vast, diverse landscape is filled with cultures, secrets, and dangers for you to explore."@en ;
+             rdfs:label "The North Holds"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#perform_action
+:perform_action rdf:type owl:NamedIndividual ;
+                gen:after :choosing_phase ;
+                gen:effectOption :check_skill_roll ,
+                                 :damage_roll ;
+                rdfs:comment "Make an attack, use a skill, cast a spell or perform one discreet action. This takes your entire phase."@en ;
+                rdfs:label "Perform an Action"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#phase_pc
+:phase_pc rdf:type owl:NamedIndividual ;
+          rdfs:label "Phase of PC"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#phases_and_rounds
+:phases_and_rounds rdf:type owl:NamedIndividual ;
+                   gen:after :setting_scene ;
+                   gen:effectOption :hurry ,
+                                    :move ,
+                                    :perform_action ;
+                   gen:included :choosing_phase ;
+                   gen:prerequisiteDescription "(foes will act in 1-3 phases per round) and (any time enemies and heroes share a phase, heroes go first)" ;
+                   gen:valueNumeric 5 ;
+                   rdfs:comment "Think of phases as cool moments in an action scene. A collection of these moments is called a round. Which phase a hero takes action is a meaningful choice for timing and strategy."@en ;
+                   rdfs:label "Phases and Rounds"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#recovery
+:recovery rdf:type owl:NamedIndividual ;
+          gen:setAdditive :equipment ,
+                          :skill ;
+          gen:valueNumeric 1 ;
+          rdfs:comment "After each scene in play, once safety is found and no enemies or timers are incoming."@en ;
+          rdfs:label "Recovery"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#repair
+:repair rdf:type owl:NamedIndividual ;
+        gen:setAdditive :equipment ;
+        gen:prerequisiteDescription "damaged equipment" ;
+        gen:valueNumeric 1 ;
+        rdfs:label "Repair"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#reroll
+:reroll rdf:type owl:NamedIndividual ;
+        gen:Actor gen:player ;
+        gen:modified :damage_roll ,
+                     :yes_no_roll ,
+                     gen:Check ;
+        gen:valueFormula "reroll roll enterily" ;
+        rdfs:label "Reroll"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#rest
+:rest rdf:type owl:NamedIndividual ;
+      gen:setAdditive :equipment ,
+                      :skill ;
+      gen:valueFormula "1d4" ;
+      rdfs:comment "Night’s rest in safety." ;
+      rdfs:label "Rest"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#rivergate
+:rivergate rdf:type owl:NamedIndividual ,
+                    gen:Location ;
+           gen:included :frothy_mare ,
+                        :thenneport_docks ;
+           rdfs:comment "At the geographic center point of The North Holds is the port city of Rivergate. This central location has made the ruling elite here wealthy, trading with the Stormkeeper dwarves and the abundant farms south of the River Thenne. Now that Ruinmoor has gone quiet, though, Rivergate is in crisis. To call this town home, you’ll be working for desperate nobles, escorting merchant barges, or exploring the fallen walls of ancient monasteries. Rivergate is the busy hub of mankind, with all its intrigue and peril."@en ;
+           rdfs:label "Rivergate, Bustling Trade City"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#rivergate_residents
+:rivergate_residents rdf:type owl:NamedIndividual ;
+                     gen:Actor :lady_walcrest ;
+                     gen:Location :rivergate ;
+                     rdfs:label "Residents of Rivergate"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#rivergate_threat
+:rivergate_threat rdf:type owl:NamedIndividual ;
+                  gen:Location :rivergate ;
+                  rdfs:comment "Mysterious archers have been harassing travelers and residents alike, leaving none alive to identify them. A murmur of fear is spreading..."@en ;
+                  rdfs:label "Threat at Rivergate"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#selene
+:selene rdf:type owl:NamedIndividual ,
+                 gen:Creature ;
+        rdfs:comment "An elder hunter and forest warden, Selene is widely known as the oldest elf in this region. She was making camp here before there was a town at all, and knows every nook and cranny of the Oakenwood and beyond. She is a descendent of the third royal line of Thryn, enjoying all the privileges of a Baroness but choosing a humble life."@en ;
+        rdfs:label "Selene"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#set_bonus_reward
+:set_bonus_reward rdf:type owl:NamedIndividual ;
+                  gen:after :set_hero_points ;
+                  gen:set :hometown_bonus ;
+                  gen:prerequisiteDescription "per 10 hero points" ;
+                  rdfs:label "Bonus reward for hero points"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#set_hero_coin
+:set_hero_coin rdf:type owl:NamedIndividual ;
+               gen:Actor gen:master ;
+               gen:set :hero_coin ;
+               gen:prerequisiteDescription "acts of heroism or astounding play" ;
+               gen:valueNumeric 1 ;
+               rdfs:label "Awarding hero coin to player"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#set_hero_points
+:set_hero_points rdf:type owl:NamedIndividual ;
+                 gen:Actor gen:master ;
+                 gen:setAdditive :hero_points ;
+                 rdfs:label "Awarding hero points"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#setting_scene
+:setting_scene rdf:type owl:NamedIndividual ;
+               gen:Actor gen:master ;
+               rdfs:label "Setting the Scene"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#skill
+:skill rdf:type owl:NamedIndividual ;
+       gen:valueFormula "maximum = 10" ;
+       rdfs:label "Skill"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#slimshire
+:slimshire rdf:type owl:NamedIndividual ,
+                    gen:Location ;
+           gen:included :bee_spoke ,
+                        :dunsel_and_kid ;
+           rdfs:comment "The coming of the ‘White Bird’ and The Holy Order has grown this town, once a wide spot in the road to Hakburg, to new heights. Ruling here is Lord Pickins, and times have been good. Such fortune has attracted the destructive attention of goblins from the Shadow Glades, Orc raiders from the deep desert, and even the darkly dreaming infl uence of a mysterious entity generally referred to as ‘the eye in the well.’ To call this town home, you will be confronting vampiric cults, fi ghting goblin skirmishers, or working to secure allies in the war with the Orcs."@en ;
+           rdfs:label "Slimshire, High Plains Outpost"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#slimshire_threat
+:slimshire_threat rdf:type owl:NamedIndividual ;
+                  gen:Location :slimshire ;
+                  rdfs:comment "As Slimshire has reached the apogee of its prosperity though, a dark force has emboldened goblins from the Shadow Glades and orc raiders from the remnants of Dalric’s Wall. To make things worse, Lord Pickins has been seen less and less of late, cloistered with his ailing daughter Kay, who, according to rumor, has been afflicted with a vampiric sickness."@en ;
+                  rdfs:label "Threat at Slimshire"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#spending_hero_coin
+:spending_hero_coin rdf:type owl:NamedIndividual ;
+                    gen:Actor gen:player ;
+                    gen:effectOption :maximize_roll ,
+                                     :reroll ;
+                    gen:resource :hero_coin ;
+                    gen:cost "1" ;
+                    rdfs:label "Spending hero coin"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#spending_hero_points
+:spending_hero_points rdf:type owl:NamedIndividual ;
+                      gen:Actor gen:player ;
+                      gen:modified gen:pc ;
+                      gen:resource :hero_points ;
+                      gen:prerequisiteDescription "can only be spent when resting in a safe place with required facilities or services" ;
+                      rdfs:comment "A milestone moment for any character."@en ;
+                      rdfs:label "Spending hero points"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#stat_atk
+:stat_atk rdf:type owl:NamedIndividual ,
+                   gen:ParameterCreature ;
+          rdfs:label "Attack stat"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#stat_def
+:stat_def rdf:type owl:NamedIndividual ,
+                   gen:ParameterCreature ;
+          rdfs:label "Defense stat"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#status_vs_haste
+:status_vs_haste rdf:type owl:NamedIndividual ,
+                          gen:Status ;
+                 gen:setAdditive :stat_atk ;
+                 gen:duration "1 round" ;
+                 gen:target "vs character acted with hurry" ;
+                 gen:valueNumeric 5 ;
+                 rdfs:label "Bonus against haste target"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#suede_and_saddle
+:suede_and_saddle rdf:type owl:NamedIndividual ,
+                           gen:Location ;
+                  rdfs:comment "Gardenburrow features a women’s social club for food, drink, and reprieve. Any female character may stay here free, gathering information or restocking basic supplies at no charge. The only male allowed in these walls is a bumbling cook named Scooby."@en ;
+                  rdfs:label "The Suede & Saddle"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#thenneport_docks
+:thenneport_docks rdf:type owl:NamedIndividual ,
+                           gen:Location ;
+                  rdfs:comment "The complex of piers, moorings and cranes in Rivergate is a wonder of The North Holds. All manner of barges, fishing boats and rivercraft gather here to load and unload cargo, conscript crew, and arrange expeditions to every corner of the world. So much wealth moves through these ports, there is an abundance of ‘red cloak’ guards present at all times. These city soldiers sport 10-foot spears, and they are some of the finest fighters in The Holds."@en ;
+                  rdfs:label "Thenneport Docks"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#threshold_defense
+:threshold_defense rdf:type owl:NamedIndividual ;
+                   gen:input :stat_atk ,
+                             :stat_def ;
+                   gen:valueFormula "defense - atk of attacker" ;
+                   rdfs:label "Threshold for defense roll"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#threshold_flat
+:threshold_flat rdf:type owl:NamedIndividual ;
+                gen:valueFormula "target or opposed roll" ;
+                rdfs:label "Threshold for flat roll"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#threshold_skill
+:threshold_skill rdf:type owl:NamedIndividual ;
+                 gen:valueFormula "skill value" ;
+                 rdfs:label "Threshold for skill roll"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#transitions_and_table_talk
+:transitions_and_table_talk rdf:type owl:NamedIndividual ;
+                            gen:after :phases_and_rounds ;
+                            gen:effectOption :setting_scene ;
+                            rdfs:label "Transitions and Table Talk"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#yes_no_roll
+:yes_no_roll rdf:type owl:NamedIndividual ;
+             gen:valueFormula "{1d6 <= 3: No; 1d6 > 3: Yes}" ;
+             rdfs:label "Yes/No roll"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#Check
+gen:Check rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#game_play
+gen:game_play gen:included :giving_hero_coin ,
+                           :healing ,
+                           :phases_and_rounds ,
+                           :recovery ,
+                           :repair ,
+                           :rest ,
+                           :set_hero_coin ,
+                           :set_hero_points ,
+                           :setting_scene ,
+                           :spending_hero_coin ,
+                           :spending_hero_points ,
+                           :transitions_and_table_talk ,
+                           :yes_no_roll ,
+                           gen:Check .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#game_preparation
+gen:game_preparation gen:included :character_creation .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+:Attrition rdfs:comment "Attrition is a term for the reduction of your character’s resources when hit by hazards and attacks."@en ;
+           rdfs:label "Attrition"@en .
+
+
+###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi

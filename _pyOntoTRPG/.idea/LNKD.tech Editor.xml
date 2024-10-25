@@ -44,20 +44,8 @@
           <value>
             <set>
               <option value="file://$PROJECT_DIR$/../../../Created%20ontologies/ontoTRPG/arc_doom_trpg/arc.ttl" />
-              <option value="file://$PROJECT_DIR$/../../../Created%20ontologies/ontoTRPG/cyberpunk_2020/CP3002.ttl" />
-              <option value="file://$PROJECT_DIR$/../../../Created%20ontologies/ontoTRPG/gumshoe/cthulhu_confidential/PELGOC01.ttl" />
-              <option value="file://$PROJECT_DIR$/../../../Created%20ontologies/ontoTRPG/ontoBookContent.ttl" />
+              <option value="file://$PROJECT_DIR$/../../../Created%20ontologies/ontoTRPG/crown_and_skull/crown_and_skull.ttl" />
               <option value="file://$PROJECT_DIR$/../../../Created%20ontologies/ontoTRPG/ontoGeneral.ttl" />
-              <option value="file://$PROJECT_DIR$/../../../Created%20ontologies/ontoTRPG/ontoTRPG.ttl" />
-              <option value="file://$PROJECT_DIR$/../../../Created%20ontologies/ontoTRPG/pathfinder_2ed/PZO2101.ttl" />
-            </set>
-          </value>
-        </entry>
-        <entry key="shacl">
-          <value>
-            <set>
-              <option value="file://$PROJECT_DIR$/../../../Created%20ontologies/ontoTRPG/gumshoe/cthulhu_confidential/PELGOC01_shacl.ttl" />
-              <option value="file://$PROJECT_DIR$/../../../Created%20ontologies/ontoTRPG/ontoBookContent_shacl.ttl" />
             </set>
           </value>
         </entry>

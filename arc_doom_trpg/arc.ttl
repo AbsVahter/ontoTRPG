@@ -597,7 +597,7 @@ fail -> (fail with opportunity) xor (success with consequence) ;
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#conflict_moving
 :conflict_moving rdf:type owl:NamedIndividual ,
                           :ConflictAction ;
-                 gen:modified :position ;
+                 gen:modified gen:position ;
                  gen:distance "2 heights" ;
                  gen:prerequisiteDescription "freely during turn" ;
                  rdfs:label "Free moving at conflict"@en .
@@ -1144,7 +1144,7 @@ fail -> (fail with opportunity) xor (success with consequence) ;
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#moving_far
 :moving_far rdf:type owl:NamedIndividual ;
-            gen:modified :position ;
+            gen:modified gen:position ;
             gen:distance "up to 5 heights" ;
             rdfs:label "Moving far at conflict"@en .
 
@@ -1229,10 +1229,6 @@ fail -> (fail with opportunity) xor (success with consequence) ;
              gen:cost "15 points" ;
              gen:valueNumeric 2 ;
              rdfs:label "Plate armor"@en .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#position
-:position rdf:type owl:NamedIndividual .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/arc_doom_trpg/arc.ttl#potion_of_brawn
