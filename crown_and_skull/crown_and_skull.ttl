@@ -14,8 +14,131 @@
 #    Classes
 #################################################################
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#ActMagicInfernal
+:ActMagicInfernal rdf:type owl:Class ;
+                  rdfs:subClassOf :RequiredDetails ,
+                                  gen:Act .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#ActMagicUnstable
+:ActMagicUnstable rdf:type owl:Class ;
+                  rdfs:subClassOf :RequiredDetails ,
+                                  gen:Act .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#Attrition
 :Attrition rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#Companion
+:Companion rdf:type owl:Class ;
+           rdfs:subClassOf :RequiredDetails ,
+                           gen:Creature .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#CoreAbility
+:CoreAbility rdf:type owl:Class ;
+             rdfs:subClassOf :RequiredDetails .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#Effect
+:Effect rdf:type owl:Class ;
+        rdfs:subClassOf :RequiredDetails ;
+        rdfs:label "Effect"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#EffectCompanion
+:EffectCompanion rdf:type owl:Class ;
+                 rdfs:subClassOf :Effect .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#EffectItem
+:EffectItem rdf:type owl:Class ;
+            rdfs:subClassOf :Effect .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#EffectSpell
+:EffectSpell rdf:type owl:Class ;
+             rdfs:subClassOf :Effect .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#Flaw
+:Flaw rdf:type owl:Class ;
+      rdfs:subClassOf :RequiredDetails .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#Item
+:Item rdf:type owl:Class ;
+      rdfs:subClassOf :RequiredDetails .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#ItemArmor
+:ItemArmor rdf:type owl:Class ;
+           rdfs:subClassOf :Item .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#ItemBasic
+:ItemBasic rdf:type owl:Class ;
+           rdfs:subClassOf :Item ;
+           rdfs:label "Basic item"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#ItemLarge
+:ItemLarge rdf:type owl:Class ;
+           rdfs:subClassOf :Item ;
+           rdfs:label "Large item"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#ItemWeapon
+:ItemWeapon rdf:type owl:Class ;
+            rdfs:subClassOf :Item ;
+            rdfs:label "Weapon"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#Limitation
+:Limitation rdf:type owl:Class ;
+            rdfs:subClassOf :RequiredDetails ;
+            rdfs:label "Limitation"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#LimitationCompanion
+:LimitationCompanion rdf:type owl:Class ;
+                     rdfs:subClassOf :Limitation .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#LimitationItem
+:LimitationItem rdf:type owl:Class ;
+                rdfs:subClassOf :Limitation .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#LimitationSpell
+:LimitationSpell rdf:type owl:Class ;
+                 rdfs:subClassOf :Limitation .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#RequiredDetails
+:RequiredDetails rdf:type owl:Class ;
+                 rdfs:label "Required details"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#Skill
+:Skill rdf:type owl:Class ;
+       rdfs:subClassOf :RequiredDetails .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#SkillCompanion
+:SkillCompanion rdf:type owl:Class ;
+                rdfs:subClassOf :Skill .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#SkillPC
+:SkillPC rdf:type owl:Class ;
+         rdfs:subClassOf :Skill .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#Spell
+:Spell rdf:type owl:Class ;
+       rdfs:subClassOf :RequiredDetails .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#Check
@@ -40,8 +163,76 @@ gen:Check rdfs:subClassOf [ rdf:type owl:Restriction ;
 #    Individuals
 #################################################################
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#ActMagicInfernal
+:ActMagicInfernal rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#ActMagicUnstable
+:ActMagicUnstable rdf:type owl:NamedIndividual .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#Attrition
 :Attrition rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#Companion
+:Companion rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#CoreAbility
+:CoreAbility rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#EffectCompanion
+:EffectCompanion rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#EffectItem
+:EffectItem rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#EffectSpell
+:EffectSpell rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#Flaw
+:Flaw rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#Item
+:Item rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#ItemArmor
+:ItemArmor rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#LimitationCompanion
+:LimitationCompanion rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#LimitationItem
+:LimitationItem rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#LimitationSpell
+:LimitationSpell rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#Skill
+:Skill rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#SkillCompanion
+:SkillCompanion rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#SkillPC
+:SkillPC rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#Spell
+:Spell rdf:type owl:NamedIndividual .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#alderman_wallaby
@@ -55,7 +246,7 @@ gen:Check rdfs:subClassOf [ rdf:type owl:Restriction ;
 :attrition_basic rdf:type owl:NamedIndividual ,
                           :Attrition ;
                  gen:setAdditive :equipment ,
-                                 :skill ;
+                                 :skills ;
                  gen:valueFormula "cross off any 1 equipment or skill" ;
                  rdfs:label "Basic attrition"@en .
 
@@ -64,7 +255,7 @@ gen:Check rdfs:subClassOf [ rdf:type owl:Restriction ;
 :attrition_brutal rdf:type owl:NamedIndividual ,
                            :Attrition ;
                   gen:setAdditive :equipment ,
-                                  :skill ;
+                                  :skills ;
                   gen:valueFormula "cross off random 1d6 equipment and skill" ;
                   rdfs:label "Basic attrition"@en .
 
@@ -73,7 +264,7 @@ gen:Check rdfs:subClassOf [ rdf:type owl:Restriction ;
 :attrition_destroy rdf:type owl:NamedIndividual ,
                             :Attrition ;
                    gen:setAdditive :equipment ,
-                                   :skill ;
+                                   :skills ;
                    gen:valueFormula "cross off random 1 equipment permanently and random 1 skill" ;
                    rdfs:label "Basic attrition"@en .
 
@@ -89,7 +280,7 @@ gen:Check rdfs:subClassOf [ rdf:type owl:Restriction ;
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#attrition_flesh
 :attrition_flesh rdf:type owl:NamedIndividual ,
                           :Attrition ;
-                 gen:setAdditive :skill ;
+                 gen:setAdditive :skills ;
                  gen:valueFormula "cross off random 1 skill" ;
                  rdfs:label "Basic attrition"@en .
 
@@ -125,8 +316,80 @@ gen:Check rdfs:subClassOf [ rdf:type owl:Restriction ;
                     rdfs:label "Character creation"@en .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#character_creation_companion
+:character_creation_companion rdf:type owl:NamedIndividual ;
+                              gen:after :character_creation_spell ;
+                              gen:input :companion_custom ;
+                              gen:resource :hero_points ;
+                              gen:set :companions ;
+                              gen:cost "companion cost" ;
+                              rdfs:label "Custom character creation: acquire and customize a companion"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#character_creation_core_ability
+:character_creation_core_ability rdf:type owl:NamedIndividual ;
+                                 gen:after :character_creation_flaws ;
+                                 gen:inputOption :CoreAbility ;
+                                 gen:resource :hero_points ;
+                                 gen:set :core_ability ;
+                                 gen:cost "15" ;
+                                 gen:prerequisiteDescription "number of core abilities <= 1" ;
+                                 rdfs:label "Custom character creation: core ability"@en .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#character_creation_custom
-:character_creation_custom rdf:type owl:NamedIndividual .
+:character_creation_custom rdf:type owl:NamedIndividual ;
+                           gen:included :character_creation_companion ,
+                                        :character_creation_core_ability ,
+                                        :character_creation_equipment ,
+                                        :character_creation_flaws ,
+                                        :character_creation_lineage ,
+                                        :character_creation_set_hometown ,
+                                        :character_creation_skill ,
+                                        :character_creation_spell ,
+                                        :character_creation_starting_points ;
+                           rdfs:label "Custom character creation"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#character_creation_equipment
+:character_creation_equipment rdf:type owl:NamedIndividual ;
+                              gen:after :character_creation_skill ;
+                              gen:input :item_custom ;
+                              gen:resource :hero_points ;
+                              gen:set :equipment ;
+                              gen:cost "cost of item" ;
+                              gen:prerequisiteDescription "number of equipment <= 10" ;
+                              rdfs:label "Custom character creation: buy and customize equipment"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#character_creation_flaws
+:character_creation_flaws rdf:type owl:NamedIndividual ;
+                          gen:after :character_creation_starting_points ;
+                          gen:included :character_creation_flaws_additional_points ,
+                                       :character_creation_flaws_selection ;
+                          rdfs:comment "What is a weakness or stress point for character? Flaws imply history and drive believable role play."@en ;
+                          rdfs:label "Custom character creation: flaws"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#character_creation_flaws_additional_points
+:character_creation_flaws_additional_points rdf:type owl:NamedIndividual ;
+                                            gen:setAdditiveMax :hero_points ;
+                                            gen:valueFormula "5 * (number of flaws)" ;
+                                            rdfs:label "Custom character creation: additional points per flaw"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#character_creation_flaws_selection
+:character_creation_flaws_selection rdf:type owl:NamedIndividual ;
+                                    gen:inputOption :Flaw ;
+                                    gen:set :flaws ;
+                                    gen:prerequisiteDescription "number of selected flaws <= 2" ;
+                                    rdfs:label "Custom character creation: choose flaws"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#character_creation_lineage
+:character_creation_lineage rdf:type owl:NamedIndividual ;
+                            gen:set :lineage ;
+                            rdfs:label "Custom character creation: choose lineage"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#character_creation_prompt
@@ -144,6 +407,35 @@ gen:Check rdfs:subClassOf [ rdf:type owl:Restriction ;
                                                  :slimshire ;
                                  gen:set :hometown ;
                                  rdfs:label "Character creation: choose a hometown"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#character_creation_skill
+:character_creation_skill rdf:type owl:NamedIndividual ;
+                          gen:after :character_creation_core_ability ;
+                          gen:inputOption :SkillPC ;
+                          gen:resource :hero_points ;
+                          gen:set :skills ;
+                          gen:cost "1 point per 1 skill level" ;
+                          gen:prerequisiteDescription "(number of non-zero skills <= 10) and (selected skill level > 2) and (selected skill level < 19)" ;
+                          rdfs:label "Custom character creation: choose skills"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#character_creation_spell
+:character_creation_spell rdf:type owl:NamedIndividual ;
+                          gen:after :character_creation_equipment ;
+                          gen:input :spell_custom ;
+                          gen:resource :hero_points ;
+                          gen:set :spells ;
+                          gen:cost "spell cost" ;
+                          rdfs:label "Custom character creation: buy and customise spells"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#character_creation_starting_points
+:character_creation_starting_points rdf:type owl:NamedIndividual ;
+                                    gen:after :character_creation_set_hometown ;
+                                    gen:set :hero_points ;
+                                    gen:valueNumeric 50 ;
+                                    rdfs:label "Custom character creation: starting points"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#character_creation_template
@@ -184,6 +476,28 @@ gen:Check rdfs:subClassOf [ rdf:type owl:Restriction ;
                   rdfs:label "Player-declared skill roll"@en .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#check_spell_infernal
+:check_spell_infernal rdf:type owl:NamedIndividual ,
+                               gen:Check ;
+                      gen:basedOn :check_skill_roll ;
+                      gen:checkFailure :ActMagicInfernal ;
+                      gen:checkSuccess :set_spell ;
+                      gen:input :skill_magic ;
+                      gen:prerequisite :limitation_spell_infernal ;
+                      rdfs:label "Infernal magic check"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#check_spell_unstable
+:check_spell_unstable rdf:type owl:NamedIndividual ,
+                               gen:Check ;
+                      gen:basedOn :check_skill_roll ;
+                      gen:checkFailure :ActMagicUnstable ;
+                      gen:checkSuccess :set_spell ;
+                      gen:input :skill_magic ;
+                      gen:prerequisite :limitation_spell_unstable ;
+                      rdfs:label "Unstable magic check"@en .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#choosing_phase
 :choosing_phase rdf:type owl:NamedIndividual ;
                 gen:Actor gen:player ;
@@ -191,6 +505,160 @@ gen:Check rdfs:subClassOf [ rdf:type owl:Restriction ;
                 gen:valueFormula "1..5" ;
                 rdfs:comment "Generally, players will agree on which phase is best, especially after a few battles inform their decision. What phase a character chooses can be changed, but not mid-combat. Players can also choose the same phase."@en ;
                 rdfs:label "Choosing a Phase"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#companion_custom
+:companion_custom rdf:type owl:NamedIndividual ,
+                           :Companion ;
+                  rdfs:label "Custom companion"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#companions
+:companions rdf:type owl:NamedIndividual ,
+                     gen:ParameterPC ;
+            rdfs:comment "A companion action counts as action of PC."@en ,
+                         "format = [list of companions]"@en ;
+            rdfs:label "Companion"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#core_ability
+:core_ability rdf:type owl:NamedIndividual ,
+                       gen:ParameterPC ;
+              rdfs:comment "This is one of the most useful mechanical aspects of character"@en ;
+              rdfs:label "Core ability"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#creation_custom_companion
+:creation_custom_companion rdf:type owl:NamedIndividual ;
+                           gen:Actor gen:player ;
+                           gen:included :creation_custom_companion_base ,
+                                        :creation_custom_companion_skills ,
+                                        :creation_custom_companion_upgrade ;
+                           gen:set :companion_custom ;
+                           rdfs:label "Custom companion creation"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#creation_custom_companion_base
+:creation_custom_companion_base rdf:type owl:NamedIndividual ;
+                                gen:inputOption :Companion ;
+                                gen:set :companion_custom ;
+                                gen:valueFormula """
+cost = (base companion cost) or
+{
+    small animal (d4 attacks, 1 skill value 9, 6 defense): 3 points ;
+    medium sized beasts or simple devices (d6 attacks, 2 skills value 9, 9 defense): 5 points ;
+    large animals or retainers (d8 attacks, 3 skills value 9, 9 defense): 12 points ;
+}
+""" ;
+                                rdfs:label "Custom companion: base"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#creation_custom_companion_skills
+:creation_custom_companion_skills rdf:type owl:NamedIndividual ;
+                                  gen:after :creation_custom_companion_base ;
+                                  gen:setAdditive :companion_custom ;
+                                  gen:valueObject :SkillCompanion ;
+                                  gen:prerequisiteDescription "number of skills <= maximum of skills of base" ;
+                                  rdfs:label "Custom companion: skills"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#creation_custom_companion_upgrade
+:creation_custom_companion_upgrade rdf:type owl:NamedIndividual ;
+                                   gen:after :creation_custom_companion_skills ;
+                                   gen:resource :hero_points ;
+                                   gen:setAdditive :companion_custom ;
+                                   gen:valueObject :EffectCompanion ,
+                                                   :LimitationCompanion ;
+                                   gen:prerequisiteDescription "final cost > 0" ;
+                                   gen:valueFormula """
+cost += {
+    effect: 3 points ;
+    limitation: -3 points ;
+}
+""" ;
+                                   rdfs:label "Custom companion: upgrade"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#creation_custom_item
+:creation_custom_item rdf:type owl:NamedIndividual ;
+                      gen:Actor gen:player ;
+                      gen:included :creation_custom_item_base ,
+                                   :creation_custom_item_upgrade ;
+                      gen:set :item_custom ;
+                      rdfs:label "Custom item creation"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#creation_custom_item_base
+:creation_custom_item_base rdf:type owl:NamedIndividual ;
+                           gen:inputOption :Item ;
+                           gen:set :item_custom ;
+                           gen:valueFormula """
+cost = (base item cost) or
+{
+    d6 weapon, +1 armor (small weapons, pouches, rope, lantern, torch, climbing kit, travel rations, staff, ring or jewelry item, cloak, boots): 1 point ;
+    d8 weapon, +2 armor (medium-sized weapons, light armor, flares, bear traps & snares, thieves’ tools, common supplies): 2 points ;
+    d10 weapon, +3 armor (heavy and exotic weapons, mechanized weapons and tools, gear for horses, complex or heavy armor): 3 points ;
+    d12 weapon, +4 armor (firearms, siege weapons, war-ready equipment and armor): 5 points ;
+}
+""" ;
+                           rdfs:label "Custom item: base"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#creation_custom_item_upgrade
+:creation_custom_item_upgrade rdf:type owl:NamedIndividual ;
+                              gen:after :creation_custom_item_base ;
+                              gen:resource :hero_points ;
+                              gen:setAdditive :item_custom ;
+                              gen:valueObject :EffectItem ,
+                                              :LimitationItem ;
+                              gen:prerequisiteDescription "(limitations cannot be added as part of an upgrade) and (no stacking) and (final cost > 0)" ;
+                              gen:valueFormula """
+cost += {
+    effect: 3 points ;
+    limitation: -3 points ;
+}
+""" ;
+                              rdfs:label "Custom item: upgrade"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#creation_custom_spell
+:creation_custom_spell rdf:type owl:NamedIndividual ;
+                       gen:Actor gen:player ;
+                       gen:included :creation_custom_spell_base ,
+                                    :creation_custom_spell_upgrade ;
+                       gen:set :spell_custom ;
+                       rdfs:label "Custom spell creation"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#creation_custom_spell_base
+:creation_custom_spell_base rdf:type owl:NamedIndividual ;
+                            gen:inputOption :Spell ;
+                            gen:set :spell_custom ;
+                            gen:valueFormula """
+cost = (base spell cost) or
+{
+    normal spell: 3 points ;
+    heavy spell: 5 points ;
+}
+""" ;
+                            rdfs:label "Custom spell: base"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#creation_custom_spell_upgrade
+:creation_custom_spell_upgrade rdf:type owl:NamedIndividual ;
+                               gen:after :creation_custom_spell_base ;
+                               gen:resource :hero_points ;
+                               gen:setAdditive :spell_custom ;
+                               gen:valueObject :EffectSpell ,
+                                               :LimitationSpell ;
+                               gen:prerequisiteDescription "(no stacking limitations) and (effect's stack < 4) and (final cost > 0)" ;
+                               gen:valueFormula """
+cost += {
+    effect: 3 points ;
+    limitation: -3 points ;
+}
+""" ;
+                               rdfs:label "Custom spell: upgrade"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#damage_roll
@@ -218,8 +686,9 @@ gen:Check rdfs:subClassOf [ rdf:type owl:Restriction ;
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#equipment
-:equipment rdf:type owl:NamedIndividual ;
-           gen:valueFormula "maximum = 10" ;
+:equipment rdf:type owl:NamedIndividual ,
+                    gen:ParameterPC ;
+           rdfs:comment "format = {item: status (carried, worn, damaged) }"@en ;
            rdfs:label "Equipment"@en .
 
 
@@ -228,6 +697,13 @@ gen:Check rdfs:subClassOf [ rdf:type owl:Restriction ;
              gen:Location :slimshire ;
              rdfs:comment "As Slimshire faces the challenges of a full-fledged city, darkness has entered the dreams of its people. The dream is always the same: descending into a pit of wet stone, beyond the lightless water, deeper, darker, until a single yellowish eye opens in the murk. The dread of this dream-intrusion is slowly growing in Slimshire, but its nature, origin, and solution are completely unknown. Some doomsayers claim the goblinorc alliance and the eye are somehow connected..."@en ;
              rdfs:label "The Eye in the Well"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaws
+:flaws rdf:type owl:NamedIndividual ,
+                gen:ParameterPC ;
+       rdfs:comment "format = list"@en ;
+       rdfs:label "Flaws"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#formless_evil
@@ -283,7 +759,7 @@ gen:Check rdfs:subClassOf [ rdf:type owl:Restriction ;
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#healing
 :healing rdf:type owl:NamedIndividual ;
-         gen:setAdditive :skill ;
+         gen:setAdditive :skills ;
          gen:valueNumeric 1 ;
          rdfs:label "Healing"@en .
 
@@ -323,11 +799,37 @@ gen:Check rdfs:subClassOf [ rdf:type owl:Restriction ;
        rdfs:label "Hurry"@en .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_custom
+:item_custom rdf:type owl:NamedIndividual ,
+                      :Item ;
+             rdfs:label "Custom item"@en .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#lady_walcrest
 :lady_walcrest rdf:type owl:NamedIndividual ,
                         gen:Creature ;
                rdfs:comment "The most widely respected fi gure in Rivergate is a venerable Baroness: heir to the Walcrest empire, Lady Ezmerelda Walcrest. Well into her 70s, she has seen and survived it all, but held true to the old alliances and standards of the town. All city policy is approved and executed by her and her council of advisors."@en ;
                rdfs:label "Lady Walcrest"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#limitation_spell_infernal
+:limitation_spell_infernal rdf:type owl:NamedIndividual ,
+                                    :LimitationSpell ;
+                           rdfs:comment "Calls on brimstone and demons."@en ;
+                           rdfs:label "Infernal spell"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#limitation_spell_unstable
+:limitation_spell_unstable rdf:type owl:NamedIndividual ,
+                                    :LimitationSpell ;
+                           rdfs:comment "A wobbly, barely-contained magic."@en ;
+                           rdfs:label "Unstable spell"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#lineage
+:lineage rdf:type owl:NamedIndividual ,
+                  gen:ParameterPC ;
+         rdfs:label "Lineage"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#lord_loyce
@@ -395,7 +897,7 @@ gen:Check rdfs:subClassOf [ rdf:type owl:Restriction ;
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#recovery
 :recovery rdf:type owl:NamedIndividual ;
           gen:setAdditive :equipment ,
-                          :skill ;
+                          :skills ;
           gen:valueNumeric 1 ;
           rdfs:comment "After each scene in play, once safety is found and no enemies or timers are incoming."@en ;
           rdfs:label "Recovery"@en .
@@ -422,7 +924,7 @@ gen:Check rdfs:subClassOf [ rdf:type owl:Restriction ;
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#rest
 :rest rdf:type owl:NamedIndividual ;
       gen:setAdditive :equipment ,
-                      :skill ;
+                      :skills ;
       gen:valueFormula "1d4" ;
       rdfs:comment "Night’s rest in safety." ;
       rdfs:label "Rest"@en .
@@ -466,6 +968,15 @@ gen:Check rdfs:subClassOf [ rdf:type owl:Restriction ;
                   rdfs:label "Bonus reward for hero points"@en .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#set_flaw
+:set_flaw rdf:type owl:NamedIndividual ,
+                   :RequiredDetails ;
+          gen:inputOption :Flaw ;
+          gen:setAdditive :flaws ;
+          gen:prerequisiteDescription "number of flaws < 5" ;
+          rdfs:label "Set flaw"@en .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#set_hero_coin
 :set_hero_coin rdf:type owl:NamedIndividual ;
                gen:Actor gen:master ;
@@ -482,16 +993,27 @@ gen:Check rdfs:subClassOf [ rdf:type owl:Restriction ;
                  rdfs:label "Awarding hero points"@en .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#set_spell
+:set_spell rdf:type owl:NamedIndividual .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#setting_scene
 :setting_scene rdf:type owl:NamedIndividual ;
                gen:Actor gen:master ;
                rdfs:label "Setting the Scene"@en .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#skill
-:skill rdf:type owl:NamedIndividual ;
-       gen:valueFormula "maximum = 10" ;
-       rdfs:label "Skill"@en .
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#skill_magic
+:skill_magic rdf:type owl:NamedIndividual ,
+                      :Skill ;
+             rdfs:label "Magic skill"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#skills
+:skills rdf:type owl:NamedIndividual ,
+                 gen:ParameterPC ;
+        rdfs:comment "format = {skill: level}"@en ;
+        rdfs:label "Skills"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#slimshire
@@ -508,6 +1030,19 @@ gen:Check rdfs:subClassOf [ rdf:type owl:Restriction ;
                   gen:Location :slimshire ;
                   rdfs:comment "As Slimshire has reached the apogee of its prosperity though, a dark force has emboldened goblins from the Shadow Glades and orc raiders from the remnants of Dalric’s Wall. To make things worse, Lord Pickins has been seen less and less of late, cloistered with his ailing daughter Kay, who, according to rumor, has been afflicted with a vampiric sickness."@en ;
                   rdfs:label "Threat at Slimshire"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#spell_custom
+:spell_custom rdf:type owl:NamedIndividual ,
+                       :Spell ;
+              rdfs:label "Custom spell"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#spells
+:spells rdf:type owl:NamedIndividual ,
+                 gen:ParameterPC ;
+        rdfs:comment "format = {spell: number of casts}"@en ;
+        rdfs:label "Spells"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#spending_hero_coin
@@ -539,6 +1074,9 @@ gen:Check rdfs:subClassOf [ rdf:type owl:Restriction ;
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#stat_def
 :stat_def rdf:type owl:NamedIndividual ,
                    gen:ParameterCreature ;
+          gen:input :equipment ;
+          gen:prerequisite :ItemArmor ;
+          gen:valueFormula "min (6 + (defense value of worn armor); 18)" ;
           rdfs:label "Defense stat"@en .
 
 
@@ -593,6 +1131,17 @@ gen:Check rdfs:subClassOf [ rdf:type owl:Restriction ;
                             rdfs:label "Transitions and Table Talk"@en .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#upgrade_skill
+:upgrade_skill rdf:type owl:NamedIndividual ;
+               gen:Actor gen:player ;
+               gen:inputOption :Skill ;
+               gen:resource :hero_points ;
+               gen:setAdditiveMax :skills ;
+               gen:cost "1 point per 1 skill level" ;
+               gen:prerequisiteDescription "(number of non-zero skills <= 10)" ;
+               rdfs:label "Upgrade skill"@en .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#yes_no_roll
 :yes_no_roll rdf:type owl:NamedIndividual ;
              gen:valueFormula "{1d6 <= 3: No; 1d6 > 3: Yes}" ;
@@ -616,6 +1165,7 @@ gen:game_play gen:included :giving_hero_coin ,
                            :spending_hero_coin ,
                            :spending_hero_points ,
                            :transitions_and_table_talk ,
+                           :upgrade_skill ,
                            :yes_no_roll ,
                            gen:Check .
 
@@ -628,8 +1178,61 @@ gen:game_preparation gen:included :character_creation .
 #    Annotations
 #################################################################
 
+:ActMagicInfernal rdfs:label "Infernal magic effect"@en .
+
+
+:ActMagicUnstable rdfs:label "Unstable magic effect"@en .
+
+
 :Attrition rdfs:comment "Attrition is a term for the reduction of your character’s resources when hit by hazards and attacks."@en ;
            rdfs:label "Attrition"@en .
+
+
+:Companion rdfs:label "Companion"@en .
+
+
+:CoreAbility rdfs:label "Core ability"@en .
+
+
+:EffectCompanion rdfs:label "Companion effect"@en .
+
+
+:EffectItem rdfs:label "Gear effect"@en .
+
+
+:EffectSpell rdfs:label "Spell effect"@en .
+
+
+:Flaw rdfs:label "Flaw"@en .
+
+
+:Item rdfs:comment "format = (base, list of effects and limitations, cost)"@en ;
+      rdfs:label "Item"@en .
+
+
+:ItemArmor rdfs:label "Armor"@en .
+
+
+:LimitationCompanion rdfs:label "Companion limitation"@en .
+
+
+:LimitationItem rdfs:label "Gear limitation"@en .
+
+
+:LimitationSpell rdfs:label "Spell limitation"@en .
+
+
+:Skill rdfs:label "Skill"@en .
+
+
+:SkillCompanion rdfs:label "Companion skill"@en .
+
+
+:SkillPC rdfs:label "PC skill"@en .
+
+
+:Spell rdfs:comment "By default: somatics, 1d6 phases duration, 1d6 effect, touch range, single target."@en ;
+       rdfs:label "Spell"@en .
 
 
 ###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi
