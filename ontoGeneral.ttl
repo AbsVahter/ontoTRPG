@@ -350,8 +350,8 @@
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#ParameterDynamic
 :ParameterDynamic rdf:type owl:Class ;
                   rdfs:subClassOf :Parameter ;
-                  rdfs:comment "in form of {maximum value; current value; modifier}"@en ,
-                               "в форме {максимальное значение; текущее значение; модификатор}"@ru ;
+                  rdfs:comment "format = (maximum value; current value)"@en ,
+                               "формат = (максимальное значение; текущее значение)"@ru ;
                   rdfs:label "Dynamic parameter"@en ,
                              "Динамический параметр"@ru .
 
