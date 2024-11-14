@@ -126,7 +126,8 @@
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#inputOption
 :inputOption rdf:type owl:ObjectProperty ;
              rdfs:comment "xor condition by default" ;
-             rdfs:label "selected input"@en .
+             rdfs:label "for selection"@en ,
+                        "на выбор"@ru .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#modified

@@ -24,10 +24,6 @@
 #    Classes
 #################################################################
 
-###  http://www.w3.org/2002/07/owl#owl:Class
-owl:owl:Class rdf:type owl:Class .
-
-
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#Ability
 :Ability rdf:type owl:Class ;
          rdfs:subClassOf :RequiredDetails .
@@ -57,7 +53,7 @@ owl:owl:Class rdf:type owl:Class .
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#CoreAbility
 :CoreAbility rdf:type owl:Class ;
-             rdfs:subClassOf <https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#:Ability> .
+             rdfs:subClassOf :Ability .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#Effect
@@ -402,10 +398,6 @@ owl:owl:Class rdf:type owl:Class .
 :Wizard rdf:type owl:Class .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#:Ability
-<https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#:Ability> rdf:type owl:Class .
-
-
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#Check
 gen:Check rdfs:subClassOf [ rdf:type owl:Restriction ;
                             owl:onProperty gen:Actor ;
@@ -432,13 +424,18 @@ gen:Community rdfs:subClassOf :RequiredDetails .
 gen:Creature rdfs:subClassOf :RequiredDetails .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#TemplatePC
+gen:TemplatePC rdf:type owl:Class ;
+               rdfs:subClassOf :RequiredDetails ,
+                               gen:Creature .
+
+
 #################################################################
 #    Individuals
 #################################################################
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#Ability
-:Ability rdf:type owl:NamedIndividual ,
-                  owl:owl:Class .
+:Ability rdf:type owl:NamedIndividual .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#ActMagicInfernal
@@ -625,6 +622,7 @@ gen:Creature rdfs:subClassOf :RequiredDetails .
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#character_creation
 :character_creation rdf:type owl:NamedIndividual ;
                     gen:Actor gen:player ;
+                    gen:after :set_hometown ;
                     gen:inputOption :character_creation_custom ,
                                     :character_creation_discovery ,
                                     :character_creation_templates_and_prompts ;
@@ -649,24 +647,29 @@ gen:Creature rdfs:subClassOf :RequiredDetails .
                                  gen:resource :hero_points ;
                                  gen:set :core_ability ;
                                  gen:cost "15" ;
-                                 gen:prerequisiteDescription "number of core abilities <= 1" ;
+                                 gen:prerequisiteDescription "number of core abilities < 2" ;
                                  rdfs:label "Custom character creation: core ability"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#character_creation_custom
 :character_creation_custom rdf:type owl:NamedIndividual ;
                            gen:Actor gen:player ;
-                           gen:included :character_creation_companion ,
-                                        :character_creation_core_ability ,
-                                        :character_creation_equipment ,
-                                        :character_creation_flaws ,
-                                        :character_creation_lineage ,
-                                        :character_creation_set_hometown ,
-                                        :character_creation_skill ,
-                                        :character_creation_spell ,
-                                        :character_creation_starting_points ;
+                           gen:included :character_creation_custom_hero_points_distribution ,
+                                        :character_creation_lineage ;
                            gen:set gen:pc ;
                            rdfs:label "Custom character creation"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#character_creation_custom_hero_points_distribution
+:character_creation_custom_hero_points_distribution rdf:type owl:NamedIndividual ;
+                                                    gen:included :character_creation_companion ,
+                                                                 :character_creation_core_ability ,
+                                                                 :character_creation_equipment ,
+                                                                 :character_creation_flaws ,
+                                                                 :character_creation_skill ,
+                                                                 :character_creation_spell ,
+                                                                 :character_creation_starting_points ;
+                                                    rdfs:label "Custom character creation by distribution of hero points"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#character_creation_discovery
@@ -771,7 +774,7 @@ gen:Creature rdfs:subClassOf :RequiredDetails .
                               gen:resource :hero_points ;
                               gen:set :equipment ;
                               gen:cost "cost of item" ;
-                              gen:prerequisiteDescription "number of equipment <= 10" ;
+                              gen:prerequisiteDescription "number of equipment < 11" ;
                               rdfs:label "Custom character creation: buy and customize equipment"@en .
 
 
@@ -786,7 +789,8 @@ gen:Creature rdfs:subClassOf :RequiredDetails .
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#character_creation_flaws_additional_points
 :character_creation_flaws_additional_points rdf:type owl:NamedIndividual ;
-                                            gen:setAdditiveMax :hero_points ;
+                                            gen:after :character_creation_flaws_selection ;
+                                            gen:setAdditive :hero_points ;
                                             gen:valueFormula "5 * (number of flaws)" ;
                                             rdfs:label "Custom character creation: additional points per flaw"@en .
 
@@ -795,7 +799,7 @@ gen:Creature rdfs:subClassOf :RequiredDetails .
 :character_creation_flaws_selection rdf:type owl:NamedIndividual ;
                                     gen:inputOption :Flaw ;
                                     gen:set :flaws ;
-                                    gen:prerequisiteDescription "number of selected flaws <= 2" ;
+                                    gen:prerequisiteDescription "number of selected flaws < 3" ;
                                     rdfs:label "Custom character creation: choose flaws"@en .
 
 
@@ -809,18 +813,9 @@ gen:Creature rdfs:subClassOf :RequiredDetails .
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#character_creation_prompt
 :character_creation_prompt rdf:type owl:NamedIndividual ;
                            gen:after :character_creation_template ;
-                           gen:set gen:pc ;
+                           gen:modified gen:pc ;
                            gen:valueFormula "prompt" ;
                            rdfs:label "Character creation: select prompt"@en .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#character_creation_set_hometown
-:character_creation_set_hometown rdf:type owl:NamedIndividual ;
-                                 gen:inputOption :gardenburrow ,
-                                                 :rivergate ,
-                                                 :slimshire ;
-                                 gen:set :hometown ;
-                                 rdfs:label "Character creation: choose a hometown"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#character_creation_skill
@@ -830,7 +825,7 @@ gen:Creature rdfs:subClassOf :RequiredDetails .
                           gen:resource :hero_points ;
                           gen:set :skills ;
                           gen:cost "1 point per 1 skill level" ;
-                          gen:prerequisiteDescription "(number of non-zero skills <= 10) and (selected skill level > 2) and (selected skill level < 19)" ;
+                          gen:prerequisiteDescription "(number of non-zero skills < 11) and (selected skill level > 2) and (selected skill level < 19)" ;
                           rdfs:label "Custom character creation: choose skills"@en .
 
 
@@ -853,9 +848,8 @@ gen:Creature rdfs:subClassOf :RequiredDetails .
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#character_creation_template
 :character_creation_template rdf:type owl:NamedIndividual ;
-                             gen:after :character_creation_set_hometown ;
                              gen:set gen:pc ;
-                             gen:valueFormula "template" ;
+                             gen:valueObject gen:TemplatePC ;
                              rdfs:label "Character creation: select template"@en .
 
 
@@ -863,7 +857,6 @@ gen:Creature rdfs:subClassOf :RequiredDetails .
 :character_creation_templates_and_prompts rdf:type owl:NamedIndividual ;
                                           gen:Actor gen:player ;
                                           gen:included :character_creation_prompt ,
-                                                       :character_creation_set_hometown ,
                                                        :character_creation_template ;
                                           gen:set gen:pc ;
                                           rdfs:label "Character creation by templates and prompts"@en .
@@ -1053,7 +1046,7 @@ cost = (base item cost) or
                               gen:setAdditive :item_custom ;
                               gen:valueObject :EffectItem ,
                                               :LimitationItem ;
-                              gen:prerequisiteDescription "(limitations cannot be added as part of an upgrade) and (no stacking) and (final cost > 0)" ;
+                              gen:prerequisiteDescription "(limitations cannot be added as part of an upgrade while rest) and (no stacking) and (final cost > 0)" ;
                               gen:valueFormula """
 cost += {
     effect: 3 points ;
@@ -1839,6 +1832,16 @@ earned value is always increased except for PC creation ;
                  rdfs:label "Awarding hero points"@en .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#set_hometown
+:set_hometown rdf:type owl:NamedIndividual ;
+              gen:Actor gen:party ;
+              gen:inputOption :gardenburrow ,
+                              :rivergate ,
+                              :slimshire ;
+              gen:set :hometown ;
+              rdfs:label "Choose a hometown"@en .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#set_spell
 :set_spell rdf:type owl:NamedIndividual .
 
@@ -2055,6 +2058,48 @@ earned value is always increased except for PC creation ;
          rdfs:label "Tattoos"@en .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#template_adventurer
+:template_adventurer rdf:type owl:NamedIndividual ,
+                              gen:TemplatePC ;
+                     rdfs:comment "You are a nomad, a hunter, a road-walker. You thrive in the ruins and wilderness, seeking treasures and truths."@en ;
+                     rdfs:label "Adventurer"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#template_cleric
+:template_cleric rdf:type owl:NamedIndividual ,
+                          gen:TemplatePC ;
+                 rdfs:comment "Yours is the holy path. You represent a higher power, divine will, and the greater good that watches over living things."@en ;
+                 rdfs:label "Cleric"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#template_hoodlum
+:template_hoodlum rdf:type owl:NamedIndividual ,
+                           gen:TemplatePC ;
+                  rdfs:comment "You are a dubious character... a shadow-dweller. You dabble in the forbidden, the lawless, and the truly free. Your fate is yours alone."@en ;
+                  rdfs:label "Hoodlum"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#template_sage
+:template_sage rdf:type owl:NamedIndividual ,
+                        gen:TemplatePC ;
+               rdfs:comment "You are a learned researcher; keeper of books; mind of science, history, and the arcane. The writing desk is your home, but adventure calls."@en ;
+               rdfs:label "Sage"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#template_smith
+:template_smith rdf:type owl:NamedIndividual ,
+                         gen:TemplatePC ;
+                rdfs:comment "You are a hearty worker of materials and tools. The daily grind of making wares must wait, though, as the wide world beckons."@en ;
+                rdfs:label "Smith"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#template_soldier
+:template_soldier rdf:type owl:NamedIndividual ,
+                           gen:TemplatePC ;
+                  rdfs:comment "You specialize in weapons and armor. On adventures and quests, your allies look to you to take a beating and see foes dispatched."@en ;
+                  rdfs:label "Soldier"@en .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#tether_service
 :tether_service rdf:type owl:NamedIndividual ;
                 gen:after :tattooing_tether ;
@@ -2194,6 +2239,10 @@ earned value is always increased except for PC creation ;
 gen:Check rdf:type owl:NamedIndividual .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#TemplatePC
+gen:TemplatePC rdf:type owl:NamedIndividual .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#game_play
 gen:game_play gen:included :crown_or_skull ,
                            :giving_hero_coin ,
@@ -2217,7 +2266,8 @@ gen:game_play gen:included :crown_or_skull ,
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#game_preparation
-gen:game_preparation gen:included :character_creation .
+gen:game_preparation gen:included :character_creation ,
+                                  :set_hometown .
 
 
 #################################################################
@@ -2314,6 +2364,9 @@ gen:game_preparation gen:included :character_creation .
 
 
 :tier rdfs:label "Tier"@en .
+
+
+gen:TemplatePC rdfs:label "PC template"@en .
 
 
 ###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi
