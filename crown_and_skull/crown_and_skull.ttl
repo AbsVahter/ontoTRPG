@@ -42,7 +42,11 @@
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#Attrition
-:Attrition rdf:type owl:Class .
+:Attrition rdf:type owl:Class ;
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty gen:effect ;
+                             owl:hasValue :set_status_close_to_death
+                           ] .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#Companion
@@ -553,6 +557,17 @@ gen:TemplatePC rdf:type owl:Class ;
                   rdfs:label "Alderman Wallabytarnwhatwallaby"@en .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#attack_of_enemy
+:attack_of_enemy rdf:type owl:NamedIndividual ;
+                 gen:Actor gen:master ;
+                 gen:effect :check_defense ;
+                 gen:set :defense_penalty ;
+                 gen:valueObject :stat_atk ;
+                 gen:prerequisiteDescription "enemy creature" ;
+                 gen:target "PC" ;
+                 rdfs:label "Attack of enemy"@en .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#attrition_basic
 :attrition_basic rdf:type owl:NamedIndividual ,
                           :Attrition ;
@@ -568,7 +583,7 @@ gen:TemplatePC rdf:type owl:Class ;
                   gen:setAdditive :equipment ,
                                   :skills ;
                   gen:valueFormula "cross off random 1d6 equipment and skill" ;
-                  rdfs:label "Basic attrition"@en .
+                  rdfs:label "Brutal attrition"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#attrition_destroy
@@ -577,7 +592,7 @@ gen:TemplatePC rdf:type owl:Class ;
                    gen:setAdditive :equipment ,
                                    :skills ;
                    gen:valueFormula "cross off random 1 equipment permanently and random 1 skill" ;
-                   rdfs:label "Basic attrition"@en .
+                   rdfs:label "Destroy attrition"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#attrition_equipment
@@ -585,7 +600,7 @@ gen:TemplatePC rdf:type owl:Class ;
                               :Attrition ;
                      gen:setAdditive :equipment ;
                      gen:valueFormula "cross off random 1 equipment" ;
-                     rdfs:label "Basic attrition"@en .
+                     rdfs:label "Equipment attrition"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#attrition_flesh
@@ -593,13 +608,31 @@ gen:TemplatePC rdf:type owl:Class ;
                           :Attrition ;
                  gen:setAdditive :skills ;
                  gen:valueFormula "cross off random 1 skill" ;
-                 rdfs:label "Basic attrition"@en .
+                 rdfs:label "Flesh attrition"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#bee_spoke
 :bee_spoke rdf:type owl:NamedIndividual ;
            rdfs:comment "The oldest tavern in town was recently damaged by a collapse and fire during an orc incursion. Its owner, Bespo Kerat, was killed in the blaze. Now his daughter Revelle has disappeared. The calamity of the Bee Spoke has rallied folk to fight back against the orcs, no matter what the cost. So, reconstruction has begun."@en ;
            rdfs:label "The Bee Spoke"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#block_status_bleed
+:block_status_bleed rdf:type owl:NamedIndividual ;
+                    gen:blocked :status_bleed ;
+                    rdfs:label "Block bleed"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#block_status_immobilized_by_magic
+:block_status_immobilized_by_magic rdf:type owl:NamedIndividual ;
+                                   gen:blocked :status_immobilized_by_magic ;
+                                   rdfs:label "Escape from immobilized condition by magic"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#block_status_immobilized_by_material_forces
+:block_status_immobilized_by_material_forces rdf:type owl:NamedIndividual ;
+                                             gen:blocked :status_immobilized_by_material_forces ;
+                                             rdfs:label "Escape from immobilized condition by material forces"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#bloodwing
@@ -862,51 +895,79 @@ gen:TemplatePC rdf:type owl:Class ;
                                           rdfs:label "Character creation by templates and prompts"@en .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#check_defense_roll
-:check_defense_roll rdf:type owl:NamedIndividual ,
-                             gen:Check ;
-                    gen:checkFailure :Attrition ;
-                    gen:checkThreshold :threshold_defense ;
-                    rdfs:label "Called-for defense roll"@en .
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#check_defense
+:check_defense rdf:type owl:NamedIndividual ,
+                        gen:Check ;
+               gen:checkFailure :Attrition ;
+               gen:checkThreshold :threshold_defense ;
+               rdfs:label "Called-for defense roll"@en .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#check_flat_roll
-:check_flat_roll rdf:type owl:NamedIndividual ,
-                          gen:Check ;
-                 gen:checkThreshold :threshold_flat ;
-                 rdfs:label "Flat roll"@en .
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#check_flat
+:check_flat rdf:type owl:NamedIndividual ,
+                     gen:Check ;
+            gen:checkThreshold :threshold_flat ;
+            rdfs:label "Flat roll"@en .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#check_skill_roll
-:check_skill_roll rdf:type owl:NamedIndividual ,
-                           gen:Check ;
-                  gen:checkFailure :check_skill_roll_faith_failure ;
-                  gen:checkSuccess :check_skill_roll_faith_success ;
-                  gen:checkThreshold :threshold_skill ;
-                  rdfs:label "Player-declared skill roll"@en .
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#check_skill
+:check_skill rdf:type owl:NamedIndividual ,
+                      gen:Check ;
+             gen:checkFailure :check_skill_faith_failure ;
+             gen:checkSuccess :check_skill_faith_success ;
+             gen:checkThreshold :threshold_skill ;
+             rdfs:label "Skill check"@en .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#check_skill_roll_faith_failure
-:check_skill_roll_faith_failure rdf:type owl:NamedIndividual ;
-                                gen:prerequisite :skill_faith ;
-                                gen:setCurrent :skill_faith ;
-                                gen:valueFormula "temporal faith = current faith" ;
-                                rdfs:label "Failed faith skill roll"@en .
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#check_skill_faith_failure
+:check_skill_faith_failure rdf:type owl:NamedIndividual ;
+                           gen:prerequisite :skill_faith ;
+                           gen:setCurrent :skill_faith ;
+                           gen:valueFormula "temporal faith = current faith" ;
+                           rdfs:label "Failed faith skill roll"@en .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#check_skill_roll_faith_success
-:check_skill_roll_faith_success rdf:type owl:NamedIndividual ;
-                                gen:prerequisite :skill_faith ;
-                                gen:setAdditive :skill_faith ;
-                                gen:prerequisiteDescription "temporal faith skill < 14" ;
-                                gen:valueFormula "temporal faith += 1" ;
-                                rdfs:label "Success faith skill roll"@en .
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#check_skill_faith_success
+:check_skill_faith_success rdf:type owl:NamedIndividual ;
+                           gen:prerequisite :skill_faith ;
+                           gen:setAdditive :skill_faith ;
+                           gen:prerequisiteDescription "temporal faith skill < 14" ;
+                           gen:valueFormula "temporal faith += 1" ;
+                           rdfs:label "Success faith skill roll"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#check_skill_magic_vs_immobilized
+:check_skill_magic_vs_immobilized rdf:type owl:NamedIndividual ,
+                                           gen:Check ;
+                                  gen:basedOn :check_skill ;
+                                  gen:checkSuccess :block_status_immobilized_by_magic ;
+                                  gen:input :skill_magic ;
+                                  rdfs:label "Magic check against immobilized status"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#check_skill_muscle_vs_immobilized
+:check_skill_muscle_vs_immobilized rdf:type owl:NamedIndividual ,
+                                            gen:Check ;
+                                   gen:basedOn :check_skill ;
+                                   gen:checkSuccess :block_status_immobilized_by_material_forces ;
+                                   gen:input :skill_muscle ;
+                                   rdfs:label "Muscle check against immobilized status"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#check_skill_resist_vs_horror
+:check_skill_resist_vs_horror rdf:type owl:NamedIndividual ,
+                                       gen:Check ;
+                              gen:basedOn :check_skill ;
+                              gen:checkFailure :set_status_afraid ;
+                              gen:input :skill_resist ;
+                              gen:prerequisiteDescription "extreme horror" ;
+                              rdfs:label "Resist horror"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#check_spell_infernal
 :check_spell_infernal rdf:type owl:NamedIndividual ,
                                gen:Check ;
-                      gen:basedOn :check_skill_roll ;
+                      gen:basedOn :check_skill ;
                       gen:checkFailure :ActMagicInfernal ;
                       gen:checkSuccess :set_spell ;
                       gen:input :skill_magic ;
@@ -917,21 +978,12 @@ gen:TemplatePC rdf:type owl:Class ;
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#check_spell_unstable
 :check_spell_unstable rdf:type owl:NamedIndividual ,
                                gen:Check ;
-                      gen:basedOn :check_skill_roll ;
+                      gen:basedOn :check_skill ;
                       gen:checkFailure :ActMagicUnstable ;
                       gen:checkSuccess :set_spell ;
                       gen:input :skill_magic ;
                       gen:prerequisite :limitation_spell_unstable ;
                       rdfs:label "Unstable magic check"@en .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#choosing_phase
-:choosing_phase rdf:type owl:NamedIndividual ;
-                gen:Actor gen:player ;
-                gen:set :phase_pc ;
-                gen:valueFormula "1..5" ;
-                rdfs:comment "Generally, players will agree on which phase is best, especially after a few battles inform their decision. What phase a character chooses can be changed, but not mid-combat. Players can also choose the same phase."@en ;
-                rdfs:label "Choosing a Phase"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#companion_custom
@@ -1165,22 +1217,29 @@ If a hero refuses to choose, they will be scorned widely, possibly deemed an ene
                 rdfs:label "Crown: set Crown-Sworn flaw"@en .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#damage_penalty
+:damage_penalty rdf:type owl:NamedIndividual ;
+                gen:valueFormula "zero by default" ;
+                rdfs:label "Penalty to damage roll"@en .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#damage_roll
 :damage_roll rdf:type owl:NamedIndividual ;
-             gen:input :stat_def ;
-             gen:valueFormula "XdY - def of foe" ;
+             gen:Actor gen:player ;
+             gen:input :damage_penalty ,
+                       :equipment ,
+                       :stat_def ;
+             gen:valueFormula "(weapon damage) - (defense of foe) - (damage penalty)" ;
              rdfs:label "Damage or effect roll"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#death_of_pc
 :death_of_pc rdf:type owl:NamedIndividual ;
-             gen:after :Attrition ;
-             gen:input :equipment ,
-                       :phases_and_rounds ;
-             gen:set gen:pc ;
-             gen:valueObject gen:death ;
-             gen:prerequisiteDescription "(equipment = 0) and (phase 5)" ;
-             rdfs:label "Death"@en .
+             gen:after :phase_action ;
+             gen:prerequisite :status_close_to_death ;
+             gen:set gen:death ;
+             gen:prerequisiteDescription "(close to death) and (after phase 5)" ;
+             rdfs:label "Death of PC at encounter"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#deeds
@@ -1195,10 +1254,23 @@ If a hero refuses to choose, they will be scorned widely, possibly deemed an ene
        rdfs:label "Deeds"@en .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#defense_penalty
+:defense_penalty rdf:type owl:NamedIndividual ;
+                 rdfs:label "Penalty to defense"@en .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#dunsel_and_kid
 :dunsel_and_kid rdf:type owl:NamedIndividual ;
                 rdfs:comment "Operating from a blacksmith-and-mercantile in town called ‘Haldur’s Goods,’ Dunsel is a stout folk merchant, beer expert, and journeyman smith. His ever-present sidekick is a fearless boy known simply as The Kid. These two have their ear to most of the goings-on in town, and the growing military challenges at hand."@en ;
                 rdfs:label "Dunsel & the Kid"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#encounter
+:encounter rdf:type owl:NamedIndividual ;
+           gen:included :phases_and_rounds ,
+                        :setting_scene ,
+                        :transitions_and_table_talk ;
+           rdfs:label "Encounter"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#equipment
@@ -1250,6 +1322,15 @@ If a hero refuses to choose, they will be scorned widely, possibly deemed an ene
                gen:after :bloodwing_war ;
                rdfs:comment "It is not fully understood, but the dreams of mortal folk are darkening. Rumor holds that the lord of Blood Manor is somehow behind this growing shadow."@en ;
                rdfs:label "A formless evil"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#freezing_entire_day
+:freezing_entire_day rdf:type owl:NamedIndividual ;
+                     gen:prerequisite :status_freezing ;
+                     gen:set gen:death ;
+                     gen:prerequisiteDescription "duration of freezing = entire day" ;
+                     rdfs:comment "your blood will go to ice, killing you slowly"@en ;
+                     rdfs:label "Freezing entire day"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#frothy_mare
@@ -1330,7 +1411,6 @@ earned value is always increased except for PC creation ;
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#hurry
 :hurry rdf:type owl:NamedIndividual ;
-       gen:after :choosing_phase ;
        gen:effect :move ,
                   :perform_action ;
        gen:set :status_vs_haste ;
@@ -1338,6 +1418,13 @@ earned value is always increased except for PC creation ;
        gen:target "foes in the scene" ;
        rdfs:comment "If you need to move AND do something in one turn, your haste opens up your Defenses with clumsy haste."@en ;
        rdfs:label "Hurry"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_bandage_kit
+:item_bandage_kit rdf:type owl:NamedIndividual ,
+                           :ItemBasic ;
+                  gen:effect :block_status_bleed ;
+                  rdfs:label "Bandage kit"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_custom
@@ -1498,7 +1585,6 @@ earned value is always increased except for PC creation ;
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#move
 :move rdf:type owl:NamedIndividual ;
-      gen:after :choosing_phase ;
       gen:modified gen:position ;
       gen:valueFormula "Move elsewhere in the scene, about 6” table space. A small ‘sidestep’ move is allowed without using one’s phase." ;
       rdfs:label "Move"@en .
@@ -1554,7 +1640,7 @@ earned value is always increased except for PC creation ;
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#path_of_magic_divine_faith_instead_of_magic
 :path_of_magic_divine_faith_instead_of_magic rdf:type owl:NamedIndividual ;
-                                             gen:modified :check_skill_roll ;
+                                             gen:modified :check_skill ;
                                              gen:prerequisite :skill_magic ;
                                              gen:valueObject :skill_faith ;
                                              gen:valueFormula "magic skill -> faith skill" ;
@@ -1604,7 +1690,7 @@ earned value is always increased except for PC creation ;
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#path_of_magic_holy_pray
 :path_of_magic_holy_pray rdf:type owl:NamedIndividual ,
                                   gen:Check ;
-                         gen:basedOn :check_skill_roll ;
+                         gen:basedOn :check_skill ;
                          gen:checkSuccess :miracle ;
                          gen:input :equipment ,
                                    :item_holy_symbol ;
@@ -1687,27 +1773,47 @@ earned value is always increased except for PC creation ;
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#perform_action
 :perform_action rdf:type owl:NamedIndividual ;
-                gen:after :choosing_phase ;
-                gen:effectOption :check_skill_roll ,
+                gen:effectOption :attack_of_enemy ,
+                                 :check_skill ,
                                  :damage_roll ;
                 rdfs:comment "Make an attack, use a skill, cast a spell or perform one discreet action. This takes your entire phase."@en ;
                 rdfs:label "Perform an Action"@en .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#phase_pc
-:phase_pc rdf:type owl:NamedIndividual ;
-          rdfs:label "Phase of PC"@en .
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#phase_action
+:phase_action rdf:type owl:NamedIndividual ;
+              gen:after :phase_choose ;
+              gen:effectOption :hurry ,
+                               :move ,
+                               :perform_action ;
+              gen:prerequisiteDescription "any time enemies and heroes share a phase, heroes go first" ;
+              rdfs:label "Action on phase"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#phase_choose
+:phase_choose rdf:type owl:NamedIndividual ;
+              gen:set :phase_of_character ;
+              gen:prerequisiteDescription "(foes acts in phases (1, 3, 5)) and (number of actions = count of phases of creature)" ;
+              gen:valueFormula "1..5" ;
+              rdfs:comment """
+Generally, players will agree on which phase is best, especially after a few battles inform their decision. What phase a character chooses can be changed, but not mid-combat. Players can also choose the same phase.
+For enemies GM chooses phases accordingly with character's statistic.
+"""@en ;
+              rdfs:label "Choosing a Phase"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#phase_of_character
+:phase_of_character rdf:type owl:NamedIndividual ,
+                             gen:ParameterCreature ;
+                    rdfs:label "Phase of character"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#phases_and_rounds
 :phases_and_rounds rdf:type owl:NamedIndividual ;
                    gen:after :setting_scene ;
-                   gen:effectOption :hurry ,
-                                    :move ,
-                                    :perform_action ;
-                   gen:included :choosing_phase ;
-                   gen:prerequisiteDescription "(foes will act in 1-3 phases per round) and (any time enemies and heroes share a phase, heroes go first)" ;
-                   gen:valueNumeric 5 ;
+                   gen:included :death_of_pc ,
+                                :phase_action ,
+                                :phase_choose ;
                    rdfs:comment "Think of phases as cool moments in an action scene. A collection of these moments is called a round. Which phase a hero takes action is a meaningful choice for timing and strategy."@en ;
                    rdfs:label "Phases and Rounds"@en .
 
@@ -1846,6 +1952,51 @@ earned value is always increased except for PC creation ;
 :set_spell rdf:type owl:NamedIndividual .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#set_status_afraid
+:set_status_afraid rdf:type owl:NamedIndividual ;
+                   gen:set :status_afraid ;
+                   rdfs:label "Start be afraid"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#set_status_bleed
+:set_status_bleed rdf:type owl:NamedIndividual ;
+                  gen:set :status_bleed ;
+                  rdfs:label "Start bleed"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#set_status_burning
+:set_status_burning rdf:type owl:NamedIndividual ;
+                    gen:set :status_burning ;
+                    gen:prerequisiteDescription "ignition by fire attacks or effects" ;
+                    rdfs:label "Start burning"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#set_status_close_to_death
+:set_status_close_to_death rdf:type owl:NamedIndividual ;
+                           gen:input :equipment ,
+                                     :skills ;
+                           gen:set :status_close_to_death ;
+                           gen:prerequisiteDescription "(number of non-damaged equipment = 0) and (number of non-crossed skill = 0)" ;
+                           gen:target "target of attrition" ;
+                           rdfs:label "Set status Close to death"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#set_status_freezing
+:set_status_freezing rdf:type owl:NamedIndividual ;
+                     gen:blocked :status_overheated ;
+                     gen:set :status_freezing ;
+                     gen:prerequisiteDescription "4 rounds of deep cold" ;
+                     rdfs:label "Start freezing"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#set_status_overheated
+:set_status_overheated rdf:type owl:NamedIndividual ;
+                       gen:blocked :status_freezing ;
+                       gen:set :status_overheated ;
+                       gen:prerequisiteDescription "2 rounds of extreme heat" ;
+                       rdfs:label "Start overheated status"@en .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#setting_scene
 :setting_scene rdf:type owl:NamedIndividual ;
                gen:Actor gen:master ;
@@ -1866,10 +2017,28 @@ earned value is always increased except for PC creation ;
              rdfs:label "Magic skill"@en .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#skill_muscle
+:skill_muscle rdf:type owl:NamedIndividual ,
+                       :Skill ;
+              rdfs:label "Muscle skill"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#skill_resist
+:skill_resist rdf:type owl:NamedIndividual ,
+                       :Skill ;
+              rdfs:label "Resist skill"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#skill_roll_penalty
+:skill_roll_penalty rdf:type owl:NamedIndividual ;
+                    gen:valueFormula "zero by default" ;
+                    rdfs:label "Penalty to skill roll"@en .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#skills
 :skills rdf:type owl:NamedIndividual ,
                  gen:ParameterPC ;
-        rdfs:comment "format = {skill: level}"@en ;
+        rdfs:comment "format = {skill: {level: 3..18; status: non-crossed, crossed}}"@en ;
         rdfs:label "Skills"@en .
 
 
@@ -1991,10 +2160,75 @@ earned value is always increased except for PC creation ;
           rdfs:label "Defense stat"@en .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#status_afraid
+:status_afraid rdf:type owl:NamedIndividual ,
+                        gen:Status ;
+               gen:blocked :hurry ,
+                           :perform_action ;
+               gen:duration "rolled timer" ;
+               rdfs:comment "Terrified by extreme horrors, you lose your wits and are forced to use your phase to flee the source of your fear."@en ;
+               rdfs:label "Afraid"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#status_bleed
+:status_bleed rdf:type owl:NamedIndividual ,
+                       gen:Status ;
+              gen:effect :attrition_flesh ;
+              gen:duration "1d4 rounds" ;
+              rdfs:label "Bleed"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#status_burning
+:status_burning rdf:type owl:NamedIndividual ,
+                         gen:Status ;
+                gen:effect :attrition_equipment ,
+                           :attrition_flesh ;
+                gen:duration "1d4 rounds" ;
+                gen:valueFormula "every round" ;
+                rdfs:label "Burning"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#status_close_to_death
+:status_close_to_death rdf:type owl:NamedIndividual ,
+                                gen:Status ;
+                       rdfs:label "Close to death"@en .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#status_enemy_focus
 :status_enemy_focus rdf:type owl:NamedIndividual ,
                              gen:Status ;
                     rdfs:label "In focus of nearby enemies"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#status_freezing
+:status_freezing rdf:type owl:NamedIndividual ,
+                          gen:Status ;
+                 gen:set :damage_penalty ,
+                         :skill_roll_penalty ;
+                 gen:duration "until you warm up" ;
+                 gen:valueNumeric 5 ;
+                 rdfs:comment "Deep cold will numb the fingers and slow the mind without furs or winter clothes."@en ;
+                 rdfs:label "Freezing"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#status_immobilized_by_magic
+:status_immobilized_by_magic rdf:type owl:NamedIndividual ,
+                                      gen:Status ;
+                             gen:blocked :move ;
+                             gen:set :status_immobilized_by_magic ;
+                             gen:prerequisiteDescription "appropriate effect of spell" ;
+                             rdfs:label "Immobilized by magic"@en ,
+                                        "Start be immobilized by magic"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#status_immobilized_by_material_forces
+:status_immobilized_by_material_forces rdf:type owl:NamedIndividual ,
+                                                gen:Status ;
+                                       gen:blocked :move ;
+                                       gen:set :status_immobilized_by_material_forces ;
+                                       gen:prerequisiteDescription "material causes" ;
+                                       rdfs:label "Immobilized by material forces"@en ,
+                                                  "Start be immobilized by material forces"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#status_magic_block
@@ -2005,19 +2239,31 @@ earned value is always increased except for PC creation ;
                     rdfs:label "Under effect of magic block"@en .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#status_overheated
+:status_overheated rdf:type owl:NamedIndividual ,
+                            gen:Status ;
+                   gen:blocked :hurry ;
+                   gen:set :damage_penalty ,
+                           :skill_roll_penalty ;
+                   gen:duration "until you cool off" ;
+                   gen:valueNumeric 5 ;
+                   rdfs:comment "Extreme heat causes a heavy-limbed exhaustion."@en ;
+                   rdfs:label "Overheated"@en .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#status_stun
 :status_stun rdf:type owl:NamedIndividual ,
                       gen:Status ;
              gen:duration "1 round" ;
+             rdfs:comment "If stunned, you are conscious but concussed, unable to act, barely able to stand."@en ;
              rdfs:label "Under stun effect"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#status_vs_haste
 :status_vs_haste rdf:type owl:NamedIndividual ,
                           gen:Status ;
-                 gen:setAdditive :stat_atk ;
+                 gen:setAdditive :defense_penalty ;
                  gen:duration "1 round" ;
-                 gen:target "vs character acted with hurry" ;
                  gen:valueNumeric 5 ;
                  rdfs:label "Bonus against haste target"@en .
 
@@ -2137,9 +2383,9 @@ earned value is always increased except for PC creation ;
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#threshold_defense
 :threshold_defense rdf:type owl:NamedIndividual ;
-                   gen:input :stat_atk ,
+                   gen:input :defense_penalty ,
                              :stat_def ;
-                   gen:valueFormula "defense - atk of attacker" ;
+                   gen:valueFormula "defense - (penalty to defense)" ;
                    rdfs:label "Threshold for defense roll"@en .
 
 
@@ -2151,7 +2397,9 @@ earned value is always increased except for PC creation ;
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#threshold_skill
 :threshold_skill rdf:type owl:NamedIndividual ;
-                 gen:valueFormula "skill value" ;
+                 gen:input :Skill ,
+                           :skill_roll_penalty ;
+                 gen:valueFormula "skill value - (skill roll penalty)" ;
                  rdfs:label "Threshold for skill roll"@en .
 
 
@@ -2189,7 +2437,7 @@ earned value is always increased except for PC creation ;
 :wild_magic rdf:type owl:NamedIndividual ,
                      gen:Check ;
             gen:Actor gen:player ;
-            gen:basedOn :check_skill_roll ;
+            gen:basedOn :check_skill ;
             gen:checkFailure :losing_control ;
             gen:checkSuccess :set_spell ;
             gen:checkThreshold :threshold_wild_magic ;
@@ -2245,20 +2493,18 @@ gen:TemplatePC rdf:type owl:NamedIndividual .
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#game_play
 gen:game_play gen:included :crown_or_skull ,
+                           :encounter ,
                            :giving_hero_coin ,
                            :healing ,
                            :path_of_magic ,
-                           :phases_and_rounds ,
                            :recovery ,
                            :renown ,
                            :repair ,
                            :rest ,
                            :set_hero_coin ,
                            :set_hero_points ,
-                           :setting_scene ,
                            :spending_hero_coin ,
                            :spending_hero_points ,
-                           :transitions_and_table_talk ,
                            :upgrade_skill ,
                            :wild_magic ,
                            :yes_no_roll ,
@@ -2305,7 +2551,8 @@ gen:game_preparation gen:included :character_creation ,
 :Flaw rdfs:label "Flaw"@en .
 
 
-:Item rdfs:comment "format = (base, list of effects and limitations, cost)"@en ;
+:Item rdfs:comment "effect after or during use"@en ,
+                   "format = (base, list of effects and limitations, cost)"@en ;
       rdfs:label "Item"@en .
 
 

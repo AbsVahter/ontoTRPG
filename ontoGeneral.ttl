@@ -233,7 +233,9 @@
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#duration
 :duration rdf:type owl:DatatypeProperty ;
           rdfs:domain :Act ;
-          rdfs:range xsd:string .
+          rdfs:range xsd:string ;
+          rdfs:label "duration"@en ,
+                     "длительность"@ru .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#methodDescription
@@ -246,8 +248,8 @@
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#prerequisiteDescription
 :prerequisiteDescription rdf:type owl:DatatypeProperty ;
                          rdfs:range xsd:string ;
-                         rdfs:label "description of prerequisites"@en ,
-                                    "описание критериев"@ru .
+                         rdfs:label "prerequisite"@en ,
+                                    "критерий"@ru .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#target
@@ -384,6 +386,12 @@
 :Creature rdf:type owl:NamedIndividual .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#death
+:death rdf:type :Status ;
+       rdfs:label "Death"@en ,
+                  "Смерть"@ru .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#destruction
 :destruction rdf:type owl:NamedIndividual ,
                       :BasicMotive ;
@@ -428,6 +436,13 @@
                     "Преданность"@ru .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#madness
+:madness rdf:type owl:NamedIndividual ,
+                  :BasicMotive ;
+         rdfs:label "Madness"@en ,
+                    "Безумие"@ru .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#master
 :master rdf:type owl:NamedIndividual .
 
@@ -457,6 +472,12 @@
 :player rdf:type owl:NamedIndividual ;
         rdfs:label "Player"@en ,
                    "Игрок"@ru .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#position
+:position rdf:type owl:NamedIndividual ;
+          rdfs:label "Position"@en ,
+                     "Положение в пространстве"@ru .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#preserving_traditions
@@ -510,160 +531,4 @@
                      "Локация"@ru .
 
 
-#################################################################
-#    Rules
-#################################################################
-
-<urn:swrl:var#act> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
-
-<urn:swrl:var#subact> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
-
-<urn:swrl:var#actor> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
-
-<urn:swrl:var#act_before> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
-
-<urn:swrl:var#result_before> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
-
-<urn:swrl:var#part> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
-
-<urn:swrl:var#subactor> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
-
-[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
-   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :included ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#act> ;
-                                                       <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#subact>
-                                                     ] ;
-                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :Actor ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#act> ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#actor>
-                                                                ] ;
-                                                      rdf:rest rdf:nil
-                                                    ]
-                                         ] ;
-   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :Actor ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#subact> ;
-                                                       <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#actor>
-                                                     ] ;
-                                           rdf:rest rdf:nil
-                                         ]
- ] .
-
-[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
-   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :after ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#act> ;
-                                                       <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#act_before>
-                                                     ] ;
-                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :actionWith ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#act_before> ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#result_before>
-                                                                ] ;
-                                                      rdf:rest rdf:nil
-                                                    ]
-                                         ] ;
-   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :input ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#act> ;
-                                                       <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#result_before>
-                                                     ] ;
-                                           rdf:rest rdf:nil
-                                         ]
- ] .
-
-[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
-   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :included ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#act> ;
-                                                       <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#part>
-                                                     ] ;
-                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :after ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#act> ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#act_before>
-                                                                ] ;
-                                                      rdf:rest rdf:nil
-                                                    ]
-                                         ] ;
-   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :after ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#part> ;
-                                                       <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#act_before>
-                                                     ] ;
-                                           rdf:rest rdf:nil
-                                         ]
- ] .
-
-[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
-   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :operated ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#act> ;
-                                                       <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#subactor>
-                                                     ] ;
-                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :included ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#act> ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#subact>
-                                                                ] ;
-                                                      rdf:rest rdf:nil
-                                                    ]
-                                         ] ;
-   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :Actor ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#subact> ;
-                                                       <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#subactor>
-                                                     ] ;
-                                           rdf:rest rdf:nil
-                                         ]
- ] .
-
-[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
-   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :effectOption ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#act> ;
-                                                       <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#subact>
-                                                     ] ;
-                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :Actor ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#act> ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#actor>
-                                                                ] ;
-                                                      rdf:rest rdf:nil
-                                                    ]
-                                         ] ;
-   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :Actor ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#subact> ;
-                                                       <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#actor>
-                                                     ] ;
-                                           rdf:rest rdf:nil
-                                         ]
- ] .
-
 ###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi
-:madness a owl:NamedIndividual , :BasicMotive ;
-    rdfs:label "Madness"@en , "Безумие"@ru .
-
-:death a owl:NamedIndividual ;
-    rdfs:label "Death"@en , "Смерть"@ru .
-
-:position rdf:type owl:NamedIndividual ;
-    rdfs:label "Position"@en , "Положение в пространстве"@ru .
