@@ -582,9 +582,14 @@ gen:TemplatePC rdf:type owl:Class ;
                            :Attrition ;
                   gen:setAdditive :equipment ,
                                   :skills ;
+                  gen:effect :set_status_stun_by_brutal_attrition ;
                   gen:valueFormula "cross off random 1d6 equipment and skill" ;
                   rdfs:label "Brutal attrition"@en .
 
+:set_status_stun_by_brutal_attrition a owl:NamedIndividual ;
+                                     gen:set :status_stun ;
+                                     gen:prerequisiteDescription "brutal attrition roll = 6" ;
+                                     rdfs:label "Set stun because of maximum roll on Brutal Attrition"@en .
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#attrition_destroy
 :attrition_destroy rdf:type owl:NamedIndividual ,
@@ -963,6 +968,15 @@ gen:TemplatePC rdf:type owl:Class ;
                               gen:prerequisiteDescription "extreme horror" ;
                               rdfs:label "Resist horror"@en .
 
+:check_skill_resist_vs_stun a owl:NamedIndividual , gen:Check ;
+                            gen:basedOn :check_skill ;
+                            gen:input :skill_resist ;
+                            gen:checkSuccess :block_status_stun ;
+                            rdfs:label "Resist stun"@en .
+
+:block_status_stun a owl:NamedIndividual ;
+                   gen:blocked :status_stun ;
+                   rdfs:label "Block stun"@en .
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#check_spell_infernal
 :check_spell_infernal rdf:type owl:NamedIndividual ,
@@ -1532,9 +1546,13 @@ earned value is always increased except for PC creation ;
                                          gen:Actor gen:master ;
                                          gen:effect :attrition_flesh ,
                                                     :status_stun ;
+                                         gen:valueFormula "stun duration = 1 round" ;
                                          gen:target "caster of wild magic" ;
                                          rdfs:label "Losing control: flesh attrition and stun"@en .
 
+:set_status_stun a owl:NamedIndividual ;
+                 gen:set :status_stun ;
+                 rdfs:label "Set stun status"@en .
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#losing_control_focus_on_caster
 :losing_control_focus_on_caster rdf:type owl:NamedIndividual ;
@@ -1981,6 +1999,12 @@ For enemies GM chooses phases accordingly with character's statistic.
                            rdfs:label "Set status Close to death"@en .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#set_status_corrosion
+:set_status_corrosion rdf:type owl:NamedIndividual ;
+                      gen:set :status_corrosion ;
+                      rdfs:label "Start corrosion"@en .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#set_status_freezing
 :set_status_freezing rdf:type owl:NamedIndividual ;
                      gen:blocked :status_overheated ;
@@ -2194,6 +2218,15 @@ For enemies GM chooses phases accordingly with character's statistic.
                        rdfs:label "Close to death"@en .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#status_corrosion
+:status_corrosion rdf:type owl:NamedIndividual ,
+                           gen:Status ;
+                  gen:effect :attrition_equipment ;
+                  gen:duration "1d4 rounds" ;
+                  rdfs:comment "Acid, rust, or specifi c types of venom can erode equipment, even if somewhat uncommon in terrain. Acidic ‘drips’ are the most frequently encountered, often found on the ceilings of underground places."@en ;
+                  rdfs:label "Corrosion"@en .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#status_enemy_focus
 :status_enemy_focus rdf:type owl:NamedIndividual ,
                              gen:Status ;
@@ -2254,7 +2287,7 @@ For enemies GM chooses phases accordingly with character's statistic.
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#status_stun
 :status_stun rdf:type owl:NamedIndividual ,
                       gen:Status ;
-             gen:duration "1 round" ;
+             gen:duration "1d4 rounds" ;
              rdfs:comment "If stunned, you are conscious but concussed, unable to act, barely able to stand."@en ;
              rdfs:label "Under stun effect"@en .
 
