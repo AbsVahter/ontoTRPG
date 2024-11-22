@@ -365,7 +365,7 @@
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#Skill
 :Skill rdf:type owl:Class ;
        rdfs:subClassOf :RequiredDetails ,
-                       gen:ParameterDynamic .
+                       gen:ParameterPC .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#SkillAntimagic
@@ -580,16 +580,12 @@ gen:TemplatePC rdf:type owl:Class ;
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#attrition_brutal
 :attrition_brutal rdf:type owl:NamedIndividual ,
                            :Attrition ;
+                  gen:effect :set_status_stun_by_brutal_attrition ;
                   gen:setAdditive :equipment ,
                                   :skills ;
-                  gen:effect :set_status_stun_by_brutal_attrition ;
                   gen:valueFormula "cross off random 1d6 equipment and skill" ;
                   rdfs:label "Brutal attrition"@en .
 
-:set_status_stun_by_brutal_attrition a owl:NamedIndividual ;
-                                     gen:set :status_stun ;
-                                     gen:prerequisiteDescription "brutal attrition roll = 6" ;
-                                     rdfs:label "Set stun because of maximum roll on Brutal Attrition"@en .
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#attrition_destroy
 :attrition_destroy rdf:type owl:NamedIndividual ,
@@ -638,6 +634,12 @@ gen:TemplatePC rdf:type owl:Class ;
 :block_status_immobilized_by_material_forces rdf:type owl:NamedIndividual ;
                                              gen:blocked :status_immobilized_by_material_forces ;
                                              rdfs:label "Escape from immobilized condition by material forces"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#block_status_stun
+:block_status_stun rdf:type owl:NamedIndividual ;
+                   gen:blocked :status_stun ;
+                   rdfs:label "Block stun"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#bloodwing
@@ -968,15 +970,15 @@ gen:TemplatePC rdf:type owl:Class ;
                               gen:prerequisiteDescription "extreme horror" ;
                               rdfs:label "Resist horror"@en .
 
-:check_skill_resist_vs_stun a owl:NamedIndividual , gen:Check ;
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#check_skill_resist_vs_stun
+:check_skill_resist_vs_stun rdf:type owl:NamedIndividual ,
+                                     gen:Check ;
                             gen:basedOn :check_skill ;
-                            gen:input :skill_resist ;
                             gen:checkSuccess :block_status_stun ;
+                            gen:input :skill_resist ;
                             rdfs:label "Resist stun"@en .
 
-:block_status_stun a owl:NamedIndividual ;
-                   gen:blocked :status_stun ;
-                   rdfs:label "Block stun"@en .
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#check_spell_infernal
 :check_spell_infernal rdf:type owl:NamedIndividual ,
@@ -1242,8 +1244,8 @@ If a hero refuses to choose, they will be scorned widely, possibly deemed an ene
              gen:Actor gen:player ;
              gen:input :damage_penalty ,
                        :equipment ,
-                       :stat_def ;
-             gen:valueFormula "(weapon damage) - (defense of foe) - (damage penalty)" ;
+                       :stat_def_enemy ;
+             gen:valueFormula "(weapon damage) - (defense of enemy) - (damage penalty)" ;
              rdfs:label "Damage or effect roll"@en .
 
 
@@ -1477,6 +1479,7 @@ earned value is always increased except for PC creation ;
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#lineage
 :lineage rdf:type owl:NamedIndividual ,
                   gen:ParameterPC ;
+         rdfs:comment "narrative parameter"@en ;
          rdfs:label "Lineage"@en .
 
 
@@ -1546,13 +1549,10 @@ earned value is always increased except for PC creation ;
                                          gen:Actor gen:master ;
                                          gen:effect :attrition_flesh ,
                                                     :status_stun ;
-                                         gen:valueFormula "stun duration = 1 round" ;
                                          gen:target "caster of wild magic" ;
+                                         gen:valueFormula "stun duration = 1 round" ;
                                          rdfs:label "Losing control: flesh attrition and stun"@en .
 
-:set_status_stun a owl:NamedIndividual ;
-                 gen:set :status_stun ;
-                 rdfs:label "Set stun status"@en .
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#losing_control_focus_on_caster
 :losing_control_focus_on_caster rdf:type owl:NamedIndividual ;
@@ -2021,6 +2021,19 @@ For enemies GM chooses phases accordingly with character's statistic.
                        rdfs:label "Start overheated status"@en .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#set_status_stun
+:set_status_stun rdf:type owl:NamedIndividual ;
+                 gen:set :status_stun ;
+                 rdfs:label "Set stun status"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#set_status_stun_by_brutal_attrition
+:set_status_stun_by_brutal_attrition rdf:type owl:NamedIndividual ;
+                                     gen:set :status_stun ;
+                                     gen:prerequisiteDescription "brutal attrition roll = 6" ;
+                                     rdfs:label "Set stun because of maximum roll on Brutal Attrition"@en .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#setting_scene
 :setting_scene rdf:type owl:NamedIndividual ;
                gen:Actor gen:master ;
@@ -2171,17 +2184,35 @@ For enemies GM chooses phases accordingly with character's statistic.
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#stat_atk
 :stat_atk rdf:type owl:NamedIndividual ,
-                   gen:ParameterCreature ;
+                   gen:ParameterEnemy ;
           rdfs:label "Attack stat"@en .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#stat_def
-:stat_def rdf:type owl:NamedIndividual ,
-                   gen:ParameterCreature ;
-          gen:input :equipment ;
-          gen:prerequisite :ItemArmor ;
-          gen:valueFormula "min (6 + (defense value of worn armor); 18)" ;
-          rdfs:label "Defense stat"@en .
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#stat_def_enemy
+:stat_def_enemy rdf:type owl:NamedIndividual ,
+                         gen:ParameterEnemy ;
+                rdfs:label "Defense stat of enemy"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#stat_def_pc
+:stat_def_pc rdf:type owl:NamedIndividual ,
+                      gen:ParameterPC ;
+             gen:input :equipment ;
+             gen:valueFormula "min (6 + (defense value of worn armor); 18)" ;
+             rdfs:label "Defense stat of PC"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#stat_hp
+:stat_hp rdf:type owl:NamedIndividual ,
+                  gen:ParameterDynamic ,
+                  gen:ParameterEnemy ;
+         rdfs:label "Hit points of enemy"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#stat_tactics
+:stat_tactics rdf:type owl:NamedIndividual ,
+                       gen:ParameterEnemy ;
+              rdfs:label "Number of actions of enemy per round"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#status_afraid
@@ -2417,7 +2448,7 @@ For enemies GM chooses phases accordingly with character's statistic.
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#threshold_defense
 :threshold_defense rdf:type owl:NamedIndividual ;
                    gen:input :defense_penalty ,
-                             :stat_def ;
+                             :stat_def_pc ;
                    gen:valueFormula "defense - (penalty to defense)" ;
                    rdfs:label "Threshold for defense roll"@en .
 
@@ -2460,7 +2491,7 @@ For enemies GM chooses phases accordingly with character's statistic.
                gen:Actor gen:player ;
                gen:inputOption :Skill ;
                gen:resource :hero_points ;
-               gen:setAdditiveMax :skills ;
+               gen:setAdditive :skills ;
                gen:cost "1 point per 1 skill level" ;
                gen:prerequisiteDescription "(number of non-zero skills <= 10)" ;
                rdfs:label "Upgrade skill"@en .
@@ -2617,8 +2648,7 @@ gen:game_preparation gen:included :character_creation ,
 :MagicAdvancementHolySymbol rdfs:label "Magic advancement for holy symbol"@en .
 
 
-:Skill rdfs:comment "format = (maximum value, current value)"@en ;
-       rdfs:label "Skill"@en .
+:Skill rdfs:label "Skill"@en .
 
 
 :SkillAntimagic rdfs:label "Antimagic skill"@en .

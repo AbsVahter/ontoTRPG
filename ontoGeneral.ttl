@@ -337,10 +337,14 @@
            rdfs:label "Parameter"@en ,
                       "Параметр"@ru .
 
+:ParameterEnemy a owl:Class ;
+                rdfs:subClassOf :Parameter ;
+                rdfs:label "Parameter of enemy"@en ,
+                           "Параметр врага"@ru .
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#ParameterCreature
 :ParameterCreature rdf:type owl:Class ;
-                   rdfs:subClassOf :ParameterPC ,
+                   rdfs:subClassOf :ParameterPC , :ParameterEnemy ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty [ owl:inverseOf :included
                                                     ] ;
