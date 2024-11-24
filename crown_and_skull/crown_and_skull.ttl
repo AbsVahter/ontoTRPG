@@ -11,6 +11,14 @@
                                                                                                   owl:imports gen: .
 
 #################################################################
+#    Annotation properties
+#################################################################
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#gen:setAdditive
+gen:gen:setAdditive rdf:type owl:AnnotationProperty .
+
+
+#################################################################
 #    Data properties
 #################################################################
 
@@ -86,9 +94,9 @@
       rdfs:label "Flaw"@en .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#FlawCreation
-:FlawCreation rdf:type owl:Class ;
-              rdfs:subClassOf :Flaw .
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#FlawBasic
+:FlawBasic rdf:type owl:Class ;
+           rdfs:subClassOf :Flaw .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#FlawCrownAndSkull
@@ -373,6 +381,32 @@
                  rdfs:label "Required details"@en .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#SetAdditiveEquipment
+:SetAdditiveEquipment rdf:type owl:Class ;
+                      owl:equivalentClass [ rdf:type owl:Restriction ;
+                                            owl:onProperty gen:setAdditive ;
+                                            owl:hasValue :equipment
+                                          ] ;
+                      rdfs:subClassOf gen:Act ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty gen:prerequisiteDescription ;
+                                        owl:hasValue "final number of equipment <= 10"
+                                      ] .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#SetAdditiveSkill
+:SetAdditiveSkill rdf:type owl:Class ;
+                  owl:equivalentClass [ rdf:type owl:Restriction ;
+                                        owl:onProperty gen:setAdditive ;
+                                        owl:hasValue :skills
+                                      ] ;
+                  rdfs:subClassOf gen:Act ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty gen:prerequisiteDescription ;
+                                    owl:hasValue "(final number of skills <= 10) and (final skill level >= 3) and (final skill level <= 18)"
+                                  ] .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#Skill
 :Skill rdf:type owl:Class ;
        rdfs:subClassOf :RequiredDetails ,
@@ -485,8 +519,8 @@ gen:TemplatePC rdf:type owl:Class ;
 :EffectSpell rdf:type owl:NamedIndividual .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#FlawCreation
-:FlawCreation rdf:type owl:NamedIndividual .
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#FlawBasic
+:FlawBasic rdf:type owl:NamedIndividual .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#Item
@@ -527,6 +561,14 @@ gen:TemplatePC rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#MagicAdvancementHolySymbol
 :MagicAdvancementHolySymbol rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#SetAdditiveEquipment
+:SetAdditiveEquipment rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#SetAdditiveSkill
+:SetAdditiveSkill rdf:type owl:NamedIndividual .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#Skill
@@ -582,9 +624,10 @@ gen:TemplatePC rdf:type owl:Class ;
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#attrition_basic
 :attrition_basic rdf:type owl:NamedIndividual ,
                           :Attrition ;
-                 gen:setAdditive :equipment ,
-                                 :skills ;
-                 gen:valueFormula "cross off any 1 equipment or skill" ;
+                 gen:modified :equipment ,
+                              :skills ;
+                 gen:valueFormula "(1 equipment non-crossed -> crossed) or (1 skill non-crossed -> crossed)" ;
+                 rdfs:comment "cross off any 1 equipment or skill"@en ;
                  rdfs:label "Basic attrition"@en .
 
 
@@ -592,34 +635,38 @@ gen:TemplatePC rdf:type owl:Class ;
 :attrition_brutal rdf:type owl:NamedIndividual ,
                            :Attrition ;
                   gen:effect :set_status_stun_by_brutal_attrition ;
-                  gen:setAdditive :equipment ,
-                                  :skills ;
-                  gen:valueFormula "cross off random 1d6 equipment and skill" ;
+                  gen:modified :equipment ,
+                               :skills ;
+                  gen:valueFormula "random 1d6 equipment and skill non-crossed -> crossed" ;
+                  rdfs:comment "cross off random 1d6 equipment and skill"@en ;
                   rdfs:label "Brutal attrition"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#attrition_destroy
 :attrition_destroy rdf:type owl:NamedIndividual ,
                             :Attrition ;
-                   gen:setAdditive :equipment ,
-                                   :skills ;
-                   gen:valueFormula "cross off random 1 equipment permanently and random 1 skill" ;
+                   gen:modified :skills ;
+                   gen:setAdditive :equipment ;
+                   gen:valueFormula "(equipment -= 1 random item) and (1 random skill non-crossed -> crossed)" ;
+                   rdfs:comment "destroy 1 random equipment and cross off 1 random skill"@en ;
                    rdfs:label "Destroy attrition"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#attrition_equipment
 :attrition_equipment rdf:type owl:NamedIndividual ,
                               :Attrition ;
-                     gen:setAdditive :equipment ;
-                     gen:valueFormula "cross off random 1 equipment" ;
+                     gen:modified :equipment ;
+                     gen:valueFormula "1 random equipment non-crossed -> crossed" ;
+                     rdfs:comment "cross off random 1 equipment"@en ;
                      rdfs:label "Equipment attrition"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#attrition_flesh
 :attrition_flesh rdf:type owl:NamedIndividual ,
                           :Attrition ;
-                 gen:setAdditive :skills ;
-                 gen:valueFormula "cross off random 1 skill" ;
+                 gen:modified :skills ;
+                 gen:valueFormula "1 random skill non-crossed -> crossed" ;
+                 rdfs:comment "cross off random 1 skill" ;
                  rdfs:label "Flesh attrition"@en .
 
 
@@ -767,10 +814,10 @@ gen:TemplatePC rdf:type owl:Class ;
 :character_creation_discovery_one_little_memory rdf:type owl:NamedIndividual ;
                                                 gen:after :character_creation_discovery_opener ;
                                                 gen:inputOption :SkillBasicPC ;
-                                                gen:set :skills ;
                                                 gen:valueNumeric 6 ;
                                                 rdfs:comment "As heroes seek to escape or get moving, a fleeting shadow, reflection, or strange feeling triggers one small memory for each character."@en ;
-                                                rdfs:label "Character creation by discovery: one little memory"@en .
+                                                rdfs:label "Character creation by discovery: one little memory"@en ;
+                                                gen:gen:setAdditive :skills .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#character_creation_discovery_opener
@@ -823,9 +870,8 @@ gen:TemplatePC rdf:type owl:Class ;
                               gen:after :character_creation_skill ;
                               gen:input :item_custom ;
                               gen:resource :hero_points ;
-                              gen:set :equipment ;
+                              gen:setAdditive :equipment ;
                               gen:cost "cost of item" ;
-                              gen:prerequisiteDescription "number of equipment < 11" ;
                               rdfs:label "Custom character creation: buy and customize equipment"@en .
 
 
@@ -848,7 +894,7 @@ gen:TemplatePC rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#character_creation_flaws_selection
 :character_creation_flaws_selection rdf:type owl:NamedIndividual ;
-                                    gen:inputOption :FlawCreation ;
+                                    gen:inputOption :FlawBasic ;
                                     gen:set :flaws ;
                                     gen:prerequisiteDescription "number of selected flaws <= 2" ;
                                     rdfs:comment "Take a maximum 2 flaws at creation. Flaws are entirely optional!"@en ;
@@ -875,9 +921,8 @@ gen:TemplatePC rdf:type owl:Class ;
                           gen:after :character_creation_core_ability ;
                           gen:inputOption :SkillBasicPC ;
                           gen:resource :hero_points ;
-                          gen:set :skills ;
+                          gen:setAdditive :skills ;
                           gen:cost "1 point per 1 skill level" ;
-                          gen:prerequisiteDescription "(number of non-zero skills < 11) and (selected skill level > 2) and (selected skill level < 19)" ;
                           rdfs:label "Custom character creation: choose skills"@en .
 
 
@@ -1257,7 +1302,7 @@ If a hero refuses to choose, they will be scorned widely, possibly deemed an ene
              gen:input :damage_penalty ,
                        :equipment ,
                        :stat_def_enemy ;
-             gen:valueFormula "(weapon damage) - (defense of enemy) - (damage penalty)" ;
+             gen:valueFormula "(worn weapon damage) - (defense of enemy) - (damage penalty)" ;
              rdfs:label "Damage or effect roll"@en .
 
 
@@ -1296,6 +1341,7 @@ If a hero refuses to choose, they will be scorned widely, possibly deemed an ene
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#encounter
 :encounter rdf:type owl:NamedIndividual ;
            gen:included :phases_and_rounds ,
+                        :recovery ,
                         :setting_scene ,
                         :transitions_and_table_talk ;
            rdfs:label "Encounter"@en .
@@ -1304,7 +1350,7 @@ If a hero refuses to choose, they will be scorned widely, possibly deemed an ene
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#equipment
 :equipment rdf:type owl:NamedIndividual ,
                     gen:ParameterPC ;
-           rdfs:comment "format = {item: status (carried, worn, damaged) }"@en ;
+           rdfs:comment "format = {item: status (carried, worn, crossed) }"@en ;
            rdfs:label "Equipment"@en .
 
 
@@ -1317,35 +1363,44 @@ If a hero refuses to choose, they will be scorned widely, possibly deemed an ene
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_addict
 :flaw_addict rdf:type owl:NamedIndividual ,
-                      :FlawCreation ;
+                      :FlawBasic ;
              rdfs:comment "You have a specific vice you cannot deny. If you can’t get your fix, the GM will ask for a roll vs. attrition in some form."@en ;
              rdfs:label "Addict flaw"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_aescetic
 :flaw_aescetic rdf:type owl:NamedIndividual ,
-                        :FlawCreation ;
+                        :FlawBasic ;
+               gen:modified :SetAdditiveEquipment ;
+               gen:valueFormula "prerequisite -> (final number of equipment <= 5)" ;
                rdfs:comment "You frown on possessions. Never exceed 5 equipment."@en ;
                rdfs:label "Aescetic flaw"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_ancient
 :flaw_ancient rdf:type owl:NamedIndividual ,
-                       :FlawCreation ;
+                       :FlawBasic ;
+              gen:modified :SetAdditiveSkill ;
+              gen:valueObject :skill_breakfall ,
+                              :skill_climber ,
+                              :skill_jump ,
+                              :skill_muscle ,
+                              :skill_stealth ;
+              gen:valueFormula "prerequisite -> ((final number of skills <= 10) and (final skill level >= 3) and (final skill level <= 9))" ;
               rdfs:comment "You are old! Muscle, Jump, Climber, Breakfall, and Stealth skills may not exceed 9, but you earn respect for your advanced age."@en ;
               rdfs:label "Ancient flaw"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_bad_reputation
 :flaw_bad_reputation rdf:type owl:NamedIndividual ,
-                              :FlawCreation ;
+                              :FlawBasic ;
                      rdfs:comment "You’ve done things... terrible things, and people know about it. You’ve done harm, broken oaths, or let someone down."@en ;
                      rdfs:label "Bad reputation flaw"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_crazy
 :flaw_crazy rdf:type owl:NamedIndividual ,
-                     :FlawCreation ;
+                     :FlawBasic ;
             rdfs:comment "When faced with a diffi cult choice, choose randomly."@en ;
             rdfs:label "Crazy flaw"@en .
 
@@ -1359,77 +1414,85 @@ If a hero refuses to choose, they will be scorned widely, possibly deemed an ene
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_disorganized
 :flaw_disorganized rdf:type owl:NamedIndividual ,
-                            :FlawCreation ;
+                            :FlawBasic ;
                    rdfs:comment "Where’d you put that? When seeking anything but your most-used items and armor, roll 9 or less on a D20 to find it."@en ;
                    rdfs:label "Disorganized flaw"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_drunkard
 :flaw_drunkard rdf:type owl:NamedIndividual ,
-                        :FlawCreation ;
+                        :FlawBasic ;
                rdfs:comment "Your drinking wavers between revelry and tomfoolery. Beer and wine drain your pockets and frustrate your friends."@en ;
                rdfs:label "Drunkard flaw"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_employed
 :flaw_employed rdf:type owl:NamedIndividual ,
-                        :FlawCreation ;
+                        :FlawBasic ;
                rdfs:comment "You are paid or oathsworn to a lord or employer. Disobey at your own peril!"@en ;
                rdfs:label "Employed flaw"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_greedy
 :flaw_greedy rdf:type owl:NamedIndividual ,
-                      :FlawCreation ;
+                      :FlawBasic ;
              rdfs:comment "Tempted by treasure, roll 6 or less on a D20 to resist the urge."@en ;
              rdfs:label "Greedy flaw"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_grudge
 :flaw_grudge rdf:type owl:NamedIndividual ,
-                      :FlawCreation ;
+                      :FlawBasic ;
              rdfs:comment "You have been wronged, and hold it against an individual or group, unjustly. When you encounter them, you behave terribly."@en ;
              rdfs:label "Grudge flaw"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_impetuous
 :flaw_impetuous rdf:type owl:NamedIndividual ,
-                         :FlawCreation ;
+                         :FlawBasic ;
+                gen:modified :phase_choose ;
+                gen:valueFormula "1..5 -> 1..2" ;
                 rdfs:comment "You are impatient, leaping into situations without planning or reservation. Only take action in phase 1 or 2."@en ;
                 rdfs:label "Impetuous flaw"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_injured
 :flaw_injured rdf:type owl:NamedIndividual ,
-                       :FlawCreation ;
+                       :FlawBasic ;
+              gen:modified :SetAdditiveSkill ;
+              gen:valueFormula "prerequisite += (final number of skills - 1)" ;
               rdfs:comment "This common flaw should be taken a few times in a character’s lifetime. An Injury brings a -1 maximum skill inventory."@en ;
               rdfs:label "Injured flaw"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_just_a_kid
 :flaw_just_a_kid rdf:type owl:NamedIndividual ,
-                          :FlawCreation ;
+                          :FlawBasic ;
+                 gen:modified :SetAdditiveSkill ;
+                 gen:valueFormula "prerequisite -> ((final number of skills <= 6) and (final skill level >= 3) and (final skill level <= 9))" ;
                  rdfs:comment "Hey, I’m just a kid! Never exceed 6 skills."@en ;
                  rdfs:label "Just a kid flaw"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_paranoid
 :flaw_paranoid rdf:type owl:NamedIndividual ,
-                        :FlawCreation ;
+                        :FlawBasic ;
                rdfs:comment "What’s that? You hear that? You invent your own boogie men, and sew doubt among others. NPCs will be hesitant to trust you."@en ;
                rdfs:label "Paranoid flaw"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_phobia
 :flaw_phobia rdf:type owl:NamedIndividual ,
-                      :FlawCreation ;
+                      :FlawBasic ;
+             gen:modified :check_skill_resist_vs_horror ;
+             gen:valueFormula "success -> fail" ;
              rdfs:comment "Fear of a common thing. In its presence, no roll can succeed."@en ;
              rdfs:label "Phobia flaw"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_pursued
 :flaw_pursued rdf:type owl:NamedIndividual ,
-                       :FlawCreation ;
+                       :FlawBasic ;
               rdfs:comment "You have a nemesis out there... somewhere... hunting you."@en ;
               rdfs:label "Pursued flaw"@en .
 
@@ -1443,28 +1506,34 @@ If a hero refuses to choose, they will be scorned widely, possibly deemed an ene
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_sickly
 :flaw_sickly rdf:type owl:NamedIndividual ,
-                      :FlawCreation ;
+                      :FlawBasic ;
+             gen:modified :SetAdditiveSkill ;
+             gen:valueObject :skill_resist ,
+                             :skill_survival ;
+             gen:valueFormula "prerequisite -> ((final number of skills <= 10) and (final skill level >= 3) and (final skill level <= 9))" ;
              rdfs:comment "You were born frail. Survival and Resist skills cannot exceed 9."@en ;
              rdfs:label "Sickly flaw"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_stubborn
 :flaw_stubborn rdf:type owl:NamedIndividual ,
-                        :FlawCreation ;
+                        :FlawBasic ;
                rdfs:comment "If you make up your mind, only a D20 contest with another player or NPC will sway you."@en ;
                rdfs:label "Stubborn flaw"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_timid
 :flaw_timid rdf:type owl:NamedIndividual ,
-                     :FlawCreation ;
+                     :FlawBasic ;
+            gen:modified :phase_choose ;
+            gen:valueFormula "1..5 -> 4..5" ;
             rdfs:comment "You’d rather let others lead. Only take action in phase 4 or 5."@en ;
             rdfs:label "Timid flaw"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_unlucky
 :flaw_unlucky rdf:type owl:NamedIndividual ,
-                       :FlawCreation ;
+                       :FlawBasic ;
               rdfs:comment "No matter how many rabbit’s feet you carry, you have a penchant for comical mishaps and crit fail on a 16+."@en ;
               rdfs:label "Unlucky flaw"@en .
 
@@ -1538,8 +1607,10 @@ If a hero refuses to choose, they will be scorned widely, possibly deemed an ene
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#healing
 :healing rdf:type owl:NamedIndividual ;
-         gen:setAdditive :skills ;
-         gen:valueNumeric 1 ;
+         gen:modified :skills ;
+         gen:prerequisiteDescription "magic, potion, or first aid" ;
+         gen:valueFormula "1 skill crossed -> non-crossed" ;
+         rdfs:comment "restore 1 crossed-off skill" ;
          rdfs:label "Healing"@en .
 
 
@@ -1734,7 +1805,6 @@ earned value is always increased except for PC creation ;
 :maximize_roll rdf:type owl:NamedIndividual ;
                gen:Actor gen:player ;
                gen:modified :damage_roll ,
-                            :yes_no_roll ,
                             gen:Check ;
                gen:valueFormula "reroll roll enterily" ;
                rdfs:label "Maximize roll"@en .
@@ -1782,7 +1852,7 @@ earned value is always increased except for PC creation ;
                          gen:resource :hero_points ;
                          gen:setAdditive :skills ;
                          gen:cost "1 hero point per level" ;
-                         gen:prerequisiteDescription "(earned hero points >= 15) and (result antimagic skill level > 2) and (result antimagic skill level < 19)" ;
+                         gen:prerequisiteDescription "(earned hero points >= 15)" ;
                          rdfs:comment "This method seeks to nullify, cancel, or remove magic rather than channel it. To learn any of the abilities listed here, the practitioner must have access to magical research facilities, no matter their style or path. Antimagic is a closely guarded secret, and not easily learned."@en ;
                          rdfs:label "Antimagic path"@en .
 
@@ -1816,10 +1886,10 @@ earned value is always increased except for PC creation ;
                                               gen:input :item_holy_symbol ;
                                               gen:inputOption :MagicAdvancementHolySymbol ;
                                               gen:resource :hero_points ;
-                                              gen:setAdditive :equipment ;
+                                              gen:setAdditive :spells ;
                                               gen:cost "3 hero points" ;
-                                              gen:prerequisiteDescription "(holy symbol in equipment) and (number of advancements < 3)" ;
-                                              gen:valueFormula "holy symbol += selected advancement" ;
+                                              gen:prerequisiteDescription "(holy symbol in equipment) and (number of advancements <= 2)" ;
+                                              gen:valueFormula "spells += selected advancement" ;
                                               rdfs:comment "purchased at any time"@en ;
                                               rdfs:label "Path of divine magic: advancement for holy symbol"@en .
 
@@ -1939,7 +2009,8 @@ earned value is always increased except for PC creation ;
 :perform_action rdf:type owl:NamedIndividual ;
                 gen:effectOption :attack_of_enemy ,
                                  :check_skill ,
-                                 :damage_roll ;
+                                 :damage_roll ,
+                                 :wild_magic ;
                 rdfs:comment "Make an attack, use a skill, cast a spell or perform one discreet action. This takes your entire phase."@en ;
                 rdfs:label "Perform an Action"@en .
 
@@ -1984,10 +2055,11 @@ For enemies GM chooses phases accordingly with character's statistic.
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#recovery
 :recovery rdf:type owl:NamedIndividual ;
-          gen:setAdditive :equipment ,
-                          :skills ;
-          gen:valueNumeric 1 ;
-          rdfs:comment "After each scene in play, once safety is found and no enemies or timers are incoming."@en ;
+          gen:after :phases_and_rounds ;
+          gen:modified :equipment ,
+                       :skills ;
+          gen:valueFormula "1 (equipment or skill) crossed -> non-crossed" ;
+          rdfs:comment "After each scene in play, once safety is found and no enemies or timers are incoming, regain 1 equipment or skill."@en ;
           rdfs:label "Recovery"@en .
 
 
@@ -2002,9 +2074,9 @@ For enemies GM chooses phases accordingly with character's statistic.
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#repair
 :repair rdf:type owl:NamedIndividual ;
-        gen:setAdditive :equipment ;
-        gen:prerequisiteDescription "damaged equipment" ;
-        gen:valueNumeric 1 ;
+        gen:modified :equipment ;
+        gen:valueFormula "1 equipment crossed -> non-crossed" ;
+        rdfs:comment "repair 1 crossed-off equipment"@en ;
         rdfs:label "Repair"@en .
 
 
@@ -2012,7 +2084,6 @@ For enemies GM chooses phases accordingly with character's statistic.
 :reroll rdf:type owl:NamedIndividual ;
         gen:Actor gen:player ;
         gen:modified :damage_roll ,
-                     :yes_no_roll ,
                      gen:Check ;
         gen:valueFormula "reroll roll enterily" ;
         rdfs:label "Reroll"@en .
@@ -2020,10 +2091,11 @@ For enemies GM chooses phases accordingly with character's statistic.
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#rest
 :rest rdf:type owl:NamedIndividual ;
-      gen:setAdditive :equipment ,
-                      :skills ;
-      gen:valueFormula "1d4" ;
-      rdfs:comment "Night’s rest in safety." ;
+      gen:effectOption :spending_hero_points ;
+      gen:modified :equipment ,
+                   :skills ;
+      gen:valueFormula "1d4 (equipment or skill) crossed -> non-crossed" ;
+      rdfs:comment "Regain a combined 1D4 of equipment and skills with a night’s rest in safety."@en ;
       rdfs:label "Rest"@en .
 
 
@@ -2078,11 +2150,10 @@ For enemies GM chooses phases accordingly with character's statistic.
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#set_flaw
-:set_flaw rdf:type owl:NamedIndividual ,
-                   :RequiredDetails ;
-          gen:inputOption :FlawCreation ;
+:set_flaw rdf:type owl:NamedIndividual ;
+          gen:inputOption :FlawBasic ;
           gen:setAdditive :flaws ;
-          gen:prerequisiteDescription "number of flaws < 5" ;
+          gen:prerequisiteDescription "number of flaws <= 4" ;
           rdfs:label "Set flaw"@en .
 
 
@@ -2186,12 +2257,24 @@ For enemies GM chooses phases accordingly with character's statistic.
                rdfs:label "Setting the Scene"@en .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#skill_breakfall
+:skill_breakfall rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#skill_climber
+:skill_climber rdf:type owl:NamedIndividual .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#skill_faith
 :skill_faith rdf:type owl:NamedIndividual ,
                       :SkillBasicPC ;
              rdfs:comment "format = (maximum value, current value, temporal value)"@en ,
                           "temporal value >= current value"@en ;
              rdfs:label "Faith skill"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#skill_jump
+:skill_jump rdf:type owl:NamedIndividual .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#skill_magic
@@ -2216,6 +2299,14 @@ For enemies GM chooses phases accordingly with character's statistic.
 :skill_roll_penalty rdf:type owl:NamedIndividual ;
                     gen:valueFormula "zero by default" ;
                     rdfs:label "Penalty to skill roll"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#skill_stealth
+:skill_stealth rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#skill_survival
+:skill_survival rdf:type owl:NamedIndividual .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#skills
@@ -2321,6 +2412,7 @@ For enemies GM chooses phases accordingly with character's statistic.
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#spending_hero_points
 :spending_hero_points rdf:type owl:NamedIndividual ;
                       gen:Actor gen:player ;
+                      gen:included :upgrade_skill ;
                       gen:modified gen:pc ;
                       gen:resource :hero_points ;
                       gen:prerequisiteDescription "can only be spent when resting in a safe place with required facilities or services" ;
@@ -2469,6 +2561,17 @@ For enemies GM chooses phases accordingly with character's statistic.
              rdfs:label "Under stun effect"@en .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#status_tether_service_is_not_given
+:status_tether_service_is_not_given rdf:type owl:NamedIndividual ,
+                                             gen:Status ;
+                                    gen:setAdditive :skills ;
+                                    gen:duration "until the wizard complies service" ;
+                                    gen:prerequisiteDescription "service isn't given" ;
+                                    gen:valueFormula "(1d4 per round) skill non-crossed -> crossed" ;
+                                    rdfs:comment "If service isn’t given, the tattoo will burn with pain, but cannot kill wizard"@en ;
+                                    rdfs:label "Called service by tether is not given"@en .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#status_vs_haste
 :status_vs_haste rdf:type owl:NamedIndividual ,
                           gen:Status ;
@@ -2559,21 +2662,11 @@ For enemies GM chooses phases accordingly with character's statistic.
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#tether_service
 :tether_service rdf:type owl:NamedIndividual ;
                 gen:after :tattooing_tether ;
-                gen:effect :tether_service_is_not_given ,
+                gen:effect :status_tether_service_is_not_given ,
                            :tether_service_is_rendered ;
                 gen:duration "1d4 rounds" ;
                 gen:prerequisiteDescription "the servant must begin to comply service" ;
                 rdfs:label "Called service by tether"@en .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#tether_service_is_not_given
-:tether_service_is_not_given rdf:type owl:NamedIndividual ;
-                             gen:setAdditive :skills ;
-                             gen:duration "until the wizard complies service" ;
-                             gen:prerequisiteDescription "service isn't given" ;
-                             gen:valueFormula "1d4 skill attrition per round, but cannot kill wizard" ;
-                             rdfs:comment "If service isn’t given, the tattoo will burn with pain."@en ;
-                             rdfs:label "Called service by tether is not given"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#tether_service_is_rendered
@@ -2627,7 +2720,7 @@ For enemies GM chooses phases accordingly with character's statistic.
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#transitions_and_table_talk
 :transitions_and_table_talk rdf:type owl:NamedIndividual ;
-                            gen:after :phases_and_rounds ;
+                            gen:after :recovery ;
                             gen:effectOption :setting_scene ;
                             rdfs:label "Transitions and Table Talk"@en .
 
@@ -2639,7 +2732,6 @@ For enemies GM chooses phases accordingly with character's statistic.
                gen:resource :hero_points ;
                gen:setAdditive :skills ;
                gen:cost "1 point per 1 skill level" ;
-               gen:prerequisiteDescription "(number of non-zero skills <= 10)" ;
                rdfs:label "Upgrade skill"@en .
 
 
@@ -2687,12 +2779,6 @@ For enemies GM chooses phases accordingly with character's statistic.
               rdfs:label "Word is bond"@en .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#yes_no_roll
-:yes_no_roll rdf:type owl:NamedIndividual ;
-             gen:valueFormula "{1d6 <= 3: No; 1d6 > 3: Yes}" ;
-             rdfs:label "Yes/No roll"@en .
-
-
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#Check
 gen:Check rdf:type owl:NamedIndividual .
 
@@ -2705,19 +2791,12 @@ gen:TemplatePC rdf:type owl:NamedIndividual .
 gen:game_play gen:included :crown_or_skull ,
                            :encounter ,
                            :giving_hero_coin ,
-                           :healing ,
                            :path_of_magic ,
-                           :recovery ,
                            :renown ,
-                           :repair ,
                            :rest ,
+                           :set_flaw ,
                            :set_hero_coin ,
                            :set_hero_points ,
-                           :spending_hero_coin ,
-                           :spending_hero_points ,
-                           :upgrade_skill ,
-                           :wild_magic ,
-                           :yes_no_roll ,
                            gen:Check .
 
 
@@ -2758,7 +2837,7 @@ gen:game_preparation gen:included :character_creation ,
 :EffectSpell rdfs:label "Spell effect"@en .
 
 
-:FlawCreation rdfs:label "Flaw for character creation"@en .
+:FlawBasic rdfs:label "Basic flaw"@en .
 
 
 :Item rdfs:comment "effect after or during use"@en ,
@@ -2792,6 +2871,12 @@ gen:game_preparation gen:included :character_creation ,
 
 
 :MagicAdvancementHolySymbol rdfs:label "Magic advancement for holy symbol"@en .
+
+
+:SetAdditiveEquipment rdfs:label "Current equipment's correction"@en .
+
+
+:SetAdditiveSkill rdfs:label "Current skill list's correction"@en .
 
 
 :Skill rdfs:label "Skill"@en .
