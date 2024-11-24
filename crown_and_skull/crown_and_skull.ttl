@@ -83,7 +83,18 @@
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#Flaw
 :Flaw rdf:type owl:Class ;
-      rdfs:subClassOf :RequiredDetails .
+      rdfs:label "Flaw"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#FlawCreation
+:FlawCreation rdf:type owl:Class ;
+              rdfs:subClassOf :Flaw .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#FlawCrownAndSkull
+:FlawCrownAndSkull rdf:type owl:Class ;
+                   rdfs:subClassOf :Flaw ;
+                   rdfs:label "Flaw after crown and skull choice"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#Item
@@ -474,8 +485,8 @@ gen:TemplatePC rdf:type owl:Class ;
 :EffectSpell rdf:type owl:NamedIndividual .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#Flaw
-:Flaw rdf:type owl:NamedIndividual .
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#FlawCreation
+:FlawCreation rdf:type owl:NamedIndividual .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#Item
@@ -837,9 +848,10 @@ gen:TemplatePC rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#character_creation_flaws_selection
 :character_creation_flaws_selection rdf:type owl:NamedIndividual ;
-                                    gen:inputOption :Flaw ;
+                                    gen:inputOption :FlawCreation ;
                                     gen:set :flaws ;
-                                    gen:prerequisiteDescription "number of selected flaws < 3" ;
+                                    gen:prerequisiteDescription "number of selected flaws <= 2" ;
+                                    rdfs:comment "Take a maximum 2 flaws at creation. Flaws are entirely optional!"@en ;
                                     rdfs:label "Custom character creation: choose flaws"@en .
 
 
@@ -1303,24 +1315,158 @@ If a hero refuses to choose, they will be scorned widely, possibly deemed an ene
              rdfs:label "The Eye in the Well"@en .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_addict
+:flaw_addict rdf:type owl:NamedIndividual ,
+                      :FlawCreation ;
+             rdfs:comment "You have a specific vice you cannot deny. If you can’t get your fix, the GM will ask for a roll vs. attrition in some form."@en ;
+             rdfs:label "Addict flaw"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_aescetic
+:flaw_aescetic rdf:type owl:NamedIndividual ,
+                        :FlawCreation ;
+               rdfs:comment "You frown on possessions. Never exceed 5 equipment."@en ;
+               rdfs:label "Aescetic flaw"@en .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_ancient
 :flaw_ancient rdf:type owl:NamedIndividual ,
-                       :Flaw ;
+                       :FlawCreation ;
+              rdfs:comment "You are old! Muscle, Jump, Climber, Breakfall, and Stealth skills may not exceed 9, but you earn respect for your advanced age."@en ;
               rdfs:label "Ancient flaw"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_bad_reputation
+:flaw_bad_reputation rdf:type owl:NamedIndividual ,
+                              :FlawCreation ;
+                     rdfs:comment "You’ve done things... terrible things, and people know about it. You’ve done harm, broken oaths, or let someone down."@en ;
+                     rdfs:label "Bad reputation flaw"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_crazy
+:flaw_crazy rdf:type owl:NamedIndividual ,
+                     :FlawCreation ;
+            rdfs:comment "When faced with a diffi cult choice, choose randomly."@en ;
+            rdfs:label "Crazy flaw"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_crown_sworn
 :flaw_crown_sworn rdf:type owl:NamedIndividual ,
-                           :Flaw ;
+                           :FlawCrownAndSkull ;
                   rdfs:comment "If you disobey a royal summons, edict or order and are caught doing so, the penalty is death."@en ;
                   rdfs:label "Crown-Sworn flaw"@en .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_disorganized
+:flaw_disorganized rdf:type owl:NamedIndividual ,
+                            :FlawCreation ;
+                   rdfs:comment "Where’d you put that? When seeking anything but your most-used items and armor, roll 9 or less on a D20 to find it."@en ;
+                   rdfs:label "Disorganized flaw"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_drunkard
+:flaw_drunkard rdf:type owl:NamedIndividual ,
+                        :FlawCreation ;
+               rdfs:comment "Your drinking wavers between revelry and tomfoolery. Beer and wine drain your pockets and frustrate your friends."@en ;
+               rdfs:label "Drunkard flaw"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_employed
+:flaw_employed rdf:type owl:NamedIndividual ,
+                        :FlawCreation ;
+               rdfs:comment "You are paid or oathsworn to a lord or employer. Disobey at your own peril!"@en ;
+               rdfs:label "Employed flaw"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_greedy
+:flaw_greedy rdf:type owl:NamedIndividual ,
+                      :FlawCreation ;
+             rdfs:comment "Tempted by treasure, roll 6 or less on a D20 to resist the urge."@en ;
+             rdfs:label "Greedy flaw"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_grudge
+:flaw_grudge rdf:type owl:NamedIndividual ,
+                      :FlawCreation ;
+             rdfs:comment "You have been wronged, and hold it against an individual or group, unjustly. When you encounter them, you behave terribly."@en ;
+             rdfs:label "Grudge flaw"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_impetuous
+:flaw_impetuous rdf:type owl:NamedIndividual ,
+                         :FlawCreation ;
+                rdfs:comment "You are impatient, leaping into situations without planning or reservation. Only take action in phase 1 or 2."@en ;
+                rdfs:label "Impetuous flaw"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_injured
+:flaw_injured rdf:type owl:NamedIndividual ,
+                       :FlawCreation ;
+              rdfs:comment "This common flaw should be taken a few times in a character’s lifetime. An Injury brings a -1 maximum skill inventory."@en ;
+              rdfs:label "Injured flaw"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_just_a_kid
+:flaw_just_a_kid rdf:type owl:NamedIndividual ,
+                          :FlawCreation ;
+                 rdfs:comment "Hey, I’m just a kid! Never exceed 6 skills."@en ;
+                 rdfs:label "Just a kid flaw"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_paranoid
+:flaw_paranoid rdf:type owl:NamedIndividual ,
+                        :FlawCreation ;
+               rdfs:comment "What’s that? You hear that? You invent your own boogie men, and sew doubt among others. NPCs will be hesitant to trust you."@en ;
+               rdfs:label "Paranoid flaw"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_phobia
+:flaw_phobia rdf:type owl:NamedIndividual ,
+                      :FlawCreation ;
+             rdfs:comment "Fear of a common thing. In its presence, no roll can succeed."@en ;
+             rdfs:label "Phobia flaw"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_pursued
+:flaw_pursued rdf:type owl:NamedIndividual ,
+                       :FlawCreation ;
+              rdfs:comment "You have a nemesis out there... somewhere... hunting you."@en ;
+              rdfs:label "Pursued flaw"@en .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_ronin
 :flaw_ronin rdf:type owl:NamedIndividual ,
-                     :Flaw ;
+                     :FlawCrownAndSkull ;
             rdfs:comment "Unless in disguise, you will be identifi ed and unwelcome in any high hall, throne room, council chamber, or royal household. Even in taverns and markets you will be seen as suspicious."@en ;
             rdfs:label "Ronin flaw"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_sickly
+:flaw_sickly rdf:type owl:NamedIndividual ,
+                      :FlawCreation ;
+             rdfs:comment "You were born frail. Survival and Resist skills cannot exceed 9."@en ;
+             rdfs:label "Sickly flaw"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_stubborn
+:flaw_stubborn rdf:type owl:NamedIndividual ,
+                        :FlawCreation ;
+               rdfs:comment "If you make up your mind, only a D20 contest with another player or NPC will sway you."@en ;
+               rdfs:label "Stubborn flaw"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_timid
+:flaw_timid rdf:type owl:NamedIndividual ,
+                     :FlawCreation ;
+            rdfs:comment "You’d rather let others lead. Only take action in phase 4 or 5."@en ;
+            rdfs:label "Timid flaw"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_unlucky
+:flaw_unlucky rdf:type owl:NamedIndividual ,
+                       :FlawCreation ;
+              rdfs:comment "No matter how many rabbit’s feet you carry, you have a penchant for comical mishaps and crit fail on a 16+."@en ;
+              rdfs:label "Unlucky flaw"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaws
@@ -1934,7 +2080,7 @@ For enemies GM chooses phases accordingly with character's statistic.
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#set_flaw
 :set_flaw rdf:type owl:NamedIndividual ,
                    :RequiredDetails ;
-          gen:inputOption :Flaw ;
+          gen:inputOption :FlawCreation ;
           gen:setAdditive :flaws ;
           gen:prerequisiteDescription "number of flaws < 5" ;
           rdfs:label "Set flaw"@en .
@@ -2612,7 +2758,7 @@ gen:game_preparation gen:included :character_creation ,
 :EffectSpell rdfs:label "Spell effect"@en .
 
 
-:Flaw rdfs:label "Flaw"@en .
+:FlawCreation rdfs:label "Flaw for character creation"@en .
 
 
 :Item rdfs:comment "effect after or during use"@en ,
