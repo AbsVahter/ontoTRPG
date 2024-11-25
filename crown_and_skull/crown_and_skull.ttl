@@ -51,7 +51,8 @@ gen:gen:setAdditive rdf:type owl:AnnotationProperty .
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#Attrition
 :Attrition rdf:type owl:Class ;
-           rdfs:subClassOf [ rdf:type owl:Restriction ;
+           rdfs:subClassOf gen:Act ,
+                           [ rdf:type owl:Restriction ;
                              owl:onProperty gen:effect ;
                              owl:hasValue :set_status_close_to_death
                            ] .
@@ -994,7 +995,7 @@ gen:TemplatePC rdf:type owl:Class ;
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#check_skill_faith_success
 :check_skill_faith_success rdf:type owl:NamedIndividual ;
                            gen:prerequisite :skill_faith ;
-                           gen:setAdditive :skill_faith ;
+                           gen:setCurrent :skill_faith ;
                            gen:prerequisiteDescription "temporal faith skill < 14" ;
                            gen:valueFormula "temporal faith += 1" ;
                            rdfs:label "Success faith skill roll"@en .
@@ -1086,6 +1087,183 @@ gen:TemplatePC rdf:type owl:Class ;
                        gen:ParameterPC ;
               rdfs:comment "This is one of the most useful mechanical aspects of character."@en ;
               rdfs:label "Core ability"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#core_ability_battlemaster
+:core_ability_battlemaster rdf:type owl:NamedIndividual ,
+                                    :CoreAbility ;
+                           gen:modified :damage_roll ;
+                           gen:prerequisite :equipment ;
+                           gen:valueObject gen:valueFormula ;
+                           gen:valueFormula "when you roll maximum value, roll again" ;
+                           rdfs:comment "You have been trained as a soldier who knows how to hit hard. When you roll maximum damage, roll again. There is no limit to the number of times the dice can ‘explode.’"@en ;
+                           rdfs:label "Battlemaster"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#core_ability_brutal_fighter
+:core_ability_brutal_fighter rdf:type owl:NamedIndividual ,
+                                      :CoreAbility ;
+                             gen:modified :set_damage ;
+                             gen:prerequisite :equipment ;
+                             gen:valueObject gen:target ;
+                             gen:valueFormula "target: enemy -> 2 enemy" ;
+                             rdfs:comment "You are fast, efficient, and adept at taking on multiple opponents in close quarters. All of your melee attacks may hit 2 foes with a single damage roll."@en ;
+                             rdfs:label "Brutal Fighter"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#core_ability_druid
+:core_ability_druid rdf:type owl:NamedIndividual ,
+                             :CoreAbility ;
+                    gen:included :core_ability_druid_set_skills ,
+                                 :core_ability_druid_skill_bonus ;
+                    rdfs:comment "Master of wilderness. Gain the Tracking and Hunting skills for free, each at 9. When outdoors, gain +3 on all skills."@en ;
+                    rdfs:label "Druid"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#core_ability_druid_set_skills
+:core_ability_druid_set_skills rdf:type owl:NamedIndividual ;
+                               gen:setAdditive :skills ;
+                               gen:valueObject :skill_hunting ,
+                                               :skill_tracking ;
+                               gen:valueNumeric 9 ;
+                               rdfs:comment "Gain the Tracking and Hunting skills for free, each at 9."@en ;
+                               rdfs:label "Druid: gain the Tracking and Hunting skills for free"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#core_ability_druid_skill_bonus
+:core_ability_druid_skill_bonus rdf:type owl:NamedIndividual ;
+                                gen:modified :check_skill ;
+                                gen:prerequisiteDescription "outdoors" ;
+                                gen:valueNumeric 3 ;
+                                rdfs:comment "When outdoors, gain +3 on all skills."@en ;
+                                rdfs:label "Druid: gain skill bonus at outdoors"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#core_ability_empath
+:core_ability_empath rdf:type owl:NamedIndividual ,
+                              :CoreAbility ;
+                     gen:setAdditive :skills ;
+                     gen:valueObject :skill_investigation ,
+                                     :skill_oratory ,
+                                     :skill_streetwise ;
+                     gen:valueNumeric 7 ;
+                     rdfs:comment "You have masterful intuition. Gain the Investigation, Streetwise, and Oratory skills at a value of 7 for free."@en ;
+                     rdfs:label "Empath"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#core_ability_go_unnoticed
+:core_ability_go_unnoticed rdf:type owl:NamedIndividual ,
+                                    :CoreAbility ;
+                           gen:modified :attack_of_enemy ;
+                           rdfs:comment "You blend into shadows with ease. When enemies are attacking you and your allies, they will target you last."@en ;
+                           rdfs:label "Go Unnoticed"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#core_ability_mountaineer
+:core_ability_mountaineer rdf:type owl:NamedIndividual ,
+                                   :CoreAbility ;
+                          gen:included :core_ability_mountaineer_climber_and_breakfall ,
+                                       :core_ability_mountaineer_scout ;
+                          rdfs:comment "A master of finding ways through rock and cavern. Gain the Climber and Breakfall skills at 10. In mountains or underground, you also have a Scout skill of 15."@en ;
+                          rdfs:label "Mountaineer"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#core_ability_mountaineer_climber_and_breakfall
+:core_ability_mountaineer_climber_and_breakfall rdf:type owl:NamedIndividual ;
+                                                gen:setAdditive :skills ;
+                                                gen:valueObject :skill_breakfall ,
+                                                                :skill_climber ;
+                                                gen:valueNumeric 10 ;
+                                                rdfs:comment "Gain the Climber and Breakfall skills at 10"@en ;
+                                                rdfs:label "Mountaineer: gain the Climber and Breakfall skills"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#core_ability_mountaineer_scout
+:core_ability_mountaineer_scout rdf:type owl:NamedIndividual ;
+                                gen:setAdditive :skills ;
+                                gen:valueObject :skill_scout ;
+                                gen:prerequisiteDescription "in mountains or underground" ;
+                                gen:valueNumeric 15 ;
+                                rdfs:comment "Gain the Scout skills at 15 in mountains or underground"@en ;
+                                rdfs:label "Mountaineer: gain the Scout skill"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#core_ability_paragon_of_faith
+:core_ability_paragon_of_faith rdf:type owl:NamedIndividual ,
+                                        :CoreAbility ;
+                               gen:included :core_ability_paragon_of_faith_bonus_to_faith_grow ,
+                                            :core_ability_paragon_of_faith_destroy_undead ;
+                               rdfs:comment "Your Faith skill grows by 2 with a successful cast, and maxes at 16. Additionally, destroy 1D6 weak undead (such as zombies, shamblers, or skeletons) as an Exhausting spell."@en ;
+                               rdfs:label "Paragon of Faith"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#core_ability_paragon_of_faith_bonus_to_faith_grow
+:core_ability_paragon_of_faith_bonus_to_faith_grow rdf:type owl:NamedIndividual ;
+                                                   gen:modified :check_skill_faith_success ;
+                                                   gen:valueObject gen:prerequisiteDescription ,
+                                                                   gen:valueFormula ;
+                                                   gen:valueFormula "{formula: temporal faith += 2; prerequisite: temporal faith skill <= 16}" ;
+                                                   rdfs:comment "Your Faith skill grows by 2 with a successful cast, and maxes at 16."@en ;
+                                                   rdfs:label "Paragon of Faith: Faith skill grows by 2 with a successful cast"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#core_ability_paragon_of_faith_destroy_undead
+:core_ability_paragon_of_faith_destroy_undead rdf:type owl:NamedIndividual ;
+                                              gen:modified :perform_action ;
+                                              gen:set :status_exhausting ;
+                                              rdfs:comment "Destroy 1D6 weak undead (such as zombies, shamblers, or skeletons) as an Exhausting spell."@en ;
+                                              rdfs:label "Paragon of Faith: destroy undead"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#core_ability_protector
+:core_ability_protector rdf:type owl:NamedIndividual ,
+                                 :CoreAbility ;
+                        gen:input :equipment ;
+                        gen:modified :check_defense ;
+                        gen:valueObject gen:effect ;
+                        gen:prerequisiteDescription "(worn shield) and (once per round)" ;
+                        gen:target "nearby ally" ;
+                        gen:valueFormula "fail -> success" ;
+                        rdfs:comment "When using a shield, change a failed Defense roll by an ally into a success once per round, if they are nearby."@en ;
+                        rdfs:label "Protector"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#core_ability_spellsinger
+:core_ability_spellsinger rdf:type owl:NamedIndividual ,
+                                   :CoreAbility ;
+                          gen:modified :creation_custom_spell ;
+                          rdfs:comment "You cast spells with flair and oratory. You can never use ‘silent’ or ‘still’ spells. As a default, though, your spells work on a target that can HEAR you cast. Upgrade from there as normal."@en ;
+                          rdfs:label "Spellsinger"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#core_ability_uncanny_shot
+:core_ability_uncanny_shot rdf:type owl:NamedIndividual ,
+                                    :CoreAbility ;
+                           gen:input :equipment ;
+                           gen:modified :set_damage ;
+                           gen:valueObject gen:valueFormula ;
+                           gen:prerequisiteDescription "worn ranged weapon" ;
+                           gen:valueFormula "formula: (defense of enemy - 1) + (damage penalty) - 2 * (damage roll)" ;
+                           rdfs:comment "Roll an extra damage die with all ranged weapons, and ignore 1 DEF on all targets when using ranged weapons."@en ;
+                           rdfs:label "Uncanny Shot"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#core_ability_veteran_commander
+:core_ability_veteran_commander rdf:type owl:NamedIndividual ,
+                                         :CoreAbility ;
+                                gen:modified :attack_of_enemy ,
+                                             :damage_roll ;
+                                gen:prerequisiteDescription "first attack" ;
+                                gen:target "1 ally" ;
+                                rdfs:comment "When a combat encounter starts, choose 1 ally. Inspire them with a command to fight! Their first attack does maximum damage, and they cannot be harmed for the remainder of that round."@en ;
+                                rdfs:label "Veteran Commander"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#core_ability_wizard_savant
+:core_ability_wizard_savant rdf:type owl:NamedIndividual ,
+                                     :CoreAbility ;
+                            rdfs:comment "You don’t just cast spells; you are a conduit of incredible power. When casting, effects and outputs of all magic you cast are maximized on a Magic skill roll of 6 or less on a D20."@en ;
+                            rdfs:label "Wizard Savant"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#creation_custom_companion
@@ -1298,12 +1476,11 @@ If a hero refuses to choose, they will be scorned widely, possibly deemed an ene
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#damage_roll
 :damage_roll rdf:type owl:NamedIndividual ;
-             gen:Actor gen:player ;
-             gen:input :damage_penalty ,
-                       :equipment ,
-                       :stat_def_enemy ;
-             gen:valueFormula "(worn weapon damage) - (defense of enemy) - (damage penalty)" ;
-             rdfs:label "Damage or effect roll"@en .
+             gen:inputOption :companions ,
+                             :equipment ,
+                             :spells ;
+             gen:valueFormula "roll of (worn weapon or spell or companion) damage stat" ;
+             rdfs:label "Damage roll"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#death_of_pc
@@ -1372,6 +1549,7 @@ If a hero refuses to choose, they will be scorned widely, possibly deemed an ene
 :flaw_aescetic rdf:type owl:NamedIndividual ,
                         :FlawBasic ;
                gen:modified :SetAdditiveEquipment ;
+               gen:valueObject gen:prerequisiteDescription ;
                gen:valueFormula "prerequisite -> (final number of equipment <= 5)" ;
                rdfs:comment "You frown on possessions. Never exceed 5 equipment."@en ;
                rdfs:label "Aescetic flaw"@en .
@@ -1385,7 +1563,8 @@ If a hero refuses to choose, they will be scorned widely, possibly deemed an ene
                               :skill_climber ,
                               :skill_jump ,
                               :skill_muscle ,
-                              :skill_stealth ;
+                              :skill_stealth ,
+                              gen:prerequisiteDescription ;
               gen:valueFormula "prerequisite -> ((final number of skills <= 10) and (final skill level >= 3) and (final skill level <= 9))" ;
               rdfs:comment "You are old! Muscle, Jump, Climber, Breakfall, and Stealth skills may not exceed 9, but you earn respect for your advanced age."@en ;
               rdfs:label "Ancient flaw"@en .
@@ -1451,6 +1630,7 @@ If a hero refuses to choose, they will be scorned widely, possibly deemed an ene
 :flaw_impetuous rdf:type owl:NamedIndividual ,
                          :FlawBasic ;
                 gen:modified :phase_choose ;
+                gen:valueObject gen:valueFormula ;
                 gen:valueFormula "1..5 -> 1..2" ;
                 rdfs:comment "You are impatient, leaping into situations without planning or reservation. Only take action in phase 1 or 2."@en ;
                 rdfs:label "Impetuous flaw"@en .
@@ -1460,6 +1640,7 @@ If a hero refuses to choose, they will be scorned widely, possibly deemed an ene
 :flaw_injured rdf:type owl:NamedIndividual ,
                        :FlawBasic ;
               gen:modified :SetAdditiveSkill ;
+              gen:valueObject gen:prerequisiteDescription ;
               gen:valueFormula "prerequisite += (final number of skills - 1)" ;
               rdfs:comment "This common flaw should be taken a few times in a character’s lifetime. An Injury brings a -1 maximum skill inventory."@en ;
               rdfs:label "Injured flaw"@en .
@@ -1469,6 +1650,7 @@ If a hero refuses to choose, they will be scorned widely, possibly deemed an ene
 :flaw_just_a_kid rdf:type owl:NamedIndividual ,
                           :FlawBasic ;
                  gen:modified :SetAdditiveSkill ;
+                 gen:valueObject gen:prerequisiteDescription ;
                  gen:valueFormula "prerequisite -> ((final number of skills <= 6) and (final skill level >= 3) and (final skill level <= 9))" ;
                  rdfs:comment "Hey, I’m just a kid! Never exceed 6 skills."@en ;
                  rdfs:label "Just a kid flaw"@en .
@@ -1485,6 +1667,7 @@ If a hero refuses to choose, they will be scorned widely, possibly deemed an ene
 :flaw_phobia rdf:type owl:NamedIndividual ,
                       :FlawBasic ;
              gen:modified :check_skill_resist_vs_horror ;
+             gen:valueObject gen:effect ;
              gen:valueFormula "success -> fail" ;
              rdfs:comment "Fear of a common thing. In its presence, no roll can succeed."@en ;
              rdfs:label "Phobia flaw"@en .
@@ -1509,7 +1692,8 @@ If a hero refuses to choose, they will be scorned widely, possibly deemed an ene
                       :FlawBasic ;
              gen:modified :SetAdditiveSkill ;
              gen:valueObject :skill_resist ,
-                             :skill_survival ;
+                             :skill_survival ,
+                             gen:prerequisiteDescription ;
              gen:valueFormula "prerequisite -> ((final number of skills <= 10) and (final skill level >= 3) and (final skill level <= 9))" ;
              rdfs:comment "You were born frail. Survival and Resist skills cannot exceed 9."@en ;
              rdfs:label "Sickly flaw"@en .
@@ -1526,6 +1710,7 @@ If a hero refuses to choose, they will be scorned widely, possibly deemed an ene
 :flaw_timid rdf:type owl:NamedIndividual ,
                      :FlawBasic ;
             gen:modified :phase_choose ;
+            gen:valueObject gen:valueFormula ;
             gen:valueFormula "1..5 -> 4..5" ;
             rdfs:comment "You’d rather let others lead. Only take action in phase 4 or 5."@en ;
             rdfs:label "Timid flaw"@en .
@@ -2009,7 +2194,7 @@ earned value is always increased except for PC creation ;
 :perform_action rdf:type owl:NamedIndividual ;
                 gen:effectOption :attack_of_enemy ,
                                  :check_skill ,
-                                 :damage_roll ,
+                                 :set_damage ,
                                  :wild_magic ;
                 rdfs:comment "Make an attack, use a skill, cast a spell or perform one discreet action. This takes your entire phase."@en ;
                 rdfs:label "Perform an Action"@en .
@@ -2149,6 +2334,18 @@ For enemies GM chooses phases accordingly with character's statistic.
                   rdfs:label "Bonus reward for hero points"@en .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#set_damage
+:set_damage rdf:type owl:NamedIndividual ;
+            gen:Actor gen:player ;
+            gen:input :damage_penalty ,
+                      :damage_roll ,
+                      :stat_def_enemy ;
+            gen:setAdditive :stat_hp ;
+            gen:target "enemy" ;
+            gen:valueFormula "(defense of enemy) + (damage penalty) - (damage roll)" ;
+            rdfs:label "Set damage to enemy"@en .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#set_flaw
 :set_flaw rdf:type owl:NamedIndividual ;
           gen:inputOption :FlawBasic ;
@@ -2273,6 +2470,14 @@ For enemies GM chooses phases accordingly with character's statistic.
              rdfs:label "Faith skill"@en .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#skill_hunting
+:skill_hunting rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#skill_investigation
+:skill_investigation rdf:type owl:NamedIndividual .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#skill_jump
 :skill_jump rdf:type owl:NamedIndividual .
 
@@ -2289,6 +2494,10 @@ For enemies GM chooses phases accordingly with character's statistic.
               rdfs:label "Muscle skill"@en .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#skill_oratory
+:skill_oratory rdf:type owl:NamedIndividual .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#skill_resist
 :skill_resist rdf:type owl:NamedIndividual ,
                        :Skill ;
@@ -2301,12 +2510,24 @@ For enemies GM chooses phases accordingly with character's statistic.
                     rdfs:label "Penalty to skill roll"@en .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#skill_scout
+:skill_scout rdf:type owl:NamedIndividual .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#skill_stealth
 :skill_stealth rdf:type owl:NamedIndividual .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#skill_streetwise
+:skill_streetwise rdf:type owl:NamedIndividual .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#skill_survival
 :skill_survival rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#skill_tracking
+:skill_tracking rdf:type owl:NamedIndividual .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#skills
@@ -2500,6 +2721,12 @@ For enemies GM chooses phases accordingly with character's statistic.
 :status_enemy_focus rdf:type owl:NamedIndividual ,
                              gen:Status ;
                     rdfs:label "In focus of nearby enemies"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#status_exhausting
+:status_exhausting rdf:type owl:NamedIndividual ,
+                            gen:Status ;
+                   rdfs:label "Exhausting status"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#status_freezing
@@ -2787,6 +3014,10 @@ gen:Check rdf:type owl:NamedIndividual .
 gen:TemplatePC rdf:type owl:NamedIndividual .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#effect
+gen:effect rdf:type owl:NamedIndividual .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#game_play
 gen:game_play gen:included :crown_or_skull ,
                            :encounter ,
@@ -2803,6 +3034,18 @@ gen:game_play gen:included :crown_or_skull ,
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#game_preparation
 gen:game_preparation gen:included :character_creation ,
                                   :set_hometown .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#prerequisiteDescription
+gen:prerequisiteDescription rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#target
+gen:target rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#valueFormula
+gen:valueFormula rdf:type owl:NamedIndividual .
 
 
 #################################################################
