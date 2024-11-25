@@ -237,6 +237,20 @@ gen:cost rdf:type owl:DatatypeProperty ;
                     "стоимость"@ru .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#damage
+gen:damage rdf:type owl:DatatypeProperty ;
+           rdfs:range xsd:string ;
+           rdfs:label "damage"@en ,
+                      "урон"@ru .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#defense
+gen:defense rdf:type owl:DatatypeProperty ;
+            rdfs:range xsd:string ;
+            rdfs:label "defense"@en ,
+                       "защита"@ru .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#distance
 gen:distance rdf:type owl:DatatypeProperty ;
              rdfs:range xsd:string ;
@@ -291,18 +305,6 @@ gen:valueNumeric rdf:type owl:DatatypeProperty ;
          rdfs:label "Ability"@en .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#ActMagicInfernal
-:ActMagicInfernal rdf:type owl:Class ;
-                  rdfs:subClassOf :RequiredDetails ,
-                                  gen:Act .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#ActMagicUnstable
-:ActMagicUnstable rdf:type owl:Class ;
-                  rdfs:subClassOf :RequiredDetails ,
-                                  gen:Act .
-
-
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#Attrition
 :Attrition rdf:type owl:Class ;
            rdfs:subClassOf gen:Act ,
@@ -314,8 +316,7 @@ gen:valueNumeric rdf:type owl:DatatypeProperty ;
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#Companion
 :Companion rdf:type owl:Class ;
-           rdfs:subClassOf :RequiredDetails ,
-                           gen:Creature .
+           rdfs:subClassOf gen:Creature .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#CoreAbility
@@ -325,7 +326,7 @@ gen:valueNumeric rdf:type owl:DatatypeProperty ;
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#Effect
 :Effect rdf:type owl:Class ;
-        rdfs:subClassOf :RequiredDetails ;
+        rdfs:subClassOf gen:Act ;
         rdfs:label "Effect"@en .
 
 
@@ -398,7 +399,7 @@ gen:valueNumeric rdf:type owl:DatatypeProperty ;
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#Limitation
 :Limitation rdf:type owl:Class ;
-            rdfs:subClassOf :RequiredDetails ;
+            rdfs:subClassOf gen:Act ;
             rdfs:label "Limitation"@en .
 
 
@@ -692,8 +693,17 @@ gen:valueNumeric rdf:type owl:DatatypeProperty ;
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#Spell
-:Spell rdf:type owl:Class ;
-       rdfs:subClassOf :RequiredDetails .
+:Spell rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#SpellConsequenceInfernal
+:SpellConsequenceInfernal rdf:type owl:Class ;
+                          rdfs:subClassOf gen:Act .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#SpellConsequenceUnstable
+:SpellConsequenceUnstable rdf:type owl:Class ;
+                          rdfs:subClassOf gen:Act .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#Wizard
@@ -834,16 +844,6 @@ gen:TemplatePC rdf:type owl:Class ;
 #    Individuals
 #################################################################
 
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#ActMagicInfernal
-:ActMagicInfernal rdf:type owl:NamedIndividual ,
-                           gen:Act .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#ActMagicUnstable
-:ActMagicUnstable rdf:type owl:NamedIndividual ,
-                           gen:Act .
-
-
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#Attrition
 :Attrition rdf:type owl:NamedIndividual ,
                     gen:Act .
@@ -955,6 +955,16 @@ gen:TemplatePC rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#Spell
 :Spell rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#SpellConsequenceInfernal
+:SpellConsequenceInfernal rdf:type owl:NamedIndividual ,
+                                   gen:Act .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#SpellConsequenceUnstable
+:SpellConsequenceUnstable rdf:type owl:NamedIndividual ,
+                                   gen:Act .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#Wizard
@@ -1710,9 +1720,9 @@ gen:TemplatePC rdf:type owl:Class ;
                                gen:Check ;
                       gen:Actor gen:player ;
                       gen:basedOn :check_skill ;
-                      gen:checkFailure :ActMagicInfernal ;
+                      gen:checkFailure :SpellConsequenceInfernal ;
                       gen:checkSuccess :set_spell ;
-                      gen:effect :ActMagicInfernal ,
+                      gen:effect :SpellConsequenceInfernal ,
                                  :set_spell ;
                       gen:input :skill_magic ;
                       gen:prerequisite :limitation_spell_infernal ;
@@ -1733,9 +1743,9 @@ gen:TemplatePC rdf:type owl:Class ;
                                gen:Check ;
                       gen:Actor gen:player ;
                       gen:basedOn :check_skill ;
-                      gen:checkFailure :ActMagicUnstable ;
+                      gen:checkFailure :SpellConsequenceUnstable ;
                       gen:checkSuccess :set_spell ;
-                      gen:effect :ActMagicUnstable ,
+                      gen:effect :SpellConsequenceUnstable ,
                                  :set_spell ;
                       gen:input :skill_magic ;
                       gen:prerequisite :limitation_spell_unstable ;
@@ -2315,6 +2325,573 @@ If a hero refuses to choose, they will be scorned widely, possibly deemed an ene
                 rdfs:label "Dunsel & the Kid"@en .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_companion_cunning
+:effect_companion_cunning rdf:type owl:NamedIndividual ,
+                                   :Effect ,
+                                   :EffectCompanion ,
+                                   gen:Act ;
+                          rdfs:comment "Upgrade the skill value used by +1."@en ;
+                          rdfs:label "Cunning"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_companion_deadly
+:effect_companion_deadly rdf:type owl:NamedIndividual ,
+                                  :Effect ,
+                                  :EffectCompanion ,
+                                  gen:Act ;
+                         rdfs:comment "Upgrade the companion’s damage with an additional die."@en ;
+                         rdfs:label "Deadly"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_companion_evasive
+:effect_companion_evasive rdf:type owl:NamedIndividual ,
+                                   :Effect ,
+                                   :EffectCompanion ,
+                                   gen:Act ;
+                          rdfs:comment "This creature gains +3 Defense."@en ;
+                          rdfs:label "Evasive"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_companion_precise
+:effect_companion_precise rdf:type owl:NamedIndividual ,
+                                   :Effect ,
+                                   :EffectCompanion ,
+                                   gen:Act ;
+                          rdfs:comment "Your companion ignores most penalties in combat."@en ;
+                          rdfs:label "Precise"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_item_balanced_weapon
+:effect_item_balanced_weapon rdf:type owl:NamedIndividual ,
+                                      :Effect ,
+                                      :EffectItem ,
+                                      gen:Act ;
+                             rdfs:comment "Ignore 1 target DEF to attack with this weapon."@en ;
+                             rdfs:label "Balanced weapon"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_item_bleed
+:effect_item_bleed rdf:type owl:NamedIndividual ,
+                            :Effect ,
+                            :EffectItem ,
+                            gen:Act ;
+                   rdfs:comment "After inflicting damage, target bleeds same damage D4 rounds."@en ;
+                   rdfs:label "Bleed"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_item_chained_weapon
+:effect_item_chained_weapon rdf:type owl:NamedIndividual ,
+                                     :Effect ,
+                                     :EffectItem ,
+                                     gen:Act ;
+                            rdfs:comment "You cannot lose or be robbed of this weapon."@en ;
+                            rdfs:label "Chained weapon"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_item_cold_forged
+:effect_item_cold_forged rdf:type owl:NamedIndividual ,
+                                  :Effect ,
+                                  :EffectItem ,
+                                  gen:Act ;
+                         rdfs:comment "This metal equipment is immune to corrosion of all kinds."@en ;
+                         rdfs:label "Cold Forged"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_item_compact
+:effect_item_compact rdf:type owl:NamedIndividual ,
+                              :Effect ,
+                              :EffectItem ,
+                              gen:Act ;
+                     rdfs:comment "This gear incurs no unwanted attention or clumsiness."@en ;
+                     rdfs:label "Compact"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_item_deadly_weapon
+:effect_item_deadly_weapon rdf:type owl:NamedIndividual ,
+                                    :Effect ,
+                                    :EffectItem ,
+                                    gen:Act ;
+                           rdfs:comment "Add an additional damage die of the weapon’s type."@en ;
+                           rdfs:label "Deadly weapon"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_item_die_upgrade
+:effect_item_die_upgrade rdf:type owl:NamedIndividual ,
+                                  :Effect ,
+                                  :EffectItem ,
+                                  gen:Act ;
+                         rdfs:comment "Upgrade the damage die of a weapon by 1 grade."@en ;
+                         rdfs:label "Die Upgrade"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_item_lightweight
+:effect_item_lightweight rdf:type owl:NamedIndividual ,
+                                  :Effect ,
+                                  :EffectItem ,
+                                  gen:Act ;
+                         rdfs:comment "Finely made equipment doesn’t inhibit stealth or swimming."@en ;
+                         rdfs:label "Lightweight"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_item_lucky_weapon
+:effect_item_lucky_weapon rdf:type owl:NamedIndividual ,
+                                   :Effect ,
+                                   :EffectItem ,
+                                   gen:Act ;
+                          rdfs:comment "Critical fails with this weapon incur no penalties."@en ;
+                          rdfs:label "Lucky weapon"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_item_reinforced
+:effect_item_reinforced rdf:type owl:NamedIndividual ,
+                                 :Effect ,
+                                 :EffectItem ,
+                                 gen:Act ;
+                        rdfs:comment "This gear is resilient to damage (2 hits to cross off)."@en ;
+                        rdfs:label "Reinforced"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_item_reinforced_armor
+:effect_item_reinforced_armor rdf:type owl:NamedIndividual ,
+                                       :Effect ,
+                                       :EffectItem ,
+                                       gen:Act ;
+                              rdfs:comment "Add an additional +1 Defense."@en ;
+                              rdfs:label "Reinforced armor"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_accuracy
+:effect_spell_accuracy rdf:type owl:NamedIndividual ,
+                                :Effect ,
+                                :EffectSpell ,
+                                gen:Act ;
+                       rdfs:comment "Boost an upcoming damage roll."@en ;
+                       rdfs:label "Accuracy"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_adapt
+:effect_spell_adapt rdf:type owl:NamedIndividual ,
+                             :Effect ,
+                             :EffectSpell ,
+                             gen:Act ;
+                    rdfs:comment "Select a specific substance you can now breathe easily."@en ;
+                    rdfs:label "Adapt"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_additional_cast
+:effect_spell_additional_cast rdf:type owl:NamedIndividual ,
+                                       :Effect ,
+                                       :EffectSpell ,
+                                       gen:Act ;
+                              rdfs:comment "Add a cast to this spell."@en ;
+                              rdfs:label "Additional Cast"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_analyze
+:effect_spell_analyze rdf:type owl:NamedIndividual ,
+                               :Effect ,
+                               :EffectSpell ,
+                               gen:Act ;
+                      rdfs:comment "Cast and roll effect. If this effect is greater than the approximate point value of the target spell or item, gain all information about it."@en ;
+                      rdfs:label "Analyze"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_animate
+:effect_spell_animate rdf:type owl:NamedIndividual ,
+                               :Effect ,
+                               :EffectSpell ,
+                               gen:Act ;
+                      rdfs:comment "Use objects as puppets, D6 of them per cast."@en ;
+                      rdfs:label "Animate"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_arcane_armor
+:effect_spell_arcane_armor rdf:type owl:NamedIndividual ,
+                                    :Effect ,
+                                    :EffectSpell ,
+                                    gen:Act ;
+                           rdfs:comment "Roll the output effect and add it to target Defense."@en ;
+                           rdfs:label "Arcane Armor"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_area
+:effect_spell_area rdf:type owl:NamedIndividual ,
+                            :Effect ,
+                            :EffectSpell ,
+                            gen:Act ;
+                   rdfs:comment "Modify a single-target spell to affect an arm’s-width radius."@en ;
+                   rdfs:label "Area"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_banish
+:effect_spell_banish rdf:type owl:NamedIndividual ,
+                              :Effect ,
+                              :EffectSpell ,
+                              gen:Act ;
+                     rdfs:comment "Cast out a summoned creature or construct."@en ;
+                     rdfs:label "Banish"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_blast
+:effect_spell_blast rdf:type owl:NamedIndividual ,
+                             :Effect ,
+                             :EffectSpell ,
+                             gen:Act ;
+                    rdfs:comment "Inflict magic damage of specified theme, element, or style."@en ;
+                    rdfs:label "Blast"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_clairvoyance
+:effect_spell_clairvoyance rdf:type owl:NamedIndividual ,
+                                    :Effect ,
+                                    :EffectSpell ,
+                                    gen:Act ;
+                           rdfs:comment "Affect unseen target(s) with rolled effect x 10’ distance."@en ;
+                           rdfs:label "Clairvoyance"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_cloak
+:effect_spell_cloak rdf:type owl:NamedIndividual ,
+                             :Effect ,
+                             :EffectSpell ,
+                             gen:Act ;
+                    rdfs:comment "Reduce the chance of being spotted by others. This effect can have many variations including camouflage, stillness, deception."@en ;
+                    rdfs:label "Cloak"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_clone
+:effect_spell_clone rdf:type owl:NamedIndividual ,
+                             :Effect ,
+                             :EffectSpell ,
+                             gen:Act ;
+                    rdfs:comment "Duplicate an object or person into a semi-real copy."@en ;
+                    rdfs:label "Clone"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_create
+:effect_spell_create rdf:type owl:NamedIndividual ,
+                              :Effect ,
+                              :EffectSpell ,
+                              gen:Act ;
+                     rdfs:comment "Create an object imbued with a spell you know. At its base level, this spell creates an object with 1 use of the selected spell."@en ;
+                     rdfs:label "Create"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_detect_object
+:effect_spell_detect_object rdf:type owl:NamedIndividual ,
+                                     :Effect ,
+                                     :EffectSpell ,
+                                     gen:Act ;
+                            rdfs:comment "Detect a specific object."@en ;
+                            rdfs:label "Detect Object"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_dice_upgrade
+:effect_spell_dice_upgrade rdf:type owl:NamedIndividual ,
+                                    :Effect ,
+                                    :EffectSpell ,
+                                    gen:Act ;
+                           rdfs:comment "Increase the dice used by this spell by one grade."@en ;
+                           rdfs:label "Dice Upgrade"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_dispel
+:effect_spell_dispel rdf:type owl:NamedIndividual ,
+                              :Effect ,
+                              :EffectSpell ,
+                              gen:Act ;
+                     rdfs:comment "To cancel a spell, roll this output. Surpass the point value of the target spell to cancel it. Sacrifice your next phase to dispel immediately."@en ;
+                     rdfs:label "Dispel"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_dominate
+:effect_spell_dominate rdf:type owl:NamedIndividual ,
+                                :Effect ,
+                                :EffectSpell ,
+                                gen:Act ;
+                       rdfs:comment "Target rolls a D20. Surpass that roll with effect to dominate."@en ;
+                       rdfs:label "Dominate"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_drain
+:effect_spell_drain rdf:type owl:NamedIndividual ,
+                             :Effect ,
+                             :EffectSpell ,
+                             gen:Act ;
+                    rdfs:comment "Reduce a target’s DEF or ATK for 1 round."@en ;
+                    rdfs:label "Drain"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_duration
+:effect_spell_duration rdf:type owl:NamedIndividual ,
+                                :Effect ,
+                                :EffectSpell ,
+                                gen:Act ;
+                       rdfs:comment "Upgrade from 1D6 phases default to 1 full round duration."@en ;
+                       rdfs:label "Duration"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_enchant
+:effect_spell_enchant rdf:type owl:NamedIndividual ,
+                               :Effect ,
+                               :EffectSpell ,
+                               gen:Act ;
+                      rdfs:comment "Imbue a weapon or object with a single gear effect."@en ;
+                      rdfs:label "Enchant"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_evade
+:effect_spell_evade rdf:type owl:NamedIndividual ,
+                             :Effect ,
+                             :EffectSpell ,
+                             gen:Act ;
+                    rdfs:comment "Boost the Evade skill of a target."@en ;
+                    rdfs:label "Evade"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_haste
+:effect_spell_haste rdf:type owl:NamedIndividual ,
+                             :Effect ,
+                             :EffectSpell ,
+                             gen:Act ;
+                    rdfs:comment "Run or swim (choose on purchase) twice as fast as others."@en ;
+                    rdfs:label "Haste"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_held_spell
+:effect_spell_held_spell rdf:type owl:NamedIndividual ,
+                                  :Effect ,
+                                  :EffectSpell ,
+                                  gen:Act ;
+                         rdfs:comment "Use a turn to ‘pre-cast’ spell, triggering it any time after."@en ;
+                         rdfs:label "Held Spell"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_illusions
+:effect_spell_illusions rdf:type owl:NamedIndividual ,
+                                 :Effect ,
+                                 :EffectSpell ,
+                                 gen:Act ;
+                        rdfs:comment "Place illusions into a mind directly, or fabricate them for all."@en ;
+                        rdfs:label "Illusions"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_language
+:effect_spell_language rdf:type owl:NamedIndividual ,
+                                :Effect ,
+                                :EffectSpell ,
+                                gen:Act ;
+                       rdfs:comment "Listen, speak, or translate any language or cypher."@en ;
+                       rdfs:label "Language"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_lasting
+:effect_spell_lasting rdf:type owl:NamedIndividual ,
+                               :Effect ,
+                               :EffectSpell ,
+                               gen:Act ;
+                      rdfs:comment "Make a spell’s output permanent, with GM approval, for a cost of 15 points."@en ;
+                      rdfs:label "Lasting"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_levitate
+:effect_spell_levitate rdf:type owl:NamedIndividual ,
+                                :Effect ,
+                                :EffectSpell ,
+                                gen:Act ;
+                       rdfs:comment "Hover or move a few feet above the ground."@en ;
+                       rdfs:label "Levitate"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_locate
+:effect_spell_locate rdf:type owl:NamedIndividual ,
+                              :Effect ,
+                              :EffectSpell ,
+                              gen:Act ;
+                     rdfs:comment "Locate a person without seeing them. If being located by an enemy, roll your Magic skill to evade detection."@en ;
+                     rdfs:label "Locate"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_mend
+:effect_spell_mend rdf:type owl:NamedIndividual ,
+                            :Effect ,
+                            :EffectSpell ,
+                            gen:Act ;
+                   rdfs:comment "Repair 1 weapon, item, or piece of armor."@en ;
+                   rdfs:label "Mend"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_metal
+:effect_spell_metal rdf:type owl:NamedIndividual ,
+                             :Effect ,
+                             :EffectSpell ,
+                             gen:Act ;
+                    rdfs:comment "Manipulate metal in numerous ways."@en ;
+                    rdfs:label "Metal"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_mind_defense
+:effect_spell_mind_defense rdf:type owl:NamedIndividual ,
+                                    :Effect ,
+                                    :EffectSpell ,
+                                    gen:Act ;
+                           rdfs:comment "Ignore Dominate, Illusions, Obscure, or Telepathy being cast upon you."@en ;
+                           rdfs:label "Mind Defense"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_obscure
+:effect_spell_obscure rdf:type owl:NamedIndividual ,
+                               :Effect ,
+                               :EffectSpell ,
+                               gen:Act ;
+                      rdfs:comment "Hide objects. Use effect as penalty to detection rolls."@en ;
+                      rdfs:label "Obscure"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_perception
+:effect_spell_perception rdf:type owl:NamedIndividual ,
+                                  :Effect ,
+                                  :EffectSpell ,
+                                  gen:Act ;
+                         rdfs:comment "Add effect to a Scout or Investigate roll."@en ;
+                         rdfs:label "Perception"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_poison
+:effect_spell_poison rdf:type owl:NamedIndividual ,
+                              :Effect ,
+                              :EffectSpell ,
+                              gen:Act ;
+                     rdfs:comment "Conjure arcane goo or oil that inflicts poison on living things."@en ;
+                     rdfs:label "Poison"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_powerful
+:effect_spell_powerful rdf:type owl:NamedIndividual ,
+                                :Effect ,
+                                :EffectSpell ,
+                                gen:Act ;
+                       rdfs:comment "Boost a spell with a die upgrade, additional die, or similar."@en ;
+                       rdfs:label "Powerful"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_psychokinesis
+:effect_spell_psychokinesis rdf:type owl:NamedIndividual ,
+                                     :Effect ,
+                                     :EffectSpell ,
+                                     gen:Act ;
+                            rdfs:comment "Use the Muscle skill at distance of effect x 10 feet."@en ;
+                            rdfs:label "Psychokinesis"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_ranged
+:effect_spell_ranged rdf:type owl:NamedIndividual ,
+                              :Effect ,
+                              :EffectSpell ,
+                              gen:Act ;
+                     rdfs:comment "Cast up to long range and visible targets (most of a scene)."@en ;
+                     rdfs:label "Ranged"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_restore
+:effect_spell_restore rdf:type owl:NamedIndividual ,
+                               :Effect ,
+                               :EffectSpell ,
+                               gen:Act ;
+                      rdfs:comment "Heal 1 skill attrition."@en ;
+                      rdfs:label "Restore"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_shapechange
+:effect_spell_shapechange rdf:type owl:NamedIndividual ,
+                                   :Effect ,
+                                   :EffectSpell ,
+                                   gen:Act ;
+                          rdfs:comment "Change into a specified animal form."@en ;
+                          rdfs:label "Shapechange"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_shield
+:effect_spell_shield rdf:type owl:NamedIndividual ,
+                              :Effect ,
+                              :EffectSpell ,
+                              gen:Act ;
+                     rdfs:comment "Create a damage-absorbent magical barrier the size of a shield. It is impervious for 1 round and cannot be moved."@en ;
+                     rdfs:label "Shield"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_silent_spell
+:effect_spell_silent_spell rdf:type owl:NamedIndividual ,
+                                    :Effect ,
+                                    :EffectSpell ,
+                                    gen:Act ;
+                           rdfs:comment "Cast this spell with no magical words spoken."@en ;
+                           rdfs:label "Silent Spell"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_still
+:effect_spell_still rdf:type owl:NamedIndividual ,
+                             :Effect ,
+                             :EffectSpell ,
+                             gen:Act ;
+                    rdfs:comment "Cast this spell with no gestures."@en ;
+                    rdfs:label "Still"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_summon
+:effect_spell_summon rdf:type owl:NamedIndividual ,
+                              :Effect ,
+                              :EffectSpell ,
+                              gen:Act ;
+                     rdfs:comment "Conjure 1D6 1 attrition ‘minion’ creatures or constructs."@en ;
+                     rdfs:label "Summon"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_telepathy
+:effect_spell_telepathy rdf:type owl:NamedIndividual ,
+                                 :Effect ,
+                                 :EffectSpell ,
+                                 gen:Act ;
+                        rdfs:comment "Read minds by overcoming foe’s D20 roll with effect."@en ;
+                        rdfs:label "Telepathy"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_transmute
+:effect_spell_transmute rdf:type owl:NamedIndividual ,
+                                 :Effect ,
+                                 :EffectSpell ,
+                                 gen:Act ;
+                        rdfs:comment "Change a mass into a different material of equal or lesser value. Change effect x 10 pounds of mass."@en ;
+                        rdfs:label "Transmute"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_transport
+:effect_spell_transport rdf:type owl:NamedIndividual ,
+                                 :Effect ,
+                                 :EffectSpell ,
+                                 gen:Act ;
+                        rdfs:comment "Move a person from here to there instantly. Distance equal to effect x 10 feet."@en ;
+                        rdfs:label "Transport"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_vapor
+:effect_spell_vapor rdf:type owl:NamedIndividual ,
+                             :Effect ,
+                             :EffectSpell ,
+                             gen:Act ;
+                    rdfs:comment "Contain a spell’s effect in a lingering vapor cloud. The cloud is subject to air movement as a conventional gas."@en ;
+                    rdfs:label "Vapor"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#effect_spell_ward
+:effect_spell_ward rdf:type owl:NamedIndividual ,
+                            :Effect ,
+                            :EffectSpell ,
+                            gen:Act ;
+                   rdfs:comment "Prevent passage of a specified creature or person through a portal or passage."@en ;
+                   rdfs:label "Ward"@en .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#encounter
 :encounter rdf:type owl:NamedIndividual ;
            gen:included :phases_and_rounds ,
@@ -2722,13 +3299,172 @@ earned value is always increased except for PC creation ;
        rdfs:label "Hurry"@en .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_backpack
+:item_backpack rdf:type owl:NamedIndividual ,
+                        :Item ,
+                        :ItemBasic ,
+                        :RequiredDetails ;
+               gen:cost "6 hero points" ;
+               rdfs:comment "Carry 2 additional items"@en ;
+               rdfs:label "Backpack"@en .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_bandage_kit
 :item_bandage_kit rdf:type owl:NamedIndividual ,
                            :Item ,
                            :ItemBasic ,
                            :RequiredDetails ;
                   gen:effect :block_status_bleed ;
-                  rdfs:label "Bandage kit"@en .
+                  gen:cost "3 hero points" ;
+                  rdfs:comment "3 count, heal 1 crossed off skill"@en ;
+                  rdfs:label "Bandage Kit"@en ,
+                             "Bandage kit"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_barbed_whip
+:item_barbed_whip rdf:type owl:NamedIndividual ,
+                           :Item ,
+                           :ItemWeapon ,
+                           :RequiredDetails ;
+                  gen:cost "5 hero points" ;
+                  gen:damage "1d8" ;
+                  rdfs:comment "Induces bleed on target"@en ;
+                  rdfs:label "Barbed Whip"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_battle_axe
+:item_battle_axe rdf:type owl:NamedIndividual ,
+                          :Item ,
+                          :ItemWeapon ,
+                          :RequiredDetails ;
+                 gen:cost "5 hero points" ;
+                 gen:damage "1d12" ;
+                 rdfs:comment "Ignore 2 target DEF"@en ;
+                 rdfs:label "Battle Axe"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_bear_trap
+:item_bear_trap rdf:type owl:NamedIndividual ,
+                         :Item ,
+                         :ItemBasic ,
+                         :RequiredDetails ;
+                gen:cost "2 hero points" ;
+                rdfs:comment "1 count, Muscle to escape"@en ;
+                rdfs:label "Bear Trap"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_blessed_water
+:item_blessed_water rdf:type owl:NamedIndividual ,
+                             :Item ,
+                             :ItemBasic ,
+                             :RequiredDetails ;
+                    gen:cost "3 hero points" ;
+                    rdfs:comment "3 uses, anathema to pure evil or the undead"@en ;
+                    rdfs:label "Blessed Water"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_caltrops
+:item_caltrops rdf:type owl:NamedIndividual ,
+                        :Item ,
+                        :ItemBasic ,
+                        :RequiredDetails ;
+               gen:cost "1 hero point" ;
+               rdfs:comment "3 uses, spiked floor-scatter, inflicts D4"@en ;
+               rdfs:label "Caltrops"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_cart
+:item_cart rdf:type owl:NamedIndividual ,
+                    :Item ,
+                    :ItemLarge ,
+                    :RequiredDetails ;
+           gen:cost "10 hero points" ;
+           rdfs:comment "Holds crates and barrels filled with goods"@en ;
+           rdfs:label "Cart"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_castle
+:item_castle rdf:type owl:NamedIndividual ,
+                      :Item ,
+                      :ItemLarge ,
+                      :RequiredDetails ;
+             gen:cost "200 hero points" ;
+             rdfs:comment "A series of keeps and towers, stone"@en ;
+             rdfs:label "Castle"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_chain_mail
+:item_chain_mail rdf:type owl:NamedIndividual ,
+                          :Item ,
+                          :ItemArmor ,
+                          :RequiredDetails ;
+                 gen:cost "3 hero points" ;
+                 gen:defense "+3" ;
+                 rdfs:comment "Noisy"@en ;
+                 rdfs:label "Chain Mail"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_chest_plate
+:item_chest_plate rdf:type owl:NamedIndividual ,
+                           :Item ,
+                           :ItemArmor ,
+                           :RequiredDetails ;
+                  gen:cost "5 hero points" ;
+                  gen:defense "+4" ;
+                  rdfs:comment "-3 Stealth skill, cannot swim"@en ;
+                  rdfs:label "Chest Plate"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_climbing_gear
+:item_climbing_gear rdf:type owl:NamedIndividual ,
+                             :Item ,
+                             :ItemBasic ,
+                             :RequiredDetails ;
+                    gen:cost "1 hero point" ;
+                    rdfs:comment "Ignore penalties on Climbing rolls"@en ;
+                    rdfs:label "Climbing Gear"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_cloak
+:item_cloak rdf:type owl:NamedIndividual ,
+                     :Item ,
+                     :ItemArmor ,
+                     :RequiredDetails ;
+            gen:cost "1 hero point" ;
+            gen:defense "+1" ;
+            rdfs:comment "+3 Stealth skill"@en ;
+            rdfs:label "Cloak"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_cold_weather_fur
+:item_cold_weather_fur rdf:type owl:NamedIndividual ,
+                                :Item ,
+                                :ItemBasic ,
+                                :RequiredDetails ;
+                       gen:cost "1 hero point" ;
+                       rdfs:comment "Ignore penalties from normal cold or snow"@en ;
+                       rdfs:label "Cold Weather Fur"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_craftsmans_tools
+:item_craftsmans_tools rdf:type owl:NamedIndividual ,
+                                :Item ,
+                                :ItemBasic ,
+                                :RequiredDetails ;
+                       gen:cost "1 hero point" ;
+                       rdfs:comment "Hammer, spanner, and bits for simple work"@en ;
+                       rdfs:label "Craftsman’s Tools"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_crossbow
+:item_crossbow rdf:type owl:NamedIndividual ,
+                        :Item ,
+                        :ItemWeapon ,
+                        :RequiredDetails ;
+               gen:cost "5 hero points" ;
+               gen:damage "1d10" ;
+               rdfs:comment "Takes 1 round to reload"@en ;
+               rdfs:label "Crossbow"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_custom
@@ -2738,11 +3474,475 @@ earned value is always increased except for PC creation ;
              rdfs:label "Custom item"@en .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_dagger
+:item_dagger rdf:type owl:NamedIndividual ,
+                      :Item ,
+                      :ItemWeapon ,
+                      :RequiredDetails ;
+             gen:cost "1 hero point" ;
+             gen:damage "1d4" ;
+             rdfs:comment "Conceal, thrown"@en ;
+             rdfs:label "Dagger"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_diving_gear
+:item_diving_gear rdf:type owl:NamedIndividual ,
+                           :Item ,
+                           :ItemBasic ,
+                           :RequiredDetails ;
+                  gen:cost "1 hero point" ;
+                  rdfs:comment "2 dive helms, spearguns, fins, marker buoy"@en ;
+                  rdfs:label "Diving Gear"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_flint_and_steel
+:item_flint_and_steel rdf:type owl:NamedIndividual ,
+                               :Item ,
+                               :ItemBasic ,
+                               :RequiredDetails ;
+                      gen:cost "1 hero point" ;
+                      rdfs:comment "Camp with comfort and cozy fire"@en ;
+                      rdfs:label "Flint & Steel"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_flint_pistol
+:item_flint_pistol rdf:type owl:NamedIndividual ,
+                            :Item ,
+                            :ItemWeapon ,
+                            :RequiredDetails ;
+                   gen:cost "7 hero points" ;
+                   gen:damage "1d10" ;
+                   rdfs:comment "Concealed, 1d6 phases to reload"@en ;
+                   rdfs:label "Flint Pistol"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_fort_garrison
+:item_fort_garrison rdf:type owl:NamedIndividual ,
+                             :Item ,
+                             :ItemLarge ,
+                             :RequiredDetails ;
+                    gen:cost "75 hero points" ;
+                    rdfs:comment "A wooden defense position with pole-fences"@en ;
+                    rdfs:label "Fort or Garrison"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_fortress
+:item_fortress rdf:type owl:NamedIndividual ,
+                        :Item ,
+                        :ItemLarge ,
+                        :RequiredDetails ;
+               gen:cost "300 hero points" ;
+               rdfs:comment "A massive, impregnable castle on a cliff"@en ;
+               rdfs:label "Fortress"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_great_sword
+:item_great_sword rdf:type owl:NamedIndividual ,
+                           :Item ,
+                           :ItemWeapon ,
+                           :RequiredDetails ;
+                  gen:cost "3 hero points" ;
+                  gen:damage "1d10" ;
+                  rdfs:comment "Uses 2 hands"@en ;
+                  rdfs:label "Great Sword"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_greaves
+:item_greaves rdf:type owl:NamedIndividual ,
+                       :Item ,
+                       :ItemArmor ,
+                       :RequiredDetails ;
+              gen:cost "1 hero point" ;
+              gen:defense "+1" ;
+              rdfs:comment "Boots with armored shins"@en ;
+              rdfs:label "Greaves"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_halberd
+:item_halberd rdf:type owl:NamedIndividual ,
+                       :Item ,
+                       :ItemWeapon ,
+                       :RequiredDetails ;
+              gen:cost "3 hero points" ;
+              gen:damage "1d10" ;
+              rdfs:comment "Long reach, halt a target’s progress"@en ;
+              rdfs:label "Halberd"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_helm
+:item_helm rdf:type owl:NamedIndividual ,
+                    :Item ,
+                    :ItemArmor ,
+                    :RequiredDetails ;
+           gen:cost "1 hero point" ;
+           gen:defense "+1" ;
+           rdfs:comment "Draws enemy attention"@en ;
+           rdfs:label "Helm"@en .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_holy_symbol
 :item_holy_symbol rdf:type owl:NamedIndividual ,
                            :Item ,
                            :RequiredDetails ;
                   rdfs:label "Holy symbol"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_horse
+:item_horse rdf:type owl:NamedIndividual ,
+                     :Item ,
+                     :ItemLarge ,
+                     :RequiredDetails ;
+            gen:cost "5 hero points" ;
+            rdfs:comment "Transports 2 people at 4x walking speed"@en ;
+            rdfs:label "Horse"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_house
+:item_house rdf:type owl:NamedIndividual ,
+                     :Item ,
+                     :ItemLarge ,
+                     :RequiredDetails ;
+            gen:cost "50 hero points" ;
+            rdfs:comment "A cozy place to live, deed for life"@en ;
+            rdfs:label "House"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_iron_chain
+:item_iron_chain rdf:type owl:NamedIndividual ,
+                          :Item ,
+                          :ItemBasic ,
+                          :RequiredDetails ;
+                 gen:cost "1 hero point" ;
+                 rdfs:comment "15’ length, all but unbreakable"@en ;
+                 rdfs:label "Iron Chain"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_leather_vest
+:item_leather_vest rdf:type owl:NamedIndividual ,
+                            :Item ,
+                            :ItemArmor ,
+                            :RequiredDetails ;
+                   gen:cost "2 hero points" ;
+                   gen:defense "+2" ;
+                   rdfs:comment "No protection against blunt force"@en ;
+                   rdfs:label "Leather Vest"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_lockpicks
+:item_lockpicks rdf:type owl:NamedIndividual ,
+                         :Item ,
+                         :ItemBasic ,
+                         :RequiredDetails ;
+                gen:cost "1 hero point" ;
+                rdfs:comment "Cannot pick locks without these tools"@en ;
+                rdfs:label "Lockpicks"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_long_bow
+:item_long_bow rdf:type owl:NamedIndividual ,
+                        :Item ,
+                        :ItemWeapon ,
+                        :RequiredDetails ;
+               gen:cost "3 hero points" ;
+               gen:damage "1d8" ;
+               rdfs:comment "On max damage, fire again"@en ;
+               rdfs:label "Long Bow"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_long_sword
+:item_long_sword rdf:type owl:NamedIndividual ,
+                          :Item ,
+                          :ItemWeapon ,
+                          :RequiredDetails ;
+                 gen:cost "2 hero points" ;
+                 gen:damage "1d8" ;
+                 rdfs:comment "If max damage, roll again"@en ;
+                 rdfs:label "Long Sword"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_mast_ship
+:item_mast_ship rdf:type owl:NamedIndividual ,
+                         :Item ,
+                         :ItemLarge ,
+                         :RequiredDetails ;
+                gen:cost "35 hero points" ;
+                rdfs:comment "Crew of 3 required, 2 masts, huge hold"@en ;
+                rdfs:label "Mast Ship"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_mining_kit
+:item_mining_kit rdf:type owl:NamedIndividual ,
+                          :Item ,
+                          :ItemBasic ,
+                          :RequiredDetails ;
+                 gen:cost "1 hero point" ;
+                 rdfs:comment "Exploring or excavation times cut in half"@en ;
+                 rdfs:label "Mining Kit"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_musket
+:item_musket rdf:type owl:NamedIndividual ,
+                      :Item ,
+                      :ItemWeapon ,
+                      :RequiredDetails ;
+             gen:cost "7 hero points" ;
+             gen:damage "1d12" ;
+             rdfs:comment "Heard for miles, 1d6 phases to reload"@en ;
+             rdfs:label "Musket"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_oil_flask
+:item_oil_flask rdf:type owl:NamedIndividual ,
+                         :Item ,
+                         :ItemBasic ,
+                         :RequiredDetails ;
+                gen:cost "1 hero point" ;
+                rdfs:comment "3 count, flammable liquid, glass phial"@en ;
+                rdfs:label "Oil Flask"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_pick_hammer
+:item_pick_hammer rdf:type owl:NamedIndividual ,
+                           :Item ,
+                           :ItemWeapon ,
+                           :RequiredDetails ;
+                  gen:cost "2 hero points" ;
+                  gen:damage "1d6" ;
+                  rdfs:comment "Reduce target armor by 1 per hit"@en ;
+                  rdfs:label "Pick Hammer"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_powder_kit
+:item_powder_kit rdf:type owl:NamedIndividual ,
+                          :Item ,
+                          :ItemBasic ,
+                          :RequiredDetails ;
+                 gen:cost "3 hero points" ;
+                 rdfs:comment "1 Firearm never empty, ruined if wet"@en ;
+                 rdfs:label "Powder Kit"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_rope
+:item_rope rdf:type owl:NamedIndividual ,
+                    :Item ,
+                    :ItemBasic ,
+                    :RequiredDetails ;
+           gen:cost "1 hero point" ;
+           rdfs:comment "50’ length, breaks on crit fail usage"@en ;
+           rdfs:label "Rope"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_sack_of_bearings
+:item_sack_of_bearings rdf:type owl:NamedIndividual ,
+                                :Item ,
+                                :ItemBasic ,
+                                :RequiredDetails ;
+                       gen:cost "1 hero point" ;
+                       rdfs:comment "A pouch of 3 dozen metal balls"@en ;
+                       rdfs:label "Sack of Bearings"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_scale_vest
+:item_scale_vest rdf:type owl:NamedIndividual ,
+                          :Item ,
+                          :ItemArmor ,
+                          :RequiredDetails ;
+                 gen:cost "3 hero points" ;
+                 gen:defense "+3" ;
+                 rdfs:comment "Rare/requires expert blacksmith"@en ;
+                 rdfs:label "Scale Vest"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_scimitar
+:item_scimitar rdf:type owl:NamedIndividual ,
+                        :Item ,
+                        :ItemWeapon ,
+                        :RequiredDetails ;
+               gen:cost "5 hero points" ;
+               gen:damage "1d8" ;
+               rdfs:comment "On max damage, attack another target"@en ;
+               rdfs:label "Scimitar"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_scribes_kit
+:item_scribes_kit rdf:type owl:NamedIndividual ,
+                           :Item ,
+                           :ItemBasic ,
+                           :RequiredDetails ;
+                  gen:cost "1 hero point" ;
+                  rdfs:comment "Parchment book, charcoal sticks"@en ;
+                  rdfs:label "Scribe’s Kit"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_short_bow
+:item_short_bow rdf:type owl:NamedIndividual ,
+                         :Item ,
+                         :ItemWeapon ,
+                         :RequiredDetails ;
+                gen:cost "1 hero point" ;
+                gen:damage "1d6" ;
+                rdfs:comment "Conceal, use point blank"@en ;
+                rdfs:label "Short Bow"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_short_sword
+:item_short_sword rdf:type owl:NamedIndividual ,
+                           :Item ,
+                           :ItemWeapon ,
+                           :RequiredDetails ;
+                  gen:cost "1 hero point" ;
+                  gen:damage "1d6" ;
+                  rdfs:comment "Use with no hindrance in tight spaces"@en ;
+                  rdfs:label "Short Sword"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_small_boat
+:item_small_boat rdf:type owl:NamedIndividual ,
+                          :Item ,
+                          :ItemLarge ,
+                          :RequiredDetails ;
+                 gen:cost "15 hero points" ;
+                 rdfs:comment "Holds 4 people, barely seaworthy, sneaky"@en ;
+                 rdfs:label "Small Boat"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_snare_kit
+:item_snare_kit rdf:type owl:NamedIndividual ,
+                         :Item ,
+                         :ItemBasic ,
+                         :RequiredDetails ;
+                gen:cost "1 hero point" ;
+                rdfs:comment "3 count, catch small animals"@en ;
+                rdfs:label "Snare Kit"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_spear
+:item_spear rdf:type owl:NamedIndividual ,
+                     :Item ,
+                     :ItemWeapon ,
+                     :RequiredDetails ;
+            gen:cost "2 hero points" ;
+            gen:damage "1d8" ;
+            rdfs:comment "Thrown, long reach"@en ;
+            rdfs:label "Spear"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_spiked_flail
+:item_spiked_flail rdf:type owl:NamedIndividual ,
+                            :Item ,
+                            :ItemWeapon ,
+                            :RequiredDetails ;
+                   gen:cost "3 hero points" ;
+                   gen:damage "1d10" ;
+                   rdfs:comment "Double damage if used mounted"@en ;
+                   rdfs:label "Spiked Flail"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_steel_shield
+:item_steel_shield rdf:type owl:NamedIndividual ,
+                            :Item ,
+                            :ItemArmor ,
+                            :RequiredDetails ;
+                   gen:cost "5 hero points" ;
+                   gen:defense "+2" ;
+                   rdfs:comment "Absorb 3 hits before attrition"@en ;
+                   rdfs:label "Steel Shield"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_studded_mace
+:item_studded_mace rdf:type owl:NamedIndividual ,
+                            :Item ,
+                            :ItemWeapon ,
+                            :RequiredDetails ;
+                   gen:cost "2 hero points" ;
+                   gen:damage "1d8" ;
+                   rdfs:comment "If max damage, stun target 3 phases"@en ;
+                   rdfs:label "Studded Mace"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_torches
+:item_torches rdf:type owl:NamedIndividual ,
+                       :Item ,
+                       :ItemBasic ,
+                       :RequiredDetails ;
+              gen:cost "1 hero point" ;
+              rdfs:comment "3 count, snap-light, burns for 1 scene"@en ;
+              rdfs:label "Torches"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_tower_shield
+:item_tower_shield rdf:type owl:NamedIndividual ,
+                            :Item ,
+                            :ItemArmor ,
+                            :RequiredDetails ;
+                   gen:cost "5 hero points" ;
+                   gen:defense "+3" ;
+                   rdfs:comment "Clumsy, ignore attrition from arrows"@en ;
+                   rdfs:label "Tower Shield"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_wagon
+:item_wagon rdf:type owl:NamedIndividual ,
+                     :Item ,
+                     :ItemLarge ,
+                     :RequiredDetails ;
+            gen:cost "20 hero points" ;
+            rdfs:comment "Transports like a cart, at horse speed"@en ;
+            rdfs:label "Wagon"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_walking_staff
+:item_walking_staff rdf:type owl:NamedIndividual ,
+                             :Item ,
+                             :ItemWeapon ,
+                             :RequiredDetails ;
+                    gen:cost "1 hero point" ;
+                    gen:damage "1d4" ;
+                    rdfs:comment "Handy for all kinds of things"@en ;
+                    rdfs:label "Walking Staff"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_war_hammer
+:item_war_hammer rdf:type owl:NamedIndividual ,
+                          :Item ,
+                          :ItemWeapon ,
+                          :RequiredDetails ;
+                 gen:cost "3 hero points" ;
+                 gen:damage "1d10" ;
+                 rdfs:comment "If 7+ dmg, stun for 1d6 phases"@en ;
+                 rdfs:label "War Hammer"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_war_wagon
+:item_war_wagon rdf:type owl:NamedIndividual ,
+                         :Item ,
+                         :ItemLarge ,
+                         :RequiredDetails ;
+                gen:cost "25 hero points" ;
+                rdfs:comment "An armored wagon for siege"@en ;
+                rdfs:label "War Wagon"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_wood_axe
+:item_wood_axe rdf:type owl:NamedIndividual ,
+                        :Item ,
+                        :ItemWeapon ,
+                        :RequiredDetails ;
+               gen:cost "1 hero point" ;
+               gen:damage "1d6" ;
+               rdfs:comment "Thrown, double damage on wood"@en ;
+               rdfs:label "Wood Axe"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#item_wood_shield
+:item_wood_shield rdf:type owl:NamedIndividual ,
+                           :Item ,
+                           :ItemArmor ,
+                           :RequiredDetails ;
+                  gen:cost "3 hero points" ;
+                  gen:defense "+1" ;
+                  rdfs:comment "Absorb 2 hits before attrition"@en ;
+                  rdfs:label "Wood Shield"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#lady_walcrest
@@ -2754,22 +3954,294 @@ earned value is always increased except for PC creation ;
                rdfs:label "Lady Walcrest"@en .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#limitation_companion_clumsy
+:limitation_companion_clumsy rdf:type owl:NamedIndividual ,
+                                      :Limitation ,
+                                      :LimitationCompanion ,
+                                      gen:Act ;
+                             rdfs:comment "This companion is almost never stealthy, hidden, or silent. The group’s sneaking or stealth efforts are afflicted by a -3 penalty."@en ;
+                             rdfs:label "Clumsy"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#limitation_companion_feral
+:limitation_companion_feral rdf:type owl:NamedIndividual ,
+                                     :Limitation ,
+                                     :LimitationCompanion ,
+                                     gen:Act ;
+                            rdfs:comment "Will not stop attacking until all immediate foes are slain or subdued."@en ;
+                            rdfs:label "Feral"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#limitation_companion_frightened
+:limitation_companion_frightened rdf:type owl:NamedIndividual ,
+                                          :Limitation ,
+                                          :LimitationCompanion ,
+                                          gen:Act ;
+                                 rdfs:comment "On a roll of 4 or less, or in special circumstances, this companion will flee, vanishing for 1D4 days."@en ;
+                                 rdfs:label "Frightened"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#limitation_companion_impulsive
+:limitation_companion_impulsive rdf:type owl:NamedIndividual ,
+                                         :Limitation ,
+                                         :LimitationCompanion ,
+                                         gen:Act ;
+                                rdfs:comment "When battle is joined, this companion rolls its best skill. On a failed roll, it makes its own opening decision, using the hero’s phase."@en ;
+                                rdfs:label "Impulsive"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#limitation_companion_trophy
+:limitation_companion_trophy rdf:type owl:NamedIndividual ,
+                                      :Limitation ,
+                                      :LimitationCompanion ,
+                                      gen:Act ;
+                             rdfs:comment "This companion is sought after by shadowy folk, collectors, jailers, or those who simply hate it."@en ;
+                             rdfs:label "Trophy"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#limitation_item_breakable
+:limitation_item_breakable rdf:type owl:NamedIndividual ,
+                                    :Limitation ,
+                                    :LimitationItem ,
+                                    gen:Act ;
+                           rdfs:comment "On a critical fail usage, minimum damage roll, or special GM-noticed circumstances, this equipment just goes to pieces."@en ;
+                           rdfs:label "Breakable"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#limitation_item_garish
+:limitation_item_garish rdf:type owl:NamedIndividual ,
+                                 :Limitation ,
+                                 :LimitationItem ,
+                                 gen:Act ;
+                        rdfs:comment "The appearance with this gear is over the top, ugly, or off-putting to most. This will draw enemy ire, embarrass you, or embolden foes."@en ;
+                        rdfs:label "Garish"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#limitation_item_heavy
+:limitation_item_heavy rdf:type owl:NamedIndividual ,
+                                :Limitation ,
+                                :LimitationItem ,
+                                gen:Act ;
+                       rdfs:comment "This equipment is bulky, occupying 2 item inventory."@en ;
+                       rdfs:label "Heavy"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#limitation_item_sought_after
+:limitation_item_sought_after rdf:type owl:NamedIndividual ,
+                                       :Limitation ,
+                                       :LimitationItem ,
+                                       gen:Act ;
+                              rdfs:comment "There are nefarious folk seeking this gear."@en ;
+                              rdfs:label "Sought after"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#limitation_item_stolen
+:limitation_item_stolen rdf:type owl:NamedIndividual ,
+                                 :Limitation ,
+                                 :LimitationItem ,
+                                 gen:Act ;
+                        rdfs:comment "The owner of this gear, or forces of law, will hunt you down."@en ;
+                        rdfs:label "Stolen"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#limitation_item_wonky
+:limitation_item_wonky rdf:type owl:NamedIndividual ,
+                                :Limitation ,
+                                :LimitationItem ,
+                                gen:Act ;
+                       rdfs:comment "This gear has silly or unexpected malfunctions the GM will referee as needed."@en ;
+                       rdfs:label "Wonky"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#limitation_spell_campfire_magic
+:limitation_spell_campfire_magic rdf:type owl:NamedIndividual ,
+                                          :Limitation ,
+                                          :LimitationSpell ,
+                                          gen:Act ;
+                                 rdfs:comment "Can only be cast in a safe place."@en ;
+                                 rdfs:label "Campfire magic"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#limitation_spell_cannot_be_customized
+:limitation_spell_cannot_be_customized rdf:type owl:NamedIndividual ,
+                                                :Limitation ,
+                                                :LimitationSpell ,
+                                                gen:Act ;
+                                       rdfs:comment "This spell is minimalistic, only available in its first-learned form, never to be changed."@en ;
+                                       rdfs:label "Cannot be customized"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#limitation_spell_cannot_be_targeted
+:limitation_spell_cannot_be_targeted rdf:type owl:NamedIndividual ,
+                                              :Limitation ,
+                                              :LimitationSpell ,
+                                              gen:Act ;
+                                     rdfs:comment "Spell always flies wild. Use dice for direction, or randomly select from available targets."@en ;
+                                     rdfs:label "Cannot be targeted"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#limitation_spell_costs_attrition
+:limitation_spell_costs_attrition rdf:type owl:NamedIndividual ,
+                                           :Limitation ,
+                                           :LimitationSpell ,
+                                           gen:Act ;
+                                  rdfs:comment "Sustain 1 attrition with each cast."@en ;
+                                  rdfs:label "Costs attrition to cast"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#limitation_spell_costs_material
+:limitation_spell_costs_material rdf:type owl:NamedIndividual ,
+                                          :Limitation ,
+                                          :LimitationSpell ,
+                                          gen:Act ;
+                                 rdfs:comment "When cast, mark off 1 item in your inventory as destroyed... a powerful reagent like a crystal or crushed bone."@en ;
+                                 rdfs:label "Costs material to cast"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#limitation_spell_druidic
+:limitation_spell_druidic rdf:type owl:NamedIndividual ,
+                                   :Limitation ,
+                                   :LimitationSpell ,
+                                   gen:Act ;
+                          rdfs:comment "Cannot be cast if the caster wears or is touching any metal."@en ;
+                          rdfs:label "Druidic"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#limitation_spell_exhausting
+:limitation_spell_exhausting rdf:type owl:NamedIndividual ,
+                                      :Limitation ,
+                                      :LimitationSpell ,
+                                      gen:Act ;
+                             rdfs:comment "No magic can be used for 1 round after cast."@en ;
+                             rdfs:label "Exhausting"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#limitation_spell_ineffable
+:limitation_spell_ineffable rdf:type owl:NamedIndividual ,
+                                     :Limitation ,
+                                     :LimitationSpell ,
+                                     gen:Act ;
+                            rdfs:comment "This magic is primal, and can’t be recorded for others to use on scrolls, weapons, rings, or wands of any sort."@en ;
+                            rdfs:label "Ineffable"@en .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#limitation_spell_infernal
 :limitation_spell_infernal rdf:type owl:NamedIndividual ,
                                     :Limitation ,
                                     :LimitationSpell ,
-                                    :RequiredDetails ;
+                                    gen:Act ;
                            rdfs:comment "Calls on brimstone and demons."@en ;
                            rdfs:label "Infernal spell"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#limitation_spell_infernal_powers
+:limitation_spell_infernal_powers rdf:type owl:NamedIndividual ,
+                                           :Limitation ,
+                                           :LimitationSpell ,
+                                           gen:Act ;
+                                  rdfs:comment "Calls on brimstone and demons. When cast, roll Magic to maintain control. If failing, roll on the Infernal Magic table."@en ;
+                                  rdfs:label "Uses infernal powers"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#limitation_spell_linked_to_object
+:limitation_spell_linked_to_object rdf:type owl:NamedIndividual ,
+                                            :Limitation ,
+                                            :LimitationSpell ,
+                                            gen:Act ;
+                                   rdfs:comment "The spell manifests with or through an object. If that object is destroyed or stolen, the spell is lost."@en ;
+                                   rdfs:label "Linked to physical object"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#limitation_spell_madness
+:limitation_spell_madness rdf:type owl:NamedIndividual ,
+                                   :Limitation ,
+                                   :LimitationSpell ,
+                                   gen:Act ;
+                          rdfs:comment "Each time this spell is cast, roll your Magic skill. On failure, take the Crazy flaw until your next rest."@en ;
+                          rdfs:label "Madness"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#limitation_spell_must_be_sustained
+:limitation_spell_must_be_sustained rdf:type owl:NamedIndividual ,
+                                             :Limitation ,
+                                             :LimitationSpell ,
+                                             gen:Act ;
+                                    rdfs:comment "This spell ends if the caster is hit or takes any other action while the spell is active."@en ;
+                                    rdfs:label "Must be sustained"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#limitation_spell_nullified_by
+:limitation_spell_nullified_by rdf:type owl:NamedIndividual ,
+                                        :Limitation ,
+                                        :LimitationSpell ,
+                                        gen:Act ;
+                               rdfs:comment "Has no effect on a specific type of target or target property."@en ;
+                               rdfs:label "Nullified by"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#limitation_spell_outdoors_only
+:limitation_spell_outdoors_only rdf:type owl:NamedIndividual ,
+                                         :Limitation ,
+                                         :LimitationSpell ,
+                                         gen:Act ;
+                                rdfs:comment "Elemental forces are required to cast."@en ;
+                                rdfs:label "Only works outdoors"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#limitation_spell_painful
+:limitation_spell_painful rdf:type owl:NamedIndividual ,
+                                   :Limitation ,
+                                   :LimitationSpell ,
+                                   gen:Act ;
+                          rdfs:comment "After this spell is cast, the user can only make a move on their next turn... i.e., no actions."@en ;
+                          rdfs:label "Painful"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#limitation_spell_red_speech
+:limitation_spell_red_speech rdf:type owl:NamedIndividual ,
+                                      :Limitation ,
+                                      :LimitationSpell ,
+                                      gen:Act ;
+                             rdfs:comment "This spell can only be cast with booming, shouted words. This limitation prohibits the use of Silent Spell."@en ;
+                             rdfs:label "Red Speech"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#limitation_spell_ritual
+:limitation_spell_ritual rdf:type owl:NamedIndividual ,
+                                  :Limitation ,
+                                  :LimitationSpell ,
+                                  gen:Act ;
+                         rdfs:comment "This spell can only be cast with 1D4 uninterrupted rounds of successful Magic skill rolls."@en ;
+                         rdfs:label "Ritual"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#limitation_spell_specific_target_type
+:limitation_spell_specific_target_type rdf:type owl:NamedIndividual ,
+                                                :Limitation ,
+                                                :LimitationSpell ,
+                                                gen:Act ;
+                                       rdfs:comment "Can be anything. Be as specific as possible."@en ;
+                                       rdfs:label "Only works on specific target type"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#limitation_spell_two_phase_cast
+:limitation_spell_two_phase_cast rdf:type owl:NamedIndividual ,
+                                          :Limitation ,
+                                          :LimitationSpell ,
+                                          gen:Act ;
+                                 rdfs:comment "Effect takes place at the end of the caster’s second phase spent casting. If hit in that time, the count starts over. If rolling to cast, the roll must be made twice consecutively."@en ;
+                                 rdfs:label "Takes 2 phases to cast"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#limitation_spell_unstable
 :limitation_spell_unstable rdf:type owl:NamedIndividual ,
                                     :Limitation ,
                                     :LimitationSpell ,
-                                    :RequiredDetails ;
-                           rdfs:comment "A wobbly, barely-contained magic."@en ;
-                           rdfs:label "Unstable spell"@en .
+                                    gen:Act ;
+                           rdfs:comment "A wobbly, barely-contained magic."@en ,
+                                        "A wobbly, barely-contained magic. When cast, roll Magic to maintain control. If failing, roll on the Unstable Magic table."@en ;
+                           rdfs:label "Unstable"@en ,
+                                      "Unstable spell"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#lineage
@@ -3550,6 +5022,149 @@ For enemies GM chooses phases accordingly with character's statistic.
                rdfs:label "Climber skill"@en .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#skill_companion_attack
+:skill_companion_attack rdf:type owl:NamedIndividual ,
+                                 :RequiredDetails ,
+                                 :Skill ,
+                                 :SkillCompanion ,
+                                 gen:Parameter ,
+                                 gen:ParameterPC ;
+                        rdfs:comment "Roll damage with natural weapons."@en ;
+                        rdfs:label "Attack"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#skill_companion_carry
+:skill_companion_carry rdf:type owl:NamedIndividual ,
+                                :RequiredDetails ,
+                                :Skill ,
+                                :SkillCompanion ,
+                                gen:Parameter ,
+                                gen:ParameterPC ;
+                       rdfs:comment "This companion can carry its weight or less with ease."@en ;
+                       rdfs:label "Carry"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#skill_companion_endure
+:skill_companion_endure rdf:type owl:NamedIndividual ,
+                                 :RequiredDetails ,
+                                 :Skill ,
+                                 :SkillCompanion ,
+                                 gen:Parameter ,
+                                 gen:ParameterPC ;
+                        rdfs:comment "This companion gains a +1 protective attrition against a lethal hit."@en ;
+                        rdfs:label "Endure"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#skill_companion_find
+:skill_companion_find rdf:type owl:NamedIndividual ,
+                               :RequiredDetails ,
+                               :Skill ,
+                               :SkillCompanion ,
+                               gen:Parameter ,
+                               gen:ParameterPC ;
+                      rdfs:comment "Locate a person or object in 1D4 rounds."@en ;
+                      rdfs:label "Find"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#skill_companion_frighten
+:skill_companion_frighten rdf:type owl:NamedIndividual ,
+                                   :RequiredDetails ,
+                                   :Skill ,
+                                   :SkillCompanion ,
+                                   gen:Parameter ,
+                                   gen:ParameterPC ;
+                          rdfs:comment "With a roll, scare a foe into hesitating for 1 round."@en ;
+                          rdfs:label "Frighten"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#skill_companion_hunt
+:skill_companion_hunt rdf:type owl:NamedIndividual ,
+                               :RequiredDetails ,
+                               :Skill ,
+                               :SkillCompanion ,
+                               gen:Parameter ,
+                               gen:ParameterPC ;
+                      rdfs:comment "Once per day, this companion can feed a group with its efforts."@en ;
+                      rdfs:label "Hunt"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#skill_companion_pin_down
+:skill_companion_pin_down rdf:type owl:NamedIndividual ,
+                                   :RequiredDetails ,
+                                   :Skill ,
+                                   :SkillCompanion ,
+                                   gen:Parameter ,
+                                   gen:ParameterPC ;
+                          rdfs:comment "Roll to pounce on a foe and pin it. Versus rolls encouraged."@en ;
+                          rdfs:label "Pin Down"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#skill_companion_protect
+:skill_companion_protect rdf:type owl:NamedIndividual ,
+                                  :RequiredDetails ,
+                                  :Skill ,
+                                  :SkillCompanion ,
+                                  gen:Parameter ,
+                                  gen:ParameterPC ;
+                         rdfs:comment "The companion clings to its charge, taking damage when possible."@en ;
+                         rdfs:label "Protect"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#skill_companion_report
+:skill_companion_report rdf:type owl:NamedIndividual ,
+                                 :RequiredDetails ,
+                                 :Skill ,
+                                 :SkillCompanion ,
+                                 gen:Parameter ,
+                                 gen:ParameterPC ;
+                        rdfs:comment "In 1D4 rounds, scout the area and report back in simple terms."@en ;
+                        rdfs:label "Report"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#skill_companion_retrieve
+:skill_companion_retrieve rdf:type owl:NamedIndividual ,
+                                   :RequiredDetails ,
+                                   :Skill ,
+                                   :SkillCompanion ,
+                                   gen:Parameter ,
+                                   gen:ParameterPC ;
+                          rdfs:comment "Roll to recover an object of equal or smaller mass."@en ;
+                          rdfs:label "Retrieve"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#skill_companion_stand_watch
+:skill_companion_stand_watch rdf:type owl:NamedIndividual ,
+                                      :RequiredDetails ,
+                                      :Skill ,
+                                      :SkillCompanion ,
+                                      gen:Parameter ,
+                                      gen:ParameterPC ;
+                             rdfs:comment "This companion reliably keeps guard, alerting at any event."@en ;
+                             rdfs:label "Stand Watch"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#skill_companion_taunt
+:skill_companion_taunt rdf:type owl:NamedIndividual ,
+                                :RequiredDetails ,
+                                :Skill ,
+                                :SkillCompanion ,
+                                gen:Parameter ,
+                                gen:ParameterPC ;
+                       rdfs:comment "With a roll, require a foe to attack for 1 round."@en ;
+                       rdfs:label "Taunt"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#skill_companion_track
+:skill_companion_track rdf:type owl:NamedIndividual ,
+                                :RequiredDetails ,
+                                :Skill ,
+                                :SkillCompanion ,
+                                gen:Parameter ,
+                                gen:ParameterPC ;
+                       rdfs:comment "Roll to reliably follow a designated quarry for 1 round."@en ;
+                       rdfs:label "Track"@en .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#skill_courtier
 :skill_courtier rdf:type owl:NamedIndividual ,
                          :RequiredDetails ,
@@ -4071,11 +5686,298 @@ For enemies GM chooses phases accordingly with character's statistic.
                   rdfs:label "Threat at Slimshire"@en .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#spell_arcane_lock
+:spell_arcane_lock rdf:type owl:NamedIndividual ,
+                            :Spell ;
+                   gen:cost "3 hero points" ;
+                   rdfs:comment "A glyph used to permanently seal a door"@en ;
+                   rdfs:label "Arcane Lock"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#spell_armor
+:spell_armor rdf:type owl:NamedIndividual ,
+                      :Spell ;
+             gen:cost "3 hero points" ;
+             rdfs:comment "Add +3 Defense"@en ;
+             rdfs:label "Armor"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#spell_consequence_infernal_charred
+:spell_consequence_infernal_charred rdf:type owl:NamedIndividual ,
+                                             :SpellConsequenceInfernal ,
+                                             gen:Act ;
+                                    rdfs:comment "Terrible burn... reduce skill inventory by 1 permanently."@en ;
+                                    rdfs:label "Charred"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#spell_consequence_infernal_devilish
+:spell_consequence_infernal_devilish rdf:type owl:NamedIndividual ,
+                                              :SpellConsequenceInfernal ,
+                                              gen:Act ;
+                                     rdfs:comment "Your appearance slightly changes: a hint of horns, a glow to the eyes, black fingernails, crab-claw fingers, or scaly skin."@en ;
+                                     rdfs:label "Devilish"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#spell_consequence_infernal_hellrift
+:spell_consequence_infernal_hellrift rdf:type owl:NamedIndividual ,
+                                              :SpellConsequenceInfernal ,
+                                              gen:Act ;
+                                     rdfs:comment "A powerful baron of hell appears, furious. It has 20 HP, actions on phases 2 and 4, and does D12 sword damage."@en ;
+                                     rdfs:label "Hellrift"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#spell_consequence_infernal_hellstone
+:spell_consequence_infernal_hellstone rdf:type owl:NamedIndividual ,
+                                               :SpellConsequenceInfernal ,
+                                               gen:Act ;
+                                      rdfs:comment "A mass of smoldering rock falls from above! It smashes a random area in 1D6 phases, inflicting 2 attrition on those below."@en ;
+                                      rdfs:label "Hellstone"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#spell_consequence_infernal_imps
+:spell_consequence_infernal_imps rdf:type owl:NamedIndividual ,
+                                          :SpellConsequenceInfernal ,
+                                          gen:Act ;
+                                 rdfs:comment "2D6 1 HP imps materialize and attack you. They do not make rolls, fly about like bats, and inflict 1 attrition per bite."@en ;
+                                 rdfs:label "Imps"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#spell_consequence_infernal_inert
+:spell_consequence_infernal_inert rdf:type owl:NamedIndividual ,
+                                           :SpellConsequenceInfernal ,
+                                           gen:Act ;
+                                  rdfs:comment "Nothing happens, save a wisp of smoke."@en ;
+                                  rdfs:label "Inert"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#spell_consequence_infernal_pain
+:spell_consequence_infernal_pain rdf:type owl:NamedIndividual ,
+                                          :SpellConsequenceInfernal ,
+                                          gen:Act ;
+                                 rdfs:comment "Heat and sparks sear your flesh for 1 item attrition."@en ;
+                                 rdfs:label "Pain"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#spell_consequence_infernal_smoke_cloud
+:spell_consequence_infernal_smoke_cloud rdf:type owl:NamedIndividual ,
+                                                 :SpellConsequenceInfernal ,
+                                                 gen:Act ;
+                                        rdfs:comment "A large cloud of opaque smoke surrounds you."@en ;
+                                        rdfs:label "Smoke Cloud"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#spell_consequence_unstable_dud
+:spell_consequence_unstable_dud rdf:type owl:NamedIndividual ,
+                                         :SpellConsequenceUnstable ,
+                                         gen:Act ;
+                                rdfs:comment "The cast fails, and expends itself."@en ;
+                                rdfs:label "A dud"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#spell_consequence_unstable_echo
+:spell_consequence_unstable_echo rdf:type owl:NamedIndividual ,
+                                          :SpellConsequenceUnstable ,
+                                          gen:Act ;
+                                 rdfs:comment "A searing, loud noise erupts, heard for miles."@en ;
+                                 rdfs:label "Echo"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#spell_consequence_unstable_erosion
+:spell_consequence_unstable_erosion rdf:type owl:NamedIndividual ,
+                                             :SpellConsequenceUnstable ,
+                                             gen:Act ;
+                                    rdfs:comment "The spell itself is damaged. Roll to add a new limitation."@en ;
+                                    rdfs:label "Erosion"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#spell_consequence_unstable_forgetful
+:spell_consequence_unstable_forgetful rdf:type owl:NamedIndividual ,
+                                               :SpellConsequenceUnstable ,
+                                               gen:Act ;
+                                      rdfs:comment "You forget how to cast this spell for 1D4 days. For each of those days, roll Investigation to try and remember."@en ;
+                                      rdfs:label "Forgetful"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#spell_consequence_unstable_psychic_spike
+:spell_consequence_unstable_psychic_spike rdf:type owl:NamedIndividual ,
+                                                   :SpellConsequenceUnstable ,
+                                                   gen:Act ;
+                                          rdfs:comment "Your mind reels from failed magic. Take a -3 penalty to your Magic skill until your next rest."@en ;
+                                          rdfs:label "Psychic Spike"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#spell_consequence_unstable_spellblast
+:spell_consequence_unstable_spellblast rdf:type owl:NamedIndividual ,
+                                                :SpellConsequenceUnstable ,
+                                                gen:Act ;
+                                       rdfs:comment "Explosion! Absorb 2 attrition. The blast is large, reaching to ‘near’ distance."@en ;
+                                       rdfs:label "Spellblast"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#spell_consequence_unstable_stable
+:spell_consequence_unstable_stable rdf:type owl:NamedIndividual ,
+                                            :SpellConsequenceUnstable ,
+                                            gen:Act ;
+                                   rdfs:comment "Your spell casts normally, with no unstable aspects."@en ;
+                                   rdfs:label "Stable"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#spell_consequence_unstable_wild_shot
+:spell_consequence_unstable_wild_shot rdf:type owl:NamedIndividual ,
+                                               :SpellConsequenceUnstable ,
+                                               gen:Act ;
+                                      rdfs:comment "The spell fires at a random target or area, including allies."@en ;
+                                      rdfs:label "Wild Shot"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#spell_courage
+:spell_courage rdf:type owl:NamedIndividual ,
+                        :Spell ;
+               gen:cost "3 hero points" ;
+               rdfs:comment "Ignore fear or intimidation"@en ;
+               rdfs:label "Courage"@en .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#spell_custom
 :spell_custom rdf:type owl:NamedIndividual ,
-                       :RequiredDetails ,
                        :Spell ;
               rdfs:label "Custom spell"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#spell_dream_spike
+:spell_dream_spike rdf:type owl:NamedIndividual ,
+                            :Spell ;
+                   gen:cost "3 hero points" ;
+                   rdfs:comment "Stun an intelligent foe"@en ;
+                   rdfs:label "Dream Spike"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#spell_far_seer
+:spell_far_seer rdf:type owl:NamedIndividual ,
+                         :Spell ;
+                gen:cost "3 hero points" ;
+                rdfs:comment "See your position from high above"@en ;
+                rdfs:label "Far-Seer"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#spell_fireblast
+:spell_fireblast rdf:type owl:NamedIndividual ,
+                          :Spell ;
+                 gen:cost "3 hero points" ;
+                 rdfs:comment "Explosive fire from the caster’s hands"@en ;
+                 rdfs:label "Fireblast"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#spell_ghost_blade
+:spell_ghost_blade rdf:type owl:NamedIndividual ,
+                            :Spell ;
+                   gen:cost "3 hero points" ;
+                   rdfs:comment "Hit 1D2 targets with arcane knives"@en ;
+                   rdfs:label "Ghost Blade"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#spell_healing_light
+:spell_healing_light rdf:type owl:NamedIndividual ,
+                              :Spell ;
+                     gen:cost "3 hero points" ;
+                     rdfs:comment "Heal a skill attrition with a touch"@en ;
+                     rdfs:label "Healing Light"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#spell_invisible_wall
+:spell_invisible_wall rdf:type owl:NamedIndividual ,
+                               :Spell ;
+                      gen:cost "3 hero points" ;
+                      rdfs:comment "A 20’ wide force field, 4 attrition/10 Def"@en ;
+                      rdfs:label "Invisible Wall"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#spell_levitation
+:spell_levitation rdf:type owl:NamedIndividual ,
+                           :Spell ;
+                  gen:cost "3 hero points" ;
+                  rdfs:comment "Hover up to 6 feet above ground"@en ;
+                  rdfs:label "Levitation"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#spell_mages_cloak
+:spell_mages_cloak rdf:type owl:NamedIndividual ,
+                            :Spell ;
+                   gen:cost "3 hero points" ;
+                   rdfs:comment "Enchant a cape. Its wearer is targeted last"@en ;
+                   rdfs:label "Mage’s Cloak"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#spell_piercing_blade
+:spell_piercing_blade rdf:type owl:NamedIndividual ,
+                               :Spell ;
+                      gen:cost "3 hero points" ;
+                      rdfs:comment "Enchant a weapon. It is deadly"@en ;
+                      rdfs:label "Piercing Blade"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#spell_purify
+:spell_purify rdf:type owl:NamedIndividual ,
+                       :Spell ;
+              gen:cost "3 hero points" ;
+              rdfs:comment "Free a target of all afflictions"@en ;
+              rdfs:label "Purify"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#spell_sprint
+:spell_sprint rdf:type owl:NamedIndividual ,
+                       :Spell ;
+              gen:cost "3 hero points" ;
+              rdfs:comment "Grant double move speed"@en ;
+              rdfs:label "Sprint"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#spell_stormcaller
+:spell_stormcaller rdf:type owl:NamedIndividual ,
+                            :Spell ;
+                   gen:cost "3 hero points" ;
+                   rdfs:comment "Conjure a type of weather when outdoors"@en ;
+                   rdfs:label "Stormcaller"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#spell_summon_vermin
+:spell_summon_vermin rdf:type owl:NamedIndividual ,
+                              :Spell ;
+                     gen:cost "3 hero points" ;
+                     rdfs:comment "Attract a swarm of local pests"@en ;
+                     rdfs:label "Summon Vermin"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#spell_telekineticus
+:spell_telekineticus rdf:type owl:NamedIndividual ,
+                              :Spell ;
+                     gen:cost "3 hero points" ;
+                     rdfs:comment "Move small objects in your immediate area"@en ;
+                     rdfs:label "Telekineticus"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#spell_vanish
+:spell_vanish rdf:type owl:NamedIndividual ,
+                       :Spell ;
+              gen:cost "5 hero points" ;
+              rdfs:comment "Become invisible"@en ;
+              rdfs:label "Vanish"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#spell_vines
+:spell_vines rdf:type owl:NamedIndividual ,
+                      :Spell ;
+             gen:cost "3 hero points" ;
+             rdfs:comment "Call up vines that grab passers-through"@en ;
+             rdfs:label "Vines"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#spell_waterbreath
+:spell_waterbreath rdf:type owl:NamedIndividual ,
+                            :Spell ;
+                   gen:cost "3 hero points" ;
+                   rdfs:comment "Breathe underwater with ease"@en ;
+                   rdfs:label "Waterbreath"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#spells
@@ -4712,6 +6614,19 @@ gen:pc rdf:type owl:NamedIndividual ,
                     :skill_brawling ,
                     :skill_breakfall ,
                     :skill_climber ,
+                    :skill_companion_attack ,
+                    :skill_companion_carry ,
+                    :skill_companion_endure ,
+                    :skill_companion_find ,
+                    :skill_companion_frighten ,
+                    :skill_companion_hunt ,
+                    :skill_companion_pin_down ,
+                    :skill_companion_protect ,
+                    :skill_companion_report ,
+                    :skill_companion_retrieve ,
+                    :skill_companion_stand_watch ,
+                    :skill_companion_taunt ,
+                    :skill_companion_track ,
                     :skill_courtier ,
                     :skill_disguise ,
                     :skill_evade ,
@@ -4826,12 +6741,6 @@ gen:valueFormula rdf:type owl:NamedIndividual .
 #    Annotations
 #################################################################
 
-:ActMagicInfernal rdfs:label "Infernal magic effect"@en .
-
-
-:ActMagicUnstable rdfs:label "Unstable magic effect"@en .
-
-
 :Attrition rdfs:comment "Attrition is a term for the reduction of your character’s resources when hit by hazards and attacks."@en ;
            rdfs:label "Attrition"@en .
 
@@ -4919,6 +6828,12 @@ gen:valueFormula rdf:type owl:NamedIndividual .
 
 :Spell rdfs:comment "By default: somatics, 1d6 phases duration, 1d6 effect, touch range, single target."@en ;
        rdfs:label "Spell"@en .
+
+
+:SpellConsequenceInfernal rdfs:label "Infernal magic consequence"@en .
+
+
+:SpellConsequenceUnstable rdfs:label "Unstable magic consequence"@en .
 
 
 :Wizard rdfs:label "Wizard"@en .
