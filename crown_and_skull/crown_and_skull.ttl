@@ -3118,8 +3118,7 @@ earned value is always increased except for PC creation ;
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#limitation_spell_unstable
 :limitation_spell_unstable rdf:type owl:NamedIndividual ,
                                     :LimitationSpell ;
-                           rdfs:comment "A wobbly, barely-contained magic."@en ,
-                                        "A wobbly, barely-contained magic. When cast, roll Magic to maintain control. If failing, roll on the Unstable Magic table."@en ;
+                           rdfs:comment "A wobbly, barely-contained magic. When cast, roll Magic to maintain control. If failing, roll on the Unstable Magic table."@en ;
                            rdfs:label "Unstable"@en ,
                                       "Unstable spell"@en .
 
