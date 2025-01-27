@@ -1,0 +1,408 @@
+@prefix : <https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#> .
+@prefix gen: <https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#> .
+
+<https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#> rdf:type owl:Ontology ;
+                                                                                                  owl:imports gen: .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#Flaw
+:Flaw rdf:type owl:Class ;
+      rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty <http://www.w3.org/ns/prov#wasMemberOf> ;
+                        owl:hasValue :flaws_for_selection
+                      ] ;
+      rdfs:label "Flaw"@en ;
+      <http://www.w3.org/ns/prov#definition> "Character's weakness for narrative and gameplay."@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#character_creation_custom
+:character_creation_custom rdf:type owl:NamedIndividual ,
+                                    <http://www.w3.org/ns/prov#Activity> ;
+                           <http://www.w3.org/ns/prov#qualifiedAssociation> gen:association_player ;
+                           <http://www.w3.org/ns/prov#qualifiedUsage> :set_starting_hero_points_usage_of_character_with_hometown ;
+                           <http://www.w3.org/ns/prov#wasInformedBy> :set_hometown ;
+                           gen:hadSubactivity :set_flaws ,
+                                              :set_starting_hero_points ;
+                           rdfs:comment "Building a fully custom character."@en ;
+                           rdfs:label "Creation of custom character"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#character_initial
+:character_initial rdf:type owl:NamedIndividual ,
+                            gen:CharacterSpecialization ;
+                   <http://www.w3.org/ns/prov#wasGeneratedBy> :character_initial_generation ;
+                   rdfs:label "Initial version of a character (abstract)"@en ;
+                   <http://www.w3.org/ns/prov#definition> "The foundation for a character, including their name, appearance, and general design."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#character_initial_generation
+:character_initial_generation rdf:type owl:NamedIndividual ,
+                                       <http://www.w3.org/ns/prov#Activity> ;
+                              <http://www.w3.org/ns/prov#qualifiedAssociation> gen:association_player ;
+                              rdfs:comment "Creating the foundation for a character, including their behavior and general design."@en ;
+                              rdfs:label "Initial creation of a character"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#character_with_flaws
+:character_with_flaws rdf:type owl:NamedIndividual ,
+                               gen:CharacterSpecialization ;
+                      <http://www.w3.org/ns/prov#qualifiedGeneration> :character_with_flaws_generation ;
+                      <http://www.w3.org/ns/prov#wasRevisionOf> :character_with_starting_points ;
+                      rdfs:label "Version of character with selected flaws (abstract)"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#character_with_flaws_generation
+:character_with_flaws_generation rdf:type owl:NamedIndividual ,
+                                          <http://www.w3.org/ns/prov#Generation> ;
+                                 <http://www.w3.org/ns/prov#activity> :set_flaws ;
+                                 gen:modification :flaws ,
+                                                  :hero_points_current ;
+                                 rdfs:comment "Take a maximum 2 flaws and add 5 hero points per flaw to your point total."@en ;
+                                 rdfs:label "Generation of character with selected flaws"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#character_with_hometown
+:character_with_hometown rdf:type owl:NamedIndividual ,
+                                  gen:CharacterSpecialization ;
+                         <http://www.w3.org/ns/prov#qualifiedGeneration> :character_with_hometown_generation ;
+                         <http://www.w3.org/ns/prov#wasRevisionOf> :character_initial ;
+                         rdfs:label "Version of character with selected hometown (abstract)"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#character_with_hometown_generation
+:character_with_hometown_generation rdf:type owl:NamedIndividual ,
+                                             <http://www.w3.org/ns/prov#Generation> ;
+                                    <http://www.w3.org/ns/prov#activity> :set_hometown ;
+                                    gen:modification :hometown ;
+                                    rdfs:label "Generation of a character with selected hometown"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#character_with_starting_points
+:character_with_starting_points rdf:type owl:NamedIndividual ,
+                                         gen:CharacterSpecialization ;
+                                <http://www.w3.org/ns/prov#qualifiedGeneration> :character_with_starting_points_generation ;
+                                <http://www.w3.org/ns/prov#wasRevisionOf> :character_with_hometown ;
+                                rdfs:comment "Version of character with starting points (abstract)"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#character_with_starting_points_generation
+:character_with_starting_points_generation rdf:type owl:NamedIndividual ,
+                                                    <http://www.w3.org/ns/prov#Generation> ;
+                                           <http://www.w3.org/ns/prov#activity> :set_starting_hero_points ;
+                                           gen:modification :hero_points_current ;
+                                           rdfs:comment "Character got 50 hero points."@en ;
+                                           rdfs:label "Generation of a character with starting points"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_addict
+:flaw_addict rdf:type owl:NamedIndividual ,
+                      :Flaw ;
+             rdfs:label "Addict flaw"@en ;
+             <http://www.w3.org/ns/prov#definition> "You have a specific vice you cannot deny. If you can’t get your fix, the GM will ask for a roll vs. attrition in some form."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_aescetic
+:flaw_aescetic rdf:type owl:NamedIndividual ,
+                        :Flaw ;
+               rdfs:label "Aescetic flaw"@en ;
+               <http://www.w3.org/ns/prov#definition> "You frown on possessions. Never exceed 5 equipment."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_ancient
+:flaw_ancient rdf:type owl:NamedIndividual ,
+                       :Flaw ;
+              rdfs:label "Ancient flaw"@en ;
+              <http://www.w3.org/ns/prov#definition> "You are old! Muscle, Jump, Climber, Breakfall, and Stealth skills may not exceed 9, but you earn respect for your advanced age."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_bad_reputation
+:flaw_bad_reputation rdf:type owl:NamedIndividual ,
+                              :Flaw ;
+                     rdfs:label "Bad reputation flaw"@en ;
+                     <http://www.w3.org/ns/prov#definition> "You’ve done things... terrible things, and people know about it. You’ve done harm, broken oaths, or let someone down."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_crazy
+:flaw_crazy rdf:type owl:NamedIndividual ,
+                     :Flaw ;
+            rdfs:label "Crazy flaw"@en ;
+            <http://www.w3.org/ns/prov#definition> "When faced with a difficult choice, choose randomly."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_disorganized
+:flaw_disorganized rdf:type owl:NamedIndividual ,
+                            :Flaw ;
+                   rdfs:label "Disorganized flaw"@en ;
+                   <http://www.w3.org/ns/prov#definition> "Where’d you put that? When seeking anything but your most-used items and armor, roll 9 or less on a D20 to find it."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_drunkard
+:flaw_drunkard rdf:type owl:NamedIndividual ,
+                        :Flaw ;
+               rdfs:label "Drunkard flaw"@en ;
+               <http://www.w3.org/ns/prov#definition> "Your drinking wavers between revelry and tomfoolery. Beer and wine drain your pockets and frustrate your friends."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_employed
+:flaw_employed rdf:type owl:NamedIndividual ,
+                        :Flaw ;
+               rdfs:label "Employed flaw"@en ;
+               <http://www.w3.org/ns/prov#definition> "You are paid or oathsworn to a lord or employer. Disobey at your own peril!"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_greedy
+:flaw_greedy rdf:type owl:NamedIndividual ,
+                      :Flaw ;
+             rdfs:label "Greedy flaw"@en ;
+             <http://www.w3.org/ns/prov#definition> "Tempted by treasure, roll 6 or less on a D20 to resist the urge."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_grudge
+:flaw_grudge rdf:type owl:NamedIndividual ,
+                      :Flaw ;
+             rdfs:label "Grudge flaw"@en ;
+             <http://www.w3.org/ns/prov#definition> "You have been wronged, and hold it against an individual or group, unjustly. When you encounter them, you behave terribly."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_impetuous
+:flaw_impetuous rdf:type owl:NamedIndividual ,
+                         :Flaw ;
+                rdfs:label "Impetuous flaw"@en ;
+                <http://www.w3.org/ns/prov#definition> "You are impatient, leaping into situations without planning or reservation. Only take action in phase 1 or 2."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_injured
+:flaw_injured rdf:type owl:NamedIndividual ,
+                       :Flaw ;
+              rdfs:label "Injured flaw"@en ;
+              <http://www.w3.org/ns/prov#definition> "This common flaw should be taken a few times in a character’s lifetime. An Injury brings a -1 maximum skill inventory."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_just_a_kid
+:flaw_just_a_kid rdf:type owl:NamedIndividual ,
+                          :Flaw ;
+                 rdfs:label "Just a kid flaw"@en ;
+                 <http://www.w3.org/ns/prov#definition> "Hey, I’m just a kid! Never exceed 6 skills."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_paranoid
+:flaw_paranoid rdf:type owl:NamedIndividual ,
+                        :Flaw ;
+               rdfs:label "Paranoid flaw"@en ;
+               <http://www.w3.org/ns/prov#definition> "What’s that? You hear that? You invent your own boogie men, and sew doubt among others. NPCs will be hesitant to trust you."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_phobia
+:flaw_phobia rdf:type owl:NamedIndividual ,
+                      :Flaw ;
+             rdfs:label "Phobia flaw"@en ;
+             <http://www.w3.org/ns/prov#definition> "Fear of a common thing. In its presence, no roll can succeed."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_pursued
+:flaw_pursued rdf:type owl:NamedIndividual ,
+                       :Flaw ;
+              rdfs:label "Pursued flaw"@en ;
+              <http://www.w3.org/ns/prov#definition> "You have a nemesis out there... somewhere... hunting you."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_sickly
+:flaw_sickly rdf:type owl:NamedIndividual ,
+                      :Flaw ;
+             rdfs:label "Sickly flaw"@en ;
+             <http://www.w3.org/ns/prov#definition> "You were born frail. Survival and Resist skills cannot exceed 9."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_stubborn
+:flaw_stubborn rdf:type owl:NamedIndividual ,
+                        :Flaw ;
+               rdfs:label "Stubborn flaw"@en ;
+               <http://www.w3.org/ns/prov#definition> "If you make up your mind, only a D20 contest with another player or NPC will sway you."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_timid
+:flaw_timid rdf:type owl:NamedIndividual ,
+                     :Flaw ;
+            rdfs:label "Timid flaw"@en ;
+            <http://www.w3.org/ns/prov#definition> "You’d rather let others lead. Only take action in phase 4 or 5."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaw_unlucky
+:flaw_unlucky rdf:type owl:NamedIndividual ,
+                       :Flaw ;
+              rdfs:label "Unlucky flaw"@en ;
+              <http://www.w3.org/ns/prov#definition> "No matter how many rabbit’s feet you carry, you have a penchant for comical mishaps and crit fail on a 16+."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaws
+:flaws rdf:type owl:NamedIndividual ,
+                gen:CharacterParameter ;
+       rdfs:label "List of flaws"@en ;
+       <http://www.w3.org/ns/prov#definition> "List of character's weaknesses for narrative and gameplay."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#flaws_for_selection
+:flaws_for_selection rdf:type owl:NamedIndividual ,
+                              <http://www.w3.org/ns/prov#Collection> ;
+                     rdfs:label "Flaws for selection"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#gardenburrow
+:gardenburrow rdf:type owl:NamedIndividual ,
+                       <http://www.w3.org/ns/prov#Location> ;
+              rdfs:comment "This town was founded by elves centuries ago as a waystation for forest caretakers and foragers. Since then, it has grown to a few hundred residents and many travelers crossing the West. To call this town home, you’ll be diving into mysterious forests, a long-standing feud with frog men, tensions with dwarves, and the mists of the Emerald Narrows. Gardenburrow is an elemental place... a pilgrimage for druids and nature-folk of the realm."@en ;
+              rdfs:label "Gardenburrow"@en ;
+              <http://www.w3.org/ns/prov#definition> "Forest Refuge"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#hero_points
+:hero_points rdf:type owl:NamedIndividual ,
+                      gen:CharacterParameter ;
+             rdfs:label "Hero points"@en ;
+             <http://www.w3.org/ns/prov#definition> "CROWN and SKULL uses hero points for players to buy items and upgrade their characters."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#hero_points_current
+:hero_points_current rdf:type owl:NamedIndividual ,
+                              gen:CharacterParameter ;
+                     <http://www.w3.org/ns/prov#specializationOf> :hero_points ;
+                     rdfs:label "Current hero points"@en ;
+                     <http://www.w3.org/ns/prov#definition> "Number of hero points available for usage by player."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#hero_points_earned
+:hero_points_earned rdf:type owl:NamedIndividual ,
+                             gen:CharacterParameter ;
+                    <http://www.w3.org/ns/prov#specializationOf> :hero_points ;
+                    rdfs:label "Earned hero points"@en ;
+                    <http://www.w3.org/ns/prov#definition> "The number of hero points earned by the player during the game. At the start of the game, it is equal to zero."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#hometown
+:hometown rdf:type owl:NamedIndividual ,
+                   gen:CharacterParameter ;
+          rdfs:label "Hometown of a player characters"@en ;
+          <http://www.w3.org/ns/prov#definition> "Hometown will define the feel and opening events of the game, and nearby areas accessible by foot travel."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#hometowns_for_selection
+:hometowns_for_selection rdf:type owl:NamedIndividual ,
+                                  <http://www.w3.org/ns/prov#Collection> ;
+                         <http://www.w3.org/ns/prov#hadMember> :gardenburrow ,
+                                                               :rivergate ,
+                                                               :slimshire ;
+                         rdfs:label "Hometowns for selection"@en ;
+                         <http://www.w3.org/ns/prov#definition> "List of hometowns for selection"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#rivergate
+:rivergate rdf:type owl:NamedIndividual ,
+                    <http://www.w3.org/ns/prov#Location> ;
+           rdfs:comment "At the geographic center point of The North Holds is the port city of Rivergate. This central location has made the ruling elite here wealthy, trading with the Stormkeeper dwarves and the abundant farms south of the River Thenne. Now that Ruinmoor has gone quiet, though, Rivergate is in crisis. To call this town home, you’ll be working for desperate nobles, escorting merchant barges, or exploring the fallen walls of ancient monasteries. Rivergate is the busy hub of mankind, with all its intrigue and peril."@en ;
+           rdfs:label "Rivergate"@en ;
+           <http://www.w3.org/ns/prov#definition> "Bustling Trade City"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#set_flaws
+:set_flaws rdf:type owl:NamedIndividual ,
+                    <http://www.w3.org/ns/prov#Activity> ;
+           <http://www.w3.org/ns/prov#qualifiedUsage> :set_flaws_usage_of_character_with_starting_points ,
+                                                      :set_flaws_usage_of_flaws_for_selection ;
+           <http://www.w3.org/ns/prov#wasInformedBy> :set_starting_hero_points ;
+           rdfs:comment """Flaw is a weakness or stress point for character. Flaws imply history and drive believable roleplay. Take a maximum 2 flaws and add 5 points per flaw to your point total. 
+Flaws are entirely optional!"""@en ;
+           rdfs:label "Selection flaws"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#set_flaws_usage_of_character_with_starting_points
+:set_flaws_usage_of_character_with_starting_points rdf:type owl:NamedIndividual ,
+                                                            <http://www.w3.org/ns/prov#Usage> ;
+                                                   <http://www.w3.org/ns/prov#entity> :character_with_starting_points ;
+                                                   <http://www.w3.org/ns/prov#hadRole> gen:base_for_modification ;
+                                                   rdfs:label "Usage of character with starting points in selection of flaws"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#set_flaws_usage_of_flaws_for_selection
+:set_flaws_usage_of_flaws_for_selection rdf:type owl:NamedIndividual ,
+                                                 <http://www.w3.org/ns/prov#Usage> ;
+                                        <http://www.w3.org/ns/prov#entity> :flaws_for_selection ;
+                                        <http://www.w3.org/ns/prov#hadRole> gen:options ;
+                                        rdfs:label "Usage of flaws options for selection of flaws"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#set_hometown
+:set_hometown rdf:type owl:NamedIndividual ,
+                       <http://www.w3.org/ns/prov#Activity> ;
+              <http://www.w3.org/ns/prov#qualifiedAssociation> gen:association_player ;
+              <http://www.w3.org/ns/prov#qualifiedUsage> :set_hometown_usage_of_character_initial ,
+                                                         :set_hometown_usage_of_hometowns ;
+              <http://www.w3.org/ns/prov#wasAssociatedWith> gen:players ;
+              <http://www.w3.org/ns/prov#wasInformedBy> :character_initial_generation ;
+              rdfs:comment """CROWN and SKULL is a bit different from many RPGs, in that players can only begin the game in one of three possible locations.
+The players must choose a hometown from three available options, the same for all their characters."""@en ;
+              rdfs:label "Selection of hometown"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#set_hometown_usage_of_character_initial
+:set_hometown_usage_of_character_initial rdf:type owl:NamedIndividual ,
+                                                  <http://www.w3.org/ns/prov#Usage> ;
+                                         <http://www.w3.org/ns/prov#entity> :character_initial ;
+                                         <http://www.w3.org/ns/prov#hadRole> gen:base_for_modification ;
+                                         rdfs:label "Usage of initial character in selection of hometown"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#set_hometown_usage_of_hometowns
+:set_hometown_usage_of_hometowns rdf:type owl:NamedIndividual ,
+                                          <http://www.w3.org/ns/prov#Usage> ;
+                                 <http://www.w3.org/ns/prov#entity> :hometowns_for_selection ;
+                                 <http://www.w3.org/ns/prov#hadRole> gen:options ;
+                                 rdfs:label "Usage of list of hometowns for selection"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#set_starting_hero_points
+:set_starting_hero_points rdf:type owl:NamedIndividual ,
+                                   <http://www.w3.org/ns/prov#Activity> ;
+                          <http://www.w3.org/ns/prov#qualifiedAssociation> gen:association_player ;
+                          <http://www.w3.org/ns/prov#qualifiedUsage> :set_starting_hero_points_usage_of_character_with_hometown ;
+                          <http://www.w3.org/ns/prov#wasInformedBy> :set_hometown ;
+                          rdfs:comment "All characters start with 50 hero points to spend on their build."@en ;
+                          rdfs:label "Set starting hero points"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#set_starting_hero_points_usage_of_character_with_hometown
+:set_starting_hero_points_usage_of_character_with_hometown rdf:type owl:NamedIndividual ,
+                                                                    <http://www.w3.org/ns/prov#Usage> ;
+                                                           <http://www.w3.org/ns/prov#entity> :character_with_hometown ;
+                                                           <http://www.w3.org/ns/prov#hadRole> gen:base_for_modification ;
+                                                           rdfs:label "Usage of character with determined hometown in setting of starting hero points"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull.ttl#slimshire
+:slimshire rdf:type owl:NamedIndividual ,
+                    <http://www.w3.org/ns/prov#Location> ;
+           rdfs:comment "The coming of the ‘White Bird’ and The Holy Order has grown this town, once a wide spot in the road to Hakburg, to new heights. Ruling here is Lord Pickins, and times have been good. Such fortune has attracted the destructive attention of goblins from the Shadow Glades, Orc raiders from the deep desert, and even the darkly dreaming influence of a mysterious entity generally referred to as ‘the eye in the well.’ To call this town home, you will be confronting vampiric cults, fighting goblin skirmishers, or working to secure allies in the war with the Orcs."@en ;
+           rdfs:label "Slimshire"@en ;
+           <http://www.w3.org/ns/prov#definition> "High Plains Outpost"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#game_preparation
+gen:game_preparation gen:hadSubactivity :character_creation_custom ,
+                                        :character_initial_generation ,
+                                        :set_hometown .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

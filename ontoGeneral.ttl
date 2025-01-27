@@ -1,545 +1,490 @@
+@base <https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#> .
 @prefix : <https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#> .
-
-<https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#> rdf:type owl:Ontology .
-
-#################################################################
-#    Object Properties
-#################################################################
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#Actor
-:Actor rdf:type owl:ObjectProperty ;
-       rdfs:domain :Act ;
-       rdfs:range :Actor .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#Location
-:Location rdf:type owl:ObjectProperty ;
-          rdfs:range :Location .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#actionWith
-:actionWith rdf:type owl:ObjectProperty ;
-            rdfs:domain :Act ;
-            rdfs:label "action with"@en ,
-                       "действие с"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#after
-:after rdf:type owl:ObjectProperty ;
-       rdfs:domain :Act ;
-       rdfs:range :Act ;
-       rdfs:label "after"@en ,
-                  "после"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#basedOn
-:basedOn rdf:type owl:ObjectProperty ,
-                  owl:TransitiveProperty ;
-         rdfs:label "based on"@en ,
-                    "основан на"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#blocked
-:blocked rdf:type owl:ObjectProperty ;
-         rdfs:subPropertyOf :actionWith ;
-         rdfs:label "blocked"@en .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#checkFailure
-:checkFailure rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf :effect ;
-              rdfs:domain :Check ;
-              rdfs:label "failed check"@en ,
-                         "провал проверки"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#checkFailureCrit
-:checkFailureCrit rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf :effect ;
-                  rdfs:domain :Check ;
-                  rdfs:label "critically failed check"@en ,
-                             "критический провал проверки"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#checkSuccess
-:checkSuccess rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf :effect ;
-              rdfs:domain :Check ;
-              rdfs:label "success check"@en ,
-                         "успех проверки"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#checkSuccessCrit
-:checkSuccessCrit rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf :effect ;
-                  rdfs:domain :Check ;
-                  rdfs:label "critically success check"@en ,
-                             "критический успех проверки"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#checkThreshold
-:checkThreshold rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf :input ;
-                rdfs:domain :Check ;
-                rdfs:label "Threshold of check"@en ,
-                           "Числовая граница для проверки"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#checkTie
-:checkTie rdf:type owl:ObjectProperty ;
-          rdfs:subPropertyOf :effect ;
-          rdfs:domain :Check ;
-          rdfs:label "Tied check result"@en ,
-                     "Проверка вничью"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#effect
-:effect rdf:type owl:ObjectProperty ;
-        rdfs:range :Act ;
-        rdfs:label "effect"@en .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#effectOption
-:effectOption rdf:type owl:ObjectProperty ;
-              rdfs:range :Act ;
-              rdfs:comment "xor condition by default" ;
-              rdfs:label "selected effect"@en .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#included
-:included rdf:type owl:ObjectProperty ;
-          rdfs:label "included"@en ,
-                     "включал"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#input
-:input rdf:type owl:ObjectProperty ;
-       rdfs:label "input"@en .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#inputOption
-:inputOption rdf:type owl:ObjectProperty ;
-             rdfs:comment "xor condition by default" ;
-             rdfs:label "for selection"@en ,
-                        "на выбор"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#modified
-:modified rdf:type owl:ObjectProperty ;
-          rdfs:subPropertyOf :actionWith ;
-          rdfs:label "modified"@en ,
-                     "изменил"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#motive
-:motive rdf:type owl:ObjectProperty ;
-        rdfs:domain :Narrative ;
-        rdfs:range :Narrative ;
-        rdfs:label "Motive"@en ,
-                   "Мотив"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#operated
-:operated rdf:type owl:ObjectProperty ;
-          rdfs:subPropertyOf :actionWith ;
-          rdfs:label "operated"@en ,
-                     "управлял"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#prerequisite
-:prerequisite rdf:type owl:ObjectProperty ;
-              rdfs:comment "AND condition by default" ;
-              rdfs:label "prerequisite"@en ,
-                         "критерий"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#resource
-:resource rdf:type owl:ObjectProperty ;
-          rdfs:label "resource"@en ,
-                     "ресурс"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#set
-:set rdf:type owl:ObjectProperty ;
-     rdfs:subPropertyOf :actionWith ;
-     rdfs:comment "By default set maximum value of parameter."@en ,
-                  "По умолчанию устанавливает максимальное значение параметра."@ru ;
-     rdfs:label "Set value"@en ,
-                "Установить значение"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#setAdditive
-:setAdditive rdf:type owl:ObjectProperty ;
-             rdfs:subPropertyOf :actionWith ;
-             rdfs:comment "By default add to current value of parameter."@en ,
-                          "По умолчанию прибавляет к текущему значению параметра."@ru ;
-             rdfs:label "Additive correction"@en ,
-                        "Аддитивная корректировка"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#setAdditiveMax
-:setAdditiveMax rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf :setAdditive ;
-                rdfs:range :ParameterDynamic ;
-                rdfs:label "Additive correction of maximum value of parameter"@en ,
-                           "Аддитивная корректировка максимального значения параметра"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#setCurrent
-:setCurrent rdf:type owl:ObjectProperty ;
-            rdfs:subPropertyOf :set ;
-            rdfs:label "Set current value"@en ,
-                       "Установить текущее значение"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#valueObject
-:valueObject rdf:type owl:ObjectProperty ;
-             rdfs:label "object of action"@en ,
-                        "объект действия"@ru .
-
-
-#################################################################
-#    Data properties
-#################################################################
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#coreWords
-:coreWords rdf:type owl:DatatypeProperty ;
-           rdfs:domain :Narrative ;
-           rdfs:range xsd:string ;
-           rdfs:label "core words"@en ,
-                      "слова-генераторы"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#cost
-:cost rdf:type owl:DatatypeProperty ;
-      rdfs:range xsd:string ;
-      rdfs:label "cost"@en ,
-                 "стоимость"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#distance
-:distance rdf:type owl:DatatypeProperty ;
-          rdfs:range xsd:string ;
-          rdfs:label "distance"@en ,
-                     "дальность"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#duration
-:duration rdf:type owl:DatatypeProperty ;
-          rdfs:domain :Act ;
-          rdfs:range xsd:string ;
-          rdfs:label "duration"@en ,
-                     "длительность"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#methodDescription
-:methodDescription rdf:type owl:DatatypeProperty ;
-                   rdfs:range xsd:string ;
-                   rdfs:label "description of method"@en ,
-                              "описание алгоритма"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#prerequisiteDescription
-:prerequisiteDescription rdf:type owl:DatatypeProperty ;
-                         rdfs:range xsd:string ;
-                         rdfs:label "prerequisite"@en ,
-                                    "критерий"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#target
-:target rdf:type owl:DatatypeProperty ;
-        rdfs:range xsd:string ;
-        rdfs:label "target"@en ,
-                   "цель"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#valueFormula
-:valueFormula rdf:type owl:DatatypeProperty ;
-              rdfs:range xsd:string ;
-              rdfs:label "value by formula"@en ,
-                         "значение по формуле"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#valueNumeric
-:valueNumeric rdf:type owl:DatatypeProperty ;
-              rdfs:range xsd:integer ;
-              rdfs:label "numeric value"@en ,
-                         "числовое значение"@ru .
-
-
-#################################################################
-#    Classes
-#################################################################
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#Act
-:Act rdf:type owl:Class ;
-     rdfs:label "Act"@en ,
-                "Акт"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#Actor
-:Actor rdf:type owl:Class .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#BasicMotive
-:BasicMotive rdf:type owl:Class ;
-             rdfs:subClassOf :Narrative ;
-             rdfs:label "Basic motive"@en ,
-                        "Базовый мотив"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#Check
-:Check rdf:type owl:Class ;
-       rdfs:subClassOf :Act ;
-       rdfs:label "Check"@en ,
-                  "Проверка"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#Community
-:Community rdf:type owl:Class ;
-           rdfs:subClassOf :Actor ;
-           rdfs:label "Community"@en ,
-                      "Общество"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#Creature
-:Creature rdf:type owl:Class ;
-          rdfs:subClassOf :Actor .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#Event
-:Event rdf:type owl:Class ;
-       rdfs:subClassOf :Act ,
-                       :Narrative ;
-       rdfs:label "Event"@en ,
-                  "Событие"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#Location
-:Location rdf:type owl:Class ;
-          rdfs:subClassOf :Narrative .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#Narrative
-:Narrative rdf:type owl:Class ;
-           rdfs:label "Narrative"@en ,
-                      "Нарратив"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#Parameter
-:Parameter rdf:type owl:Class ;
-           rdfs:label "Parameter"@en ,
-                      "Параметр"@ru .
-
-:ParameterEnemy a owl:Class ;
-                rdfs:subClassOf :Parameter ;
-                rdfs:label "Parameter of enemy"@en ,
-                           "Параметр врага"@ru .
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#ParameterCreature
-:ParameterCreature rdf:type owl:Class ;
-                   rdfs:subClassOf :ParameterPC , :ParameterEnemy ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty [ owl:inverseOf :included
-                                                    ] ;
-                                     owl:hasValue :Creature
-                                   ] ;
-                   rdfs:label "Parameter of creature"@en ,
-                              "Параметр существа"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#ParameterDynamic
-:ParameterDynamic rdf:type owl:Class ;
-                  rdfs:subClassOf :Parameter ;
-                  rdfs:comment "format = (maximum value; current value)"@en ,
-                               "формат = (максимальное значение; текущее значение)"@ru ;
-                  rdfs:label "Dynamic parameter"@en ,
-                             "Динамический параметр"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#ParameterPC
-:ParameterPC rdf:type owl:Class ;
-             rdfs:subClassOf :Parameter ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty [ owl:inverseOf :included
-                                              ] ;
-                               owl:hasValue :pc
-                             ] ;
-             rdfs:label "Parameter of player character"@en ,
-                        "Параметр игрового персонажа"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#Status
-:Status rdf:type owl:Class ;
-        rdfs:subClassOf :Act ;
-        rdfs:label "Status"@en ,
-                   "Состояние"@ru .
-
-
-#################################################################
-#    Individuals
-#################################################################
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#Creature
-:Creature rdf:type owl:NamedIndividual .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#death
-:death rdf:type :Status ;
-       rdfs:label "Death"@en ,
-                  "Смерть"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#destruction
-:destruction rdf:type owl:NamedIndividual ,
-                      :BasicMotive ;
-             rdfs:label "Destruction"@en ,
-                        "Разрушение" .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#game
-:game rdf:type owl:NamedIndividual ;
-      :Actor :party ;
-      :included :game_epilogue ,
-                :game_play ,
-                :game_preparation ;
-      rdfs:label "Game"@en ,
-                 "Игра"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#game_epilogue
-:game_epilogue rdf:type owl:NamedIndividual ;
-               :after :game_play ;
-               rdfs:label "Epilogue"@en ,
-                          "Эпилог"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#game_play
-:game_play rdf:type owl:NamedIndividual ;
-           :after :game_preparation ;
-           rdfs:label "Playing the Game"@en ,
-                      "Непосредственно игра"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#game_preparation
-:game_preparation rdf:type owl:NamedIndividual ;
-                  rdfs:label "Preparing for the game"@en ,
-                             "Подготовка к игре"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#loyalty
-:loyalty rdf:type owl:NamedIndividual ,
-                  :BasicMotive ;
-         rdfs:label "Loyalty"@en ,
-                    "Преданность"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#madness
-:madness rdf:type owl:NamedIndividual ,
-                  :BasicMotive ;
-         rdfs:label "Madness"@en ,
-                    "Безумие"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#master
-:master rdf:type owl:NamedIndividual .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#new_blood
-:new_blood rdf:type owl:NamedIndividual ,
-                    :BasicMotive ;
-           rdfs:label "New blood"@en ,
-                      "Новая кровь"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#party
-:party rdf:type owl:NamedIndividual ;
-       :included :master ,
-                 :player ;
-       rdfs:label "Party" .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#pc
-:pc rdf:type owl:NamedIndividual ,
-             :Creature ;
-    rdfs:label "Player character"@en ,
-               "Персонаж игрока"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#player
-:player rdf:type owl:NamedIndividual ;
-        rdfs:label "Player"@en ,
-                   "Игрок"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#position
-:position rdf:type owl:NamedIndividual ;
-          rdfs:label "Position"@en ,
-                     "Положение в пространстве"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#preserving_traditions
-:preserving_traditions rdf:type owl:NamedIndividual ,
-                                :BasicMotive ;
-                       rdfs:label "Preserving traditions"@en ,
-                                  "Сохранение традиций"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#profit
-:profit rdf:type owl:NamedIndividual ,
-                 :BasicMotive ;
-        rdfs:label "Profit"@en ,
-                   "Нажива"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#protection
-:protection rdf:type owl:NamedIndividual ,
-                     :BasicMotive ;
-            rdfs:label "Protection"@en ,
-                       "Защита"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#purification
-:purification rdf:type owl:NamedIndividual ,
-                       :BasicMotive ;
-              rdfs:label "Purification"@en ,
-                         "Очищение"@ru .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#rebellion
-:rebellion rdf:type owl:NamedIndividual ,
-                    :BasicMotive ;
-           rdfs:label "Rebellion"@en ,
-                      "Мятежность"@ru .
-
-
-#################################################################
-#    Annotations
-#################################################################
-
-:Actor rdfs:label "Actor"@en ,
-                  "Актор"@ru .
-
-
-:Creature rdfs:label "Creature"@en ,
-                     "Существо"@ru .
-
-
-:Location rdfs:label "Location"@en ,
-                     "Локация"@ru .
-
-
-###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi
-:damage a owl:DatatypeProperty ;
-        rdfs:label "damage"@en , "урон"@ru ;
-        rdfs:range xsd:string .
-
-:defense a owl:DatatypeProperty ;
-    rdfs:label "defense"@en , "защита"@ru ;
-    rdfs:range xsd:string .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#Actor
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#Location
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#actionWith
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#after
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#basedOn
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#blocked
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#checkFailure
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#checkFailureCrit
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#checkSuccess
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#checkSuccessCrit
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#checkThreshold
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#checkTie
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#effect
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#effectOption
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#included
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#input
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#inputOption
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#modified
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#motive
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#operated
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#prerequisite
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#resource
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#set
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#setAdditive
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#setAdditiveMax
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#setCurrent
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#valueObject
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#coreWords
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#cost
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#damage
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#defense
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#distance
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#duration
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#methodDescription
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#prerequisiteDescription
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#target
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#valueFormula
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#valueNumeric
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#Act
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#Actor
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#BasicMotive
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#Check
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#Community
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#Creature
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#Event
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#Location
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#Narrative
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#Parameter
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#ParameterCreature
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#ParameterDynamic
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#ParameterEnemy
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#ParameterPC
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#Status
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#Creature
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#death
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#destruction
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#game
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#game_epilogue
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#game_play
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#game_preparation
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#loyalty
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#madness
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#master
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#new_blood
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#party
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#pc
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#player
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#position
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#preserving_traditions
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#profit
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#protection
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#purification
+# 
+# https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#rebellion
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Annotations
+# #
+# #################################################################
+# 
+# 
+# 
+# 
+# 
+# Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
+
+<#> a owl:Ontology .
+
+:Actor a owl:ObjectProperty, owl:Class;
+  rdfs:domain :Act;
+  rdfs:range :Actor;
+  rdfs:label "Actor"@en, "Актор"@ru .
+
+:Location a owl:ObjectProperty, owl:Class;
+  rdfs:range :Location;
+  rdfs:subClassOf :Narrative;
+  rdfs:label "Location"@en, "Локация"@ru .
+
+:actionWith a owl:ObjectProperty;
+  rdfs:domain :Act;
+  rdfs:label "action with"@en, "действие с"@ru .
+
+:after a owl:ObjectProperty;
+  rdfs:domain :Act;
+  rdfs:range :Act;
+  rdfs:label "after"@en, "после"@ru .
+
+:basedOn a owl:ObjectProperty, owl:TransitiveProperty;
+  rdfs:label "based on"@en, "основан на"@ru .
+
+:blocked a owl:ObjectProperty;
+  rdfs:subPropertyOf :actionWith;
+  rdfs:label "blocked"@en .
+
+:checkFailure a owl:ObjectProperty;
+  rdfs:subPropertyOf :effect;
+  rdfs:domain :Check;
+  rdfs:label "failed check"@en, "провал проверки"@ru .
+
+:checkFailureCrit a owl:ObjectProperty;
+  rdfs:subPropertyOf :effect;
+  rdfs:domain :Check;
+  rdfs:label "critically failed check"@en, "критический провал проверки"@ru .
+
+:checkSuccess a owl:ObjectProperty;
+  rdfs:subPropertyOf :effect;
+  rdfs:domain :Check;
+  rdfs:label "success check"@en, "успех проверки"@ru .
+
+:checkSuccessCrit a owl:ObjectProperty;
+  rdfs:subPropertyOf :effect;
+  rdfs:domain :Check;
+  rdfs:label "critically success check"@en, "критический успех проверки"@ru .
+
+:checkThreshold a owl:ObjectProperty;
+  rdfs:subPropertyOf :input;
+  rdfs:domain :Check;
+  rdfs:label "Threshold of check"@en, "Числовая граница для проверки"@ru .
+
+:checkTie a owl:ObjectProperty;
+  rdfs:subPropertyOf :effect;
+  rdfs:domain :Check;
+  rdfs:label "Tied check result"@en, "Проверка вничью"@ru .
+
+:effect a owl:ObjectProperty;
+  rdfs:range :Act;
+  rdfs:label "effect"@en .
+
+:effectOption a owl:ObjectProperty;
+  rdfs:range :Act;
+  rdfs:comment "xor condition by default";
+  rdfs:label "selected effect"@en .
+
+:included a owl:ObjectProperty;
+  rdfs:label "included"@en, "включал"@ru .
+
+:input a owl:ObjectProperty;
+  rdfs:label "input"@en .
+
+:inputOption a owl:ObjectProperty;
+  rdfs:comment "xor condition by default";
+  rdfs:label "for selection"@en, "на выбор"@ru .
+
+:modified a owl:ObjectProperty;
+  rdfs:subPropertyOf :actionWith;
+  rdfs:label "modified"@en, "изменил"@ru .
+
+:motive a owl:ObjectProperty;
+  rdfs:domain :Narrative;
+  rdfs:range :Narrative;
+  rdfs:label "Motive"@en, "Мотив"@ru .
+
+:operated a owl:ObjectProperty;
+  rdfs:subPropertyOf :actionWith;
+  rdfs:label "operated"@en, "управлял"@ru .
+
+:prerequisite a owl:ObjectProperty;
+  rdfs:comment "AND condition by default";
+  rdfs:label "prerequisite"@en, "критерий"@ru .
+
+:resource a owl:ObjectProperty;
+  rdfs:label "resource"@en, "ресурс"@ru .
+
+:set a owl:ObjectProperty;
+  rdfs:subPropertyOf :actionWith;
+  rdfs:comment "By default set maximum value of parameter."@en, "По умолчанию устанавливает максимальное значение параметра."@ru;
+  rdfs:label "Set value"@en, "Установить значение"@ru .
+
+:setAdditive a owl:ObjectProperty;
+  rdfs:subPropertyOf :actionWith;
+  rdfs:comment "By default add to current value of parameter."@en, "По умолчанию прибавляет к текущему значению параметра."@ru;
+  rdfs:label "Additive correction"@en, "Аддитивная корректировка"@ru .
+
+:setAdditiveMax a owl:ObjectProperty;
+  rdfs:subPropertyOf :setAdditive;
+  rdfs:range :ParameterDynamic;
+  rdfs:label "Additive correction of maximum value of parameter"@en, "Аддитивная корректировка максимального значения параметра"@ru .
+
+:setCurrent a owl:ObjectProperty;
+  rdfs:subPropertyOf :set;
+  rdfs:label "Set current value"@en, "Установить текущее значение"@ru .
+
+:valueObject a owl:ObjectProperty;
+  rdfs:label "object of action"@en, "объект действия"@ru .
+
+:coreWords a owl:DatatypeProperty;
+  rdfs:domain :Narrative;
+  rdfs:range xsd:string;
+  rdfs:label "core words"@en, "слова-генераторы"@ru .
+
+:cost a owl:DatatypeProperty;
+  rdfs:range xsd:string;
+  rdfs:label "cost"@en, "стоимость"@ru .
+
+:damage a owl:DatatypeProperty;
+  rdfs:range xsd:string;
+  rdfs:label "damage"@en, "урон"@ru .
+
+:defense a owl:DatatypeProperty;
+  rdfs:range xsd:string;
+  rdfs:label "defense"@en, "защита"@ru .
+
+:distance a owl:DatatypeProperty;
+  rdfs:range xsd:string;
+  rdfs:label "distance"@en, "дальность"@ru .
+
+:duration a owl:DatatypeProperty;
+  rdfs:domain :Act;
+  rdfs:range xsd:string;
+  rdfs:label "duration"@en, "длительность"@ru .
+
+:methodDescription a owl:DatatypeProperty;
+  rdfs:range xsd:string;
+  rdfs:label "description of method"@en, "описание алгоритма"@ru .
+
+:prerequisiteDescription a owl:DatatypeProperty;
+  rdfs:range xsd:string;
+  rdfs:label "prerequisite"@en, "критерий"@ru .
+
+:target a owl:DatatypeProperty;
+  rdfs:range xsd:string;
+  rdfs:label "target"@en, "цель"@ru .
+
+:valueFormula a owl:DatatypeProperty;
+  rdfs:range xsd:string;
+  rdfs:label "value by formula"@en, "значение по формуле"@ru .
+
+:valueNumeric a owl:DatatypeProperty;
+  rdfs:range xsd:integer;
+  rdfs:label "numeric value"@en, "числовое значение"@ru .
+
+:Act a owl:Class;
+  rdfs:label "Act"@en, "Акт"@ru .
+
+:BasicMotive a owl:Class;
+  rdfs:subClassOf :Narrative;
+  rdfs:label "Basic motive"@en, "Базовый мотив"@ru .
+
+:Check a owl:Class;
+  rdfs:subClassOf :Act;
+  rdfs:label "Check"@en, "Проверка"@ru .
+
+:Community a owl:Class;
+  rdfs:subClassOf :Actor;
+  rdfs:label "Community"@en, "Общество"@ru .
+
+:Creature a owl:Class, owl:NamedIndividual;
+  rdfs:subClassOf :Actor;
+  rdfs:label "Creature"@en, "Существо"@ru .
+
+:Event a owl:Class;
+  rdfs:subClassOf :Act, :Narrative;
+  rdfs:label "Event"@en, "Событие"@ru .
+
+:Narrative a owl:Class;
+  rdfs:label "Narrative"@en, "Нарратив"@ru .
+
+:Parameter a owl:Class;
+  rdfs:label "Parameter"@en, "Параметр"@ru .
+
+:ParameterCreature a owl:Class;
+  rdfs:subClassOf :ParameterEnemy, :ParameterPC, _:genid1;
+  rdfs:label "Parameter of creature"@en, "Параметр существа"@ru .
+
+_:genid1 a owl:Restriction;
+  owl:hasValue :Creature;
+  owl:onProperty _:genid2 .
+
+_:genid2 owl:inverseOf :included .
+
+:ParameterDynamic a owl:Class;
+  rdfs:subClassOf :Parameter;
+  rdfs:comment "format = (maximum value; current value)"@en, "формат = (максимальное значение; текущее значение)"@ru;
+  rdfs:label "Dynamic parameter"@en, "Динамический параметр"@ru .
+
+:ParameterEnemy a owl:Class;
+  rdfs:subClassOf :Parameter;
+  rdfs:label "Parameter of enemy"@en, "Параметр врага"@ru .
+
+:ParameterPC a owl:Class;
+  rdfs:subClassOf :Parameter, _:genid3;
+  rdfs:label "Parameter of player character"@en, "Параметр игрового персонажа"@ru .
+
+_:genid3 a owl:Restriction;
+  owl:hasValue :pc;
+  owl:onProperty _:genid4 .
+
+_:genid4 owl:inverseOf :included .
+
+:Status a owl:Class;
+  rdfs:subClassOf :Act;
+  rdfs:label "Status"@en, "Состояние"@ru .
+
+:death a owl:NamedIndividual, :Status;
+  rdfs:label "Death"@en, "Смерть"@ru .
+
+:destruction a owl:NamedIndividual, :BasicMotive;
+  rdfs:label "Destruction"@en, "Разрушение" .
+
+:game a owl:NamedIndividual;
+  :Actor :party;
+  :included :game_epilogue, :game_play, :game_preparation;
+  rdfs:label "Game"@en, "Игра"@ru .
+
+:game_epilogue a owl:NamedIndividual;
+  :after :game_play;
+  rdfs:label "Epilogue"@en, "Эпилог"@ru .
+
+:game_play a owl:NamedIndividual;
+  :after :game_preparation;
+  rdfs:label "Playing the Game"@en, "Непосредственно игра"@ru .
+
+:game_preparation a owl:NamedIndividual;
+  rdfs:label "Preparing for the game"@en, "Подготовка к игре"@ru .
+
+:loyalty a owl:NamedIndividual, :BasicMotive;
+  rdfs:label "Loyalty"@en, "Преданность"@ru .
+
+:madness a owl:NamedIndividual, :BasicMotive;
+  rdfs:label "Madness"@en, "Безумие"@ru .
+
+:master a owl:NamedIndividual .
+
+:new_blood a owl:NamedIndividual, :BasicMotive;
+  rdfs:label "New blood"@en, "Новая кровь"@ru .
+
+:party a owl:NamedIndividual;
+  :included :master, :player;
+  rdfs:label "Party" .
+
+:pc a owl:NamedIndividual, :Creature;
+  rdfs:label "Player character"@en, "Персонаж игрока"@ru .
+
+:player a owl:NamedIndividual;
+  rdfs:label "Player"@en, "Игрок"@ru .
+
+:position a owl:NamedIndividual;
+  rdfs:label "Position"@en, "Положение в пространстве"@ru .
+
+:preserving_traditions a owl:NamedIndividual, :BasicMotive;
+  rdfs:label "Preserving traditions"@en, "Сохранение традиций"@ru .
+
+:profit a owl:NamedIndividual, :BasicMotive;
+  rdfs:label "Profit"@en, "Нажива"@ru .
+
+:protection a owl:NamedIndividual, :BasicMotive;
+  rdfs:label "Protection"@en, "Защита"@ru .
+
+:purification a owl:NamedIndividual, :BasicMotive;
+  rdfs:label "Purification"@en, "Очищение"@ru .
+
+:rebellion a owl:NamedIndividual, :BasicMotive;
+  rdfs:label "Rebellion"@en, "Мятежность"@ru .
