@@ -1,12 +1,12 @@
-@prefix : <https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#> .
+@prefix : <https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral_prov.ttl#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#> .
+@base <https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral_prov.ttl#> .
 
-<https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#> rdf:type owl:Ontology .
+<https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral_prov.ttl#> rdf:type owl:Ontology .
 
 #################################################################
 #    Annotation properties
@@ -310,7 +310,14 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
                                       rdfs:label "wasUsedBy" .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#hadSubactivity
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral_prov.ttl#costEquivalent
+:costEquivalent rdf:type owl:ObjectProperty ;
+                rdfs:domain <http://www.w3.org/ns/prov#Entity> ;
+                rdfs:range <http://www.w3.org/ns/prov#Entity> ;
+                rdfs:label "Equivalent for exchange"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral_prov.ttl#hadSubactivity
 :hadSubactivity rdf:type owl:ObjectProperty ;
                 owl:inverseOf :wasSubactivityOf ;
                 rdfs:domain <http://www.w3.org/ns/prov#Activity> ;
@@ -318,7 +325,7 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
                 rdfs:label "had subactivity"@en .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#modification
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral_prov.ttl#modification
 :modification rdf:type owl:ObjectProperty ;
               owl:inverseOf :wasModified ;
               rdfs:domain <http://www.w3.org/ns/prov#Generation> ;
@@ -326,14 +333,53 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
               rdfs:label "modification"@en .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#wasModified
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral_prov.ttl#wasModified
 :wasModified rdf:type owl:ObjectProperty ;
              rdfs:label "was modified"@en .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#wasSubactivityOf
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral_prov.ttl#wasSubactivityOf
 :wasSubactivityOf rdf:type owl:ObjectProperty ;
                   rdfs:label "was subactivity of"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral_prov.ttl#cost
+:cost rdf:type owl:DatatypeProperty ;
+      rdfs:domain <http://www.w3.org/ns/prov#Entity> ;
+      rdfs:range xsd:decimal ;
+      rdfs:label "The cost of an item in equivalents"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral_prov.ttl#damage
+:damage rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Weapon ;
+        rdfs:range xsd:string ;
+        rdfs:label "damage of weapon"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral_prov.ttl#damageNatural
+:damageNatural rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Character ;
+               rdfs:range xsd:string ;
+               rdfs:label "natural damage of character"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral_prov.ttl#defense
+:defense rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Armor ;
+         rdfs:range xsd:integer ;
+         rdfs:label "defense of armor"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral_prov.ttl#defenseNatural
+:defenseNatural rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Character ;
+                rdfs:range xsd:integer ;
+                rdfs:label "natural defense of character"@en .
 
 
 #################################################################
@@ -455,14 +501,20 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
                                   <http://www.w3.org/ns/prov#definition> "Usage is the beginning of utilizing an entity by an activity. Before usage, the activity had not begun to utilize this entity and could not have been affected by the entity."@en .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#Character
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral_prov.ttl#Armor
+:Armor rdf:type owl:Class ;
+       rdfs:subClassOf :Item ;
+       rdfs:label "Armor"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral_prov.ttl#Character
 :Character rdf:type owl:Class ;
            rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
            rdfs:label "Character"@en ;
            <http://www.w3.org/ns/prov#definition> "A character in TRPG is a fictional persona controlled by a player or the Game Master. Characters serve as key participants in the story, with defined traits, abilities, and motivations that influence their actions and interactions within the game world."@en .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#CharacterParameter
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral_prov.ttl#CharacterParameter
 :CharacterParameter rdf:type owl:Class ;
                     rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ,
                                     [ rdf:type owl:Restriction ;
@@ -473,7 +525,7 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
                     <http://www.w3.org/ns/prov#definition> "A character parameter is a measurable attribute or statistic that defines a character’s abilities, traits, or resources. It influences gameplay by determining how well a character performs specific actions or reacts to situations, such as Strength, Dexterity, Hit Points, or Magic Points."@en .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#CharacterSpecialization
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral_prov.ttl#CharacterSpecialization
 :CharacterSpecialization rdf:type owl:Class ;
                          rdfs:subClassOf :Character ,
                                          [ rdf:type owl:Restriction ;
@@ -484,11 +536,23 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
                          <http://www.w3.org/ns/prov#definition> "A version of the character at a specific point in time."@en .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral_prov.ttl#Item
+:Item rdf:type owl:Class ;
+      rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
+      rdfs:label "Item" .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral_prov.ttl#Weapon
+:Weapon rdf:type owl:Class ;
+        rdfs:subClassOf :Item ;
+        rdfs:label "Weapon"@en .
+
+
 #################################################################
 #    Individuals
 #################################################################
 
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#association_master
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral_prov.ttl#association_master
 :association_master rdf:type owl:NamedIndividual ,
                              <http://www.w3.org/ns/prov#Association> ;
                     <http://www.w3.org/ns/prov#agent> :person ;
@@ -497,7 +561,7 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
                     rdfs:label "Qualified association with master role."@en .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#association_player
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral_prov.ttl#association_player
 :association_player rdf:type owl:NamedIndividual ,
                              <http://www.w3.org/ns/prov#Association> ;
                     <http://www.w3.org/ns/prov#agent> :person ;
@@ -506,21 +570,21 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
                     rdfs:label "Qualified association with player role."@en .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#base_for_modification
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral_prov.ttl#base_for_modification
 :base_for_modification rdf:type owl:NamedIndividual ,
                                 <http://www.w3.org/ns/prov#Role> ;
                        rdfs:label "Base for modification"@en ;
                        <http://www.w3.org/ns/prov#definition> "The entity is used as a basis for further modification."@en .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#character
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral_prov.ttl#character
 :character rdf:type owl:NamedIndividual ,
                     :Character ;
            rdfs:label "Character (abstract)"@en ;
            <http://www.w3.org/ns/prov#definition> "A character in TRPG is a fictional persona, either controlled by a player (PC) or the Game Master (NPC), with defined traits, abilities, and a role within the game’s narrative and mechanics."@en .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#game
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral_prov.ttl#game
 :game rdf:type owl:NamedIndividual ,
                <http://www.w3.org/ns/prov#Activity> ;
       <http://www.w3.org/ns/prov#qualifiedAssociation> :association_master ,
@@ -533,7 +597,7 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
       <http://www.w3.org/ns/prov#definition> "The process of playing a game that creates a single complete story."@en .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#game_epilogue
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral_prov.ttl#game_epilogue
 :game_epilogue rdf:type owl:NamedIndividual ,
                         <http://www.w3.org/ns/prov#Activity> ;
                <http://www.w3.org/ns/prov#qualifiedAssociation> :association_master ,
@@ -544,7 +608,7 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
                <http://www.w3.org/ns/prov#definition> "Epilogue is the concluding segment of a tabletop role-playing game (TRPG) campaign or session. It provides closure by revealing the outcomes of the players’ actions, the fate of their characters, and the resolution of the story’s major plotlines. The epilogue often highlights long-term consequences and offers a reflective narrative to wrap up the adventure."@en .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#game_preparation
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral_prov.ttl#game_preparation
 :game_preparation rdf:type owl:NamedIndividual ,
                            <http://www.w3.org/ns/prov#Activity> ;
                   <http://www.w3.org/ns/prov#qualifiedAssociation> :association_master ,
@@ -554,7 +618,7 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
                   <http://www.w3.org/ns/prov#definition> "Preparation for the game involves creating characters, the world, and the backstory." .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#game_sessions
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral_prov.ttl#game_sessions
 :game_sessions rdf:type owl:NamedIndividual ,
                         <http://www.w3.org/ns/prov#Activity> ;
                <http://www.w3.org/ns/prov#qualifiedAssociation> :association_master ,
@@ -565,42 +629,42 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
                <http://www.w3.org/ns/prov#definition> "Sessions of TRPG refer to individual gameplay meetings in a tabletop role-playing game (TRPG), where players and the Game Master gather to progress the story. Each session typically lasts a few hours and may focus on role-playing, combat, exploration, or advancing the overarching narrative. Sessions are interconnected and contribute to the development of a larger campaign or storyline."@en .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#master
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral_prov.ttl#master
 :master rdf:type owl:NamedIndividual ,
                  <http://www.w3.org/ns/prov#Role> ;
         rdfs:label "Game Master"@en ;
         <http://www.w3.org/ns/prov#definition> "A Game Master (GM) is the facilitator and storyteller in a tabletop role-playing game (TRPG). They control the game’s narrative, manage non-player characters (NPCs), describe the environment, and adjudicate rules to guide players through the adventure."@en .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#options
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral_prov.ttl#options
 :options rdf:type owl:NamedIndividual ,
                   <http://www.w3.org/ns/prov#Role> ;
          rdfs:label "Options for selection"@en ;
          <http://www.w3.org/ns/prov#definition> "List of entities is used as options for selection by agent."@en .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#pc
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral_prov.ttl#pc
 :pc rdf:type owl:NamedIndividual ,
              <http://www.w3.org/ns/prov#Role> ;
     rdfs:label "Player character (PC)"@en ;
     <http://www.w3.org/ns/prov#definition> "Player Character (PC) refers to a character directly controlled by a player."@en .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#person
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral_prov.ttl#person
 :person rdf:type owl:NamedIndividual ,
                  <http://www.w3.org/ns/prov#Person> ;
         rdfs:label "Person (abstract)"@en ;
         <http://www.w3.org/ns/prov#definition> "A participant in a tabletop role-playing game."@en .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#player
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral_prov.ttl#player
 :player rdf:type owl:NamedIndividual ,
                  <http://www.w3.org/ns/prov#Role> ;
         rdfs:label "Player"@en ;
         <http://www.w3.org/ns/prov#definition> "A player creates and controls a character within the game. Players interact with the story, make decisions, and collaborate with other players and the Game Master to progress through the adventure."@en .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#players
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral_prov.ttl#players
 :players rdf:type owl:NamedIndividual ,
                   <http://www.w3.org/ns/prov#Agent> ,
                   <http://www.w3.org/ns/prov#Collection> ;
@@ -609,7 +673,7 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
          <http://www.w3.org/ns/prov#definition> "A group of people taking part in a game."@en .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral.ttl#story
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral_prov.ttl#story
 :story rdf:type owl:NamedIndividual ,
                 <http://www.w3.org/ns/prov#Entity> ;
        <http://www.w3.org/ns/prov#wasGeneratedBy> :game ,
