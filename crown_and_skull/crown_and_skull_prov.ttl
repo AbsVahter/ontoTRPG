@@ -85,6 +85,17 @@
            rdfs:label "Companion"@en .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#CompanionLimitation
+:CompanionLimitation rdf:type owl:Class ;
+                     rdfs:subClassOf :Customization ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty prov:wasMemberOf ;
+                                       owl:hasValue :list_of_limitation_examples
+                                     ] ;
+                     rdfs:comment "A limitation option that can be applied to a companion during customization."@en ;
+                     rdfs:label "Companion limitation"@en .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#CompanionSpecialization
 :CompanionSpecialization rdf:type owl:Class ;
                          rdfs:subClassOf :Companion ,
@@ -94,6 +105,17 @@
                                          ] ;
                          rdfs:label "Specialization of the companion (abstract)"@en ;
                          prov:definition "A version of the companion at a specific point in time."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#CompanionUpgrade
+:CompanionUpgrade rdf:type owl:Class ;
+                  rdfs:subClassOf :Customization ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty prov:wasMemberOf ;
+                                    owl:hasValue :list_of_upgrade_examples
+                                  ] ;
+                  rdfs:comment "An upgrade option that can be applied to a companion during customization."@en ;
+                  rdfs:label "Companion upgrade"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#CoreAbility
@@ -119,6 +141,20 @@
                                            owl:hasValue gen:association_player
                                          ] ;
                          rdfs:label "Subactivity of custom character creation"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#CustomCompanionCreation
+:CustomCompanionCreation rdf:type owl:Class ;
+                         owl:equivalentClass [ rdf:type owl:Restriction ;
+                                               owl:onProperty gen:wasSubactivityOf ;
+                                               owl:hasValue :custom_companion_creation
+                                             ] ;
+                         rdfs:subClassOf prov:Activity ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty prov:qualifiedAssociation ;
+                                           owl:hasValue gen:association_player
+                                         ] ;
+                         rdfs:label "Subactivity of custom companion creation"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#CustomItemCreation
@@ -152,8 +188,8 @@
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#Customization
 :Customization rdf:type owl:Class ;
                rdfs:subClassOf prov:Entity ;
-               rdfs:comment "Adds additional property to entity (effect or limitation)."@en ;
-               rdfs:label "Customization"@en .
+               rdfs:label "Customization"@en ;
+               prov:definition "Adds additional property to entity (effect or limitation)."@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#Flaw
@@ -202,6 +238,17 @@
                                     ] ;
                     rdfs:label "Specialization of the item (abstract)"@en ;
                     prov:definition "A version of the item at a specific point in time."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#Lineage
+:Lineage rdf:type owl:Class ;
+         rdfs:subClassOf prov:Entity ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty prov:wasMemberOf ;
+                           owl:hasValue :list_of_lineages
+                         ] ;
+         rdfs:label "Lineage"@en ;
+         prov:definition "A cultural or ancestral background for a character, describing their heritage without mechanical impact."@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#Skill
@@ -289,6 +336,19 @@ gen:Item rdf:type owl:Class ;
 #################################################################
 #    Individuals
 #################################################################
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#add_companion_limitation
+:add_companion_limitation rdf:type owl:NamedIndividual ,
+                                   prov:Activity ;
+                          prov:generated :companion_with_limitations ;
+                          prov:qualifiedUsage :usage_companion_with_upgrades ,
+                                              :usage_list_of_limitation_examples ;
+                          prov:wasInformedBy :upgrade_companion ;
+                          gen:wasSubactivityOf :custom_companion_creation ;
+                          rdfs:comment """Every added limitation decreases cost by 3 hero points.
+The final cost can never be less than 1 point."""@en ;
+                          rdfs:label "Add companion limitation"@en .
+
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#add_effects_to_item
 :add_effects_to_item rdf:type owl:NamedIndividual ,
@@ -595,6 +655,15 @@ The final cost of a piece of gear can never be less than 1 point."""@en ;
                                     rdfs:label "Generation of a character with selected hometown"@en .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#character_with_lineage
+:character_with_lineage rdf:type owl:NamedIndividual ,
+                                 gen:CharacterSpecialization ;
+                        prov:qualifiedGeneration :generation_character_with_lineage ;
+                        prov:wasRevisionOf :character_with_companion ;
+                        rdfs:label "Character with lineage (abstract)"@en ;
+                        prov:definition "A version of the character after lineage selection."@en .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#character_with_skills
 :character_with_skills rdf:type owl:NamedIndividual ,
                                 gen:CharacterSpecialization ;
@@ -711,6 +780,14 @@ D6 attacks, 2 skills value 9, 9 Defense."""@en .
                   rdfs:label "List of the companion's skills"@en .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#companion_with_limitations
+:companion_with_limitations rdf:type owl:NamedIndividual ,
+                                     :CompanionSpecialization ;
+                            prov:wasDerivedFrom :companion_with_upgrades ;
+                            rdfs:comment "A version of the companion after adding limitations."@en ;
+                            rdfs:label "Companion with limitations (abstract)"@en .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#companion_with_skills
 :companion_with_skills rdf:type owl:NamedIndividual ,
                                 :CompanionSpecialization ;
@@ -725,6 +802,14 @@ D6 attacks, 2 skills value 9, 9 Defense."""@en .
                                   prov:activity :set_companion_skills ;
                                   gen:modification :skills_of_character ;
                                   rdfs:label "Generation of version of companion with skills"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#companion_with_upgrades
+:companion_with_upgrades rdf:type owl:NamedIndividual ,
+                                  :CompanionSpecialization ;
+                         prov:wasDerivedFrom :companion_with_skills ;
+                         rdfs:comment "A version of the companion after upgrading."@en ;
+                         rdfs:label "Companion with upgrades (abstract)"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#core_abilities_for_selection
@@ -843,6 +928,10 @@ D6 attacks, 2 skills value 9, 9 Defense."""@en .
 :custom_companion_creation rdf:type owl:NamedIndividual ,
                                     prov:Activity ;
                            prov:generated :companion ;
+                           rdfs:comment """Select basic companion and skills, add ugrades and limitations.
+Every upgrade costs 3 hero points.
+Every added limitation decreases cost by 3 hero points.
+The final cost can never be less than 1 point."""@en ;
                            rdfs:label "Creation of custom companion"@en .
 
 
@@ -1607,6 +1696,15 @@ When hit by an enemy, you can ‘cross off’ a piece of armor as your attrition
                   rdfs:label "List of gear limitations"@en .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#generation_character_with_lineage
+:generation_character_with_lineage rdf:type owl:NamedIndividual ,
+                                            prov:Generation ;
+                                   prov:activity :select_character_lineage ;
+                                   gen:modification :lineage_of_character ;
+                                   rdfs:comment "Modification of character's lineage as part of character creation."@en ;
+                                   rdfs:label "Generation of character with lineage"@en .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#hero_points
 :hero_points rdf:type owl:NamedIndividual ,
                       gen:CharacterParameter ;
@@ -1768,6 +1866,27 @@ When hit by an enemy, you can ‘cross off’ a piece of armor as your attrition
                       prov:definition "On a critical fail usage, minimum damage roll, or special GM-noticed circumstances, this equipment just goes to pieces."@en .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#limitation_clumsy
+:limitation_clumsy rdf:type owl:NamedIndividual ,
+                            :CompanionLimitation ;
+                   rdfs:label "Clumsy (Companion limitation)"@en ;
+                   prov:definition "This companion is almost never stealthy, hidden, or silent. The group’s sneaking or stealth efforts are afflicted by a -3 penalty."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#limitation_feral
+:limitation_feral rdf:type owl:NamedIndividual ,
+                           :CompanionLimitation ;
+                  rdfs:label "Feral (Companion limitation)"@en ;
+                  prov:definition "Will not stop attacking until all immediate foes are slain or subdued."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#limitation_frightened
+:limitation_frightened rdf:type owl:NamedIndividual ,
+                                :CompanionLimitation ;
+                       rdfs:label "Frightened (Companion limitation)"@en ;
+                       prov:definition "On a roll of 4 or less, or in special circumstances, this companion will flee, vanishing for 1D4 days."@en .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#limitation_garish
 :limitation_garish rdf:type owl:NamedIndividual ,
                             :GearLimitation ;
@@ -1780,6 +1899,13 @@ When hit by an enemy, you can ‘cross off’ a piece of armor as your attrition
                            :GearLimitation ;
                   rdfs:label "Heavy"@en ;
                   prov:definition "This equipment is bulky, occupying 2 item inventory."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#limitation_impulsive
+:limitation_impulsive rdf:type owl:NamedIndividual ,
+                               :CompanionLimitation ;
+                      rdfs:label "Impulsive (Companion limitation)"@en ;
+                      prov:definition "When battle is joined, this companion rolls its best skill. On a failed roll, it makes its own opening decision, using the hero’s phase."@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#limitation_sought_after
@@ -1796,11 +1922,81 @@ When hit by an enemy, you can ‘cross off’ a piece of armor as your attrition
                    prov:definition "The owner of this gear, or forces of law, will hunt you down."@en .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#limitation_trophy
+:limitation_trophy rdf:type owl:NamedIndividual ,
+                            :CompanionLimitation ;
+                   rdfs:label "Trophy (Companion limitation)"@en ;
+                   prov:definition "This companion is sought after by shadowy folk, collectors, jailers, or those who simply hate it."@en .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#limitation_wonky
 :limitation_wonky rdf:type owl:NamedIndividual ,
                            :GearLimitation ;
                   rdfs:label "Wonky"@en ;
                   prov:definition "This gear has silly or unexpected malfunctions the GM will referee as needed."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#lineage_elven
+:lineage_elven rdf:type owl:NamedIndividual ,
+                        :Lineage ;
+               rdfs:label "Elven (Lineage)"@en ;
+               prov:definition "Elves in The North Holds stay out of wars and witchcraft, cultivating powerful allies with nature and primal forces. They are known as the keepers of knowledge, though internal conflicts persist."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#lineage_frog_kin
+:lineage_frog_kin rdf:type owl:NamedIndividual ,
+                           :Lineage ;
+                  rdfs:label "Frog-Kin (Lineage)"@en ;
+                  prov:definition "Frog-kin live under the rule of Lord Croakokame, a ruthless emperor. Some rebel against his rule, facing exile and assassination, while others remain bound by strict discipline and honor."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#lineage_human
+:lineage_human rdf:type owl:NamedIndividual ,
+                        :Lineage ;
+               rdfs:label "Human (Lineage)"@en ;
+               prov:definition "Humans in The North Holds are known for their ambition, ascension, and ruin. They have a history of kings and golden ages falling to calamity, often seeking unity under a single banner."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#lineage_of_character
+:lineage_of_character rdf:type owl:NamedIndividual ,
+                               gen:CharacterParameter ;
+                      rdfs:label "Lineage of character"@en ;
+                      prov:definition "A non-mechanical descriptor representing the cultural or ancestral background of a character."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#lineage_proudfoot
+:lineage_proudfoot rdf:type owl:NamedIndividual ,
+                            :Lineage ;
+                   rdfs:label "Proudfoot (Lineage)"@en ;
+                   prov:definition "The Proudfoot people are diminutive, peaceful, and inventive, hailing from the deserts near Hakburg. They are frontier-folk, master horsemen, and prize a good meal above all."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#lineage_stout_folk
+:lineage_stout_folk rdf:type owl:NamedIndividual ,
+                             :Lineage ;
+                    rdfs:label "Stout Folk (Lineage)"@en ;
+                    prov:definition "Stout folk, also called dwarves, are hammer-wielding, ale-quaffing warriors with a deep sense of moral duty. They honor their mighty ancestors but must guard against the shadow of greed."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#list_of_limitation_examples
+:list_of_limitation_examples rdf:type owl:NamedIndividual ,
+                                      prov:Collection ;
+                             rdfs:comment "A collection of possible limitations that can be applied to a companion."@en ;
+                             rdfs:label "List of limitation examples"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#list_of_lineages
+:list_of_lineages rdf:type owl:NamedIndividual ,
+                           prov:Collection ;
+                  rdfs:label "List of lineages"@en ;
+                  prov:definition "A collection of possible lineages that can be chosen for a character."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#list_of_upgrade_examples
+:list_of_upgrade_examples rdf:type owl:NamedIndividual ,
+                                   prov:Collection ;
+                          rdfs:comment "A collection of possible upgrades that can be applied to a companion."@en ;
+                          rdfs:label "List of upgrade examples"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#rivergate
@@ -1809,6 +2005,18 @@ When hit by an enemy, you can ‘cross off’ a piece of armor as your attrition
            rdfs:comment "At the geographic center point of The North Holds is the port city of Rivergate. This central location has made the ruling elite here wealthy, trading with the Stormkeeper dwarves and the abundant farms south of the River Thenne. Now that Ruinmoor has gone quiet, though, Rivergate is in crisis. To call this town home, you’ll be working for desperate nobles, escorting merchant barges, or exploring the fallen walls of ancient monasteries. Rivergate is the busy hub of mankind, with all its intrigue and peril."@en ;
            rdfs:label "Rivergate"@en ;
            prov:definition "Bustling Trade City"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#select_character_lineage
+:select_character_lineage rdf:type owl:NamedIndividual ,
+                                   prov:Activity ;
+                          prov:generated :character_with_lineage ;
+                          prov:qualifiedUsage :usage_character_with_companion ,
+                                              :usage_list_of_lineages ;
+                          prov:wasInformedBy :set_companion ;
+                          gen:wasSubactivityOf :custom_character_creation ;
+                          rdfs:comment "Selection of character's lineage as part of character creation. Lineage does not include mechanical aspects, as each population is vast and diverse."@en ;
+                          rdfs:label "Select character lineage"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#set_basic_companion
@@ -2877,6 +3085,100 @@ The players must choose a hometown from three available options, the same for al
 :spells_basic rdf:type owl:NamedIndividual ,
                        prov:Collection ;
               rdfs:label "List of the basic spells"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#upgrade_companion
+:upgrade_companion rdf:type owl:NamedIndividual ,
+                            prov:Activity ;
+                   prov:generated :companion_with_upgrades ;
+                   prov:qualifiedUsage :usage_companion_with_skills ,
+                                       :usage_list_of_upgrade_examples ;
+                   prov:wasInformedBy :set_companion_skills ;
+                   gen:wasSubactivityOf :custom_companion_creation ;
+                   rdfs:comment "Every upgrade costs 3 hero points."@en ;
+                   rdfs:label "Upgrade companion"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#upgrade_cunning
+:upgrade_cunning rdf:type owl:NamedIndividual ,
+                          :CompanionUpgrade ;
+                 rdfs:comment "Upgrade the skill value used by +1."@en ;
+                 rdfs:label "Cunning (Companion upgrade)"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#upgrade_deadly
+:upgrade_deadly rdf:type owl:NamedIndividual ,
+                         :CompanionUpgrade ;
+                rdfs:comment "Upgrade the companion’s damage with an additional die."@en ;
+                rdfs:label "Deadly (Companion upgrade)"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#upgrade_evasive
+:upgrade_evasive rdf:type owl:NamedIndividual ,
+                          :CompanionUpgrade ;
+                 rdfs:comment "This creature gains +3 Defense."@en ;
+                 rdfs:label "Evasive (Companion upgrade)"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#upgrade_precise
+:upgrade_precise rdf:type owl:NamedIndividual ,
+                          :CompanionUpgrade ;
+                 rdfs:comment "Your companion ignores most penalties in combat."@en ;
+                 rdfs:label "Precise (Companion upgrade)"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#usage_character_with_companion
+:usage_character_with_companion rdf:type owl:NamedIndividual ,
+                                         prov:Usage ;
+                                prov:entity :character_with_companion ;
+                                prov:hadRole gen:base_for_modification ;
+                                rdfs:comment "The character before lineage selection, already having a companion."@en ;
+                                rdfs:label "Usage of character with companion"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#usage_companion_with_skills
+:usage_companion_with_skills rdf:type owl:NamedIndividual ,
+                                      prov:Usage ;
+                             prov:entity :companion_with_skills ;
+                             prov:hadRole gen:base_for_modification ;
+                             rdfs:comment "The base companion before upgrading."@en ;
+                             rdfs:label "Usage of companion with skills"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#usage_companion_with_upgrades
+:usage_companion_with_upgrades rdf:type owl:NamedIndividual ,
+                                        prov:Usage ;
+                               prov:entity :companion_with_upgrades ;
+                               prov:hadRole gen:base_for_modification ;
+                               rdfs:comment "The companion after upgrades, before limitations are added."@en ;
+                               rdfs:label "Usage of companion with upgrades"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#usage_list_of_limitation_examples
+:usage_list_of_limitation_examples rdf:type owl:NamedIndividual ,
+                                            prov:Usage ;
+                                   prov:entity :list_of_limitation_examples ;
+                                   prov:hadRole gen:options ;
+                                   rdfs:comment "Possible limitation options available during the process."@en ;
+                                   rdfs:label "Usage of list of limitation examples"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#usage_list_of_lineages
+:usage_list_of_lineages rdf:type owl:NamedIndividual ,
+                                 prov:Usage ;
+                        prov:entity :list_of_lineages ;
+                        prov:hadRole gen:options ;
+                        rdfs:comment "Possible lineage options available during the process."@en ;
+                        rdfs:label "Usage of list of lineages"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#usage_list_of_upgrade_examples
+:usage_list_of_upgrade_examples rdf:type owl:NamedIndividual ,
+                                         prov:Usage ;
+                                prov:entity :list_of_upgrade_examples ;
+                                prov:hadRole gen:options ;
+                                rdfs:comment "Possible upgrade options available during the process."@en ;
+                                rdfs:label "Usage of list of upgrade examples"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#weapon_barbed_whip
