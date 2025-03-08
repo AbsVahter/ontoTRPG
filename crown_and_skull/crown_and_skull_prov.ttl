@@ -552,6 +552,92 @@ The final cost of a piece of gear can never be less than 1 point."""@en ;
         rdfs:label "List of armor"@en .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#character_after_finding_gear
+:character_after_finding_gear rdf:type owl:NamedIndividual ,
+                                       gen:CharacterSpecialization ;
+                              prov:qualifiedGeneration :generation_character_after_finding_gear ;
+                              prov:wasRevisionOf :character_after_finding_memories ;
+                              rdfs:label "Character after finding gear (abstract)"@en ;
+                              prov:definition "A version of the character after discovering useful items."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#character_after_finding_memories
+:character_after_finding_memories rdf:type owl:NamedIndividual ,
+                                           gen:CharacterSpecialization ;
+                                  prov:qualifiedGeneration :generation_character_after_finding_memories ;
+                                  prov:wasRevisionOf :character_after_i_remember_my_name ;
+                                  rdfs:label "Character after finding memories (abstract)"@en ;
+                                  prov:definition "A version of the character after unlocking multiple personal memories."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#character_after_finding_your_past
+:character_after_finding_your_past rdf:type owl:NamedIndividual ,
+                                            gen:CharacterSpecialization ;
+                                   prov:wasRevisionOf :character_after_finding_gear ;
+                                   rdfs:label "Version of character after finding his or her past (abstract)"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#character_after_i_remember_my_name
+:character_after_i_remember_my_name rdf:type owl:NamedIndividual ,
+                                             gen:CharacterSpecialization ;
+                                    prov:wasRevisionOf :character_after_stuff_lying_around ;
+                                    rdfs:label "Character after remembering name (abstract)"@en ;
+                                    prov:definition "A version of the character after recalling their name and early past."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#character_after_one_little_memory
+:character_after_one_little_memory rdf:type owl:NamedIndividual ,
+                                            gen:CharacterSpecialization ;
+                                   prov:qualifiedGeneration :generation_character_after_one_little_memory ;
+                                   prov:wasRevisionOf :character_after_opener ;
+                                   rdfs:label "Character after one little memory (abstract)"@en ;
+                                   prov:definition "A version of the character after gaining an initial small memory."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#character_after_opener
+:character_after_opener rdf:type owl:NamedIndividual ,
+                                 gen:CharacterSpecialization ;
+                        prov:wasRevisionOf :character_with_hometown ;
+                        rdfs:label "Character after opener (abstract)"@en ;
+                        prov:definition "A version of the character after the initial scenario setup."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#character_after_origin_revealed
+:character_after_origin_revealed rdf:type owl:NamedIndividual ,
+                                          gen:CharacterSpecialization ;
+                                 prov:qualifiedGeneration :generation_character_after_origin_revealed ;
+                                 prov:wasGeneratedBy :origin_revealed ;
+                                 prov:wasRevisionOf :character_after_finding_your_past ;
+                                 rdfs:label "Version of character after origin revealed (abstract)"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#character_after_stuff_lying_around
+:character_after_stuff_lying_around rdf:type owl:NamedIndividual ,
+                                             gen:CharacterSpecialization ;
+                                    prov:qualifiedGeneration :generation_character_after_stuff_lying_around ;
+                                    prov:wasRevisionOf :character_after_one_little_memory ;
+                                    rdfs:label "Character after stuff lying around (abstract)"@en ;
+                                    prov:definition "A version of the character after acquiring minor starting items."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#character_creation_discovery
+:character_creation_discovery rdf:type owl:NamedIndividual ,
+                                       prov:Activity ;
+                              prov:generated :character_after_origin_revealed ;
+                              prov:qualifiedUsage :set_starting_hero_points_usage_of_character_with_hometown ;
+                              gen:hadSubactivity :finding_gear ,
+                                                 :finding_memories ,
+                                                 :finding_your_past ,
+                                                 :i_remember_my_name ,
+                                                 :one_little_memory ,
+                                                 :origin_revealed ,
+                                                 :stuff_lying_around ,
+                                                 :the_opener ;
+                              gen:wasSubactivityOf gen:game_sessions ;
+                              rdfs:comment "Discovery method places the character in a vulnerable state of amnesia with little to no equipment. Players gradually uncover skills, identities, and histories collaboratively through gameplay. Memories and gear are found organically, and characters gain knowledge of their past through triggered events and significant moments in the story. The final revelation provides established skills, equipment, and character background, marking the completion of character creation."@en ;
+                              rdfs:label "Character creation by discovery method"@en .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#character_initial
 :character_initial rdf:type owl:NamedIndividual ,
                             gen:CharacterSpecialization ;
@@ -573,7 +659,14 @@ The final cost of a piece of gear can never be less than 1 point."""@en ;
                                    gen:CharacterSpecialization ;
                           prov:qualifiedGeneration :character_with_companion_generation ;
                           prov:wasRevisionOf :character_with_spells ;
-                          rdfs:label "Version of character with selected companion (abstract)"@en .
+                          rdfs:label "Version of character with selected companion (abstract)"@en ;
+                          prov:definition """Character with points for customization and selected parameters:
+- hometown
+- flaws
+- core ability
+- skills
+- equipment
+- companion"""@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#character_with_companion_generation
@@ -590,7 +683,11 @@ The final cost of a piece of gear can never be less than 1 point."""@en ;
                                       gen:CharacterSpecialization ;
                              prov:qualifiedGeneration :character_with_core_ability_generation ;
                              prov:wasRevisionOf :character_with_flaws ;
-                             rdfs:label "Version of character with selected core ability (abstract)"@en .
+                             rdfs:label "Version of character with selected core ability (abstract)"@en ;
+                             prov:definition """Character with points for customization and selected parameters:
+- hometown
+- flaws
+- core ability"""@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#character_with_core_ability_generation
@@ -608,7 +705,13 @@ The final cost of a piece of gear can never be less than 1 point."""@en ;
                                    gen:CharacterSpecialization ;
                           prov:qualifiedGeneration :character_with_equipment_generation ;
                           prov:wasRevisionOf :character_with_skills ;
-                          rdfs:label "Version of character with selected equipment (abstract)"@en .
+                          rdfs:label "Version of character with selected equipment (abstract)"@en ;
+                          prov:definition """Character with points for customization and selected parameters:
+- hometown
+- flaws
+- core ability
+- skills
+- equipment"""@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#character_with_equipment_generation
@@ -626,14 +729,17 @@ The final cost of a piece of gear can never be less than 1 point."""@en ;
                                gen:CharacterSpecialization ;
                       prov:qualifiedGeneration :character_with_flaws_generation ;
                       prov:wasRevisionOf :character_with_starting_points ;
-                      rdfs:label "Version of character with selected flaws (abstract)"@en .
+                      rdfs:label "Version of character with selected flaws (abstract)"@en ;
+                      prov:definition """Character with points for customization and selected parameters:
+- hometown
+- flaws"""@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#character_with_flaws_generation
 :character_with_flaws_generation rdf:type owl:NamedIndividual ,
                                           prov:Generation ;
                                  prov:activity :set_flaws ;
-                                 gen:modification :flaws ,
+                                 gen:modification :flaws_of_character ,
                                                   :hero_points_current ;
                                  rdfs:comment "Take a maximum 2 flaws and add 5 hero points per flaw to your point total."@en ;
                                  rdfs:label "Generation of character with selected flaws"@en .
@@ -644,7 +750,8 @@ The final cost of a piece of gear can never be less than 1 point."""@en ;
                                   gen:CharacterSpecialization ;
                          prov:qualifiedGeneration :character_with_hometown_generation ;
                          prov:wasRevisionOf :character_initial ;
-                         rdfs:label "Version of character with selected hometown (abstract)"@en .
+                         rdfs:label "Version of character with selected hometown (abstract)"@en ;
+                         prov:definition "Initial character with selected hometown"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#character_with_hometown_generation
@@ -655,21 +762,17 @@ The final cost of a piece of gear can never be less than 1 point."""@en ;
                                     rdfs:label "Generation of a character with selected hometown"@en .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#character_with_lineage
-:character_with_lineage rdf:type owl:NamedIndividual ,
-                                 gen:CharacterSpecialization ;
-                        prov:qualifiedGeneration :generation_character_with_lineage ;
-                        prov:wasRevisionOf :character_with_companion ;
-                        rdfs:label "Character with lineage (abstract)"@en ;
-                        prov:definition "A version of the character after lineage selection."@en .
-
-
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#character_with_skills
 :character_with_skills rdf:type owl:NamedIndividual ,
                                 gen:CharacterSpecialization ;
                        prov:qualifiedGeneration :character_with_skills_generation ;
                        prov:wasRevisionOf :character_with_core_ability ;
-                       rdfs:label "Version of character with selected skills (abstract)"@en .
+                       rdfs:label "Version of character with selected skills (abstract)"@en ;
+                       prov:definition """Character with points for customization and selected parameters:
+- hometown
+- flaws
+- core ability
+- skills"""@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#character_with_skills_generation
@@ -685,8 +788,15 @@ The final cost of a piece of gear can never be less than 1 point."""@en ;
 :character_with_spells rdf:type owl:NamedIndividual ,
                                 gen:CharacterSpecialization ;
                        prov:qualifiedGeneration :character_with_spells_generation ;
-                       prov:specializationOf :character_with_equipment ;
-                       rdfs:label "Version of character with selected equipment (abstract)"@en .
+                       prov:wasRevisionOf :character_with_equipment ;
+                       rdfs:label "Version of character with selected equipment (abstract)"@en ;
+                       prov:definition """Character with points for customization and selected parameters:
+- hometown
+- flaws
+- core ability
+- skills
+- equipment
+- spells"""@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#character_with_spells_generation
@@ -704,7 +814,8 @@ The final cost of a piece of gear can never be less than 1 point."""@en ;
                                          gen:CharacterSpecialization ;
                                 prov:qualifiedGeneration :character_with_starting_points_generation ;
                                 prov:wasRevisionOf :character_with_hometown ;
-                                rdfs:comment "Version of character with starting points (abstract)"@en .
+                                rdfs:label "Version of character with starting points (abstract)"@en ;
+                                prov:definition "Character with selected hometown and starting points for customization."@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#character_with_starting_points_generation
@@ -909,9 +1020,27 @@ D6 attacks, 2 skills value 9, 9 Defense."""@en .
                             prov:definition "You don’t just cast spells; you are a conduit of incredible power. When casting, effects and outputs of all magic you cast are maximized on a Magic skill roll of 6 or less on a D20."@en .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#custom_character
+:custom_character rdf:type owl:NamedIndividual ,
+                           gen:CharacterSpecialization ;
+                  prov:qualifiedGeneration :generation_character_with_lineage ;
+                  prov:wasRevisionOf :character_with_companion ;
+                  rdfs:label "Custom character (abstract)"@en ;
+                  prov:definition """Character with points for customization and selected parameters:
+- hometown
+- flaws
+- core ability
+- skills
+- equipment
+- spells
+- companion
+- lineage"""@en .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#custom_character_creation
 :custom_character_creation rdf:type owl:NamedIndividual ,
                                     prov:Activity ;
+                           prov:generated :custom_character ;
                            prov:qualifiedAssociation gen:association_player ;
                            prov:qualifiedUsage :set_starting_hero_points_usage_of_character_with_hometown ;
                            prov:wasInformedBy :set_hometown ;
@@ -1522,6 +1651,37 @@ When hit by an enemy, you can ‘cross off’ a piece of armor as your attrition
            rdfs:label "Equipment of a character"@en .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#finding_gear
+:finding_gear rdf:type owl:NamedIndividual ,
+                       prov:Activity ;
+              prov:generated :character_after_finding_gear ;
+              prov:qualifiedUsage :usage_character_after_finding_memories ;
+              prov:wasInformedBy :finding_memories ;
+              rdfs:label "Finding gear"@en ;
+              prov:definition "Characters find 1-3 useful items in session 1, emphasizing the scarcity of usable inventory in the game."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#finding_memories
+:finding_memories rdf:type owl:NamedIndividual ,
+                           prov:Activity ;
+                  prov:generated :character_after_finding_memories ;
+                  prov:qualifiedUsage :usage_character_after_i_remember_my_name ;
+                  prov:wasInformedBy :i_remember_my_name ;
+                  rdfs:label "Finding memories"@en ;
+                  prov:definition "As the session unfolds, players and the GM recognize key events as memory triggers, gradually unlocking skills, abilities, and character history. 3-5 memories are typically discovered per session."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#finding_your_past
+:finding_your_past rdf:type owl:NamedIndividual ,
+                            prov:Activity ;
+                   prov:generated :character_after_finding_your_past ;
+                   prov:informed :origin_revealed ;
+                   prov:qualifiedUsage :usage_character_after_finding_gear ;
+                   prov:wasInformedBy :finding_gear ;
+                   rdfs:label "Finding your past"@en ;
+                   prov:definition "Beyond skills and gear, characters slowly uncover who they are. This may not happen in session 1, but is encouraged throughout the discovery process."@en .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#flaw_addict
 :flaw_addict rdf:type owl:NamedIndividual ,
                       :FlawBasic ;
@@ -1662,18 +1822,18 @@ When hit by an enemy, you can ‘cross off’ a piece of armor as your attrition
               prov:definition "No matter how many rabbit’s feet you carry, you have a penchant for comical mishaps and crit fail on a 16+."@en .
 
 
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#flaws
-:flaws rdf:type owl:NamedIndividual ,
-                prov:Collection ,
-                gen:CharacterParameter ;
-       rdfs:label "List of flaws of character"@en ;
-       prov:definition "List of character's weaknesses for narrative and gameplay."@en .
-
-
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#flaws_for_selection
 :flaws_for_selection rdf:type owl:NamedIndividual ,
                               prov:Collection ;
                      rdfs:label "Flaws for selection"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#flaws_of_character
+:flaws_of_character rdf:type owl:NamedIndividual ,
+                             prov:Collection ,
+                             gen:CharacterParameter ;
+                    rdfs:label "List of flaws of character"@en ;
+                    prov:definition "List of character's weaknesses for narrative and gameplay."@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#gardenburrow
@@ -1694,6 +1854,54 @@ When hit by an enemy, you can ‘cross off’ a piece of armor as your attrition
 :gear_limitations rdf:type owl:NamedIndividual ,
                            prov:Collection ;
                   rdfs:label "List of gear limitations"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#generation_character_after_finding_gear
+:generation_character_after_finding_gear rdf:type owl:NamedIndividual ,
+                                                  prov:Generation ;
+                                         prov:activity :finding_gear ;
+                                         gen:modification :equipment ;
+                                         rdfs:label "Generation of the character after finding gear"@en ;
+                                         prov:definition "Generation of the character after discovering useful items."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#generation_character_after_finding_memories
+:generation_character_after_finding_memories rdf:type owl:NamedIndividual ,
+                                                      prov:Generation ;
+                                             prov:activity :finding_memories ;
+                                             gen:modification :flaws_of_character ,
+                                                              :skills_of_character ;
+                                             rdfs:label "Generation of the character after finding memories"@en ;
+                                             prov:definition "Generation of the character after unlocking multiple personal memories."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#generation_character_after_one_little_memory
+:generation_character_after_one_little_memory rdf:type owl:NamedIndividual ,
+                                                       prov:Generation ;
+                                              prov:activity :one_little_memory ;
+                                              gen:modification :skills_of_character ;
+                                              rdfs:label "Generation of the character after one little memory"@en ;
+                                              prov:definition "Generation of the character after gaining an initial small memory."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#generation_character_after_origin_revealed
+:generation_character_after_origin_revealed rdf:type owl:NamedIndividual ,
+                                                     prov:Generation ;
+                                            prov:activity :origin_revealed ;
+                                            gen:modification :core_ability ,
+                                                             :equipment ,
+                                                             :skills_of_character ;
+                                            rdfs:comment "Character gains 2 skills at value 9, 10 points of equipment, a core ability."@en ;
+                                            rdfs:label "Generation of the character after origin revealed"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#generation_character_after_stuff_lying_around
+:generation_character_after_stuff_lying_around rdf:type owl:NamedIndividual ,
+                                                        prov:Generation ;
+                                               prov:activity :stuff_lying_around ;
+                                               gen:modification :equipment ;
+                                               rdfs:label "Generation of the character after stuff lying around"@en ;
+                                               prov:definition "Generation of the character after acquiring minor starting items."@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#generation_character_with_lineage
@@ -1743,6 +1951,16 @@ When hit by an enemy, you can ‘cross off’ a piece of armor as your attrition
                                         :slimshire ;
                          rdfs:label "Hometowns for selection"@en ;
                          prov:definition "List of hometowns for selection"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#i_remember_my_name
+:i_remember_my_name rdf:type owl:NamedIndividual ,
+                             prov:Activity ;
+                    prov:generated :character_after_i_remember_my_name ;
+                    prov:qualifiedUsage :usage_character_after_stuff_lying_around ;
+                    prov:wasInformedBy :stuff_lying_around ;
+                    rdfs:label "I remember my name"@en ;
+                    prov:definition "Through key moments, the GM announces that a character recalls their name, unlocking further narrative discoveries about their past."@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#item
@@ -1999,6 +2217,25 @@ When hit by an enemy, you can ‘cross off’ a piece of armor as your attrition
                           rdfs:label "List of upgrade examples"@en .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#one_little_memory
+:one_little_memory rdf:type owl:NamedIndividual ,
+                            prov:Activity ;
+                   prov:generated :character_after_one_little_memory ;
+                   prov:qualifiedUsage :usage_character_after_opener ,
+                                       :usage_of_skills_for_selection ;
+                   prov:wasInformedBy :the_opener ;
+                   rdfs:label "One little memory"@en ;
+                   prov:definition "Characters gain one small initial memory triggered by a fleeting reflection or strange feeling. This memory is represented by a single skill at value 6."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#origin_revealed
+:origin_revealed rdf:type owl:NamedIndividual ,
+                          prov:Activity ;
+                 prov:qualifiedUsage :usage_character_after_finding_your_past ;
+                 rdfs:comment "At a pivotal moment of great success or luck, a character fully remembers their past. The next time they rest safely, they gain 2 skills at value 9, 10 points of equipment, a core ability, and knowledge of how they got into their situation."@en ;
+                 rdfs:label "Origin revealed"@en .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#rivergate
 :rivergate rdf:type owl:NamedIndividual ,
                     prov:Location ;
@@ -2010,7 +2247,7 @@ When hit by an enemy, you can ‘cross off’ a piece of armor as your attrition
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#select_character_lineage
 :select_character_lineage rdf:type owl:NamedIndividual ,
                                    prov:Activity ;
-                          prov:generated :character_with_lineage ;
+                          prov:generated :custom_character ;
                           prov:qualifiedUsage :usage_character_with_companion ,
                                               :usage_list_of_lineages ;
                           prov:wasInformedBy :set_companion ;
@@ -2154,7 +2391,7 @@ When hit by an enemy, you can ‘cross off’ a piece of armor as your attrition
 :set_equipment rdf:type owl:NamedIndividual ,
                         prov:Activity ;
                prov:qualifiedUsage :set_equipment_usage_of_character_with_skills ,
-                                   :set_equipment_usage_of_custom_item ;
+                                   :usage_of_custom_item_for_selection ;
                prov:wasInformedBy :set_skills ;
                rdfs:comment "Visualize your character and spend your precious points on the equipment you need to satisfy the spend your precious points on the equipment you need to satisfy the concept. 10 items max in equipment inventory."@en ;
                rdfs:label "Selection of equipment"@en .
@@ -2166,14 +2403,6 @@ When hit by an enemy, you can ‘cross off’ a piece of armor as your attrition
                                               prov:entity :character_with_skills ;
                                               prov:hadRole gen:base_for_modification ;
                                               rdfs:label "Usage of character with skills in selection of equipment"@en .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#set_equipment_usage_of_custom_item
-:set_equipment_usage_of_custom_item rdf:type owl:NamedIndividual ,
-                                             prov:Usage ;
-                                    prov:entity :item ;
-                                    prov:hadRole gen:options ;
-                                    rdfs:label "Usage of custom item in selection of equipment"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#set_flaws
@@ -2236,7 +2465,7 @@ The players must choose a hometown from three available options, the same for al
 :set_skills rdf:type owl:NamedIndividual ,
                      prov:Activity ;
             prov:qualifiedUsage :set_skills_usage_of_character_with_core_ability ,
-                                :set_skills_usage_of_skills_for_selection ;
+                                :usage_of_skills_for_selection ;
             prov:wasInformedBy :set_core_ability ;
             rdfs:comment "Outfit your character with a handful of skills that fit your concept. Skills are purchased at 1-to-1 point value. No skill can be higher than 18 or lower than 3. 10 skills max in inventory."@en ;
             rdfs:label "Selection of skills"@en .
@@ -2248,14 +2477,6 @@ The players must choose a hometown from three available options, the same for al
                                                  prov:entity :character_with_core_ability ;
                                                  prov:hadRole gen:base_for_modification ;
                                                  rdfs:label "Usage of character with core ability for selection of skills"@en .
-
-
-###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#set_skills_usage_of_skills_for_selection
-:set_skills_usage_of_skills_for_selection rdf:type owl:NamedIndividual ,
-                                                   prov:Usage ;
-                                          prov:entity :skills_for_selection ;
-                                          prov:hadRole gen:options ;
-                                          rdfs:label "Usage of list of skills for selection"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#set_spells
@@ -2287,7 +2508,6 @@ The players must choose a hometown from three available options, the same for al
 :set_starting_hero_points rdf:type owl:NamedIndividual ,
                                    prov:Activity ;
                           prov:qualifiedUsage :set_starting_hero_points_usage_of_character_with_hometown ;
-                          prov:wasInformedBy :set_hometown ;
                           rdfs:comment "All characters start with 50 hero points to spend on their build."@en ;
                           rdfs:label "Set starting hero points"@en .
 
@@ -3087,6 +3307,26 @@ The players must choose a hometown from three available options, the same for al
               rdfs:label "List of the basic spells"@en .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#stuff_lying_around
+:stuff_lying_around rdf:type owl:NamedIndividual ,
+                             prov:Activity ;
+                    prov:generated :character_after_stuff_lying_around ;
+                    prov:qualifiedUsage :usage_character_after_one_little_memory ,
+                                        :usage_of_custom_item_for_selection ;
+                    prov:wasInformedBy :one_little_memory ;
+                    rdfs:label "Stuff lying around"@en ;
+                    prov:definition "Characters find 1D4 minor items in their immediate area, offering limited initial equipment."@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#the_opener
+:the_opener rdf:type owl:NamedIndividual ,
+                     prov:Activity ;
+            prov:generated :character_after_opener ;
+            prov:qualifiedUsage :set_starting_hero_points_usage_of_character_with_hometown ;
+            rdfs:label "The opener"@en ;
+            prov:definition "Establishes initial scenario with location, condition, and time pressure to push characters into immediate action."@en .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#upgrade_companion
 :upgrade_companion rdf:type owl:NamedIndividual ,
                             prov:Activity ;
@@ -3125,6 +3365,62 @@ The players must choose a hometown from three available options, the same for al
                           :CompanionUpgrade ;
                  rdfs:comment "Your companion ignores most penalties in combat."@en ;
                  rdfs:label "Precise (Companion upgrade)"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#usage_character_after_finding_gear
+:usage_character_after_finding_gear rdf:type owl:NamedIndividual ,
+                                             prov:Usage ;
+                                    prov:entity :character_after_finding_gear ;
+                                    prov:hadRole gen:base_for_modification ;
+                                    rdfs:label "Usage of character after finding gear"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#usage_character_after_finding_memories
+:usage_character_after_finding_memories rdf:type owl:NamedIndividual ,
+                                                 prov:Usage ;
+                                        prov:entity :character_after_finding_memories ;
+                                        prov:hadRole gen:base_for_modification ;
+                                        rdfs:label "Usage of character after finding memories"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#usage_character_after_finding_your_past
+:usage_character_after_finding_your_past rdf:type owl:NamedIndividual ,
+                                                  prov:Usage ;
+                                         prov:entity :character_after_finding_your_past ;
+                                         prov:hadRole gen:base_for_modification ;
+                                         rdfs:label "Usage of character after finding past"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#usage_character_after_i_remember_my_name
+:usage_character_after_i_remember_my_name rdf:type owl:NamedIndividual ,
+                                                   prov:Usage ;
+                                          prov:entity :character_after_i_remember_my_name ;
+                                          prov:hadRole gen:base_for_modification ;
+                                          rdfs:label "Usage of character after remembering name"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#usage_character_after_one_little_memory
+:usage_character_after_one_little_memory rdf:type owl:NamedIndividual ,
+                                                  prov:Usage ;
+                                         prov:entity :character_after_one_little_memory ;
+                                         prov:hadRole gen:base_for_modification ;
+                                         rdfs:label "Usage of character after one little memory"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#usage_character_after_opener
+:usage_character_after_opener rdf:type owl:NamedIndividual ,
+                                       prov:Usage ;
+                              prov:entity :character_after_opener ;
+                              prov:hadRole gen:base_for_modification ;
+                              rdfs:label "Usage of character after opener"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#usage_character_after_stuff_lying_around
+:usage_character_after_stuff_lying_around rdf:type owl:NamedIndividual ,
+                                                   prov:Usage ;
+                                          prov:entity :character_after_stuff_lying_around ;
+                                          prov:hadRole gen:base_for_modification ;
+                                          rdfs:label "Usage of character after stuff lying around"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#usage_character_with_companion
@@ -3179,6 +3475,22 @@ The players must choose a hometown from three available options, the same for al
                                 prov:hadRole gen:options ;
                                 rdfs:comment "Possible upgrade options available during the process."@en ;
                                 rdfs:label "Usage of list of upgrade examples"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#usage_of_custom_item_for_selection
+:usage_of_custom_item_for_selection rdf:type owl:NamedIndividual ,
+                                             prov:Usage ;
+                                    prov:entity :item ;
+                                    prov:hadRole gen:options ;
+                                    rdfs:label "Usage of custom item in selection of equipment"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#usage_of_skills_for_selection
+:usage_of_skills_for_selection rdf:type owl:NamedIndividual ,
+                                        prov:Usage ;
+                               prov:entity :skills_for_selection ;
+                               prov:hadRole gen:options ;
+                               rdfs:label "Usage of list of skills for selection"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#weapon_barbed_whip
@@ -3368,9 +3680,12 @@ The players must choose a hometown from three available options, the same for al
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral_prov.ttl#game_preparation
-gen:game_preparation gen:hadSubactivity :character_initial_generation ,
+gen:game_preparation prov:generated gen:character ;
+                     gen:hadSubactivity :character_initial_generation ,
                                         :custom_character_creation ,
+                                        :custom_companion_creation ,
                                         :custom_item_creation ,
+                                        :custom_spell_creation ,
                                         :set_hometown .
 
 
