@@ -1017,7 +1017,7 @@ D6 attacks, 2 skills value 9, 9 Defense."""@en .
 :core_ability_wizard_savant rdf:type owl:NamedIndividual ,
                                      :CoreAbility ;
                             rdfs:label "Wizard Savant"@en ;
-                            prov:definition "You don’t just cast spells; you are a conduit of incredible power. When casting, effects and outputs of all magic you cast are maximized on a Magic skill roll of 6 or less on a D20."@en .
+                            prov:definition "You don't just cast spells; you are a conduit of incredible power. When casting, effects and outputs of all magic you cast are maximized on a Magic skill roll of 6 or less on a D20."@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#custom_character
