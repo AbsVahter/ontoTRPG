@@ -2,7 +2,6 @@
 @prefix gen: <https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral_prov.ttl#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -940,7 +939,7 @@ D6 attacks, 2 skills value 9, 9 Defense."""@en .
 :core_ability_battlemaster rdf:type owl:NamedIndividual ,
                                     :CoreAbility ;
                            rdfs:label "Battlemaster"@en ;
-                           prov:definition "You have been trained as a soldier who knows how to hit hard. When you roll maximum damage, roll again. There is no limit to the number of times the dice can ‘explode.’"@en .
+                           prov:definition "You have been trained as a soldier who knows how to hit hard. When you roll maximum damage, roll again. There is no limit to the number of times the dice can explode.'"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#core_ability_brutal_fighter
@@ -996,7 +995,7 @@ D6 attacks, 2 skills value 9, 9 Defense."""@en .
 :core_ability_spellsinger rdf:type owl:NamedIndividual ,
                                    :CoreAbility ;
                           rdfs:label "Spellsinger"@en ;
-                          prov:definition "You cast spells with flair and oratory. You can never use ‘silent’ or ‘still’ spells. As a default, though, your spells work on a target that can HEAR you cast. Upgrade from there as normal."@en .
+                          prov:definition "You cast spells with flair and oratory. You can never use 'silent' or 'still' spells. As a default, though, your spells work on a target that can HEAR you cast. Upgrade from there as normal."@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#core_ability_uncanny_shot
@@ -1135,7 +1134,7 @@ Each limitation reduces spell cost by 3 hero points as normal. The final cost of
 :effect_area rdf:type owl:NamedIndividual ,
                       :SpellEffect ;
              rdfs:label "Area (Spell effect)"@en ;
-             prov:definition "Modify a single-target spell to affect an arm’s-width radius."@en .
+             prov:definition "Modify a single-target spell to affect an arm's-width radius."@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#effect_balanced_weapon
@@ -1198,7 +1197,7 @@ Each limitation reduces spell cost by 3 hero points as normal. The final cost of
 :effect_clairvoyance rdf:type owl:NamedIndividual ,
                               :SpellEffect ;
                      rdfs:label "Clairvoyance (Spell effect)"@en ;
-                     prov:definition "Affect unseen target(s) with rolled effect x 10’ distance."@en .
+                     prov:definition "Affect unseen target(s) with rolled effect x 10' distance."@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#effect_cloak
@@ -1254,7 +1253,7 @@ Each limitation reduces spell cost by 3 hero points as normal. The final cost of
 :effect_deadly_weapon rdf:type owl:NamedIndividual ,
                                :GearEffect ;
                       rdfs:label "Deadly Weapon"@en ;
-                      prov:definition "Add an additional damage die of the weapon’s type."@en .
+                      prov:definition "Add an additional damage die of the weapon's type."@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#effect_detect_object
@@ -1296,7 +1295,7 @@ Each limitation reduces spell cost by 3 hero points as normal. The final cost of
 :effect_drain rdf:type owl:NamedIndividual ,
                        :SpellEffect ;
               rdfs:label "Drain (Spell effect)"@en ;
-              prov:definition "Reduce a target’s DEF or ATK for 1 round."@en .
+              prov:definition "Reduce a target's DEF or ATK for 1 round."@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#effect_druidic
@@ -1345,7 +1344,7 @@ Each limitation reduces spell cost by 3 hero points as normal. The final cost of
 :effect_held_spell rdf:type owl:NamedIndividual ,
                             :SpellEffect ;
                    rdfs:label "Held Spell (Spell effect)"@en ;
-                   prov:definition "Use a turn to ‘pre-cast’ spell, triggering it any time after."@en .
+                   prov:definition "Use a turn to 'pre-cast' spell, triggering it any time after."@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#effect_illusions
@@ -1359,7 +1358,7 @@ Each limitation reduces spell cost by 3 hero points as normal. The final cost of
 :effect_ineffable rdf:type owl:NamedIndividual ,
                            :SpellLimitation ;
                   rdfs:label "Ineffable (Spell limitation)"@en ;
-                  prov:definition "This magic is primal, and can’t be recorded for others to use on scrolls, weapons, rings, or wands of any sort."@en .
+                  prov:definition "This magic is primal, and can't be recorded for others to use on scrolls, weapons, rings, or wands of any sort."@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#effect_language
@@ -1373,7 +1372,7 @@ Each limitation reduces spell cost by 3 hero points as normal. The final cost of
 :effect_lasting rdf:type owl:NamedIndividual ,
                          :SpellEffect ;
                 rdfs:label "Lasting (Spell effect)"@en ;
-                prov:definition "Make a spell’s output permanent, with GM approval, for a cost of 15 points."@en .
+                prov:definition "Make a spell's output permanent, with GM approval, for a cost of 15 points."@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#effect_levitate
@@ -1387,7 +1386,7 @@ Each limitation reduces spell cost by 3 hero points as normal. The final cost of
 :effect_lightweight rdf:type owl:NamedIndividual ,
                              :GearEffect ;
                     rdfs:label "Lightweight"@en ;
-                    prov:definition "Finely made equipment doesn’t inhibit stealth or swimming."@en .
+                    prov:definition "Finely made equipment doesn't inhibit stealth or swimming."@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#effect_linked_to_physical_object
@@ -1583,21 +1582,21 @@ Each limitation reduces spell cost by 3 hero points as normal. The final cost of
 :effect_summon rdf:type owl:NamedIndividual ,
                         :SpellEffect ;
                rdfs:label "Summon (Spell effect)"@en ;
-               prov:definition "Conjure 1D6 1 attrition ‘minion’ creatures or constructs."@en .
+               prov:definition "Conjure 1D6 1 attrition 'minion' creatures or constructs."@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#effect_takes_2_phases_to_cast
 :effect_takes_2_phases_to_cast rdf:type owl:NamedIndividual ,
                                         :SpellLimitation ;
                                rdfs:label "Takes 2 Phases to Cast (Spell limitation)"@en ;
-                               prov:definition "Effect takes place at the end of the caster’s second phase spent casting. If hit in that time, the count starts over. If rolling to cast, the roll must be made twice consecutively."@en .
+                               prov:definition "Effect takes place at the end of the caster's second phase spent casting. If hit in that time, the count starts over. If rolling to cast, the roll must be made twice consecutively."@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#effect_telepathy
 :effect_telepathy rdf:type owl:NamedIndividual ,
                            :SpellEffect ;
                   rdfs:label "Telepathy (Spell effect)"@en ;
-                  prov:definition "Read minds by overcoming foe’s D20 roll with effect."@en .
+                  prov:definition "Read minds by overcoming foe's D20 roll with effect."@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#effect_transmute
@@ -1632,7 +1631,7 @@ Each limitation reduces spell cost by 3 hero points as normal. The final cost of
 :effect_vapor rdf:type owl:NamedIndividual ,
                        :SpellEffect ;
               rdfs:label "Vapor (Spell effect)"@en ;
-              prov:definition "Contain a spell’s effect in a lingering vapor cloud. The cloud is subject to air movement as a conventional gas."@en .
+              prov:definition "Contain a spell's effect in a lingering vapor cloud. The cloud is subject to air movement as a conventional gas."@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#effect_ward
@@ -1647,7 +1646,7 @@ Each limitation reduces spell cost by 3 hero points as normal. The final cost of
                     prov:Collection ,
                     gen:CharacterParameter ;
            rdfs:comment """When loading up on armor, duplicates can be carried, but only one of a type/body location can be worn to boost Defense. Backup armor is just as vulnerable to attrition as worn armor or any other equipment.
-When hit by an enemy, you can ‘cross off’ a piece of armor as your attrition. Most commonly, this means the armor is damaged beyond use. Some foes with corrosive or ‘sundering’ attacks will destroy armor, not just damage it. Delete the item from your inventory permanently."""@en ;
+When hit by an enemy, you can 'cross off' a piece of armor as your attrition. Most commonly, this means the armor is damaged beyond use. Some foes with corrosive or 'sundering' attacks will destroy armor, not just damage it. Delete the item from your inventory permanently."""@en ;
            rdfs:label "Equipment of a character"@en .
 
 
@@ -1686,7 +1685,7 @@ When hit by an enemy, you can ‘cross off’ a piece of armor as your attrition
 :flaw_addict rdf:type owl:NamedIndividual ,
                       :FlawBasic ;
              rdfs:label "Addict flaw"@en ;
-             prov:definition "You have a specific vice you cannot deny. If you can’t get your fix, the GM will ask for a roll vs. attrition in some form."@en .
+             prov:definition "You have a specific vice you cannot deny. If you can't get your fix, the GM will ask for a roll vs. attrition in some form."@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#flaw_aescetic
@@ -1707,7 +1706,7 @@ When hit by an enemy, you can ‘cross off’ a piece of armor as your attrition
 :flaw_bad_reputation rdf:type owl:NamedIndividual ,
                               :FlawBasic ;
                      rdfs:label "Bad reputation flaw"@en ;
-                     prov:definition "You’ve done things... terrible things, and people know about it. You’ve done harm, broken oaths, or let someone down."@en .
+                     prov:definition "You've done things... terrible things, and people know about it. You've done harm, broken oaths, or let someone down."@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#flaw_crazy
@@ -1721,7 +1720,7 @@ When hit by an enemy, you can ‘cross off’ a piece of armor as your attrition
 :flaw_disorganized rdf:type owl:NamedIndividual ,
                             :FlawBasic ;
                    rdfs:label "Disorganized flaw"@en ;
-                   prov:definition "Where’d you put that? When seeking anything but your most-used items and armor, roll 9 or less on a D20 to find it."@en .
+                   prov:definition "Where'd you put that? When seeking anything but your most-used items and armor, roll 9 or less on a D20 to find it."@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#flaw_drunkard
@@ -1763,21 +1762,21 @@ When hit by an enemy, you can ‘cross off’ a piece of armor as your attrition
 :flaw_injured rdf:type owl:NamedIndividual ,
                        :FlawBasic ;
               rdfs:label "Injured flaw"@en ;
-              prov:definition "This common flaw should be taken a few times in a character’s lifetime. An Injury brings a -1 maximum skill inventory."@en .
+              prov:definition "This common flaw should be taken a few times in a character's lifetime. An Injury brings a -1 maximum skill inventory."@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#flaw_just_a_kid
 :flaw_just_a_kid rdf:type owl:NamedIndividual ,
                           :FlawBasic ;
                  rdfs:label "Just a kid flaw"@en ;
-                 prov:definition "Hey, I’m just a kid! Never exceed 6 skills."@en .
+                 prov:definition "Hey, I'm just a kid! Never exceed 6 skills."@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#flaw_paranoid
 :flaw_paranoid rdf:type owl:NamedIndividual ,
                         :FlawBasic ;
                rdfs:label "Paranoid flaw"@en ;
-               prov:definition "What’s that? You hear that? You invent your own boogie men, and sew doubt among others. NPCs will be hesitant to trust you."@en .
+               prov:definition "What's that? You hear that? You invent your own boogie men, and sew doubt among others. NPCs will be hesitant to trust you."@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#flaw_phobia
@@ -1812,14 +1811,14 @@ When hit by an enemy, you can ‘cross off’ a piece of armor as your attrition
 :flaw_timid rdf:type owl:NamedIndividual ,
                      :FlawBasic ;
             rdfs:label "Timid flaw"@en ;
-            prov:definition "You’d rather let others lead. Only take action in phase 4 or 5."@en .
+            prov:definition "You'd rather let others lead. Only take action in phase 4 or 5."@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#flaw_unlucky
 :flaw_unlucky rdf:type owl:NamedIndividual ,
                        :FlawBasic ;
               rdfs:label "Unlucky flaw"@en ;
-              prov:definition "No matter how many rabbit’s feet you carry, you have a penchant for comical mishaps and crit fail on a 16+."@en .
+              prov:definition "No matter how many rabbit's feet you carry, you have a penchant for comical mishaps and crit fail on a 16+."@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#flaws_for_selection
@@ -1839,7 +1838,7 @@ When hit by an enemy, you can ‘cross off’ a piece of armor as your attrition
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#gardenburrow
 :gardenburrow rdf:type owl:NamedIndividual ,
                        prov:Location ;
-              rdfs:comment "This town was founded by elves centuries ago as a waystation for forest caretakers and foragers. Since then, it has grown to a few hundred residents and many travelers crossing the West. To call this town home, you’ll be diving into mysterious forests, a long-standing feud with frog men, tensions with dwarves, and the mists of the Emerald Narrows. Gardenburrow is an elemental place... a pilgrimage for druids and nature-folk of the realm."@en ;
+              rdfs:comment "This town was founded by elves centuries ago as a waystation for forest caretakers and foragers. Since then, it has grown to a few hundred residents and many travelers crossing the West. To call this town home, you'll be diving into mysterious forests, a long-standing feud with frog men, tensions with dwarves, and the mists of the Emerald Narrows. Gardenburrow is an elemental place... a pilgrimage for druids and nature-folk of the realm."@en ;
               rdfs:label "Gardenburrow"@en ;
               prov:definition "Forest Refuge"@en .
 
@@ -2088,7 +2087,7 @@ When hit by an enemy, you can ‘cross off’ a piece of armor as your attrition
 :limitation_clumsy rdf:type owl:NamedIndividual ,
                             :CompanionLimitation ;
                    rdfs:label "Clumsy (Companion limitation)"@en ;
-                   prov:definition "This companion is almost never stealthy, hidden, or silent. The group’s sneaking or stealth efforts are afflicted by a -3 penalty."@en .
+                   prov:definition "This companion is almost never stealthy, hidden, or silent. The group's sneaking or stealth efforts are afflicted by a -3 penalty."@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#limitation_feral
@@ -2123,7 +2122,7 @@ When hit by an enemy, you can ‘cross off’ a piece of armor as your attrition
 :limitation_impulsive rdf:type owl:NamedIndividual ,
                                :CompanionLimitation ;
                       rdfs:label "Impulsive (Companion limitation)"@en ;
-                      prov:definition "When battle is joined, this companion rolls its best skill. On a failed roll, it makes its own opening decision, using the hero’s phase."@en .
+                      prov:definition "When battle is joined, this companion rolls its best skill. On a failed roll, it makes its own opening decision, using the hero's phase."@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#limitation_sought_after
@@ -2239,7 +2238,7 @@ When hit by an enemy, you can ‘cross off’ a piece of armor as your attrition
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#rivergate
 :rivergate rdf:type owl:NamedIndividual ,
                     prov:Location ;
-           rdfs:comment "At the geographic center point of The North Holds is the port city of Rivergate. This central location has made the ruling elite here wealthy, trading with the Stormkeeper dwarves and the abundant farms south of the River Thenne. Now that Ruinmoor has gone quiet, though, Rivergate is in crisis. To call this town home, you’ll be working for desperate nobles, escorting merchant barges, or exploring the fallen walls of ancient monasteries. Rivergate is the busy hub of mankind, with all its intrigue and peril."@en ;
+           rdfs:comment "At the geographic center point of The North Holds is the port city of Rivergate. This central location has made the ruling elite here wealthy, trading with the Stormkeeper dwarves and the abundant farms south of the River Thenne. Now that Ruinmoor has gone quiet, though, Rivergate is in crisis. To call this town home, you'll be working for desperate nobles, escorting merchant barges, or exploring the fallen walls of ancient monasteries. Rivergate is the busy hub of mankind, with all its intrigue and peril."@en ;
            rdfs:label "Rivergate"@en ;
            prov:definition "Bustling Trade City"@en .
 
@@ -2531,7 +2530,7 @@ The players must choose a hometown from three available options, the same for al
 :skill_armorer rdf:type owl:NamedIndividual ,
                         :SkillBasic ;
                rdfs:label "Armorer skill"@en ;
-               prov:definition "In arm’s length of an ally, roll this skill to repair 1 damaged armor item in their inventory. On a failure, the armor is destroyed."@en .
+               prov:definition "In arm's length of an ally, roll this skill to repair 1 damaged armor item in their inventory. On a failure, the armor is destroyed."@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#skill_brawling
@@ -2874,7 +2873,7 @@ The players must choose a hometown from three available options, the same for al
 :skill_survival rdf:type owl:NamedIndividual ,
                          :SkillBasic ;
                 rdfs:label "Survival skill"@en ;
-                prov:definition "If your heart is hit, a lethal injury, roll this skill instantly (it will be crossed off). On a success, you fight off death’s embrace for 1 round. Also rolled when refusing to rest and pushing onward after lack of sleep."@en .
+                prov:definition "If your heart is hit, a lethal injury, roll this skill instantly (it will be crossed off). On a success, you fight off death's embrace for 1 round. Also rolled when refusing to rest and pushing onward after lack of sleep."@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#skill_swimming
@@ -2922,7 +2921,7 @@ The players must choose a hometown from three available options, the same for al
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#slimshire
 :slimshire rdf:type owl:NamedIndividual ,
                     prov:Location ;
-           rdfs:comment "The coming of the ‘White Bird’ and The Holy Order has grown this town, once a wide spot in the road to Hakburg, to new heights. Ruling here is Lord Pickins, and times have been good. Such fortune has attracted the destructive attention of goblins from the Shadow Glades, Orc raiders from the deep desert, and even the darkly dreaming influence of a mysterious entity generally referred to as ‘the eye in the well.’ To call this town home, you will be confronting vampiric cults, fighting goblin skirmishers, or working to secure allies in the war with the Orcs."@en ;
+           rdfs:comment "The coming of the 'White Bird' and The Holy Order has grown this town, once a wide spot in the road to Hakburg, to new heights. Ruling here is Lord Pickins, and times have been good. Such fortune has attracted the destructive attention of goblins from the Shadow Glades, Orc raiders from the deep desert, and even the darkly dreaming influence of a mysterious entity generally referred to as 'the eye in the well.' To call this town home, you will be confronting vampiric cults, fighting goblin skirmishers, or working to secure allies in the war with the Orcs."@en ;
            rdfs:label "Slimshire"@en ;
            prov:definition "High Plains Outpost"@en .
 
@@ -3012,7 +3011,7 @@ The players must choose a hometown from three available options, the same for al
                                 :BasicSmallItem ;
                        gen:cost 1 ;
                        rdfs:label "Iron Chain"@en ;
-                       prov:definition "15’ length, all but unbreakable"@en .
+                       prov:definition "15' length, all but unbreakable"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#small_item_lockpicks
@@ -3052,7 +3051,7 @@ The players must choose a hometown from three available options, the same for al
                           :BasicSmallItem ;
                  gen:cost 1 ;
                  rdfs:label "Rope"@en ;
-                 prov:definition "50’ length, breaks on crit fail usage"@en .
+                 prov:definition "50' length, breaks on crit fail usage"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#small_item_sack_of_bearings
@@ -3157,7 +3156,7 @@ The players must choose a hometown from three available options, the same for al
                           :BasicSpell ;
                  gen:cost 3 ;
                  rdfs:label "Fireblast"@en ;
-                 prov:definition "Explosive fire from the caster’s hands."@en .
+                 prov:definition "Explosive fire from the caster's hands."@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#spell_ghost_blade
@@ -3181,7 +3180,7 @@ The players must choose a hometown from three available options, the same for al
                                :BasicSpell ;
                       gen:cost 3 ;
                       rdfs:label "Invisible Wall"@en ;
-                      prov:definition "A 20’ wide force field, 4 attrition/10 Def."@en .
+                      prov:definition "A 20' wide force field, 4 attrition/10 Def."@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#spell_levitation
@@ -3202,7 +3201,7 @@ The players must choose a hometown from three available options, the same for al
 :spell_mages_cloak rdf:type owl:NamedIndividual ,
                             :BasicSpell ;
                    gen:cost 3 ;
-                   rdfs:label "Mage’s Cloak"@en ;
+                   rdfs:label "Mage's Cloak"@en ;
                    prov:definition "Enchant a cape. Its wearer is targeted last."@en .
 
 
@@ -3349,7 +3348,7 @@ The players must choose a hometown from three available options, the same for al
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#upgrade_deadly
 :upgrade_deadly rdf:type owl:NamedIndividual ,
                          :CompanionUpgrade ;
-                rdfs:comment "Upgrade the companion’s damage with an additional die."@en ;
+                rdfs:comment "Upgrade the companion's damage with an additional die."@en ;
                 rdfs:label "Deadly (Companion upgrade)"@en .
 
 
@@ -3553,7 +3552,7 @@ The players must choose a hometown from three available options, the same for al
                 gen:cost 3 ;
                 gen:damage "D10" ;
                 rdfs:label "Halberd"@en ;
-                prov:definition "Long reach, halt a target’s progress"@en .
+                prov:definition "Long reach, halt a target's progress"@en .
 
 
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#weapon_long_bow
@@ -3690,3 +3689,114 @@ gen:game_preparation prov:generated gen:character ;
 
 
 ###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#Deed
+:Deed rdf:type owl:Class ;
+      rdfs:subClassOf prov:Activity ;
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty prov:qualifiedAssociation ;
+                        owl:hasValue :association_player ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty prov:qualifiedUsage ;
+                        owl:hasValue :usage_of_character ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty prov:qualifiedUsage ;
+                        owl:hasValue :usage_of_renown_levels ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty prov:activityOfInfluence ;
+                        owl:hasValue :generation_after_deed ] ;
+      rdfs:label "Mighty Deed"@en ;
+      prov:definition "A heroic action that goes beyond survival, wealth gain, or influence, where heroes risk their lives for the greater good."@en .
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#usage_of_renown_levels
+:usage_of_renown_levels rdf:type owl:NamedIndividual ,
+                                prov:Usage ;
+                        prov:entity :renown_levels ;
+                        prov:hadRole :options ;
+                        gen:required "Requires specific number of deeds to be completed"^^xsd:string ;
+                        rdfs:label "Usage of renown levels as options for selection"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#usage_of_character
+:usage_of_character rdf:type owl:NamedIndividual ,
+                                 prov:Usage ;
+                        prov:entity :character ;
+                        prov:hadRole :base_for_modification ;
+                        rdfs:label "Usage of character as base for modification"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#renown_title
+:renown_title rdf:type gen:CharacterParameter ;
+            rdfs:label "Renown Title"@en ;
+            prov:definition "A title bestowed upon heroes based on their accumulated deeds."@en .
+
+:renown_level_of_character a gen:CharacterParameter ;
+  rdfs:label "Renown level of character" ;
+  prov:definition "The level of renown of a character, reflecting their achievements and reputation in the world."@en .
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#RenownLevel
+:RenownLevel rdf:type owl:Class ;
+            rdfs:subClassOf prov:Entity ;
+            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty prov:wasMemberOf ;
+                             owl:hasValue :renown_levels ] ;
+            rdfs:label "Renown Level"@en .
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#renown_levels
+:renown_levels rdf:type owl:NamedIndividual ,
+                        prov:Collection ;
+               rdfs:label "Collection of renown levels"@en .
+
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#requiresDeedCount
+:requiresDeedCount rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :RenownLevel ;
+                   rdfs:range xsd:integer ;
+                   rdfs:label "requires deed count"@en .
+
+###  Renown Levels
+:novice_renown rdf:type owl:NamedIndividual, :RenownLevel ;
+               :requiresDeedCount "0"^^xsd:integer ;
+               rdfs:label "Novice Renown"@en .
+
+:minor_renown rdf:type owl:NamedIndividual, :RenownLevel ;
+              :requiresDeedCount "3"^^xsd:integer ;
+              rdfs:label "Minor Renown"@en ;
+              rdfs:comment "Heroes receive titles like 'spider-slayer' or 'boulder breaker'"@en .
+
+:established_renown rdf:type owl:NamedIndividual, :RenownLevel ;
+                   :requiresDeedCount "5"^^xsd:integer ;
+                   rdfs:label "Established Renown"@en ;
+                   rdfs:comment "Heroes receive official titles like 'Knight Errant' or 'Commander'"@en .
+
+:legendary_renown rdf:type owl:NamedIndividual, :RenownLevel ;
+                 :requiresDeedCount "10"^^xsd:integer ;
+                 rdfs:label "Legendary Renown"@en ;
+                 rdfs:comment "Heroes receive noble titles like 'Lord', 'Baron', or 'High Priest' and may be granted fortresses or villages"@en .
+
+###  Example Deed Types
+:session_completion_deed rdf:type owl:NamedIndividual, :Deed ;
+                        rdfs:label "Session Completion Deed"@en ;
+                        rdfs:comment "Awarded for completing a session with flair"@en .
+
+:legendary_action_deed rdf:type owl:NamedIndividual, :Deed ;
+                      rdfs:label "Legendary Action Deed"@en ;
+                      rdfs:comment "Awarded for executing legendary or pivotal actions in play"@en .
+
+:triumphant_return_deed rdf:type owl:NamedIndividual, :Deed ;
+                       rdfs:label "Triumphant Return Deed"@en ;
+                       rdfs:comment "Awarded when returning to grateful townsfolk after a successful mission"@en .
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#character_after_deed
+:character_after_deed rdf:type owl:NamedIndividual ,
+                              gen:CharacterSpecialization ;
+                     rdfs:label "Character after deed"@en ;
+                     prov:definition "A version of character that emerges after completing a mighty deed, with updated hero points and possibly new titles"@en ;
+                     prov:qualifiedGeneration :generation_after_deed .
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/crown_and_skull/crown_and_skull_prov.ttl#generation_after_deed
+:generation_after_deed rdf:type owl:NamedIndividual ,
+                               prov:Generation ;
+                      rdfs:label "Generation after deed"@en ;
+                      rdfs:comment "The generation process of a new character version after completing a deed. Character receives 3 hero points and possibly renown level and title."@en ;
+                      gen:modification :hero_points_current , :hero_points_earned , :renown_title , :renown_level_of_character .
