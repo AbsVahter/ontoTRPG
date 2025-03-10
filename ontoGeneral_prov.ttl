@@ -541,6 +541,17 @@ prov:Usage rdf:type owl:Class ;
       rdfs:label "Item" .
 
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral_prov.ttl#Trigger
+:Trigger rdf:type owl:Class ;
+         rdfs:subClassOf prov:Entity ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty prov:started ;
+                           owl:someValuesFrom prov:Activity
+                         ] ;
+         rdfs:label "Trigger"@en ;
+         prov:definition "A trigger is an entity that initiates or starts an activity. It serves as a catalyst or condition that, when met, leads to the commencement of a specific activity. The trigger must be connected to at least one activity through the prov:started property."@en .
+
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral_prov.ttl#Weapon
 :Weapon rdf:type owl:Class ;
         rdfs:subClassOf :Item ;
@@ -682,8 +693,39 @@ prov:Usage rdf:type owl:Class ;
        rdfs:label "Game story"@en ;
        prov:definition "Game story as result of TRPG."@en .
 
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral_prov.ttl#usage_of_character
+:usage_of_character rdf:type owl:NamedIndividual ,
+                            prov:Usage ;
+                    prov:entity :character ;
+                    prov:hadRole :base_for_modification ;
+                    rdfs:label "Usage of character as base for modification"@en .
+
 ###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral_prov.ttl#required
 :required rdf:type owl:DatatypeProperty ;
          rdfs:domain prov:InstantaneousEvent ;
          rdfs:range xsd:string ;
          rdfs:label "required condition"@en .
+
+###  http://www.w3.org/ns/prov#wasStartedBy
+prov:wasStartedBy rdf:type owl:ObjectProperty ;
+                  rdfs:domain prov:Activity ;
+                  rdfs:range prov:Entity ;
+                  rdfs:label "was started by"@en ;
+                  rdfs:comment "Start is when an activity is deemed to have been started by an entity, known as trigger. The activity did not exist before its start. Any usage, generation, or invalidation involving an activity follows the activity's start. A start may refer to a trigger entity that set off the activity, or to an activity, known as starter, that generated the trigger."@en ;
+                  owl:inverseOf prov:started .
+
+###  http://www.w3.org/ns/prov#started  
+prov:started rdf:type owl:ObjectProperty ;
+             rdfs:domain prov:Entity ;
+             rdfs:range prov:Activity ;
+             rdfs:label "started"@en ;
+             rdfs:comment "An entity that started an activity."@en ;
+             owl:inverseOf prov:wasStartedBy .
+
+###  https://raw.githubusercontent.com/AbsVahter/ontoTRPG/main/ontoGeneral_prov.ttl#threshold_check
+:threshold_check rdf:type owl:NamedIndividual ,
+                         prov:Role ;
+                rdfs:label "Threshold check"@en ;
+                prov:definition "Role for checking if any entity's parameter meets or exceeds a specified threshold value."@en .
+
+
